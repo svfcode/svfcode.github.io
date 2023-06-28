@@ -1,0 +1,12 @@
+[submodule "blog/themes/ananke"]
+	path = blog/themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke
+[submodule "blog/themes/hello-friend"]
+	path = blog/themes/hello-friend
+	url = https://github.com/panr/hugo-theme-hello-friend.git
+[submodule "blog/themes/hugo-coder"]
+	path = blog/themes/hugo-coder
+	url = https://github.com/luizdepra/hugo-coder.git
+[submodule "blog/themes/hugo-theme-stack"]
+	path = blog/themes/hugo-theme-stack
+	url = https://github.com/CaiJimmy/hugo-theme-stack/
