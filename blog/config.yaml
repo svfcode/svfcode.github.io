@@ -22,6 +22,12 @@ languages:
         weight: 1
 
 params:
+    comments:
+        enabled: false
+        provider: disqus
+        # disqusjs:
+            # shortname: svfcode
+
     widgets:
         homepage:
             - type: search
@@ -36,3 +42,5 @@ params:
                   limit: 10
         page:
             - type: toc
+
+disqusShortname: svfcode
