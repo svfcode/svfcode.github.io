@@ -25,8 +25,7 @@ params:
     comments:
         enabled: false
         provider: disqus
-        # disqusjs:
-            # shortname: svfcode
+        disqusShortname: svfcode
 
     widgets:
         homepage:
@@ -42,5 +41,3 @@ params:
                   limit: 10
         page:
             - type: toc
-
-disqusShortname: svfcode
