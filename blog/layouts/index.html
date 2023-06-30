@@ -9,9 +9,7 @@
             {{ partial "article-list/default" . }}
         {{ end }}
     </section>
-    {{ template "_internal/disqus.html" . }}
 
-    {{- partial "comments/include.html" . -}}
     {{- partial "pagination.html" . -}}
     {{- partial "footer/footer" . -}}
 {{ end }}
