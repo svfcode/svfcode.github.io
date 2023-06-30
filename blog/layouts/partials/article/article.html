@@ -3,14 +3,7 @@
 
     {{ partial "article/components/content" . }}
 
-stack by
-    {{ partial "comments/include.html" }}
-
     {{ partial "article/components/footer" . }}
-standard
-    {{ template "_internal/disqus.html" . }}
-
-    {{- partial "comments/include.html" . -}}
 
     {{ if or .Params.math .Site.Params.article.math }}
         {{ partialCached "article/components/math.html" . }}
