@@ -1,5 +1,5 @@
 ---
-title: "поиск"
+title: "search"
 slug: "search"
 layout: "search"
 outputs:

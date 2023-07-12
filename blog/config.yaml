@@ -12,13 +12,13 @@ DefaultContentLanguage: ru
 languages:
     en:
         languageName: en
-        title: Example Site 123
-        description: Example description
+        title: Blog
+        description: go, js, php, linux, db, etc.
         weight: 2
     ru:
         languageName: ru
-        title: тест
-        description: тест description
+        title: Блог
+        description: go, js, php, linux, db, etc.
         weight: 1
 
 params:
@@ -26,6 +26,9 @@ params:
         enabled: true
         provider: disqus
         disqusShortname: svfcode
+
+    sidebar:
+        avatar: false
 
     widgets:
         homepage:
