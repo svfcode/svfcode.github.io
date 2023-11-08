@@ -8,20 +8,28 @@ permalinks:
     post: /p/:slug/
     page: /:slug/
 
-DefaultContentLanguage: ru
+DefaultContentLanguage: en
 languages:
     en:
         languageName: en
-        title: Example Site 123
-        description: Example description
+        title: Blog
+        description: php, js, db, linux, etc.
         weight: 2
     ru:
         languageName: ru
-        title: тест
-        description: тест description
+        title: Блог
+        description: php, js, db, linux, etc.
         weight: 1
 
 params:
+    sidebar:
+        # emoji: 🍥
+        subtitle: php, js, db, linux, etc.
+        avatar:
+            enabled: true
+            local: true
+            src: img/avatar.jpg
+
     widgets:
         homepage:
             - type: search
