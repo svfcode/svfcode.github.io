@@ -40,6 +40,412 @@
 &lt;p&gt;На канале буду рассказывать об интересующих меня темах: машинное обучение, компьютерное зрение и создание роботизированных систем.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;Контакты:&lt;/em&gt; &lt;a class=&#34;link&#34; href=&#34;mailto:svfcode@gmail.com&#34; &gt;svfcode@gmail.com&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;about-timeline&#34; id=&#34;about-timeline-root&#34;&gt;
+  &lt;div class=&#34;about-timeline-tabs&#34;&gt;
+    &lt;button type=&#34;button&#34; class=&#34;about-tab active&#34; data-mode=&#34;timeline&#34;&gt;Таймлайн&lt;/button&gt;
+    &lt;button type=&#34;button&#34; class=&#34;about-tab&#34; data-mode=&#34;game&#34;&gt;Игра: Поймай эпохи&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div id=&#34;about-timeline-panel&#34; class=&#34;about-panel&#34;&gt;
+    &lt;canvas id=&#34;about-timeline-canvas&#34;&gt;&lt;/canvas&gt;
+    &lt;div class=&#34;about-timeline-narrative&#34; id=&#34;about-timeline-narrative&#34;&gt;
+      &lt;div class=&#34;about-timeline-era-title&#34; id=&#34;about-timeline-title&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;about-timeline-era-desc&#34; id=&#34;about-timeline-desc&#34;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;about-timeline-controls&#34;&gt;
+      &lt;button type=&#34;button&#34; id=&#34;about-timeline-play&#34; aria-label=&#34;Старт&#34;&gt;▶&lt;/button&gt;
+      &lt;button type=&#34;button&#34; id=&#34;about-timeline-pause&#34; aria-label=&#34;Пауза&#34;&gt;⏸&lt;/button&gt;
+      &lt;div class=&#34;about-timeline-progress-wrap&#34;&gt;
+        &lt;div class=&#34;about-timeline-progress&#34; id=&#34;about-timeline-progress&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;span class=&#34;about-timeline-time&#34; id=&#34;about-timeline-time&#34;&gt;0:00 / 1:10&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div id=&#34;about-game-panel&#34; class=&#34;about-panel&#34; style=&#34;display:none;&#34;&gt;
+    &lt;canvas id=&#34;about-game-canvas&#34;&gt;&lt;/canvas&gt;
+    &lt;div class=&#34;about-game-ui&#34;&gt;
+      &lt;span&gt;Счёт: &lt;strong id=&#34;about-game-score&#34;&gt;0&lt;/strong&gt;&lt;/span&gt;
+      &lt;span&gt;Жизни: &lt;strong id=&#34;about-game-lives&#34;&gt;3&lt;/strong&gt;&lt;/span&gt;
+      &lt;button type=&#34;button&#34; id=&#34;about-game-start&#34;&gt;Старт&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p class=&#34;about-game-hint&#34;&gt;Двигай мышью — лови иконки эпох. 3 промаха — конец игры.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.about-timeline { margin-top: 2.5rem; margin-bottom: 2rem; width: 100%; max-width: 100%; }
+.about-timeline-tabs { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; }
+.about-tab { padding: 0.6rem 1.25rem; border-radius: 10px; border: 2px solid currentColor; background: transparent; cursor: pointer; font-size: 1.05rem; font-weight: 500; opacity: 0.75; transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s; }
+.about-tab:hover { opacity: 1; transform: translateY(-1px); }
+.about-tab.active { opacity: 1; background: var(--card-separator-color, rgba(0,0,0,0.08)); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.about-panel { }
+.about-timeline canvas, #about-game-canvas { display: block; width: 100%; max-width: 100%; cursor: pointer; border-radius: 12px; }
+#about-timeline-canvas { min-height: 220px; background: linear-gradient(135deg, rgba(30,58,138,0.08) 0%, rgba(124,58,237,0.08) 50%, rgba(194,65,12,0.08) 100%); }
+#about-game-canvas { height: 360px; background: linear-gradient(180deg, #0f172a 0%, #1e293b 40%, #334155 100%); }
+.about-timeline-narrative { margin-top: 1.25rem; padding: 1.25rem 0; min-height: 5em; transition: opacity 0.4s ease; }
+.about-timeline-era-title { font-weight: 700; font-size: 1.35rem; margin-bottom: 0.5rem; letter-spacing: 0.01em; }
+.about-timeline-era-desc { font-size: 1.1rem; opacity: 0.92; line-height: 1.55; }
+.about-timeline-controls { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+.about-timeline-controls button { width: 44px; height: 44px; border-radius: 50%; border: 2px solid currentColor; background: transparent; cursor: pointer; font-size: 1.1rem; padding: 0; transition: transform 0.15s, box-shadow 0.15s; }
+.about-timeline-controls button:hover { transform: scale(1.08); }
+.about-timeline-progress-wrap { flex: 1; min-width: 140px; height: 8px; background: var(--card-separator-color, rgba(0,0,0,0.12)); border-radius: 4px; overflow: hidden; }
+.about-timeline-progress { height: 100%; width: 0%; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899); border-radius: 4px; transition: width 0.25s ease; }
+.about-timeline-time { font-size: 1rem; font-weight: 500; opacity: 0.85; }
+.about-game-ui { display: flex; align-items: center; gap: 1.25rem; margin-top: 1rem; flex-wrap: wrap; font-size: 1.1rem; }
+.about-game-ui strong { font-size: 1.25rem; }
+.about-game-ui button { padding: 0.5rem 1.25rem; border-radius: 10px; border: 2px solid currentColor; background: transparent; cursor: pointer; font-size: 1.05rem; font-weight: 600; transition: transform 0.15s; }
+.about-game-ui button:hover { transform: scale(1.05); }
+.about-game-hint { font-size: 1rem; opacity: 0.8; margin-top: 0.5rem; }
+@keyframes about-score-pop { 0% { transform: scale(1); } 50% { transform: scale(1.3); color: #22c55e; } 100% { transform: scale(1); } }
+.about-game-ui .score-pop { animation: about-score-pop 0.4s ease; }
+&lt;/style&gt;
+
+&lt;script&gt;
+(function() {
+  var root = document.getElementById(&#39;about-timeline-root&#39;);
+  if (!root) return;
+
+  var timelineCanvas = document.getElementById(&#39;about-timeline-canvas&#39;);
+  var gameCanvas = document.getElementById(&#39;about-game-canvas&#39;);
+  var panelTimeline = document.getElementById(&#39;about-timeline-panel&#39;);
+  var panelGame = document.getElementById(&#39;about-game-panel&#39;);
+  var tabBtns = root.querySelectorAll(&#39;.about-tab&#39;);
+
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener(&#39;click&#39;, function() {
+      var mode = this.getAttribute(&#39;data-mode&#39;);
+      tabBtns.forEach(function(b) { b.classList.remove(&#39;active&#39;); });
+      this.classList.add(&#39;active&#39;);
+      if (mode === &#39;timeline&#39;) {
+        panelTimeline.style.display = &#39;&#39;;
+        panelGame.style.display = &#39;none&#39;;
+        if (window.aboutTimelineDraw) window.aboutTimelineDraw();
+      } else {
+        panelTimeline.style.display = &#39;none&#39;;
+        panelGame.style.display = &#39;&#39;;
+        if (window.aboutGameResize) window.aboutGameResize();
+      }
+    });
+  });
+
+  var ERAS = [
+    { year: &#39;~1820–1920&#39;, title: &#39;Индустриализация и электричество&#39;, desc: &#39;Первый большой переход: фабрики, железные дороги, распространение электричества.&#39; },
+    { year: &#39;~1920–1970&#39;, title: &#39;Конвейеры и доступная энергия&#39;, desc: &#39;Второй переход: массовое производство, конвейеры, рост доступности энергии.&#39; },
+    { year: &#39;1990‑е — 2000‑е&#39;, title: &#39;Эпоха интернета&#39;, desc: &#39;Третий переход: интернет, цифровизация, новые профессии.&#39; },
+    { year: &#39;30 ноября 2022&#39;, title: &#39;GPT‑3.5 в открытый доступ&#39;, desc: &#39;Чат-бот в общем доступе. Точка отсчёта нового перехода.&#39; },
+    { year: &#39;Сейчас&#39;, title: &#39;Новый переход&#39;, desc: &#39;Перестройка под ИИ и автоматизацию. Рост качества жизни.&#39; }
+  ];
+
+  var currentEra = 0, eraTime = 0, playing = false, lastTick = 0, rafId = null;
+  var titleEl = document.getElementById(&#39;about-timeline-title&#39;);
+  var descEl = document.getElementById(&#39;about-timeline-desc&#39;);
+  var progressEl = document.getElementById(&#39;about-timeline-progress&#39;);
+  var timeEl = document.getElementById(&#39;about-timeline-time&#39;);
+  var DURATION_PER_ERA = 14, totalDuration = ERAS.length * DURATION_PER_ERA;
+
+  var ERA_COLORS = [&#39;#f59e0b&#39;, &#39;#10b981&#39;, &#39;#3b82f6&#39;, &#39;#8b5cf6&#39;, &#39;#ec4899&#39;];
+  var timelineParticles = [];
+
+  function getColors() {
+    var isDark = document.body.classList.contains(&#39;dark&#39;);
+    return {
+      line: isDark ? &#39;rgba(255,255,255,0.15)&#39; : &#39;rgba(0,0,0,0.12)&#39;,
+      text: isDark ? &#39;#e5e5e5&#39; : &#39;#262626&#39;,
+      muted: isDark ? &#39;#a3a3a3&#39; : &#39;#737373&#39;,
+      dotInactive: isDark ? &#39;rgba(255,255,255,0.25)&#39; : &#39;rgba(0,0,0,0.2)&#39;
+    };
+  }
+
+  function setEra(i) {
+    currentEra = Math.max(0, Math.min(i, ERAS.length - 1));
+    eraTime = 0;
+    var e = ERAS[currentEra];
+    if (titleEl) titleEl.textContent = e.year + &#39; — &#39; + e.title;
+    if (descEl) descEl.textContent = e.desc;
+    updateProgress();
+    drawTimeline();
+  }
+
+  function updateProgress() {
+    var t = currentEra * DURATION_PER_ERA + eraTime;
+    if (progressEl) progressEl.style.width = (t / totalDuration) * 100 + &#39;%&#39;;
+    var m = Math.floor(t / 60), s = Math.floor(t % 60);
+    var mM = Math.floor(totalDuration / 60), sM = Math.floor(totalDuration % 60);
+    if (timeEl) timeEl.textContent = m + &#39;:&#39; + (s &lt; 10 ? &#39;0&#39; : &#39;&#39;) + s + &#39; / &#39; + mM + &#39;:&#39; + (sM &lt; 10 ? &#39;0&#39; : &#39;&#39;) + sM;
+  }
+
+  function drawEraIcon(ctx, x, y, eraIndex, col) {
+    ctx.save();
+    ctx.translate(x, y - 22);
+    ctx.strokeStyle = col;
+    ctx.fillStyle = col;
+    ctx.lineWidth = 1.5;
+    var s = 6;
+    if (eraIndex === 0) { ctx.fillRect(-s*0.8, s*0.3, s*0.6, s*1.2); ctx.fillRect(s*0.2, 0, s*0.5, s*1.1); ctx.beginPath(); ctx.moveTo(-s*0.5, s*0.3); ctx.lineTo(s*1, s*0.3); ctx.stroke(); }
+    else if (eraIndex === 1) { ctx.beginPath(); ctx.moveTo(0, -s); ctx.lineTo(s*0.6, s*0.5); ctx.lineTo(-s*0.3, s*0.2); ctx.lineTo(-s*0.6, s*0.5); ctx.closePath(); ctx.stroke(); }
+    else if (eraIndex === 2) { ctx.beginPath(); ctx.arc(0, 0, s*0.6, 0, Math.PI*2); ctx.stroke(); ctx.beginPath(); ctx.moveTo(-s*0.5, -s*0.5); ctx.lineTo(s*0.5, s*0.5); ctx.moveTo(s*0.5, -s*0.5); ctx.lineTo(-s*0.5, s*0.5); ctx.stroke(); }
+    else if (eraIndex === 3) { ctx.beginPath(); ctx.arc(0, 0, s*0.5, 0, Math.PI*2); ctx.fill(); ctx.strokeStyle = ctx.fillStyle; ctx.stroke(); }
+    else { ctx.beginPath(); for (var k = 0; k &lt; 5; k++) { var a = -Math.PI/2 + (k*2*Math.PI/5); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(a)*s, Math.sin(a)*s); } ctx.stroke(); }
+    ctx.restore();
+  }
+
+  function drawTimeline() {
+    if (!timelineCanvas) return;
+    var rect = timelineCanvas.getBoundingClientRect();
+    var w = rect.width, h = 220, dpr = window.devicePixelRatio || 1;
+    if (timelineCanvas.width !== w * dpr) { timelineCanvas.width = w * dpr; timelineCanvas.height = h * dpr; }
+    var ctx = timelineCanvas.getContext(&#39;2d&#39;);
+    ctx.scale(dpr, dpr);
+    var pad = { L: 50, R: 50, T: 55, B: 65 };
+    var W = w - pad.L - pad.R, H = h - pad.T - pad.B, y0 = pad.T + H / 2, n = ERAS.length;
+    var colors = getColors();
+    var progressInEra = eraTime / DURATION_PER_ERA;
+    var activeX = pad.L + ((currentEra + progressInEra) / n) * W;
+    ctx.clearRect(0, 0, w, h);
+    var markerX = [];
+    for (var i = 0; i &lt; n; i++) markerX.push(pad.L + ((i + 0.5) / n) * W);
+
+    if (playing &amp;&amp; Math.random() &lt; 0.15) {
+      timelineParticles.push({ x: pad.L + Math.random() * (activeX - pad.L), y: y0 + (Math.random() - 0.5) * 8, life: 1, hue: (Date.now() / 20) % 360 });
+    }
+    for (var p = timelineParticles.length - 1; p &gt;= 0; p--) {
+      var pt = timelineParticles[p];
+      pt.life -= 0.03;
+      if (pt.life &lt;= 0) { timelineParticles.splice(p, 1); continue; }
+      ctx.globalAlpha = pt.life;
+      ctx.fillStyle = &#39;hsl(&#39; + pt.hue + &#39;, 80%, 60%)&#39;;
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, 3, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    }
+
+    ctx.strokeStyle = colors.line;
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(pad.L, y0);
+    ctx.lineTo(pad.R + W, y0);
+    ctx.stroke();
+
+    var grad = ctx.createLinearGradient(pad.L, 0, activeX, 0);
+    grad.addColorStop(0, &#39;#3b82f6&#39;);
+    grad.addColorStop(0.35, &#39;#8b5cf6&#39;);
+    grad.addColorStop(0.65, &#39;#ec4899&#39;);
+    grad.addColorStop(1, &#39;#f59e0b&#39;);
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 5;
+    ctx.lineCap = &#39;round&#39;;
+    ctx.beginPath();
+    ctx.moveTo(pad.L, y0);
+    ctx.lineTo(activeX, y0);
+    ctx.stroke();
+
+    var t = Date.now() / 1000;
+    for (var j = 0; j &lt; n; j++) {
+      var x = markerX[j];
+      var isActive = j === currentEra, isPast = j &lt; currentEra;
+      var col = isPast || isActive ? ERA_COLORS[j] : colors.dotInactive;
+      drawEraIcon(ctx, x, y0, j, col);
+      if (isActive) {
+        var pulse = 1 + 0.15 * Math.sin(t * 4);
+        ctx.shadowColor = ERA_COLORS[j];
+        ctx.shadowBlur = 20 + 10 * Math.sin(t * 3);
+      }
+      ctx.fillStyle = col;
+      ctx.beginPath();
+      ctx.arc(x, y0, isActive ? 10 : 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.font = &#39;600 13px system-ui,sans-serif&#39;;
+      ctx.fillStyle = isActive ? colors.text : colors.muted;
+      ctx.textAlign = &#39;center&#39;;
+      ctx.fillText(ERAS[j].year, x, y0 + 32);
+    }
+    if (playing) rafId = requestAnimationFrame(drawTimeline);
+  }
+  window.aboutTimelineDraw = drawTimeline;
+
+  function tick(now) {
+    if (!playing) return;
+    eraTime += (now - lastTick) / 1000;
+    lastTick = now;
+    if (eraTime &gt;= DURATION_PER_ERA) {
+      eraTime = 0;
+      if (currentEra &lt; ERAS.length - 1) { currentEra++; var e = ERAS[currentEra]; if (titleEl) titleEl.textContent = e.year + &#39; — &#39; + e.title; if (descEl) descEl.textContent = e.desc; }
+      else { currentEra = 0; setEra(0); }
+    }
+    updateProgress();
+    drawTimeline();
+    if (playing) rafId = requestAnimationFrame(tick);
+  }
+
+  document.getElementById(&#39;about-timeline-play&#39;).addEventListener(&#39;click&#39;, function() {
+    if (playing) return;
+    playing = true;
+    lastTick = performance.now();
+    rafId = requestAnimationFrame(tick);
+  });
+  document.getElementById(&#39;about-timeline-pause&#39;).addEventListener(&#39;click&#39;, function() {
+    playing = false;
+    if (rafId) cancelAnimationFrame(rafId);
+  });
+
+  timelineCanvas.addEventListener(&#39;click&#39;, function(e) {
+    var x = e.clientX - timelineCanvas.getBoundingClientRect().left;
+    var pad = 50, W = timelineCanvas.getBoundingClientRect().width - 100, n = ERAS.length;
+    for (var i = 0; i &lt; n; i++) {
+      var mx = pad + ((i + 0.5) / n) * W;
+      if (Math.abs(x - mx) &lt; 30) { setEra(i); return; }
+    }
+  });
+
+  setEra(0);
+  drawTimeline();
+  window.addEventListener(&#39;resize&#39;, function() { if (!playing) drawTimeline(); });
+
+  
+  var scoreEl = document.getElementById(&#39;about-game-score&#39;);
+  var livesEl = document.getElementById(&#39;about-game-lives&#39;);
+  var gameStartBtn = document.getElementById(&#39;about-game-start&#39;);
+  var gameScore = 0, gameLives = 3, gameRunning = false, gamePaddleX = 0, gameW = 0, gameH = 360;
+  var gameFalls = [];
+  var gameParticles = [];
+  var gamePaddleW = 90, gamePaddleH = 14, gameFallSpeed = 2, gameSpawnTick = 0;
+  var GAME_ERA_COLORS = [&#39;#f59e0b&#39;, &#39;#10b981&#39;, &#39;#3b82f6&#39;, &#39;#8b5cf6&#39;, &#39;#ec4899&#39;];
+  var GAME_ERA_LABELS = [&#39;Фабрика · Индустриализация&#39;, &#39;Молния · Энергия&#39;, &#39;Глобус · Интернет&#39;, &#39;Чат · GPT‑3.5&#39;, &#39;Звезда · Новый переход&#39;];
+
+  function gameRand(a, b) { return a + Math.random() * (b - a); }
+
+  function drawGameIcon(ctx, x, y, size, eraIndex) {
+    ctx.save();
+    ctx.translate(x, y);
+    var col = GAME_ERA_COLORS[eraIndex] || &#39;#3b82f6&#39;;
+    ctx.strokeStyle = col;
+    ctx.fillStyle = col;
+    ctx.lineWidth = 2.5;
+    ctx.shadowColor = col;
+    ctx.shadowBlur = 8;
+    var s = size || 16;
+    if (eraIndex === 0) { ctx.fillRect(-s*0.5, s*0.2, s*0.4, s*0.8); ctx.fillRect(s*0.1, 0, s*0.35, s*0.7); ctx.beginPath(); ctx.moveTo(-s*0.3, s*0.2); ctx.lineTo(s*0.6, s*0.2); ctx.stroke(); }
+    else if (eraIndex === 1) { ctx.beginPath(); ctx.moveTo(0, -s*0.6); ctx.lineTo(s*0.4, s*0.3); ctx.lineTo(-s*0.2, s*0.1); ctx.lineTo(-s*0.4, s*0.3); ctx.closePath(); ctx.stroke(); }
+    else if (eraIndex === 2) { ctx.beginPath(); ctx.arc(0, 0, s*0.4, 0, Math.PI*2); ctx.stroke(); ctx.beginPath(); ctx.moveTo(-s*0.35, -s*0.35); ctx.lineTo(s*0.35, s*0.35); ctx.moveTo(s*0.35, -s*0.35); ctx.lineTo(-s*0.35, s*0.35); ctx.stroke(); }
+    else if (eraIndex === 3) { ctx.beginPath(); ctx.arc(0, 0, s*0.35, 0, Math.PI*2); ctx.fill(); ctx.stroke(); }
+    else { ctx.beginPath(); for (var k = 0; k &lt; 5; k++) { var a = -Math.PI/2 + (k*2*Math.PI/5); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(a)*s*0.5, Math.sin(a)*s*0.5); } ctx.stroke(); }
+    ctx.shadowBlur = 0;
+    ctx.restore();
+  }
+
+  function addCatchParticles(x, y, col) {
+    for (var i = 0; i &lt; 12; i++) {
+      var a = (i / 12) * Math.PI * 2 + Math.random();
+      gameParticles.push({ x: x, y: y, vx: Math.cos(a) * 4, vy: Math.sin(a) * 4 - 2, life: 1, color: col });
+    }
+  }
+
+  function gameLoop() {
+    if (!gameRunning || !gameCanvas) return;
+    var rect = gameCanvas.getBoundingClientRect();
+    gameW = rect.width;
+    var dpr = window.devicePixelRatio || 1;
+    if (gameCanvas.width !== gameW * dpr) { gameCanvas.width = gameW * dpr; gameCanvas.height = gameH * dpr; }
+    var ctx = gameCanvas.getContext(&#39;2d&#39;);
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, gameW, gameH);
+
+    ctx.save();
+    ctx.globalAlpha = 0.4;
+    ctx.font = &#39;500 11px system-ui, sans-serif&#39;;
+    var legendX = gameW - 130;
+    var legendY = 50;
+    var rowH = 44;
+    for (var L = 0; L &lt; 5; L++) {
+      var ly = legendY + L * rowH;
+      drawGameIcon(ctx, legendX - 70, ly, 10, L);
+      ctx.fillStyle = &#39;#e2e8f0&#39;;
+      ctx.textAlign = &#39;left&#39;;
+      ctx.fillText(GAME_ERA_LABELS[L], legendX - 55, ly + 4);
+    }
+    ctx.globalAlpha = 1;
+    ctx.restore();
+
+    for (var pt = gameParticles.length - 1; pt &gt;= 0; pt--) {
+      var p = gameParticles[pt];
+      p.x += p.vx; p.y += p.vy; p.life -= 0.04; p.vy += 0.15;
+      if (p.life &lt;= 0) { gameParticles.splice(pt, 1); continue; }
+      ctx.globalAlpha = p.life;
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    }
+
+    gameSpawnTick++;
+    if (gameSpawnTick &gt;= 38) {
+      gameSpawnTick = 0;
+      gameFalls.push({ x: gameRand(25, gameW - 25), y: 0, era: Math.floor(Math.random() * 5), r: 16 });
+    }
+
+    var paddleY = gameH - 45;
+    gamePaddleX = Math.max(gamePaddleW/2, Math.min(gameW - gamePaddleW/2, gamePaddleX));
+
+    for (var i = gameFalls.length - 1; i &gt;= 0; i--) {
+      var o = gameFalls[i];
+      o.y += gameFallSpeed;
+      drawGameIcon(ctx, o.x, o.y, o.r, o.era);
+      if (o.y &gt; gameH) {
+        gameFalls.splice(i, 1);
+        gameLives--;
+        if (livesEl) livesEl.textContent = gameLives;
+        if (gameLives &lt;= 0) { gameRunning = false; gameStartBtn.textContent = &#39;Заново&#39;; return; }
+      } else if (o.y + o.r &gt; paddleY - gamePaddleH &amp;&amp; o.y - o.r &lt; paddleY + gamePaddleH &amp;&amp; Math.abs(o.x - gamePaddleX) &lt; gamePaddleW/2 + o.r) {
+        addCatchParticles(o.x, o.y, GAME_ERA_COLORS[o.era]);
+        gameFalls.splice(i, 1);
+        gameScore += 10;
+        if (scoreEl) { scoreEl.textContent = gameScore; scoreEl.classList.add(&#39;score-pop&#39;); setTimeout(function() { scoreEl.classList.remove(&#39;score-pop&#39;); }, 400); }
+      }
+    }
+
+    var pg = ctx.createLinearGradient(gamePaddleX - gamePaddleW/2, 0, gamePaddleX + gamePaddleW/2, 0);
+    pg.addColorStop(0, &#39;#3b82f6&#39;);
+    pg.addColorStop(0.5, &#39;#8b5cf6&#39;);
+    pg.addColorStop(1, &#39;#ec4899&#39;);
+    ctx.fillStyle = pg;
+    ctx.shadowColor = &#39;#8b5cf6&#39;;
+    ctx.shadowBlur = 15;
+    ctx.fillRect(gamePaddleX - gamePaddleW/2, paddleY, gamePaddleW, gamePaddleH);
+    ctx.shadowBlur = 0;
+
+    requestAnimationFrame(gameLoop);
+  }
+
+  gameCanvas.addEventListener(&#39;mousemove&#39;, function(e) {
+    var r = gameCanvas.getBoundingClientRect();
+    gamePaddleX = e.clientX - r.left;
+  });
+  gameCanvas.addEventListener(&#39;touchmove&#39;, function(e) {
+    e.preventDefault();
+    if (e.touches.length) gamePaddleX = e.touches[0].clientX - gameCanvas.getBoundingClientRect().left;
+  }, { passive: false });
+
+  gameStartBtn.addEventListener(&#39;click&#39;, function() {
+    gameFalls = [];
+    gameScore = 0;
+    gameLives = 3;
+    if (scoreEl) scoreEl.textContent = &#39;0&#39;;
+    if (livesEl) livesEl.textContent = &#39;3&#39;;
+    gameRunning = true;
+    gameStartBtn.textContent = &#39;Игра идёт…&#39;;
+    gameLoop();
+  });
+
+  window.aboutGameResize = function() {
+    if (gameCanvas &amp;&amp; panelGame.style.display !== &#39;none&#39;) gameLoop();
+  };
+})();
+&lt;/script&gt;
+
 </description>
         </item>
         <item>

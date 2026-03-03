@@ -22,6 +22,8 @@ languages:
         weight: 1
 
 params:
+    yandexMetrika: 107089384
+
     sidebar:
         # emoji: 🍥
         subtitle: ai, ml, nn, cv, ros, etc.
