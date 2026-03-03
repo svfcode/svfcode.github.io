@@ -8,23 +8,23 @@ permalinks:
     post: /p/:slug/
     page: /:slug/
 
-DefaultContentLanguage: en
+DefaultContentLanguage: ru
 languages:
     en:
         languageName: en
         title: Blog
-        description: php, js, db, linux, etc.
+        description: ai, ml, nn, cv, ros, etc.
         weight: 2
     ru:
         languageName: ru
         title: Блог
-        description: php, js, db, linux, etc.
+        description: ai, ml, nn, cv, ros, etc.
         weight: 1
 
 params:
     sidebar:
         # emoji: 🍥
-        subtitle: php, js, db, linux, etc.
+        subtitle: ai, ml, nn, cv, ros, etc.
         avatar:
             enabled: true
             local: true

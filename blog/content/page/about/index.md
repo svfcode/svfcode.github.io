@@ -1,11 +1,10 @@
 ---
-title: About
-description: Full-stack web developer
+title: Обо мне
+description: ml/ros специалист
 date: '2019-02-28'
 aliases:
   - about
   - contact
-# license: CC BY-NC-ND
 lastmod: '2020-10-09'
 menu:
     main: 
@@ -14,6 +13,10 @@ menu:
             icon: user
 ---
 
-Contacts
+**Обо мне**
 
-- svfcode@gmail.com
+10 лет работал в нефтяной отрасли, затем 5 лет — фулстек-разработчиком. Сейчас занимаюсь **ML** и **ROS**.
+
+---
+
+*Контакты:* [svfcode@gmail.com](mailto:svfcode@gmail.com)
