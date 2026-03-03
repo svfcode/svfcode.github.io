@@ -1,0 +1,7 @@
+/* Ограничение максимальной ширины текста для удобства чтения */
+.article-page .main-article .article-content,
+.page .main-article .article-content {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+}
