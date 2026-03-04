@@ -23,7 +23,7 @@ Spent 10 years in the oil & gas industry, then 5 years as a fullstack developer.
 
 I'm a programmer myself, and over the last couple of years I've watched my profession change; looking around, I see other trades adapting to new tools as well.
 
-I'm convinced we're heading toward higher GDP in PPP terms — in other words, better quality of life through optimized working conditions and a higher degree of automation.
+I'm confident that thanks to automation and optimization of working conditions, quality of life will grow — just as it did during previous technological transitions.
 
 Yes, we'll need to adapt again, much as people did two hundred years ago with industrialization and the spread of electricity, then a hundred years later with assembly lines and cheaper energy, then with the rise of the internet — and now, another transition.
 
