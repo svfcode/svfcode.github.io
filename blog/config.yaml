@@ -9,6 +9,12 @@ permalinks:
     page: /:slug/
 
 DefaultContentLanguage: ru
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 languages:
     en:
         languageName: en

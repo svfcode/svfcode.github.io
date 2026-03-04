@@ -25,10 +25,10 @@
         </item>
         <item>
         <title>Обо мне</title>
-        <link>http://localhost:1313/%D0%BE%D0%B1%D0%BE-%D0%BC%D0%BD%D0%B5/</link>
+        <link>http://localhost:1313/about/</link>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%D0%BE%D0%B1%D0%BE-%D0%BC%D0%BD%D0%B5/</guid>
+        <guid>http://localhost:1313/about/</guid>
         <description>&lt;p&gt;&lt;strong&gt;Обо мне&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;10 лет работал в нефтяной отрасли, затем 5 лет — фулстек-разработчиком. Сейчас занимаюсь &lt;strong&gt;ML&lt;/strong&gt; и &lt;strong&gt;ROS&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -38,8 +38,12 @@
 &lt;p&gt;Да, необходимо будет перестроиться, подобно тому как это уже делали двести лет назад в индустриализацию и с распространением электричества, потом через сто лет ещё раз — в эпоху распространения конвейеров и увеличения доступности энергии. Потом с появлением интернета — ну тут вы и сами всё видите, и вот теперь новый переход.&lt;/p&gt;
 &lt;p&gt;Стоит сказать, что GPT‑3.5 (который показал, что возможно общаться с ботом в чате) был выпущен в публичный доступ совсем недавно, только 30 ноября 2022 года. Это значит, что впереди большой путь развития и становления этого инструмента.&lt;/p&gt;
 &lt;p&gt;На канале буду рассказывать об интересующих меня темах: машинное обучение, компьютерное зрение и создание роботизированных систем.&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/O-Itc0rRttk?si=zrkFvgWaKo9JRs0i&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;em&gt;Контакты:&lt;/em&gt; &lt;a class=&#34;link&#34; href=&#34;mailto:svfcode@gmail.com&#34; &gt;svfcode@gmail.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Контакты:&lt;/em&gt; &lt;a href=&#34;mailto:svfcode@gmail.com&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;mailto:svfcode@gmail.com&#34; &gt;svfcode@gmail.com&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;div class=&#34;about-timeline&#34; id=&#34;about-timeline-root&#34;&gt;
   &lt;div class=&#34;about-timeline-tabs&#34;&gt;
     &lt;button type=&#34;button&#34; class=&#34;about-tab active&#34; data-mode=&#34;timeline&#34;&gt;Таймлайн&lt;/button&gt;

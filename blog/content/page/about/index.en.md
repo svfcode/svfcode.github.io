@@ -1,10 +1,11 @@
 ---
 title: About
+slug: about
 description: ml/ros specialist
 date: '2019-02-28'
 aliases:
-  - about
   - contact
+  - обо-мне
 lastmod: '2020-10-09'
 menu:
     main: 
@@ -31,6 +32,14 @@ Worth noting: GPT‑3.5 (which showed that chatting with a bot was possible) was
 
 On the channel I'll cover what interests me: machine learning, computer vision, and building robotic systems.
 
+<div class="video-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O-Itc0rRttk?si=zrkFvgWaKo9JRs0i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ---
 
-*Contact:* [svfcode@gmail.com](mailto:svfcode@gmail.com)
+*Contact:* <a href="mailto:svfcode@gmail.com">svfcode@gmail.com</a>
+
+<hr>
+
+{{< about_timeline >}}
