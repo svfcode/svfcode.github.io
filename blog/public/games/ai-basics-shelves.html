@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Разложи по полочкам</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f1117;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 16px;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    .game-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #1a1d26 0%, #14161d 100%);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(251, 191, 36, 0.2);
+    }
+    h1 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #fbbf24;
+    }
+    .shelves {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .shelf {
+      min-height: 52px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 2px dashed #475569;
+      background: rgba(30, 41, 59, 0.5);
+      transition: all 0.2s;
+    }
+    .shelf.drag-over { border-color: #fbbf24; background: rgba(251, 191, 36, 0.1); }
+    .shelf.filled { border-style: solid; border-color: #475569; }
+    .shelf-title {
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+    .shelf-cards { min-height: 24px; display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; align-content: flex-start; }
+    .pool {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 16px;
+      background: #0d0f14;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      min-height: 80px;
+      transition: background 0.2s;
+    }
+    .pool.drag-over { background: rgba(251, 191, 36, 0.1); outline: 2px dashed #fbbf24; outline-offset: 2px; }
+    .card {
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: #1e293b;
+      border: 2px solid #475569;
+      font-size: 13px;
+      cursor: grab;
+      user-select: none;
+      transition: transform 0.1s;
+    }
+    .card:active { cursor: grabbing; }
+    .card.dragging { opacity: 0.7; transform: scale(1.02); }
+    .card.placed { cursor: default; border-color: #64748b; }
+    .card.selected { border-color: #fbbf24; box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.5); }
+    .card.correct { border-color: #22c55e; background: rgba(34, 197, 94, 0.15); }
+    .card.wrong { border-color: #ef4444; background: rgba(239, 68, 68, 0.15); }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #fbbf24;
+      color: #0f172a;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .result {
+      text-align: center;
+      padding: 20px;
+      font-size: 1.1rem;
+      display: none;
+    }
+    .result.show { display: block; }
+    .result.success { color: #22c55e; }
+    .result.fail { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>📚 Разложи по полочкам</h1>
+    <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 16px;">Перетащи тезис на нужную полку</p>
+
+    <div class="shelves">
+      <div class="shelf" data-shelf="ai">
+        <div class="shelf-title">🧠 ИИ</div>
+        <div class="shelf-cards"></div>
+      </div>
+      <div class="shelf" data-shelf="ml">
+        <div class="shelf-title">📊 МО</div>
+        <div class="shelf-cards"></div>
+      </div>
+      <div class="shelf" data-shelf="nn">
+        <div class="shelf-title">🔗 НС</div>
+        <div class="shelf-cards"></div>
+      </div>
+      <div class="shelf" data-shelf="scale">
+        <div class="shelf-title">📈 Масштаб параметров</div>
+        <div class="shelf-cards"></div>
+      </div>
+    </div>
+
+    <div class="pool" id="pool"></div>
+
+    <div style="display: flex; gap: 8px;">
+      <button class="btn" id="checkBtn" style="flex: 1;">Проверить</button>
+      <button class="btn" id="resetBtn" style="flex: 0 0 auto; padding: 14px 20px;">Заново</button>
+    </div>
+    <div class="result" id="result"></div>
+  </div>
+  <script>
+(function() {
+  'use strict';
+
+  const ITEMS = [
+    { text: '🧠 Системы, решающие задачи человеческого интеллекта', shelf: 'ai' },
+    { text: '📋 Можно реализовать без МО (правила, экспертные системы)', shelf: 'ai' },
+    { text: '♟️ Понимание речи, шахматы, распознавание образов', shelf: 'ai' },
+    { text: '📊 Система учится на данных сама', shelf: 'ml' },
+    { text: '🌳 Деревья решений, линейные модели, кластеризация', shelf: 'ml' },
+    { text: '🎯 Находит закономерности по примерам', shelf: 'ml' },
+    { text: '🔗 Слои, веса, активации — как нейроны в мозге', shelf: 'nn' },
+    { text: '🖼️ Мощный инструмент для изображений, текста, речи', shelf: 'nn' },
+    { text: '📚 Deep learning — многослойные нейросети', shelf: 'nn' },
+    { text: '💻 1–7 млрд — можно запустить на ноутбуке', shelf: 'scale' },
+    { text: '🖥️ Триллионы — нужны кластеры серверов', shelf: 'scale' },
+    { text: '💬 Предсказывает следующее слово', shelf: 'scale' },
+    { text: '🤖 Любой чат-бот — языковая модель', shelf: 'scale' },
+    { text: '📈 Отличие ботов — масштаб датасета и серверов', shelf: 'scale' },
+    { text: '🌍 Язык фиксирует коллективный опыт', shelf: 'scale' },
+    { text: '🏛️ Фундаментальные модели усвоили знания из языка', shelf: 'scale' }
+  ];
+
+  const pool = document.getElementById('pool');
+  const checkBtn = document.getElementById('checkBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const resultEl = document.getElementById('result');
+  const shelves = document.querySelectorAll('.shelf');
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  let selectedCard = null;
+
+  function createCard(item, id) {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.textContent = item.text;
+    el.dataset.id = id;
+    el.dataset.shelf = item.shelf;
+    el.draggable = true;
+
+    el.addEventListener('dragstart', e => {
+      e.dataTransfer.setData('text/plain', id);
+      e.dataTransfer.effectAllowed = 'move';
+      el.classList.add('dragging');
+    });
+    el.addEventListener('dragend', () => el.classList.remove('dragging'));
+
+    el.addEventListener('click', e => {
+      if (e.target !== el && !el.contains(e.target)) return;
+      document.querySelectorAll('.card.selected').forEach(c => c.classList.remove('selected'));
+      if (selectedCard === el) { selectedCard = null; return; }
+      selectedCard = el;
+      el.classList.add('selected');
+    });
+
+    return el;
+  }
+
+  function resetGame() {
+    selectedCard = null;
+    pool.innerHTML = '';
+    shelves.forEach(s => {
+      const cards = s.querySelector('.shelf-cards');
+      cards.innerHTML = '';
+      s.classList.remove('filled', 'drag-over');
+    });
+    resultEl.classList.remove('show', 'success', 'fail');
+    resultEl.textContent = '';
+
+    const shuffled = shuffle(ITEMS);
+    shuffled.forEach((item, i) => {
+      const card = createCard(item, '' + i);
+      pool.appendChild(card);
+    });
+  }
+
+  shelves.forEach(shelf => {
+    const cardsCont = shelf.querySelector('.shelf-cards');
+
+    shelf.addEventListener('dragover', e => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      shelf.classList.add('drag-over');
+    });
+    shelf.addEventListener('dragleave', () => shelf.classList.remove('drag-over'));
+    shelf.addEventListener('click', e => {
+      if (selectedCard && !e.target.classList.contains('card')) {
+        const cardsCont = shelf.querySelector('.shelf-cards');
+        const prevShelf = selectedCard.closest('.shelf');
+        if (prevShelf) prevShelf.querySelector('.shelf-cards').removeChild(selectedCard);
+        else pool.removeChild(selectedCard);
+        cardsCont.appendChild(selectedCard);
+        selectedCard.classList.add('placed');
+        selectedCard.classList.remove('selected');
+        shelf.classList.add('filled');
+        if (prevShelf && prevShelf.querySelector('.shelf-cards').children.length === 0) prevShelf.classList.remove('filled');
+        selectedCard = null;
+      }
+    });
+
+    shelf.addEventListener('drop', e => {
+      e.preventDefault();
+      shelf.classList.remove('drag-over');
+      const id = e.dataTransfer.getData('text/plain');
+      const card = document.querySelector(`.card[data-id="${id}"]`);
+      if (card) {
+        const prevShelf = card.closest('.shelf');
+        if (prevShelf) {
+          prevShelf.querySelector('.shelf-cards').removeChild(card);
+          if (prevShelf.querySelector('.shelf-cards').children.length === 0) prevShelf.classList.remove('filled');
+        } else {
+          pool.removeChild(card);
+        }
+        cardsCont.appendChild(card);
+        card.classList.add('placed');
+        shelf.classList.add('filled');
+      }
+    });
+  });
+
+  pool.addEventListener('dragover', e => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    pool.classList.add('drag-over');
+  });
+  pool.addEventListener('dragleave', e => {
+    if (!pool.contains(e.relatedTarget)) pool.classList.remove('drag-over');
+  });
+  pool.addEventListener('click', e => {
+    if (selectedCard?.closest('.shelf') && pool.contains(e.target) && !e.target.classList.contains('card')) {
+      const shelf = selectedCard.closest('.shelf');
+      if (shelf) {
+        shelf.querySelector('.shelf-cards').removeChild(selectedCard);
+        if (shelf.querySelector('.shelf-cards').children.length === 0) shelf.classList.remove('filled');
+      }
+      pool.appendChild(selectedCard);
+      selectedCard.classList.remove('placed', 'selected', 'correct', 'wrong');
+      selectedCard = null;
+    }
+  });
+
+  pool.addEventListener('drop', e => {
+    e.preventDefault();
+    pool.classList.remove('drag-over');
+    const id = e.dataTransfer.getData('text/plain');
+    const card = document.querySelector(`.card[data-id="${id}"]`);
+    const shelf = card?.closest('.shelf');
+    if (card && shelf) {
+      shelf.querySelector('.shelf-cards').removeChild(card);
+      if (shelf.querySelector('.shelf-cards').children.length === 0) shelf.classList.remove('filled');
+      pool.appendChild(card);
+      card.classList.remove('placed', 'correct', 'wrong');
+    }
+  });
+
+  resetBtn.addEventListener('click', resetGame);
+
+  checkBtn.addEventListener('click', () => {
+    let correct = 0, total = 0;
+    document.querySelectorAll('.card.placed').forEach(card => {
+      total++;
+      const isCorrect = card.closest('.shelf')?.dataset.shelf === card.dataset.shelf;
+      card.classList.remove('correct', 'wrong');
+      card.classList.add(isCorrect ? 'correct' : 'wrong');
+      if (isCorrect) correct++;
+    });
+
+    resultEl.classList.add('show');
+    if (total === 0) {
+      resultEl.textContent = 'Сначала разложи тезисы по полкам';
+      resultEl.classList.add('fail');
+      resultEl.classList.remove('success');
+    } else if (correct === total && total === ITEMS.length) {
+      resultEl.textContent = `Отлично! Всё верно (${correct}/${total})`;
+      resultEl.classList.add('success');
+      resultEl.classList.remove('fail');
+    } else {
+      resultEl.textContent = `Правильно ${correct} из ${total}. Исправь ошибки — карточки красные`;
+      resultEl.classList.add('fail');
+      resultEl.classList.remove('success');
+    }
+  });
+
+  resetGame();
+})();
+  </script>
+</body>
+</html>

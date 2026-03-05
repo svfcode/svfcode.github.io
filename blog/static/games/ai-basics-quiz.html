@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проверь знания: базовый минимум про ИИ</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f1117;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      color: #e2e8f0;
+    }
+    .game-container {
+      width: 100%;
+      max-width: 640px;
+      background: linear-gradient(145deg, #1a1d26 0%, #14161d 100%);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+    h1 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #a5b4fc;
+    }
+    #gameCanvas {
+      display: block;
+      width: 100%;
+      max-width: 592px;
+      height: 360px;
+      margin: 0 auto;
+      border-radius: 12px;
+      background: #0d0f14;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .score-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      font-size: 0.875rem;
+    }
+    .score-bar span { color: #94a3b8; }
+    .score-bar strong { color: #67e8a3; }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>🧠 Закрепляем материал</h1>
+    <canvas id="gameCanvas" width="592" height="360"></canvas>
+    <div class="score-bar">
+      <span>Вопрос <strong id="current">1</strong> из <strong id="total">7</strong></span>
+      <span>Очки: <strong id="score">0</strong></span>
+    </div>
+  </div>
+  <script>
+(function() {
+  'use strict';
+
+  const W = 592, H = 360;
+  const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const QUESTIONS = [
+    {
+      type: 'choice',
+      q: 'Что делает языковая модель?',
+      options: [
+        'Предсказывает следующее слово по контексту',
+        'Играет в шахматы',
+        'Распознаёт изображения'
+      ],
+      correct: 0
+    },
+    {
+      type: 'choice',
+      q: 'Чем отличаются чат-бот поддержки и ChatGPT?',
+      options: [
+        'Разным масштабом: датасетом и серверами',
+        'ChatGPT умеет шутить',
+        'Ничем, это одно и то же'
+      ],
+      correct: 0
+    },
+    {
+      type: 'choice',
+      q: 'Сколько параметров можно запустить на ноутбуке?',
+      options: [
+        '1–7 миллиардов',
+        'Триллионы',
+        'Миллионы'
+      ],
+      correct: 0
+    },
+    {
+      type: 'choice',
+      q: 'Почему модели на триллионы параметров называют фундаментальными?',
+      options: [
+        'Они усвоили знания, запечатанные в языке',
+        'Они очень тяжёлые',
+        'Они работают на фундаменте'
+      ],
+      correct: 0
+    },
+    {
+      type: 'choice',
+      q: 'Что такое МО (машинное обучение)?',
+      options: [
+        'Подмножество ИИ: система учится на данных сама',
+        'Программирование нейросетей',
+        'То же самое, что искусственный интеллект'
+      ],
+      correct: 0
+    },
+    {
+      type: 'order',
+      q: 'Расставь от меньшего к большему (по параметрам):',
+      items: [
+        { text: 'Бот поддержки', params: 1e9 },
+        { text: 'Llama 7B', params: 7e9 },
+        { text: 'GPT-4', params: 1.7e12 }
+      ]
+    },
+    {
+      type: 'match',
+      q: 'К какой категории относится «деревья решений»?',
+      options: ['ИИ', 'МО', 'НС'],
+      correct: 1
+    }
+  ];
+
+  let state = 'menu';
+  let questionIndex = 0;
+  let score = 0;
+  let orderAnswer = [];
+  let hovered = -1;
+  let wrongFlash = 0;
+
+  function drawRoundRect(x, y, w, h, r, fill, stroke) {
+    ctx.beginPath();
+    ctx.roundRect(x, y, w, h, r);
+    ctx.fillStyle = fill;
+    ctx.fill();
+    if (stroke) {
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  }
+
+  function drawText(text, x, y, opts = {}) {
+    const { size = 16, align = 'left', color = '#e2e8f0', maxW = W - 48 } = opts;
+    ctx.font = `${size}px "Segoe UI", system-ui, sans-serif`;
+    ctx.fillStyle = color;
+    ctx.textAlign = align;
+    ctx.textBaseline = 'middle';
+    const lines = wrapText(text, maxW);
+    lines.forEach((line, i) => {
+      ctx.fillText(line, x, y + i * (size + 4));
+    });
+  }
+
+  function wrapText(text, maxWidth) {
+    const words = text.split(' ');
+    const lines = [];
+    let line = '';
+    ctx.font = '16px "Segoe UI", system-ui, sans-serif';
+    for (const w of words) {
+      const test = line + (line ? ' ' : '') + w;
+      if (ctx.measureText(test).width > maxWidth && line) {
+        lines.push(line);
+        line = w;
+      } else line = test;
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function getButtonHitboxes(q) {
+    const hitboxes = [];
+    if (q.type === 'choice') {
+      const optH = 44, gap = 8, startY = 180;
+      q.options.forEach((_, i) => {
+        hitboxes.push({
+          id: i, y: startY + i * (optH + gap), h: optH,
+          x: 40, w: W - 80
+        });
+      });
+    } else if (q.type === 'order') {
+      const h = 48, gap = 8, startY = 170;
+      const items = q.items;
+      items.forEach((_, i) => {
+        hitboxes.push({
+          id: i, y: startY + i * (h + gap), h,
+          x: 40, w: W - 100,
+          swapUp: { x: W - 88, y: startY + i * (h + gap) + h/2 - 20, w: 28, h: 18 },
+          swapDown: { x: W - 88, y: startY + i * (h + gap) + h/2 + 2, w: 28, h: 18 }
+        });
+      });
+    } else if (q.type === 'match') {
+      const optH = 44, gap = 8, startY = 180;
+      q.options.forEach((_, i) => {
+        hitboxes.push({ id: i, y: startY + i * (optH + gap), h: optH, x: 40, w: W - 80 });
+      });
+    }
+    return hitboxes;
+  }
+
+  function checkOrderCorrect(q) {
+    const sorted = [...q.items].sort((a, b) => a.params - b.params);
+    return orderAnswer.length === sorted.length &&
+      orderAnswer.every((idx, i) => q.items[idx].params === sorted[i].params);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    if (state === 'menu') {
+      ctx.fillStyle = '#a5b4fc';
+      ctx.font = 'bold 20px "Segoe UI", system-ui';
+      ctx.textAlign = 'center';
+      ctx.fillText('Проверь знания по статье', W/2, 120);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '14px "Segoe UI"';
+      ctx.fillText('ИИ, языковые модели, МО, НС', W/2, 155);
+
+      const btnY = 220, btnH = 56;
+      drawRoundRect(120, btnY, W - 240, btnH, 12, hovered === 0 ? '#6366f1' : '#4f46e5', '#818cf8');
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 18px "Segoe UI"';
+      ctx.fillText('Начать', W/2, btnY + btnH/2);
+
+      return;
+    }
+
+    if (state === 'result') {
+      const pct = Math.round((score / QUESTIONS.length) * 100);
+      ctx.fillStyle = pct >= 80 ? '#67e8a3' : pct >= 60 ? '#fde047' : '#f87171';
+      ctx.font = 'bold 24px "Segoe UI"';
+      ctx.textAlign = 'center';
+      ctx.fillText(`Готово! ${score} из ${QUESTIONS.length}`, W/2, 100);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '16px "Segoe UI"';
+      ctx.fillText(pct >= 80 ? 'Отлично!' : pct >= 60 ? 'Хорошо' : 'Перечитай статью', W/2, 140);
+
+      const btnY = 240;
+      drawRoundRect(120, btnY, W - 240, 48, 12, hovered === 0 ? '#6366f1' : '#4f46e5', '#818cf8');
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 16px "Segoe UI"';
+      ctx.fillText('Заново', W/2, btnY + 24);
+
+      return;
+    }
+
+    const q = QUESTIONS[questionIndex];
+    if (!q) { state = 'result'; draw(); return; }
+
+    if (wrongFlash > 0) {
+      ctx.fillStyle = `rgba(248, 113, 113, ${wrongFlash})`;
+      ctx.fillRect(0, 0, W, H);
+      wrongFlash -= 0.05;
+    }
+
+    ctx.fillStyle = '#a5b4fc';
+    ctx.font = 'bold 14px "Segoe UI"';
+    ctx.textAlign = 'left';
+    ctx.fillText('Вопрос ' + (questionIndex + 1) + ' из ' + QUESTIONS.length, 24, 28);
+
+    ctx.fillStyle = '#e2e8f0';
+    ctx.font = '16px "Segoe UI"';
+    drawText(q.q, 24, 70, { maxW: W - 48 });
+
+    const hitboxes = getButtonHitboxes(q);
+
+    if (q.type === 'choice' || q.type === 'match') {
+      q.options.forEach((opt, i) => {
+        const hb = hitboxes[i];
+        const isHover = hb && (hovered === i || (hovered >= 0 && hitboxes[hovered]?.id === i));
+        drawRoundRect(hb.x, hb.y, hb.w, hb.h, 10,
+          isHover ? '#334155' : '#1e293b',
+          '#475569');
+        ctx.fillStyle = '#e2e8f0';
+        ctx.font = '14px "Segoe UI"';
+        drawText(opt, hb.x + 16, hb.y + hb.h/2, { maxW: hb.w - 32 });
+      });
+    } else if (q.type === 'order') {
+      const displayOrder = orderAnswer.length ? orderAnswer : q.items.map((_, i) => i);
+      displayOrder.forEach((idx, i) => {
+        const item = q.items[idx];
+        const h = 48, gap = 8, y = 170 + i * (h + gap);
+        drawRoundRect(40, y, W - 100, h, 8, '#1e293b', '#475569');
+        drawText(item.text, 56, y + h/2, { maxW: W - 160 });
+        const upY = y + h/2 - 20, downY = y + h/2 + 2;
+        const upActive = i > 0, downActive = i < displayOrder.length - 1;
+        drawRoundRect(W - 88, upY, 28, 18, 4, upActive ? '#334155' : '#0f172a', '#475569');
+        drawRoundRect(W - 88, downY, 28, 18, 4, downActive ? '#334155' : '#0f172a', '#475569');
+        ctx.fillStyle = upActive ? '#94a3b8' : '#475569';
+        ctx.font = '10px "Segoe UI"';
+        ctx.textAlign = 'center';
+        ctx.fillText('▲', W - 74, upY + 13);
+        ctx.fillText('▼', W - 74, downY + 13);
+      });
+      const btnY = 320;
+      drawRoundRect(W/2 - 70, btnY, 140, 36, 8, hovered === 99 ? '#6366f1' : '#4f46e5', '#818cf8');
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 14px "Segoe UI"';
+      ctx.textAlign = 'center';
+      ctx.fillText('Проверить', W/2, btnY + 18);
+    }
+
+    document.getElementById('current').textContent = questionIndex + 1;
+    document.getElementById('total').textContent = QUESTIONS.length;
+    document.getElementById('score').textContent = score;
+  }
+
+  function findHitbox(q, mx, my) {
+    if (q.type === 'order') {
+      const btnY = 320;
+      if (mx >= W/2 - 70 && mx <= W/2 + 70 && my >= btnY && my <= btnY + 36)
+        return { type: 'submitOrder' };
+      const hitboxes = getButtonHitboxes(q);
+      for (let i = 0; i < hitboxes.length; i++) {
+        const hb = hitboxes[i];
+        if (hb.swapUp && mx >= hb.swapUp.x && mx <= hb.swapUp.x + hb.swapUp.w &&
+            my >= hb.swapUp.y && my <= hb.swapUp.y + hb.swapUp.h)
+          return { type: 'swapUp', index: i };
+        if (hb.swapDown && mx >= hb.swapDown.x && mx <= hb.swapDown.x + hb.swapDown.w &&
+            my >= hb.swapDown.y && my <= hb.swapDown.y + hb.swapDown.h)
+          return { type: 'swapDown', index: i };
+      }
+    }
+    const hitboxes = getButtonHitboxes(q);
+    for (let i = 0; i < hitboxes.length; i++) {
+      const hb = hitboxes[i];
+      if (mx >= hb.x && mx <= hb.x + hb.w && my >= hb.y && my <= hb.y + hb.h)
+        return { type: 'option', index: i };
+    }
+    return null;
+  }
+
+  function handleClick(e) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const mx = (e.clientX - rect.left) * scaleX;
+    const my = (e.clientY - rect.top) * scaleY;
+
+    if (state === 'menu') {
+      if (mx >= 120 && mx <= W - 120 && my >= 220 && my <= 276) {
+        state = 'play';
+        questionIndex = 0;
+        score = 0;
+        orderAnswer = [];
+      }
+      draw();
+      return;
+    }
+
+    if (state === 'result') {
+      if (mx >= 120 && mx <= W - 120 && my >= 240 && my <= 288) {
+        state = 'menu';
+        hovered = -1;
+      }
+      draw();
+      return;
+    }
+
+    const q = QUESTIONS[questionIndex];
+    const hit = findHitbox(q, mx, my);
+
+    if (q.type === 'order' && hit) {
+      if (hit.type === 'submitOrder') {
+        if (orderAnswer.length && checkOrderCorrect(q)) {
+          score++;
+          questionIndex++;
+          orderAnswer = QUESTIONS[questionIndex]?.type === 'order'
+            ? QUESTIONS[questionIndex].items.map((_, i) => i) : [];
+          if (questionIndex >= QUESTIONS.length) state = 'result';
+        } else {
+          wrongFlash = 0.3;
+        }
+      } else if (hit.type === 'swapUp' && hit.index > 0) {
+        [orderAnswer[hit.index], orderAnswer[hit.index - 1]] = [orderAnswer[hit.index - 1], orderAnswer[hit.index]];
+      } else if (hit.type === 'swapDown' && hit.index < orderAnswer.length - 1) {
+        [orderAnswer[hit.index], orderAnswer[hit.index + 1]] = [orderAnswer[hit.index + 1], orderAnswer[hit.index]];
+      }
+      draw();
+      return;
+    }
+
+    if (hit && hit.type === 'option') {
+      const correct = (q.type === 'choice' || q.type === 'match') && hit.index === q.correct;
+
+      if (correct) {
+        score++;
+        questionIndex++;
+        if (questionIndex >= QUESTIONS.length) state = 'result';
+        else if (QUESTIONS[questionIndex]?.type === 'order') orderAnswer = QUESTIONS[questionIndex].items.map((_, i) => i);
+      } else {
+        wrongFlash = 0.3;
+      }
+    }
+
+    draw();
+  }
+
+  canvas.addEventListener('click', handleClick);
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const mx = (e.clientX - rect.left) * scaleX;
+    const my = (e.clientY - rect.top) * scaleY;
+
+    if (state === 'menu') {
+      hovered = (mx >= 120 && mx <= W - 120 && my >= 220 && my <= 276) ? 0 : -1;
+    } else if (state === 'result') {
+      hovered = (mx >= 120 && mx <= W - 120 && my >= 240 && my <= 288) ? 0 : -1;
+    } else {
+      const q = QUESTIONS[questionIndex];
+      const hit = findHitbox(q, mx, my);
+      if (hit?.type === 'submitOrder') hovered = 99;
+      else if (hit && hit.type === 'option') hovered = hit.index;
+      else hovered = -1;
+    }
+    draw();
+  });
+
+  function init() {
+    const q = QUESTIONS.find(q => q.type === 'order');
+    if (q) orderAnswer = q.items.map((_, i) => i);
+    draw();
+  }
+  init();
+})();
+  </script>
+</body>
+</html>

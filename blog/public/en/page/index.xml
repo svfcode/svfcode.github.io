@@ -34,6 +34,7 @@
 &lt;/div&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;Contact:&lt;/em&gt; &lt;a href=&#34;mailto:svfcode@gmail.com&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;mailto:svfcode@gmail.com&#34; &gt;svfcode@gmail.com&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;div class=&#34;about-timeline&#34; id=&#34;about-timeline-root&#34;&gt;
   &lt;div class=&#34;about-timeline-tabs&#34;&gt;
     &lt;button type=&#34;button&#34; class=&#34;about-tab active&#34; data-mode=&#34;timeline&#34;&gt;Таймлайн&lt;/button&gt;

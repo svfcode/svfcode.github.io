@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Гонки: собери правильные ответы</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f1117;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      color: #e2e8f0;
+    }
+    .game-container {
+      width: 100%;
+      max-width: 640px;
+      background: linear-gradient(145deg, #1a1d26 0%, #14161d 100%);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    h1 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #4ade80;
+    }
+    #gameCanvas {
+      display: block;
+      width: 100%;
+      max-width: 592px;
+      height: 400px;
+      margin: 0 auto;
+      border-radius: 12px;
+      background: #0d0f14;
+      cursor: default;
+      touch-action: none;
+    }
+    .score-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      font-size: 0.875rem;
+    }
+    .score-bar span { color: #94a3b8; }
+    .score-bar strong { color: #4ade80; }
+    .hint { font-size: 0.75rem; color: #64748b; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>🏎️ Гонки: наезжай на правильные ответы</h1>
+    <canvas id="gameCanvas" width="592" height="400"></canvas>
+    <div class="score-bar">
+      <span>Очки: <strong id="score">0</strong></span>
+      <span>Жизни: <strong id="lives">3</strong></span>
+    </div>
+    <p class="hint">← → или A D для движения · тап по краям на телефоне</p>
+  </div>
+  <script>
+(function() {
+  'use strict';
+
+  const W = 592, H = 400;
+  const LANES = 3;
+  const LANE_W = W / LANES;
+  const CAR_W = 80;
+  const CAR_H = 50;
+  const BLOCK_H = 44;
+  const BLOCK_PADDING = 8;
+  const FALL_SPEED_BASE = 1.8;
+
+  const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const WAVES = [
+    { q: 'Языковая модель предсказывает следующее слово', correct: 0, wrongs: ['Играет в шахматы', 'Рисует картинки'] },
+    { q: 'ChatGPT и бот поддержки — оба языковые модели', correct: 0, wrongs: ['Разные технологии', 'Один умнее по природе'] },
+    { q: '1–7 млрд параметров можно запустить на ноутбуке', correct: 0, wrongs: ['Нужен суперкомпьютер', 'Миллионы максимум'] },
+    { q: 'Фундаментальные модели имеют триллионы параметров', correct: 0, wrongs: ['Миллионы', 'Тысячи'] },
+    { q: 'МО — подмножество ИИ', correct: 0, wrongs: ['ИИ — подмножество МО', 'Одно и то же'] },
+    { q: 'Деревья решений относятся к машинному обучению', correct: 0, wrongs: ['Только к нейросетям', 'К экспертным системам'] },
+    { q: 'ИИ можно сделать без машинного обучения', correct: 0, wrongs: ['Только через МО', 'Невозможно'] },
+    { q: 'НС — подмножество МО', correct: 0, wrongs: ['МО — подмножество НС', 'Не связаны'] },
+    { q: 'Язык фиксирует коллективный опыт', correct: 0, wrongs: ['Только для общения', 'Просто символы'] },
+    { q: 'Масштаб отличает ботов: датасет и серверы', correct: 0, wrongs: ['Программисты', 'Алгоритм другой'] },
+    { q: 'Deep learning — многослойные нейросети', correct: 0, wrongs: ['Один слой', 'Без нейросетей'] },
+    { q: 'Фундаментальные модели усвоили знания из языка', correct: 0, wrongs: ['Только статистику слов', 'Ничего не усвоили'] }
+  ];
+
+  let state = 'menu';
+  let score = 0;
+  let lives = 3;
+  let carLane = 1;
+  let blocks = [];
+  let currentWave = 0;
+  let waveTimer = 0;
+  let fallSpeed = FALL_SPEED_BASE;
+  let keys = {};
+  let lastKeys = {};
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function spawnBlock() {
+    const w = WAVES[currentWave % WAVES.length];
+    const texts = [w.q, ...w.wrongs];
+    const shuffled = shuffle([0, 1, 2]);
+    for (let i = 0; i < LANES; i++) {
+      const textIdx = shuffled[i];
+      blocks.push({
+        lane: i,
+        y: -BLOCK_H - 10,
+        text: texts[textIdx],
+        correct: textIdx === 0
+      });
+    }
+    currentWave++;
+  }
+
+  function drawRoad() {
+    ctx.fillStyle = '#1e293b';
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.strokeStyle = '#334155';
+    ctx.lineWidth = 2;
+    for (let i = 1; i < LANES; i++) {
+      const x = i * LANE_W;
+      ctx.setLineDash([20, 20]);
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, H);
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    for (let i = 0; i < 8; i++) {
+      const y = (Date.now() / 50 + i * 60) % (H + 60) - 30;
+      ctx.fillStyle = '#475569';
+      ctx.fillRect(LANE_W / 2 - 4, y, 8, 24);
+      ctx.fillRect(LANE_W * 2 + LANE_W / 2 - 4, y, 8, 24);
+    }
+  }
+
+  function drawCar(lane) {
+    const x = lane * LANE_W + (LANE_W - CAR_W) / 2;
+    const y = H - CAR_H - 20;
+
+    ctx.save();
+
+    ctx.fillStyle = '#22c55e';
+    ctx.beginPath();
+    ctx.roundRect(x + 10, y + 10, CAR_W - 20, CAR_H - 20, 8);
+    ctx.fill();
+    ctx.strokeStyle = '#16a34a';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(x + 18, y + 12, 20, 12);
+    ctx.fillRect(x + CAR_W - 38, y + 12, 20, 12);
+
+    ctx.fillStyle = '#facc15';
+    ctx.beginPath();
+    ctx.arc(x + CAR_W / 2, y + CAR_H - 15, 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function drawBlock(b) {
+    const x = b.lane * LANE_W + LANE_W * 0.1;
+    const w = LANE_W * 0.8;
+    const y = b.y;
+
+    ctx.fillStyle = '#1e293b';
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.roundRect(x, y, w, BLOCK_H, 6);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = '#e2e8f0';
+    ctx.font = '12px "Segoe UI", system-ui';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const lines = wrapText(b.text, w - 16);
+    const lineH = 14;
+    const startY = y + BLOCK_H / 2 - (lines.length * lineH) / 2 + lineH / 2;
+    lines.forEach((line, i) => {
+      ctx.fillText(line, x + w / 2, startY + i * lineH);
+    });
+  }
+
+  function wrapText(text, maxW) {
+    const words = text.split(' ');
+    const lines = [];
+    let line = '';
+    ctx.font = '12px "Segoe UI"';
+    for (const w of words) {
+      const test = line + (line ? ' ' : '') + w;
+      if (ctx.measureText(test).width > maxW && line) {
+        lines.push(line);
+        line = w;
+      } else line = test;
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function collision(b) {
+    const carY = H - CAR_H - 20;
+    const blockBottom = b.y + BLOCK_H;
+    const blockTop = b.y;
+    return b.lane === carLane && blockBottom >= carY && blockTop <= carY + CAR_H;
+  }
+
+  function update() {
+    if (state === 'play') {
+    const goLeft = (keys['ArrowLeft'] || keys['a'] || keys['A']) && !(lastKeys['ArrowLeft'] || lastKeys['a'] || lastKeys['A']);
+    const goRight = (keys['ArrowRight'] || keys['d'] || keys['D']) && !(lastKeys['ArrowRight'] || lastKeys['d'] || lastKeys['D']);
+    if (goLeft) carLane = Math.max(0, carLane - 1);
+    if (goRight) carLane = Math.min(LANES - 1, carLane + 1);
+
+    waveTimer--;
+    if (waveTimer <= 0) {
+      spawnBlock();
+      waveTimer = 120;
+      fallSpeed = Math.min(FALL_SPEED_BASE + score * 0.1, 4);
+    }
+
+    for (let i = blocks.length - 1; i >= 0; i--) {
+      blocks[i].y += fallSpeed;
+
+      if (collision(blocks[i])) {
+        if (blocks[i].correct) {
+          score += 10;
+        } else {
+          lives--;
+          if (lives <= 0) state = 'gameover';
+        }
+        blocks.splice(i, 1);
+      } else if (blocks[i].y > H + 20) {
+        if (blocks[i].correct) {
+          lives--;
+          if (lives <= 0) state = 'gameover';
+        }
+        blocks.splice(i, 1);
+      }
+    }
+    }
+    lastKeys = { ...keys };
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    if (state === 'menu') {
+      drawRoad();
+      ctx.fillStyle = '#4ade80';
+      ctx.font = 'bold 22px "Segoe UI"';
+      ctx.textAlign = 'center';
+      ctx.fillText('Гонки знаний', W / 2, 120);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '14px "Segoe UI"';
+      ctx.fillText('Наезжай на ПРАВИЛЬНЫЕ ответы', W / 2, 160);
+      ctx.fillText('Избегай неправильных', W / 2, 185);
+
+      ctx.fillStyle = '#64748b';
+      ctx.font = '12px "Segoe UI"';
+      ctx.fillText('← → или A D — движение', W / 2, 240);
+
+      ctx.fillStyle = '#22c55e';
+      ctx.font = 'bold 18px "Segoe UI"';
+      ctx.fillText('СТАРТ', W / 2, 310);
+
+      ctx.strokeStyle = '#22c55e';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(W / 2 - 60, 285, 120, 40);
+
+      return;
+    }
+
+    if (state === 'gameover') {
+      drawRoad();
+      ctx.fillStyle = '#f87171';
+      ctx.font = 'bold 24px "Segoe UI"';
+      ctx.textAlign = 'center';
+      ctx.fillText('Конец заезда!', W / 2, 140);
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = '18px "Segoe UI"';
+      ctx.fillText('Очки: ' + score, W / 2, 185);
+
+      ctx.fillStyle = '#22c55e';
+      ctx.font = 'bold 16px "Segoe UI"';
+      ctx.fillText('Ещё раз', W / 2, 250);
+      ctx.strokeRect(W / 2 - 55, 230, 110, 35);
+
+      document.getElementById('score').textContent = score;
+      document.getElementById('lives').textContent = lives;
+      return;
+    }
+
+    drawRoad();
+
+    const w = WAVES[currentWave % WAVES.length];
+    ctx.fillStyle = '#a5b4fc';
+    ctx.font = 'bold 13px "Segoe UI"';
+    ctx.textAlign = 'center';
+    const qLines = wrapText(w.q, W - 40);
+    qLines.forEach((line, i) => ctx.fillText(line, W / 2, 24 + i * 16));
+
+    blocks.forEach(drawBlock);
+    drawCar(carLane);
+
+    document.getElementById('score').textContent = score;
+    document.getElementById('lives').textContent = lives;
+  }
+
+  function handleClick(e) {
+    const rect = canvas.getBoundingClientRect();
+    const t = e.changedTouches ? e.changedTouches[0] : e;
+    const mx = (t.clientX || 0) - rect.left;
+    const my = (t.clientY || 0) - rect.top;
+
+    if (state === 'menu') {
+      if (mx >= W / 2 - 60 && mx <= W / 2 + 60 && my >= 285 && my <= 325) {
+        state = 'play';
+        score = 0;
+        lives = 3;
+        carLane = 1;
+        blocks = [];
+        currentWave = 0;
+        waveTimer = 60;
+        fallSpeed = FALL_SPEED_BASE;
+      }
+      draw();
+      return;
+    }
+
+    if (state === 'gameover') {
+      if (mx >= W / 2 - 55 && mx <= W / 2 + 55 && my >= 230 && my <= 265) {
+        state = 'menu';
+      }
+      draw();
+      return;
+    }
+
+    if (state === 'play') {
+      if (mx < W / 3) carLane = 0;
+      else if (mx < (W * 2) / 3) carLane = 1;
+      else carLane = 2;
+    }
+    draw();
+  }
+
+  document.addEventListener('keydown', e => {
+    keys[e.key] = true;
+    if (['ArrowLeft', 'ArrowRight', 'Space'].includes(e.key)) e.preventDefault();
+  });
+  document.addEventListener('keyup', e => { keys[e.key] = false; });
+
+  canvas.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    if (state === 'play') {
+      const rect = canvas.getBoundingClientRect();
+      const tx = e.touches[0].clientX - rect.left;
+      if (tx < W / 3) carLane = 0;
+      else if (tx < (W * 2) / 3) carLane = 1;
+      else carLane = 2;
+    }
+    e.preventDefault();
+  }, { passive: false });
+  canvas.addEventListener('touchmove', e => {
+    if (state === 'play') {
+      const rect = canvas.getBoundingClientRect();
+      const tx = e.touches[0].clientX - rect.left;
+      if (tx < W / 3) carLane = 0;
+      else if (tx < (W * 2) / 3) carLane = 1;
+      else carLane = 2;
+      e.preventDefault();
+    }
+  }, { passive: false });
+  canvas.addEventListener('touchend', handleClick);
+  canvas.addEventListener('click', handleClick);
+  canvas.addEventListener('mousemove', e => {
+    if (state === 'play') {
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      if (mx < W / 3) carLane = 0;
+      else if (mx < (W * 2) / 3) carLane = 1;
+      else carLane = 2;
+    }
+    draw();
+  });
+
+  function loop() {
+    update();
+    draw();
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+  </script>
+</body>
+</html>
