@@ -464,11 +464,12 @@
   &lt;tbody&gt;
       &lt;tr&gt;
           &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-intro/&#34; &gt;AI basics – introduction&lt;/a&gt;&lt;/td&gt;
-          &lt;td&gt;—&lt;/td&gt;
-          &lt;td&gt;—&lt;/td&gt;
-          &lt;td&gt;—&lt;/td&gt;
-          &lt;td&gt;—&lt;/td&gt;
-          &lt;td&gt;—&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;video&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;5 / 4&lt;/td&gt;
+          &lt;td&gt;basic&lt;/td&gt;
+          &lt;td&gt;language model, dataset, parameters, AI/ML/NN, foundation models&lt;/td&gt;
+          &lt;td&gt;none&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
