@@ -9,8 +9,19 @@ menu:
             icon: link
 ---
 
-## Basics
+## 📚 Basics
 
-| Title (article) | Video (YouTube) | Reading / video (min) | Difficulty | Terms | Prerequisites |
-|-----------------|-----------------|-----------------|------------|-------|---------------|
-| [AI basics – introduction](/en/p/ai-basics-intro/) | [video](https://youtu.be/z9VBZn0XcVk) | 5 / 4 | basic | language model, dataset, parameters, AI/ML/NN, foundation models | none |
+- **[AI basics – introduction](/en/p/ai-basics-intro/)**
+  - 🎬 [Video](https://youtu.be/z9VBZn0XcVk) · reading 5 min / video 4 min
+  - 🏷️ Terms: language model, dataset, parameters, AI/ML/NN, foundation models
+  - 📊 Difficulty: basic
+  - 📋 Prerequisites: none
+
+## 👥 On Their Shoulders
+
+- **[The Future of AI: Why Scaling Alone is No Longer Enough](/en/p/ai-future-beyond-scaling/)**
+  - 🎬 [Video](https://youtu.be/5mUEOx3uLDc) · reading 12 min / video 8 min
+  - 👥 Participants: Nicholas Thompson, Eric Xing, Yoshua Bengio, Yuval Noah Harari, Yejin Choi
+  - 🏷️ Terms: scaling, reward hacking, world model, guardrail, AGI, anthropomorphism
+  - 📊 Difficulty: intermediate
+  - 📋 Prerequisites: AI basics

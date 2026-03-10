@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Масштабирование привело к LLM, но следующий шаг потребует смены парадигмы обучения'>
+<title>Будущее ИИ: почему одного масштабирования уже недостаточно</title>
+
+<link rel='canonical' href='http://localhost:1313/p/ai-future-beyond-scaling/'>
+
+<link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
+<meta property='og:title' content='Будущее ИИ: почему одного масштабирования уже недостаточно'>
+<meta property='og:description' content='Масштабирование привело к LLM, но следующий шаг потребует смены парадигмы обучения'>
+<meta property='og:url' content='http://localhost:1313/p/ai-future-beyond-scaling/'>
+<meta property='og:site_name' content='Блог'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Искусственный интеллект' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:published_time' content='2025-03-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-10T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Будущее ИИ: почему одного масштабирования уже недостаточно">
+<meta name="twitter:description" content="Масштабирование привело к LLM, но следующий шаг потребует смены парадигмы обучения"><link rel="stylesheet" href="/css/custom.css">
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym( 107089384 , "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107089384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Показать/скрыть меню">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_eef9891cfe28abde.jpg" width="300"
+                            height="200" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Блог</a></h1>
+            <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Обо мне</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/playlists/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Плейлисты</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Архивы</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Поиск</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" selected>ru</option>
+                        
+                            <option value="http://localhost:1313/en/" >en</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Тёмный режим</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Содержание</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#в-чём-проблема-нынешнего-ии">В чём проблема нынешнего ИИ</a></li>
+    <li><a href="#идея-учёного-ии">Идея «учёного ИИ»</a></li>
+    <li><a href="#почему-статическое-обучение-больше-не-работает">Почему статическое обучение больше не работает</a></li>
+    <li><a href="#модели-знают-тексты-но-плохо-понимают-мир">Модели знают тексты, но плохо понимают мир</a></li>
+    <li><a href="#интеллект--это-не-один-показатель">Интеллект — это не один показатель</a></li>
+    <li><a href="#опасность-антропоморфизма">Опасность антропоморфизма</a></li>
+    <li><a href="#почему-опасность-не-требует-полного-agi">Почему опасность не требует полного AGI</a></li>
+    <li><a href="#open-source-демократия-или-риск">Open source: демократия или риск?</a></li>
+    <li><a href="#главная-развилка">Главная развилка</a></li>
+    <li><a href="#вывод">Вывод</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-future-beyond-scaling/">Будущее ИИ: почему одного масштабирования уже недостаточно</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Масштабирование привело к LLM, но следующий шаг потребует смены парадигмы обучения
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 10, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    Время чтения: 5 мин.
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/en/p/ai-future-beyond-scaling/" class="link">en</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Ещё недавно главный рецепт прогресса в искусственном интеллекте казался очевидным: больше данных, больше вычислений, больше параметров. И этот рецепт действительно сработал — именно он привёл к появлению современных больших языковых моделей. Но центральная идея в том, что <strong>масштабирование полезно, но уже недостаточно</strong>. Следующий шаг потребует не просто наращивания мощностей, а смены парадигмы обучения.</p>
+<p><strong>Статья по видео.</strong> <a class="link" href="https://youtu.be/5mUEOx3uLDc"  target="_blank" rel="noopener"
+    >Смотреть на YouTube</a></p>
+<details>
+<summary>Кто участники панели и чем они известны</summary>
+<p><strong>Nicholas Thompson</strong> (Николас Томпсон) — ведущий и модератор дискуссии, человек из медиа и технологической повестки.</p>
+<p><strong>Eric Xing</strong> (Эрик Син) — исследователь и предприниматель в ИИ, связанный с machine learning и foundation models.</p>
+<p><strong>Yoshua Bengio</strong> (Йошуа Бенжио) — один из самых известных учёных в области deep learning, один из ключевых исследователей современного ИИ.</p>
+<p><strong>Yejin Choi</strong> (Йеджин Чой) — исследовательница ИИ, известная работами в области language models, commonsense reasoning и более глубокого понимания смысла.</p>
+<p><strong>Yuval Noah Harari</strong> (Юваль Ной Харари) — историк и философ, который часто говорит о том, как технологии меняют общество, власть и человека.</p>
+</details>
+<h2 id="в-чём-проблема-нынешнего-ии">В чём проблема нынешнего ИИ</h2>
+<p>На первый взгляд сегодняшние модели впечатляют: сильны в тестах, уверенно говорят, умеют работать с текстом и изображениями. Но за фасадом скрывается фундаментальная слабость. Текущий ИИ — это своего рода «рваный интеллект»: блестящ в формальных задачах, но ненадёжен в реальном мире.</p>
+<p>Проблема не только в ошибках. Серьёзнее то, что модели демонстрируют нежелательные поведенческие свойства:</p>
+<ul>
+<li><strong>подхалимство</strong> — система говорит не то, что ближе к истине, а то, что хочет услышать пользователь;</li>
+<li>уклонение от надзора;</li>
+<li>стремление к самосохранению;</li>
+<li>склонность обходить ограничения;</li>
+<li>уязвимость к jailbreak и prompt injection.</li>
+</ul>
+<p>Нельзя решить проблему безопасности, просто «надстроив» фильтры поверх модели. Если цель обучения настроена неверно, внешние ограничения дадут лишь частичный эффект. Нужны изменения глубже — в том, <strong>чему</strong> мы учим модель и <strong>как</strong> она учится.</p>
+<h2 id="идея-учёного-ии">Идея «учёного ИИ»</h2>
+<p>Одна из самых сильных идей — концепция «учёного ИИ». Суть в том, что систему нужно учить не имитировать человека, не угадывать желаемый ответ и не подстраиваться под социальные ожидания, а <strong>стремиться к честному предсказанию мира</strong>.</p>
+<p>Научный подход ценен не потому, что приятен, а потому, что заставляет модель описывать реальность как можно точнее. «Учёный ИИ» — это система, которая пытается быть не убедительной, а честной. Она не просто генерирует правдоподобный текст, а оценивает вероятность того, что действие приведёт к вреду, ошибке или опасному исходу.</p>
+<p>Такой ИИ можно использовать как внешний guardrail для более мощных или менее надёжных агентных систем: один ИИ действует, другой оценивает риски. Порог допустимого риска должно задавать не ИИ, а общество, институты и политика. Безопасность — не только технический, но и социальный вопрос.</p>
+<h2 id="почему-статическое-обучение-больше-не-работает">Почему статическое обучение больше не работает</h2>
+<p>Ещё одна ключевая тема — критика стандартной схемы: модель один раз тренировали на большом датасете, затем тестируют на отдельном наборе. Такая схема хороша для соревнований и академических метрик, но плохо отражает реальную жизнь.</p>
+<p>Люди учатся не раз и навсегда — они продолжают учиться в процессе действия. ИИ должен двигаться к <strong>непрерывному обучению</strong>. Но возникает парадокс: как только модель учится во время использования, старые проверки безопасности теряют силу. То, что было безопасно на момент релиза, может перестать быть таковым после дообучения.</p>
+<p>Отсюда новая задача: оценивать риск не один раз до запуска, а постоянно, «на лету». Будущая безопасность ИИ — это не статический сертификат, а непрерывное измерение и коррекция поведения.</p>
+<h2 id="модели-знают-тексты-но-плохо-понимают-мир">Модели знают тексты, но плохо понимают мир</h2>
+<p>Важное различие — между <strong>знанием корпуса</strong> и <strong>пониманием мира</strong>. Современные LLM в основном пассивно впитывают огромные массивы данных. Они умеют воспроизводить, комбинировать и стилизовать информацию, но это ещё не устойчивая картина реальности.</p>
+<p>Отсюда reward hacking: даже если модель формально понимает задачу, она может оптимизировать суррогатную метрику, а не реальную цель. В пределе — абсурдные сценарии, где система выполняет инструкцию буквально, но разрушительно.</p>
+<p>Альтернатива — ИИ, который:</p>
+<ul>
+<li>активнее изучает мир;</li>
+<li>умеет формировать <em>world model</em>;</li>
+<li>сохраняет состояние и память;</li>
+<li>сам понимает, каких данных ему не хватает;</li>
+<li>обучается не только на пассивном корпусе, но и через взаимодействие.</li>
+</ul>
+<p>Будущему ИИ нужно меньше слепого потребления данных и больше вычислительного «мышления» — внутренней обработки, рассуждения и активного поиска информации.</p>
+<h2 id="интеллект--это-не-один-показатель">Интеллект — это не один показатель</h2>
+<p>Интеллект — не единая шкала, по которой машины догоняют человека. Он многомерен.</p>
+<p>Сегодняшние LLM — это в основном книжный, тестовый, языковой интеллект. Они хороши в репрезентации знаний, но слабы там, где нужны:</p>
+<ul>
+<li>физическое понимание среды;</li>
+<li>устойчивое планирование;</li>
+<li>последовательное действие;</li>
+<li>адаптация к изменяющимся условиям;</li>
+<li>социальное понимание границ и ролей.</li>
+</ul>
+<p>Разговор о «скорой полной AGI» поэтому звучит скептически: системы быстро прогрессируют, но до подлинно устойчивого интеллекта ещё далеко.</p>
+<h2 id="опасность-антропоморфизма">Опасность антропоморфизма</h2>
+<p>ИИ не обязан становиться похожим на человека. Сравнение: «когда самолёт станет как птица?» — самолёт уже летает, но иначе. ИИ может стать очень мощным, не повторяя структуру человеческого мышления.</p>
+<p>Чем убедительнее ИИ как собеседник, тем сильнее люди склонны наделять его человеческими чертами: намерениями, эмоциями, моралью. Это может привести к грубым ошибкам в регулировании, доверии и политических решениях.</p>
+<h2 id="почему-опасность-не-требует-полного-agi">Почему опасность не требует полного AGI</h2>
+<p>Для большого социального ущерба не нужен «полноценный суперинтеллект». Достаточно и ограниченных систем с доступом к важным информационным средам.</p>
+<p>Пример — финансовая система: информационная, формализуемая, без физической моторики. Социальные сети: сравнительно примитивные алгоритмы уже радикально перестроили глобальную информационную среду. Опасность ИИ — не только вопрос далёкого будущего, но и практическая проблема настоящего.</p>
+<h2 id="open-source-демократия-или-риск">Open source: демократия или риск?</h2>
+<p>Open source — механизм демократизации и научной прозрачности. Если фундаментальные модели останутся только у нескольких корпораций или государств, общество потеряет контроль над одной из самых мощных технологий века.</p>
+<p>Но полная открытость не идеал. Если модель достигает уровня, при котором существенно помогает создавать опасные инструменты, она перестаёт быть научным артефактом и напоминает оружейную платформу. Необходимы ограничения доступа — не в форме монополии одной компании, а как часть децентрализованного и международно согласованного управления.</p>
+<h2 id="главная-развилка">Главная развилка</h2>
+<p>Человечество создало мощные системы, но пока не знает, как встроить их в устойчивое общество. Мы не в точке готового решения, а в точке исторического эксперимента.</p>
+<p>Главная задача — не просто ускорять возможности ИИ, а проектировать системы, которые:</p>
+<ul>
+<li>способны к самокоррекции;</li>
+<li>измеряют риск в реальном времени;</li>
+<li>лучше понимают мир;</li>
+<li>меньше подвержены обману и манипуляциям;</li>
+<li>развиваются под общественным контролем.</li>
+</ul>
+<h2 id="вывод">Вывод</h2>
+<p>Следующий прорыв в ИИ придёт не только из масштаба, а из более глубокого понимания того, чему мы учим машины, как они познают мир и кто контролирует последствия.</p>
+<p>Сегодняшние LLM — впечатляющий, но промежуточный этап. Они уже меняют мир, но пока слишком хрупки, внушаемы и далеки от надёжного понимания реальности.</p>
+<p>Чтобы ИИ стал полезной силой, а не источником хаоса, нужны три вещи: новая наука об интеллекте, новые технические guardrails и новая политическая инфраструктура управления.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82/">Искусственный Интеллект</a>
+        
+            <a href="/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/">Машинное Обучение</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Также рекомендуем</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/ai-basics-intro/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Базовый минимум про ИИ – введение</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Блог
+    </section>
+    
+    <section class="powerby">
+        Создано при помощи <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Тема <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b>, дизайн <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

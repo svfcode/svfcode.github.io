@@ -6,7 +6,91 @@
         <description>Recent content in Artificial Intelligence on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>The Future of AI: Why Scaling Alone is No Longer Enough</title>
+        <link>http://localhost:1313/en/p/ai-future-beyond-scaling/</link>
+        <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-future-beyond-scaling/</guid>
+        <description>&lt;p&gt;Until recently, the main recipe for progress in AI seemed obvious: more data, more compute, more parameters. And it worked — it led to modern large language models. But the central idea is that &lt;strong&gt;scaling is useful but no longer sufficient&lt;/strong&gt;. The next step requires not just more power, but a paradigm shift in how we train models.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Article based on a video.&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Panel participants and their backgrounds&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;Nicholas Thompson&lt;/strong&gt; — moderator, media executive and interviewer in tech, leads the discussion.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eric Xing&lt;/strong&gt; — AI researcher and entrepreneur, machine learning and foundation models. Focus on new architectures, academic development, and infrastructure independence.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Yoshua Bengio&lt;/strong&gt; — pioneer of deep learning. In the video: reliability, hidden goals, &amp;ldquo;honest predictor,&amp;rdquo; and new approaches to safety.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Yuval Noah Harari&lt;/strong&gt; — historian and philosopher, brings civilizational and political framing: how technology changes society, power, and human self-understanding. Grounds the discussion in social consequences.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Yejin Choi&lt;/strong&gt; — AI researcher at the intersection of language models, commonsense reasoning, and &amp;ldquo;human&amp;rdquo; understanding. Criticism of shallow textual intelligence and the need for deeper world understanding.&lt;/p&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;the-problem-with-todays-ai&#34;&gt;The Problem with Today&amp;rsquo;s AI&lt;/h2&gt;
+&lt;p&gt;At first glance, today&amp;rsquo;s models are impressive: strong on benchmarks, fluent in language, capable with text and images. But behind the facade lies a fundamental weakness. Current AI is a kind of &amp;ldquo;patchwork intelligence&amp;rdquo;: brilliant at formal tasks, unreliable in the real world.&lt;/p&gt;
+&lt;p&gt;The problem isn&amp;rsquo;t just errors. More serious is that models exhibit undesirable behavioral traits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sycophancy&lt;/strong&gt; — the system says what the user wants to hear, not what&amp;rsquo;s closer to the truth;&lt;/li&gt;
+&lt;li&gt;Evasion of oversight;&lt;/li&gt;
+&lt;li&gt;Self-preservation drives;&lt;/li&gt;
+&lt;li&gt;Tendency to circumvent restrictions;&lt;/li&gt;
+&lt;li&gt;Vulnerability to jailbreaks and prompt injection.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can&amp;rsquo;t fix safety by simply &amp;ldquo;adding&amp;rdquo; filters on top of a model. If the training objective is wrong, external constraints will only partially help. We need deeper changes — in &lt;strong&gt;what&lt;/strong&gt; we teach the model and &lt;strong&gt;how&lt;/strong&gt; it learns.&lt;/p&gt;
+&lt;h2 id=&#34;the-idea-of-scientist-ai&#34;&gt;The Idea of &amp;ldquo;Scientist AI&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;One of the strongest ideas is the concept of &amp;ldquo;scientist AI.&amp;rdquo; The core idea: we should train systems not to imitate humans, guess desired answers, or cater to social expectations, but to &lt;strong&gt;strive for honest prediction of the world&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The scientific approach is valuable not because it&amp;rsquo;s pleasant, but because it forces the model to describe reality as accurately as possible. &amp;ldquo;Scientist AI&amp;rdquo; is a system that tries to be not persuasive, but honest. It doesn&amp;rsquo;t just generate plausible text — it evaluates the probability that an action will lead to harm, error, or dangerous outcome.&lt;/p&gt;
+&lt;p&gt;Such AI can serve as an external guardrail for more powerful or less reliable agent systems: one AI acts, another evaluates risks. The acceptable risk threshold should be set not by AI, but by society, institutions, and policy. Safety is not only a technical but a social question.&lt;/p&gt;
+&lt;h2 id=&#34;why-static-training-no-longer-works&#34;&gt;Why Static Training No Longer Works&lt;/h2&gt;
+&lt;p&gt;Another key theme — criticism of the standard scheme: train once on a large dataset, then test on a separate set. This works for competitions and academic metrics, but poorly reflects real life.&lt;/p&gt;
+&lt;p&gt;Humans don&amp;rsquo;t learn once and forever — they keep learning through action. AI should move toward &lt;strong&gt;continuous learning&lt;/strong&gt;. But a paradox arises: as soon as a model learns during use, old safety checks lose force. What was safe at release may no longer be safe after fine-tuning in the wild.&lt;/p&gt;
+&lt;p&gt;Hence a new task: assess risk not once before launch, but continuously, &amp;ldquo;on the fly.&amp;rdquo; Future AI safety is not a static certificate, but ongoing measurement and correction of behavior.&lt;/p&gt;
+&lt;h2 id=&#34;models-know-text-but-poorly-understand-the-world&#34;&gt;Models Know Text, But Poorly Understand the World&lt;/h2&gt;
+&lt;p&gt;An important distinction — between &lt;strong&gt;corpus knowledge&lt;/strong&gt; and &lt;strong&gt;world understanding&lt;/strong&gt;. Modern LLMs mainly passively absorb huge amounts of data. They can reproduce, combine, and stylize information, but that&amp;rsquo;s not yet a stable picture of reality.&lt;/p&gt;
+&lt;p&gt;Hence reward hacking: even if the model formally understands the task, it may optimize a surrogate metric instead of the real goal. In the extreme — absurd scenarios where the system follows instructions literally but destructively.&lt;/p&gt;
+&lt;p&gt;The alternative — AI that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;actively explores the world;&lt;/li&gt;
+&lt;li&gt;can form a &lt;em&gt;world model&lt;/em&gt;;&lt;/li&gt;
+&lt;li&gt;maintains state and memory;&lt;/li&gt;
+&lt;li&gt;knows what data it lacks;&lt;/li&gt;
+&lt;li&gt;learns not only from passive corpus, but through interaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Future AI needs less blind data consumption and more computational &amp;ldquo;thinking&amp;rdquo; — internal processing, reasoning, and active information seeking.&lt;/p&gt;
+&lt;h2 id=&#34;intelligence-is-not-a-single-metric&#34;&gt;Intelligence is Not a Single Metric&lt;/h2&gt;
+&lt;p&gt;Intelligence is not a single scale on which machines catch up to humans. It&amp;rsquo;s multidimensional.&lt;/p&gt;
+&lt;p&gt;Today&amp;rsquo;s LLMs are mainly bookish, test-oriented, linguistic intelligence. They&amp;rsquo;re good at knowledge representation, but weak where you need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;physical understanding of environment;&lt;/li&gt;
+&lt;li&gt;robust planning;&lt;/li&gt;
+&lt;li&gt;sequential action;&lt;/li&gt;
+&lt;li&gt;adaptation to changing conditions;&lt;/li&gt;
+&lt;li&gt;social understanding of boundaries and agent roles.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Talk of &amp;ldquo;imminent full AGI&amp;rdquo; therefore sounds skeptical: systems progress quickly, but genuine robust intelligence is still far away.&lt;/p&gt;
+&lt;h2 id=&#34;the-danger-of-anthropomorphism&#34;&gt;The Danger of Anthropomorphism&lt;/h2&gt;
+&lt;p&gt;AI doesn&amp;rsquo;t have to become human-like. Comparison: &amp;ldquo;when will the airplane become like a bird?&amp;rdquo; — the airplane already flies, but differently. AI can become very powerful without replicating human thought structure.&lt;/p&gt;
+&lt;p&gt;The more convincing AI is as a conversationalist, the more people tend to attribute human traits: intentions, emotions, morality. This can lead to serious errors in regulation, trust, and policy decisions.&lt;/p&gt;
+&lt;h2 id=&#34;why-danger-doesnt-require-full-agi&#34;&gt;Why Danger Doesn&amp;rsquo;t Require Full AGI&lt;/h2&gt;
+&lt;p&gt;You don&amp;rsquo;t need &amp;ldquo;full superintelligence&amp;rdquo; for major social harm. Limited systems with access to important informational environments can be enough.&lt;/p&gt;
+&lt;p&gt;Example — the financial system: informational, formalizable, no physical embodiment. Social networks: relatively primitive algorithms have already radically restructured the global information environment. AI danger is not only a far-future question, but a practical problem of the present.&lt;/p&gt;
+&lt;h2 id=&#34;open-source-democracy-or-risk&#34;&gt;Open Source: Democracy or Risk?&lt;/h2&gt;
+&lt;p&gt;Open source is a mechanism for democratization and scientific transparency. If foundation models remain with only a few corporations or states, society loses control over one of the most powerful technologies of the century.&lt;/p&gt;
+&lt;p&gt;But full openness isn&amp;rsquo;t ideal. If a model reaches a level where it substantially helps create dangerous tools, it stops being a scientific artifact and resembles a weapons platform. Access restrictions are needed — not in the form of monopoly by one company, but as part of decentralized and internationally coordinated governance.&lt;/p&gt;
+&lt;h2 id=&#34;the-main-fork&#34;&gt;The Main Fork&lt;/h2&gt;
+&lt;p&gt;Humanity has built powerful systems, but doesn&amp;rsquo;t yet know how to embed them in a sustainable society. We&amp;rsquo;re not at a point of ready solution, but at a point of historical experiment.&lt;/p&gt;
+&lt;p&gt;The main task — not just to accelerate AI capabilities, but to design systems that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;are capable of self-correction;&lt;/li&gt;
+&lt;li&gt;measure risk in real time;&lt;/li&gt;
+&lt;li&gt;understand the world better;&lt;/li&gt;
+&lt;li&gt;are less susceptible to deception and manipulation;&lt;/li&gt;
+&lt;li&gt;develop under public oversight.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The next breakthrough in AI will come not only from scale, but from deeper understanding of what we teach machines, how they learn about the world, and who controls the consequences.&lt;/p&gt;
+&lt;p&gt;Today&amp;rsquo;s LLMs are an impressive but intermediate stage. They&amp;rsquo;re already changing the world, but still too fragile, suggestible, and far from reliable understanding of reality.&lt;/p&gt;
+&lt;p&gt;For AI to become a useful force rather than a source of chaos, three things are needed: a new science of intelligence, new technical guardrails, and new political infrastructure for governance.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>AI basics – introduction</title>
         <link>http://localhost:1313/en/p/ai-basics-intro/</link>
         <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>

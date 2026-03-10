@@ -1,3 +1,9 @@
+/* Курсор при наведении на заголовок аккордиона */
+.article-content details summary,
+.content details summary {
+    cursor: pointer;
+}
+
 /* Ограничение максимальной ширины текста для удобства чтения */
 .article-page .main-article .article-content,
 .page .main-article .article-content {

@@ -449,30 +449,31 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/playlists/</guid>
-        <description>&lt;h2 id=&#34;базовый-минимум&#34;&gt;Базовый минимум&lt;/h2&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Название (статья)&lt;/th&gt;
-          &lt;th&gt;Ссылка на видео (YouTube)&lt;/th&gt;
-          &lt;th&gt;Чтение / видео (мин)&lt;/th&gt;
-          &lt;th&gt;Сложность&lt;/th&gt;
-          &lt;th&gt;Термины&lt;/th&gt;
-          &lt;th&gt;Необходимые знания&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-intro/&#34; &gt;Базовый минимум про ИИ – введение&lt;/a&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;видео&lt;/a&gt;&lt;/td&gt;
-          &lt;td&gt;5 / 4&lt;/td&gt;
-          &lt;td&gt;базовая&lt;/td&gt;
-          &lt;td&gt;языковая модель, датасет, параметры, ИИ/МО/НС, фундаментальные модели&lt;/td&gt;
-          &lt;td&gt;нет&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+        <description>&lt;h2 id=&#34;-базовый-минимум&#34;&gt;📚 Базовый минимум&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-intro/&#34; &gt;Базовый минимум про ИИ – введение&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Видео&lt;/a&gt; · чтение 5 мин / видео 4 мин&lt;/li&gt;
+&lt;li&gt;🏷️ Термины: языковая модель, датасет, параметры, ИИ/МО/НС, фундаментальные модели&lt;/li&gt;
+&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
+&lt;li&gt;📋 Необходимые знания: нет&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-на-их-плечах&#34;&gt;👥 На их плечах&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-future-beyond-scaling/&#34; &gt;Будущее ИИ: почему одного масштабирования уже недостаточно&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Видео&lt;/a&gt; · чтение 12 мин / видео 8 мин&lt;/li&gt;
+&lt;li&gt;👥 Участники: Nicholas Thompson, Eric Xing, Yoshua Bengio, Yuval Noah Harari, Yejin Choi&lt;/li&gt;
+&lt;li&gt;🏷️ Термины: масштабирование, reward hacking, world model, guardrail, AGI, антропоморфизм&lt;/li&gt;
+&lt;li&gt;📊 Сложность: средняя&lt;/li&gt;
+&lt;li&gt;📋 Необходимые знания: база по ИИ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>

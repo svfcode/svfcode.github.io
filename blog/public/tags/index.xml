@@ -6,18 +6,10 @@
         <description>Recent content in Tags on Блог</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ru</language>
-        <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>База</title>
-        <link>http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link>
-        <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</guid>
-        <description></description>
-        </item>
-        <item>
+        <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Искусственный Интеллект</title>
         <link>http://localhost:1313/tags/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82/</link>
-        <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/tags/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82/</guid>
         <description></description>
@@ -25,9 +17,17 @@
         <item>
         <title>Машинное Обучение</title>
         <link>http://localhost:1313/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/</link>
-        <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>База</title>
+        <link>http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link>
+        <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</guid>
         <description></description>
         </item>
         
