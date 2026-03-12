@@ -474,6 +474,23 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;-необходимая-математика&#34;&gt;📐 Необходимая математика&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-essentials-overview/&#34; &gt;Необходимая математика — обзор&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;📋 Обзор: какие разделы математики нужны для ИИ/МО и зачем&lt;/li&gt;
+&lt;li&gt;🏷️ Линейная алгебра, анализ, вероятность и статистика&lt;/li&gt;
+&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-derivatives/&#34; &gt;Мат Анализ — Производные&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;📋 Производная, градиент, правило цепочки — основа обучения нейросетей&lt;/li&gt;
+&lt;li&gt;🏷️ Градиентный спуск, backpropagation&lt;/li&gt;
+&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>

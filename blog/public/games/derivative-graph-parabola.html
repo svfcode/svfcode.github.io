@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Парабола y = x²</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow: hidden; height: 100%; }
+    body { background: #1a1a1a; font-family: system-ui, sans-serif; padding: 8px; display: flex; flex-direction: column; }
+    .chart-wrap { flex: 1; min-height: 0; position: relative; }
+    .caption { font-size: 11px; margin-top: 6px; opacity: 0.8; text-align: center; color: #9ca3af; }
+  </style>
+</head>
+<body>
+  <div class="chart-wrap">
+    <canvas id="chart"></canvas>
+  </div>
+  <p class="caption">y = x² и касательные: f'(2) = 4, f'(4) = 8</p>
+  <script>
+    const parabolaData = [];
+    for (let x = 0; x <= 5; x += 0.1) {
+      parabolaData.push({ x, y: x * x });
+    }
+    const tangent2Data = [];
+    for (let x = 0.5; x <= 3.2; x += 0.1) {
+      tangent2Data.push({ x, y: 4 * x - 4 });
+    }
+    const tangent4Data = [];
+    for (let x = 2; x <= 5; x += 0.1) {
+      tangent4Data.push({ x, y: 8 * x - 16 });
+    }
+
+    const ctx = document.getElementById('chart').getContext('2d');
+    const fontColor = '#9ca3af';
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: [
+          {
+            label: 'y = x²',
+            data: parabolaData,
+            borderColor: '#4ade80',
+            backgroundColor: 'transparent',
+            borderWidth: 2.5,
+            fill: false,
+            pointRadius: 0,
+            tension: 0
+          },
+          {
+            label: 'касательная в (2, 4)',
+            data: tangent2Data,
+            borderColor: '#f97316',
+            backgroundColor: 'transparent',
+            borderWidth: 2,
+            borderDash: [6, 4],
+            fill: false,
+            pointRadius: 0,
+            tension: 0
+          },
+          {
+            label: 'касательная в (4, 16)',
+            data: tangent4Data,
+            borderColor: '#60a5fa',
+            backgroundColor: 'transparent',
+            borderWidth: 2,
+            borderDash: [4, 4],
+            fill: false,
+            pointRadius: 0,
+            tension: 0
+          },
+          {
+            label: '(2, 4)',
+            data: [{ x: 2, y: 4 }],
+            borderColor: '#f97316',
+            backgroundColor: '#f97316',
+            borderWidth: 2,
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            showLine: false,
+            tension: 0
+          },
+          {
+            label: '(4, 16)',
+            data: [{ x: 4, y: 16 }],
+            borderColor: '#60a5fa',
+            backgroundColor: '#60a5fa',
+            borderWidth: 2,
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            showLine: false,
+            tension: 0
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 4/3,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: c => `(${c.parsed.x}, ${c.parsed.y})`
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            min: -0.2,
+            max: 5.2,
+            grid: { color: '#333', drawBorder: true },
+            ticks: {
+              color: fontColor,
+              stepSize: 1,
+              callback: v => Number.isInteger(v) ? v : ''
+            }
+          },
+          y: {
+            min: -2,
+            max: 28,
+            grid: { color: '#333', drawBorder: true },
+            ticks: {
+              color: fontColor,
+              stepSize: 4
+            }
+          }
+        }
+      },
+      plugins: [{
+        id: 'pointLabels',
+        afterDraw: chart => {
+          const ctx = chart.ctx;
+          const meta2 = chart.getDatasetMeta(3);
+          const meta4 = chart.getDatasetMeta(4);
+          ctx.save();
+          if (meta2.data[0]) {
+            const pt = meta2.data[0];
+            ctx.fillStyle = '#fdba74';
+            ctx.font = '500 11px system-ui';
+            ctx.fillText('(2, 4), наклон 4', pt.x + 10, pt.y - 8);
+          }
+          if (meta4.data[0]) {
+            const pt = meta4.data[0];
+            ctx.fillStyle = '#93c5fd';
+            ctx.font = '500 11px system-ui';
+            ctx.fillText('(4, 16), наклон 8', pt.x + 10, pt.y - 8);
+          }
+          ctx.restore();
+        }
+      }]
+    });
+  </script>
+</body>
+</html>

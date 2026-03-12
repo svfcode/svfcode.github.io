@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Прямая y = 3x − 1</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow: hidden; height: 100%; }
+    body { background: #1a1a1a; font-family: system-ui, sans-serif; padding: 8px; display: flex; flex-direction: column; }
+    .chart-wrap { flex: 1; min-height: 0; position: relative; }
+    .caption { font-size: 11px; margin-top: 6px; opacity: 0.8; text-align: center; color: #9ca3af; }
+  </style>
+</head>
+<body>
+  <div class="chart-wrap">
+    <canvas id="chart"></canvas>
+  </div>
+  <p class="caption">Наклон (производная) во всех точках равен 3</p>
+  <script>
+    const f = x => 3 * x - 1;
+    const linearData = [];
+    for (let x = -1; x <= 11; x += 0.5) linearData.push({ x, y: f(x) });
+    const highlightIdx = linearData.findIndex(p => Math.abs(p.x - 5) < 0.1);
+
+    const ctx = document.getElementById('chart').getContext('2d');
+    const fontColor = '#9ca3af';
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: [{
+          label: 'y = 3x − 1',
+          data: linearData,
+          borderColor: '#60a5fa',
+          backgroundColor: 'transparent',
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: linearData.map((_, i) => i === highlightIdx ? 6 : 0),
+          pointHoverRadius: 8,
+          pointBackgroundColor: '#60a5fa',
+          pointBorderColor: '#93c5fd',
+          pointBorderWidth: 2,
+          tension: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 2,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: c => `(${c.parsed.x}, ${c.parsed.y})`
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            min: -1,
+            max: 11,
+            grid: { color: '#333', drawBorder: true },
+            ticks: {
+              color: fontColor,
+              stepSize: 2,
+              callback: v => Number.isInteger(v) ? v : ''
+            }
+          },
+          y: {
+            min: -5,
+            max: 35,
+            grid: { color: '#333', drawBorder: true },
+            ticks: {
+              color: fontColor,
+              stepSize: 5
+            }
+          }
+        }
+      },
+      plugins: [{
+        id: 'pointLabel',
+        afterDraw: chart => {
+          const ctx = chart.ctx;
+          const pt = chart.getDatasetMeta(0).data[highlightIdx];
+          if (pt) {
+            ctx.save();
+            ctx.fillStyle = '#93c5fd';
+            ctx.font = '500 11px system-ui';
+            ctx.fillText('(5, 14)', pt.x + 10, pt.y - 8);
+            ctx.font = '11px system-ui';
+            ctx.fillText('y = 3x − 1, наклон везде 3', pt.x + 50, pt.y + 15);
+            ctx.restore();
+          }
+        }
+      }]
+    });
+  </script>
+</body>
+</html>

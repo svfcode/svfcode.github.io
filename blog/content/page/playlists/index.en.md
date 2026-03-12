@@ -25,3 +25,14 @@ menu:
   - 🏷️ Terms: scaling, reward hacking, world model, guardrail, AGI, anthropomorphism
   - 📊 Difficulty: intermediate
   - 📋 Prerequisites: AI basics
+
+## 📐 Essential Mathematics
+
+- **[Essential Mathematics — Overview](/en/p/math-essentials-overview/)**
+  - 📋 Overview: which math areas are needed for AI/ML and why
+  - 🏷️ Linear algebra, calculus, probability and statistics
+  - 📊 Difficulty: basic
+- **[Math Analysis — Derivatives](/en/p/math-derivatives/)**
+  - 📋 Derivative, gradient, chain rule — backbone of neural network training
+  - 🏷️ Gradient descent, backpropagation
+  - 📊 Difficulty: basic

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Computer Vision on Blog</title>
+        <link>http://localhost:1313/en/tags/computer-vision/</link>
+        <description>Recent content in Computer Vision on Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Wed, 12 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/computer-vision/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Essential Mathematics — Overview</title>
+        <link>http://localhost:1313/en/p/math-essentials-overview/</link>
+        <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-essentials-overview/</guid>
+        <description>&lt;p&gt;This is the intro to the «Essential Mathematics» series — an overview of which math areas are needed for AI and machine learning, and what they are used for.&lt;/p&gt;
+&lt;h2 id=&#34;linear-algebra&#34;&gt;Linear Algebra&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; vectors, matrices, matrix multiplication, linear transformations, dot product, vector norm, eigenvalues and eigenvectors (advanced).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vectors — the basic way to represent data: a word, an image, or a model&amp;rsquo;s «thought» is encoded as a vector of numbers&lt;/li&gt;
+&lt;li&gt;Matrices — all neural network operations (convolutions, attention, linear layers) boil down to matrix multiplication&lt;/li&gt;
+&lt;li&gt;Linear transformations — understanding how a layer «mixes» and combines features&lt;/li&gt;
+&lt;li&gt;Without linear algebra you cannot read formulas in papers or understand what the code does (e.g. &lt;code&gt;W @ x&lt;/code&gt; is weight matrix times input vector)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;derivatives&#34;&gt;Derivatives&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; derivatives, partial derivatives, gradient, chain rule, function optimization.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neural networks are trained via gradient descent: we move weights in the direction that reduces the error&lt;/li&gt;
+&lt;li&gt;Gradient — a vector of partial derivatives showing which way to «tweak» each parameter&lt;/li&gt;
+&lt;li&gt;Chain rule is the backbone of backpropagation — the algorithm that computes gradients for all layers&lt;/li&gt;
+&lt;li&gt;Without calculus you cannot understand where weight updates come from or why training works at all&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;probability-and-statistics&#34;&gt;Probability and Statistics&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; distributions (normal, Bernoulli, etc.), expectation, variance, conditional probability, Bayes&amp;rsquo; theorem, maximum likelihood estimation (MLE).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Models are often formulated probabilistically: «probability of the next word», «how confident is the model»&lt;/li&gt;
+&lt;li&gt;Loss functions often derive from likelihood (cross-entropy, MSE, etc.)&lt;/li&gt;
+&lt;li&gt;Statistics for working with data: normalization, quality assessment, understanding metrics (precision, recall, AUC)&lt;/li&gt;
+&lt;li&gt;Bayes — foundation of many classical algorithms and the way to «update beliefs» on new data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;computer-vision-cv&#34;&gt;Computer Vision (CV)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;On top of the general minimum:&lt;/strong&gt; discrete convolution (2D), affine and projective transformations, basic image geometry (camera calibration, epipolar geometry).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Convolution — the core of CNNs: understanding how a filter «slides» over an image, and what kernel, padding, stride mean&lt;/li&gt;
+&lt;li&gt;Affine transformations (rotation, scale, shift) — for augmentations and understanding invariance&lt;/li&gt;
+&lt;li&gt;Projective geometry and homographies — for stereo vision, 3D reconstruction, AR&lt;/li&gt;
+&lt;li&gt;For classical methods (SIFT, optical flow) — image derivatives and per-pixel gradients are useful&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;optional-but-helpful&#34;&gt;Optional but helpful&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Information theory&lt;/strong&gt; (entropy, cross-entropy) — deeper understanding of loss functions and data compression&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Convex optimization&lt;/strong&gt; — when the problem is «nice» and when SGD converges&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Differential geometry&lt;/strong&gt; — for advanced topics (diffusion models, representations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;practical-minimum&#34;&gt;Practical minimum&lt;/h2&gt;
+&lt;p&gt;To comfortably read papers and code:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Be able to multiply matrices and understand what a linear layer does&lt;/li&gt;
+&lt;li&gt;Understand what a gradient is and why it matters for training&lt;/li&gt;
+&lt;li&gt;Know basic distributions and quality metrics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can pick up the rest as needed — when it appears in a specific problem or paper.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;code&gt;W @ x&lt;/code&gt; — in Python (NumPy, PyTorch) the matrix multiplication operator: the weight matrix W is multiplied by the input vector x. The result is the output vector. A linear layer essentially computes &lt;code&gt;W·x + b&lt;/code&gt;.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

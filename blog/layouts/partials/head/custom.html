@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
 
+{{- if .Param "math" -}}
+  {{- partialCached "math.html" . -}}
+{{- end -}}
+
 {{- with .Site.Params.yandexMetrika -}}
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">

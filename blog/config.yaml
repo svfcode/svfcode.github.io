@@ -14,6 +14,18 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - '\['
+              - '\]'
+            - - '$$'
+              - '$$'
+          inline:
+            - - '\('
+              - '\)'
 
 languages:
     en:
@@ -29,6 +41,7 @@ languages:
 
 params:
     yandexMetrika: 107089384
+    math: true
 
     sidebar:
         # emoji: 🍥

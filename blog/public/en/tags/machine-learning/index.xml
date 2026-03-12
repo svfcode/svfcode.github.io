@@ -6,7 +6,133 @@
         <description>Recent content in Machine Learning on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 12 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Essential Mathematics — Overview</title>
+        <link>http://localhost:1313/en/p/math-essentials-overview/</link>
+        <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-essentials-overview/</guid>
+        <description>&lt;p&gt;This is the intro to the «Essential Mathematics» series — an overview of which math areas are needed for AI and machine learning, and what they are used for.&lt;/p&gt;
+&lt;h2 id=&#34;linear-algebra&#34;&gt;Linear Algebra&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; vectors, matrices, matrix multiplication, linear transformations, dot product, vector norm, eigenvalues and eigenvectors (advanced).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vectors — the basic way to represent data: a word, an image, or a model&amp;rsquo;s «thought» is encoded as a vector of numbers&lt;/li&gt;
+&lt;li&gt;Matrices — all neural network operations (convolutions, attention, linear layers) boil down to matrix multiplication&lt;/li&gt;
+&lt;li&gt;Linear transformations — understanding how a layer «mixes» and combines features&lt;/li&gt;
+&lt;li&gt;Without linear algebra you cannot read formulas in papers or understand what the code does (e.g. &lt;code&gt;W @ x&lt;/code&gt; is weight matrix times input vector)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;derivatives&#34;&gt;Derivatives&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; derivatives, partial derivatives, gradient, chain rule, function optimization.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neural networks are trained via gradient descent: we move weights in the direction that reduces the error&lt;/li&gt;
+&lt;li&gt;Gradient — a vector of partial derivatives showing which way to «tweak» each parameter&lt;/li&gt;
+&lt;li&gt;Chain rule is the backbone of backpropagation — the algorithm that computes gradients for all layers&lt;/li&gt;
+&lt;li&gt;Without calculus you cannot understand where weight updates come from or why training works at all&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;probability-and-statistics&#34;&gt;Probability and Statistics&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; distributions (normal, Bernoulli, etc.), expectation, variance, conditional probability, Bayes&amp;rsquo; theorem, maximum likelihood estimation (MLE).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Models are often formulated probabilistically: «probability of the next word», «how confident is the model»&lt;/li&gt;
+&lt;li&gt;Loss functions often derive from likelihood (cross-entropy, MSE, etc.)&lt;/li&gt;
+&lt;li&gt;Statistics for working with data: normalization, quality assessment, understanding metrics (precision, recall, AUC)&lt;/li&gt;
+&lt;li&gt;Bayes — foundation of many classical algorithms and the way to «update beliefs» on new data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;computer-vision-cv&#34;&gt;Computer Vision (CV)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;On top of the general minimum:&lt;/strong&gt; discrete convolution (2D), affine and projective transformations, basic image geometry (camera calibration, epipolar geometry).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Convolution — the core of CNNs: understanding how a filter «slides» over an image, and what kernel, padding, stride mean&lt;/li&gt;
+&lt;li&gt;Affine transformations (rotation, scale, shift) — for augmentations and understanding invariance&lt;/li&gt;
+&lt;li&gt;Projective geometry and homographies — for stereo vision, 3D reconstruction, AR&lt;/li&gt;
+&lt;li&gt;For classical methods (SIFT, optical flow) — image derivatives and per-pixel gradients are useful&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;optional-but-helpful&#34;&gt;Optional but helpful&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Information theory&lt;/strong&gt; (entropy, cross-entropy) — deeper understanding of loss functions and data compression&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Convex optimization&lt;/strong&gt; — when the problem is «nice» and when SGD converges&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Differential geometry&lt;/strong&gt; — for advanced topics (diffusion models, representations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;practical-minimum&#34;&gt;Practical minimum&lt;/h2&gt;
+&lt;p&gt;To comfortably read papers and code:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Be able to multiply matrices and understand what a linear layer does&lt;/li&gt;
+&lt;li&gt;Understand what a gradient is and why it matters for training&lt;/li&gt;
+&lt;li&gt;Know basic distributions and quality metrics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can pick up the rest as needed — when it appears in a specific problem or paper.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;code&gt;W @ x&lt;/code&gt; — in Python (NumPy, PyTorch) the matrix multiplication operator: the weight matrix W is multiplied by the input vector x. The result is the output vector. A linear layer essentially computes &lt;code&gt;W·x + b&lt;/code&gt;.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>Math Analysis — Derivatives</title>
+        <link>http://localhost:1313/en/p/math-derivatives/</link>
+        <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-derivatives/</guid>
+        <description>&lt;p&gt;Second article in the «Essential Mathematics» series — on derivatives, gradient, and chain rule. Without this you can&amp;rsquo;t understand how neural networks learn.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-a-derivative&#34;&gt;What is a derivative&lt;/h2&gt;
+&lt;p&gt;The derivative of a function at a point shows the &lt;strong&gt;rate of change&lt;/strong&gt;: how fast the function grows (or decreases) for a small shift in the argument.&lt;/p&gt;
+&lt;p&gt;For a single-variable function \( f(x) \), the derivative \( f&#39;(x) \) is the limit of the ratio of the change in \( f \) to the change in \( x \) as the change goes to zero:&lt;/p&gt;
+\[
+f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\]&lt;p&gt;Geometrically — the slope of the tangent line at \( x \):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\( f&#39;(x) &gt; 0 \) — function is increasing&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) &lt; 0 \) — function is decreasing&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) = 0 \) — possible minimum or maximum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Why it matters in ML:&lt;/strong&gt; training is minimization of the loss function. We need to know which direction to change the weights so that the loss decreases. The derivative points in the direction of increase; we go the opposite way so the loss drops.&lt;/p&gt;
+&lt;h2 id=&#34;partial-derivative&#34;&gt;Partial derivative&lt;/h2&gt;
+&lt;p&gt;A neural network has many weights — the loss depends on thousands or millions of variables. We need to know how the loss changes when we change &lt;strong&gt;each&lt;/strong&gt; weight separately.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;partial derivative&lt;/strong&gt; \( \frac{\partial f}{\partial x} \) — the derivative with respect to one variable, treating the others as constants.&lt;/p&gt;
+&lt;p&gt;Example: \( f(x, y) = x^2 + xy \)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\( \frac{\partial f}{\partial x} = 2x + y \)&lt;/li&gt;
+&lt;li&gt;\( \frac{\partial f}{\partial y} = x \)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;gradient&#34;&gt;Gradient&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;gradient&lt;/strong&gt; \( \nabla f \) — the vector of all partial derivatives:&lt;/p&gt;
+\[
+\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right)
+\]&lt;p&gt;The gradient points in the direction of &lt;strong&gt;steepest increase&lt;/strong&gt; of the function. So \( -\nabla f \) is the direction of steepest &lt;strong&gt;decrease&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gradient descent&lt;/strong&gt; — iterative weight updates:&lt;/p&gt;
+\[
+w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
+\]&lt;p&gt;where \( \alpha \) is the learning rate (step size), \( L \) is the loss. We move in the direction opposite to the gradient so the loss decreases.&lt;/p&gt;
+&lt;h2 id=&#34;chain-rule&#34;&gt;Chain rule&lt;/h2&gt;
+&lt;p&gt;A neural network is a chain of layers: each layer&amp;rsquo;s output is fed to the next. The loss depends on the outputs, and those depend on the weights. To get \( \frac{\partial L}{\partial w} \), we need to «propagate» the derivative backward through this chain.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Chain rule&lt;/strong&gt; for composed functions: if \( z = f(y) \) and \( y = g(x) \), then&lt;/p&gt;
+\[
+\frac{dz}{dx} = \frac{dz}{dy} \cdot \frac{dy}{dx}
+\]&lt;p&gt;For many variables it works the same way: the derivative with respect to an earlier layer&amp;rsquo;s weight is the product of derivatives along the path from that weight to the loss.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Backpropagation&lt;/strong&gt; — the algorithm that does this efficiently: one backward pass through the network computes all needed gradients at once.&lt;/p&gt;
+&lt;h2 id=&#34;example-linear-regression&#34;&gt;Example: linear regression&lt;/h2&gt;
+&lt;p&gt;Loss — mean squared error: \( L = \frac{1}{2}(y - \hat{y})^2 \), where \( \hat{y} = wx + b \).&lt;/p&gt;
+\[
+\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial w} = -(y - \hat{y}) \cdot x
+\]&lt;p&gt;The larger the error \( (y - \hat{y}) \) and the larger \( x \), the more we adjust \( w \). Makes sense: a big error and an «important» input require a larger update.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Derivative&lt;/strong&gt; — rate of change, direction of increase&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Partial derivative&lt;/strong&gt; — with respect to one variable, others fixed&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gradient&lt;/strong&gt; — vector of partial derivatives, direction of steepest increase&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chain rule&lt;/strong&gt; — how to compute derivatives along a chain of layers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gradient descent&lt;/strong&gt; — update weights in the \( -\nabla L \) direction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PyTorch, TensorFlow, etc. compute gradients automatically (autograd) — but understanding what happens under the hood helps when you hit «exploding gradients» or «model won&amp;rsquo;t learn».&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>The Future of AI: Why Scaling Alone is No Longer Enough</title>
         <link>http://localhost:1313/en/p/ai-future-beyond-scaling/</link>
         <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>

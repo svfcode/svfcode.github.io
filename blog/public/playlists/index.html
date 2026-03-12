@@ -13,7 +13,36 @@
 <meta property='og:site_name' content='Блог'>
 <meta property='og:type' content='article'><meta property='article:section' content='Page' />
 <meta name="twitter:title" content="Плейлисты">
-<meta name="twitter:description" content="Подборки материалов по ИИ и смежным темам"><link rel="stylesheet" href="/css/custom.css">
+<meta name="twitter:description" content="Подборки материалов по ИИ и смежным темам"><link rel="stylesheet" href="/css/custom.css"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      throwOnError: false
+    });
+  });
+</script>
 <script type="text/javascript">
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
@@ -240,6 +269,7 @@
   <ul>
     <li><a href="#-базовый-минимум">📚 Базовый минимум</a></li>
     <li><a href="#-на-их-плечах">👥 На их плечах</a></li>
+    <li><a href="#-необходимая-математика">📐 Необходимая математика</a></li>
   </ul>
 </nav>
         </div>
@@ -343,6 +373,23 @@
 <li>🏷️ Термины: масштабирование, reward hacking, world model, guardrail, AGI, антропоморфизм</li>
 <li>📊 Сложность: средняя</li>
 <li>📋 Необходимые знания: база по ИИ</li>
+</ul>
+</li>
+</ul>
+<h2 id="-необходимая-математика">📐 Необходимая математика</h2>
+<ul>
+<li><strong><a class="link" href="/p/math-essentials-overview/" >Необходимая математика — обзор</a></strong>
+<ul>
+<li>📋 Обзор: какие разделы математики нужны для ИИ/МО и зачем</li>
+<li>🏷️ Линейная алгебра, анализ, вероятность и статистика</li>
+<li>📊 Сложность: базовая</li>
+</ul>
+</li>
+<li><strong><a class="link" href="/p/math-derivatives/" >Мат Анализ — Производные</a></strong>
+<ul>
+<li>📋 Производная, градиент, правило цепочки — основа обучения нейросетей</li>
+<li>🏷️ Градиентный спуск, backpropagation</li>
+<li>📊 Сложность: базовая</li>
 </ul>
 </li>
 </ul>
