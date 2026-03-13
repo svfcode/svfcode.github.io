@@ -6,10 +6,62 @@
         <description>Recent content in Mathematics on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Wed, 12 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/mathematics/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/mathematics/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Math Analysis — Derivatives</title>
+        <link>http://localhost:1313/en/p/math-derivatives/</link>
+        <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-derivatives/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Without this you can&amp;rsquo;t understand how neural networks learn.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A common example is the speed of a car. We&amp;rsquo;ll do the same.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-speed&#34;&gt;What is speed?&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s the ratio of distance to time.&lt;/p&gt;
+&lt;p&gt;A car traveling at an average speed of 60 km/h — if we increase time \( t \) by one unit, distance \( s \) increases by 60 units. If we multiply \( t \) by 10, \( s \) is multiplied by 10 as well. The growth is linear; on a graph it&amp;rsquo;s a straight line.&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;defs&gt;
+    &lt;marker id=&#34;arr-en&#34; markerWidth=&#34;8&#34; markerHeight=&#34;8&#34; refX=&#34;6&#34; refY=&#34;4&#34; orient=&#34;auto&#34;&gt;
+      &lt;polygon points=&#34;0 0, 8 4, 0 8&#34; fill=&#34;#6b7280&#34;/&gt;
+    &lt;/marker&gt;
+  &lt;/defs&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;250&#34; y2=&#34;30&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
+  &lt;text x=&#34;140&#34; y=&#34;85&#34; font-size=&#34;11&#34; fill=&#34;#3b82f6&#34;&gt;s = 60t&lt;/text&gt;
+&lt;/svg&gt;
+&lt;p&gt;But over time the car moves unevenly — speed increases and decreases.&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 30 150 C 90 130, 150 80, 220 50&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;path d=&#34;M 30 150 Q 90 130, 150 140 T 250 50&#34; fill=&#34;none&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34; stroke-dasharray=&#34;6 4&#34;/&gt;
+  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;90&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34; text-anchor=&#34;end&#34;&gt;v&lt;/text&gt;
+  &lt;text x=&#34;160&#34; y=&#34;45&#34; font-size=&#34;10&#34; fill=&#34;#3b82f6&#34;&gt;s(t)&lt;/text&gt;
+  &lt;text x=&#34;200&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34;&gt;v(t)&lt;/text&gt;
+&lt;/svg&gt;
+&lt;details style=&#34;background: rgba(239, 68, 68, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #ef4444;&#34;&gt;
+&lt;summary&gt;Impossible&lt;/summary&gt;
+&lt;p&gt;Distance traveled cannot decrease. Such an s(t) graph would be wrong:&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 0.75em 0;&#34;&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;path d=&#34;M 30 150 C 65 55, 135 142, 250 45&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;25&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
+  &lt;text x=&#34;140&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#ef4444&#34;&gt;s(t) — wrong&lt;/text&gt;
+&lt;/svg&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
         <title>Essential Mathematics — Overview</title>
         <link>http://localhost:1313/en/p/math-essentials-overview/</link>
-        <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/en/p/math-essentials-overview/</guid>
         <description>&lt;p&gt;This is the intro to the «Essential Mathematics» series — an overview of which math areas are needed for AI and machine learning, and what they are used for.&lt;/p&gt;
@@ -75,61 +127,532 @@
         </item>
         <item>
         <title>Math Analysis — Derivatives</title>
-        <link>http://localhost:1313/en/p/math-derivatives/</link>
-        <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+        <link>http://localhost:1313/en/p/math-derivatives-bkp/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/math-derivatives/</guid>
-        <description>&lt;p&gt;Second article in the «Essential Mathematics» series — on derivatives, gradient, and chain rule. Without this you can&amp;rsquo;t understand how neural networks learn.&lt;/p&gt;
+        <guid>http://localhost:1313/en/p/math-derivatives-bkp/</guid>
+        <description>&lt;p&gt;Second article in the «Essential Mathematics» series — on derivatives, gradient, and chain rule.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Without this you can&amp;rsquo;t understand how neural networks learn.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Prerequisites:&lt;/strong&gt; limits — foundation for defining the derivative and continuity.&lt;/p&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#what-is-a-derivative&#34; &gt;What is a derivative&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#simple-explanation&#34; &gt;Simple explanation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#the-simplest-explanation&#34; &gt;The simplest explanation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#rules-and-basics&#34; &gt;Rules and basic derivative facts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#numerical-example-linear-function&#34; &gt;Numerical example: linear function \( g(x) = 3x - 1 \)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#numerical-example-quadratic-function&#34; &gt;Numerical example: quadratic function \( f(x) = x^2 \)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#interactive-exercise&#34; &gt;Interactive exercise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#self-check-tasks&#34; &gt;Self-check tasks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#summary&#34; &gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;what-is-a-derivative&#34;&gt;What is a derivative&lt;/h2&gt;
+&lt;h3 id=&#34;formal-definition&#34;&gt;Formal definition&lt;/h3&gt;
 &lt;p&gt;The derivative of a function at a point shows the &lt;strong&gt;rate of change&lt;/strong&gt;: how fast the function grows (or decreases) for a small shift in the argument.&lt;/p&gt;
 &lt;p&gt;For a single-variable function \( f(x) \), the derivative \( f&#39;(x) \) is the limit of the ratio of the change in \( f \) to the change in \( x \) as the change goes to zero:&lt;/p&gt;
 \[
 f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
-\]&lt;p&gt;Geometrically — the slope of the tangent line at \( x \):&lt;/p&gt;
+\]&lt;p&gt;Here \( \Delta x \) is the increment of the argument (a small step). In the examples below we use \( h \) for the same quantity.&lt;/p&gt;
+&lt;p&gt;Geometrically — the slope of the tangent line at \( x \):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;\( f&#39;(x) &gt; 0 \) — function is increasing&lt;/li&gt;
 &lt;li&gt;\( f&#39;(x) &lt; 0 \) — function is decreasing&lt;/li&gt;
 &lt;li&gt;\( f&#39;(x) = 0 \) — possible minimum or maximum&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Why it matters in ML:&lt;/strong&gt; training is minimization of the loss function. We need to know which direction to change the weights so that the loss decreases. The derivative points in the direction of increase; we go the opposite way so the loss drops.&lt;/p&gt;
-&lt;h2 id=&#34;partial-derivative&#34;&gt;Partial derivative&lt;/h2&gt;
-&lt;p&gt;A neural network has many weights — the loss depends on thousands or millions of variables. We need to know how the loss changes when we change &lt;strong&gt;each&lt;/strong&gt; weight separately.&lt;/p&gt;
-&lt;p&gt;A &lt;strong&gt;partial derivative&lt;/strong&gt; \( \frac{\partial f}{\partial x} \) — the derivative with respect to one variable, treating the others as constants.&lt;/p&gt;
-&lt;p&gt;Example: \( f(x, y) = x^2 + xy \)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If it didn&amp;rsquo;t click — open the simple explanation.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;simple-explanation&#34;&gt;Simple explanation&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Simple explanation&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;The speedometer&lt;/strong&gt; — that&amp;rsquo;s essentially a derivative: how fast the distance traveled changes. Accelerating — speed goes up. Braking — it drops. So the derivative answers: &amp;ldquo;how much does one quantity change when you change another one a little?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A hill.&lt;/strong&gt; The steepness of a slope — &amp;ldquo;how far down you go when you take a step forward.&amp;rdquo; Steep slope — large derivative. Gentle — small. Flat road — zero.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A function graph.&lt;/strong&gt; If you have a graph \( y = f(x) \), the derivative at a point is the &lt;strong&gt;slope&lt;/strong&gt; of the graph at that point. For a straight line \( y = kx + b \) the slope is the familiar coefficient \( k \). For a curve, each point has its own slope — that&amp;rsquo;s the derivative.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;\( \frac{\partial f}{\partial x} = 2x + y \)&lt;/li&gt;
-&lt;li&gt;\( \frac{\partial f}{\partial y} = x \)&lt;/li&gt;
+&lt;li&gt;Graph steeply going up → positive derivative&lt;/li&gt;
+&lt;li&gt;Going down → negative derivative&lt;/li&gt;
+&lt;li&gt;Flat (top or bottom) → derivative equals zero&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;gradient&#34;&gt;Gradient&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;gradient&lt;/strong&gt; \( \nabla f \) — the vector of all partial derivatives:&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;em&gt;If it&amp;rsquo;s still not crystal clear — open the simplest explanation.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-simplest-explanation&#34;&gt;The simplest explanation&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;The simplest explanation&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;A car drives at constant speed.&lt;/strong&gt; Distance \( s \) (km) depends on time \( t \) (h): \( s(t) = 60t \). In one hour we cover 60 km.&lt;/p&gt;
+&lt;p&gt;Speed is &amp;ldquo;how many km per hour.&amp;rdquo; The ratio of change in distance to change in time:&lt;/p&gt;
 \[
-\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right)
-\]&lt;p&gt;The gradient points in the direction of &lt;strong&gt;steepest increase&lt;/strong&gt; of the function. So \( -\nabla f \) is the direction of steepest &lt;strong&gt;decrease&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Gradient descent&lt;/strong&gt; — iterative weight updates:&lt;/p&gt;
+\text{speed} = \frac{s(1) - s(0)}{1 - 0} = \frac{60 - 0}{1} = 60 \text{ km/h}
+\]&lt;p&gt;That&amp;rsquo;s the derivative: the &lt;strong&gt;rate of change&lt;/strong&gt; of one quantity (distance) with respect to another (time).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Numeric example:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( t \) (h)&lt;/th&gt;
+          &lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
+          &lt;th&gt;\( s(t+0.5) - s(t) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;120&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Everywhere we get 60. &lt;strong&gt;Yes: 60 (the speed in km/h) is the derivative&lt;/strong&gt; — \( s&#39;(t) = 60 \). It&amp;rsquo;s constant because the speed doesn&amp;rsquo;t change.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The graph&lt;/strong&gt; — a straight line. The slope of this line is also 60 — the same number:&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;What if the speed varied?&lt;/strong&gt; First 30 min at 40 km/h, next 30 min at 80 km/h. Total: 20 + 40 = 60 km in 1 h. &lt;strong&gt;Average&lt;/strong&gt; speed is 60 km/h — but at each moment it was either 40 or 80.&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-piecewise.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of s(t) and s&#39;(t): smooth acceleration&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;The graph shows a smooth variant: speed increases from 40 to 80 km/h. Green curve — distance s(t), dashed line — derivative s&amp;rsquo;(t) (instantaneous speed).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;We compute the &lt;strong&gt;instantaneous&lt;/strong&gt; speed (derivative) at several points — using \( \frac{s(t+h) - s(t)}{h} \) with small \( h = 0.1 \) h:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( t \) (h)&lt;/th&gt;
+          &lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
+          &lt;th&gt;\( s(t+0.1) - s(t) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.1&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.25&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.5&lt;/td&gt;
+          &lt;td&gt;20&lt;/td&gt;
+          &lt;td&gt;—&lt;/td&gt;
+          &lt;td&gt;40 (from left) / &lt;strong&gt;80&lt;/strong&gt; (from right)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.75&lt;/td&gt;
+          &lt;td&gt;40&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In the first half-hour the derivative is 40 everywhere; in the second, 80. At \( t = 0.5 \) the graph has a &amp;ldquo;kink&amp;rdquo;: slope 40 on the left, 80 on the right. The average 60 is just an average over the whole trip; the derivative tells you the speed &lt;strong&gt;at that exact moment&lt;/strong&gt;.&lt;/p&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;rules-and-basics&#34;&gt;Rules and basic derivative facts&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Main rules and facts&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;The derivative is the rate of change.&lt;/strong&gt; How fast the function grows (or decreases) for a small shift in the argument. Geometrically — the &lt;strong&gt;slope of the tangent&lt;/strong&gt; to the graph.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sign and behavior:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\( f&#39;(x) &gt; 0 \) — function is increasing&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) &lt; 0 \) — function is decreasing&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) = 0 \) — possible minimum or maximum (peak, valley)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Main rules (brief):&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Function&lt;/th&gt;
+          &lt;th&gt;Derivative&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( C \) (constant)&lt;/td&gt;
+          &lt;td&gt;\( 0 \)&lt;/td&gt;
+          &lt;td&gt;constant does not change; rate of change is zero&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( x \)&lt;/td&gt;
+          &lt;td&gt;\( 1 \)&lt;/td&gt;
+          &lt;td&gt;linear growth at rate 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( x^n \)&lt;/td&gt;
+          &lt;td&gt;\( n \cdot x^{n-1} \)&lt;/td&gt;
+          &lt;td&gt;exponent &amp;ldquo;comes down&amp;rdquo; as factor; power decreases by 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( kx + b \)&lt;/td&gt;
+          &lt;td&gt;\( k \)&lt;/td&gt;
+          &lt;td&gt;linear function: slope equals coefficient \( k \)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( f + g \)&lt;/td&gt;
+          &lt;td&gt;\( f&#39; + g&#39; \)&lt;/td&gt;
+          &lt;td&gt;derivative of sum equals sum of derivatives&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( C \cdot f \)&lt;/td&gt;
+          &lt;td&gt;\( C \cdot f&#39; \)&lt;/td&gt;
+          &lt;td&gt;constant can be factored out of the derivative&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; \( (5)&#39; = 0 \), \( (x^2)&#39; = 2x \), \( (x^3)&#39; = 3x^2 \), \( (7x - 2)&#39; = 7 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why it matters in ML:&lt;/strong&gt; training minimizes the loss. The derivative points in the direction of increase; gradient descent moves the opposite way (\( -\nabla L \))&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; so the loss decreases.&lt;/p&gt;
+&lt;details style=&#34;background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;&#34;&gt;
+&lt;summary&gt;Why \( (x^n)&#39; = n \cdot x^{n-1} \)?&lt;/summary&gt;
+&lt;p&gt;For natural \( n \) we can derive from the definition. Example for \( n = 2 \):&lt;/p&gt;
 \[
-w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
-\]&lt;p&gt;where \( \alpha \) is the learning rate (step size), \( L \) is the loss. We move in the direction opposite to the gradient so the loss decreases.&lt;/p&gt;
-&lt;h2 id=&#34;chain-rule&#34;&gt;Chain rule&lt;/h2&gt;
-&lt;p&gt;A neural network is a chain of layers: each layer&amp;rsquo;s output is fed to the next. The loss depends on the outputs, and those depend on the weights. To get \( \frac{\partial L}{\partial w} \), we need to «propagate» the derivative backward through this chain.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Chain rule&lt;/strong&gt; for composed functions: if \( z = f(y) \) and \( y = g(x) \), then&lt;/p&gt;
+\frac{(x+h)^2 - x^2}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = 2x + h \to 2x
+\]&lt;p&gt;As \( h \to 0 \) we get \( (x^2)&#39; = 2x \). For \( n = 3 \): expanding \( (x+h)^3 \), the \( h^2 \) term vanishes in the limit, leaving \( 3x^2 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Intuition:&lt;/strong&gt; the power \( n \) «comes down» as a multiplier; the exponent drops by 1. Higher power means steeper growth — so the derivative has \( n \) and \( x^{n-1} \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example: parabola \( y = x^2 \)&lt;/strong&gt; — in detail&lt;/p&gt;
+&lt;p&gt;For \( f(x) = x^2 \) the formula gives \( f&#39;(x) = 2x \). Each point has its own slope:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Point \( x \)&lt;/th&gt;
+          &lt;th&gt;\( f(x) = x^2 \)&lt;/th&gt;
+          &lt;th&gt;\( f&#39;(x) = 2x \) (slope)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;16&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;At \( x = 2 \): the parabola is tangent to a line with slope 4 (tangent \( y = 4x - 4 \) passes through (2, 4)).&lt;br&gt;
+At \( x = 4 \): slope is 8 — the parabola is steeper, tangent \( y = 8x - 16 \).&lt;br&gt;
+At \( x = 0 \): vertex of the parabola, slope 0 — tangent is horizontal.&lt;/p&gt;
+&lt;div style=&#34;margin: 0.75em 0; aspect-ratio: 320/240; min-height: 200px; max-height: 400px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Parabola y = x² and tangents&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;On the graph:&lt;/em&gt; green curve — \( y = x^2 \); dashed lines — tangents at (2, 4) and (4, 16). Slopes 4 and 8 match \( f&#39;(2) = 4 \), \( f&#39;(4) = 8 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example: square&lt;/strong&gt; — \( x \) as side length, area \( A(x) = x^2 \)&lt;/p&gt;
+&lt;p&gt;ΔA is the increment (change) of area A. If area is given by function \( A(x) \), then:
+&lt;/p&gt;
 \[
-\frac{dz}{dx} = \frac{dz}{dy} \cdot \frac{dy}{dx}
-\]&lt;p&gt;For many variables it works the same way: the derivative with respect to an earlier layer&amp;rsquo;s weight is the product of derivatives along the path from that weight to the loss.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Backpropagation&lt;/strong&gt; — the algorithm that does this efficiently: one backward pass through the network computes all needed gradients at once.&lt;/p&gt;
-&lt;h2 id=&#34;example-linear-regression&#34;&gt;Example: linear regression&lt;/h2&gt;
-&lt;p&gt;Loss — mean squared error: \( L = \frac{1}{2}(y - \hat{y})^2 \), where \( \hat{y} = wx + b \).&lt;/p&gt;
+\Delta A = A(x + \Delta x) - A(x)
+\]&lt;p&gt;
+So ΔA is how much area is added when side \( x \) increases by Δx.&lt;/p&gt;
+&lt;p&gt;Increase the side by \( \Delta x \). To the original square we add: two &amp;ldquo;strips&amp;rdquo; of area \( x \cdot \Delta x \) (right and top) and a small square \( (\Delta x)^2 \) in the corner. So:
+&lt;/p&gt;
 \[
-\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial w} = -(y - \hat{y}) \cdot x
-\]&lt;p&gt;The larger the error \( (y - \hat{y}) \) and the larger \( x \), the more we adjust \( w \). Makes sense: a big error and an «important» input require a larger update.&lt;/p&gt;
+\Delta A = 2x \cdot \Delta x + (\Delta x)^2,\quad \frac{\Delta A}{\Delta x} = 2x + \Delta x \to 2x
+\]&lt;p&gt;
+as \( \Delta x \to 0 \). Derivative \( A&#39;(x) = 2x \) — for the same \( \Delta x \), larger \( x \) gives more area gain.&lt;/p&gt;
+&lt;div style=&#34;margin: 0.75em 0; min-height: 360px;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-square-area-en.html&#34; style=&#34;width: 100%; height: 360px; border: none; display: block; background: #1a1a1a; border-radius: 8px;&#34; title=&#34;Square: area and increment&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Change x and Δx&lt;/em&gt; — observe how the &amp;ldquo;strips&amp;rdquo; and \( \Delta A / \Delta x \approx 2x \) change.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s important to distinguish two cases.&lt;/p&gt;
+&lt;p&gt;\( \Delta A/\Delta x \approx 2x \) — yes, this is an approximation. It holds when \( \Delta x \) is small but nonzero. The smaller \( \Delta x \), the more accurate:
+&lt;/p&gt;
+\[
+\frac{\Delta A}{\Delta x} = 2x + \Delta x \approx 2x \quad \text{for small } \Delta x
+\]&lt;p&gt;The formula \( (x^n)&#39; = nx^{n-1} \) — this is not an approximation, but an exact expression. The derivative is defined as the limit:
+&lt;/p&gt;
+\[
+f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\]&lt;p&gt;
+We take this limit first, then obtain the exact formula.&lt;/p&gt;
+&lt;p&gt;\( \Delta A/\Delta x \) — approximation, because \( \Delta x \) is still finite. \( A&#39;(x) = 2x \) and \( (x^n)&#39; = nx^{n-1} \) — exact formulas, because they are the result of the limit \( \Delta x \to 0 \).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In short:&lt;/em&gt; approximation applies to finite differences; the derivatives themselves and their formulas are exact.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details style=&#34;background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;&#34;&gt;
+&lt;summary&gt;Why \( (C \cdot f)&#39; = C \cdot f&#39; \)?&lt;/summary&gt;
+&lt;p&gt;The constant can be factored out of the derivative because it does not depend on \( x \) and merely scales the rate of change of the function.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;From the definition:&lt;/strong&gt;
+&lt;/p&gt;
+\[
+(C \cdot f)&#39;(x) = \lim_{h \to 0} \frac{C \cdot f(x+h) - C \cdot f(x)}{h} = C \cdot \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = C \cdot f&#39;(x)
+\]&lt;p&gt;The constant \( C \) does not depend on \( h \), so it can be taken outside the limit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; \( (5x^2)&#39; = 5 \cdot 2x = 10x \), \( (-3x^3)&#39; = -3 \cdot 3x^2 = -9x^2 \).&lt;/p&gt;
+&lt;/details&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;em&gt;Now a few numerical examples.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;numerical-example-linear-function&#34;&gt;Numerical example: linear function \( g(x) = 3x - 1 \)&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Numerical example: linear function \( g(x) = 3x - 1 \)&lt;/summary&gt;
+&lt;p&gt;For a straight line the slope is the same everywhere. At any point, e.g. \( x = 5 \):&lt;/p&gt;
+\[
+\frac{g(5 + h) - g(5)}{h} = \frac{(3(5+h) - 1) - g(5)}{h} = \frac{14 + 3h - 14}{h} = \frac{3h}{h} = 3
+\]&lt;p&gt;
+where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
+&lt;p&gt;For any \( h \neq 0 \) we get &lt;strong&gt;3&lt;/strong&gt; — the derivative is constant, same as the coefficient of \( x \) in the line equation.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( x \)&lt;/th&gt;
+          &lt;th&gt;\( g(x) \)&lt;/th&gt;
+          &lt;th&gt;\( g(x+0.1) - g(x) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{g(x+0.1)-g(x)}{0.1} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;0.3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;29&lt;/td&gt;
+          &lt;td&gt;0.3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-2&lt;/td&gt;
+          &lt;td&gt;-7&lt;/td&gt;
+          &lt;td&gt;0.3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;numerical-example-quadratic-function&#34;&gt;Numerical example: quadratic function \( f(x) = x^2 \)&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Numerical example: quadratic function \( f(x) = x^2 \)&lt;/summary&gt;
+&lt;p&gt;Approximate the derivative at \( x = 2 \) using &amp;ldquo;change in \( f \) over change in \( x \)&amp;rdquo;. Take a small step \( h \):&lt;/p&gt;
+\[
+\frac{f(2 + h) - f(2)}{h} = \frac{(2+h)^2 - 4}{h}
+\]&lt;p&gt;&lt;strong&gt;At \( x = 2 \)&lt;/strong&gt; (\( f(2) = 4 \)):&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( h \)&lt;/th&gt;
+          &lt;th&gt;\( f(2+h) \)&lt;/th&gt;
+          &lt;th&gt;\( f(2+h) - f(2) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{f(2+h)-f(2)}{h} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.1&lt;/td&gt;
+          &lt;td&gt;4.41&lt;/td&gt;
+          &lt;td&gt;0.41&lt;/td&gt;
+          &lt;td&gt;4.1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.01&lt;/td&gt;
+          &lt;td&gt;4.0401&lt;/td&gt;
+          &lt;td&gt;0.0401&lt;/td&gt;
+          &lt;td&gt;4.01&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.001&lt;/td&gt;
+          &lt;td&gt;4.0004…&lt;/td&gt;
+          &lt;td&gt;0.004…&lt;/td&gt;
+          &lt;td&gt;4.001&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The ratio tends to &lt;strong&gt;4&lt;/strong&gt; → \( f&#39;(2) = 4 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;At \( x = 4 \)&lt;/strong&gt; (\( f(4) = 16 \)):&lt;/p&gt;
+\[
+\frac{f(4 + h) - f(4)}{h} = \frac{(4+h)^2 - 16}{h} = \frac{8h + h^2}{h} = 8 + h \to 8
+\]&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( h \)&lt;/th&gt;
+          &lt;th&gt;\( f(4+h) \)&lt;/th&gt;
+          &lt;th&gt;\( f(4+h) - f(4) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{f(4+h)-f(4)}{h} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;25&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.1&lt;/td&gt;
+          &lt;td&gt;16.81&lt;/td&gt;
+          &lt;td&gt;0.81&lt;/td&gt;
+          &lt;td&gt;8.1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.01&lt;/td&gt;
+          &lt;td&gt;16.0801&lt;/td&gt;
+          &lt;td&gt;0.0801&lt;/td&gt;
+          &lt;td&gt;8.01&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The ratio tends to &lt;strong&gt;8&lt;/strong&gt; → \( f&#39;(4) = 8 \). By \( (x^2)&#39; = 2x \): at \( x = 2 \) we get 4, at \( x = 4 \) — 8. For a curve, the derivative is different at each point.&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/240; min-height: 240px; max-height: 480px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = x² and tangent&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Why it matters in ML:&lt;/strong&gt; training is minimization of the loss function. We need to know which direction to change the weights so that the loss decreases. The derivative points in the direction of increase; we go the opposite way so the loss drops.&lt;/p&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;interactive-exercise&#34;&gt;Interactive exercise&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Car and Bezier curve&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;1. Car.&lt;/strong&gt; Change the speed — the distance graph \( s(t) \) and derivative table update. Derivative \( s&#39;(t) \) = speed (constant for uniform motion).&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; min-height: 380px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-car-interactive-en.html&#34; style=&#34;width: 100%; height: 420px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Car: speed and derivative&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;2. Draw a Bezier curve.&lt;/strong&gt; Drag 4 control points — a cubic Bezier curve is built. Place the orange point on the curve — the derivative calculation appears on the right.&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; min-height: 420px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-draw-curve-en.html&#34; style=&#34;width: 100%; height: 520px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Bezier curve and derivative&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;self-check-tasks&#34;&gt;Self-check tasks&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Tasks with hints and verification&lt;/summary&gt;
+&lt;p&gt;Solve the tasks. Open the hint if needed. Enter your answer and click &amp;ldquo;Check&amp;rdquo;.&lt;/p&gt;
+&lt;div style=&#34;margin: 0.5em 0; min-height: 480px;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-selfcheck-en.html&#34; style=&#34;width: 100%; height: 480px; border: none; display: block; background: #1a1a1a; border-radius: 6px;&#34; title=&#34;Self-check tasks&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Derivative&lt;/strong&gt; — rate of change, direction of increase&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Partial derivative&lt;/strong&gt; — with respect to one variable, others fixed&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Gradient&lt;/strong&gt; — vector of partial derivatives, direction of steepest increase&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Chain rule&lt;/strong&gt; — how to compute derivatives along a chain of layers&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gradient descent&lt;/strong&gt; — update weights in the \( -\nabla L \) direction&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gradient descent&lt;/strong&gt; — update weights in the \( -\nabla L \) direction &lt;sup id=&#34;fnref1:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;PyTorch, TensorFlow, etc. compute gradients automatically (autograd) — but understanding what happens under the hood helps when you hit «exploding gradients» or «model won&amp;rsquo;t learn».&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;\( \nabla L \) — the gradient of the loss (vector of partial derivatives). It points in the direction of steepest increase of \( L \). So \( -\nabla L \) is the direction of steepest decrease; we move that way in gradient descent.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>Math Analysis — Example of Analysis (Finding πr²)</title>
+        <link>http://localhost:1313/en/p/math-circle-area/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-circle-area/</guid>
+        <description>&lt;p&gt;How do we find the area of a circle &lt;strong&gt;analytically&lt;/strong&gt;?&lt;/p&gt;
+&lt;h2 id=&#34;slicing-into-rectangles&#34;&gt;Slicing into Rectangles&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Idea:&lt;/strong&gt; slice the circle into thin concentric rings and «unroll» each ring into a rectangle.&lt;/p&gt;
+&lt;p&gt;A ring of radius r and width Δr has circumference 2πr. Unrolled, it becomes a rectangle:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;length: 2πr&lt;/li&gt;
+&lt;li&gt;width: Δr&lt;/li&gt;
+&lt;li&gt;area: 2πr · Δr&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The total area is the sum of all such rings, from r = 0 to r = R. The smaller Δr, the better the approximation.&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 360 200&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 360px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id=&#34;ring-en&#34; x1=&#34;0%&#34; y1=&#34;0%&#34; x2=&#34;100%&#34; y2=&#34;0%&#34;&gt;
+      &lt;stop offset=&#34;0%&#34; stop-color=&#34;#3b82f6&#34;/&gt;
+      &lt;stop offset=&#34;100%&#34; stop-color=&#34;#60a5fa&#34;/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;circle cx=&#34;100&#34; cy=&#34;100&#34; r=&#34;85&#34; fill=&#34;none&#34; stroke=&#34;#4b5563&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;path d=&#34;M 100 15 A 85 85 0 0 1 185 100 A 85 85 0 0 1 100 185 A 85 85 0 0 1 15 100 A 85 85 0 0 1 100 15&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 30 A 70 70 0 0 1 170 100 A 70 70 0 0 1 100 170 A 70 70 0 0 1 30 100 A 70 70 0 0 1 100 30&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.2&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 45 A 55 55 0 0 1 155 100 A 55 55 0 0 1 100 155 A 55 55 0 0 1 45 100 A 55 55 0 0 1 100 45&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.28&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 60 A 40 40 0 0 1 140 100 A 40 40 0 0 1 100 140 A 40 40 0 0 1 60 100 A 40 40 0 0 1 100 60&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.35&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 75 A 25 25 0 0 1 125 100 A 25 25 0 0 1 100 125 A 25 25 0 0 1 75 100 A 25 25 0 0 1 100 75&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.5&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;circle cx=&#34;100&#34; cy=&#34;100&#34; r=&#34;12&#34; fill=&#34;#1e3a5f&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;line x1=&#34;100&#34; y1=&#34;100&#34; x2=&#34;100&#34; y2=&#34;30&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34; stroke-dasharray=&#34;4 2&#34;/&gt;
+  &lt;text x=&#34;115&#34; y=&#34;60&#34; font-size=&#34;14&#34; fill=&#34;#f59e0b&#34;&gt;R&lt;/text&gt;
+  &lt;text x=&#34;100&#34; y=&#34;108&#34; font-size=&#34;12&#34; fill=&#34;#e5e7eb&#34; text-anchor=&#34;middle&#34;&gt;r=0&lt;/text&gt;
+  &lt;text x=&#34;250&#34; y=&#34;100&#34; font-size=&#34;13&#34; fill=&#34;#9ca3af&#34;&gt;Rings r = 0 … R&lt;/text&gt;
+&lt;/svg&gt;
+&lt;p&gt;If we arrange these cut strips (each of length 2πr) on a graph from left to right — from r = 0 to r = R — we get a triangle. Base R, height 2πR: the area of the triangle is ½ · R · 2πR = πR².&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 320 220&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 320px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id=&#34;strip-en&#34; x1=&#34;0%&#34; y1=&#34;0%&#34; x2=&#34;100%&#34; y2=&#34;0%&#34;&gt;
+      &lt;stop offset=&#34;0%&#34; stop-color=&#34;#3b82f6&#34;/&gt;
+      &lt;stop offset=&#34;100%&#34; stop-color=&#34;#60a5fa&#34;/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;!-- Axes --&gt;
+  &lt;line x1=&#34;40&#34; y1=&#34;180&#34; x2=&#34;260&#34; y2=&#34;180&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;line x1=&#34;40&#34; y1=&#34;180&#34; x2=&#34;40&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;!-- Strips: height 2πr at left edge (not above the line), width Δr --&gt;
+  &lt;rect x=&#34;40&#34; y=&#34;172&#34; width=&#34;22&#34; height=&#34;8&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;62&#34; y=&#34;164&#34; width=&#34;22&#34; height=&#34;16&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;84&#34; y=&#34;148&#34; width=&#34;22&#34; height=&#34;32&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;106&#34; y=&#34;132&#34; width=&#34;22&#34; height=&#34;48&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;128&#34; y=&#34;116&#34; width=&#34;22&#34; height=&#34;64&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;150&#34; y=&#34;100&#34; width=&#34;22&#34; height=&#34;80&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;172&#34; y=&#34;84&#34; width=&#34;22&#34; height=&#34;96&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;194&#34; y=&#34;68&#34; width=&#34;22&#34; height=&#34;112&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;216&#34; y=&#34;52&#34; width=&#34;22&#34; height=&#34;128&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;238&#34; y=&#34;36&#34; width=&#34;22&#34; height=&#34;144&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;!-- Line 2πr (from r=0 to r=R) --&gt;
+  &lt;line x1=&#34;40&#34; y1=&#34;180&#34; x2=&#34;260&#34; y2=&#34;20&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;text x=&#34;270&#34; y=&#34;185&#34; font-size=&#34;14&#34; fill=&#34;#9ca3af&#34;&gt;r&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;35&#34; font-size=&#34;14&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;2πr&lt;/text&gt;
+  &lt;text x=&#34;255&#34; y=&#34;195&#34; font-size=&#34;12&#34; fill=&#34;#f59e0b&#34;&gt;R&lt;/text&gt;
+  &lt;text x=&#34;35&#34; y=&#34;45&#34; font-size=&#34;12&#34; fill=&#34;#f59e0b&#34; text-anchor=&#34;end&#34;&gt;2πR&lt;/text&gt;
+  &lt;text x=&#34;150&#34; y=&#34;110&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;middle&#34;&gt;½·R·2πR = πR²&lt;/text&gt;
+&lt;/svg&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt; area of the circle S = πR². The same approach — slicing a shape into «small pieces», summing their areas, and taking the limit — underlies integral calculus and, as we will see, leads to derivatives.&lt;/p&gt;
 </description>
         </item>
         

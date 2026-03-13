@@ -1,7 +1,7 @@
 ---
 title: "Essential Mathematics — Overview"
 description: "What math knowledge is needed for AI and machine learning, and why"
-date: "2025-03-12"
+date: "2026-03-12"
 slug: "math-essentials-overview"
 tags:
   - Machine Learning

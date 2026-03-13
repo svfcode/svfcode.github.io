@@ -6,72 +6,596 @@
         <description>Recent content in Posts on Блог</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ru</language>
-        <lastBuildDate>Wed, 12 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Мат Анализ — Производные</title>
         <link>http://localhost:1313/p/math-derivatives/</link>
-        <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/math-derivatives/</guid>
-        <description>&lt;p&gt;Вторая статья цикла «Необходимая математика» — про производные, градиент и правило цепочки. Без этого не понять, как нейросеть вообще учится.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/math-derivatives/cover.jpg" alt="Featured image of post Мат Анализ — Производные" /&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Без этого не понять, как нейросеть вообще учится.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Для примера часто приводят скорость автомобиля. Мы тоже так сделаем.&lt;/p&gt;
+&lt;h2 id=&#34;что-такое-скорость&#34;&gt;Что такое скорость?&lt;/h2&gt;
+&lt;p&gt;Это отношение расстояния ко времени.&lt;/p&gt;
+&lt;p&gt;Вот машина едет со средней скоростью 60 км/ч — значит, если увеличить время \( t \) на единицу, расстояние \( s \) увеличится на 60 единиц. Если увеличить \( t \) в 10 раз, то и \( s \) увеличится в 10 раз. Здесь рост линейный, на графике это прямая линия.&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;defs&gt;
+    &lt;marker id=&#34;arr&#34; markerWidth=&#34;8&#34; markerHeight=&#34;8&#34; refX=&#34;6&#34; refY=&#34;4&#34; orient=&#34;auto&#34;&gt;
+      &lt;polygon points=&#34;0 0, 8 4, 0 8&#34; fill=&#34;#6b7280&#34;/&gt;
+    &lt;/marker&gt;
+  &lt;/defs&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;250&#34; y2=&#34;30&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
+  &lt;text x=&#34;140&#34; y=&#34;85&#34; font-size=&#34;11&#34; fill=&#34;#3b82f6&#34;&gt;s = 60t&lt;/text&gt;
+&lt;/svg&gt;
+&lt;p&gt;Но в течение времени машина движется неравномерно — скорость то увеличивается, то уменьшается.&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 30 150 C 90 130, 150 80, 220 50&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;path d=&#34;M 30 150 Q 90 130, 150 140 T 250 50&#34; fill=&#34;none&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34; stroke-dasharray=&#34;6 4&#34;/&gt;
+  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;90&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34; text-anchor=&#34;end&#34;&gt;v&lt;/text&gt;
+  &lt;text x=&#34;160&#34; y=&#34;45&#34; font-size=&#34;10&#34; fill=&#34;#3b82f6&#34;&gt;s(t)&lt;/text&gt;
+  &lt;text x=&#34;200&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34;&gt;v(t)&lt;/text&gt;
+&lt;/svg&gt;
+&lt;details style=&#34;background: rgba(239, 68, 68, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #ef4444;&#34;&gt;
+&lt;summary&gt;Невозможно&lt;/summary&gt;
+&lt;p&gt;Пройденное расстояние не может уменьшаться. Такой график s(t) был бы ошибочным:&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 0.75em 0;&#34;&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;path d=&#34;M 30 150 C 65 55, 135 142, 250 45&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;25&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
+  &lt;text x=&#34;140&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#ef4444&#34;&gt;s(t) — неправильно&lt;/text&gt;
+&lt;/svg&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
+        <title>Мат Анализ — пример анализа (нахождение πr²)</title>
+        <link>http://localhost:1313/p/math-circle-area/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/math-circle-area/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-circle-area/cover.jpg" alt="Featured image of post Мат Анализ — пример анализа (нахождение πr²)" /&gt;&lt;p&gt;Зададимся вопросом: как &lt;strong&gt;аналитически&lt;/strong&gt; найти площадь круга?&lt;/p&gt;
+&lt;h2 id=&#34;нарезка-на-прямоугольники&#34;&gt;Нарезка на прямоугольники&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Идея:&lt;/strong&gt; разрежем круг на тонкие концентрические кольца и «развернём» каждое кольцо в прямоугольник.&lt;/p&gt;
+&lt;p&gt;Кольцо радиуса r и шириной Δr имеет длину окружности 2πr. Развернутое кольцо — это прямоугольник:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;длина: 2πr&lt;/li&gt;
+&lt;li&gt;ширина: Δr&lt;/li&gt;
+&lt;li&gt;площадь: 2πr · Δr&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Площадь всего круга — сумма площадей всех таких колец, от r = 0 до r = R. Чем меньше Δr, тем точнее приближение.&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 360 200&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 360px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id=&#34;ring&#34; x1=&#34;0%&#34; y1=&#34;0%&#34; x2=&#34;100%&#34; y2=&#34;0%&#34;&gt;
+      &lt;stop offset=&#34;0%&#34; stop-color=&#34;#3b82f6&#34;/&gt;
+      &lt;stop offset=&#34;100%&#34; stop-color=&#34;#60a5fa&#34;/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;circle cx=&#34;100&#34; cy=&#34;100&#34; r=&#34;85&#34; fill=&#34;none&#34; stroke=&#34;#4b5563&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;path d=&#34;M 100 15 A 85 85 0 0 1 185 100 A 85 85 0 0 1 100 185 A 85 85 0 0 1 15 100 A 85 85 0 0 1 100 15&#34; fill=&#34;url(#ring)&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 30 A 70 70 0 0 1 170 100 A 70 70 0 0 1 100 170 A 70 70 0 0 1 30 100 A 70 70 0 0 1 100 30&#34; fill=&#34;url(#ring)&#34; fill-opacity=&#34;0.2&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 45 A 55 55 0 0 1 155 100 A 55 55 0 0 1 100 155 A 55 55 0 0 1 45 100 A 55 55 0 0 1 100 45&#34; fill=&#34;url(#ring)&#34; fill-opacity=&#34;0.28&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 60 A 40 40 0 0 1 140 100 A 40 40 0 0 1 100 140 A 40 40 0 0 1 60 100 A 40 40 0 0 1 100 60&#34; fill=&#34;url(#ring)&#34; fill-opacity=&#34;0.35&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 75 A 25 25 0 0 1 125 100 A 25 25 0 0 1 100 125 A 25 25 0 0 1 75 100 A 25 25 0 0 1 100 75&#34; fill=&#34;url(#ring)&#34; fill-opacity=&#34;0.5&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;circle cx=&#34;100&#34; cy=&#34;100&#34; r=&#34;12&#34; fill=&#34;#1e3a5f&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;line x1=&#34;100&#34; y1=&#34;100&#34; x2=&#34;100&#34; y2=&#34;30&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34; stroke-dasharray=&#34;4 2&#34;/&gt;
+  &lt;text x=&#34;115&#34; y=&#34;60&#34; font-size=&#34;14&#34; fill=&#34;#f59e0b&#34;&gt;R&lt;/text&gt;
+  &lt;text x=&#34;100&#34; y=&#34;108&#34; font-size=&#34;12&#34; fill=&#34;#e5e7eb&#34; text-anchor=&#34;middle&#34;&gt;r=0&lt;/text&gt;
+  &lt;text x=&#34;250&#34; y=&#34;100&#34; font-size=&#34;13&#34; fill=&#34;#9ca3af&#34;&gt;Кольца r = 0 … R&lt;/text&gt;
+&lt;/svg&gt;
+&lt;p&gt;Если выложить эти нарезанные полоски (каждую длиной 2πr) на графике слева направо — от r = 0 до r = R — получится треугольник. В основании R, высота 2πR: площадь треугольника ½ · R · 2πR = πR².&lt;/p&gt;
+&lt;svg viewBox=&#34;0 0 320 220&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 320px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id=&#34;strip&#34; x1=&#34;0%&#34; y1=&#34;0%&#34; x2=&#34;100%&#34; y2=&#34;0%&#34;&gt;
+      &lt;stop offset=&#34;0%&#34; stop-color=&#34;#3b82f6&#34;/&gt;
+      &lt;stop offset=&#34;100%&#34; stop-color=&#34;#60a5fa&#34;/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;!-- Оси --&gt;
+  &lt;line x1=&#34;40&#34; y1=&#34;180&#34; x2=&#34;260&#34; y2=&#34;180&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;line x1=&#34;40&#34; y1=&#34;180&#34; x2=&#34;40&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;!-- Полоски: высота 2πr по левому краю (не выше прямой), ширина Δr --&gt;
+  &lt;rect x=&#34;40&#34; y=&#34;172&#34; width=&#34;22&#34; height=&#34;8&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;62&#34; y=&#34;164&#34; width=&#34;22&#34; height=&#34;16&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;84&#34; y=&#34;148&#34; width=&#34;22&#34; height=&#34;32&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;106&#34; y=&#34;132&#34; width=&#34;22&#34; height=&#34;48&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;128&#34; y=&#34;116&#34; width=&#34;22&#34; height=&#34;64&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;150&#34; y=&#34;100&#34; width=&#34;22&#34; height=&#34;80&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;172&#34; y=&#34;84&#34; width=&#34;22&#34; height=&#34;96&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;194&#34; y=&#34;68&#34; width=&#34;22&#34; height=&#34;112&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;216&#34; y=&#34;52&#34; width=&#34;22&#34; height=&#34;128&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;238&#34; y=&#34;36&#34; width=&#34;22&#34; height=&#34;144&#34; fill=&#34;url(#strip)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;!-- Прямая 2πr (от r=0 до r=R) --&gt;
+  &lt;line x1=&#34;40&#34; y1=&#34;180&#34; x2=&#34;260&#34; y2=&#34;20&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;!-- Подписи --&gt;
+  &lt;text x=&#34;270&#34; y=&#34;185&#34; font-size=&#34;14&#34; fill=&#34;#9ca3af&#34;&gt;r&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;35&#34; font-size=&#34;14&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;2πr&lt;/text&gt;
+  &lt;text x=&#34;255&#34; y=&#34;195&#34; font-size=&#34;12&#34; fill=&#34;#f59e0b&#34;&gt;R&lt;/text&gt;
+  &lt;text x=&#34;35&#34; y=&#34;45&#34; font-size=&#34;12&#34; fill=&#34;#f59e0b&#34; text-anchor=&#34;end&#34;&gt;2πR&lt;/text&gt;
+  &lt;text x=&#34;150&#34; y=&#34;110&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;middle&#34;&gt;½·R·2πR = πR²&lt;/text&gt;
+&lt;/svg&gt;
+&lt;p&gt;&lt;strong&gt;Результат:&lt;/strong&gt; площадь круга S = πR². Тот же подход — нарезка фигуры на «маленькие кусочки», подсчёт их площади и переход к пределу — лежит в основе интегрального исчисления и, как увидим дальше, ведёт к производным.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Мат Анализ — Производные</title>
+        <link>http://localhost:1313/p/math-derivatives-bkp/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/math-derivatives-bkp/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-derivatives-bkp/cover.jpg" alt="Featured image of post Мат Анализ — Производные" /&gt;&lt;p&gt;Вторая статья цикла «Необходимая математика» — про производные, градиент и правило цепочки.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Без этого не понять, как нейросеть вообще учится.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Необходимые знания:&lt;/strong&gt; пределы функций — основа для определения производной и непрерывности.&lt;/p&gt;
+&lt;h2 id=&#34;содержание&#34;&gt;Содержание&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%d1%87%d1%82%d0%be-%d1%82%d0%b0%d0%ba%d0%be%d0%b5-%d0%bf%d1%80%d0%be%d0%b8%d0%b7%d0%b2%d0%be%d0%b4%d0%bd%d0%b0%d1%8f&#34; &gt;Что такое производная&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b5-%d0%be%d0%b1%d1%8a%d1%8f%d1%81%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5&#34; &gt;Простое объяснение&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%d1%81%d0%b0%d0%bc%d0%be%d0%b5-%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b5-%d0%be%d0%b1%d1%8a%d1%8f%d1%81%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5&#34; &gt;Самое простое объяснение&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d0%b0-%d0%b8-%d0%b1%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%8f-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d1%8f&#34; &gt;Правила и базовая информация о производных&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%d1%87%d0%b8%d1%81%d0%bb%d0%be%d0%b2%d0%be%d0%b9-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80-%d0%bb%d0%b8%d0%bd%d0%b5%d0%b9%d0%bd%d0%b0%d1%8f-%d1%84%d1%83%d0%bd%d0%ba%d1%86%d0%b8%d1%8f&#34; &gt;Числовой пример: линейная функция \( g(x) = 3x - 1 \)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%d1%87%d0%b8%d1%81%d0%bb%d0%be%d0%b2%d0%be%d0%b9-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80-%d0%ba%d0%b2%d0%b0%d0%b4%d1%80%d0%b0%d1%82%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d1%84%d1%83%d0%bd%d0%ba%d1%86%d0%b8%d1%8f&#34; &gt;Числовой пример: квадратичная функция \( f(x) = x^2 \)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b0%d0%ba%d1%82%d0%b8%d0%b2%d0%bd%d0%be%d0%b5-%d1%83%d0%bf%d1%80%d0%b0%d0%b6%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5&#34; &gt;Интерактивное упражнение&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%d0%b7%d0%b0%d0%b4%d0%b0%d0%bd%d0%b8%d1%8f-%d0%b4%d0%bb%d1%8f-%d1%81%d0%b0%d0%bc%d0%be%d0%bf%d1%80%d0%be%d0%b2%d0%b5%d1%80%d0%ba%d0%b8&#34; &gt;Задания для самопроверки&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%d1%80%d0%b5%d0%b7%d1%8e%d0%bc%d0%b5&#34; &gt;Резюме&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;что-такое-производная&#34;&gt;Что такое производная&lt;/h2&gt;
+&lt;h3 id=&#34;формальное-определение&#34;&gt;Формальное определение&lt;/h3&gt;
 &lt;p&gt;Производная функции в точке показывает &lt;strong&gt;скорость изменения&lt;/strong&gt;: насколько быстро растёт (или падает) значение функции при небольшом сдвиге аргумента.&lt;/p&gt;
 &lt;p&gt;Для функции одной переменной \( f(x) \) производная \( f&#39;(x) \) — это предел отношения приращения \( f \) к приращению \( x \), когда приращение стремится к нулю:&lt;/p&gt;
 \[
 f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
-\]&lt;p&gt;Геометрически — наклон касательной к графику в точке \( x \):&lt;/p&gt;
+\]&lt;p&gt;Здесь \( \Delta x \) — приращение аргумента (маленький шаг). В примерах ниже ту же величину обозначаем буквой \( h \).&lt;/p&gt;
+&lt;p&gt;Геометрически — наклон касательной к графику в точке \( x \):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;\( f&#39;(x) &gt; 0 \) — функция растёт&lt;/li&gt;
 &lt;li&gt;\( f&#39;(x) &lt; 0 \) — функция убывает&lt;/li&gt;
 &lt;li&gt;\( f&#39;(x) = 0 \) — возможный минимум или максимум&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Зачем в МО:&lt;/strong&gt; обучение — это минимизация функции потерь (loss). Нам нужно знать, в какую сторону менять веса, чтобы loss уменьшался. Производная как раз указывает направление роста; в противоположную сторону идём, чтобы loss падал.&lt;/p&gt;
-&lt;h2 id=&#34;частная-производная&#34;&gt;Частная производная&lt;/h2&gt;
-&lt;p&gt;У нейросети много весов — функция потерь зависит от тысяч или миллионов переменных. Нужно понимать, как loss меняется при изменении &lt;strong&gt;каждого&lt;/strong&gt; веса по отдельности.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Частная производная&lt;/strong&gt; \( \frac{\partial f}{\partial x} \) — производная по одной переменной, когда остальные считаются константами.&lt;/p&gt;
-&lt;p&gt;Пример: \( f(x, y) = x^2 + xy \)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Если понимание не пришло — открывай простое объяснение.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;простое-объяснение&#34;&gt;Простое объяснение&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Простое объяснение&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;Скорость на спидометре&lt;/strong&gt; — это по сути производная: как быстро меняется пройденное расстояние. Разгоняешься — скорость растёт. Тормозишь — падает. То есть производная отвечает на вопрос: «насколько сильно изменится одна величина, если чуть-чуть изменить другую?»&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Горка.&lt;/strong&gt; Крутизна спуска — «насколько сильно опускаешься вниз, когда делаешь шаг вперёд». Крутой спуск — большая производная. Пологий — маленькая. На ровной дороге — ноль.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;График функции.&lt;/strong&gt; Если есть график \( y = f(x) \), производная в точке — это &lt;strong&gt;наклон&lt;/strong&gt; графика в этой точке. Для прямой вида \( y = kx + b \) наклон — это уже знакомый коэффициент \( k \). Для кривой в каждой точке свой наклон — его и называют производной.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;\( \frac{\partial f}{\partial x} = 2x + y \)&lt;/li&gt;
-&lt;li&gt;\( \frac{\partial f}{\partial y} = x \)&lt;/li&gt;
+&lt;li&gt;График круто идёт вверх → производная положительная&lt;/li&gt;
+&lt;li&gt;Идёт вниз → производная отрицательная&lt;/li&gt;
+&lt;li&gt;Горизонтально (вершина, впадина) → производная равна нулю&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;градиент&#34;&gt;Градиент&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Градиент&lt;/strong&gt; \( \nabla f \) — вектор всех частных производных:&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;em&gt;Если всё ещё не до конца понятно — открывай самое простое объяснение.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;самое-простое-объяснение&#34;&gt;Самое простое объяснение&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Самое простое объяснение&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;Машина едет с постоянной скоростью.&lt;/strong&gt; Расстояние \( s \) (км) зависит от времени \( t \) (ч): \( s(t) = 60t \). За час проезжаем 60 км.&lt;/p&gt;
+&lt;p&gt;Скорость — это «сколько км прибавляется за каждый час». То есть отношение изменения расстояния к изменению времени:&lt;/p&gt;
 \[
-\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right)
-\]&lt;p&gt;Градиент указывает направление &lt;strong&gt;наискорейшего роста&lt;/strong&gt; функции. Значит, \( -\nabla f \) — направление наискорейшего &lt;strong&gt;уменьшения&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Градиентный спуск&lt;/strong&gt; — итеративное обновление весов:&lt;/p&gt;
+\text{скорость} = \frac{s(1) - s(0)}{1 - 0} = \frac{60 - 0}{1} = 60 \text{ км/ч}
+\]&lt;p&gt;Это и есть производная: &lt;strong&gt;скорость изменения&lt;/strong&gt; одной величины (расстояние) по другой (время).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Числовой пример:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( t \) (ч)&lt;/th&gt;
+          &lt;th&gt;\( s(t) \) (км)&lt;/th&gt;
+          &lt;th&gt;\( s(t+0{,}5) - s(t) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;120&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Везде получается 60. &lt;strong&gt;Да: 60 (скорость в км/ч) и есть производная&lt;/strong&gt; — \( s&#39;(t) = 60 \). Она постоянна, потому что скорость не меняется.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;График&lt;/strong&gt; — прямая линия. Наклон этой прямой тоже равен 60 — то же самое число:&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;График y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;А если скорость менялась?&lt;/strong&gt; Полчаса ехали 40 км/ч, полчаса — 80 км/ч. В итоге: 20 + 40 = 60 км за 1 ч. &lt;strong&gt;Средняя&lt;/strong&gt; скорость 60 км/ч — но в каждый момент она была то 40, то 80.&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-piecewise.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;График s(t) и s&#39;(t): плавное ускорение&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;На графике — плавный вариант: скорость растёт от 40 до 80 км/ч. Зелёная кривая — расстояние s(t), пунктир — производная s&amp;rsquo;(t) (мгновенная скорость).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Считаем &lt;strong&gt;мгновенную&lt;/strong&gt; скорость (производную) в разных точках — по формуле \( \frac{s(t+h) - s(t)}{h} \) при маленьком \( h = 0{,}1 \) ч:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( t \) (ч)&lt;/th&gt;
+          &lt;th&gt;\( s(t) \) (км)&lt;/th&gt;
+          &lt;th&gt;\( s(t+0{,}1) - s(t) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,1&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,25&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,5&lt;/td&gt;
+          &lt;td&gt;20&lt;/td&gt;
+          &lt;td&gt;—&lt;/td&gt;
+          &lt;td&gt;40 (слева) / &lt;strong&gt;80&lt;/strong&gt; (справа)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,75&lt;/td&gt;
+          &lt;td&gt;40&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;В первой половине часа производная везде 40, во второй — 80. В точке \( t = 0{,}5 \) график «ломается»: слева наклон 40, справа 80. Средняя 60 — это лишь «усреднение» по всему пути; производная показывает скорость &lt;strong&gt;в данный момент&lt;/strong&gt;.&lt;/p&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;правила-и-базовая-информация&#34;&gt;Правила и базовая информация о производных&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Основные правила и факты&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;Производная — это скорость изменения.&lt;/strong&gt; Насколько быстро растёт (или падает) функция при малом сдвиге аргумента. Геометрически — &lt;strong&gt;наклон касательной&lt;/strong&gt; к графику.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Связь со знаком:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\( f&#39;(x) &gt; 0 \) — функция растёт&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) &lt; 0 \) — функция убывает&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) = 0 \) — возможный минимум или максимум (вершина, впадина)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Основные правила (кратко):&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Функция&lt;/th&gt;
+          &lt;th&gt;Производная&lt;/th&gt;
+          &lt;th&gt;Описание&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( C \) (константа)&lt;/td&gt;
+          &lt;td&gt;\( 0 \)&lt;/td&gt;
+          &lt;td&gt;константа не меняется, скорость изменения нулевая&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( x \)&lt;/td&gt;
+          &lt;td&gt;\( 1 \)&lt;/td&gt;
+          &lt;td&gt;линейный рост со скоростью 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( x^n \)&lt;/td&gt;
+          &lt;td&gt;\( n \cdot x^{n-1} \)&lt;/td&gt;
+          &lt;td&gt;степень «спускается» множителем, показатель уменьшается на 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( kx + b \)&lt;/td&gt;
+          &lt;td&gt;\( k \)&lt;/td&gt;
+          &lt;td&gt;линейная функция: наклон равен коэффициенту \( k \)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( f + g \)&lt;/td&gt;
+          &lt;td&gt;\( f&#39; + g&#39; \)&lt;/td&gt;
+          &lt;td&gt;производная суммы равна сумме производных&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( C \cdot f \)&lt;/td&gt;
+          &lt;td&gt;\( C \cdot f&#39; \)&lt;/td&gt;
+          &lt;td&gt;константу можно вынести за знак производной&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Примеры:&lt;/strong&gt; \( (5)&#39; = 0 \), \( (x^2)&#39; = 2x \), \( (x^3)&#39; = 3x^2 \), \( (7x - 2)&#39; = 7 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Зачем в МО:&lt;/strong&gt; обучение модели — это минимизация loss. Производная показывает направление роста; градиентный спуск двигается в противоположную сторону (\( -\nabla L \))&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, чтобы loss уменьшался.&lt;/p&gt;
+&lt;details style=&#34;background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;&#34;&gt;
+&lt;summary&gt;Почему \( (x^n)&#39; = n \cdot x^{n-1} \)?&lt;/summary&gt;
+&lt;p&gt;Для натурального \( n \) можно вывести из определения. Пример для \( n = 2 \):&lt;/p&gt;
 \[
-w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
-\]&lt;p&gt;где \( \alpha \) — learning rate (шаг), \( L \) — loss. Двигаемся в направлении, противоположном градиенту, чтобы loss уменьшался.&lt;/p&gt;
-&lt;h2 id=&#34;правило-цепочки-chain-rule&#34;&gt;Правило цепочки (chain rule)&lt;/h2&gt;
-&lt;p&gt;Нейросеть — это цепочка слоёв: выход каждого слоя передаётся на вход следующего. Loss зависит от выходов, а те — от весов. Чтобы получить \( \frac{\partial L}{\partial w} \), нужно «протащить» производную назад по этой цепочке.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Правило цепочки&lt;/strong&gt; для композиции функций: если \( z = f(y) \) и \( y = g(x) \), то&lt;/p&gt;
+\frac{(x+h)^2 - x^2}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = 2x + h \to 2x
+\]&lt;p&gt;При \( h \to 0 \) получаем \( (x^2)&#39; = 2x \). Для \( n = 3 \): раскрывая \( (x+h)^3 \), член с \( h^2 \) уходит в ноль, остаётся \( 3x^2 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Интуиция:&lt;/strong&gt; степень \( n \) «спускается» вперёд как множитель, показатель уменьшается на 1. Чем выше степень, тем «круче» рост — поэтому производная содержит \( n \) и \( x^{n-1} \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Пример: парабола \( y = x^2 \)&lt;/strong&gt; — подробно&lt;/p&gt;
+&lt;p&gt;Для \( f(x) = x^2 \) формула даёт \( f&#39;(x) = 2x \). В каждой точке свой наклон:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Точка \( x \)&lt;/th&gt;
+          &lt;th&gt;\( f(x) = x^2 \)&lt;/th&gt;
+          &lt;th&gt;\( f&#39;(x) = 2x \) (наклон)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;16&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;В \( x = 2 \): парабола касается прямой с наклоном 4 (касательная \( y = 4x - 4 \) проходит через (2, 4)).&lt;br&gt;
+В \( x = 4 \): наклон уже 8 — парабола круче, касательная \( y = 8x - 16 \).&lt;br&gt;
+В \( x = 0 \): вершина параболы, наклон 0 — касательная горизонтальна.&lt;/p&gt;
+&lt;div style=&#34;margin: 0.75em 0; aspect-ratio: 320/240; min-height: 200px; max-height: 400px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Парабола y = x² и касательные&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;На графике:&lt;/em&gt; зелёная кривая — \( y = x^2 \); пунктирные линии — касательные в точках (2, 4) и (4, 16). Наклоны 4 и 8 соответствуют \( f&#39;(2) = 4 \), \( f&#39;(4) = 8 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Пример: квадрат&lt;/strong&gt; — \( x \) как сторона, площадь \( A(x) = x^2 \)&lt;/p&gt;
+&lt;p&gt;ΔA — это приращение (изменение) площади A. Если площадь задана функцией \( A(x) \), то:
+&lt;/p&gt;
 \[
-\frac{dz}{dx} = \frac{dz}{dy} \cdot \frac{dy}{dx}
-\]&lt;p&gt;Для многих переменных аналогично: производная по весу раннего слоя получается перемножением производных по всем промежуточным величинам на пути от этого веса до loss.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Backpropagation&lt;/strong&gt; — алгоритм, который эффективно это делает: один проход «назад» по сети вычисляет все нужные градиенты за один раз.&lt;/p&gt;
-&lt;h2 id=&#34;пример-линейная-регрессия&#34;&gt;Пример: линейная регрессия&lt;/h2&gt;
-&lt;p&gt;Loss — среднеквадратичная ошибка: \( L = \frac{1}{2}(y - \hat{y})^2 \), где \( \hat{y} = wx + b \).&lt;/p&gt;
+\Delta A = A(x + \Delta x) - A(x)
+\]&lt;p&gt;
+То есть ΔA — сколько прибавляется к площади, когда сторона \( x \) увеличивается на Δx.&lt;/p&gt;
+&lt;p&gt;Увеличиваем сторону на \( \Delta x \). К исходному квадрату добавляются: две «полосы» площадью \( x \cdot \Delta x \) (справа и сверху) и малый квадрат \( (\Delta x)^2 \) в углу. Итого:
+&lt;/p&gt;
 \[
-\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial w} = -(y - \hat{y}) \cdot x
-\]&lt;p&gt;Чем больше ошибка \( (y - \hat{y}) \) и чем больше \( x \), тем сильнее корректируем \( w \). Логично: сильная ошибка и «важный» вход требуют большего обновления.&lt;/p&gt;
+\Delta A = 2x \cdot \Delta x + (\Delta x)^2,\quad \frac{\Delta A}{\Delta x} = 2x + \Delta x \to 2x
+\]&lt;p&gt;
+при \( \Delta x \to 0 \). Производная \( A&#39;(x) = 2x \) — при том же \( \Delta x \) чем больше \( x \), тем больше прирост площади.&lt;/p&gt;
+&lt;div style=&#34;margin: 0.75em 0; min-height: 360px;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-square-area.html&#34; style=&#34;width: 100%; height: 360px; border: none; display: block; background: #1a1a1a; border-radius: 8px;&#34; title=&#34;Квадрат: площадь и приращение&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Меняй x и Δx&lt;/em&gt; — наблюдай, как меняются «полосы» и формула \( \Delta A / \Delta x \approx 2x \).&lt;/p&gt;
+&lt;p&gt;Здесь важно разделить два случая.&lt;/p&gt;
+&lt;p&gt;\( \Delta A/\Delta x \approx 2x \) — да, это приближение. Оно верно, когда \( \Delta x \) мало, но не равно нулю. Чем меньше \( \Delta x \), тем точнее:
+&lt;/p&gt;
+\[
+\frac{\Delta A}{\Delta x} = 2x + \Delta x \approx 2x \quad \text{при малом } \Delta x
+\]&lt;p&gt;Формула \( (x^n)&#39; = nx^{n-1} \) — это уже не приближение, а точное выражение. Производная определяется как предел:
+&lt;/p&gt;
+\[
+f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\]&lt;p&gt;
+Мы сначала берём этот предел, а потом получаем точную формулу.&lt;/p&gt;
+&lt;p&gt;\( \Delta A/\Delta x \) — приближение, потому что \( \Delta x \) ещё конечное. \( A&#39;(x) = 2x \) и \( (x^n)&#39; = nx^{n-1} \) — точные формулы, потому что это результат предела \( \Delta x \to 0 \).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Коротко:&lt;/em&gt; приближение — у конечных разностей; сами производные и их формулы — точные.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details style=&#34;background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;&#34;&gt;
+&lt;summary&gt;Почему \( (C \cdot f)&#39; = C \cdot f&#39; \)?&lt;/summary&gt;
+&lt;p&gt;Константу можно вынести за знак производной, потому что она не зависит от \( x \) и «масштабирует» скорость изменения функции.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Из определения:&lt;/strong&gt;
+&lt;/p&gt;
+\[
+(C \cdot f)&#39;(x) = \lim_{h \to 0} \frac{C \cdot f(x+h) - C \cdot f(x)}{h} = C \cdot \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = C \cdot f&#39;(x)
+\]&lt;p&gt;Константа \( C \) не зависит от \( h \), поэтому её можно вынести из предела.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Примеры:&lt;/strong&gt; \( (5x^2)&#39; = 5 \cdot 2x = 10x \), \( (-3x^3)&#39; = -3 \cdot 3x^2 = -9x^2 \).&lt;/p&gt;
+&lt;/details&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;em&gt;Теперь несколько числовых примеров.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;числовой-пример-линейная-функция&#34;&gt;Числовой пример: линейная функция \( g(x) = 3x - 1 \)&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Числовой пример: линейная функция \( g(x) = 3x - 1 \)&lt;/summary&gt;
+&lt;p&gt;Для прямой наклон везде один и тот же. Считаем в любой точке, например в \( x = 5 \):&lt;/p&gt;
+\[
+\frac{g(5 + h) - g(5)}{h} = \frac{(3(5+h) - 1) - g(5)}{h} = \frac{14 + 3h - 14}{h} = \frac{3h}{h} = 3
+\]&lt;p&gt;
+где \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
+&lt;p&gt;При любом \( h \neq 0 \) получается &lt;strong&gt;3&lt;/strong&gt; — производная постоянна, как и коэффициент при \( x \) в уравнении прямой.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( x \)&lt;/th&gt;
+          &lt;th&gt;\( g(x) \)&lt;/th&gt;
+          &lt;th&gt;\( g(x+0{,}1) - g(x) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{g(x+0{,}1)-g(x)}{0{,}1} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;0,3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;29&lt;/td&gt;
+          &lt;td&gt;0,3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-2&lt;/td&gt;
+          &lt;td&gt;-7&lt;/td&gt;
+          &lt;td&gt;0,3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;График y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;числовой-пример-квадратичная-функция&#34;&gt;Числовой пример: квадратичная функция \( f(x) = x^2 \)&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Числовой пример: квадратичная функция \( f(x) = x^2 \)&lt;/summary&gt;
+&lt;p&gt;Считаем приближённую производную в точке \( x = 2 \) по формуле «приращение \( f \) делим на приращение \( x \)». Берём маленький шаг \( h \) и смотрим отношение:&lt;/p&gt;
+\[
+\frac{f(2 + h) - f(2)}{h} = \frac{(2+h)^2 - 4}{h}
+\]&lt;p&gt;&lt;strong&gt;При \( x = 2 \)&lt;/strong&gt; (\( f(2) = 4 \)):&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( h \)&lt;/th&gt;
+          &lt;th&gt;\( f(2+h) \)&lt;/th&gt;
+          &lt;th&gt;\( f(2+h) - f(2) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{f(2+h)-f(2)}{h} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,1&lt;/td&gt;
+          &lt;td&gt;4,41&lt;/td&gt;
+          &lt;td&gt;0,41&lt;/td&gt;
+          &lt;td&gt;4,1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,01&lt;/td&gt;
+          &lt;td&gt;4,0401&lt;/td&gt;
+          &lt;td&gt;0,0401&lt;/td&gt;
+          &lt;td&gt;4,01&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,001&lt;/td&gt;
+          &lt;td&gt;4,0004…&lt;/td&gt;
+          &lt;td&gt;0,004…&lt;/td&gt;
+          &lt;td&gt;4,001&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Отношение стремится к &lt;strong&gt;4&lt;/strong&gt; → \( f&#39;(2) = 4 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;При \( x = 4 \)&lt;/strong&gt; (\( f(4) = 16 \)):&lt;/p&gt;
+\[
+\frac{f(4 + h) - f(4)}{h} = \frac{(4+h)^2 - 16}{h} = \frac{8h + h^2}{h} = 8 + h \to 8
+\]&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( h \)&lt;/th&gt;
+          &lt;th&gt;\( f(4+h) \)&lt;/th&gt;
+          &lt;th&gt;\( f(4+h) - f(4) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{f(4+h)-f(4)}{h} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;25&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,1&lt;/td&gt;
+          &lt;td&gt;16,81&lt;/td&gt;
+          &lt;td&gt;0,81&lt;/td&gt;
+          &lt;td&gt;8,1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,01&lt;/td&gt;
+          &lt;td&gt;16,0801&lt;/td&gt;
+          &lt;td&gt;0,0801&lt;/td&gt;
+          &lt;td&gt;8,01&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Отношение стремится к &lt;strong&gt;8&lt;/strong&gt; → \( f&#39;(4) = 8 \). По формуле \( (x^2)&#39; = 2x \): при \( x = 2 \) получаем 4, при \( x = 4 \) — 8. Для кривой производная в каждой точке своя.&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/240; min-height: 240px; max-height: 480px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;График y = x² и касательная&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Зачем в МО:&lt;/strong&gt; обучение — это минимизация функции потерь (loss). Нам нужно знать, в какую сторону менять веса, чтобы loss уменьшался. Производная как раз указывает направление роста; в противоположную сторону идём, чтобы loss падал.&lt;/p&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;интерактивное-упражнение&#34;&gt;Интерактивное упражнение&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Машинка и рисуй кривую Безье&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;1. Машинка.&lt;/strong&gt; Меняй скорость — график расстояния \( s(t) \) и таблица производных пересчитываются. Производная \( s&#39;(t) \) = скорость (постоянна при равномерном движении).&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; min-height: 380px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-car-interactive.html&#34; style=&#34;width: 100%; height: 420px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Машинка: скорость и производная&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;2. Рисуй кривую Безье.&lt;/strong&gt; Перетащи 4 контрольные точки — строится кубическая кривая Безье. Поставь оранжевую точку на кривую — справа детальная калькуляция производной.&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; min-height: 420px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-draw-curve.html&#34; style=&#34;width: 100%; height: 520px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Рисуй кривую Безье и производная&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;задания-для-самопроверки&#34;&gt;Задания для самопроверки&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
+&lt;summary&gt;Задания с подсказками и проверкой&lt;/summary&gt;
+&lt;p&gt;Реши задания. Открой подсказку, если нужно. Введи ответ и нажми «Проверить».&lt;/p&gt;
+&lt;div style=&#34;margin: 0.5em 0; min-height: 480px;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-selfcheck.html&#34; style=&#34;width: 100%; height: 480px; border: none; display: block; background: #1a1a1a; border-radius: 6px;&#34; title=&#34;Задания для самопроверки&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;резюме&#34;&gt;Резюме&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Производная&lt;/strong&gt; — скорость изменения, направление роста&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Частная производная&lt;/strong&gt; — по одной переменной при фиксированных остальных&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Градиент&lt;/strong&gt; — вектор частных производных, направление наискорейшего роста&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Правило цепочки&lt;/strong&gt; — как считать производные по цепочке слоёв&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Градиентный спуск&lt;/strong&gt; — обновление весов в направлении \( -\nabla L \)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Градиентный спуск&lt;/strong&gt; — обновление весов в направлении \( -\nabla L \) &lt;sup id=&#34;fnref1:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;PyTorch, TensorFlow и др. делают вычисление градиентов автоматически (autograd) — но понимать, что под капотом, важно, чтобы не ловить «градиенты взорвались» или «модель не учится».&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;\( \nabla L \) — градиент loss (вектор частных производных). Он указывает в направлении наискорейшего роста \( L \). Значит \( -\nabla L \) — направление наискорейшего уменьшения; в него двигаемся при градиентном спуске.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 </description>
         </item>
         <item>
         <title>Необходимая математика — обзор</title>
         <link>http://localhost:1313/p/math-essentials-overview/</link>
-        <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/math-essentials-overview/</guid>
-        <description>&lt;p&gt;Это вводная статья цикла «Необходимая математика» — обзор того, какие разделы математики нужны для работы с ИИ и машинным обучением и для чего именно они используются.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/math-essentials-overview/cover.jpg" alt="Featured image of post Необходимая математика — обзор" /&gt;&lt;p&gt;Это вводная статья цикла «Необходимая математика» — обзор того, какие разделы математики нужны для работы с ИИ и машинным обучением и для чего именно они используются.&lt;/p&gt;
 &lt;h2 id=&#34;линейная-алгебра&#34;&gt;Линейная алгебра&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Что нужно:&lt;/strong&gt; векторы, матрицы, умножение матриц, линейные преобразования, скалярное произведение, норма вектора, собственные числа и векторы (на продвинутом уровне).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Зачем:&lt;/strong&gt;&lt;/p&gt;
@@ -81,8 +605,8 @@ w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
 &lt;li&gt;Линейные преобразования — понимание, как слой «перемешивает» и комбинирует признаки&lt;/li&gt;
 &lt;li&gt;Без линейной алгебры невозможно читать формулы в статьях и понимать, что делает код (например, &lt;code&gt;W @ x&lt;/code&gt; — это умножение матрицы весов на вектор входа)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;производные&#34;&gt;Производные&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Что нужно:&lt;/strong&gt; производные, частные производные, градиент, правило цепочки (chain rule), оптимизация функций.&lt;/p&gt;
+&lt;h2 id=&#34;пределы-и-производные&#34;&gt;Пределы и производные&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Что нужно:&lt;/strong&gt; пределы функций, производные, частные производные, градиент, правило цепочки (chain rule), оптимизация функций.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Зачем:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Нейросеть обучается через градиентный спуск: мы двигаем веса в направлении, где ошибка уменьшается&lt;/li&gt;
@@ -135,12 +659,13 @@ w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
         <item>
         <title>Будущее ИИ: почему одного масштабирования уже недостаточно</title>
         <link>http://localhost:1313/p/ai-future-beyond-scaling/</link>
-        <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/ai-future-beyond-scaling/</guid>
-        <description>&lt;p&gt;Ещё недавно главный рецепт прогресса в искусственном интеллекте казался очевидным: больше данных, больше вычислений, больше параметров. И этот рецепт действительно сработал — именно он привёл к появлению современных больших языковых моделей. Но центральная идея в том, что &lt;strong&gt;масштабирование полезно, но уже недостаточно&lt;/strong&gt;. Следующий шаг потребует не просто наращивания мощностей, а смены парадигмы обучения.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/ai-future-beyond-scaling/cover.jpg" alt="Featured image of post Будущее ИИ: почему одного масштабирования уже недостаточно" /&gt;&lt;p&gt;Ещё недавно главный рецепт прогресса в искусственном интеллекте казался очевидным: больше данных, больше вычислений, больше параметров. И этот рецепт действительно сработал — именно он привёл к появлению современных больших языковых моделей. Но центральная идея в том, что &lt;strong&gt;масштабирование полезно, но уже недостаточно&lt;/strong&gt;. Следующий шаг потребует не просто наращивания мощностей, а смены парадигмы обучения.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Статья по видео.&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Смотреть на YouTube&lt;/a&gt;&lt;/p&gt;
+    &gt;Смотреть на YouTube&lt;/a&gt; (8 мин) · &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/MdGnCIl-_hU?si=ylocQLiEBvp9Bydb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Оригинал 52 мин&lt;/a&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;Кто участники панели и чем они известны&lt;/summary&gt;
 &lt;p&gt;&lt;strong&gt;Nicholas Thompson&lt;/strong&gt; (Николас Томпсон) — ведущий и модератор дискуссии, человек из медиа и технологической повестки.&lt;/p&gt;
@@ -219,10 +744,10 @@ w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
         <item>
         <title>Базовый минимум про ИИ – введение</title>
         <link>http://localhost:1313/p/ai-basics-intro/</link>
-        <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/ai-basics-intro/</guid>
-        <description>&lt;p&gt;Это первая статья из цикла «Базовый минимум» — коротко про то, как устроен ИИ. Каждая статья будет освещать одно понятие или концепцию, постараюсь делать их короткими и последовательными.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – введение" /&gt;&lt;p&gt;Это первая статья из цикла «Базовый минимум» — коротко про то, как устроен ИИ. Каждая статья будет освещать одно понятие или концепцию, постараюсь делать их короткими и последовательными.&lt;/p&gt;
 &lt;p&gt;Начнём с общепринятых терминов, далее поговорим про промпт-инжиниринг, RAG-системы и агентов, способных выполнять сложные многоступенчатые задачи.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Видео версия:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Смотреть на YouTube&lt;/a&gt;&lt;/p&gt;

@@ -6,15 +6,16 @@
         <description>Recent content in Artificial Intelligence on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>The Future of AI: Why Scaling Alone is No Longer Enough</title>
         <link>http://localhost:1313/en/p/ai-future-beyond-scaling/</link>
-        <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/en/p/ai-future-beyond-scaling/</guid>
         <description>&lt;p&gt;Until recently, the main recipe for progress in AI seemed obvious: more data, more compute, more parameters. And it worked — it led to modern large language models. But the central idea is that &lt;strong&gt;scaling is useful but no longer sufficient&lt;/strong&gt;. The next step requires not just more power, but a paradigm shift in how we train models.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Article based on a video.&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
+    &gt;Watch on YouTube&lt;/a&gt; (8 min) · &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/MdGnCIl-_hU?si=ylocQLiEBvp9Bydb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Original 52 min&lt;/a&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;Panel participants and their backgrounds&lt;/summary&gt;
 &lt;p&gt;&lt;strong&gt;Nicholas Thompson&lt;/strong&gt; — moderator, media executive and interviewer in tech, leads the discussion.&lt;/p&gt;
@@ -93,7 +94,7 @@
         <item>
         <title>AI basics – introduction</title>
         <link>http://localhost:1313/en/p/ai-basics-intro/</link>
-        <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/en/p/ai-basics-intro/</guid>
         <description>&lt;p&gt;Introduction to basic concepts of artificial intelligence. You can expand the content here.&lt;/p&gt;

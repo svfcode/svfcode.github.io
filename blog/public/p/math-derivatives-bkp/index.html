@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Производная, градиент и правило цепочки — основа обучения нейросетей'>
+<title>Мат Анализ — Производные</title>
+
+<link rel='canonical' href='http://localhost:1313/p/math-derivatives-bkp/'>
+
+<link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
+<meta property='og:title' content='Мат Анализ — Производные'>
+<meta property='og:description' content='Производная, градиент и правило цепочки — основа обучения нейросетей'>
+<meta property='og:url' content='http://localhost:1313/p/math-derivatives-bkp/'>
+<meta property='og:site_name' content='Блог'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:tag' content='Математика' /><meta property='article:published_time' content='2026-03-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-12T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/math-derivatives-bkp/cover.jpg' />
+<meta name="twitter:title" content="Мат Анализ — Производные">
+<meta name="twitter:description" content="Производная, градиент и правило цепочки — основа обучения нейросетей"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/math-derivatives-bkp/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym( 107089384 , "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107089384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Показать/скрыть меню">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_eef9891cfe28abde.jpg" width="300"
+                            height="200" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Блог</a></h1>
+            <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Обо мне</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/playlists/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Плейлисты</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Архивы</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Поиск</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" selected>ru</option>
+                        
+                            <option value="http://localhost:1313/en/" >en</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Тёмный режим</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Содержание</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#содержание">Содержание</a></li>
+    <li><a href="#что-такое-производная">Что такое производная</a>
+      <ul>
+        <li><a href="#формальное-определение">Формальное определение</a></li>
+        <li><a href="#простое-объяснение">Простое объяснение</a></li>
+        <li><a href="#самое-простое-объяснение">Самое простое объяснение</a></li>
+        <li><a href="#правила-и-базовая-информация">Правила и базовая информация о производных</a></li>
+        <li><a href="#числовой-пример-линейная-функция">Числовой пример: линейная функция </a></li>
+        <li><a href="#числовой-пример-квадратичная-функция">Числовой пример: квадратичная функция </a></li>
+        <li><a href="#интерактивное-упражнение">Интерактивное упражнение</a></li>
+        <li><a href="#задания-для-самопроверки">Задания для самопроверки</a></li>
+      </ul>
+    </li>
+    <li><a href="#резюме">Резюме</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/math-derivatives-bkp/">
+                <img src="/p/math-derivatives-bkp/cover_hu_1dda6aee2912428a.jpg"
+                        srcset="/p/math-derivatives-bkp/cover_hu_1dda6aee2912428a.jpg 800w, /p/math-derivatives-bkp/cover_hu_1120ee8c63d0b14e.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — Производные" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/math-derivatives-bkp/">Мат Анализ — Производные</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Производная, градиент и правило цепочки — основа обучения нейросетей
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 12, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    Время чтения: 10 мин.
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/en/p/math-derivatives-bkp/" class="link">en</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Вторая статья цикла «Необходимая математика» — про производные, градиент и правило цепочки.</p>
+<blockquote>
+<p><strong>Без этого не понять, как нейросеть вообще учится.</strong></p>
+</blockquote>
+<p><strong>Необходимые знания:</strong> пределы функций — основа для определения производной и непрерывности.</p>
+<h2 id="содержание">Содержание</h2>
+<ol>
+<li><a class="link" href="#%d1%87%d1%82%d0%be-%d1%82%d0%b0%d0%ba%d0%be%d0%b5-%d0%bf%d1%80%d0%be%d0%b8%d0%b7%d0%b2%d0%be%d0%b4%d0%bd%d0%b0%d1%8f" >Что такое производная</a>
+<ul>
+<li><a class="link" href="#%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b5-%d0%be%d0%b1%d1%8a%d1%8f%d1%81%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5" >Простое объяснение</a></li>
+<li><a class="link" href="#%d1%81%d0%b0%d0%bc%d0%be%d0%b5-%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b5-%d0%be%d0%b1%d1%8a%d1%8f%d1%81%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5" >Самое простое объяснение</a></li>
+<li><a class="link" href="#%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d0%b0-%d0%b8-%d0%b1%d0%b0%d0%b7%d0%be%d0%b2%d0%b0%d1%8f-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d1%8f" >Правила и базовая информация о производных</a></li>
+<li><a class="link" href="#%d1%87%d0%b8%d1%81%d0%bb%d0%be%d0%b2%d0%be%d0%b9-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80-%d0%bb%d0%b8%d0%bd%d0%b5%d0%b9%d0%bd%d0%b0%d1%8f-%d1%84%d1%83%d0%bd%d0%ba%d1%86%d0%b8%d1%8f" >Числовой пример: линейная функция \( g(x) = 3x - 1 \)</a></li>
+<li><a class="link" href="#%d1%87%d0%b8%d1%81%d0%bb%d0%be%d0%b2%d0%be%d0%b9-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80-%d0%ba%d0%b2%d0%b0%d0%b4%d1%80%d0%b0%d1%82%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d1%84%d1%83%d0%bd%d0%ba%d1%86%d0%b8%d1%8f" >Числовой пример: квадратичная функция \( f(x) = x^2 \)</a></li>
+<li><a class="link" href="#%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b0%d0%ba%d1%82%d0%b8%d0%b2%d0%bd%d0%be%d0%b5-%d1%83%d0%bf%d1%80%d0%b0%d0%b6%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5" >Интерактивное упражнение</a></li>
+<li><a class="link" href="#%d0%b7%d0%b0%d0%b4%d0%b0%d0%bd%d0%b8%d1%8f-%d0%b4%d0%bb%d1%8f-%d1%81%d0%b0%d0%bc%d0%be%d0%bf%d1%80%d0%be%d0%b2%d0%b5%d1%80%d0%ba%d0%b8" >Задания для самопроверки</a></li>
+</ul>
+</li>
+<li><a class="link" href="#%d1%80%d0%b5%d0%b7%d1%8e%d0%bc%d0%b5" >Резюме</a></li>
+</ol>
+<h2 id="что-такое-производная">Что такое производная</h2>
+<h3 id="формальное-определение">Формальное определение</h3>
+<p>Производная функции в точке показывает <strong>скорость изменения</strong>: насколько быстро растёт (или падает) значение функции при небольшом сдвиге аргумента.</p>
+<p>Для функции одной переменной \( f(x) \) производная \( f'(x) \) — это предел отношения приращения \( f \) к приращению \( x \), когда приращение стремится к нулю:</p>
+\[
+f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\]<p>Здесь \( \Delta x \) — приращение аргумента (маленький шаг). В примерах ниже ту же величину обозначаем буквой \( h \).</p>
+<p>Геометрически — наклон касательной к графику в точке \( x \):</p>
+<ul>
+<li>\( f'(x) > 0 \) — функция растёт</li>
+<li>\( f'(x) < 0 \) — функция убывает</li>
+<li>\( f'(x) = 0 \) — возможный минимум или максимум</li>
+</ul>
+<p><em>Если понимание не пришло — открывай простое объяснение.</em></p>
+<h3 id="простое-объяснение">Простое объяснение</h3>
+<details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;">
+<summary>Простое объяснение</summary>
+<p><strong>Скорость на спидометре</strong> — это по сути производная: как быстро меняется пройденное расстояние. Разгоняешься — скорость растёт. Тормозишь — падает. То есть производная отвечает на вопрос: «насколько сильно изменится одна величина, если чуть-чуть изменить другую?»</p>
+<p><strong>Горка.</strong> Крутизна спуска — «насколько сильно опускаешься вниз, когда делаешь шаг вперёд». Крутой спуск — большая производная. Пологий — маленькая. На ровной дороге — ноль.</p>
+<p><strong>График функции.</strong> Если есть график \( y = f(x) \), производная в точке — это <strong>наклон</strong> графика в этой точке. Для прямой вида \( y = kx + b \) наклон — это уже знакомый коэффициент \( k \). Для кривой в каждой точке свой наклон — его и называют производной.</p>
+<ul>
+<li>График круто идёт вверх → производная положительная</li>
+<li>Идёт вниз → производная отрицательная</li>
+<li>Горизонтально (вершина, впадина) → производная равна нулю</li>
+</ul>
+</details>
+<p><em>Если всё ещё не до конца понятно — открывай самое простое объяснение.</em></p>
+<h3 id="самое-простое-объяснение">Самое простое объяснение</h3>
+<details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;">
+<summary>Самое простое объяснение</summary>
+<p><strong>Машина едет с постоянной скоростью.</strong> Расстояние \( s \) (км) зависит от времени \( t \) (ч): \( s(t) = 60t \). За час проезжаем 60 км.</p>
+<p>Скорость — это «сколько км прибавляется за каждый час». То есть отношение изменения расстояния к изменению времени:</p>
+\[
+\text{скорость} = \frac{s(1) - s(0)}{1 - 0} = \frac{60 - 0}{1} = 60 \text{ км/ч}
+\]<p>Это и есть производная: <strong>скорость изменения</strong> одной величины (расстояние) по другой (время).</p>
+<p><strong>Числовой пример:</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>\( t \) (ч)</th>
+          <th>\( s(t) \) (км)</th>
+          <th>\( s(t+0{,}5) - s(t) \)</th>
+          <th>\( \frac{\Delta s}{\Delta t} \)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>30</td>
+          <td>60</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>60</td>
+          <td>30</td>
+          <td>60</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>120</td>
+          <td>30</td>
+          <td>60</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>Везде получается 60. <strong>Да: 60 (скорость в км/ч) и есть производная</strong> — \( s'(t) = 60 \). Она постоянна, потому что скорость не меняется.</p>
+<p><strong>График</strong> — прямая линия. Наклон этой прямой тоже равен 60 — то же самое число:</p>
+<div style="margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;">
+  <iframe src="/games/derivative-graph-linear.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="График y = 3x − 1" scrolling="no"></iframe>
+</div>
+<hr>
+<p><strong>А если скорость менялась?</strong> Полчаса ехали 40 км/ч, полчаса — 80 км/ч. В итоге: 20 + 40 = 60 км за 1 ч. <strong>Средняя</strong> скорость 60 км/ч — но в каждый момент она была то 40, то 80.</p>
+<div style="margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;">
+  <iframe src="/games/derivative-graph-piecewise.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="График s(t) и s'(t): плавное ускорение" scrolling="no"></iframe>
+</div>
+<p><em>На графике — плавный вариант: скорость растёт от 40 до 80 км/ч. Зелёная кривая — расстояние s(t), пунктир — производная s&rsquo;(t) (мгновенная скорость).</em></p>
+<p>Считаем <strong>мгновенную</strong> скорость (производную) в разных точках — по формуле \( \frac{s(t+h) - s(t)}{h} \) при маленьком \( h = 0{,}1 \) ч:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>\( t \) (ч)</th>
+          <th>\( s(t) \) (км)</th>
+          <th>\( s(t+0{,}1) - s(t) \)</th>
+          <th>\( \frac{\Delta s}{\Delta t} \)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0,1</td>
+          <td>4</td>
+          <td>4</td>
+          <td><strong>40</strong></td>
+      </tr>
+      <tr>
+          <td>0,25</td>
+          <td>10</td>
+          <td>4</td>
+          <td><strong>40</strong></td>
+      </tr>
+      <tr>
+          <td>0,5</td>
+          <td>20</td>
+          <td>—</td>
+          <td>40 (слева) / <strong>80</strong> (справа)</td>
+      </tr>
+      <tr>
+          <td>0,75</td>
+          <td>40</td>
+          <td>8</td>
+          <td><strong>80</strong></td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>60</td>
+          <td>8</td>
+          <td><strong>80</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<p>В первой половине часа производная везде 40, во второй — 80. В точке \( t = 0{,}5 \) график «ломается»: слева наклон 40, справа 80. Средняя 60 — это лишь «усреднение» по всему пути; производная показывает скорость <strong>в данный момент</strong>.</p>
+</details>
+<h3 id="правила-и-базовая-информация">Правила и базовая информация о производных</h3>
+<details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;">
+<summary>Основные правила и факты</summary>
+<p><strong>Производная — это скорость изменения.</strong> Насколько быстро растёт (или падает) функция при малом сдвиге аргумента. Геометрически — <strong>наклон касательной</strong> к графику.</p>
+<p><strong>Связь со знаком:</strong></p>
+<ul>
+<li>\( f'(x) > 0 \) — функция растёт</li>
+<li>\( f'(x) < 0 \) — функция убывает</li>
+<li>\( f'(x) = 0 \) — возможный минимум или максимум (вершина, впадина)</li>
+</ul>
+<p><strong>Основные правила (кратко):</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Функция</th>
+          <th>Производная</th>
+          <th>Описание</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>\( C \) (константа)</td>
+          <td>\( 0 \)</td>
+          <td>константа не меняется, скорость изменения нулевая</td>
+      </tr>
+      <tr>
+          <td>\( x \)</td>
+          <td>\( 1 \)</td>
+          <td>линейный рост со скоростью 1</td>
+      </tr>
+      <tr>
+          <td>\( x^n \)</td>
+          <td>\( n \cdot x^{n-1} \)</td>
+          <td>степень «спускается» множителем, показатель уменьшается на 1</td>
+      </tr>
+      <tr>
+          <td>\( kx + b \)</td>
+          <td>\( k \)</td>
+          <td>линейная функция: наклон равен коэффициенту \( k \)</td>
+      </tr>
+      <tr>
+          <td>\( f + g \)</td>
+          <td>\( f' + g' \)</td>
+          <td>производная суммы равна сумме производных</td>
+      </tr>
+      <tr>
+          <td>\( C \cdot f \)</td>
+          <td>\( C \cdot f' \)</td>
+          <td>константу можно вынести за знак производной</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>Примеры:</strong> \( (5)' = 0 \), \( (x^2)' = 2x \), \( (x^3)' = 3x^2 \), \( (7x - 2)' = 7 \).</p>
+<p><strong>Зачем в МО:</strong> обучение модели — это минимизация loss. Производная показывает направление роста; градиентный спуск двигается в противоположную сторону (\( -\nabla L \))<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, чтобы loss уменьшался.</p>
+<details style="background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;">
+<summary>Почему \( (x^n)' = n \cdot x^{n-1} \)?</summary>
+<p>Для натурального \( n \) можно вывести из определения. Пример для \( n = 2 \):</p>
+\[
+\frac{(x+h)^2 - x^2}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = 2x + h \to 2x
+\]<p>При \( h \to 0 \) получаем \( (x^2)' = 2x \). Для \( n = 3 \): раскрывая \( (x+h)^3 \), член с \( h^2 \) уходит в ноль, остаётся \( 3x^2 \).</p>
+<p><strong>Интуиция:</strong> степень \( n \) «спускается» вперёд как множитель, показатель уменьшается на 1. Чем выше степень, тем «круче» рост — поэтому производная содержит \( n \) и \( x^{n-1} \).</p>
+<p><strong>Пример: парабола \( y = x^2 \)</strong> — подробно</p>
+<p>Для \( f(x) = x^2 \) формула даёт \( f'(x) = 2x \). В каждой точке свой наклон:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Точка \( x \)</th>
+          <th>\( f(x) = x^2 \)</th>
+          <th>\( f'(x) = 2x \) (наклон)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>4</td>
+          <td><strong>4</strong></td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>9</td>
+          <td>6</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>16</td>
+          <td><strong>8</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<p>В \( x = 2 \): парабола касается прямой с наклоном 4 (касательная \( y = 4x - 4 \) проходит через (2, 4)).<br>
+В \( x = 4 \): наклон уже 8 — парабола круче, касательная \( y = 8x - 16 \).<br>
+В \( x = 0 \): вершина параболы, наклон 0 — касательная горизонтальна.</p>
+<div style="margin: 0.75em 0; aspect-ratio: 320/240; min-height: 200px; max-height: 400px; overflow: hidden; border-radius: 8px; background: #1a1a1a;">
+  <iframe src="/games/derivative-graph-parabola.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="Парабола y = x² и касательные" scrolling="no"></iframe>
+</div>
+<p><em>На графике:</em> зелёная кривая — \( y = x^2 \); пунктирные линии — касательные в точках (2, 4) и (4, 16). Наклоны 4 и 8 соответствуют \( f'(2) = 4 \), \( f'(4) = 8 \).</p>
+<p><strong>Пример: квадрат</strong> — \( x \) как сторона, площадь \( A(x) = x^2 \)</p>
+<p>ΔA — это приращение (изменение) площади A. Если площадь задана функцией \( A(x) \), то:
+</p>
+\[
+\Delta A = A(x + \Delta x) - A(x)
+\]<p>
+То есть ΔA — сколько прибавляется к площади, когда сторона \( x \) увеличивается на Δx.</p>
+<p>Увеличиваем сторону на \( \Delta x \). К исходному квадрату добавляются: две «полосы» площадью \( x \cdot \Delta x \) (справа и сверху) и малый квадрат \( (\Delta x)^2 \) в углу. Итого:
+</p>
+\[
+\Delta A = 2x \cdot \Delta x + (\Delta x)^2,\quad \frac{\Delta A}{\Delta x} = 2x + \Delta x \to 2x
+\]<p>
+при \( \Delta x \to 0 \). Производная \( A'(x) = 2x \) — при том же \( \Delta x \) чем больше \( x \), тем больше прирост площади.</p>
+<div style="margin: 0.75em 0; min-height: 360px;">
+  <iframe src="/games/derivative-square-area.html" style="width: 100%; height: 360px; border: none; display: block; background: #1a1a1a; border-radius: 8px;" title="Квадрат: площадь и приращение"></iframe>
+</div>
+<p><em>Меняй x и Δx</em> — наблюдай, как меняются «полосы» и формула \( \Delta A / \Delta x \approx 2x \).</p>
+<p>Здесь важно разделить два случая.</p>
+<p>\( \Delta A/\Delta x \approx 2x \) — да, это приближение. Оно верно, когда \( \Delta x \) мало, но не равно нулю. Чем меньше \( \Delta x \), тем точнее:
+</p>
+\[
+\frac{\Delta A}{\Delta x} = 2x + \Delta x \approx 2x \quad \text{при малом } \Delta x
+\]<p>Формула \( (x^n)' = nx^{n-1} \) — это уже не приближение, а точное выражение. Производная определяется как предел:
+</p>
+\[
+f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\]<p>
+Мы сначала берём этот предел, а потом получаем точную формулу.</p>
+<p>\( \Delta A/\Delta x \) — приближение, потому что \( \Delta x \) ещё конечное. \( A'(x) = 2x \) и \( (x^n)' = nx^{n-1} \) — точные формулы, потому что это результат предела \( \Delta x \to 0 \).</p>
+<p><em>Коротко:</em> приближение — у конечных разностей; сами производные и их формулы — точные.</p>
+</details>
+<details style="background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;">
+<summary>Почему \( (C \cdot f)' = C \cdot f' \)?</summary>
+<p>Константу можно вынести за знак производной, потому что она не зависит от \( x \) и «масштабирует» скорость изменения функции.</p>
+<p><strong>Из определения:</strong>
+</p>
+\[
+(C \cdot f)'(x) = \lim_{h \to 0} \frac{C \cdot f(x+h) - C \cdot f(x)}{h} = C \cdot \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = C \cdot f'(x)
+\]<p>Константа \( C \) не зависит от \( h \), поэтому её можно вынести из предела.</p>
+<p><strong>Примеры:</strong> \( (5x^2)' = 5 \cdot 2x = 10x \), \( (-3x^3)' = -3 \cdot 3x^2 = -9x^2 \).</p>
+</details>
+</details>
+<p><em>Теперь несколько числовых примеров.</em></p>
+<h3 id="числовой-пример-линейная-функция">Числовой пример: линейная функция \( g(x) = 3x - 1 \)</h3>
+<details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;">
+<summary>Числовой пример: линейная функция \( g(x) = 3x - 1 \)</summary>
+<p>Для прямой наклон везде один и тот же. Считаем в любой точке, например в \( x = 5 \):</p>
+\[
+\frac{g(5 + h) - g(5)}{h} = \frac{(3(5+h) - 1) - g(5)}{h} = \frac{14 + 3h - 14}{h} = \frac{3h}{h} = 3
+\]<p>
+где \( g(5) = 3 \cdot 5 - 1 = 14 \).</p>
+<p>При любом \( h \neq 0 \) получается <strong>3</strong> — производная постоянна, как и коэффициент при \( x \) в уравнении прямой.</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>\( x \)</th>
+          <th>\( g(x) \)</th>
+          <th>\( g(x+0{,}1) - g(x) \)</th>
+          <th>\( \frac{g(x+0{,}1)-g(x)}{0{,}1} \)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>5</td>
+          <td>14</td>
+          <td>0,3</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>29</td>
+          <td>0,3</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>-2</td>
+          <td>-7</td>
+          <td>0,3</td>
+          <td>3</td>
+      </tr>
+  </tbody>
+</table></div>
+<div style="margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;">
+  <iframe src="/games/derivative-graph-linear.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="График y = 3x − 1" scrolling="no"></iframe>
+</div>
+</details>
+<h3 id="числовой-пример-квадратичная-функция">Числовой пример: квадратичная функция \( f(x) = x^2 \)</h3>
+<details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;">
+<summary>Числовой пример: квадратичная функция \( f(x) = x^2 \)</summary>
+<p>Считаем приближённую производную в точке \( x = 2 \) по формуле «приращение \( f \) делим на приращение \( x \)». Берём маленький шаг \( h \) и смотрим отношение:</p>
+\[
+\frac{f(2 + h) - f(2)}{h} = \frac{(2+h)^2 - 4}{h}
+\]<p><strong>При \( x = 2 \)</strong> (\( f(2) = 4 \)):</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>\( h \)</th>
+          <th>\( f(2+h) \)</th>
+          <th>\( f(2+h) - f(2) \)</th>
+          <th>\( \frac{f(2+h)-f(2)}{h} \)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>9</td>
+          <td>5</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>0,1</td>
+          <td>4,41</td>
+          <td>0,41</td>
+          <td>4,1</td>
+      </tr>
+      <tr>
+          <td>0,01</td>
+          <td>4,0401</td>
+          <td>0,0401</td>
+          <td>4,01</td>
+      </tr>
+      <tr>
+          <td>0,001</td>
+          <td>4,0004…</td>
+          <td>0,004…</td>
+          <td>4,001</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>Отношение стремится к <strong>4</strong> → \( f'(2) = 4 \).</p>
+<p><strong>При \( x = 4 \)</strong> (\( f(4) = 16 \)):</p>
+\[
+\frac{f(4 + h) - f(4)}{h} = \frac{(4+h)^2 - 16}{h} = \frac{8h + h^2}{h} = 8 + h \to 8
+\]<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>\( h \)</th>
+          <th>\( f(4+h) \)</th>
+          <th>\( f(4+h) - f(4) \)</th>
+          <th>\( \frac{f(4+h)-f(4)}{h} \)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>25</td>
+          <td>9</td>
+          <td>9</td>
+      </tr>
+      <tr>
+          <td>0,1</td>
+          <td>16,81</td>
+          <td>0,81</td>
+          <td>8,1</td>
+      </tr>
+      <tr>
+          <td>0,01</td>
+          <td>16,0801</td>
+          <td>0,0801</td>
+          <td>8,01</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>Отношение стремится к <strong>8</strong> → \( f'(4) = 8 \). По формуле \( (x^2)' = 2x \): при \( x = 2 \) получаем 4, при \( x = 4 \) — 8. Для кривой производная в каждой точке своя.</p>
+<div style="margin: 1em 0; aspect-ratio: 320/240; min-height: 240px; max-height: 480px; overflow: hidden; border-radius: 8px; background: #1a1a1a;">
+  <iframe src="/games/derivative-graph-parabola.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="График y = x² и касательная" scrolling="no"></iframe>
+</div>
+<p><strong>Зачем в МО:</strong> обучение — это минимизация функции потерь (loss). Нам нужно знать, в какую сторону менять веса, чтобы loss уменьшался. Производная как раз указывает направление роста; в противоположную сторону идём, чтобы loss падал.</p>
+</details>
+<h3 id="интерактивное-упражнение">Интерактивное упражнение</h3>
+<details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;">
+<summary>Машинка и рисуй кривую Безье</summary>
+<p><strong>1. Машинка.</strong> Меняй скорость — график расстояния \( s(t) \) и таблица производных пересчитываются. Производная \( s'(t) \) = скорость (постоянна при равномерном движении).</p>
+<div style="margin: 1em 0; min-height: 380px; overflow: hidden; border-radius: 8px; background: #1a1a1a;">
+  <iframe src="/games/derivative-car-interactive.html" style="width: 100%; height: 420px; border: none; display: block; background: #1a1a1a;" title="Машинка: скорость и производная" scrolling="no"></iframe>
+</div>
+<p><strong>2. Рисуй кривую Безье.</strong> Перетащи 4 контрольные точки — строится кубическая кривая Безье. Поставь оранжевую точку на кривую — справа детальная калькуляция производной.</p>
+<div style="margin: 1em 0; min-height: 420px; overflow: hidden; border-radius: 8px; background: #1a1a1a;">
+  <iframe src="/games/derivative-draw-curve.html" style="width: 100%; height: 520px; border: none; display: block; background: #1a1a1a;" title="Рисуй кривую Безье и производная" scrolling="no"></iframe>
+</div>
+</details>
+<h3 id="задания-для-самопроверки">Задания для самопроверки</h3>
+<details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;">
+<summary>Задания с подсказками и проверкой</summary>
+<p>Реши задания. Открой подсказку, если нужно. Введи ответ и нажми «Проверить».</p>
+<div style="margin: 0.5em 0; min-height: 480px;">
+  <iframe src="/games/derivative-selfcheck.html" style="width: 100%; height: 480px; border: none; display: block; background: #1a1a1a; border-radius: 6px;" title="Задания для самопроверки"></iframe>
+</div>
+</details>
+<h2 id="резюме">Резюме</h2>
+<ul>
+<li><strong>Производная</strong> — скорость изменения, направление роста</li>
+<li><strong>Частная производная</strong> — по одной переменной при фиксированных остальных</li>
+<li><strong>Градиент</strong> — вектор частных производных, направление наискорейшего роста</li>
+<li><strong>Правило цепочки</strong> — как считать производные по цепочке слоёв</li>
+<li><strong>Градиентный спуск</strong> — обновление весов в направлении \( -\nabla L \) <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+</ul>
+<p>PyTorch, TensorFlow и др. делают вычисление градиентов автоматически (autograd) — но понимать, что под капотом, важно, чтобы не ловить «градиенты взорвались» или «модель не учится».</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>\( \nabla L \) — градиент loss (вектор частных производных). Он указывает в направлении наискорейшего роста \( L \). Значит \( -\nabla L \) — направление наискорейшего уменьшения; в него двигаемся при градиентном спуске.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/">Машинное Обучение</a>
+        
+            <a href="/tags/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/">Математика</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Также рекомендуем</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/math-circle-area/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-circle-area/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — пример анализа (нахождение πr²)"
+                        data-key="math-circle-area" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Мат Анализ — пример анализа (нахождение πr²)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-essentials-overview/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-essentials-overview/cover.02fd5d4fc0d77f3e57e83f94fcc7f1ab_hu_839ed1d706eca3a8.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Необходимая математика — обзор"
+                        data-key="math-essentials-overview" 
+                        data-hash="md5-Av1dT8DXfz5X6D&#43;U/Mfxqw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Необходимая математика — обзор</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/ai-future-beyond-scaling/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-future-beyond-scaling/cover.021d37318be2db61d8f7849e96887ab9_hu_c758c54acc359981.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Будущее ИИ: почему одного масштабирования уже недостаточно"
+                        data-key="ai-future-beyond-scaling" 
+                        data-hash="md5-Ah03MYvi22HY94Seloh6uQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Будущее ИИ: почему одного масштабирования уже недостаточно</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/ai-basics-intro/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-intro/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Базовый минимум про ИИ – введение"
+                        data-key="ai-basics-intro" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Базовый минимум про ИИ – введение</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Блог
+    </section>
+    
+    <section class="powerby">
+        Создано при помощи <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Тема <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b>, дизайн <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

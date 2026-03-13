@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Limit of a function — foundation of differential calculus and understanding derivatives'>
+<title>Math Analysis — Limits</title>
+
+<link rel='canonical' href='http://localhost:1313/en/p/math-limits/'>
+
+<link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
+<meta property='og:title' content='Math Analysis — Limits'>
+<meta property='og:description' content='Limit of a function — foundation of differential calculus and understanding derivatives'>
+<meta property='og:url' content='http://localhost:1313/en/p/math-limits/'>
+<meta property='og:site_name' content='Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Mathematics' /><meta property='article:tag' content='Machine Learning' /><meta property='article:published_time' content='2026-03-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-13T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Math Analysis — Limits">
+<meta name="twitter:description" content="Limit of a function — foundation of differential calculus and understanding derivatives"><link rel="stylesheet" href="/css/custom.css"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym( 107089384 , "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107089384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_eef9891cfe28abde.jpg" width="300"
+                            height="200" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Blog</a></h1>
+            <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/playlists/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Playlists</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" >ru</option>
+                        
+                            <option value="http://localhost:1313/en/" selected>en</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#contents">Contents</a></li>
+    <li><a href="#what-is-a-limit">What is a limit</a>
+      <ul>
+        <li><a href="#simple-explanation">Simple explanation</a></li>
+        <li><a href="#formal-definition">Formal definition</a></li>
+        <li><a href="#why-we-need-it">Why we need it</a></li>
+        <li><a href="#notation">Notation</a></li>
+      </ul>
+    </li>
+    <li><a href="#limit-of-a-sequence-and-limit-of-a-function">Limit of a sequence and limit of a function</a>
+      <ul>
+        <li><a href="#limit-of-a-sequence">Limit of a sequence</a></li>
+        <li><a href="#limit-of-a-function">Limit of a function</a></li>
+        <li><a href="#relation-between-them">Relation between them</a></li>
+      </ul>
+    </li>
+    <li><a href="#simple-examples">Simple examples</a></li>
+    <li><a href="#properties-of-limits">Properties of limits</a></li>
+    <li><a href="#important-limits">Important limits</a></li>
+    <li><a href="#limits-at-infinity">Limits at infinity</a></li>
+    <li><a href="#connection-to-the-derivative">Connection to the derivative</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/math-limits/">Math Analysis — Limits</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Limit of a function — foundation of differential calculus and understanding derivatives
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 13, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    8 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/p/math-limits/" class="link">ru</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>The limit is one of the key concepts in mathematical analysis. Without it, derivatives, continuity, and many optimization algorithms cannot be rigorously defined.</p>
+<blockquote>
+<p><strong>The derivative is a limit.</strong> The article on <a class="link" href="/en/p/math-derivatives/" >derivatives</a> relies on this concept.</p>
+<p>Limits are needed wherever there is an infinite process that converges to something.</p>
+</blockquote>
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a class="link" href="#what-is-a-limit" >What is a limit</a>
+<ul>
+<li><a class="link" href="#simple-explanation" >Simple explanation</a></li>
+<li><a class="link" href="#formal-definition" >Formal definition</a></li>
+<li><a class="link" href="#why-we-need-it" >Why we need it</a></li>
+<li><a class="link" href="#notation" >Notation</a></li>
+</ul>
+</li>
+<li><a class="link" href="#limit-of-a-sequence-and-limit-of-a-function" >Limit of a sequence and limit of a function</a></li>
+<li><a class="link" href="#simple-examples" >Simple examples</a></li>
+<li><a class="link" href="#properties-of-limits" >Properties of limits</a></li>
+<li><a class="link" href="#important-limits" >Important limits</a></li>
+<li><a class="link" href="#limits-at-infinity" >Limits at infinity</a></li>
+<li><a class="link" href="#connection-to-the-derivative" >Connection to the derivative</a></li>
+<li><a class="link" href="#summary" >Summary</a></li>
+</ol>
+<h2 id="what-is-a-limit">What is a limit</h2>
+<h3 id="simple-explanation">Simple explanation</h3>
+<p>A <strong>limit</strong> is the number a function &ldquo;approaches&rdquo; as the argument gets closer to some point (or to infinity).</p>
+<ul>
+<li>&ldquo;Approaches&rdquo; does not mean &ldquo;equals&rdquo; — the function may be undefined at the point itself but still have a limit.</li>
+<li>The limit describes the <strong>behavior</strong> of the function &ldquo;near&rdquo; the point.</li>
+</ul>
+<p><strong>Example.</strong> The function \( f(x) = \frac{\sin x}{x} \) is undefined at \( x = 0 \) (division by zero). But as \( x \to 0 \), the ratio \( \frac{\sin x}{x} \) approaches 1. We write:
+</p>
+\[
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+\]<h3 id="formal-definition">Formal definition</h3>
+<details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;">
+<summary>ε-δ (epsilon-delta) definition</summary>
+<p>A number \( L \) is called the <strong>limit</strong> of a function \( f(x) \) as \( x \to a \) if:</p>
+<p>for every \( \varepsilon > 0 \) there exists \( \delta > 0 \) such that whenever \( 0 < |x - a| < \delta \), we have \( |f(x) - L| < \varepsilon \).</p>
+<p>In other words: however small we require the &ldquo;accuracy&rdquo; \( \varepsilon \) to be, we can always find a neighborhood \( \delta \) around \( a \) where \( f(x) \) differs from \( L \) by less than \( \varepsilon \).</p>
+</details>
+<h3 id="why-we-need-it">Why we need it</h3>
+<p><strong>The paradox of Achilles and the tortoise</strong> (Zeno, 5th century BC): Achilles races a tortoise. The tortoise gets a head start. Achilles reaches the point where the tortoise was — but the tortoise has moved forward. He runs to the new position — again the tortoise is a bit ahead. Each time a &ldquo;last segment&rdquo; remains. It seems Achilles can never catch up.</p>
+<p>In reality, he does. The paradox arose because we were adding <strong>infinitely many</strong> segments and did not know whether such a sum could be finite. The concept of a limit provides the answer: the sum of an infinite sequence of segments can converge to a finite number. The time it takes Achilles to catch the tortoise is the limit of the sum of ever-smaller intervals.</p>
+\[
+T = t_1 + t_2 + t_3 + \ldots \to \text{finite number}
+\]<p>Without limits we cannot rigorously describe convergence of series, derivatives, integrals — or many machine learning algorithms (gradient descent, iteration convergence).</p>
+<h3 id="notation">Notation</h3>
+\[
+\lim_{x \to a} f(x) = L
+\]<p>read: &ldquo;the limit of \( f(x) \) as \( x \) approaches \( a \) is \( L \)&rdquo;.</p>
+<h2 id="limit-of-a-sequence-and-limit-of-a-function">Limit of a sequence and limit of a function</h2>
+<p>These are two related but distinct concepts.</p>
+<h3 id="limit-of-a-sequence">Limit of a sequence</h3>
+<p>A <strong>sequence</strong> is a function whose argument takes only natural numbers: \( a_1, a_2, a_3, \ldots \), or \( (a_n)_{n=1}^{\infty} \).</p>
+<p>A number \( L \) is the <strong>limit of the sequence</strong> \( (a_n) \) if as \( n \to \infty \) the terms \( a_n \) approach \( L \) arbitrarily closely.</p>
+<p><strong>Formally (ε-N):</strong> for every \( \varepsilon > 0 \) there exists an index \( N \) such that for all \( n > N \) we have \( |a_n - L| < \varepsilon \).</p>
+<p>Notation: \( \lim_{n \to \infty} a_n = L \) or \( a_n \to L \) as \( n \to \infty \).</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>\( a_n = \frac{1}{n} \): \( \lim_{n \to \infty} \frac{1}{n} = 0 \)</li>
+<li>\( a_n = \left(1 + \frac{1}{n}\right)^n \): \( \lim_{n \to \infty} a_n = e \)</li>
+</ul>
+<p>The argument \( n \) tends to infinity — a sequence has no other &ldquo;directions&rdquo; to consider.</p>
+<h3 id="limit-of-a-function">Limit of a function</h3>
+<p>A <strong>function</strong> \( f(x) \) is defined on a set (e.g., an interval). The argument \( x \) can approach a point \( a \) <strong>in different ways</strong>: from the left, from the right, along different paths (in the multivariate case).</p>
+<p>A number \( L \) is the <strong>limit of the function</strong> \( f(x) \) as \( x \to a \) if as \( x \) approaches \( a \) (with \( x \neq a \)) the value \( f(x) \) approaches \( L \).</p>
+<p><strong>Formally (ε-δ):</strong> for every \( \varepsilon > 0 \) there exists \( \delta > 0 \) such that whenever \( 0 < |x - a| < \delta \), we have \( |f(x) - L| < \varepsilon \).</p>
+<p>Notation: \( \lim_{x \to a} f(x) = L \).</p>
+<p><strong>Difference from a sequence:</strong> \( x \) tends to a finite point \( a \) (or to \( \pm\infty \)), not only to \( +\infty \). All &ldquo;ways&rdquo; of approaching \( a \) must be taken into account.</p>
+<h3 id="relation-between-them">Relation between them</h3>
+<p>A sequence can be viewed as a function \( f(n) = a_n \) defined on \( \mathbb{N} \). Then the limit of a sequence is a special case of the limit of a function as \( n \to +\infty \). But usually they are distinguished: for a sequence the argument is discrete (\( n = 1, 2, 3, \ldots \)), for a function it is continuous.</p>
+<h2 id="simple-examples">Simple examples</h2>
+<p><strong>1. Constant.</strong> \( f(x) = 5 \). For any \( x \to a \), the value \( f(x) = 5 \).
+</p>
+\[
+\lim_{x \to a} 5 = 5
+\]<p><strong>2. Linear function.</strong> \( f(x) = 2x + 1 \). As \( x \to 3 \) we get \( f(x) \to 7 \).
+</p>
+\[
+\lim_{x \to 3} (2x + 1) = 7
+\]<p><strong>3. Undefined at the point, but limit exists.</strong> \( f(x) = \frac{x^2 - 1}{x - 1} \). At \( x = 1 \) — division by zero. But for \( x \neq 1 \) we can simplify:
+</p>
+\[
+\frac{x^2 - 1}{x - 1} = \frac{(x-1)(x+1)}{x-1} = x + 1
+\]<p>
+As \( x \to 1 \), the expression \( x + 1 \to 2 \). So:
+</p>
+\[
+\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = 2
+\]<p><strong>4. No limit.</strong> \( f(x) = \frac{1}{x} \) as \( x \to 0 \). For \( x > 0 \) we have \( \frac{1}{x} \to +\infty \), for \( x < 0 \) — \( \to -\infty \). There is no single finite &ldquo;limit&rdquo;.</p>
+<h2 id="properties-of-limits">Properties of limits</h2>
+<p>If \( \lim_{x \to a} f(x) = L \) and \( \lim_{x \to a} g(x) = M \) exist, then:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Property</th>
+          <th>Formula</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Sum</td>
+          <td>\( \lim(f + g) = L + M \)</td>
+      </tr>
+      <tr>
+          <td>Difference</td>
+          <td>\( \lim(f - g) = L - M \)</td>
+      </tr>
+      <tr>
+          <td>Product</td>
+          <td>\( \lim(f \cdot g) = L \cdot M \)</td>
+      </tr>
+      <tr>
+          <td>Quotient (when \( M \neq 0 \))</td>
+          <td>\( \lim(f/g) = L/M \)</td>
+      </tr>
+      <tr>
+          <td>Constant</td>
+          <td>\( \lim(c \cdot f) = c \cdot L \)</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>These rules allow us to break complex limits into simpler ones.</p>
+<h2 id="important-limits">Important limits</h2>
+<p><strong>1. First remarkable limit:</strong>
+</p>
+\[
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+\]<p>
+Used in the derivation of the derivative of sine and in many problems.</p>
+<p><strong>2. Second remarkable limit (base \( e \)):</strong>
+</p>
+\[
+\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e \approx 2.718
+\]<p>
+In another form: \( \lim_{x \to 0} (1 + x)^{1/x} = e \).</p>
+<p><strong>3. The limit that gives the derivative:</strong>
+</p>
+\[
+\lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = f'(x)
+\]<p>
+This is the definition of the derivative — the limit of the ratio of the change in the function to the change in the argument.</p>
+<h2 id="limits-at-infinity">Limits at infinity</h2>
+<p>When \( x \to +\infty \) or \( x \to -\infty \), the limit describes the behavior of the function &ldquo;at large distances&rdquo;.</p>
+<p><strong>Examples:</strong>
+</p>
+\[
+\lim_{x \to +\infty} \frac{1}{x} = 0,\quad \lim_{x \to -\infty} \frac{1}{x} = 0
+\]<p>
+</p>
+\[
+\lim_{x \to +\infty} \frac{1}{x^2} = 0
+\]<p><strong>Polynomials.</strong> As \( x \to \infty \), the leading term dominates:
+</p>
+\[
+\lim_{x \to +\infty} \frac{2x^3 + x - 1}{x^3} = 2
+\]<p>
+(divide numerator and denominator by \( x^3 \), lower-order terms tend to zero).</p>
+<h2 id="connection-to-the-derivative">Connection to the derivative</h2>
+<p>The derivative is a limit:</p>
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+\]<p>Therefore:</p>
+<ul>
+<li><strong>Finite differences</strong> \( \frac{\Delta f}{\Delta x} \) — an approximation when \( \Delta x \) is small but nonzero.</li>
+<li><strong>The derivative</strong> \( f'(x) \) — the exact value of the limit as \( \Delta x \to 0 \).</li>
+</ul>
+<p>Formulas like \( (x^n)' = nx^{n-1} \) are obtained as the result of this limit, not as an approximation. For more details, see the article on <a class="link" href="/en/p/math-derivatives/" >Derivatives</a>.</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>Limit</strong> — the number a function approaches as the argument approaches a point (or infinity).</li>
+<li>The limit describes the <strong>behavior</strong> of the function &ldquo;near&rdquo; the point; the function itself may be undefined at that point.</li>
+<li><strong>Derivative</strong> — a special case of a limit: \( f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \).</li>
+<li>Understanding limits is needed for a rigorous understanding of differential calculus and optimization algorithms (gradient descent, convergence).</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/mathematics/">Mathematics</a>
+        
+            <a href="/en/tags/machine-learning/">Machine Learning</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/en/p/math-chain-rule/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Chain Rule</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-linear-regression-example/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Example: Linear Regression</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-gradient/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Gradient</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-derivatives/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Math Analysis — Derivatives</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-partial-derivative/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Partial Derivative</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

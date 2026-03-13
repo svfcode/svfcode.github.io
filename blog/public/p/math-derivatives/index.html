@@ -11,9 +11,10 @@
 <meta property='og:description' content='Производная, градиент и правило цепочки — основа обучения нейросетей'>
 <meta property='og:url' content='http://localhost:1313/p/math-derivatives/'>
 <meta property='og:site_name' content='Блог'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:tag' content='Математика' /><meta property='article:published_time' content='2025-03-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-12T00:00:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:tag' content='Математика' /><meta property='article:published_time' content='2026-03-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-13T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/math-derivatives/cover.jpg' />
 <meta name="twitter:title" content="Мат Анализ — Производные">
-<meta name="twitter:description" content="Производная, градиент и правило цепочки — основа обучения нейросетей"><link rel="stylesheet" href="/css/custom.css"><link
+<meta name="twitter:description" content="Производная, градиент и правило цепочки — основа обучения нейросетей"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/math-derivatives/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
   integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
@@ -267,19 +268,7 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#что-такое-производная">Что такое производная</a>
-      <ul>
-        <li><a href="#простое-объяснение">Простое объяснение</a></li>
-        <li><a href="#формальное-определение">Формальное определение</a></li>
-        <li><a href="#числовой-пример-линейная-функция">Числовой пример: линейная функция </a></li>
-        <li><a href="#числовой-пример-квадратичная-функция">Числовой пример: квадратичная функция </a></li>
-      </ul>
-    </li>
-    <li><a href="#частная-производная">Частная производная</a></li>
-    <li><a href="#градиент">Градиент</a></li>
-    <li><a href="#правило-цепочки-chain-rule">Правило цепочки (chain rule)</a></li>
-    <li><a href="#пример-линейная-регрессия">Пример: линейная регрессия</a></li>
-    <li><a href="#резюме">Резюме</a></li>
+    <li><a href="#что-такое-скорость">Что такое скорость?</a></li>
   </ul>
 </nav>
         </div>
@@ -291,8 +280,20 @@
 
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/math-derivatives/">
+                <img src="/p/math-derivatives/cover_hu_1dda6aee2912428a.jpg"
+                        srcset="/p/math-derivatives/cover_hu_1dda6aee2912428a.jpg 800w, /p/math-derivatives/cover_hu_1120ee8c63d0b14e.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — Производные" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -325,7 +326,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Mar 12, 2025</time>
+                <time class="article-time--published">Mar 13, 2026</time>
             </div>
         
 
@@ -340,7 +341,7 @@
 
 
                 <time class="article-time--reading">
-                    Время чтения: 5 мин.
+                    Время чтения: 1 мин.
                 </time>
             </div>
         
@@ -374,187 +375,292 @@
     <section class="article-content">
     
     
-    <p>Вторая статья цикла «Необходимая математика» — про производные, градиент и правило цепочки. Без этого не понять, как нейросеть вообще учится.</p>
-<h2 id="что-такое-производная">Что такое производная</h2>
-<h3 id="простое-объяснение">Простое объяснение</h3>
-<p><strong>Скорость на спидометре</strong> — это по сути производная: как быстро меняется пройденное расстояние. Разгоняешься — скорость растёт. Тормозишь — падает. То есть производная отвечает на вопрос: «насколько сильно изменится одна величина, если чуть-чуть изменить другую?»</p>
-<p><strong>Горка.</strong> Крутизна спуска — «насколько сильно опускаешься вниз, когда делаешь шаг вперёд». Крутой спуск — большая производная. Пологий — маленькая. На ровной дороге — ноль.</p>
-<p><strong>График функции.</strong> Если есть график \( y = f(x) \), производная в точке — это <strong>наклон</strong> графика в этой точке. Для прямой вида \( y = kx + b \) наклон — это уже знакомый коэффициент \( k \). Для кривой в каждой точке свой наклон — его и называют производной.</p>
-<ul>
-<li>График круто идёт вверх → производная положительная</li>
-<li>Идёт вниз → производная отрицательная</li>
-<li>Горизонтально (вершина, впадина) → производная равна нулю</li>
-</ul>
-<h3 id="формальное-определение">Формальное определение</h3>
-<p>Производная функции в точке показывает <strong>скорость изменения</strong>: насколько быстро растёт (или падает) значение функции при небольшом сдвиге аргумента.</p>
-<p>Для функции одной переменной \( f(x) \) производная \( f'(x) \) — это предел отношения приращения \( f \) к приращению \( x \), когда приращение стремится к нулю:</p>
-\[
-f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
-\]<p>Здесь \( \Delta x \) — приращение аргумента (маленький шаг). В примерах ниже ту же величину обозначаем буквой \( h \).</p>
-<p>Геометрически — наклон касательной к графику в точке \( x \):</p>
-<ul>
-<li>\( f'(x) > 0 \) — функция растёт</li>
-<li>\( f'(x) < 0 \) — функция убывает</li>
-<li>\( f'(x) = 0 \) — возможный минимум или максимум</li>
-</ul>
-<h3 id="числовой-пример-линейная-функция">Числовой пример: линейная функция \( g(x) = 3x - 1 \)</h3>
-<p>Для прямой наклон везде один и тот же. Считаем в любой точке, например в \( x = 5 \):</p>
-\[
-\frac{g(5 + h) - g(5)}{h} = \frac{(3(5+h) - 1) - g(5)}{h} = \frac{14 + 3h - 14}{h} = \frac{3h}{h} = 3
-\]<p>
-где \( g(5) = 3 \cdot 5 - 1 = 14 \).</p>
-<p>При любом \( h \neq 0 \) получается <strong>3</strong> — производная постоянна, как и коэффициент при \( x \) в уравнении прямой.</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>\( x \)</th>
-          <th>\( g(x) \)</th>
-          <th>\( g(x+0{,}1) - g(x) \)</th>
-          <th>\( \frac{g(x+0{,}1)-g(x)}{0{,}1} \)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>5</td>
-          <td>14</td>
-          <td>0,3</td>
-          <td>3</td>
-      </tr>
-      <tr>
-          <td>10</td>
-          <td>29</td>
-          <td>0,3</td>
-          <td>3</td>
-      </tr>
-      <tr>
-          <td>-2</td>
-          <td>-7</td>
-          <td>0,3</td>
-          <td>3</td>
-      </tr>
-  </tbody>
-</table></div>
-<div style="margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;">
-  <iframe src="/games/derivative-graph-linear.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="График y = 3x − 1" scrolling="no"></iframe>
+    <blockquote>
+<p><strong>Без этого не понять, как нейросеть вообще учится.</strong></p>
+</blockquote>
+<p>Для примера часто приводят скорость автомобиля. Мы тоже так сделаем.</p>
+<h2 id="что-такое-скорость">Что такое скорость?</h2>
+<p>Это отношение расстояния ко времени.</p>
+<p>Вот машина едет со средней скоростью 60 км/ч — значит, если увеличить время \( t \) на единицу, расстояние \( s \) увеличится на 60 единиц. Если увеличить \( t \) в 10 раз, то и \( s \) увеличится в 10 раз. Здесь рост линейный, на графике это прямая линия.</p>
+<div class="chart-wrap" style="max-width: 360px; margin: 1em 0;">
+  <canvas id="chart-linear-075077307086944b10918ade1d547bd6" height="200"></canvas>
+  <div class="chart-legend" style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);">
+    <span style="display: flex; align-items: center; gap: 0.4rem;"><span style="width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;"></span>s = 60t</span>
+  </div>
 </div>
-<h3 id="числовой-пример-квадратичная-функция">Числовой пример: квадратичная функция \( f(x) = x^2 \)</h3>
-<p>Считаем приближённую производную в точке \( x = 2 \) по формуле «приращение \( f \) делим на приращение \( x \)». Берём маленький шаг \( h \) и смотрим отношение:</p>
-\[
-\frac{f(2 + h) - f(2)}{h} = \frac{(2+h)^2 - 4}{h}
-\]<p><strong>При \( x = 2 \)</strong> (\( f(2) = 4 \)):</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>\( h \)</th>
-          <th>\( f(2+h) \)</th>
-          <th>\( f(2+h) - f(2) \)</th>
-          <th>\( \frac{f(2+h)-f(2)}{h} \)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>9</td>
-          <td>5</td>
-          <td>5</td>
-      </tr>
-      <tr>
-          <td>0,1</td>
-          <td>4,41</td>
-          <td>0,41</td>
-          <td>4,1</td>
-      </tr>
-      <tr>
-          <td>0,01</td>
-          <td>4,0401</td>
-          <td>0,0401</td>
-          <td>4,01</td>
-      </tr>
-      <tr>
-          <td>0,001</td>
-          <td>4,0004…</td>
-          <td>0,004…</td>
-          <td>4,001</td>
-      </tr>
-  </tbody>
-</table></div>
-<p>Отношение стремится к <strong>4</strong> → \( f'(2) = 4 \).</p>
-<p><strong>При \( x = 4 \)</strong> (\( f(4) = 16 \)):</p>
-\[
-\frac{f(4 + h) - f(4)}{h} = \frac{(4+h)^2 - 16}{h} = \frac{8h + h^2}{h} = 8 + h \to 8
-\]<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>\( h \)</th>
-          <th>\( f(4+h) \)</th>
-          <th>\( f(4+h) - f(4) \)</th>
-          <th>\( \frac{f(4+h)-f(4)}{h} \)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>25</td>
-          <td>9</td>
-          <td>9</td>
-      </tr>
-      <tr>
-          <td>0,1</td>
-          <td>16,81</td>
-          <td>0,81</td>
-          <td>8,1</td>
-      </tr>
-      <tr>
-          <td>0,01</td>
-          <td>16,0801</td>
-          <td>0,0801</td>
-          <td>8,01</td>
-      </tr>
-  </tbody>
-</table></div>
-<p>Отношение стремится к <strong>8</strong> → \( f'(4) = 8 \). По формуле \( (x^2)' = 2x \): при \( x = 2 \) получаем 4, при \( x = 4 \) — 8. Для кривой производная в каждой точке своя.</p>
-<div style="margin: 1em 0; aspect-ratio: 320/240; min-height: 240px; max-height: 480px; overflow: hidden; border-radius: 8px; background: #1a1a1a;">
-  <iframe src="/games/derivative-graph-parabola.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="График y = x² и касательная" scrolling="no"></iframe>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  var id = 'chart-linear-075077307086944b10918ade1d547bd6';
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function init() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    var labels = [0, 1, 2, 3, 4];
+    var data = [0, 60, 120, 180, 240];
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 's = 60t',
+          data: data,
+          borderColor: '#3b82f6',
+          backgroundColor: 'transparent',
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          title: { display: false }
+        },
+        scales: {
+          x: { title: { display: true, text: 't' }, grid: { color: 'rgba(107,114,128,0.3)' } },
+          y: { title: { display: true, text: 's' }, min: 0, grid: { color: 'rgba(107,114,128,0.3)' } }
+        }
+      }
+    });
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+})();
+</script>
+
+<p>Но в течение времени машина движется неравномерно — скорость то увеличивается, то уменьшается.</p>
+<div class="chart-wrap" style="max-width: 360px; margin: 1em 0;">
+  <canvas id="chart-nonuniform-075077307086944b10918ade1d547bd6" height="200"></canvas>
+  <div class="chart-legend" style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151); flex-wrap: wrap;">
+    <span style="display: flex; align-items: center; gap: 0.4rem;"><span style="width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;"></span>s(t) — расстояние</span>
+    <span style="display: flex; align-items: center; gap: 0.4rem;"><span style="width: 24px; border-bottom: 2px dashed #f59e0b;"></span>v(t) — скорость</span>
+  </div>
 </div>
-<p><strong>Зачем в МО:</strong> обучение — это минимизация функции потерь (loss). Нам нужно знать, в какую сторону менять веса, чтобы loss уменьшался. Производная как раз указывает направление роста; в противоположную сторону идём, чтобы loss падал.</p>
-<h2 id="частная-производная">Частная производная</h2>
-<p>У нейросети много весов — функция потерь зависит от тысяч или миллионов переменных. Нужно понимать, как loss меняется при изменении <strong>каждого</strong> веса по отдельности.</p>
-<p><strong>Частная производная</strong> \( \frac{\partial f}{\partial x} \) — производная по одной переменной, когда остальные считаются константами.</p>
-<p>Пример: \( f(x, y) = x^2 + xy \)</p>
-<ul>
-<li>\( \frac{\partial f}{\partial x} = 2x + y \)</li>
-<li>\( \frac{\partial f}{\partial y} = x \)</li>
-</ul>
-<h2 id="градиент">Градиент</h2>
-<p><strong>Градиент</strong> \( \nabla f \) — вектор всех частных производных:</p>
-\[
-\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right)
-\]<p>Градиент указывает направление <strong>наискорейшего роста</strong> функции. Значит, \( -\nabla f \) — направление наискорейшего <strong>уменьшения</strong>.</p>
-<p><strong>Градиентный спуск</strong> — итеративное обновление весов:</p>
-\[
-w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
-\]<p>где \( \alpha \) — learning rate (шаг), \( L \) — loss. Двигаемся в направлении, противоположном градиенту, чтобы loss уменьшался.</p>
-<h2 id="правило-цепочки-chain-rule">Правило цепочки (chain rule)</h2>
-<p>Нейросеть — это цепочка слоёв: выход каждого слоя передаётся на вход следующего. Loss зависит от выходов, а те — от весов. Чтобы получить \( \frac{\partial L}{\partial w} \), нужно «протащить» производную назад по этой цепочке.</p>
-<p><strong>Правило цепочки</strong> для композиции функций: если \( z = f(y) \) и \( y = g(x) \), то</p>
-\[
-\frac{dz}{dx} = \frac{dz}{dy} \cdot \frac{dy}{dx}
-\]<p>Для многих переменных аналогично: производная по весу раннего слоя получается перемножением производных по всем промежуточным величинам на пути от этого веса до loss.</p>
-<p><strong>Backpropagation</strong> — алгоритм, который эффективно это делает: один проход «назад» по сети вычисляет все нужные градиенты за один раз.</p>
-<h2 id="пример-линейная-регрессия">Пример: линейная регрессия</h2>
-<p>Loss — среднеквадратичная ошибка: \( L = \frac{1}{2}(y - \hat{y})^2 \), где \( \hat{y} = wx + b \).</p>
-\[
-\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial w} = -(y - \hat{y}) \cdot x
-\]<p>Чем больше ошибка \( (y - \hat{y}) \) и чем больше \( x \), тем сильнее корректируем \( w \). Логично: сильная ошибка и «важный» вход требуют большего обновления.</p>
-<h2 id="резюме">Резюме</h2>
-<ul>
-<li><strong>Производная</strong> — скорость изменения, направление роста</li>
-<li><strong>Частная производная</strong> — по одной переменной при фиксированных остальных</li>
-<li><strong>Градиент</strong> — вектор частных производных, направление наискорейшего роста</li>
-<li><strong>Правило цепочки</strong> — как считать производные по цепочке слоёв</li>
-<li><strong>Градиентный спуск</strong> — обновление весов в направлении \( -\nabla L \)</li>
-</ul>
-<p>PyTorch, TensorFlow и др. делают вычисление градиентов автоматически (autograd) — но понимать, что под капотом, важно, чтобы не ловить «градиенты взорвались» или «модель не учится».</p>
+<script>
+(function() {
+  var id = 'chart-nonuniform-075077307086944b10918ade1d547bd6';
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    var labels = [];
+    var sData = [];
+    var vData = [];
+    for (var t = 0; t <= 1.02; t += 0.02) {
+      labels.push(t.toFixed(2));
+      var u = Math.max(0, Math.min(1, t));
+      var s = 60 * u * u * (3 - 2 * u);
+      var v = 360 * u * (1 - u);
+      sData.push(s);
+      vData.push(v);
+    }
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 's(t) — расстояние',
+            data: sData,
+            borderColor: '#3b82f6',
+            borderWidth: 2.5,
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: 'y'
+          },
+          {
+            label: 'v(t) — скорость',
+            data: vData,
+            borderColor: '#f59e0b',
+            borderWidth: 2,
+            borderDash: [6, 4],
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { title: { display: true, text: 't' }, grid: { color: 'rgba(107,114,128,0.3)' } },
+          y: {
+            type: 'linear',
+            position: 'left',
+            title: { display: true, text: 's' },
+            min: 0,
+            max: 70,
+            grid: { color: 'rgba(107,114,128,0.3)' }
+          },
+          y1: {
+            type: 'linear',
+            position: 'right',
+            title: { display: true, text: 'v' },
+            min: 0,
+            max: 100,
+            grid: { drawOnChartArea: false },
+            ticks: { color: 'rgba(107,114,128,0.8)' }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js';
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+})();
+</script>
+
+<details style="background: rgba(239, 68, 68, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #ef4444;">
+<summary>Невозможно</summary>
+<p>Пройденное расстояние не может уменьшаться. Такой график s(t) был бы ошибочным:</p>
+<div class="chart-impossible-wrap" style="max-width: 360px; margin: 0.75em 0;">
+  <canvas id="chart-impossible-st-075077307086944b10918ade1d547bd6" height="200"></canvas>
+  <div class="chart-legend" style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);">
+    <span style="display: flex; align-items: center; gap: 0.4rem;"><span style="width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;"></span>s(t) — неправильно</span>
+  </div>
+</div>
+<script>
+(function() {
+  var id = 'chart-impossible-st-075077307086944b10918ade1d547bd6';
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
+    var labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var data = [0, 3, 7, 11, 14, 11, 6, 2, 5, 9, 13];
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 's(t) — неправильно',
+          data: data,
+          borderColor: '#3b82f6',
+          backgroundColor: 'transparent',
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: true },
+          title: { display: false }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 't', font: { size: 12 } },
+            grid: { color: 'rgba(107,114,128,0.3)' },
+            ticks: { maxTicksLimit: 6 }
+          },
+          y: {
+            title: { display: true, text: 's', font: { size: 12 } },
+            min: 0,
+            max: 16,
+            grid: { color: 'rgba(107,114,128,0.3)' },
+            ticks: { stepSize: 2 }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js';
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+})();
+</script>
+
+</details>
+<details class="quiz-nonuniform" style="margin: 1.5em 0; padding: 1rem; background: var(--card-background, #f8fafc); border-radius: 10px; border: 1px solid var(--card-separator-color, rgba(0,0,0,0.08));">
+<summary style="cursor: pointer; font-size: 1.15rem; font-weight: 600;">Вопросы для самопроверки</summary>
+<div style="margin-top: 1rem;"><div class="quiz-item" style="margin-bottom: 1.25rem;">
+    <p style="margin: 0 0 0.5rem; font-weight: 500;">1. В какой момент скорость максимальна?</p>
+    <details style="margin: 0.4rem 0;"><summary style="cursor: pointer; color: var(--link-color);">Подсказка</summary>
+    <p style="margin: 0.4rem 0; opacity: 0.9;">Посмотри на график v(t). Где он достигает наибольшего значения?</p></details>
+    <div style="margin-top: 0.5rem;">
+      <button type="button" class="quiz-reveal" data-answer="В середине интервала, при t ≈ 0.5">Проверить</button>
+      <span class="quiz-answer" style="display: none; margin-left: 0.5rem;"></span>
+    </div>
+  </div>
+
+  <div class="quiz-item" style="margin-bottom: 1.25rem;">
+    <p style="margin: 0 0 0.5rem; font-weight: 500;">2. Что означает наклон графика s(t) в данной точке?</p>
+    <details style="margin: 0.4rem 0;"><summary style="cursor: pointer; color: var(--link-color);">Подсказка</summary>
+    <p style="margin: 0.4rem 0; opacity: 0.9;">Скорость — это отношение изменения расстояния ко времени. Как это связано с наклоном?</p></details>
+    <div style="margin-top: 0.5rem;">
+      <button type="button" class="quiz-reveal" data-answer="Мгновенную скорость v(t) в этот момент">Проверить</button>
+      <span class="quiz-answer" style="display: none; margin-left: 0.5rem;"></span>
+    </div>
+  </div>
+
+  <div class="quiz-item" style="margin-bottom: 0;">
+    <p style="margin: 0 0 0.5rem; font-weight: 500;">3. Почему v(t) сначала растёт, а потом падает?</p>
+    <details style="margin: 0.4rem 0;"><summary style="cursor: pointer; color: var(--link-color);">Подсказка</summary>
+    <p style="margin: 0.4rem 0; opacity: 0.9;">v — это производная s. Как меняется наклон s(t) от начала до конца? Вспомни S-образную форму.</p></details>
+    <div style="margin-top: 0.5rem;">
+      <button type="button" class="quiz-reveal" data-answer="Наклон s(t) сначала растёт (ускорение), потом уменьшается (замедление). У s есть точка перегиба.">Проверить</button>
+      <span class="quiz-answer" style="display: none; margin-left: 0.5rem;"></span>
+    </div>
+  </div></div>
+</details>
+
+<script>
+(function() {
+  document.querySelectorAll('.quiz-reveal').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var span = this.nextElementSibling;
+      if (span && span.classList.contains('quiz-answer')) {
+        if (span.style.display === 'none' || !span.style.display) {
+          span.textContent = 'Правильный ответ: ' + this.getAttribute('data-answer');
+          span.style.display = 'inline';
+          btn.textContent = 'Скрыть';
+        } else {
+          span.textContent = '';
+          span.style.display = 'none';
+          btn.textContent = 'Проверить';
+        }
+      }
+    });
+  });
+})();
+</script>
+
 
 </section>
 
@@ -586,9 +692,68 @@ w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
         <div class="flex article-list--tile">
             
                 
-<article class="">
+<article class="has-image">
+    <a href="/p/math-derivatives-bkp/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-derivatives-bkp/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — Производные"
+                        data-key="math-derivatives-bkp" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Мат Анализ — Производные</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-circle-area/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-circle-area/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — пример анализа (нахождение πr²)"
+                        data-key="math-circle-area" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Мат Анализ — пример анализа (нахождение πr²)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
     <a href="/p/math-essentials-overview/">
         
+        
+            <div class="article-image">
+                <img src="/p/math-essentials-overview/cover.02fd5d4fc0d77f3e57e83f94fcc7f1ab_hu_839ed1d706eca3a8.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Необходимая математика — обзор"
+                        data-key="math-essentials-overview" 
+                        data-hash="md5-Av1dT8DXfz5X6D&#43;U/Mfxqw==">
+                
+            </div>
         
 
         <div class="article-details">
@@ -599,9 +764,20 @@ w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/p/ai-future-beyond-scaling/">
         
+        
+            <div class="article-image">
+                <img src="/p/ai-future-beyond-scaling/cover.021d37318be2db61d8f7849e96887ab9_hu_c758c54acc359981.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Будущее ИИ: почему одного масштабирования уже недостаточно"
+                        data-key="ai-future-beyond-scaling" 
+                        data-hash="md5-Ah03MYvi22HY94Seloh6uQ==">
+                
+            </div>
         
 
         <div class="article-details">
@@ -612,9 +788,20 @@ w_{new} = w_{old} - \alpha \cdot \frac{\partial L}{\partial w}
 
             
                 
-<article class="">
+<article class="has-image">
     <a href="/p/ai-basics-intro/">
         
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-intro/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Базовый минимум про ИИ – введение"
+                        data-key="ai-basics-intro" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
         
 
         <div class="article-details">

@@ -1,7 +1,7 @@
 ---
 title: "AI basics – introduction"
 description: "A short introduction to the fundamentals of artificial intelligence"
-date: "2025-03-03"
+date: "2026-03-03"
 slug: "ai-basics-intro"
 tags:
   - Artificial Intelligence

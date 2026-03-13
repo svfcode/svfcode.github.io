@@ -466,7 +466,7 @@
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-future-beyond-scaling/&#34; &gt;The Future of AI: Why Scaling Alone is No Longer Enough&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Video&lt;/a&gt; · reading 12 min / video 8 min&lt;/li&gt;
+    &gt;Video&lt;/a&gt; · reading 12 min / video 8 min (original 52 min)&lt;/li&gt;
 &lt;li&gt;👥 Participants: Nicholas Thompson, Eric Xing, Yoshua Bengio, Yuval Noah Harari, Yejin Choi&lt;/li&gt;
 &lt;li&gt;🏷️ Terms: scaling, reward hacking, world model, guardrail, AGI, anthropomorphism&lt;/li&gt;
 &lt;li&gt;📊 Difficulty: intermediate&lt;/li&gt;
@@ -483,9 +483,16 @@
 &lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;Math Analysis — Example of Analysis (Finding πr²)&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;📋 Slicing the circle into rings, unrolling into strips 2πr × Δr — yields a triangle of area πR²&lt;/li&gt;
+&lt;li&gt;🏷️ Integral, limits, area of circle&lt;/li&gt;
+&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;Math Analysis — Derivatives&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;📋 Derivative, gradient, chain rule — backbone of neural network training&lt;/li&gt;
+&lt;li&gt;📋 Without this you can&amp;rsquo;t understand how neural networks learn. Derivative, gradient, chain rule.&lt;/li&gt;
 &lt;li&gt;🏷️ Gradient descent, backpropagation&lt;/li&gt;
 &lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
 &lt;/ul&gt;

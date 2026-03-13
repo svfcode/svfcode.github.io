@@ -1,0 +1,97 @@
+{{- $labelS := default "s(t) — расстояние" (.Get "labelS") -}}
+{{- $labelV := default "v(t) — скорость" (.Get "labelV") -}}
+<div class="chart-wrap" style="max-width: 360px; margin: 1em 0;">
+  <canvas id="chart-nonuniform-{{ .Page.File.UniqueID }}" height="200"></canvas>
+  <div class="chart-legend" style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151); flex-wrap: wrap;">
+    <span style="display: flex; align-items: center; gap: 0.4rem;"><span style="width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;"></span>{{ $labelS }}</span>
+    <span style="display: flex; align-items: center; gap: 0.4rem;"><span style="width: 24px; border-bottom: 2px dashed #f59e0b;"></span>{{ $labelV }}</span>
+  </div>
+</div>
+<script>
+(function() {
+  var id = 'chart-nonuniform-{{ .Page.File.UniqueID }}';
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    var labels = [];
+    var sData = [];
+    var vData = [];
+    for (var t = 0; t <= 1.02; t += 0.02) {
+      labels.push(t.toFixed(2));
+      var u = Math.max(0, Math.min(1, t));
+      var s = 60 * u * u * (3 - 2 * u);
+      var v = 360 * u * (1 - u);
+      sData.push(s);
+      vData.push(v);
+    }
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: '{{ $labelS }}',
+            data: sData,
+            borderColor: '#3b82f6',
+            borderWidth: 2.5,
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: 'y'
+          },
+          {
+            label: '{{ $labelV }}',
+            data: vData,
+            borderColor: '#f59e0b',
+            borderWidth: 2,
+            borderDash: [6, 4],
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { title: { display: true, text: 't' }, grid: { color: 'rgba(107,114,128,0.3)' } },
+          y: {
+            type: 'linear',
+            position: 'left',
+            title: { display: true, text: 's' },
+            min: 0,
+            max: 70,
+            grid: { color: 'rgba(107,114,128,0.3)' }
+          },
+          y1: {
+            type: 'linear',
+            position: 'right',
+            title: { display: true, text: 'v' },
+            min: 0,
+            max: 100,
+            grid: { drawOnChartArea: false },
+            ticks: { color: 'rgba(107,114,128,0.8)' }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js';
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+})();
+</script>

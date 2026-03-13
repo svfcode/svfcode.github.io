@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кривая Безье — производная</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; }
+    body { background: #1a1a1a; font-family: system-ui, sans-serif; padding: 8px; color: #e5e7eb; font-size: 12px; display: flex; flex-direction: column; }
+    .top { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 6px; flex-shrink: 0; }
+    .top button { padding: 5px 10px; border-radius: 6px; border: none; background: #3b82f6; color: white; cursor: pointer; font-size: 11px; }
+    .top button:hover { background: #2563eb; }
+    .top button.secondary { background: #374151; }
+    .layout { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 8px; }
+    .canvas-wrap { flex: 1; min-height: 120px; min-width: 0; position: relative; cursor: crosshair; touch-action: none; }
+    #can { width: 100%; height: 100%; display: block; border-radius: 8px; background: #111827; cursor: crosshair; }
+    .calc { flex-shrink: 0; background: #111827; padding: 10px; border-radius: 8px; border: 1px solid #374151; display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+    .calc h4 { margin-bottom: 6px; color: #60a5fa; font-size: 12px; width: 100%; }
+    .calc table { font-size: 11px; border-collapse: collapse; }
+    .calc td { padding: 3px 6px; border-bottom: 1px solid #374151; }
+    .calc td:first-child { color: #9ca3af; }
+    .hint { font-size: 10px; color: #9ca3af; margin-top: 6px; }
+    .h-slider { margin: 6px 0; }
+    .h-slider label { font-size: 10px; color: #9ca3af; }
+    .h-slider input { width: 100%; margin-top: 2px; accent-color: #3b82f6; }
+    .status { font-size: 11px; color: #9ca3af; flex-shrink: 0; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <button id="btnPoint" class="secondary">Точка на кривой</button>
+    <button id="btnClear">Сброс</button>
+    <span id="status">Перетащи 4 синие точки — строится кривая Безье</span>
+  </div>
+  <div class="layout">
+    <div class="canvas-wrap" id="canvasWrap">
+      <canvas id="can"></canvas>
+    </div>
+    <div class="calc" style="width: 100%;">
+      <h4>Калькуляция производной</h4>
+      <p id="calcIntro" style="color: #6b7280; font-size: 11px;">Поставь точку на кривую.</p>
+      <div id="calcBox" style="display: none;">
+        <table>
+          <tr><td>x</td><td id="vX">—</td></tr>
+          <tr><td>f(x)</td><td id="vFx">—</td></tr>
+          <tr><td>h</td><td id="vH">—</td></tr>
+          <tr><td>x + h</td><td id="vXh">—</td></tr>
+          <tr><td>f(x+h)</td><td id="vFxh">—</td></tr>
+          <tr><td>Δf</td><td id="vDf">—</td></tr>
+          <tr><td>f'(x) ≈ Δf/h</td><td id="vDeriv" style="color: #4ade80; font-weight: 600;">—</td></tr>
+        </table>
+        <div class="h-slider">
+          <label>h: <span id="hVal">0.1</span></label>
+          <input type="range" id="hSlider" min="-3" max="0" step="0.1" value="-1">
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="status" id="statusHint">P0, P1, P2, P3 — контрольные точки кубической Безье</p>
+  <script>
+    const can = document.getElementById('can');
+    const ctx = can.getContext('2d');
+    const xMin = -4, xMax = 4, yMin = -3, yMax = 3;
+    const width = () => can.width;
+    const height = () => can.height;
+
+    let ctrl = [
+      { x: -2.5, y: -1 }, { x: -0.5, y: 2 },
+      { x: 1.5, y: -2 }, { x: 2.5, y: 1 }
+    ];
+    let mode = 'point';
+    let pointX = null;
+    let dragging = false;
+    let dragIdx = -1;
+    let h = 0.1;
+    let mdownPos = null;
+
+    function toPx(x, y) {
+      const px = (x - xMin) / (xMax - xMin) * width();
+      const py = height() - (y - yMin) / (yMax - yMin) * height();
+      return { px, py };
+    }
+    function fromPx(px, py) {
+      const x = xMin + (px / width()) * (xMax - xMin);
+      const y = yMin + ((height() - py) / height()) * (yMax - yMin);
+      return { x, y };
+    }
+
+    function resize() {
+      const wrap = can.parentElement;
+      const w = wrap && wrap.clientWidth > 0 ? wrap.clientWidth : 400;
+      const wrapH = wrap && wrap.clientHeight > 0 ? wrap.clientHeight - 10 : 250;
+      can.width = Math.max(200, w);
+      can.height = Math.max(150, wrapH);
+      draw();
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    setTimeout(resize, 50);
+
+    function bezier(t) {
+      const t2 = t * t, t3 = t2 * t;
+      const u = 1 - t, u2 = u * u, u3 = u2 * u;
+      return {
+        x: u3*ctrl[0].x + 3*u2*t*ctrl[1].x + 3*u*t2*ctrl[2].x + t3*ctrl[3].x,
+        y: u3*ctrl[0].y + 3*u2*t*ctrl[1].y + 3*u*t2*ctrl[2].y + t3*ctrl[3].y
+      };
+    }
+
+    function findTForX(x) {
+      if (x < bezier(0).x || x > bezier(1).x) return null;
+      let lo = 0, hi = 1;
+      for (let i = 0; i < 30; i++) {
+        const mid = (lo + hi) / 2;
+        const bx = bezier(mid).x;
+        if (Math.abs(bx - x) < 1e-6) return mid;
+        if (bx < x) lo = mid; else hi = mid;
+      }
+      return (lo + hi) / 2;
+    }
+
+    function f(x) {
+      const t = findTForX(x);
+      return t !== null ? bezier(t).y : null;
+    }
+
+    function findClosestOnCurve(px, py) {
+      let best = null, bestD = Infinity;
+      for (let i = 0; i <= 100; i++) {
+        const t = i / 100;
+        const b = bezier(t);
+        const { px: cx, py: cy } = toPx(b.x, b.y);
+        const d = (px - cx) ** 2 + (py - cy) ** 2;
+        if (d < bestD) { bestD = d; best = { x: b.x, y: b.y }; }
+      }
+      return best;
+    }
+
+    function hitCtrl(px, py) {
+      for (let i = 0; i < 4; i++) {
+        const { px: cx, py: cy } = toPx(ctrl[i].x, ctrl[i].y);
+        if ((px - cx) ** 2 + (py - cy) ** 2 < 196) return i;
+      }
+      return -1;
+    }
+
+    function draw() {
+      ctx.fillStyle = '#111827';
+      ctx.fillRect(0, 0, width(), height());
+
+      ctx.strokeStyle = '#374151';
+      ctx.lineWidth = 1;
+      const ox = toPx(0, 0);
+      ctx.beginPath();
+      ctx.moveTo(ox.px, 0); ctx.lineTo(ox.px, height());
+      ctx.moveTo(0, ox.py); ctx.lineTo(width(), ox.py);
+      ctx.stroke();
+
+      ctx.fillStyle = '#9ca3af';
+      ctx.font = '11px sans-serif';
+      ctx.textAlign = 'center';
+      for (let i = Math.ceil(xMin); i <= Math.floor(xMax); i++) {
+        if (i === 0) continue;
+        const p = toPx(i, 0);
+        ctx.fillText(String(i), p.px, ox.py + 14);
+      }
+      ctx.fillText('0', ox.px, ox.py + 14);
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      for (let i = Math.ceil(yMin); i <= Math.floor(yMax); i++) {
+        const p = toPx(0, i);
+        ctx.fillText(String(i), ox.px - 6, p.py);
+      }
+      ctx.textBaseline = 'alphabetic';
+
+      ctx.strokeStyle = '#4b5563';
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      const p0 = toPx(ctrl[0].x, ctrl[0].y);
+      ctx.moveTo(p0.px, p0.py);
+      ctx.lineTo(toPx(ctrl[1].x, ctrl[1].y).px, toPx(ctrl[1].x, ctrl[1].y).py);
+      ctx.lineTo(toPx(ctrl[2].x, ctrl[2].y).px, toPx(ctrl[2].x, ctrl[2].y).py);
+      ctx.lineTo(toPx(ctrl[3].x, ctrl[3].y).px, toPx(ctrl[3].x, ctrl[3].y).py);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.strokeStyle = '#4ade80';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(p0.px, p0.py);
+      for (let i = 1; i <= 80; i++) {
+        const b = bezier(i / 80);
+        const fp = toPx(b.x, b.y);
+        ctx.lineTo(fp.px, fp.py);
+      }
+      ctx.stroke();
+
+      if (pointX !== null) {
+        const fy = f(pointX);
+        if (fy !== null) {
+          const pt = toPx(pointX, fy);
+          ctx.fillStyle = '#f97316';
+          ctx.beginPath();
+          ctx.arc(pt.px, pt.py, 8, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.strokeStyle = '#fb923c';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          const xh = pointX + h;
+          const fyh = f(xh);
+          if (fyh !== null) {
+            const pth = toPx(xh, fyh);
+            ctx.strokeStyle = 'rgba(96, 165, 250, 0.6)';
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(pt.px, pt.py);
+            ctx.lineTo(pth.px, pth.py);
+            ctx.stroke();
+            ctx.setLineDash([]);
+          }
+        }
+      }
+
+      for (let i = 0; i < 4; i++) {
+        const fp = toPx(ctrl[i].x, ctrl[i].y);
+        ctx.fillStyle = '#60a5fa';
+        ctx.beginPath();
+        ctx.arc(fp.px, fp.py, 6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = '#93c5fd';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.fillStyle = '#e5e7eb';
+        ctx.font = '10px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('P' + i, fp.px, fp.py - 10);
+      }
+    }
+
+    function updateCalc() {
+      const box = document.getElementById('calcBox');
+      const intro = document.getElementById('calcIntro');
+      if (pointX === null || f(pointX) === null) {
+        box.style.display = 'none';
+        intro.style.display = 'block';
+        return;
+      }
+      box.style.display = 'block';
+      intro.style.display = 'none';
+      const fx = f(pointX);
+      const xh = pointX + h;
+      const fxh = f(xh);
+      const df = fxh !== null ? fxh - fx : null;
+      const deriv = df !== null ? df / h : null;
+
+      document.getElementById('vX').textContent = pointX.toFixed(3);
+      document.getElementById('vFx').textContent = fx.toFixed(4);
+      document.getElementById('vH').textContent = h.toFixed(4);
+      document.getElementById('vXh').textContent = xh.toFixed(3);
+      document.getElementById('vFxh').textContent = fxh !== null ? fxh.toFixed(4) : '—';
+      document.getElementById('vDf').textContent = df !== null ? df.toFixed(4) : '—';
+      document.getElementById('vDeriv').textContent = deriv !== null ? deriv.toFixed(4) : '—';
+    }
+
+    const canvasWrap = document.getElementById('canvasWrap');
+
+    function getEventCoords(e) {
+      if (e.touches && e.touches.length) return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      if (e.changedTouches && e.changedTouches.length) return { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
+      if (e.clientX !== undefined) return { x: e.clientX, y: e.clientY };
+      return { x: 0, y: 0 };
+    }
+    function eventToCanvas(e) {
+      const { x: cx, y: cy } = getEventCoords(e);
+      const rect = canvasWrap.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) return { px: 0, py: 0 };
+      const scaleX = can.width / rect.width;
+      const scaleY = can.height / rect.height;
+      return {
+        px: (cx - rect.left) * scaleX,
+        py: (cy - rect.top) * scaleY
+      };
+    }
+
+    function handlePointerDown(e) {
+      if (e.cancelable && (e.pointerType === 'touch' || e.type === 'touchstart')) e.preventDefault();
+      const { px, py } = eventToCanvas(e);
+      mdownPos = { px, py };
+      const idx = hitCtrl(px, py);
+      if (idx >= 0) {
+        dragIdx = idx;
+        dragging = true;
+      } else if (mode === 'point') {
+        const pt = findClosestOnCurve(px, py);
+        if (pt) {
+          pointX = pt.x;
+          dragging = true;
+          dragIdx = -2;
+          updateCalc();
+          draw();
+        }
+      }
+    }
+    canvasWrap.addEventListener('pointerdown', handlePointerDown);
+    canvasWrap.addEventListener('mousedown', handlePointerDown);
+    canvasWrap.addEventListener('touchstart', handlePointerDown, { passive: false });
+
+    function handlePointerMove(e) {
+      if (e.cancelable && e.type === 'touchmove') e.preventDefault();
+      const { px, py } = eventToCanvas(e);
+      const { x, y } = fromPx(px, py);
+      if (dragging) {
+        if (dragIdx >= 0) {
+          ctrl[dragIdx].x = Math.max(xMin, Math.min(xMax, x));
+          ctrl[dragIdx].y = Math.max(yMin, Math.min(yMax, y));
+        } else if (dragIdx === -2) {
+          const pt = findClosestOnCurve(px, py);
+          if (pt) pointX = pt.x;
+          updateCalc();
+        }
+      }
+      draw();
+    }
+    canvasWrap.addEventListener('pointermove', handlePointerMove);
+    canvasWrap.addEventListener('mousemove', handlePointerMove);
+    canvasWrap.addEventListener('touchmove', handlePointerMove, { passive: false });
+
+    function handlePointerUp(e) {
+      if (e.cancelable && (e.type === 'touchend' || e.type === 'touchcancel')) e.preventDefault();
+      if (dragging && dragIdx === -2 && mdownPos) {
+        const c = (e.changedTouches && e.changedTouches.length) ? e.changedTouches[0] : (e.clientX != null ? e : null);
+        if (c) {
+          const rect = canvasWrap.getBoundingClientRect();
+          if (rect.width > 0 && rect.height > 0) {
+            const px = (c.clientX - rect.left) * (can.width / rect.width);
+            const py = (c.clientY - rect.top) * (can.height / rect.height);
+            if ((px - mdownPos.px) ** 2 + (py - mdownPos.py) ** 2 <= 100) {
+              const pt = findClosestOnCurve(px, py);
+              if (pt) { pointX = pt.x; updateCalc(); draw(); }
+            }
+          }
+        }
+      }
+      dragging = false;
+      dragIdx = -1;
+      mdownPos = null;
+    }
+    document.addEventListener('pointerup', handlePointerUp);
+    document.addEventListener('pointercancel', handlePointerUp);
+    document.addEventListener('mouseup', handlePointerUp);
+    document.addEventListener('touchend', handlePointerUp, { passive: false });
+    document.addEventListener('touchcancel', handlePointerUp, { passive: false });
+
+    canvasWrap.addEventListener('click', e => {
+      if (dragging) return;
+      const { px, py } = eventToCanvas(e);
+      if (mdownPos && (px - mdownPos.px) ** 2 + (py - mdownPos.py) ** 2 > 100) { mdownPos = null; return; }
+      mdownPos = null;
+      if (mode === 'point') {
+        const pt = findClosestOnCurve(px, py);
+        if (pt) {
+          pointX = pt.x;
+          updateCalc();
+        }
+      }
+      draw();
+    });
+
+    document.getElementById('btnPoint').addEventListener('click', () => {
+      mode = 'point';
+      if (pointX === null) pointX = (bezier(0).x + bezier(1).x) / 2;
+      document.getElementById('status').textContent = 'Перетащи оранжевую точку по кривой или кликни по кривой.';
+      document.getElementById('btnPoint').classList.remove('secondary');
+      updateCalc();
+      draw();
+    });
+
+    document.getElementById('btnClear').addEventListener('click', () => {
+      ctrl = [
+        { x: -2.5, y: -1 }, { x: -0.5, y: 2 },
+        { x: 1.5, y: -2 }, { x: 2.5, y: 1 }
+      ];
+      pointX = null;
+      document.getElementById('status').textContent = 'Перетащи 4 синие точки — строится кривая Безье';
+      draw();
+      updateCalc();
+    });
+
+    document.getElementById('hSlider').addEventListener('input', () => {
+      const v = parseFloat(document.getElementById('hSlider').value);
+      h = Math.pow(10, v);
+      document.getElementById('hVal').textContent = h.toFixed(4);
+      updateCalc();
+      draw();
+    });
+
+    document.getElementById('hVal').textContent = h.toFixed(4);
+    draw();
+  </script>
+</body>
+</html>

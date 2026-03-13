@@ -1,0 +1,72 @@
+{{- $label := default "s(t) — неправильно" (.Get "label") -}}
+<div class="chart-impossible-wrap" style="max-width: 360px; margin: 0.75em 0;">
+  <canvas id="chart-impossible-st-{{ .Page.File.UniqueID }}" height="200"></canvas>
+  <div class="chart-legend" style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);">
+    <span style="display: flex; align-items: center; gap: 0.4rem;"><span style="width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;"></span>{{ $label }}</span>
+  </div>
+</div>
+<script>
+(function() {
+  var id = 'chart-impossible-st-{{ .Page.File.UniqueID }}';
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    // Impossible s(t): rise → fall → rise (distance cannot decrease)
+    var labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var data = [0, 3, 7, 11, 14, 11, 6, 2, 5, 9, 13];
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '{{ $label }}',
+          data: data,
+          borderColor: '#3b82f6',
+          backgroundColor: 'transparent',
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: true },
+          title: { display: false }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 't', font: { size: 12 } },
+            grid: { color: 'rgba(107,114,128,0.3)' },
+            ticks: { maxTicksLimit: 6 }
+          },
+          y: {
+            title: { display: true, text: 's', font: { size: 12 } },
+            min: 0,
+            max: 16,
+            grid: { color: 'rgba(107,114,128,0.3)' },
+            ticks: { stepSize: 2 }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js';
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+})();
+</script>

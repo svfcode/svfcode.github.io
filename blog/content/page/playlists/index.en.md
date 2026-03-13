@@ -20,7 +20,7 @@ menu:
 ## 👥 On Their Shoulders
 
 - **[The Future of AI: Why Scaling Alone is No Longer Enough](/en/p/ai-future-beyond-scaling/)**
-  - 🎬 [Video](https://youtu.be/5mUEOx3uLDc) · reading 12 min / video 8 min
+  - 🎬 [Video](https://youtu.be/5mUEOx3uLDc) · reading 12 min / video 8 min (original 52 min)
   - 👥 Participants: Nicholas Thompson, Eric Xing, Yoshua Bengio, Yuval Noah Harari, Yejin Choi
   - 🏷️ Terms: scaling, reward hacking, world model, guardrail, AGI, anthropomorphism
   - 📊 Difficulty: intermediate
@@ -32,7 +32,11 @@ menu:
   - 📋 Overview: which math areas are needed for AI/ML and why
   - 🏷️ Linear algebra, calculus, probability and statistics
   - 📊 Difficulty: basic
+- **[Math Analysis — Example of Analysis (Finding πr²)](/en/p/math-circle-area/)**
+  - 📋 Slicing the circle into rings, unrolling into strips 2πr × Δr — yields a triangle of area πR²
+  - 🏷️ Integral, limits, area of circle
+  - 📊 Difficulty: basic
 - **[Math Analysis — Derivatives](/en/p/math-derivatives/)**
-  - 📋 Derivative, gradient, chain rule — backbone of neural network training
+  - 📋 Without this you can't understand how neural networks learn. Derivative, gradient, chain rule.
   - 🏷️ Gradient descent, backpropagation
   - 📊 Difficulty: basic

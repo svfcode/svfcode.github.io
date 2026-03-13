@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Self-check tasks</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #1a1a1a; font-family: system-ui, sans-serif; padding: 12px; color: #e5e7eb; font-size: 14px; }
+    .task { margin-bottom: 16px; padding: 12px; background: #111827; border-radius: 8px; border-left: 3px solid #3b82f6; }
+    .task q { font-style: italic; color: #d1d5db; }
+    .hint { margin-top: 8px; font-size: 13px; color: #9ca3af; }
+    .hint summary { cursor: pointer; color: #60a5fa; }
+    .check-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+    .check-row input { padding: 6px 10px; border-radius: 6px; border: 1px solid #374151; background: #111827; color: #e5e7eb; width: 80px; font-size: 14px; }
+    .check-row button { padding: 6px 14px; border-radius: 6px; border: none; background: #3b82f6; color: white; cursor: pointer; font-size: 13px; }
+    .check-row button:hover { background: #2563eb; }
+    .result { margin-top: 6px; font-size: 13px; }
+    .result.ok { color: #4ade80; }
+    .result.err { color: #f87171; }
+  </style>
+</head>
+<body>
+  <div class="task" data-answer="3">
+    <q>What is the derivative of g(x) = 3x − 1? (at any point x)</q>
+    <details class="hint">
+      <summary>Hint</summary>
+      <p>For a line y = kx + b the slope (derivative) is k everywhere.</p>
+    </details>
+    <div class="check-row">
+      <label>Answer:</label>
+      <input type="text" data-task="0" placeholder="number">
+      <button type="button" data-check="0">Check</button>
+      <span class="result" data-result="0"></span>
+    </div>
+  </div>
+
+  <div class="task" data-answer="8">
+    <q>What is f'(4) for f(x) = x²?</q>
+    <details class="hint">
+      <summary>Hint</summary>
+      <p>Derivative (x²)' = 2x. Plug in x = 4.</p>
+    </details>
+    <div class="check-row">
+      <label>Answer:</label>
+      <input type="text" data-task="1" placeholder="number">
+      <button type="button" data-check="1">Check</button>
+      <span class="result" data-result="1"></span>
+    </div>
+  </div>
+
+  <div class="task" data-answer="60">
+    <q>A car drives 60 km/h. s(t) = 60t. What is s'(t) (instantaneous speed)?</q>
+    <details class="hint">
+      <summary>Hint</summary>
+      <p>At constant speed, derivative of distance w.r.t. time = speed.</p>
+    </details>
+    <div class="check-row">
+      <label>Answer:</label>
+      <input type="text" data-task="2" placeholder="number">
+      <button type="button" data-check="2">Check</button>
+      <span class="result" data-result="2"></span>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('[data-check]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const task = btn.closest('.task');
+        const answer = task.dataset.answer;
+        const inp = task.querySelector('input');
+        const resEl = task.querySelector('[data-result]');
+        const val = inp.value.trim().replace(',', '.');
+        if (!val) { resEl.textContent = 'Enter answer'; resEl.className = 'result err'; return; }
+        const num = parseFloat(val);
+        const expected = parseFloat(answer);
+        if (!Number.isNaN(num) && Math.abs(num - expected) < 0.01) {
+          resEl.textContent = 'Correct!';
+          resEl.className = 'result ok';
+        } else {
+          resEl.textContent = 'Try again. Answer: ' + answer;
+          resEl.className = 'result err';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

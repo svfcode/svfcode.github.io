@@ -1,0 +1,53 @@
+{{- $title := default "s = 60t" (.Get "title") -}}
+{{- $legend := default "s = 60t" (.Get "legend") -}}
+<div class="chart-wrap" style="max-width: 360px; margin: 1em 0;">
+  <canvas id="chart-linear-{{ .Page.File.UniqueID }}" height="200"></canvas>
+  <div class="chart-legend" style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);">
+    <span style="display: flex; align-items: center; gap: 0.4rem;"><span style="width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;"></span>{{ $legend }}</span>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  var id = 'chart-linear-{{ .Page.File.UniqueID }}';
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function init() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    var labels = [0, 1, 2, 3, 4];
+    var data = [0, 60, 120, 180, 240];
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '{{ $legend }}',
+          data: data,
+          borderColor: '#3b82f6',
+          backgroundColor: 'transparent',
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          title: { display: false }
+        },
+        scales: {
+          x: { title: { display: true, text: 't' }, grid: { color: 'rgba(107,114,128,0.3)' } },
+          y: { title: { display: true, text: 's' }, min: 0, grid: { color: 'rgba(107,114,128,0.3)' } }
+        }
+      }
+    });
+  }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+})();
+</script>

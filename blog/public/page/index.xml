@@ -466,7 +466,7 @@
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-future-beyond-scaling/&#34; &gt;Будущее ИИ: почему одного масштабирования уже недостаточно&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Видео&lt;/a&gt; · чтение 12 мин / видео 8 мин&lt;/li&gt;
+    &gt;Видео&lt;/a&gt; · чтение 12 мин / видео 8 мин (оригинал 52 мин)&lt;/li&gt;
 &lt;li&gt;👥 Участники: Nicholas Thompson, Eric Xing, Yoshua Bengio, Yuval Noah Harari, Yejin Choi&lt;/li&gt;
 &lt;li&gt;🏷️ Термины: масштабирование, reward hacking, world model, guardrail, AGI, антропоморфизм&lt;/li&gt;
 &lt;li&gt;📊 Сложность: средняя&lt;/li&gt;
@@ -483,9 +483,16 @@
 &lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-derivatives/&#34; &gt;Мат Анализ — Производные&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-circle-area/&#34; &gt;Мат анализ — пример анализа (нахождение πr²)&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;📋 Производная, градиент, правило цепочки — основа обучения нейросетей&lt;/li&gt;
+&lt;li&gt;📋 Нарезка круга на кольца, разворот в полоски 2πr × Δr — получается треугольник с площадью πR²&lt;/li&gt;
+&lt;li&gt;🏷️ Интеграл, пределы, площадь круга&lt;/li&gt;
+&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-derivatives/&#34; &gt;Мат анализ — Производные&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;📋 Без этого не понять, как нейросеть вообще учится. Производная, градиент, правило цепочки.&lt;/li&gt;
 &lt;li&gt;🏷️ Градиентный спуск, backpropagation&lt;/li&gt;
 &lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
 &lt;/ul&gt;

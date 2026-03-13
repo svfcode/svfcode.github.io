@@ -6,13 +6,13 @@
         <description>Recent content in База on Блог</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ru</language>
-        <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 03 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Базовый минимум про ИИ – введение</title>
         <link>http://localhost:1313/p/ai-basics-intro/</link>
-        <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/ai-basics-intro/</guid>
-        <description>&lt;p&gt;Это первая статья из цикла «Базовый минимум» — коротко про то, как устроен ИИ. Каждая статья будет освещать одно понятие или концепцию, постараюсь делать их короткими и последовательными.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – введение" /&gt;&lt;p&gt;Это первая статья из цикла «Базовый минимум» — коротко про то, как устроен ИИ. Каждая статья будет освещать одно понятие или концепцию, постараюсь делать их короткими и последовательными.&lt;/p&gt;
 &lt;p&gt;Начнём с общепринятых терминов, далее поговорим про промпт-инжиниринг, RAG-системы и агентов, способных выполнять сложные многоступенчатые задачи.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Видео версия:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Смотреть на YouTube&lt;/a&gt;&lt;/p&gt;

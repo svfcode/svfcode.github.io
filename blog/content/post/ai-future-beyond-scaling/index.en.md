@@ -1,7 +1,7 @@
 ---
 title: "The Future of AI: Why Scaling Alone is No Longer Enough"
 description: "Scaling brought us LLMs, but the next leap requires a paradigm shift in how we train models"
-date: "2025-03-10"
+date: "2026-03-10"
 slug: "ai-future-beyond-scaling"
 tags:
   - Artificial Intelligence
@@ -10,7 +10,7 @@ tags:
 
 Until recently, the main recipe for progress in AI seemed obvious: more data, more compute, more parameters. And it worked — it led to modern large language models. But the central idea is that **scaling is useful but no longer sufficient**. The next step requires not just more power, but a paradigm shift in how we train models.
 
-**Article based on a video.** [Watch on YouTube](https://youtu.be/5mUEOx3uLDc)
+**Article based on a video.** [Watch on YouTube](https://youtu.be/5mUEOx3uLDc) (8 min) · [Original 52 min](https://youtu.be/MdGnCIl-_hU?si=ylocQLiEBvp9Bydb)
 
 <details>
 <summary>Panel participants and their backgrounds</summary>

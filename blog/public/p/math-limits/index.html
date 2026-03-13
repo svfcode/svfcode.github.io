@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Предел функции — основа дифференциального исчисления и понимания производных'>
+<title>Мат Анализ — Пределы</title>
+
+<link rel='canonical' href='http://localhost:1313/p/math-limits/'>
+
+<link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
+<meta property='og:title' content='Мат Анализ — Пределы'>
+<meta property='og:description' content='Предел функции — основа дифференциального исчисления и понимания производных'>
+<meta property='og:url' content='http://localhost:1313/p/math-limits/'>
+<meta property='og:site_name' content='Блог'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Математика' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:published_time' content='2026-03-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-13T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Мат Анализ — Пределы">
+<meta name="twitter:description" content="Предел функции — основа дифференциального исчисления и понимания производных"><link rel="stylesheet" href="/css/custom.css"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym( 107089384 , "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107089384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Показать/скрыть меню">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_eef9891cfe28abde.jpg" width="300"
+                            height="200" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Блог</a></h1>
+            <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Обо мне</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/playlists/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Плейлисты</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Архивы</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Поиск</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" selected>ru</option>
+                        
+                            <option value="http://localhost:1313/en/" >en</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Тёмный режим</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Содержание</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#содержание">Содержание</a></li>
+    <li><a href="#что-такое-предел">Что такое предел</a>
+      <ul>
+        <li><a href="#простое-объяснение">Простое объяснение</a></li>
+        <li><a href="#формальное-определение">Формальное определение</a></li>
+        <li><a href="#зачем-он-нужен">Зачем он нужен</a></li>
+        <li><a href="#обозначение">Обозначение</a></li>
+      </ul>
+    </li>
+    <li><a href="#предел-последовательности-и-предел-функции">Предел последовательности и предел функции</a>
+      <ul>
+        <li><a href="#предел-последовательности">Предел последовательности</a></li>
+        <li><a href="#предел-функции">Предел функции</a></li>
+        <li><a href="#связь">Связь</a></li>
+      </ul>
+    </li>
+    <li><a href="#простые-примеры">Простые примеры</a></li>
+    <li><a href="#свойства-пределов">Свойства пределов</a></li>
+    <li><a href="#важные-пределы">Важные пределы</a></li>
+    <li><a href="#пределы-на-бесконечности">Пределы на бесконечности</a></li>
+    <li><a href="#связь-с-производной">Связь с производной</a></li>
+    <li><a href="#резюме">Резюме</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/math-limits/">Мат Анализ — Пределы</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Предел функции — основа дифференциального исчисления и понимания производных
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 13, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    Время чтения: 7 мин.
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/en/p/math-limits/" class="link">en</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Предел — одно из ключевых понятий математического анализа. Без него нельзя строго определить производную, непрерывность и многие алгоритмы оптимизации.</p>
+<blockquote>
+<p><strong>Производная — это предел.</strong> Статья про <a class="link" href="/p/math-derivatives/" >производные</a> опирается на это понятие.</p>
+<p>Пределы нужны там, где есть бесконечный процесс, но он к чему-то сходится.</p>
+</blockquote>
+<h2 id="содержание">Содержание</h2>
+<ol>
+<li><a class="link" href="#%d1%87%d1%82%d0%be-%d1%82%d0%b0%d0%ba%d0%be%d0%b5-%d0%bf%d1%80%d0%b5%d0%b4%d0%b5%d0%bb" >Что такое предел</a>
+<ul>
+<li><a class="link" href="#%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b5-%d0%be%d0%b1%d1%8a%d1%8f%d1%81%d0%bd%d0%b5%d0%bd%d0%b8%d0%b5" >Простое объяснение</a></li>
+<li><a class="link" href="#%d1%84%d0%be%d1%80%d0%bc%d0%b0%d0%bb%d1%8c%d0%bd%d0%be%d0%b5-%d0%be%d0%bf%d1%80%d0%b5%d0%b4%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5" >Формальное определение</a></li>
+<li><a class="link" href="#%d0%b7%d0%b0%d1%87%d0%b5%d0%bc-%d0%be%d0%bd-%d0%bd%d1%83%d0%b6%d0%b5%d0%bd" >Зачем он нужен</a></li>
+<li><a class="link" href="#%d0%be%d0%b1%d0%be%d0%b7%d0%bd%d0%b0%d1%87%d0%b5%d0%bd%d0%b8%d0%b5" >Обозначение</a></li>
+</ul>
+</li>
+<li><a class="link" href="#%d0%bf%d1%80%d0%b5%d0%b4%d0%b5%d0%bb-%d0%bf%d0%be%d1%81%d0%bb%d0%b5%d0%b4%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%be%d1%81%d1%82%d0%b8-%d0%b8-%d0%bf%d1%80%d0%b5%d0%b4%d0%b5%d0%bb-%d1%84%d1%83%d0%bd%d0%ba%d1%86%d0%b8%d0%b8" >Предел последовательности и предел функции</a></li>
+<li><a class="link" href="#%d0%bf%d1%80%d0%be%d1%81%d1%82%d1%8b%d0%b5-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80%d1%8b" >Простые примеры</a></li>
+<li><a class="link" href="#%d1%81%d0%b2%d0%be%d0%b9%d1%81%d1%82%d0%b2%d0%b0-%d0%bf%d1%80%d0%b5%d0%b4%d0%b5%d0%bb%d0%be%d0%b2" >Свойства пределов</a></li>
+<li><a class="link" href="#%d0%b2%d0%b0%d0%b6%d0%bd%d1%8b%d0%b5-%d0%bf%d1%80%d0%b5%d0%b4%d0%b5%d0%bb%d1%8b" >Важные пределы</a></li>
+<li><a class="link" href="#%d0%bf%d1%80%d0%b5%d0%b4%d0%b5%d0%bb%d1%8b-%d0%bd%d0%b0-%d0%b1%d0%b5%d1%81%d0%ba%d0%be%d0%bd%d0%b5%d1%87%d0%bd%d0%be%d1%81%d1%82%d0%b8" >Пределы на бесконечности</a></li>
+<li><a class="link" href="#%d1%81%d0%b2%d1%8f%d0%b7%d1%8c-%d1%81-%d0%bf%d1%80%d0%be%d0%b8%d0%b7%d0%b2%d0%be%d0%b4%d0%bd%d0%be%d0%b9" >Связь с производной</a></li>
+<li><a class="link" href="#%d1%80%d0%b5%d0%b7%d1%8e%d0%bc%d0%b5" >Резюме</a></li>
+</ol>
+<h2 id="что-такое-предел">Что такое предел</h2>
+<h3 id="простое-объяснение">Простое объяснение</h3>
+<p><strong>Предел</strong> — это число, к которому функция «стремится», когда аргумент приближается к некоторой точке (или к бесконечности).</p>
+<ul>
+<li>«Стремится» не значит «равно» — функция может быть не определена в самой точке, но иметь предел.</li>
+<li>Предел описывает <strong>поведение</strong> функции «рядом» с точкой.</li>
+</ul>
+<p><strong>Пример.</strong> Функция \( f(x) = \frac{\sin x}{x} \) не определена в \( x = 0 \) (деление на ноль). Но при \( x \to 0 \) отношение \( \frac{\sin x}{x} \) приближается к 1. Пишут:
+</p>
+\[
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+\]<h3 id="формальное-определение">Формальное определение</h3>
+<details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;">
+<summary>Определение по ε-δ (ε-delta)</summary>
+<p>Число \( L \) называется <strong>пределом</strong> функции \( f(x) \) при \( x \to a \), если:</p>
+<p>для любого \( \varepsilon > 0 \) найдётся такое \( \delta > 0 \), что при \( 0 < |x - a| < \delta \) выполняется \( |f(x) - L| < \varepsilon \).</p>
+<p>Иначе: сколько бы мы ни требовали «точности» \( \varepsilon \), всегда можно подобрать окрестность \( \delta \) вокруг \( a \), в которой \( f(x) \) отличается от \( L \) меньше чем на \( \varepsilon \).</p>
+</details>
+<h3 id="зачем-он-нужен">Зачем он нужен</h3>
+<p><strong>Парадокс Ахиллеса и черепахи</strong> (Зенон, V в. до н.э.): Ахиллес бежит за черепахой. Черепаха стартует раньше. Ахиллес добегает до точки, где была черепаха, — но черепаха уже ушла вперёд. Он снова добегает до новой позиции черепахи — и снова она чуть впереди. Каждый раз остаётся «последний отрезок». Кажется, Ахиллес никогда не догонит черепаху.</p>
+<p>На деле Ахиллес догоняет. Парадокс возникал из-за того, что мы складывали <strong>бесконечно много</strong> отрезков и не знали, может ли такая сумма быть конечной. Понятие предела как раз и даёт ответ: сумма бесконечной последовательности отрезков может сходиться к конечному числу. Время, за которое Ахиллес догонит черепаху, — это предел суммы всё уменьшающихся промежутков.</p>
+\[
+T = t_1 + t_2 + t_3 + \ldots \to \text{конечное число}
+\]<p>Без пределов нельзя строго описать сходимость рядов, производные, интегралы — и многие алгоритмы машинного обучения (градиентный спуск, сходимость итераций).</p>
+<h3 id="обозначение">Обозначение</h3>
+\[
+\lim_{x \to a} f(x) = L
+\]<p>читается: «предел \( f(x) \) при \( x \), стремящемся к \( a \), равен \( L \)».</p>
+<h2 id="предел-последовательности-и-предел-функции">Предел последовательности и предел функции</h2>
+<p>Это два родственных, но разных понятия.</p>
+<h3 id="предел-последовательности">Предел последовательности</h3>
+<p><strong>Последовательность</strong> — это функция, аргумент которой принимает только натуральные значения: \( a_1, a_2, a_3, \ldots \), или \( (a_n)_{n=1}^{\infty} \).</p>
+<p>Число \( L \) — <strong>предел последовательности</strong> \( (a_n) \), если при \( n \to \infty \) члены \( a_n \) неограниченно приближаются к \( L \).</p>
+<p><strong>Формально (ε-N):</strong> для любого \( \varepsilon > 0 \) найдётся номер \( N \), такой что при всех \( n > N \) выполняется \( |a_n - L| < \varepsilon \).</p>
+<p>Обозначение: \( \lim_{n \to \infty} a_n = L \) или \( a_n \to L \) при \( n \to \infty \).</p>
+<p><strong>Примеры:</strong></p>
+<ul>
+<li>\( a_n = \frac{1}{n} \): \( \lim_{n \to \infty} \frac{1}{n} = 0 \)</li>
+<li>\( a_n = \left(1 + \frac{1}{n}\right)^n \): \( \lim_{n \to \infty} a_n = e \)</li>
+</ul>
+<p>Аргумент \( n \) стремится к бесконечности — других «направлений» у последовательности нет.</p>
+<h3 id="предел-функции">Предел функции</h3>
+<p><strong>Функция</strong> \( f(x) \) задана на множестве (например, на интервале). Аргумент \( x \) может приближаться к точке \( a \) <strong>по-разному</strong>: слева, справа, вдоль разных путей (в многомерном случае).</p>
+<p>Число \( L \) — <strong>предел функции</strong> \( f(x) \) при \( x \to a \), если при приближении \( x \) к \( a \) (но \( x \neq a \)) значение \( f(x) \) приближается к \( L \).</p>
+<p><strong>Формально (ε-δ):</strong> для любого \( \varepsilon > 0 \) найдётся \( \delta > 0 \), такое что при \( 0 < |x - a| < \delta \) выполняется \( |f(x) - L| < \varepsilon \).</p>
+<p>Обозначение: \( \lim_{x \to a} f(x) = L \).</p>
+<p><strong>Отличие от последовательности:</strong> \( x \) стремится к конечной точке \( a \) (или к \( \pm\infty \)), а не только к \( +\infty \). Нужно учитывать все «способы» приближения к \( a \).</p>
+<h3 id="связь">Связь</h3>
+<p>Последовательность можно считать функцией \( f(n) = a_n \), определённой на \( \mathbb{N} \). Тогда предел последовательности — частный случай предела функции при \( n \to +\infty \). Но обычно их различают: у последовательности аргумент дискретный (\( n = 1, 2, 3, \ldots \)), у функции — непрерывный.</p>
+<h2 id="простые-примеры">Простые примеры</h2>
+<p><strong>1. Постоянная.</strong> \( f(x) = 5 \). При любом \( x \to a \) значение \( f(x) = 5 \).
+</p>
+\[
+\lim_{x \to a} 5 = 5
+\]<p><strong>2. Линейная функция.</strong> \( f(x) = 2x + 1 \). При \( x \to 3 \) получаем \( f(x) \to 7 \).
+</p>
+\[
+\lim_{x \to 3} (2x + 1) = 7
+\]<p><strong>3. Не определена в точке, но предел есть.</strong> \( f(x) = \frac{x^2 - 1}{x - 1} \). В \( x = 1 \) — деление на ноль. Но при \( x \neq 1 \) можно сократить:
+</p>
+\[
+\frac{x^2 - 1}{x - 1} = \frac{(x-1)(x+1)}{x-1} = x + 1
+\]<p>
+При \( x \to 1 \) выражение \( x + 1 \to 2 \). Итого:
+</p>
+\[
+\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = 2
+\]<p><strong>4. Предела нет.</strong> \( f(x) = \frac{1}{x} \) при \( x \to 0 \). При \( x > 0 \) значение \( \frac{1}{x} \to +\infty \), при \( x < 0 \) — \( \to -\infty \). Одного конечного числа «предела» нет.</p>
+<h2 id="свойства-пределов">Свойства пределов</h2>
+<p>Если существуют \( \lim_{x \to a} f(x) = L \) и \( \lim_{x \to a} g(x) = M \), то:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Свойство</th>
+          <th>Формула</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Сумма</td>
+          <td>\( \lim(f + g) = L + M \)</td>
+      </tr>
+      <tr>
+          <td>Разность</td>
+          <td>\( \lim(f - g) = L - M \)</td>
+      </tr>
+      <tr>
+          <td>Произведение</td>
+          <td>\( \lim(f \cdot g) = L \cdot M \)</td>
+      </tr>
+      <tr>
+          <td>Частное (при \( M \neq 0 \))</td>
+          <td>\( \lim(f/g) = L/M \)</td>
+      </tr>
+      <tr>
+          <td>Константа</td>
+          <td>\( \lim(c \cdot f) = c \cdot L \)</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>Эти правила позволяют раскладывать сложные пределы на простые.</p>
+<h2 id="важные-пределы">Важные пределы</h2>
+<p><strong>1. Первый замечательный предел:</strong>
+</p>
+\[
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+\]<p>
+Используется при выводе производной синуса и во многих задачах.</p>
+<p><strong>2. Второй замечательный предел (основание \( e \)):</strong>
+</p>
+\[
+\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e \approx 2{,}718
+\]<p>
+В другом виде: \( \lim_{x \to 0} (1 + x)^{1/x} = e \).</p>
+<p><strong>3. Предел, приводящий к производной:</strong>
+</p>
+\[
+\lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = f'(x)
+\]<p>
+Это определение производной — предел отношения приращения функции к приращению аргумента.</p>
+<h2 id="пределы-на-бесконечности">Пределы на бесконечности</h2>
+<p>Когда \( x \to +\infty \) или \( x \to -\infty \), предел описывает поведение функции «на больших расстояниях».</p>
+<p><strong>Примеры:</strong>
+</p>
+\[
+\lim_{x \to +\infty} \frac{1}{x} = 0,\quad \lim_{x \to -\infty} \frac{1}{x} = 0
+\]<p>
+</p>
+\[
+\lim_{x \to +\infty} \frac{1}{x^2} = 0
+\]<p><strong>Полиномы.</strong> При \( x \to \infty \) «главным» становится старший член:
+</p>
+\[
+\lim_{x \to +\infty} \frac{2x^3 + x - 1}{x^3} = 2
+\]<p>
+(делим числитель и знаменатель на \( x^3 \), младшие члены стремятся к нулю).</p>
+<h2 id="связь-с-производной">Связь с производной</h2>
+<p>Производная — это предел:</p>
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+\]<p>Поэтому:</p>
+<ul>
+<li><strong>Конечные разности</strong> \( \frac{\Delta f}{\Delta x} \) — приближение при малом, но ненулевом \( \Delta x \).</li>
+<li><strong>Производная</strong> \( f'(x) \) — точное значение предела, когда \( \Delta x \to 0 \).</li>
+</ul>
+<p>Формулы вроде \( (x^n)' = nx^{n-1} \) получаются как результат этого предела, а не как приближение. Подробнее — в статье <a class="link" href="/p/math-derivatives/" >Производные</a>.</p>
+<h2 id="резюме">Резюме</h2>
+<ul>
+<li><strong>Предел</strong> — число, к которому стремится функция при приближении аргумента к точке (или бесконечности).</li>
+<li>Предел описывает <strong>поведение</strong> функции «рядом» с точкой; сама функция в этой точке может быть не определена.</li>
+<li><strong>Производная</strong> — частный случай предела: \( f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \).</li>
+<li>Понимание пределов нужно для строгого понимания дифференциального исчисления и алгоритмов оптимизации (градиентный спуск, сходимость).</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/">Математика</a>
+        
+            <a href="/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/">Машинное Обучение</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Также рекомендуем</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/math-gradient/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-gradient/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Градиент"
+                        data-key="math-gradient" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Градиент</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-derivatives/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-derivatives/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — Производные"
+                        data-key="math-derivatives" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Мат Анализ — Производные</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-chain-rule/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-chain-rule/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Правило цепочки"
+                        data-key="math-chain-rule" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Правило цепочки</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-linear-regression-example/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-linear-regression-example/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Пример: линейная регрессия"
+                        data-key="math-linear-regression-example" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Пример: линейная регрессия</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-partial-derivative/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-partial-derivative/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Частная производная"
+                        data-key="math-partial-derivative" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Частная производная</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Блог
+    </section>
+    
+    <section class="powerby">
+        Создано при помощи <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Тема <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b>, дизайн <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

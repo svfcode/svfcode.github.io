@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Машинка: скорость и производная</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #1a1a1a; font-family: system-ui, sans-serif; padding: 12px; color: #e5e7eb; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .controls label { font-size: 14px; color: #9ca3af; }
+    .controls input[type="range"] { width: 140px; accent-color: #3b82f6; }
+    .speed-val { font-weight: 600; color: #4ade80; min-width: 3em; }
+    .car { font-size: 32px; margin-left: 8px; }
+    .chart-wrap { height: 160px; margin-bottom: 12px; position: relative; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 6px 10px; text-align: center; border: 1px solid #374151; }
+    th { background: #374151; color: #9ca3af; font-weight: 500; }
+    td { background: #111827; }
+    .tbl-num { font-variant-numeric: tabular-nums; }
+    .caption { font-size: 11px; margin-top: 8px; color: #9ca3af; opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <label>Скорость:</label>
+    <input type="range" id="speed" min="20" max="100" value="60" step="5">
+    <span class="speed-val" id="speedVal">60</span>
+    <span>км/ч</span>
+    <span class="car" id="car">🚗</span>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="chart"></canvas>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>t (ч)</th>
+        <th>s(t) (км)</th>
+        <th>Δs</th>
+        <th>Δs/Δt (км/ч)</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <p class="caption">Меняй скорость — график и таблица пересчитываются. Производная \( s'(t) \) = скорость (постоянна).</p>
+  <script>
+    const speedInp = document.getElementById('speed');
+    const speedVal = document.getElementById('speedVal');
+    const tbody = document.getElementById('tbody');
+    let chart = null;
+
+    function update() {
+      const v = +speedInp.value;
+      speedVal.textContent = v;
+      // s(t) = v*t
+      const s = t => v * t;
+      const h = 0.1;
+
+      // Table
+      const rows = [0, 0.25, 0.5, 0.75, 1].map(t => {
+        const st = s(t);
+        const stPlus = s(t + h);
+        const delta = (stPlus - st).toFixed(2);
+        const deriv = (delta / h).toFixed(1);
+        return `<tr><td class="tbl-num">${t}</td><td class="tbl-num">${st.toFixed(2)}</td><td class="tbl-num">${delta}</td><td class="tbl-num"><strong>${deriv}</strong></td></tr>`;
+      });
+      tbody.innerHTML = rows.join('');
+
+      // Chart
+      const labels = [];
+      const pts = [];
+      for (let t = 0; t <= 1.05; t += 0.05) {
+        labels.push(t.toFixed(2));
+        pts.push(s(t));
+      }
+      const fontColor = '#9ca3af';
+      const cfg = {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 's(t)',
+            data: pts,
+            borderColor: '#4ade80',
+            backgroundColor: 'transparent',
+            borderWidth: 2.5,
+            fill: false,
+            pointRadius: 0,
+            tension: 0,
+            yAxisID: 'y'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          aspectRatio: 2.5,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: {
+              title: { display: true, text: 't (ч)', color: fontColor },
+              grid: { color: '#333' },
+              ticks: { color: fontColor, maxTicksLimit: 6 }
+            },
+            y: {
+              min: 0,
+              max: Math.max(110, v * 1.1),
+              title: { display: true, text: 's (км)', color: fontColor },
+              grid: { color: '#333' },
+              ticks: { color: fontColor, stepSize: 20 }
+            }
+          }
+        }
+      };
+      if (chart) chart.destroy();
+      chart = new Chart(document.getElementById('chart').getContext('2d'), cfg);
+    }
+
+    speedInp.addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Расстояние и скорость: плавное ускорение</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow: hidden; height: 100%; }
+    body { background: #1a1a1a; font-family: system-ui, sans-serif; padding: 8px; display: flex; flex-direction: column; }
+    .chart-wrap { flex: 1; min-height: 120px; position: relative; }
+    .caption { font-size: 11px; margin-top: 6px; opacity: 0.8; text-align: center; color: #9ca3af; }
+    .legend { display: flex; gap: 1rem; justify-content: center; margin-top: 4px; font-size: 11px; color: #9ca3af; }
+    .legend span { display: flex; align-items: center; gap: 6px; }
+    .legend .swatch { width: 14px; height: 3px; border-radius: 1px; }
+    .legend .swatch.dash { background: repeating-linear-gradient(90deg, #f59e0b 0, #f59e0b 4px, transparent 4px, transparent 8px); }
+  </style>
+</head>
+<body>
+  <div class="chart-wrap">
+    <canvas id="chart"></canvas>
+  </div>
+  <div class="legend">
+    <span><span class="swatch" style="background: #4ade80;"></span> s(t) — расстояние (км)</span>
+    <span><span class="swatch dash"></span> s'(t) — скорость (км/ч)</span>
+  </div>
+  <p class="caption">s(t) = 40t + 20t² — плавное ускорение. s'(t) = 40 + 40t — производная (мгновенная скорость).</p>
+  <script>
+    // Плавная функция: s(t) = 40t + 20t², t ∈ [0, 1]
+    // s(0)=0, s(1)=60 км; s'(t)=40+40t — скорость от 40 до 80 км/ч
+    const s = t => 40*t + 20*t*t;
+    const sPrime = t => 40 + 40*t;
+
+    const labels = [];
+    const pts = [];
+    const derivPts = [];
+    for (let t = 0; t <= 1.02; t += 0.02) {
+      labels.push(t.toFixed(2));
+      pts.push(s(t));
+      derivPts.push(sPrime(t));
+    }
+
+    const ctx = document.getElementById('chart').getContext('2d');
+    const fontColor = '#9ca3af';
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 's(t)',
+            data: pts,
+            borderColor: '#4ade80',
+            backgroundColor: 'transparent',
+            borderWidth: 2.5,
+            fill: false,
+            pointRadius: 0,
+            tension: 0,
+            yAxisID: 'y'
+          },
+          {
+            label: "s'(t)",
+            data: derivPts,
+            borderColor: '#f59e0b',
+            backgroundColor: 'transparent',
+            borderWidth: 2,
+            borderDash: [6, 4],
+            fill: false,
+            pointRadius: 0,
+            tension: 0,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 2,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: c => {
+                const t = parseFloat(labels[c.dataIndex]).toFixed(2);
+                return c.datasetIndex === 0
+                  ? `s(${t}) = ${c.parsed.y.toFixed(1)} км`
+                  : `s'(${t}) = ${c.parsed.y.toFixed(1)} км/ч`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 't (ч)', color: fontColor },
+            grid: { color: '#333', drawBorder: true },
+            ticks: {
+              color: fontColor,
+              maxTicksLimit: 6,
+              autoSkip: true
+            }
+          },
+          y: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+            min: -5,
+            max: 70,
+            title: { display: true, text: 's (км)', color: '#4ade80' },
+            grid: { color: '#333', drawBorder: true },
+            ticks: { color: fontColor, stepSize: 10 }
+          },
+          y1: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            min: 25,
+            max: 95,
+            title: { display: true, text: "s' (км/ч)", color: '#f59e0b' },
+            grid: { drawOnChartArea: false },
+            ticks: { color: fontColor, stepSize: 10 }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
