@@ -11,7 +11,15 @@ permalinks:
 DefaultContentLanguage: ru
 
 markup:
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
   goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
     renderer:
       unsafe: true
     extensions:

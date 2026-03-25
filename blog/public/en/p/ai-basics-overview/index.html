@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Overview of large language models: capabilities, how they work, prompting, RAG, key concepts, and limits'>
+<title>AI basics – overview</title>
+
+<link rel='canonical' href='http://localhost:1313/en/p/ai-basics-overview/'>
+
+<link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
+<meta property='og:title' content='AI basics – overview'>
+<meta property='og:description' content='Overview of large language models: capabilities, how they work, prompting, RAG, key concepts, and limits'>
+<meta property='og:url' content='http://localhost:1313/en/p/ai-basics-overview/'>
+<meta property='og:site_name' content='Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Artificial Intelligence' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-overview/cover.jpg' />
+<meta name="twitter:title" content="AI basics – overview">
+<meta name="twitter:description" content="Overview of large language models: capabilities, how they work, prompting, RAG, key concepts, and limits"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-overview/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym( 107089384 , "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107089384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_eef9891cfe28abde.jpg" width="300"
+                            height="200" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Blog</a></h1>
+            <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/playlists/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Playlists</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" >ru</option>
+                        
+                            <option value="http://localhost:1313/en/" selected>en</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#large-language-models-llms">Large language models (LLMs)</a>
+      <ul>
+        <li><a href="#what-is-it--a-tool-first-then-capabilities-and-use-cases">What is it? — A tool first; then capabilities and use cases</a></li>
+        <li><a href="#what-is-it-technically---a-huge-statistical-machine">What is it technically? - A huge statistical machine</a></li>
+        <li><a href="#how-to-use-them---overview-of-techniques-for-working-with-llms">How to use them? - Overview of techniques for working with LLMs</a></li>
+        <li><a href="#popular-models">Popular models</a></li>
+        <li><a href="#key-concepts">Key concepts</a></li>
+        <li><a href="#problems-and-limitations">Problems and limitations</a></li>
+        <li><a href="#future-and-trends">Future and trends</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/p/ai-basics-overview/">
+                <img src="/p/ai-basics-overview/cover_hu_9edf806161ac8987.jpg"
+                        srcset="/p/ai-basics-overview/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-overview/cover_hu_fef56980ce8b91ab.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post AI basics – overview" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/ai-basics-overview/">AI basics – overview</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Overview of large language models: capabilities, how they work, prompting, RAG, key concepts, and limits
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 25, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    4 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/p/ai-basics-overview/" class="link">ru</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>This overview for the «Bare minimum» series is an outline:</p>
+<ul>
+<li>large language models;</li>
+<li>architecture;</li>
+<li>usage patterns;</li>
+<li>trends.</li>
+</ul>
+<h2 id="large-language-models-llms">Large language models (LLMs)</h2>
+<h3 class="toc-heading-only" id="what-is-it--a-tool-first-then-capabilities-and-use-cases">What is it? — A tool first; then capabilities and use cases</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">What is it? — A tool first; then capabilities and use cases</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Text generation</strong></p>
+<ul>
+<li>Articles, stories, marketing materials</li>
+<li>Automated reports and documentation</li>
+<li>Creative writing and content across genres</li>
+</ul>
+<p><strong>Question answering</strong></p>
+<ul>
+<li>Intelligent customer-support chatbots</li>
+<li>Q&amp;A systems for information retrieval</li>
+<li>Virtual assistants for everyday tasks</li>
+</ul>
+<p><strong>Language analysis</strong></p>
+<ul>
+<li>Text classification by category and sentiment</li>
+<li>Summarization of long documents</li>
+<li>Translation between languages with context preserved</li>
+</ul>
+<p><strong>Programming and code</strong></p>
+<ul>
+<li>Code generation from natural-language descriptions</li>
+<li>Debugging and fixing errors</li>
+<li>Comments and explanations for complex code</li>
+</ul>
+</div>
+</details>
+<p><em>Powerful — but it helps to know how they work and where they fail.</em></p>
+<h3 class="toc-heading-only" id="what-is-it-technically---a-huge-statistical-machine">What is it technically? - A huge statistical machine</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">What is it technically? - A huge statistical machine</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Definition and how it works</strong></p>
+<p>Neural models trained to predict the next token from context.</p>
+<p>They use statistical regularities in language to generate text.</p>
+<p>An LLM uses the full context to pick the most likely next word.</p>
+<p><img src="llm-context.png" alt="Diagram: model uses full context for the next token" loading="lazy" /></p>
+<p><strong>LLM token prediction flow</strong></p>
+<p><strong>Input context (Russian tongue-twister):</strong> «Карл у Клары украл…»</p>
+<p><strong>Context analysis:</strong></p>
+<ul>
+<li>Карл (subject)</li>
+<li>у Клары (whose / from whom)</li>
+<li>украл (action)</li>
+</ul>
+<p><strong>Prediction:</strong> the model analyzes all prior tokens and their relations, recognizes the familiar tongue-twister pattern</p>
+<p>→ «кораллы» (“corals”)</p>
+<p><strong>Probability:</strong> 85%</p>
+<p><img src="llm-token-flow.png" alt="Token prediction flow" loading="lazy" /></p>
+<p><strong>Transformers and architecture</strong></p>
+<p>Self-attention for sequences (sounds simple — in practice, it isn’t).</p>
+<p><img src="attention.png" alt="Self-attention mechanism" loading="lazy" /></p>
+<p>Parallel processing of data instead of a purely recurrent pipeline.</p>
+<p><img src="parallel-vs-rnn.png" alt="Parallel processing vs recurrent style" loading="lazy" /></p>
+<p>Multi-layer structure with billions of parameters (weight heatmap).</p>
+<p><img src="layer-weights-heatmap.png" alt="Layers and parameter scale" loading="lazy" /></p>
+<p><strong>Training on text</strong></p>
+<ul>
+<li>Self-supervised learning on billions of text examples</li>
+<li>Pre-training on broad data, then specialization</li>
+<li>Scaling data and compute</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="how-to-use-them---overview-of-techniques-for-working-with-llms">How to use them? - Overview of techniques for working with LLMs</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">How to use them? - Overview of techniques for working with LLMs</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Prompt engineering</strong></p>
+<ul>
+<li>The craft of phrasing requests for better results</li>
+<li>Structuring instructions with roles, examples, and context</li>
+<li>Iteratively refining prompts for accurate answers</li>
+</ul>
+<p><strong>Fine-tuning</strong></p>
+<ul>
+<li>Adapting the model to specific tasks and domains</li>
+<li>Using small labeled datasets</li>
+<li>RLHF (reinforcement learning from human feedback)</li>
+</ul>
+<p><strong>RAG (Retrieval-Augmented Generation)</strong></p>
+<ul>
+<li>Extending the model with retrieval from a knowledge base</li>
+<li>Combining external sources with generation</li>
+<li>Reducing hallucinations by grounding in verified facts</li>
+</ul>
+<p><strong>Chain-of-thought</strong></p>
+<ul>
+<li>Step-by-step reasoning for hard problems</li>
+<li>Intermediate computation and logical steps</li>
+<li>Better math and logic when the model is guided through steps</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="popular-models">Popular models</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Popular models</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>GPT (OpenAI)</strong></p>
+<ul>
+<li>A family from GPT-3 through GPT-5.4-class releases, industry leaders</li>
+<li>Commercial APIs with a wide range of capabilities</li>
+<li>ChatGPT as the mass-market product built on these models</li>
+</ul>
+<p><strong>Claude (Anthropic)</strong></p>
+<ul>
+<li>Emphasis on safety and long context</li>
+<li>Constitutional-style alignment with human values</li>
+<li>Very large context (up to ~1M tokens in flagship offerings)</li>
+</ul>
+<p><strong>LLaMA</strong></p>
+<ul>
+<li>Open(ish) models from Meta for the research community</li>
+<li>Base for many derivatives (Alpaca, Vicuna, …)</li>
+<li>Compact variants for local deployment</li>
+</ul>
+<p><strong>Regional / domestic stacks</strong></p>
+<ul>
+<li>YandexGPT with strong Russian support</li>
+<li>Sber’s GigaChat for business use</li>
+<li>Vikhr and other specialized models for niche tasks</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="key-concepts">Key concepts</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Key concepts</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Token</strong></p>
+<ul>
+<li>Smallest unit of text the model processes</li>
+<li>Can be a word, subword, or symbol</li>
+<li>Examples: “hello” ≈ 1 token; “unpredictability” often 2–3 tokens</li>
+<li>Tokenization splits text into a sequence of tokens</li>
+</ul>
+<p><strong>Temperature</strong></p>
+<ul>
+<li>Low (0.1–0.3): more predictable, precise text</li>
+<li>Mid (0.7–0.9): balance of creativity and coherence</li>
+<li>High (1.5–2.0): more creative, less coherent
+<p style="margin: 0.5rem 0 0 0;"><img src="overview-temperature-high.png" alt="Infographic: LLM generation temperature from predictable to highly diverse output" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /></p></li>
+</ul>
+<p><strong>Model types by role</strong></p>
+<ul>
+<li>Foundation: pre-trained on large text corpora</li>
+<li>Instruction-tuned: trained to follow user instructions</li>
+<li>Chat: tuned for dialogue and multi-turn conversation</li>
+<li>Specialized: tuned for code, medicine, law, etc.
+<p style="margin: 0.5rem 0 0 0;"><img src="overview-model-specialized.png" alt="Diagram: from foundation models to specialized models (code, medicine, law)" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /></p></li>
+</ul>
+<p><strong>Context window</strong></p>
+<ul>
+<li>Cap on how much text the model processes in one pass</li>
+<li>Various ways to extend context (roughly 8K–100K tokens in many systems)</li>
+<li>Information loss on very long documents</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="problems-and-limitations">Problems and limitations</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Problems and limitations</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Hallucinations</strong></p>
+<ul>
+<li>The model may invent facts while sounding confident</li>
+<li>Plausible but false content</li>
+<li>Hard to verify everything it generates</li>
+</ul>
+<p><strong>Compute</strong></p>
+<ul>
+<li>Powerful GPUs/TPUs for training and inference</li>
+<li>High energy use for training large models</li>
+<li>Cost of building and running infrastructure</li>
+</ul>
+<p><strong>Ethics</strong></p>
+<ul>
+<li>Bias and stereotypes in training data</li>
+<li>Safety risks and malicious use</li>
+<li>Copyright and intellectual property issues</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="future-and-trends">Future and trends</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Future and trends</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Multimodality</strong></p>
+<ul>
+<li>Text, images, audio, and video</li>
+<li>Understanding and generating content in multiple formats</li>
+<li>Integrating modalities for richer understanding</li>
+</ul>
+<p><strong>LLM agents</strong></p>
+<ul>
+<li>Autonomous systems for complex tasks</li>
+<li>Planning actions and making decisions</li>
+<li>Using external tools and APIs</li>
+</ul>
+<p><strong>Model optimization</strong></p>
+<ul>
+<li>Quantization and distillation for speed</li>
+<li>More efficient architectures</li>
+<li>Trade-off between size and capability</li>
+</ul>
+<p><strong>On-device / local</strong></p>
+<ul>
+<li>Models on personal devices</li>
+<li>Privacy without sending data to the cloud</li>
+<li>Specialized hardware for LLM inference</li>
+</ul>
+</div>
+</details>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/artificial-intelligence/">Artificial Intelligence</a>
+        
+            <a href="/en/tags/machine-learning/">Machine Learning</a>
+        
+            <a href="/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/">База</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/ai-basics-intro/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-intro/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post AI basics – introduction"
+                        data-key="ai-basics-intro" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI basics – introduction</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/ai-future-beyond-scaling/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">The Future of AI: Why Scaling Alone is No Longer Enough</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-derivatives/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Math Analysis — Derivatives</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-essentials-overview/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Essential Mathematics — Overview</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-derivatives-bkp/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Math Analysis — Derivatives</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

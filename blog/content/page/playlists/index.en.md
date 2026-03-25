@@ -16,8 +16,14 @@ menu:
   - 🏷️ Terms: language model, dataset, parameters, AI/ML/NN, foundation models
   - 📊 Difficulty: basic
   - 📋 Prerequisites: none
+- **[AI basics – overview](/en/p/ai-basics-overview/)**
+  - 📋 Overview: what the «Bare minimum» series covers and how the material is organized
+  - 📊 Difficulty: basic
+  - 📋 Prerequisites: none
 
 ## 👥 On Their Shoulders
+
+> *Short digests from interviews, podcasts, and conferences on AI*
 
 - **[The Future of AI: Why Scaling Alone is No Longer Enough](/en/p/ai-future-beyond-scaling/)**
   - 🎬 [Video](https://youtu.be/5mUEOx3uLDc) · reading 12 min / video 8 min (original 52 min)
@@ -27,6 +33,8 @@ menu:
   - 📋 Prerequisites: AI basics
 
 ## 📐 Essential Mathematics
+
+> *Machine learning relies on mathematics that grows out of the school curriculum; to understand how ML works, you need a solid grasp of school-level math.*
 
 - **[Essential Mathematics — Overview](/en/p/math-essentials-overview/)**
   - 📋 Overview: which math areas are needed for AI/ML and why

@@ -6,12 +6,28 @@
         <description>Recent content in Tags on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Artificial Intelligence</title>
+        <link>http://localhost:1313/en/tags/artificial-intelligence/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/tags/artificial-intelligence/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Machine Learning</title>
         <link>http://localhost:1313/en/tags/machine-learning/</link>
-        <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/en/tags/machine-learning/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>База</title>
+        <link>http://localhost:1313/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</guid>
         <description></description>
         </item>
         <item>
@@ -28,22 +44,6 @@
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/en/tags/computer-vision/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Artificial Intelligence</title>
-        <link>http://localhost:1313/en/tags/artificial-intelligence/</link>
-        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/en/tags/artificial-intelligence/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>База</title>
-        <link>http://localhost:1313/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link>
-        <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</guid>
         <description></description>
         </item>
         

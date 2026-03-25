@@ -1,5 +1,139 @@
-/* Курсор при наведении на заголовок аккордиона */
-.article-content details summary,
+/* Заголовки только для оглавления Hugo: в «Содержание» есть, в теле статьи не занимают место и не видны */
+.article-content h3.toc-heading-only {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden;
+    clip-path: inset(50%);
+    opacity: 0;
+    border: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    scroll-margin-top: 5rem;
+}
+
+/* Аккордеоны: цветовые акценты (по порядку в статье) */
+.article-content details.post-accordion {
+    margin: 1rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--card-separator-color, rgba(0, 0, 0, 0.1));
+    border-left: 4px solid var(--acc-border, #64748b);
+    background: var(--acc-bg, var(--card-background, #fff));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+html[data-scheme="dark"] .article-content details.post-accordion {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.article-content details.post-accordion summary {
+    list-style: none;
+    padding: 0.65rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    /* как основной текст статьи (не --body-text-color — это цвет сайдбара в Stack) */
+    color: var(--card-text-color-main, inherit);
+}
+
+.article-content details.post-accordion summary * {
+    color: inherit;
+}
+
+.article-content details.post-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.article-content details.post-accordion summary::marker {
+    content: "";
+}
+
+.article-content details.post-accordion[open] summary {
+    border-bottom: 1px solid var(--card-separator-color, rgba(0, 0, 0, 0.08));
+}
+
+.article-content details.post-accordion > div {
+    padding: 0.75rem 1rem 1rem;
+    background: var(--acc-inner, transparent);
+}
+
+/* Палитра: 1 — бирюза, 2 — фиолетовый, 3 — янтарь, 4 — роза, 5 — небо, 6 — изумруд, 7 — индиго */
+.article-content details.post-accordion:nth-of-type(1) {
+    --acc-border: #0d9488;
+    --acc-bg: rgba(13, 148, 136, 0.07);
+    --acc-inner: rgba(13, 148, 136, 0.04);
+}
+.article-content details.post-accordion:nth-of-type(2) {
+    --acc-border: #7c3aed;
+    --acc-bg: rgba(124, 58, 237, 0.07);
+    --acc-inner: rgba(124, 58, 237, 0.04);
+}
+.article-content details.post-accordion:nth-of-type(3) {
+    --acc-border: #d97706;
+    --acc-bg: rgba(217, 119, 6, 0.08);
+    --acc-inner: rgba(217, 119, 6, 0.05);
+}
+.article-content details.post-accordion:nth-of-type(4) {
+    --acc-border: #e11d48;
+    --acc-bg: rgba(225, 29, 72, 0.06);
+    --acc-inner: rgba(225, 29, 72, 0.035);
+}
+.article-content details.post-accordion:nth-of-type(5) {
+    --acc-border: #0284c7;
+    --acc-bg: rgba(2, 132, 199, 0.07);
+    --acc-inner: rgba(2, 132, 199, 0.04);
+}
+.article-content details.post-accordion:nth-of-type(6) {
+    --acc-border: #059669;
+    --acc-bg: rgba(5, 150, 105, 0.07);
+    --acc-inner: rgba(5, 150, 105, 0.04);
+}
+.article-content details.post-accordion:nth-of-type(7) {
+    --acc-border: #4f46e5;
+    --acc-bg: rgba(79, 70, 229, 0.07);
+    --acc-inner: rgba(79, 70, 229, 0.04);
+}
+
+html[data-scheme="dark"] .article-content details.post-accordion:nth-of-type(1) {
+    --acc-border: #2dd4bf;
+    --acc-bg: rgba(45, 212, 191, 0.1);
+    --acc-inner: rgba(45, 212, 191, 0.06);
+}
+html[data-scheme="dark"] .article-content details.post-accordion:nth-of-type(2) {
+    --acc-border: #a78bfa;
+    --acc-bg: rgba(167, 139, 250, 0.1);
+    --acc-inner: rgba(167, 139, 250, 0.06);
+}
+html[data-scheme="dark"] .article-content details.post-accordion:nth-of-type(3) {
+    --acc-border: #fbbf24;
+    --acc-bg: rgba(251, 191, 36, 0.1);
+    --acc-inner: rgba(251, 191, 36, 0.06);
+}
+html[data-scheme="dark"] .article-content details.post-accordion:nth-of-type(4) {
+    --acc-border: #fb7185;
+    --acc-bg: rgba(251, 113, 133, 0.1);
+    --acc-inner: rgba(251, 113, 133, 0.06);
+}
+html[data-scheme="dark"] .article-content details.post-accordion:nth-of-type(5) {
+    --acc-border: #38bdf8;
+    --acc-bg: rgba(56, 189, 248, 0.1);
+    --acc-inner: rgba(56, 189, 248, 0.06);
+}
+html[data-scheme="dark"] .article-content details.post-accordion:nth-of-type(6) {
+    --acc-border: #34d399;
+    --acc-bg: rgba(52, 211, 153, 0.1);
+    --acc-inner: rgba(52, 211, 153, 0.06);
+}
+html[data-scheme="dark"] .article-content details.post-accordion:nth-of-type(7) {
+    --acc-border: #818cf8;
+    --acc-bg: rgba(129, 140, 248, 0.1);
+    --acc-inner: rgba(129, 140, 248, 0.06);
+}
+
+/* Прочие details (не .post-accordion) */
+.article-content details:not(.post-accordion) summary,
 .content details summary {
     cursor: pointer;
 }

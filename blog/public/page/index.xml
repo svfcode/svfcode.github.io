@@ -460,8 +460,18 @@
 &lt;li&gt;📋 Необходимые знания: нет&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;Базовый минимум про ИИ – обзор&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;📋 Обзор: что входит в цикл «Базовый минимум» и как устроена подача материала&lt;/li&gt;
+&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
+&lt;li&gt;📋 Необходимые знания: нет&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;-на-их-плечах&#34;&gt;👥 На их плечах&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;краткая выжимка из интервью, подкастов и конференций про ИИ&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-future-beyond-scaling/&#34; &gt;Будущее ИИ: почему одного масштабирования уже недостаточно&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
@@ -475,6 +485,9 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;-необходимая-математика&#34;&gt;📐 Необходимая математика&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;В машинном обучении используется математика, которая опирается на школьную программу; чтобы понять, как устроено МО, нужно хорошо знать школьную математику.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-essentials-overview/&#34; &gt;Необходимая математика — обзор&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;

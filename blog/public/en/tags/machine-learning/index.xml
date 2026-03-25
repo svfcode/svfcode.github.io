@@ -6,7 +6,229 @@
         <description>Recent content in Machine Learning on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI basics – overview</title>
+        <link>http://localhost:1313/en/p/ai-basics-overview/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-overview/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-overview/cover.jpg" alt="Featured image of post AI basics – overview" /&gt;&lt;p&gt;This overview for the «Bare minimum» series is an outline:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;large language models;&lt;/li&gt;
+&lt;li&gt;architecture;&lt;/li&gt;
+&lt;li&gt;usage patterns;&lt;/li&gt;
+&lt;li&gt;trends.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;large-language-models-llms&#34;&gt;Large language models (LLMs)&lt;/h2&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What is it? — A tool first; then capabilities and use cases&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Text generation&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Articles, stories, marketing materials&lt;/li&gt;
+&lt;li&gt;Automated reports and documentation&lt;/li&gt;
+&lt;li&gt;Creative writing and content across genres&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Question answering&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Intelligent customer-support chatbots&lt;/li&gt;
+&lt;li&gt;Q&amp;amp;A systems for information retrieval&lt;/li&gt;
+&lt;li&gt;Virtual assistants for everyday tasks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Language analysis&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Text classification by category and sentiment&lt;/li&gt;
+&lt;li&gt;Summarization of long documents&lt;/li&gt;
+&lt;li&gt;Translation between languages with context preserved&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Programming and code&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Code generation from natural-language descriptions&lt;/li&gt;
+&lt;li&gt;Debugging and fixing errors&lt;/li&gt;
+&lt;li&gt;Comments and explanations for complex code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;em&gt;Powerful — but it helps to know how they work and where they fail.&lt;/em&gt;&lt;/p&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What is it technically? - A huge statistical machine&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Definition and how it works&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Neural models trained to predict the next token from context.&lt;/p&gt;
+&lt;p&gt;They use statistical regularities in language to generate text.&lt;/p&gt;
+&lt;p&gt;An LLM uses the full context to pick the most likely next word.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;llm-context.png&#34; alt=&#34;Diagram: model uses full context for the next token&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LLM token prediction flow&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Input context (Russian tongue-twister):&lt;/strong&gt; «Карл у Клары украл…»&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Context analysis:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Карл (subject)&lt;/li&gt;
+&lt;li&gt;у Клары (whose / from whom)&lt;/li&gt;
+&lt;li&gt;украл (action)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Prediction:&lt;/strong&gt; the model analyzes all prior tokens and their relations, recognizes the familiar tongue-twister pattern&lt;/p&gt;
+&lt;p&gt;→ «кораллы» (“corals”)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Probability:&lt;/strong&gt; 85%&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;llm-token-flow.png&#34; alt=&#34;Token prediction flow&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Transformers and architecture&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Self-attention for sequences (sounds simple — in practice, it isn’t).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;attention.png&#34; alt=&#34;Self-attention mechanism&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Parallel processing of data instead of a purely recurrent pipeline.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;parallel-vs-rnn.png&#34; alt=&#34;Parallel processing vs recurrent style&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Multi-layer structure with billions of parameters (weight heatmap).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;layer-weights-heatmap.png&#34; alt=&#34;Layers and parameter scale&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Training on text&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Self-supervised learning on billions of text examples&lt;/li&gt;
+&lt;li&gt;Pre-training on broad data, then specialization&lt;/li&gt;
+&lt;li&gt;Scaling data and compute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;How to use them? - Overview of techniques for working with LLMs&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Prompt engineering&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The craft of phrasing requests for better results&lt;/li&gt;
+&lt;li&gt;Structuring instructions with roles, examples, and context&lt;/li&gt;
+&lt;li&gt;Iteratively refining prompts for accurate answers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fine-tuning&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adapting the model to specific tasks and domains&lt;/li&gt;
+&lt;li&gt;Using small labeled datasets&lt;/li&gt;
+&lt;li&gt;RLHF (reinforcement learning from human feedback)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;RAG (Retrieval-Augmented Generation)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Extending the model with retrieval from a knowledge base&lt;/li&gt;
+&lt;li&gt;Combining external sources with generation&lt;/li&gt;
+&lt;li&gt;Reducing hallucinations by grounding in verified facts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Chain-of-thought&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step-by-step reasoning for hard problems&lt;/li&gt;
+&lt;li&gt;Intermediate computation and logical steps&lt;/li&gt;
+&lt;li&gt;Better math and logic when the model is guided through steps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Popular models&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;GPT (OpenAI)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A family from GPT-3 through GPT-5.4-class releases, industry leaders&lt;/li&gt;
+&lt;li&gt;Commercial APIs with a wide range of capabilities&lt;/li&gt;
+&lt;li&gt;ChatGPT as the mass-market product built on these models&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Claude (Anthropic)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Emphasis on safety and long context&lt;/li&gt;
+&lt;li&gt;Constitutional-style alignment with human values&lt;/li&gt;
+&lt;li&gt;Very large context (up to ~1M tokens in flagship offerings)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;LLaMA&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open(ish) models from Meta for the research community&lt;/li&gt;
+&lt;li&gt;Base for many derivatives (Alpaca, Vicuna, …)&lt;/li&gt;
+&lt;li&gt;Compact variants for local deployment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Regional / domestic stacks&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;YandexGPT with strong Russian support&lt;/li&gt;
+&lt;li&gt;Sber’s GigaChat for business use&lt;/li&gt;
+&lt;li&gt;Vikhr and other specialized models for niche tasks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Key concepts&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Token&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Smallest unit of text the model processes&lt;/li&gt;
+&lt;li&gt;Can be a word, subword, or symbol&lt;/li&gt;
+&lt;li&gt;Examples: “hello” ≈ 1 token; “unpredictability” often 2–3 tokens&lt;/li&gt;
+&lt;li&gt;Tokenization splits text into a sequence of tokens&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Temperature&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Low (0.1–0.3): more predictable, precise text&lt;/li&gt;
+&lt;li&gt;Mid (0.7–0.9): balance of creativity and coherence&lt;/li&gt;
+&lt;li&gt;High (1.5–2.0): more creative, less coherent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Model types by role&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Foundation: pre-trained on large text corpora&lt;/li&gt;
+&lt;li&gt;Instruction-tuned: trained to follow user instructions&lt;/li&gt;
+&lt;li&gt;Chat: tuned for dialogue and multi-turn conversation&lt;/li&gt;
+&lt;li&gt;Specialized: tuned for code, medicine, law, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Context window&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cap on how much text the model processes in one pass&lt;/li&gt;
+&lt;li&gt;Various ways to extend context (roughly 8K–100K tokens in many systems)&lt;/li&gt;
+&lt;li&gt;Information loss on very long documents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Problems and limitations&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Hallucinations&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The model may invent facts while sounding confident&lt;/li&gt;
+&lt;li&gt;Plausible but false content&lt;/li&gt;
+&lt;li&gt;Hard to verify everything it generates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Compute&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Powerful GPUs/TPUs for training and inference&lt;/li&gt;
+&lt;li&gt;High energy use for training large models&lt;/li&gt;
+&lt;li&gt;Cost of building and running infrastructure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Ethics&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bias and stereotypes in training data&lt;/li&gt;
+&lt;li&gt;Safety risks and malicious use&lt;/li&gt;
+&lt;li&gt;Copyright and intellectual property issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Future and trends&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Multimodality&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Text, images, audio, and video&lt;/li&gt;
+&lt;li&gt;Understanding and generating content in multiple formats&lt;/li&gt;
+&lt;li&gt;Integrating modalities for richer understanding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;LLM agents&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Autonomous systems for complex tasks&lt;/li&gt;
+&lt;li&gt;Planning actions and making decisions&lt;/li&gt;
+&lt;li&gt;Using external tools and APIs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Model optimization&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quantization and distillation for speed&lt;/li&gt;
+&lt;li&gt;More efficient architectures&lt;/li&gt;
+&lt;li&gt;Trade-off between size and capability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;On-device / local&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Models on personal devices&lt;/li&gt;
+&lt;li&gt;Privacy without sending data to the cloud&lt;/li&gt;
+&lt;li&gt;Specialized hardware for LLM inference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
         <title>Math Analysis — Derivatives</title>
         <link>http://localhost:1313/en/p/math-derivatives/</link>
         <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
@@ -19,43 +241,285 @@
 &lt;h2 id=&#34;what-is-speed&#34;&gt;What is speed?&lt;/h2&gt;
 &lt;p&gt;It&amp;rsquo;s the ratio of distance to time.&lt;/p&gt;
 &lt;p&gt;A car traveling at an average speed of 60 km/h — if we increase time \( t \) by one unit, distance \( s \) increases by 60 units. If we multiply \( t \) by 10, \( s \) is multiplied by 10 as well. The growth is linear; on a graph it&amp;rsquo;s a straight line.&lt;/p&gt;
-&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
-  &lt;defs&gt;
-    &lt;marker id=&#34;arr-en&#34; markerWidth=&#34;8&#34; markerHeight=&#34;8&#34; refX=&#34;6&#34; refY=&#34;4&#34; orient=&#34;auto&#34;&gt;
-      &lt;polygon points=&#34;0 0, 8 4, 0 8&#34; fill=&#34;#6b7280&#34;/&gt;
-    &lt;/marker&gt;
-  &lt;/defs&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;250&#34; y2=&#34;30&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
-  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
-  &lt;text x=&#34;140&#34; y=&#34;85&#34; font-size=&#34;11&#34; fill=&#34;#3b82f6&#34;&gt;s = 60t&lt;/text&gt;
-&lt;/svg&gt;
+&lt;div class=&#34;chart-wrap&#34; style=&#34;max-width: 360px; margin: 1em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-linear-ef65e140a99a3aa68a1c55eb91ebca46&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s = 60t&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+(function() {
+  var id = &#39;chart-linear-ef65e140a99a3aa68a1c55eb91ebca46&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function init() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    var labels = [0, 1, 2, 3, 4];
+    var data = [0, 60, 120, 180, 240];
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: &#39;s = 60t&#39;,
+          data: data,
+          borderColor: &#39;#3b82f6&#39;,
+          backgroundColor: &#39;transparent&#39;,
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          title: { display: false }
+        },
+        scales: {
+          x: { title: { display: true, text: &#39;t&#39; }, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } },
+          y: { title: { display: true, text: &#39;s&#39; }, min: 0, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } }
+        }
+      }
+    });
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
+})();
+&lt;/script&gt;
+
 &lt;p&gt;But over time the car moves unevenly — speed increases and decreases.&lt;/p&gt;
-&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;path d=&#34;M 30 150 C 90 130, 150 80, 220 50&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
-  &lt;path d=&#34;M 30 150 Q 90 130, 150 140 T 250 50&#34; fill=&#34;none&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34; stroke-dasharray=&#34;6 4&#34;/&gt;
-  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;90&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34; text-anchor=&#34;end&#34;&gt;v&lt;/text&gt;
-  &lt;text x=&#34;160&#34; y=&#34;45&#34; font-size=&#34;10&#34; fill=&#34;#3b82f6&#34;&gt;s(t)&lt;/text&gt;
-  &lt;text x=&#34;200&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34;&gt;v(t)&lt;/text&gt;
-&lt;/svg&gt;
+&lt;div class=&#34;chart-wrap&#34; style=&#34;max-width: 360px; margin: 1em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-nonuniform-ef65e140a99a3aa68a1c55eb91ebca46&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151); flex-wrap: wrap;&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s(t) — distance&lt;/span&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; border-bottom: 2px dashed #f59e0b;&#34;&gt;&lt;/span&gt;v(t) — velocity&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function() {
+  var id = &#39;chart-nonuniform-ef65e140a99a3aa68a1c55eb91ebca46&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    var labels = [];
+    var sData = [];
+    var vData = [];
+    for (var t = 0; t &lt;= 1.02; t += 0.02) {
+      labels.push(t.toFixed(2));
+      var u = Math.max(0, Math.min(1, t));
+      var s = 60 * u * u * (3 - 2 * u);
+      var v = 360 * u * (1 - u);
+      sData.push(s);
+      vData.push(v);
+    }
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: &#39;s(t) — distance&#39;,
+            data: sData,
+            borderColor: &#39;#3b82f6&#39;,
+            borderWidth: 2.5,
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: &#39;y&#39;
+          },
+          {
+            label: &#39;v(t) — velocity&#39;,
+            data: vData,
+            borderColor: &#39;#f59e0b&#39;,
+            borderWidth: 2,
+            borderDash: [6, 4],
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: &#39;y1&#39;
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { title: { display: true, text: &#39;t&#39; }, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } },
+          y: {
+            type: &#39;linear&#39;,
+            position: &#39;left&#39;,
+            title: { display: true, text: &#39;s&#39; },
+            min: 0,
+            max: 70,
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; }
+          },
+          y1: {
+            type: &#39;linear&#39;,
+            position: &#39;right&#39;,
+            title: { display: true, text: &#39;v&#39; },
+            min: 0,
+            max: 100,
+            grid: { drawOnChartArea: false },
+            ticks: { color: &#39;rgba(107,114,128,0.8)&#39; }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement(&#39;script&#39;);
+      s.src = &#39;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#39;;
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
+})();
+&lt;/script&gt;
+
 &lt;details style=&#34;background: rgba(239, 68, 68, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #ef4444;&#34;&gt;
 &lt;summary&gt;Impossible&lt;/summary&gt;
 &lt;p&gt;Distance traveled cannot decrease. Such an s(t) graph would be wrong:&lt;/p&gt;
-&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 0.75em 0;&#34;&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
-  &lt;path d=&#34;M 30 150 C 65 55, 135 142, 250 45&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
-  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;25&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
-  &lt;text x=&#34;140&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#ef4444&#34;&gt;s(t) — wrong&lt;/text&gt;
-&lt;/svg&gt;
+&lt;div class=&#34;chart-impossible-wrap&#34; style=&#34;max-width: 360px; margin: 0.75em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-impossible-st-ef65e140a99a3aa68a1c55eb91ebca46&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s(t) — wrong&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function() {
+  var id = &#39;chart-impossible-st-ef65e140a99a3aa68a1c55eb91ebca46&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    
+    var labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var data = [0, 3, 7, 11, 14, 11, 6, 2, 5, 9, 13];
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: &#39;s(t) — wrong&#39;,
+          data: data,
+          borderColor: &#39;#3b82f6&#39;,
+          backgroundColor: &#39;transparent&#39;,
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: true },
+          title: { display: false }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: &#39;t&#39;, font: { size: 12 } },
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; },
+            ticks: { maxTicksLimit: 6 }
+          },
+          y: {
+            title: { display: true, text: &#39;s&#39;, font: { size: 12 } },
+            min: 0,
+            max: 16,
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; },
+            ticks: { stepSize: 2 }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement(&#39;script&#39;);
+      s.src = &#39;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#39;;
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
+})();
+&lt;/script&gt;
+
 &lt;/details&gt;
+&lt;details class=&#34;quiz-nonuniform&#34; style=&#34;margin: 1.5em 0; padding: 1rem; background: var(--card-background, #f8fafc); border-radius: 10px; border: 1px solid var(--card-separator-color, rgba(0,0,0,0.08));&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-size: 1.15rem; font-weight: 600;&#34;&gt;Self-check questions&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 1rem;&#34;&gt;&lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 1.25rem;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;1. When is the speed at its maximum?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Hint&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;Look at the v(t) graph. Where does it reach its highest value?&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;In the middle of the interval, at t ≈ 0.5&#34;&gt;Check&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 1.25rem;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;2. What does the slope of s(t) at a given point represent?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Hint&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;Velocity is the ratio of distance change to time. How does that relate to slope?&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;The instantaneous velocity v(t) at that moment&#34;&gt;Check&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 0;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;3. Why does v(t) first increase and then decrease?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Hint&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;v is the derivative of s. How does the slope of s(t) change from start to end? Recall the S-shape.&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;The slope of s(t) first increases (acceleration), then decreases (deceleration). s has an inflection point.&#34;&gt;Check&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+
+&lt;script&gt;
+(function() {
+  document.querySelectorAll(&#39;.quiz-reveal&#39;).forEach(function(btn) {
+    btn.addEventListener(&#39;click&#39;, function() {
+      var span = this.nextElementSibling;
+      if (span &amp;&amp; span.classList.contains(&#39;quiz-answer&#39;)) {
+        if (span.style.display === &#39;none&#39; || !span.style.display) {
+          span.textContent = &#39;Correct answer: &#39; + this.getAttribute(&#39;data-answer&#39;);
+          span.style.display = &#39;inline&#39;;
+          btn.textContent = &#39;Hide&#39;;
+        } else {
+          span.textContent = &#39;&#39;;
+          span.style.display = &#39;none&#39;;
+          btn.textContent = &#39;Check&#39;;
+        }
+      }
+    });
+  });
+})();
+&lt;/script&gt;
+
 </description>
         </item>
         <item>
@@ -746,7 +1210,49 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
         <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/en/p/ai-basics-intro/</guid>
-        <description>&lt;p&gt;Introduction to basic concepts of artificial intelligence. You can expand the content here.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
+&lt;p&gt;We’ll start with common terms, then talk about prompt engineering, RAG systems, and agents that can handle complex multi-step tasks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;what-a-language-model-is&#34;&gt;What a language model is&lt;/h2&gt;
+&lt;p&gt;A language model is a system that, given what has already been said, predicts the next word. And so on in a loop:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The → The cat → The cat sat → The cat sat on → The cat sat on the → …&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Filling its own context with words it has just produced.&lt;/p&gt;
+&lt;h2 id=&#34;where-we-run-into-them&#34;&gt;Where we run into them&lt;/h2&gt;
+&lt;p&gt;Any chatbot — whether it’s a support “assistant” that drives us crazy until we ask for a human, or “smart” chats like DeepSeek or ChatGPT — relies on a language model.&lt;/p&gt;
+&lt;p&gt;The only difference between a support bot and a “smart” one from DeepSeek is scale: the scale of the dataset and the server capacity needed to process it.&lt;/p&gt;
+&lt;h2 id=&#34;parameter-scale&#34;&gt;Parameter scale&lt;/h2&gt;
+&lt;p&gt;That leads to &lt;strong&gt;parameter scale&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1–7 billion&lt;/strong&gt; — models you can run on a local laptop&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trillions&lt;/strong&gt; — models that need server clusters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Models in the trillion-parameter range are called &lt;strong&gt;foundation&lt;/strong&gt; models: they have absorbed not just statistics of word sequences, but knowledge encoded in language. Language is not only a medium for communication but also a record of collective experience.&lt;/p&gt;
+&lt;h2 id=&#34;ai-ml-and-neural-networks--whats-the-difference&#34;&gt;AI, ML, and neural networks — what’s the difference&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;AI (artificial intelligence)&lt;/strong&gt; is the broadest term: systems and programs that behave “intelligently” — they solve tasks that usually need human intelligence (speech understanding, chess, image recognition, decision-making, and so on). AI can be built without machine learning (e.g. rules, expert systems).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ML (machine learning)&lt;/strong&gt; is a subset of AI: a way to build AI so the system learns from data instead of hand-written rules. The goal is to find patterns in examples (data) and use them for predictions or decisions. ML includes more than neural networks: decision trees, linear models, clustering, and others.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NNs (neural networks)&lt;/strong&gt; are a subset of ML: models inspired by neurons in the brain (layers, weights, activations). One of the most powerful ML tools, especially for images, text, and speech. &lt;strong&gt;Deep learning&lt;/strong&gt; is ML with deep (many-layer) neural networks.&lt;/p&gt;
+&lt;p&gt;The relationship: &lt;strong&gt;AI ⊃ ML ⊃ NN&lt;/strong&gt; — neural networks are a kind of machine learning, and machine learning is one way to implement artificial intelligence.&lt;/p&gt;
+&lt;h2 id=&#34;practice-what-you-learned&#34;&gt;Practice what you learned&lt;/h2&gt;
+&lt;p&gt;Short games help you check how well you’ve absorbed the material.&lt;/p&gt;
+&lt;p&gt;Quiz:&lt;/p&gt;
+&lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
+  &lt;iframe
+    src=&#34;http://localhost:1313/games/ai-basics-quiz.html&#34;
+    style=&#34;width: 100%; max-width: 672px; height: 540px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
+    title=&#34;Quiz: test your AI basics&#34;
+  &gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;Sort the shelf — drag statements onto the right shelves (AI, ML, NN, parameter scale):&lt;/p&gt;
+&lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
+  &lt;iframe
+    src=&#34;http://localhost:1313/games/ai-basics-shelves.html&#34;
+    style=&#34;width: 100%; max-width: 840px; height: 720px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
+    title=&#34;Sort the shelf&#34;
+  &gt;&lt;/iframe&gt;
+&lt;/div&gt;
 </description>
         </item>
         

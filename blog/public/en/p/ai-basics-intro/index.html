@@ -11,9 +11,10 @@
 <meta property='og:description' content='A short introduction to the fundamentals of artificial intelligence'>
 <meta property='og:url' content='http://localhost:1313/en/p/ai-basics-intro/'>
 <meta property='og:site_name' content='Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Artificial Intelligence' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-03T00:00:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Artificial Intelligence' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-03T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-intro/cover.jpg' />
 <meta name="twitter:title" content="AI basics – introduction">
-<meta name="twitter:description" content="A short introduction to the fundamentals of artificial intelligence"><link rel="stylesheet" href="/css/custom.css"><link
+<meta name="twitter:description" content="A short introduction to the fundamentals of artificial intelligence"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-intro/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
   integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
@@ -245,11 +246,58 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-a-language-model-is">What a language model is</a></li>
+    <li><a href="#where-we-run-into-them">Where we run into them</a></li>
+    <li><a href="#parameter-scale">Parameter scale</a></li>
+    <li><a href="#ai-ml-and-neural-networks--whats-the-difference">AI, ML, and neural networks — what’s the difference</a></li>
+    <li><a href="#practice-what-you-learned">Practice what you learned</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/en/p/ai-basics-intro/">
+                <img src="/p/ai-basics-intro/cover_hu_9edf806161ac8987.jpg"
+                        srcset="/p/ai-basics-intro/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-intro/cover_hu_fef56980ce8b91ab.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post AI basics – introduction" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -297,7 +345,7 @@
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    3 minute read
                 </time>
             </div>
         
@@ -331,7 +379,49 @@
     <section class="article-content">
     
     
-    <p>Introduction to basic concepts of artificial intelligence. You can expand the content here.</p>
+    <p>This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.</p>
+<p>We’ll start with common terms, then talk about prompt engineering, RAG systems, and agents that can handle complex multi-step tasks.</p>
+<p><strong>Video:</strong> <a class="link" href="https://youtu.be/z9VBZn0XcVk"  target="_blank" rel="noopener"
+    >Watch on YouTube</a></p>
+<h2 id="what-a-language-model-is">What a language model is</h2>
+<p>A language model is a system that, given what has already been said, predicts the next word. And so on in a loop:</p>
+<blockquote>
+<p>The → The cat → The cat sat → The cat sat on → The cat sat on the → …</p>
+</blockquote>
+<p>Filling its own context with words it has just produced.</p>
+<h2 id="where-we-run-into-them">Where we run into them</h2>
+<p>Any chatbot — whether it’s a support “assistant” that drives us crazy until we ask for a human, or “smart” chats like DeepSeek or ChatGPT — relies on a language model.</p>
+<p>The only difference between a support bot and a “smart” one from DeepSeek is scale: the scale of the dataset and the server capacity needed to process it.</p>
+<h2 id="parameter-scale">Parameter scale</h2>
+<p>That leads to <strong>parameter scale</strong>:</p>
+<ul>
+<li><strong>1–7 billion</strong> — models you can run on a local laptop</li>
+<li><strong>Trillions</strong> — models that need server clusters</li>
+</ul>
+<p>Models in the trillion-parameter range are called <strong>foundation</strong> models: they have absorbed not just statistics of word sequences, but knowledge encoded in language. Language is not only a medium for communication but also a record of collective experience.</p>
+<h2 id="ai-ml-and-neural-networks--whats-the-difference">AI, ML, and neural networks — what’s the difference</h2>
+<p><strong>AI (artificial intelligence)</strong> is the broadest term: systems and programs that behave “intelligently” — they solve tasks that usually need human intelligence (speech understanding, chess, image recognition, decision-making, and so on). AI can be built without machine learning (e.g. rules, expert systems).</p>
+<p><strong>ML (machine learning)</strong> is a subset of AI: a way to build AI so the system learns from data instead of hand-written rules. The goal is to find patterns in examples (data) and use them for predictions or decisions. ML includes more than neural networks: decision trees, linear models, clustering, and others.</p>
+<p><strong>NNs (neural networks)</strong> are a subset of ML: models inspired by neurons in the brain (layers, weights, activations). One of the most powerful ML tools, especially for images, text, and speech. <strong>Deep learning</strong> is ML with deep (many-layer) neural networks.</p>
+<p>The relationship: <strong>AI ⊃ ML ⊃ NN</strong> — neural networks are a kind of machine learning, and machine learning is one way to implement artificial intelligence.</p>
+<h2 id="practice-what-you-learned">Practice what you learned</h2>
+<p>Short games help you check how well you’ve absorbed the material.</p>
+<p>Quiz:</p>
+<div style="margin: 1.5em 0;">
+  <iframe
+    src="/games/ai-basics-quiz.html"
+    style="width: 100%; max-width: 672px; height: 540px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;"
+    title="Quiz: test your AI basics"
+  ></iframe>
+</div>
+<p>Sort the shelf — drag statements onto the right shelves (AI, ML, NN, parameter scale):</p>
+<div style="margin: 1.5em 0;">
+  <iframe
+    src="/games/ai-basics-shelves.html"
+    style="width: 100%; max-width: 840px; height: 720px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;"
+    title="Sort the shelf"
+  ></iframe>
+</div>
 
 </section>
 

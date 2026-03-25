@@ -19,43 +19,285 @@
 &lt;h2 id=&#34;что-такое-скорость&#34;&gt;Что такое скорость?&lt;/h2&gt;
 &lt;p&gt;Это отношение расстояния ко времени.&lt;/p&gt;
 &lt;p&gt;Вот машина едет со средней скоростью 60 км/ч — значит, если увеличить время \( t \) на единицу, расстояние \( s \) увеличится на 60 единиц. Если увеличить \( t \) в 10 раз, то и \( s \) увеличится в 10 раз. Здесь рост линейный, на графике это прямая линия.&lt;/p&gt;
-&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
-  &lt;defs&gt;
-    &lt;marker id=&#34;arr&#34; markerWidth=&#34;8&#34; markerHeight=&#34;8&#34; refX=&#34;6&#34; refY=&#34;4&#34; orient=&#34;auto&#34;&gt;
-      &lt;polygon points=&#34;0 0, 8 4, 0 8&#34; fill=&#34;#6b7280&#34;/&gt;
-    &lt;/marker&gt;
-  &lt;/defs&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;250&#34; y2=&#34;30&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
-  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
-  &lt;text x=&#34;140&#34; y=&#34;85&#34; font-size=&#34;11&#34; fill=&#34;#3b82f6&#34;&gt;s = 60t&lt;/text&gt;
-&lt;/svg&gt;
+&lt;div class=&#34;chart-wrap&#34; style=&#34;max-width: 360px; margin: 1em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-linear-075077307086944b10918ade1d547bd6&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s = 60t&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+(function() {
+  var id = &#39;chart-linear-075077307086944b10918ade1d547bd6&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function init() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    var labels = [0, 1, 2, 3, 4];
+    var data = [0, 60, 120, 180, 240];
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: &#39;s = 60t&#39;,
+          data: data,
+          borderColor: &#39;#3b82f6&#39;,
+          backgroundColor: &#39;transparent&#39;,
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          title: { display: false }
+        },
+        scales: {
+          x: { title: { display: true, text: &#39;t&#39; }, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } },
+          y: { title: { display: true, text: &#39;s&#39; }, min: 0, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } }
+        }
+      }
+    });
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
+})();
+&lt;/script&gt;
+
 &lt;p&gt;Но в течение времени машина движется неравномерно — скорость то увеличивается, то уменьшается.&lt;/p&gt;
-&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;path d=&#34;M 30 150 C 90 130, 150 80, 220 50&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
-  &lt;path d=&#34;M 30 150 Q 90 130, 150 140 T 250 50&#34; fill=&#34;none&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34; stroke-dasharray=&#34;6 4&#34;/&gt;
-  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;90&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34; text-anchor=&#34;end&#34;&gt;v&lt;/text&gt;
-  &lt;text x=&#34;160&#34; y=&#34;45&#34; font-size=&#34;10&#34; fill=&#34;#3b82f6&#34;&gt;s(t)&lt;/text&gt;
-  &lt;text x=&#34;200&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34;&gt;v(t)&lt;/text&gt;
-&lt;/svg&gt;
+&lt;div class=&#34;chart-wrap&#34; style=&#34;max-width: 360px; margin: 1em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-nonuniform-075077307086944b10918ade1d547bd6&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151); flex-wrap: wrap;&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s(t) — расстояние&lt;/span&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; border-bottom: 2px dashed #f59e0b;&#34;&gt;&lt;/span&gt;v(t) — скорость&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function() {
+  var id = &#39;chart-nonuniform-075077307086944b10918ade1d547bd6&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    var labels = [];
+    var sData = [];
+    var vData = [];
+    for (var t = 0; t &lt;= 1.02; t += 0.02) {
+      labels.push(t.toFixed(2));
+      var u = Math.max(0, Math.min(1, t));
+      var s = 60 * u * u * (3 - 2 * u);
+      var v = 360 * u * (1 - u);
+      sData.push(s);
+      vData.push(v);
+    }
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: &#39;s(t) — расстояние&#39;,
+            data: sData,
+            borderColor: &#39;#3b82f6&#39;,
+            borderWidth: 2.5,
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: &#39;y&#39;
+          },
+          {
+            label: &#39;v(t) — скорость&#39;,
+            data: vData,
+            borderColor: &#39;#f59e0b&#39;,
+            borderWidth: 2,
+            borderDash: [6, 4],
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: &#39;y1&#39;
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { title: { display: true, text: &#39;t&#39; }, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } },
+          y: {
+            type: &#39;linear&#39;,
+            position: &#39;left&#39;,
+            title: { display: true, text: &#39;s&#39; },
+            min: 0,
+            max: 70,
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; }
+          },
+          y1: {
+            type: &#39;linear&#39;,
+            position: &#39;right&#39;,
+            title: { display: true, text: &#39;v&#39; },
+            min: 0,
+            max: 100,
+            grid: { drawOnChartArea: false },
+            ticks: { color: &#39;rgba(107,114,128,0.8)&#39; }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement(&#39;script&#39;);
+      s.src = &#39;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#39;;
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
+})();
+&lt;/script&gt;
+
 &lt;details style=&#34;background: rgba(239, 68, 68, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #ef4444;&#34;&gt;
 &lt;summary&gt;Невозможно&lt;/summary&gt;
 &lt;p&gt;Пройденное расстояние не может уменьшаться. Такой график s(t) был бы ошибочным:&lt;/p&gt;
-&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 0.75em 0;&#34;&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
-  &lt;path d=&#34;M 30 150 C 65 55, 135 142, 250 45&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
-  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;25&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
-  &lt;text x=&#34;140&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#ef4444&#34;&gt;s(t) — неправильно&lt;/text&gt;
-&lt;/svg&gt;
+&lt;div class=&#34;chart-impossible-wrap&#34; style=&#34;max-width: 360px; margin: 0.75em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-impossible-st-075077307086944b10918ade1d547bd6&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s(t) — неправильно&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function() {
+  var id = &#39;chart-impossible-st-075077307086944b10918ade1d547bd6&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    
+    var labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var data = [0, 3, 7, 11, 14, 11, 6, 2, 5, 9, 13];
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: &#39;s(t) — неправильно&#39;,
+          data: data,
+          borderColor: &#39;#3b82f6&#39;,
+          backgroundColor: &#39;transparent&#39;,
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: true },
+          title: { display: false }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: &#39;t&#39;, font: { size: 12 } },
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; },
+            ticks: { maxTicksLimit: 6 }
+          },
+          y: {
+            title: { display: true, text: &#39;s&#39;, font: { size: 12 } },
+            min: 0,
+            max: 16,
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; },
+            ticks: { stepSize: 2 }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement(&#39;script&#39;);
+      s.src = &#39;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#39;;
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
+})();
+&lt;/script&gt;
+
 &lt;/details&gt;
+&lt;details class=&#34;quiz-nonuniform&#34; style=&#34;margin: 1.5em 0; padding: 1rem; background: var(--card-background, #f8fafc); border-radius: 10px; border: 1px solid var(--card-separator-color, rgba(0,0,0,0.08));&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-size: 1.15rem; font-weight: 600;&#34;&gt;Вопросы для самопроверки&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 1rem;&#34;&gt;&lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 1.25rem;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;1. В какой момент скорость максимальна?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Подсказка&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;Посмотри на график v(t). Где он достигает наибольшего значения?&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;В середине интервала, при t ≈ 0.5&#34;&gt;Проверить&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 1.25rem;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;2. Что означает наклон графика s(t) в данной точке?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Подсказка&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;Скорость — это отношение изменения расстояния ко времени. Как это связано с наклоном?&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;Мгновенную скорость v(t) в этот момент&#34;&gt;Проверить&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 0;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;3. Почему v(t) сначала растёт, а потом падает?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Подсказка&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;v — это производная s. Как меняется наклон s(t) от начала до конца? Вспомни S-образную форму.&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;Наклон s(t) сначала растёт (ускорение), потом уменьшается (замедление). У s есть точка перегиба.&#34;&gt;Проверить&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+
+&lt;script&gt;
+(function() {
+  document.querySelectorAll(&#39;.quiz-reveal&#39;).forEach(function(btn) {
+    btn.addEventListener(&#39;click&#39;, function() {
+      var span = this.nextElementSibling;
+      if (span &amp;&amp; span.classList.contains(&#39;quiz-answer&#39;)) {
+        if (span.style.display === &#39;none&#39; || !span.style.display) {
+          span.textContent = &#39;Правильный ответ: &#39; + this.getAttribute(&#39;data-answer&#39;);
+          span.style.display = &#39;inline&#39;;
+          btn.textContent = &#39;Скрыть&#39;;
+        } else {
+          span.textContent = &#39;&#39;;
+          span.style.display = &#39;none&#39;;
+          btn.textContent = &#39;Проверить&#39;;
+        }
+      }
+    });
+  });
+})();
+&lt;/script&gt;
+
 </description>
         </item>
         <item>

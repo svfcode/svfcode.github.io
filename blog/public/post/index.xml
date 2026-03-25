@@ -6,7 +6,229 @@
         <description>Recent content in Posts on Блог</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ru</language>
-        <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Базовый минимум про ИИ – обзор</title>
+        <link>http://localhost:1313/p/ai-basics-overview/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/ai-basics-overview/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-overview/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – обзор" /&gt;&lt;p&gt;Это обзорная статья цикла «Базовый минимум» — по тезисам:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;большие языковые модели;&lt;/li&gt;
+&lt;li&gt;архитектура;&lt;/li&gt;
+&lt;li&gt;техники использования;&lt;/li&gt;
+&lt;li&gt;тренды.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;большие-языковые-модели-llm&#34;&gt;Большие языковые модели (LLM)&lt;/h2&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Что это? - Это инструмент, далее возможности и применение&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Генерация текста&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Создание статей, историй, маркетинговых материалов&lt;/li&gt;
+&lt;li&gt;Автоматическое составление отчётов и документации&lt;/li&gt;
+&lt;li&gt;Творческое письмо и контент различных жанров&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Ответы на вопросы&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Интеллектуальные чат-боты для поддержки клиентов&lt;/li&gt;
+&lt;li&gt;Системы вопросов-ответов для поиска информации&lt;/li&gt;
+&lt;li&gt;Виртуальные ассистенты для повседневных задач&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Анализ и обработка языка&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Классификация текстов по категориям и тональности&lt;/li&gt;
+&lt;li&gt;Суммаризация длинных документов&lt;/li&gt;
+&lt;li&gt;Перевод между языками с сохранением контекста&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Программирование и код&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Генерация кода по текстовому описанию&lt;/li&gt;
+&lt;li&gt;Отладка и исправление ошибок&lt;/li&gt;
+&lt;li&gt;Комментирование и объяснение сложных участков кода&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;em&gt;Инструмент мощный — но важно понимать, как он устроен и где ломается.&lt;/em&gt;&lt;/p&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Что это технически? - Огромная статистическая машина&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Определение и принципы работы&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Нейросетевые модели, обученные предсказывать следующий токен на основе контекста.&lt;/p&gt;
+&lt;p&gt;Используют статистические закономерности в языке для генерации текста.&lt;/p&gt;
+&lt;p&gt;LLM использует полный контекст для определения наиболее вероятного следующего слова.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;llm-context.png&#34; alt=&#34;Схема: модель опирается на полный контекст при выборе следующего токена&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Флоу предсказания токенов LLM&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Входной контекст:&lt;/strong&gt; «Карл у Клары украл…»&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Анализ контекста:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Карл (субъект)&lt;/li&gt;
+&lt;li&gt;у Клары (у кого)&lt;/li&gt;
+&lt;li&gt;украл (действие)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Предсказание:&lt;/strong&gt; Модель анализирует все предыдущие токены и их связи, распознаёт паттерн известной скороговорки&lt;/p&gt;
+&lt;p&gt;→ «кораллы»&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Вероятность:&lt;/strong&gt; 85%&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;llm-token-flow.png&#34; alt=&#34;Флоу предсказания следующего токена&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Трансформеры и архитектура&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Механизм self-attention для обработки последовательностей (ну тут всё понятно — на самом деле нет).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;attention.png&#34; alt=&#34;Механизм self-attention&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Параллельная обработка данных вместо рекуррентной.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;parallel-vs-rnn.png&#34; alt=&#34;Параллельная обработка вместо рекуррентной схемы&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Многослойная структура с миллиардами параметров (тепловая карта весов).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;layer-weights-heatmap.png&#34; alt=&#34;Многослойная структура и масштаб параметров&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Обучение на текстовых данных&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Обучение без учителя на миллиардах текстовых примеров&lt;/li&gt;
+&lt;li&gt;Предобучение на общих данных с последующей специализацией&lt;/li&gt;
+&lt;li&gt;Масштабирование данных и вычислительных ресурсов&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Как использовать? - обзор техник работы с LLM&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Промпт-инжиниринг&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Искусство формулирования запросов для лучших результатов&lt;/li&gt;
+&lt;li&gt;Структурирование инструкций с ролями, примерами и контекстом&lt;/li&gt;
+&lt;li&gt;Итеративное улучшение запросов для точных ответов&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fine-tuning (дообучение)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Адаптация модели под специфические задачи и домены&lt;/li&gt;
+&lt;li&gt;Использование небольших наборов размеченных данных&lt;/li&gt;
+&lt;li&gt;RLHF (обучение с подкреплением по обратной связи человека)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;RAG (Retrieval-Augmented Generation)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Расширение знаний модели через поиск в базе данных&lt;/li&gt;
+&lt;li&gt;Комбинирование внешних источников информации с генерацией&lt;/li&gt;
+&lt;li&gt;Уменьшение галлюцинаций через опору на проверенные факты&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Chain-of-thought&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Пошаговое рассуждение для решения сложных задач&lt;/li&gt;
+&lt;li&gt;Промежуточные вычисления и логические переходы&lt;/li&gt;
+&lt;li&gt;Улучшение математических и логических способностей модели&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Популярные модели&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;GPT (OpenAI)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Серия моделей от GPT-3 до GPT-5.4, лидеры индустрии&lt;/li&gt;
+&lt;li&gt;Коммерческие API с широким спектром возможностей&lt;/li&gt;
+&lt;li&gt;ChatGPT как массовый продукт на базе этих моделей&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Claude (Anthropic)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Фокус на безопасность и длинный контекст&lt;/li&gt;
+&lt;li&gt;Конституционный подход к выравниванию с человеческими ценностями&lt;/li&gt;
+&lt;li&gt;Способность обрабатывать большие объёмы текста (до 1М токенов)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;LLaMA&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Открытая модель от Meta для исследовательского сообщества&lt;/li&gt;
+&lt;li&gt;Основа для множества производных моделей (Alpaca, Vicuna)&lt;/li&gt;
+&lt;li&gt;Компактные версии для локального запуска&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Отечественные разработки&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;YandexGPT с поддержкой русского языка&lt;/li&gt;
+&lt;li&gt;GigaChat от Сбера для бизнес-применений&lt;/li&gt;
+&lt;li&gt;Модели Vikhr и другие разработки для специализированных задач&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Ключевые понятия&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Токен&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Минимальная единица текста для обработки моделью&lt;/li&gt;
+&lt;li&gt;Может быть словом, частью слова или символом&lt;/li&gt;
+&lt;li&gt;Примеры: «привет» = 1 токен, «непредсказуемость» = 2–3 токена&lt;/li&gt;
+&lt;li&gt;Токенизация разбивает текст на последовательность токенов&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Температура&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Низкая температура (0.1–0.3): предсказуемый, точный текст&lt;/li&gt;
+&lt;li&gt;Средняя температура (0.7–0.9): баланс креативности и связности&lt;/li&gt;
+&lt;li&gt;Высокая температура (1.5–2.0): творческий, но менее связный текст&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Типы моделей по назначению&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Базовые (foundation): предобученные на больших корпусах текста&lt;/li&gt;
+&lt;li&gt;Инструктивные (instruction-tuned): обучены следовать инструкциям пользователя&lt;/li&gt;
+&lt;li&gt;Чат-модели: оптимизированы для диалогов и многошаговых разговоров&lt;/li&gt;
+&lt;li&gt;Специализированные: настроенные под конкретные задачи (код, медицина, юриспруденция)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Контекстное окно&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ограничение на объём текста, который модель обрабатывает за раз&lt;/li&gt;
+&lt;li&gt;Различные техники расширения контекста (8K–100K токенов)&lt;/li&gt;
+&lt;li&gt;Потеря информации при работе с длинными документами&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Проблемы и ограничения&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Галлюцинации&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Модель может выдумывать несуществующие факты с уверенным видом&lt;/li&gt;
+&lt;li&gt;Создание правдоподобной, но ложной информации&lt;/li&gt;
+&lt;li&gt;Сложность верификации сгенерированного контента&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Вычислительные ресурсы&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Требуются мощные GPU/TPU для обучения и инференса&lt;/li&gt;
+&lt;li&gt;Высокие энергозатраты на обучение крупных моделей&lt;/li&gt;
+&lt;li&gt;Стоимость разработки и поддержки инфраструктуры&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Этические вопросы&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Предвзятость и стереотипы в обучающих данных&lt;/li&gt;
+&lt;li&gt;Проблемы безопасности и генерации вредоносного контента&lt;/li&gt;
+&lt;li&gt;Нарушение авторских прав и вопросы интеллектуальной собственности&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Будущее и тренды&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Мультимодальность&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Работа с текстом, изображениями, аудио и видео&lt;/li&gt;
+&lt;li&gt;Понимание и генерация контента в различных форматах&lt;/li&gt;
+&lt;li&gt;Интеграция разных модальностей для комплексного понимания&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Агенты на базе LLM&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Автономные системы для выполнения сложных задач&lt;/li&gt;
+&lt;li&gt;Планирование действий и принятие решений&lt;/li&gt;
+&lt;li&gt;Взаимодействие с внешними инструментами и API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Оптимизация моделей&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Квантизация и дистилляция для ускорения работы&lt;/li&gt;
+&lt;li&gt;Разработка более эффективных архитектур&lt;/li&gt;
+&lt;li&gt;Баланс между размером модели и её возможностями&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Локальные решения&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Модели, работающие на персональных устройствах&lt;/li&gt;
+&lt;li&gt;Конфиденциальность данных без отправки в облако&lt;/li&gt;
+&lt;li&gt;Специализированное аппаратное обеспечение для LLM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
         <title>Мат Анализ — Производные</title>
         <link>http://localhost:1313/p/math-derivatives/</link>
         <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
@@ -19,43 +241,285 @@
 &lt;h2 id=&#34;что-такое-скорость&#34;&gt;Что такое скорость?&lt;/h2&gt;
 &lt;p&gt;Это отношение расстояния ко времени.&lt;/p&gt;
 &lt;p&gt;Вот машина едет со средней скоростью 60 км/ч — значит, если увеличить время \( t \) на единицу, расстояние \( s \) увеличится на 60 единиц. Если увеличить \( t \) в 10 раз, то и \( s \) увеличится в 10 раз. Здесь рост линейный, на графике это прямая линия.&lt;/p&gt;
-&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
-  &lt;defs&gt;
-    &lt;marker id=&#34;arr&#34; markerWidth=&#34;8&#34; markerHeight=&#34;8&#34; refX=&#34;6&#34; refY=&#34;4&#34; orient=&#34;auto&#34;&gt;
-      &lt;polygon points=&#34;0 0, 8 4, 0 8&#34; fill=&#34;#6b7280&#34;/&gt;
-    &lt;/marker&gt;
-  &lt;/defs&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;250&#34; y2=&#34;30&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
-  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
-  &lt;text x=&#34;140&#34; y=&#34;85&#34; font-size=&#34;11&#34; fill=&#34;#3b82f6&#34;&gt;s = 60t&lt;/text&gt;
-&lt;/svg&gt;
+&lt;div class=&#34;chart-wrap&#34; style=&#34;max-width: 360px; margin: 1em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-linear-075077307086944b10918ade1d547bd6&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s = 60t&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+(function() {
+  var id = &#39;chart-linear-075077307086944b10918ade1d547bd6&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function init() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    var labels = [0, 1, 2, 3, 4];
+    var data = [0, 60, 120, 180, 240];
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: &#39;s = 60t&#39;,
+          data: data,
+          borderColor: &#39;#3b82f6&#39;,
+          backgroundColor: &#39;transparent&#39;,
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          title: { display: false }
+        },
+        scales: {
+          x: { title: { display: true, text: &#39;t&#39; }, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } },
+          y: { title: { display: true, text: &#39;s&#39; }, min: 0, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } }
+        }
+      }
+    });
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
+})();
+&lt;/script&gt;
+
 &lt;p&gt;Но в течение времени машина движется неравномерно — скорость то увеличивается, то уменьшается.&lt;/p&gt;
-&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 1em 0;&#34;&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
-  &lt;path d=&#34;M 30 150 C 90 130, 150 80, 220 50&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
-  &lt;path d=&#34;M 30 150 Q 90 130, 150 140 T 250 50&#34; fill=&#34;none&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34; stroke-dasharray=&#34;6 4&#34;/&gt;
-  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;26&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;90&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34; text-anchor=&#34;end&#34;&gt;v&lt;/text&gt;
-  &lt;text x=&#34;160&#34; y=&#34;45&#34; font-size=&#34;10&#34; fill=&#34;#3b82f6&#34;&gt;s(t)&lt;/text&gt;
-  &lt;text x=&#34;200&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#f59e0b&#34;&gt;v(t)&lt;/text&gt;
-&lt;/svg&gt;
+&lt;div class=&#34;chart-wrap&#34; style=&#34;max-width: 360px; margin: 1em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-nonuniform-075077307086944b10918ade1d547bd6&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151); flex-wrap: wrap;&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s(t) — расстояние&lt;/span&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; border-bottom: 2px dashed #f59e0b;&#34;&gt;&lt;/span&gt;v(t) — скорость&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function() {
+  var id = &#39;chart-nonuniform-075077307086944b10918ade1d547bd6&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    var labels = [];
+    var sData = [];
+    var vData = [];
+    for (var t = 0; t &lt;= 1.02; t += 0.02) {
+      labels.push(t.toFixed(2));
+      var u = Math.max(0, Math.min(1, t));
+      var s = 60 * u * u * (3 - 2 * u);
+      var v = 360 * u * (1 - u);
+      sData.push(s);
+      vData.push(v);
+    }
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: &#39;s(t) — расстояние&#39;,
+            data: sData,
+            borderColor: &#39;#3b82f6&#39;,
+            borderWidth: 2.5,
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: &#39;y&#39;
+          },
+          {
+            label: &#39;v(t) — скорость&#39;,
+            data: vData,
+            borderColor: &#39;#f59e0b&#39;,
+            borderWidth: 2,
+            borderDash: [6, 4],
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: &#39;y1&#39;
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { title: { display: true, text: &#39;t&#39; }, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } },
+          y: {
+            type: &#39;linear&#39;,
+            position: &#39;left&#39;,
+            title: { display: true, text: &#39;s&#39; },
+            min: 0,
+            max: 70,
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; }
+          },
+          y1: {
+            type: &#39;linear&#39;,
+            position: &#39;right&#39;,
+            title: { display: true, text: &#39;v&#39; },
+            min: 0,
+            max: 100,
+            grid: { drawOnChartArea: false },
+            ticks: { color: &#39;rgba(107,114,128,0.8)&#39; }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement(&#39;script&#39;);
+      s.src = &#39;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#39;;
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
+})();
+&lt;/script&gt;
+
 &lt;details style=&#34;background: rgba(239, 68, 68, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #ef4444;&#34;&gt;
 &lt;summary&gt;Невозможно&lt;/summary&gt;
 &lt;p&gt;Пройденное расстояние не может уменьшаться. Такой график s(t) был бы ошибочным:&lt;/p&gt;
-&lt;svg viewBox=&#34;0 0 280 180&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 280px; display: block; margin: 0.75em 0;&#34;&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;260&#34; y2=&#34;150&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
-  &lt;line x1=&#34;30&#34; y1=&#34;150&#34; x2=&#34;30&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1&#34;/&gt;
-  &lt;path d=&#34;M 30 150 C 65 55, 135 142, 250 45&#34; fill=&#34;none&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
-  &lt;text x=&#34;268&#34; y=&#34;155&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34;&gt;t&lt;/text&gt;
-  &lt;text x=&#34;25&#34; y=&#34;25&#34; font-size=&#34;11&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;s&lt;/text&gt;
-  &lt;text x=&#34;140&#34; y=&#34;95&#34; font-size=&#34;10&#34; fill=&#34;#ef4444&#34;&gt;s(t) — неправильно&lt;/text&gt;
-&lt;/svg&gt;
+&lt;div class=&#34;chart-impossible-wrap&#34; style=&#34;max-width: 360px; margin: 0.75em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-impossible-st-075077307086944b10918ade1d547bd6&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s(t) — неправильно&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function() {
+  var id = &#39;chart-impossible-st-075077307086944b10918ade1d547bd6&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    
+    var labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var data = [0, 3, 7, 11, 14, 11, 6, 2, 5, 9, 13];
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: &#39;s(t) — неправильно&#39;,
+          data: data,
+          borderColor: &#39;#3b82f6&#39;,
+          backgroundColor: &#39;transparent&#39;,
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: true },
+          title: { display: false }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: &#39;t&#39;, font: { size: 12 } },
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; },
+            ticks: { maxTicksLimit: 6 }
+          },
+          y: {
+            title: { display: true, text: &#39;s&#39;, font: { size: 12 } },
+            min: 0,
+            max: 16,
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; },
+            ticks: { stepSize: 2 }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement(&#39;script&#39;);
+      s.src = &#39;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#39;;
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
+})();
+&lt;/script&gt;
+
 &lt;/details&gt;
+&lt;details class=&#34;quiz-nonuniform&#34; style=&#34;margin: 1.5em 0; padding: 1rem; background: var(--card-background, #f8fafc); border-radius: 10px; border: 1px solid var(--card-separator-color, rgba(0,0,0,0.08));&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-size: 1.15rem; font-weight: 600;&#34;&gt;Вопросы для самопроверки&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 1rem;&#34;&gt;&lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 1.25rem;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;1. В какой момент скорость максимальна?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Подсказка&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;Посмотри на график v(t). Где он достигает наибольшего значения?&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;В середине интервала, при t ≈ 0.5&#34;&gt;Проверить&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 1.25rem;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;2. Что означает наклон графика s(t) в данной точке?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Подсказка&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;Скорость — это отношение изменения расстояния ко времени. Как это связано с наклоном?&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;Мгновенную скорость v(t) в этот момент&#34;&gt;Проверить&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 0;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;3. Почему v(t) сначала растёт, а потом падает?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Подсказка&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;v — это производная s. Как меняется наклон s(t) от начала до конца? Вспомни S-образную форму.&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;Наклон s(t) сначала растёт (ускорение), потом уменьшается (замедление). У s есть точка перегиба.&#34;&gt;Проверить&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+
+&lt;script&gt;
+(function() {
+  document.querySelectorAll(&#39;.quiz-reveal&#39;).forEach(function(btn) {
+    btn.addEventListener(&#39;click&#39;, function() {
+      var span = this.nextElementSibling;
+      if (span &amp;&amp; span.classList.contains(&#39;quiz-answer&#39;)) {
+        if (span.style.display === &#39;none&#39; || !span.style.display) {
+          span.textContent = &#39;Правильный ответ: &#39; + this.getAttribute(&#39;data-answer&#39;);
+          span.style.display = &#39;inline&#39;;
+          btn.textContent = &#39;Скрыть&#39;;
+        } else {
+          span.textContent = &#39;&#39;;
+          span.style.display = &#39;none&#39;;
+          btn.textContent = &#39;Проверить&#39;;
+        }
+      }
+    });
+  });
+})();
+&lt;/script&gt;
+
 </description>
         </item>
         <item>
@@ -790,8 +1254,6 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
     title=&#34;Разложи по полочкам&#34;
   &gt;&lt;/iframe&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;дальше-в-цикле&#34;&gt;Дальше в цикле&lt;/h2&gt;
-&lt;p&gt;В следующих статьях разберём: как от простых моделей пришли к трансформерам, что такое токены и параметры, чем инструктивные и мультимодальные модели отличаются от «просто текстовых», и зачем это всё нужно.&lt;/p&gt;
 </description>
         </item>
         

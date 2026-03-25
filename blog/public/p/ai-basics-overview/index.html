@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Обзор больших языковых моделей: что умеют LLM, как устроены, промпты, RAG, ключевые понятия и ограничения'>
+<title>Базовый минимум про ИИ – обзор</title>
+
+<link rel='canonical' href='http://localhost:1313/p/ai-basics-overview/'>
+
+<link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
+<meta property='og:title' content='Базовый минимум про ИИ – обзор'>
+<meta property='og:description' content='Обзор больших языковых моделей: что умеют LLM, как устроены, промпты, RAG, ключевые понятия и ограничения'>
+<meta property='og:url' content='http://localhost:1313/p/ai-basics-overview/'>
+<meta property='og:site_name' content='Блог'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Искусственный интеллект' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-overview/cover.jpg' />
+<meta name="twitter:title" content="Базовый минимум про ИИ – обзор">
+<meta name="twitter:description" content="Обзор больших языковых моделей: что умеют LLM, как устроены, промпты, RAG, ключевые понятия и ограничения"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-overview/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym( 107089384 , "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107089384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Показать/скрыть меню">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_eef9891cfe28abde.jpg" width="300"
+                            height="200" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Блог</a></h1>
+            <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Обо мне</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/playlists/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Плейлисты</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Архивы</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Поиск</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" selected>ru</option>
+                        
+                            <option value="http://localhost:1313/en/" >en</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Тёмный режим</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Содержание</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#большие-языковые-модели-llm">Большие языковые модели (LLM)</a>
+      <ul>
+        <li><a href="#что-это---это-инструмент-далее-возможности-и-применение">Что это? - Это инструмент, далее возможности и применение</a></li>
+        <li><a href="#что-это-технически---огромная-статистическая-машина">Что это технически? - Огромная статистическая машина</a></li>
+        <li><a href="#как-использовать---обзор-техник-работы-с-llm">Как использовать? - обзор техник работы с LLM</a></li>
+        <li><a href="#популярные-модели">Популярные модели</a></li>
+        <li><a href="#ключевые-понятия">Ключевые понятия</a></li>
+        <li><a href="#проблемы-и-ограничения">Проблемы и ограничения</a></li>
+        <li><a href="#будущее-и-тренды">Будущее и тренды</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/ai-basics-overview/">
+                <img src="/p/ai-basics-overview/cover_hu_9edf806161ac8987.jpg"
+                        srcset="/p/ai-basics-overview/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-overview/cover_hu_fef56980ce8b91ab.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post Базовый минимум про ИИ – обзор" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-basics-overview/">Базовый минимум про ИИ – обзор</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Обзор больших языковых моделей: что умеют LLM, как устроены, промпты, RAG, ключевые понятия и ограничения
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 25, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    Время чтения: 4 мин.
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/en/p/ai-basics-overview/" class="link">en</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Это обзорная статья цикла «Базовый минимум» — по тезисам:</p>
+<ul>
+<li>большие языковые модели;</li>
+<li>архитектура;</li>
+<li>техники использования;</li>
+<li>тренды.</li>
+</ul>
+<h2 id="большие-языковые-модели-llm">Большие языковые модели (LLM)</h2>
+<h3 class="toc-heading-only" id="что-это---это-инструмент-далее-возможности-и-применение">Что это? - Это инструмент, далее возможности и применение</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Что это? - Это инструмент, далее возможности и применение</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Генерация текста</strong></p>
+<ul>
+<li>Создание статей, историй, маркетинговых материалов</li>
+<li>Автоматическое составление отчётов и документации</li>
+<li>Творческое письмо и контент различных жанров</li>
+</ul>
+<p><strong>Ответы на вопросы</strong></p>
+<ul>
+<li>Интеллектуальные чат-боты для поддержки клиентов</li>
+<li>Системы вопросов-ответов для поиска информации</li>
+<li>Виртуальные ассистенты для повседневных задач</li>
+</ul>
+<p><strong>Анализ и обработка языка</strong></p>
+<ul>
+<li>Классификация текстов по категориям и тональности</li>
+<li>Суммаризация длинных документов</li>
+<li>Перевод между языками с сохранением контекста</li>
+</ul>
+<p><strong>Программирование и код</strong></p>
+<ul>
+<li>Генерация кода по текстовому описанию</li>
+<li>Отладка и исправление ошибок</li>
+<li>Комментирование и объяснение сложных участков кода</li>
+</ul>
+</div>
+</details>
+<p><em>Инструмент мощный — но важно понимать, как он устроен и где ломается.</em></p>
+<h3 class="toc-heading-only" id="что-это-технически---огромная-статистическая-машина">Что это технически? - Огромная статистическая машина</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Что это технически? - Огромная статистическая машина</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Определение и принципы работы</strong></p>
+<p>Нейросетевые модели, обученные предсказывать следующий токен на основе контекста.</p>
+<p>Используют статистические закономерности в языке для генерации текста.</p>
+<p>LLM использует полный контекст для определения наиболее вероятного следующего слова.</p>
+<p><img src="llm-context.png" alt="Схема: модель опирается на полный контекст при выборе следующего токена" loading="lazy" /></p>
+<p><strong>Флоу предсказания токенов LLM</strong></p>
+<p><strong>Входной контекст:</strong> «Карл у Клары украл…»</p>
+<p><strong>Анализ контекста:</strong></p>
+<ul>
+<li>Карл (субъект)</li>
+<li>у Клары (у кого)</li>
+<li>украл (действие)</li>
+</ul>
+<p><strong>Предсказание:</strong> Модель анализирует все предыдущие токены и их связи, распознаёт паттерн известной скороговорки</p>
+<p>→ «кораллы»</p>
+<p><strong>Вероятность:</strong> 85%</p>
+<p><img src="llm-token-flow.png" alt="Флоу предсказания следующего токена" loading="lazy" /></p>
+<p><strong>Трансформеры и архитектура</strong></p>
+<p>Механизм self-attention для обработки последовательностей (ну тут всё понятно — на самом деле нет).</p>
+<p><img src="attention.png" alt="Механизм self-attention" loading="lazy" /></p>
+<p>Параллельная обработка данных вместо рекуррентной.</p>
+<p><img src="parallel-vs-rnn.png" alt="Параллельная обработка вместо рекуррентной схемы" loading="lazy" /></p>
+<p>Многослойная структура с миллиардами параметров (тепловая карта весов).</p>
+<p><img src="layer-weights-heatmap.png" alt="Многослойная структура и масштаб параметров" loading="lazy" /></p>
+<p><strong>Обучение на текстовых данных</strong></p>
+<ul>
+<li>Обучение без учителя на миллиардах текстовых примеров</li>
+<li>Предобучение на общих данных с последующей специализацией</li>
+<li>Масштабирование данных и вычислительных ресурсов</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="как-использовать---обзор-техник-работы-с-llm">Как использовать? - обзор техник работы с LLM</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Как использовать? - обзор техник работы с LLM</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Промпт-инжиниринг</strong></p>
+<ul>
+<li>Искусство формулирования запросов для лучших результатов</li>
+<li>Структурирование инструкций с ролями, примерами и контекстом</li>
+<li>Итеративное улучшение запросов для точных ответов</li>
+</ul>
+<p><strong>Fine-tuning (дообучение)</strong></p>
+<ul>
+<li>Адаптация модели под специфические задачи и домены</li>
+<li>Использование небольших наборов размеченных данных</li>
+<li>RLHF (обучение с подкреплением по обратной связи человека)</li>
+</ul>
+<p><strong>RAG (Retrieval-Augmented Generation)</strong></p>
+<ul>
+<li>Расширение знаний модели через поиск в базе данных</li>
+<li>Комбинирование внешних источников информации с генерацией</li>
+<li>Уменьшение галлюцинаций через опору на проверенные факты</li>
+</ul>
+<p><strong>Chain-of-thought</strong></p>
+<ul>
+<li>Пошаговое рассуждение для решения сложных задач</li>
+<li>Промежуточные вычисления и логические переходы</li>
+<li>Улучшение математических и логических способностей модели</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="популярные-модели">Популярные модели</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Популярные модели</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>GPT (OpenAI)</strong></p>
+<ul>
+<li>Серия моделей от GPT-3 до GPT-5.4, лидеры индустрии</li>
+<li>Коммерческие API с широким спектром возможностей</li>
+<li>ChatGPT как массовый продукт на базе этих моделей</li>
+</ul>
+<p><strong>Claude (Anthropic)</strong></p>
+<ul>
+<li>Фокус на безопасность и длинный контекст</li>
+<li>Конституционный подход к выравниванию с человеческими ценностями</li>
+<li>Способность обрабатывать большие объёмы текста (до 1М токенов)</li>
+</ul>
+<p><strong>LLaMA</strong></p>
+<ul>
+<li>Открытая модель от Meta для исследовательского сообщества</li>
+<li>Основа для множества производных моделей (Alpaca, Vicuna)</li>
+<li>Компактные версии для локального запуска</li>
+</ul>
+<p><strong>Отечественные разработки</strong></p>
+<ul>
+<li>YandexGPT с поддержкой русского языка</li>
+<li>GigaChat от Сбера для бизнес-применений</li>
+<li>Модели Vikhr и другие разработки для специализированных задач</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="ключевые-понятия">Ключевые понятия</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Ключевые понятия</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Токен</strong></p>
+<ul>
+<li>Минимальная единица текста для обработки моделью</li>
+<li>Может быть словом, частью слова или символом</li>
+<li>Примеры: «привет» = 1 токен, «непредсказуемость» = 2–3 токена</li>
+<li>Токенизация разбивает текст на последовательность токенов</li>
+</ul>
+<p><strong>Температура</strong></p>
+<ul>
+<li>Низкая температура (0.1–0.3): предсказуемый, точный текст</li>
+<li>Средняя температура (0.7–0.9): баланс креативности и связности</li>
+<li>Высокая температура (1.5–2.0): творческий, но менее связный текст
+<p style="margin: 0.5rem 0 0 0;"><img src="overview-temperature-high.png" alt="Инфографика: температура генерации LLM — от предсказуемого к разнообразным ответам" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /></p></li>
+</ul>
+<p><strong>Типы моделей по назначению</strong></p>
+<ul>
+<li>Базовые (foundation): предобученные на больших корпусах текста</li>
+<li>Инструктивные (instruction-tuned): обучены следовать инструкциям пользователя</li>
+<li>Чат-модели: оптимизированы для диалогов и многошаговых разговоров</li>
+<li>Специализированные: настроенные под конкретные задачи (код, медицина, юриспруденция)
+<p style="margin: 0.5rem 0 0 0;"><img src="overview-model-specialized.png" alt="Схема: от foundation-моделей к специализированным (код, медицина, право)" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /></p></li>
+</ul>
+<p><strong>Контекстное окно</strong></p>
+<ul>
+<li>Ограничение на объём текста, который модель обрабатывает за раз</li>
+<li>Различные техники расширения контекста (8K–100K токенов)</li>
+<li>Потеря информации при работе с длинными документами</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="проблемы-и-ограничения">Проблемы и ограничения</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Проблемы и ограничения</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Галлюцинации</strong></p>
+<ul>
+<li>Модель может выдумывать несуществующие факты с уверенным видом</li>
+<li>Создание правдоподобной, но ложной информации</li>
+<li>Сложность верификации сгенерированного контента</li>
+</ul>
+<p><strong>Вычислительные ресурсы</strong></p>
+<ul>
+<li>Требуются мощные GPU/TPU для обучения и инференса</li>
+<li>Высокие энергозатраты на обучение крупных моделей</li>
+<li>Стоимость разработки и поддержки инфраструктуры</li>
+</ul>
+<p><strong>Этические вопросы</strong></p>
+<ul>
+<li>Предвзятость и стереотипы в обучающих данных</li>
+<li>Проблемы безопасности и генерации вредоносного контента</li>
+<li>Нарушение авторских прав и вопросы интеллектуальной собственности</li>
+</ul>
+</div>
+</details>
+<h3 class="toc-heading-only" id="будущее-и-тренды">Будущее и тренды</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Будущее и тренды</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Мультимодальность</strong></p>
+<ul>
+<li>Работа с текстом, изображениями, аудио и видео</li>
+<li>Понимание и генерация контента в различных форматах</li>
+<li>Интеграция разных модальностей для комплексного понимания</li>
+</ul>
+<p><strong>Агенты на базе LLM</strong></p>
+<ul>
+<li>Автономные системы для выполнения сложных задач</li>
+<li>Планирование действий и принятие решений</li>
+<li>Взаимодействие с внешними инструментами и API</li>
+</ul>
+<p><strong>Оптимизация моделей</strong></p>
+<ul>
+<li>Квантизация и дистилляция для ускорения работы</li>
+<li>Разработка более эффективных архитектур</li>
+<li>Баланс между размером модели и её возможностями</li>
+</ul>
+<p><strong>Локальные решения</strong></p>
+<ul>
+<li>Модели, работающие на персональных устройствах</li>
+<li>Конфиденциальность данных без отправки в облако</li>
+<li>Специализированное аппаратное обеспечение для LLM</li>
+</ul>
+</div>
+</details>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82/">Искусственный Интеллект</a>
+        
+            <a href="/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/">Машинное Обучение</a>
+        
+            <a href="/tags/%D0%B1%D0%B0%D0%B7%D0%B0/">База</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Также рекомендуем</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/ai-basics-intro/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-intro/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Базовый минимум про ИИ – введение"
+                        data-key="ai-basics-intro" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Базовый минимум про ИИ – введение</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/ai-future-beyond-scaling/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-future-beyond-scaling/cover.021d37318be2db61d8f7849e96887ab9_hu_c758c54acc359981.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Будущее ИИ: почему одного масштабирования уже недостаточно"
+                        data-key="ai-future-beyond-scaling" 
+                        data-hash="md5-Ah03MYvi22HY94Seloh6uQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Будущее ИИ: почему одного масштабирования уже недостаточно</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-derivatives/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-derivatives/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — Производные"
+                        data-key="math-derivatives" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Мат Анализ — Производные</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-derivatives-bkp/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-derivatives-bkp/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — Производные"
+                        data-key="math-derivatives-bkp" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Мат Анализ — Производные</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-circle-area/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-circle-area/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — пример анализа (нахождение πr²)"
+                        data-key="math-circle-area" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Мат Анализ — пример анализа (нахождение πr²)</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Блог
+    </section>
+    
+    <section class="powerby">
+        Создано при помощи <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Тема <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b>, дизайн <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
