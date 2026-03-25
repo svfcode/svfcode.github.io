@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='RAG (Retrieval-Augmented Generation): зачем подмешивать поиск к LLM, этапы пайплайна, чанкование, naive и advanced RAG'>
+<title>Базовый минимум про ИИ – RAG-системы</title>
+
+<link rel='canonical' href='http://localhost:1313/p/ai-basics-rag/'>
+
+<link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
+<meta property='og:title' content='Базовый минимум про ИИ – RAG-системы'>
+<meta property='og:description' content='RAG (Retrieval-Augmented Generation): зачем подмешивать поиск к LLM, этапы пайплайна, чанкование, naive и advanced RAG'>
+<meta property='og:url' content='http://localhost:1313/p/ai-basics-rag/'>
+<meta property='og:site_name' content='Блог'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Искусственный интеллект' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-rag/cover.jpg' />
+<meta name="twitter:title" content="Базовый минимум про ИИ – RAG-системы">
+<meta name="twitter:description" content="RAG (Retrieval-Augmented Generation): зачем подмешивать поиск к LLM, этапы пайплайна, чанкование, naive и advanced RAG"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-rag/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym( 107089384 , "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107089384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Показать/скрыть меню">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_eef9891cfe28abde.jpg" width="300"
+                            height="200" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Блог</a></h1>
+            <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Обо мне</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/playlists/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Плейлисты</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Архивы</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Поиск</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" selected>ru</option>
+                        
+                            <option value="http://localhost:1313/en/" >en</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Тёмный режим</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Содержание</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#что-такое-rag">Что такое RAG</a></li>
+        <li><a href="#этапы-работы-rag">Этапы работы RAG</a></li>
+        <li><a href="#чанкование">Чанкование</a></li>
+        <li><a href="#типы-rag-систем">Типы RAG-систем</a></li>
+        <li><a href="#кто-использует">Кто использует</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/ai-basics-rag/">
+                <img src="/p/ai-basics-rag/cover_hu_9edf806161ac8987.jpg"
+                        srcset="/p/ai-basics-rag/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-rag/cover_hu_fef56980ce8b91ab.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post Базовый минимум про ИИ – RAG-системы" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-basics-rag/">Базовый минимум про ИИ – RAG-системы</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            RAG (Retrieval-Augmented Generation): зачем подмешивать поиск к LLM, этапы пайплайна, чанкование, naive и advanced RAG
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 25, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    Время чтения: 3 мин.
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/en/p/ai-basics-rag/" class="link">en</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Статья цикла «Базовый минимум» про системы <strong>дополненной генерации с поиском</strong> (RAG): как подключать к языковой модели внешние документы и актуальные знания.</p>
+<h3 class="toc-heading-only" id="что-такое-rag">Что такое RAG</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Что такое RAG</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Retrieval-Augmented Generation</strong> — подход, при котором перед ответом модель опирается не только на «память» из обучения, но и на <strong>найденные во внешнем хранилище</strong> фрагменты текста.</p>
+<p><strong>Проблема одной только LLM:</strong> знания после обучения по сути <strong>статичны</strong> — модель не узнаёт о событиях после среза данных, <strong>не обновляется сама по себе</strong> и отражает мир <strong>каким он был на момент обучения</strong>. Для свежих фактов, внутренних регламентов компании или вашей библиотеки статей этого недостаточно.</p>
+<ul>
+<li>RAG — это <strong>технология подключения внешних источников</strong> к шагу генерации.</li>
+<li>Она <strong>смягчает проблему устаревших знаний</strong>: релевантные куски подтягиваются из актуального корпуса.</li>
+<li>Модель <strong>дополняется контекстом из документов</strong>, а не только весами, заложенными при pre-training.</li>
+</ul>
+<p>RAG не отменяет галлюцинации полностью, но даёт опору на цитируемые фрагменты — их проще проверить человеку или правилами.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="этапы-работы-rag">Этапы работы RAG</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Этапы работы RAG</summary>
+<div style="margin-top: 0.75em;">
+<p>Типичный пайплайн можно представить как цепочку из офлайн-подготовки данных и онлайн-запроса пользователя.</p>
+<ul>
+<li><strong>Загрузка корпуса и чанкование.</strong> Документы попадают в систему и режутся на фрагменты удобного размера для индекса и контекстного окна.</li>
+<li><strong>Построение векторного индекса.</strong> Для каждого фрагмента считается эмбеддинг; по ним организуется поиск «похожих» кусков по смыслу запроса.</li>
+<li><strong>Retrieval.</strong> По пользовательскому вопросу выбираются наиболее релевантные фрагменты из индекса.</li>
+<li><strong>Generation.</strong> Выбранные фрагменты подставляются в промпт (вместе с инструкцией и вопросом), и LLM формулирует ответ, опираясь на этот контекст.</li>
+</ul>
+<p>Детали реализации (какой энкодер, какой векторный стор, сколько чанков подмешивать) сильно влияют на качество — но логика «найти → подставить → сгенерировать» остаётся общей.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="чанкование">Чанкование</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Чанкование</summary>
+<div style="margin-top: 0.75em;">
+<p><strong>Чанкование</strong> — разбиение документов на небольшие части. Эти куски — <strong>базовые единицы индексации и поиска</strong>: именно их векторизуют и именно их доставляют в промпт.</p>
+<ul>
+<li>В контекст модели попадают <strong>фрагменты, а не целые документы</strong> целиком — иначе не уложиться в окно и не потерять точность поиска.</li>
+<li><strong>Качество нарезки напрямую влияет на доступность фактов:</strong> если смысловой блок разрезан посередине, ретривер может не найти нужный кусок; если чанк огромный — в нём много шума, падает точность попадания в запрос.</li>
+</ul>
+<p>На практике подбирают размер чанка, перекрытие между соседними кусками и иногда более умное деление по структуре (заголовки, абзацы), а не только «каждые N символов».</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="типы-rag-систем">Типы RAG-систем</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Типы RAG-систем</summary>
+<div style="margin-top: 0.75em;">
+<p>Условно выделяют «наивный» и «продвинутый» уровень зрелости пайплайна — граница размыта, но названия помогают ориентироваться.</p>
+<ul>
+<li><strong>Naive RAG:</strong> запрос → поиск ближайших чанков → они сразу передаются в модель <strong>без дополнительной обработки</strong>. Просто собрать, но качество сильно зависит от качества корпуса, чанков и эмбеддингов.</li>
+<li><strong>Advanced RAG:</strong> добавляют шаги вокруг retrieval и генерации: <strong>переформулирование или расширение запроса</strong>, <strong>переранжирование</strong> кандидатов отдельной моделью или кросс-энкодером, <strong>очистка от дубликатов</strong> и пересекающихся кусков, иногда фильтрация по метаданным. Цель — выше точность и полнота подмешиваемого контекста.</li>
+</ul>
+<p>Для учебного и исследовательского прототипа часто начинают с naive и усложняют пайплайн там, где видны типичные ошибки: «не тот абзац», «дубли», «запрос сформулирован не так, как в документе».</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="кто-использует">Кто использует</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Кто использует</summary>
+<div style="margin-top: 0.75em;">
+<p>RAG внедряют там, где ответ нужно строить по <strong>заданному набору документов</strong> — внутренним, клиентским или личным — а не только по «памяти» модели из обучения.</p>
+<ul>
+<li><strong>Компании.</strong> Базы знаний, регламенты, скрипты поддержки: сотрудник или клиент задаёт вопрос, система находит релевантные фрагменты и формулирует ответ с опорой на актуальные тексты организации.</li>
+<li><strong>Разработчики и продуктовые команды.</strong> Чат-боты и ассистенты поверх документации, вики, тикетов: снижается нагрузка на «угадать» API по обрывкам из интернета — контролируемый корпус задаёт границы.</li>
+<li><strong>Учёба и наука.</strong> Работа с подборкой статей, конспектами и PDF: удобно задавать вопросы по материалам курса или обзора литературы, не подменяя проверку источников.</li>
+<li><strong>Отраслевые сценарии.</strong> Юридические, медицинские, финансовые и другие домены, где важна привязка к текстам компании или регуляторики — всегда с человеческой верификацией и политиками доступа к данным.</li>
+</ul>
+</div>
+</details>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82/">Искусственный Интеллект</a>
+        
+            <a href="/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/">Машинное Обучение</a>
+        
+            <a href="/tags/%D0%B1%D0%B0%D0%B7%D0%B0/">База</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Также рекомендуем</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/ai-basics-overview/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-overview/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Базовый минимум про ИИ – обзор"
+                        data-key="ai-basics-overview" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Базовый минимум про ИИ – обзор</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/ai-basics-prompt-engineering/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-prompt-engineering/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Базовый минимум про ИИ – промпт-инжиниринг"
+                        data-key="ai-basics-prompt-engineering" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Базовый минимум про ИИ – промпт-инжиниринг</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/ai-basics-intro/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-intro/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Базовый минимум про ИИ – введение"
+                        data-key="ai-basics-intro" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Базовый минимум про ИИ – введение</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/ai-future-beyond-scaling/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-future-beyond-scaling/cover.021d37318be2db61d8f7849e96887ab9_hu_c758c54acc359981.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Будущее ИИ: почему одного масштабирования уже недостаточно"
+                        data-key="ai-future-beyond-scaling" 
+                        data-hash="md5-Ah03MYvi22HY94Seloh6uQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Будущее ИИ: почему одного масштабирования уже недостаточно</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/math-derivatives/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-derivatives/cover.b62053fdd52df1f0f9a76f73a5571a2c_hu_b7cfabdf4ddcad1d.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Мат Анализ — Производные"
+                        data-key="math-derivatives" 
+                        data-hash="md5-tiBT/dUt8fD5p29zpVcaLA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Мат Анализ — Производные</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Блог
+    </section>
+    
+    <section class="powerby">
+        Создано при помощи <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Тема <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b>, дизайн <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

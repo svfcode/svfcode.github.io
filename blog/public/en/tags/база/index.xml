@@ -99,6 +99,7 @@
 &lt;li&gt;Structuring instructions with roles, examples, and context&lt;/li&gt;
 &lt;li&gt;Iteratively refining prompts for accurate answers&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34;&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fine-tuning&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Adapting the model to specific tasks and domains&lt;/li&gt;
@@ -237,8 +238,15 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h2 id=&#34;prompt-engineering&#34;&gt;Prompt engineering&lt;/h2&gt;
-&lt;p&gt;The structure below mirrors a typical mind map: &lt;strong&gt;why&lt;/strong&gt; we craft prompts at all, core &lt;strong&gt;techniques&lt;/strong&gt;, then &lt;strong&gt;where&lt;/strong&gt; good prompts come from. Each major node is its own accordion.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>AI basics – prompt engineering</title>
+        <link>http://localhost:1313/en/p/ai-basics-prompt-engineering/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-prompt-engineering/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;goal-and-essence&#34;&gt;Goal and essence&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Goal and essence&lt;/summary&gt;
@@ -333,7 +341,7 @@
         
         <guid>http://localhost:1313/en/p/ai-basics-intro/</guid>
         <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
-&lt;p&gt;We’ll start with common terms, then talk about prompt engineering, RAG systems, and agents that can handle complex multi-step tasks.&lt;/p&gt;
+&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, RAG systems, and agents that can handle complex multi-step tasks.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-a-language-model-is&#34;&gt;What a language model is&lt;/h2&gt;

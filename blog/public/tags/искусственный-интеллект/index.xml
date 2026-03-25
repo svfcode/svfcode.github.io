@@ -99,6 +99,7 @@
 &lt;li&gt;Структурирование инструкций с ролями, примерами и контекстом&lt;/li&gt;
 &lt;li&gt;Итеративное улучшение запросов для точных ответов&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Развёрнуто по техникам (zero-shot, few-shot, CoT, роли, step-back и др.): &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-prompt-engineering/&#34;&gt;Базовый минимум про ИИ – промпт-инжиниринг&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fine-tuning (дообучение)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Адаптация модели под специфические задачи и домены&lt;/li&gt;
@@ -237,8 +238,15 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h2 id=&#34;промпт-инжиниринг&#34;&gt;Промпт-инжиниринг&lt;/h2&gt;
-&lt;p&gt;Ниже — та же логика, что на mind map: от &lt;strong&gt;зачем&lt;/strong&gt; мы вообще формулируем запросы, к базовым и продвинутым &lt;strong&gt;техникам&lt;/strong&gt;, затем к тому, &lt;strong&gt;откуда&lt;/strong&gt; брать и улучшать промпты. Каждый крупный узел — в отдельном аккордеоне.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Базовый минимум про ИИ – промпт-инжиниринг</title>
+        <link>http://localhost:1313/p/ai-basics-prompt-engineering/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/ai-basics-prompt-engineering/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – промпт-инжиниринг" /&gt;&lt;p&gt;Статья цикла «Базовый минимум» про то, как формулировать запросы к большим языковым моделям.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;цель-и-суть&#34;&gt;Цель и суть&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Цель и суть&lt;/summary&gt;
@@ -418,7 +426,7 @@
         
         <guid>http://localhost:1313/p/ai-basics-intro/</guid>
         <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – введение" /&gt;&lt;p&gt;Это первая статья из цикла «Базовый минимум» — коротко про то, как устроен ИИ. Каждая статья будет освещать одно понятие или концепцию, постараюсь делать их короткими и последовательными.&lt;/p&gt;
-&lt;p&gt;Начнём с общепринятых терминов, далее поговорим про промпт-инжиниринг, RAG-системы и агентов, способных выполнять сложные многоступенчатые задачи.&lt;/p&gt;
+&lt;p&gt;Начнём с общепринятых терминов; отдельно в цикле — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-prompt-engineering/&#34; &gt;промпт-инжиниринг&lt;/a&gt;, RAG-системы и агенты, способные выполнять сложные многоступенчатые задачи.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Видео версия:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Смотреть на YouTube&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;что-такое-языковая-модель&#34;&gt;Что такое языковая модель&lt;/h2&gt;

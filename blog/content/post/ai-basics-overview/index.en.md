@@ -140,6 +140,8 @@ This overview for the «Bare minimum» series is an outline:
 <li>Reducing hallucinations by grounding in verified facts</li>
 </ul>
 
+<p>More on stages, chunking, and pipeline flavors: <a class="link" href="/en/p/ai-basics-rag/">AI basics – RAG systems</a>.</p>
+
 <p><strong>Chain-of-thought</strong></p>
 <ul>
 <li>Step-by-step reasoning for hard problems</li>

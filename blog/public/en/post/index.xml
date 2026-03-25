@@ -99,6 +99,7 @@
 &lt;li&gt;Structuring instructions with roles, examples, and context&lt;/li&gt;
 &lt;li&gt;Iteratively refining prompts for accurate answers&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34;&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fine-tuning&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Adapting the model to specific tasks and domains&lt;/li&gt;
@@ -111,6 +112,7 @@
 &lt;li&gt;Combining external sources with generation&lt;/li&gt;
 &lt;li&gt;Reducing hallucinations by grounding in verified facts&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;More on stages, chunking, and pipeline flavors: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;AI basics – RAG systems&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Chain-of-thought&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Step-by-step reasoning for hard problems&lt;/li&gt;
@@ -237,8 +239,15 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h2 id=&#34;prompt-engineering&#34;&gt;Prompt engineering&lt;/h2&gt;
-&lt;p&gt;The structure below mirrors a typical mind map: &lt;strong&gt;why&lt;/strong&gt; we craft prompts at all, core &lt;strong&gt;techniques&lt;/strong&gt;, then &lt;strong&gt;where&lt;/strong&gt; good prompts come from. Each major node is its own accordion.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>AI basics – prompt engineering</title>
+        <link>http://localhost:1313/en/p/ai-basics-prompt-engineering/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-prompt-engineering/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;goal-and-essence&#34;&gt;Goal and essence&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Goal and essence&lt;/summary&gt;
@@ -322,6 +331,80 @@
 &lt;li&gt;Then map onto your instance: data, constraints, desired output.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Useful when failures come from jumping to an answer without anchoring on the right background knowledge.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
+        <title>AI basics – RAG systems</title>
+        <link>http://localhost:1313/en/p/ai-basics-rag/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-rag/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-rag/cover.jpg" alt="Featured image of post AI basics – RAG systems" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;retrieval-augmented generation&lt;/strong&gt;: how to ground a language model in external documents and up-to-date knowledge.&lt;/p&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-rag-is&#34;&gt;What RAG is&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What RAG is&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Retrieval-Augmented Generation&lt;/strong&gt; means the model answers not only from weights learned at training time but also from &lt;strong&gt;fragments retrieved&lt;/strong&gt; from an external store.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The LLM-only issue:&lt;/strong&gt; knowledge is largely &lt;strong&gt;static&lt;/strong&gt; after training — the model does not automatically learn what happened next, &lt;strong&gt;does not self-update&lt;/strong&gt;, and reflects the world &lt;strong&gt;as of the training cutoff&lt;/strong&gt;. That is weak for fresh facts, internal playbooks, or a personal paper library.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RAG is the &lt;strong&gt;technology of wiring external sources&lt;/strong&gt; into the generation step.&lt;/li&gt;
+&lt;li&gt;It &lt;strong&gt;mitigates stale knowledge&lt;/strong&gt; by pulling relevant chunks from a current corpus.&lt;/li&gt;
+&lt;li&gt;The model is &lt;strong&gt;augmented with document context&lt;/strong&gt;, not just pre-trained parameters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;RAG does not eliminate hallucinations, but it grounds answers in retrievable snippets that humans (or rules) can verify more easily.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;stages-of-a-rag-pipeline&#34;&gt;Stages of a RAG pipeline&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Stages of a RAG pipeline&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Think of two phases: offline indexing and the online user query.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ingestion and chunking.&lt;/strong&gt; Documents enter the system and are split into pieces sized for the index and the context window.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vector index build.&lt;/strong&gt; Each chunk gets an embedding; similarity search finds chunks “close” to the query in meaning.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Retrieval.&lt;/strong&gt; For a user question, the system selects the most relevant chunks from the index.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Generation.&lt;/strong&gt; Those chunks are placed in the prompt (with instructions and the question), and the LLM produces an answer conditioned on that context.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Concrete choices (embeddings, vector DB, how many chunks to inject) strongly affect quality, but the pattern &lt;em&gt;retrieve → inject → generate&lt;/em&gt; stays the same.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chunking&#34;&gt;Chunking&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chunking&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Chunking&lt;/strong&gt; splits documents into smaller segments. Those segments are the &lt;strong&gt;basic units of indexing and search&lt;/strong&gt; — what you embed and what you pass to the model.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The LLM sees &lt;strong&gt;fragments, not whole documents&lt;/strong&gt; at once — full docs rarely fit the window, and search needs granular matches.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chunk quality drives whether facts are reachable:&lt;/strong&gt; split a coherent block in the wrong place and retrieval may miss it; make chunks huge and noise dilutes the signal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In practice people tune chunk size, overlap between neighbors, and sometimes structure-aware splits (headings, paragraphs) instead of fixed character counts only.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;types-of-rag-systems&#34;&gt;Types of RAG systems&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Types of RAG systems&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;People loosely contrast “naive” and “advanced” pipelines — the boundary is fuzzy, but the labels help navigate complexity.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Naive RAG:&lt;/strong&gt; query → nearest-chunk search → chunks go straight into the model &lt;strong&gt;without extra processing&lt;/strong&gt;. Easy to ship; quality hinges on corpus, chunks, and embeddings.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Advanced RAG:&lt;/strong&gt; adds steps around retrieval and generation: &lt;strong&gt;query rewriting or expansion&lt;/strong&gt;, &lt;strong&gt;reranking&lt;/strong&gt; with a cross-encoder or another model, &lt;strong&gt;deduplication&lt;/strong&gt; of overlapping hits, sometimes metadata filters. Goal: sharper, cleaner context for the LLM.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For coursework or a research prototype, naive RAG is a common start; you add sophistication where you see failure modes like wrong paragraph, duplicates, or vocabulary mismatch between query and docs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;who-uses-it&#34;&gt;Who uses it&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Who uses it&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Teams adopt RAG when answers must be grounded in a &lt;strong&gt;chosen document set&lt;/strong&gt; — internal, customer-facing, or personal — rather than only in the model’s training-time knowledge.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Enterprises.&lt;/strong&gt; Knowledge bases, policies, support playbooks: employees or customers ask questions, the system retrieves relevant snippets, and the model answers with reference to up-to-date org text.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Developers and product teams.&lt;/strong&gt; Assistants over docs, wikis, tickets: less guessing about APIs from the open web — a controlled corpus sets the boundary.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Education and research.&lt;/strong&gt; Working with a curated stack of papers, notes, and PDFs: ask questions over course materials or a literature review without replacing source checks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Regulated or expert domains.&lt;/strong&gt; Legal, clinical, finance, and similar settings where tying answers to company or regulatory text matters — always with human verification and data-access policies.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 </description>
@@ -1309,7 +1392,7 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
         
         <guid>http://localhost:1313/en/p/ai-basics-intro/</guid>
         <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
-&lt;p&gt;We’ll start with common terms, then talk about prompt engineering, RAG systems, and agents that can handle complex multi-step tasks.&lt;/p&gt;
+&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;RAG systems&lt;/a&gt;, and agents that can handle complex multi-step tasks.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-a-language-model-is&#34;&gt;What a language model is&lt;/h2&gt;

@@ -11,7 +11,7 @@ menu:
 
 ## 📚 Basics
 
-Short track on AI: terms and language models → LLM overview → **prompt engineering** as its own article.
+Short track on AI: terms and language models → LLM overview → **prompt engineering** and **RAG systems** as separate articles.
 
 - **[AI basics – introduction](/en/p/ai-basics-intro/)**
   - 🎬 [Video](https://youtu.be/z9VBZn0XcVk) · reading 5 min / video 4 min
@@ -28,6 +28,12 @@ Short track on AI: terms and language models → LLM overview → **prompt engin
   - ⏱️ ~7 min read · no video
   - 📋 Zero-shot, few-shot, chain-of-thought, roles, step-back, where prompts come from; mind-map layout; accordions
   - 🏷️ prompt engineering, zero-shot, few-shot, CoT, role prompting, step-back, in-context learning
+  - 📊 Difficulty: basic
+  - 📋 Prerequisites: [LLM overview](/en/p/ai-basics-overview/) recommended
+- **[AI basics – RAG systems](/en/p/ai-basics-rag/)**
+  - ⏱️ ~6 min read · no video
+  - 📋 Why RAG, pipeline stages, chunking, naive vs advanced RAG; accordions
+  - 🏷️ RAG, retrieval, embeddings, vector index, chunking, context-conditioned generation
   - 📊 Difficulty: basic
   - 📋 Prerequisites: [LLM overview](/en/p/ai-basics-overview/) recommended
 

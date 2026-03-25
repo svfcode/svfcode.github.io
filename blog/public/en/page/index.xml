@@ -450,6 +450,7 @@
         
         <guid>http://localhost:1313/en/playlists/</guid>
         <description>&lt;h2 id=&#34;-basics&#34;&gt;📚 Basics&lt;/h2&gt;
+&lt;p&gt;Short track on AI: terms and language models → LLM overview → &lt;strong&gt;prompt engineering&lt;/strong&gt; as its own article.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-intro/&#34; &gt;AI basics – introduction&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
@@ -468,6 +469,15 @@
 &lt;li&gt;🏷️ LLM, transformer, token, temperature, prompt engineering, RAG, fine-tuning, RLHF, chain-of-thought, context window, hallucinations, multimodality, agents&lt;/li&gt;
 &lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
 &lt;li&gt;📋 Prerequisites: none (intro to the series is enough)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;AI basics – prompt engineering&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;⏱️ ~7 min read · no video&lt;/li&gt;
+&lt;li&gt;📋 Zero-shot, few-shot, chain-of-thought, roles, step-back, where prompts come from; mind-map layout; accordions&lt;/li&gt;
+&lt;li&gt;🏷️ prompt engineering, zero-shot, few-shot, CoT, role prompting, step-back, in-context learning&lt;/li&gt;
+&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
+&lt;li&gt;📋 Prerequisites: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;LLM overview&lt;/a&gt; recommended&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
