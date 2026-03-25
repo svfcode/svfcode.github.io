@@ -17,6 +17,8 @@ This overview for the «Bare minimum» series is an outline:
 - usage patterns;
 - trends.
 
+**Video (~9 min):** [Watch on YouTube](https://youtu.be/xHLP2f2WVpU)
+
 ## Large language models (LLMs)
 
 ### What is it? — A tool first; then capabilities and use cases {.toc-heading-only}

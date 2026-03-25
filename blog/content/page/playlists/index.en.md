@@ -17,9 +17,11 @@ menu:
   - 📊 Difficulty: basic
   - 📋 Prerequisites: none
 - **[AI basics – overview](/en/p/ai-basics-overview/)**
-  - 📋 Overview: what the «Bare minimum» series covers and how the material is organized
+  - 🎬 [Video](https://youtu.be/xHLP2f2WVpU) · reading ~14 min / video 9 min
+  - 📋 LLM overview: use cases, internals (tokens, transformers), prompting, RAG, fine-tuning, chain-of-thought, model families, key terms, risks, trends
+  - 🏷️ LLM, transformer, token, temperature, prompt engineering, RAG, fine-tuning, RLHF, chain-of-thought, context window, hallucinations, multimodality, agents
   - 📊 Difficulty: basic
-  - 📋 Prerequisites: none
+  - 📋 Prerequisites: none (intro to the series is enough)
 
 ## 👥 On Their Shoulders
 
