@@ -124,6 +124,8 @@ image: cover.jpg
 <li>Итеративное улучшение запросов для точных ответов</li>
 </ul>
 
+<p>Развёрнуто по техникам (zero-shot, few-shot, CoT, роли, step-back и др.): <a class="link" href="/p/ai-basics-prompt-engineering/">Базовый минимум про ИИ – промпт-инжиниринг</a>.</p>
+
 <p><strong>Fine-tuning (дообучение)</strong></p>
 <ul>
 <li>Адаптация модели под специфические задачи и домены</li>

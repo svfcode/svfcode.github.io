@@ -124,6 +124,8 @@ This overview for the «Bare minimum» series is an outline:
 <li>Iteratively refining prompts for accurate answers</li>
 </ul>
 
+<p>Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): <a class="link" href="/en/p/ai-basics-prompt-engineering/">AI basics – prompt engineering</a>.</p>
+
 <p><strong>Fine-tuning</strong></p>
 <ul>
 <li>Adapting the model to specific tasks and domains</li>

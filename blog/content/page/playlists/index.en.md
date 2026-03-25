@@ -11,6 +11,8 @@ menu:
 
 ## 📚 Basics
 
+Short track on AI: terms and language models → LLM overview → **prompt engineering** as its own article.
+
 - **[AI basics – introduction](/en/p/ai-basics-intro/)**
   - 🎬 [Video](https://youtu.be/z9VBZn0XcVk) · reading 5 min / video 4 min
   - 🏷️ Terms: language model, dataset, parameters, AI/ML/NN, foundation models
@@ -22,6 +24,12 @@ menu:
   - 🏷️ LLM, transformer, token, temperature, prompt engineering, RAG, fine-tuning, RLHF, chain-of-thought, context window, hallucinations, multimodality, agents
   - 📊 Difficulty: basic
   - 📋 Prerequisites: none (intro to the series is enough)
+- **[AI basics – prompt engineering](/en/p/ai-basics-prompt-engineering/)**
+  - ⏱️ ~7 min read · no video
+  - 📋 Zero-shot, few-shot, chain-of-thought, roles, step-back, where prompts come from; mind-map layout; accordions
+  - 🏷️ prompt engineering, zero-shot, few-shot, CoT, role prompting, step-back, in-context learning
+  - 📊 Difficulty: basic
+  - 📋 Prerequisites: [LLM overview](/en/p/ai-basics-overview/) recommended
 
 ## 👥 On Their Shoulders
 

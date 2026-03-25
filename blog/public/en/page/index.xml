@@ -462,9 +462,12 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;AI basics – overview&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;📋 Overview: what the «Bare minimum» series covers and how the material is organized&lt;/li&gt;
+&lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/xHLP2f2WVpU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Video&lt;/a&gt; · reading ~14 min / video 9 min&lt;/li&gt;
+&lt;li&gt;📋 LLM overview: use cases, internals (tokens, transformers), prompting, RAG, fine-tuning, chain-of-thought, model families, key terms, risks, trends&lt;/li&gt;
+&lt;li&gt;🏷️ LLM, transformer, token, temperature, prompt engineering, RAG, fine-tuning, RLHF, chain-of-thought, context window, hallucinations, multimodality, agents&lt;/li&gt;
 &lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
-&lt;li&gt;📋 Prerequisites: none&lt;/li&gt;
+&lt;li&gt;📋 Prerequisites: none (intro to the series is enough)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

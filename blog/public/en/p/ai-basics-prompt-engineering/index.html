@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Overview of large language models: capabilities, how they work, prompting, RAG, key concepts, and limits'>
-<title>AI basics – overview</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Prompt engineering: goals, zero-shot and few-shot, chain-of-thought, roles, step-back, and where good prompts come from'>
+<title>AI basics – prompt engineering</title>
 
-<link rel='canonical' href='http://localhost:1313/en/p/ai-basics-overview/'>
+<link rel='canonical' href='http://localhost:1313/en/p/ai-basics-prompt-engineering/'>
 
 <link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
-<meta property='og:title' content='AI basics – overview'>
-<meta property='og:description' content='Overview of large language models: capabilities, how they work, prompting, RAG, key concepts, and limits'>
-<meta property='og:url' content='http://localhost:1313/en/p/ai-basics-overview/'>
+<meta property='og:title' content='AI basics – prompt engineering'>
+<meta property='og:description' content='Prompt engineering: goals, zero-shot and few-shot, chain-of-thought, roles, step-back, and where good prompts come from'>
+<meta property='og:url' content='http://localhost:1313/en/p/ai-basics-prompt-engineering/'>
 <meta property='og:site_name' content='Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Artificial Intelligence' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-overview/cover.jpg' />
-<meta name="twitter:title" content="AI basics – overview">
-<meta name="twitter:description" content="Overview of large language models: capabilities, how they work, prompting, RAG, key concepts, and limits"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-overview/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Artificial Intelligence' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg' />
+<meta name="twitter:title" content="AI basics – prompt engineering">
+<meta name="twitter:description" content="Prompt engineering: goals, zero-shot and few-shot, chain-of-thought, roles, step-back, and where good prompts come from"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
   integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
@@ -268,15 +268,15 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#large-language-models-llms">Large language models (LLMs)</a>
+    <li>
       <ul>
-        <li><a href="#what-is-it--a-tool-first-then-capabilities-and-use-cases">What is it? — A tool first; then capabilities and use cases</a></li>
-        <li><a href="#what-is-it-technically---a-huge-statistical-machine">What is it technically? - A huge statistical machine</a></li>
-        <li><a href="#how-to-use-them---overview-of-techniques-for-working-with-llms">How to use them? - Overview of techniques for working with LLMs</a></li>
-        <li><a href="#popular-models">Popular models</a></li>
-        <li><a href="#key-concepts">Key concepts</a></li>
-        <li><a href="#problems-and-limitations">Problems and limitations</a></li>
-        <li><a href="#future-and-trends">Future and trends</a></li>
+        <li><a href="#goal-and-essence">Goal and essence</a></li>
+        <li><a href="#zero-shot-prompting">Zero-shot prompting</a></li>
+        <li><a href="#few-shot-prompting">Few-shot prompting</a></li>
+        <li><a href="#chain-of-thought-cot">Chain-of-Thought (CoT)</a></li>
+        <li><a href="#where-prompts-come-from">Where prompts come from</a></li>
+        <li><a href="#role-based-prompting">Role-based prompting</a></li>
+        <li><a href="#step-back-prompting">Step-back prompting</a></li>
       </ul>
     </li>
   </ul>
@@ -293,13 +293,13 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/en/p/ai-basics-overview/">
-                <img src="/p/ai-basics-overview/cover_hu_9edf806161ac8987.jpg"
-                        srcset="/p/ai-basics-overview/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-overview/cover_hu_fef56980ce8b91ab.jpg 1600w"
+            <a href="/en/p/ai-basics-prompt-engineering/">
+                <img src="/p/ai-basics-prompt-engineering/cover_hu_9edf806161ac8987.jpg"
+                        srcset="/p/ai-basics-prompt-engineering/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-prompt-engineering/cover_hu_fef56980ce8b91ab.jpg 1600w"
                         width="800" 
                         height="450" 
                         loading="lazy"
-                        alt="Featured image of post AI basics – overview" />
+                        alt="Featured image of post AI basics – prompt engineering" />
                 
             </a>
         </div>
@@ -310,12 +310,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/en/p/ai-basics-overview/">AI basics – overview</a>
+            <a href="/en/p/ai-basics-prompt-engineering/">AI basics – prompt engineering</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Overview of large language models: capabilities, how they work, prompting, RAG, key concepts, and limits
+            Prompt engineering: goals, zero-shot and few-shot, chain-of-thought, roles, step-back, and where good prompts come from
         </h3>
         
     </div>
@@ -351,7 +351,7 @@
 
 
                 <time class="article-time--reading">
-                    4 minute read
+                    3 minute read
                 </time>
             </div>
         
@@ -373,7 +373,7 @@
 
             <div>
                 
-                    <a href="http://localhost:1313/p/ai-basics-overview/" class="link">ru</a>
+                    <a href="http://localhost:1313/p/ai-basics-prompt-engineering/" class="link">ru</a>
                 
             </div>
         </footer>
@@ -385,230 +385,90 @@
     <section class="article-content">
     
     
-    <p>This overview for the «Bare minimum» series is an outline:</p>
-<ul>
-<li>large language models;</li>
-<li>architecture;</li>
-<li>usage patterns;</li>
-<li>trends.</li>
-</ul>
-<p><strong>Video (~9 min):</strong> <a class="link" href="https://youtu.be/xHLP2f2WVpU"  target="_blank" rel="noopener"
-    >Watch on YouTube</a></p>
-<h2 id="large-language-models-llms">Large language models (LLMs)</h2>
-<h3 class="toc-heading-only" id="what-is-it--a-tool-first-then-capabilities-and-use-cases">What is it? — A tool first; then capabilities and use cases</h3>
+    <p>A «Bare minimum» article on how to phrase requests to large language models.</p>
+<h3 class="toc-heading-only" id="goal-and-essence">Goal and essence</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">What is it? — A tool first; then capabilities and use cases</summary>
+<summary style="cursor: pointer; font-weight: 600;">Goal and essence</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Text generation</strong></p>
+<p><strong>A prompt is a short technical spec for the model.</strong> You state what to do, how to format the answer, and what to rely on. The clearer the spec, the less the model has to guess.</p>
 <ul>
-<li>Articles, stories, marketing materials</li>
-<li>Automated reports and documentation</li>
-<li>Creative writing and content across genres</li>
-</ul>
-<p><strong>Question answering</strong></p>
-<ul>
-<li>Intelligent customer-support chatbots</li>
-<li>Q&amp;A systems for information retrieval</li>
-<li>Virtual assistants for everyday tasks</li>
-</ul>
-<p><strong>Language analysis</strong></p>
-<ul>
-<li>Text classification by category and sentiment</li>
-<li>Summarization of long documents</li>
-<li>Translation between languages with context preserved</li>
-</ul>
-<p><strong>Programming and code</strong></p>
-<ul>
-<li>Code generation from natural-language descriptions</li>
-<li>Debugging and fixing errors</li>
-<li>Comments and explanations for complex code</li>
+<li><strong>Quality.</strong> Clear instructions reduce vagueness and improve usefulness of text, code, or structured output.</li>
+<li><strong>Predictability.</strong> Fixed formats (lists, JSON, paragraph templates) and explicit constraints make outputs repeatable across runs.</li>
+<li><strong>Building blocks.</strong> Treat the prompt as a mini-spec: role, context, task, output format, examples (if needed), success criteria.</li>
 </ul>
 </div>
 </details>
-<p><em>Powerful — but it helps to know how they work and where they fail.</em></p>
-<h3 class="toc-heading-only" id="what-is-it-technically---a-huge-statistical-machine">What is it technically? - A huge statistical machine</h3>
+<h3 class="toc-heading-only" id="zero-shot-prompting">Zero-shot prompting</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">What is it technically? - A huge statistical machine</summary>
+<summary style="cursor: pointer; font-weight: 600;">Zero-shot prompting</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Definition and how it works</strong></p>
-<p>Neural models trained to predict the next token from context.</p>
-<p>They use statistical regularities in language to generate text.</p>
-<p>An LLM uses the full context to pick the most likely next word.</p>
-<p><img src="llm-context.png" alt="Diagram: model uses full context for the next token" loading="lazy" /></p>
-<p><strong>LLM token prediction flow</strong></p>
-<p><strong>Input context (Russian tongue-twister):</strong> «Карл у Клары украл…»</p>
-<p><strong>Context analysis:</strong></p>
+<p><strong>The task is given with no input–output examples.</strong> The model leans on pretraining plus your instruction in the current request.</p>
 <ul>
-<li>Карл (subject)</li>
-<li>у Клары (whose / from whom)</li>
-<li>украл (action)</li>
+<li>Works well for simple, unambiguous tasks when the desired format is obvious or one line away.</li>
+<li><strong>Example:</strong> sentiment classification (“label as positive / neutral / negative”) with no labeled examples in the prompt.</li>
 </ul>
-<p><strong>Prediction:</strong> the model analyzes all prior tokens and their relations, recognizes the familiar tongue-twister pattern</p>
-<p>→ «кораллы» (“corals”)</p>
-<p><strong>Probability:</strong> 85%</p>
-<p><img src="llm-token-flow.png" alt="Token prediction flow" loading="lazy" /></p>
-<p><strong>Transformers and architecture</strong></p>
-<p>Self-attention for sequences (sounds simple — in practice, it isn’t).</p>
-<p><img src="attention.png" alt="Self-attention mechanism" loading="lazy" /></p>
-<p>Parallel processing of data instead of a purely recurrent pipeline.</p>
-<p><img src="parallel-vs-rnn.png" alt="Parallel processing vs recurrent style" loading="lazy" /></p>
-<p>Multi-layer structure with billions of parameters (weight heatmap).</p>
-<p><img src="layer-weights-heatmap.png" alt="Layers and parameter scale" loading="lazy" /></p>
-<p><strong>Training on text</strong></p>
-<ul>
-<li>Self-supervised learning on billions of text examples</li>
-<li>Pre-training on broad data, then specialization</li>
-<li>Scaling data and compute</li>
-</ul>
+<p>If zero-shot drifts, few-shot examples or explicit step-by-step reasoning (CoT) usually help.</p>
 </div>
 </details>
-<h3 class="toc-heading-only" id="how-to-use-them---overview-of-techniques-for-working-with-llms">How to use them? - Overview of techniques for working with LLMs</h3>
+<h3 class="toc-heading-only" id="few-shot-prompting">Few-shot prompting</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">How to use them? - Overview of techniques for working with LLMs</summary>
+<summary style="cursor: pointer; font-weight: 600;">Few-shot prompting</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Prompt engineering</strong></p>
+<p><strong>In-context learning:</strong> you add one or more “input → gold output” pairs so the model picks up style, fields, and constraints.</p>
 <ul>
-<li>The craft of phrasing requests for better results</li>
-<li>Structuring instructions with roles, examples, and context</li>
-<li>Iteratively refining prompts for accurate answers</li>
+<li>Especially useful when you need a <strong>strict or unusual format</strong> — tables, JSON with fixed keys, report templates.</li>
+<li>Examples act as a contract for the answer: fewer arbitrary interpretations.</li>
 </ul>
-<p>Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): <a class="link" href="/en/p/ai-basics-prompt-engineering/">AI basics – prompt engineering</a>.</p>
-<p><strong>Fine-tuning</strong></p>
-<ul>
-<li>Adapting the model to specific tasks and domains</li>
-<li>Using small labeled datasets</li>
-<li>RLHF (reinforcement learning from human feedback)</li>
-</ul>
-<p><strong>RAG (Retrieval-Augmented Generation)</strong></p>
-<ul>
-<li>Extending the model with retrieval from a knowledge base</li>
-<li>Combining external sources with generation</li>
-<li>Reducing hallucinations by grounding in verified facts</li>
-</ul>
-<p><strong>Chain-of-thought</strong></p>
-<ul>
-<li>Step-by-step reasoning for hard problems</li>
-<li>Intermediate computation and logical steps</li>
-<li>Better math and logic when the model is guided through steps</li>
-</ul>
+<p>Do not overload context: keep examples relevant, representative, and within the context window.</p>
 </div>
 </details>
-<h3 class="toc-heading-only" id="popular-models">Popular models</h3>
+<h3 class="toc-heading-only" id="chain-of-thought-cot">Chain-of-Thought (CoT)</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Popular models</summary>
+<summary style="cursor: pointer; font-weight: 600;">Chain-of-Thought (CoT)</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>GPT (OpenAI)</strong></p>
+<p><strong>Reasoning chain:</strong> the model emits intermediate steps, then the final answer. That tends to stabilize logic, arithmetic, and multi-step tasks.</p>
 <ul>
-<li>A family from GPT-3 through GPT-5.4-class releases, industry leaders</li>
-<li>Commercial APIs with a wide range of capabilities</li>
-<li>ChatGPT as the mass-market product built on these models</li>
+<li><strong>Few-shot CoT:</strong> examples show not only the answer but the reasoning path — the model mimics that pattern.</li>
+<li><strong>Zero-shot CoT:</strong> phrases like “think step by step” / “explain your reasoning first, then answer” often suffice.</li>
+<li><strong>Uncertainty-routed CoT:</strong> explore multiple reasoning lines or alternatives when the task is ambiguous, then compare or pick a justified conclusion.</li>
 </ul>
-<p><strong>Claude (Anthropic)</strong></p>
-<ul>
-<li>Emphasis on safety and long context</li>
-<li>Constitutional-style alignment with human values</li>
-<li>Very large context (up to ~1M tokens in flagship offerings)</li>
-</ul>
-<p><strong>LLaMA</strong></p>
-<ul>
-<li>Open(ish) models from Meta for the research community</li>
-<li>Base for many derivatives (Alpaca, Vicuna, …)</li>
-<li>Compact variants for local deployment</li>
-</ul>
-<p><strong>Regional / domestic stacks</strong></p>
-<ul>
-<li>YandexGPT with strong Russian support</li>
-<li>Sber’s GigaChat for business use</li>
-<li>Vikhr and other specialized models for niche tasks</li>
-</ul>
+<p>CoT lengthens responses and latency; for trivial tasks a short instruction without reasoning may be enough.</p>
 </div>
 </details>
-<h3 class="toc-heading-only" id="key-concepts">Key concepts</h3>
+<h3 class="toc-heading-only" id="where-prompts-come-from">Where prompts come from</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Key concepts</summary>
+<summary style="cursor: pointer; font-weight: 600;">Where prompts come from</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Token</strong></p>
 <ul>
-<li>Smallest unit of text the model processes</li>
-<li>Can be a word, subword, or symbol</li>
-<li>Examples: “hello” ≈ 1 token; “unpredictability” often 2–3 tokens</li>
-<li>Tokenization splits text into a sequence of tokens</li>
+<li><strong>You define the goal.</strong> The primary source is your statement of task, audience, and quality bar.</li>
+<li><strong>LLM-generated drafts.</strong> Ask the model for a structured prompt (role, steps, format), then edit manually.</li>
+<li><strong>Reverse engineering.</strong> From a desired output (or a great response), reconstruct and refine what in the prompt made it work.</li>
 </ul>
-<p><strong>Temperature</strong></p>
-<ul>
-<li>Low (0.1–0.3): more predictable, precise text</li>
-<li>Mid (0.7–0.9): balance of creativity and coherence</li>
-<li>High (1.5–2.0): more creative, less coherent
-<p style="margin: 0.5rem 0 0 0;"><img src="overview-temperature-high.png" alt="Infographic: LLM generation temperature from predictable to highly diverse output" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /></p></li>
-</ul>
-<p><strong>Model types by role</strong></p>
-<ul>
-<li>Foundation: pre-trained on large text corpora</li>
-<li>Instruction-tuned: trained to follow user instructions</li>
-<li>Chat: tuned for dialogue and multi-turn conversation</li>
-<li>Specialized: tuned for code, medicine, law, etc.
-<p style="margin: 0.5rem 0 0 0;"><img src="overview-model-specialized.png" alt="Diagram: from foundation models to specialized models (code, medicine, law)" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /></p></li>
-</ul>
-<p><strong>Context window</strong></p>
-<ul>
-<li>Cap on how much text the model processes in one pass</li>
-<li>Various ways to extend context (roughly 8K–100K tokens in many systems)</li>
-<li>Information loss on very long documents</li>
-</ul>
+<p>In practice people combine model drafts, hard constraints, and iteration on real outputs.</p>
 </div>
 </details>
-<h3 class="toc-heading-only" id="problems-and-limitations">Problems and limitations</h3>
+<h3 class="toc-heading-only" id="role-based-prompting">Role-based prompting</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Problems and limitations</summary>
+<summary style="cursor: pointer; font-weight: 600;">Role-based prompting</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Hallucinations</strong></p>
+<p><strong>Explicit role and perspective:</strong> “you are an editor”, “economist for non-experts”, “comedian in the style of …”. That steers tone, depth, and granularity.</p>
 <ul>
-<li>The model may invent facts while sounding confident</li>
-<li>Plausible but false content</li>
-<li>Hard to verify everything it generates</li>
+<li>Especially helpful for <strong>open-ended</strong> work: explanations, creative writing, advice when there is no single “right” format.</li>
+<li><strong>Role examples:</strong> public speaker, domain expert, comedian, teacher — role changes vocabulary, structure, and how bold the model can be.</li>
 </ul>
-<p><strong>Compute</strong></p>
-<ul>
-<li>Powerful GPUs/TPUs for training and inference</li>
-<li>High energy use for training large models</li>
-<li>Cost of building and running infrastructure</li>
-</ul>
-<p><strong>Ethics</strong></p>
-<ul>
-<li>Bias and stereotypes in training data</li>
-<li>Safety risks and malicious use</li>
-<li>Copyright and intellectual property issues</li>
-</ul>
+<p>Role complements but does not replace a clear task and constraints; “you are an expert” without context helps less than expert + goal + format.</p>
 </div>
 </details>
-<h3 class="toc-heading-only" id="future-and-trends">Future and trends</h3>
+<h3 class="toc-heading-only" id="step-back-prompting">Step-back prompting</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Future and trends</summary>
+<summary style="cursor: pointer; font-weight: 600;">Step-back prompting</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Multimodality</strong></p>
+<p><strong>A CoT-style variation:</strong> first step back to general principles, definitions, or a standard method, <strong>then</strong> apply them to the specific case.</p>
 <ul>
-<li>Text, images, audio, and video</li>
-<li>Understanding and generating content in multiple formats</li>
-<li>Integrating modalities for richer understanding</li>
+<li>Start with guiding questions: which laws, patterns, or concepts matter for this task?</li>
+<li>Then map onto your instance: data, constraints, desired output.</li>
 </ul>
-<p><strong>LLM agents</strong></p>
-<ul>
-<li>Autonomous systems for complex tasks</li>
-<li>Planning actions and making decisions</li>
-<li>Using external tools and APIs</li>
-</ul>
-<p><strong>Model optimization</strong></p>
-<ul>
-<li>Quantization and distillation for speed</li>
-<li>More efficient architectures</li>
-<li>Trade-off between size and capability</li>
-</ul>
-<p><strong>On-device / local</strong></p>
-<ul>
-<li>Models on personal devices</li>
-<li>Privacy without sending data to the cloud</li>
-<li>Specialized hardware for LLM inference</li>
-</ul>
+<p>Useful when failures come from jumping to an answer without anchoring on the right background knowledge.</p>
 </div>
 </details>
 
@@ -645,23 +505,23 @@
             
                 
 <article class="has-image">
-    <a href="/en/p/ai-basics-prompt-engineering/">
+    <a href="/en/p/ai-basics-overview/">
         
         
             <div class="article-image">
-                <img src="/p/ai-basics-prompt-engineering/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                <img src="/p/ai-basics-overview/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post AI basics – prompt engineering"
-                        data-key="ai-basics-prompt-engineering" 
+                        alt="Featured image of post AI basics – overview"
+                        data-key="ai-basics-overview" 
                         data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">AI basics – prompt engineering</h2>
+            <h2 class="article-title">AI basics – overview</h2>
         </div>
     </a>
 </article>
