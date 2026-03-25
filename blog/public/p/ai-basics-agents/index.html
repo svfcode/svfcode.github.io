@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Промпт-инжиниринг: цель и суть, zero-shot и few-shot, chain-of-thought, роли, step-back, источники хороших промптов'>
-<title>Базовый минимум про ИИ – промпт-инжиниринг</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='ИИ-агенты на базе LLM: чем отличаются от чата, планирование, память, инструменты, ReAct, мультиагентные системы'>
+<title>Базовый минимум про ИИ – ИИ-агенты</title>
 
-<link rel='canonical' href='http://localhost:1313/p/ai-basics-prompt-engineering/'>
+<link rel='canonical' href='http://localhost:1313/p/ai-basics-agents/'>
 
 <link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
-<meta property='og:title' content='Базовый минимум про ИИ – промпт-инжиниринг'>
-<meta property='og:description' content='Промпт-инжиниринг: цель и суть, zero-shot и few-shot, chain-of-thought, роли, step-back, источники хороших промптов'>
-<meta property='og:url' content='http://localhost:1313/p/ai-basics-prompt-engineering/'>
+<meta property='og:title' content='Базовый минимум про ИИ – ИИ-агенты'>
+<meta property='og:description' content='ИИ-агенты на базе LLM: чем отличаются от чата, планирование, память, инструменты, ReAct, мультиагентные системы'>
+<meta property='og:url' content='http://localhost:1313/p/ai-basics-agents/'>
 <meta property='og:site_name' content='Блог'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Искусственный интеллект' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg' />
-<meta name="twitter:title" content="Базовый минимум про ИИ – промпт-инжиниринг">
-<meta name="twitter:description" content="Промпт-инжиниринг: цель и суть, zero-shot и few-shot, chain-of-thought, роли, step-back, источники хороших промптов"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Искусственный интеллект' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-agents/cover.jpg' />
+<meta name="twitter:title" content="Базовый минимум про ИИ – ИИ-агенты">
+<meta name="twitter:description" content="ИИ-агенты на базе LLM: чем отличаются от чата, планирование, память, инструменты, ReAct, мультиагентные системы"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-agents/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
   integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
@@ -270,13 +270,12 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#цель-и-суть">Цель и суть</a></li>
-        <li><a href="#zero-shot-промптинг">Zero-shot промптинг</a></li>
-        <li><a href="#few-shot-промптинг">Few-shot промптинг</a></li>
-        <li><a href="#chain-of-thought-cot">Chain-of-Thought (CoT)</a></li>
-        <li><a href="#источники-промптов">Источники промптов</a></li>
-        <li><a href="#ролевой-промптинг">Ролевой промптинг</a></li>
-        <li><a href="#step-back-промптинг">Step-back промптинг</a></li>
+        <li><a href="#чат-и-агент-в-чём-разница">Чат и агент: в чём разница</a></li>
+        <li><a href="#из-чего-состоит-агент">Из чего состоит агент</a></li>
+        <li><a href="#как-думать-об-агентах">Как думать об агентах</a></li>
+        <li><a href="#react-рассуждение-и-действие">ReAct: рассуждение и действие</a></li>
+        <li><a href="#мультиагентные-системы">Мультиагентные системы</a></li>
+        <li><a href="#кто-использует">Кто использует</a></li>
       </ul>
     </li>
   </ul>
@@ -293,13 +292,13 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/ai-basics-prompt-engineering/">
-                <img src="/p/ai-basics-prompt-engineering/cover_hu_9edf806161ac8987.jpg"
-                        srcset="/p/ai-basics-prompt-engineering/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-prompt-engineering/cover_hu_fef56980ce8b91ab.jpg 1600w"
+            <a href="/p/ai-basics-agents/">
+                <img src="/p/ai-basics-agents/cover_hu_9edf806161ac8987.jpg"
+                        srcset="/p/ai-basics-agents/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-agents/cover_hu_fef56980ce8b91ab.jpg 1600w"
                         width="800" 
                         height="450" 
                         loading="lazy"
-                        alt="Featured image of post Базовый минимум про ИИ – промпт-инжиниринг" />
+                        alt="Featured image of post Базовый минимум про ИИ – ИИ-агенты" />
                 
             </a>
         </div>
@@ -310,12 +309,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/ai-basics-prompt-engineering/">Базовый минимум про ИИ – промпт-инжиниринг</a>
+            <a href="/p/ai-basics-agents/">Базовый минимум про ИИ – ИИ-агенты</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Промпт-инжиниринг: цель и суть, zero-shot и few-shot, chain-of-thought, роли, step-back, источники хороших промптов
+            ИИ-агенты на базе LLM: чем отличаются от чата, планирование, память, инструменты, ReAct, мультиагентные системы
         </h3>
         
     </div>
@@ -351,7 +350,7 @@
 
 
                 <time class="article-time--reading">
-                    Время чтения: 3 мин.
+                    Время чтения: 4 мин.
                 </time>
             </div>
         
@@ -373,7 +372,7 @@
 
             <div>
                 
-                    <a href="http://localhost:1313/en/p/ai-basics-prompt-engineering/" class="link">en</a>
+                    <a href="http://localhost:1313/en/p/ai-basics-agents/" class="link">en</a>
                 
             </div>
         </footer>
@@ -385,90 +384,80 @@
     <section class="article-content">
     
     
-    <p>Статья цикла «Базовый минимум» про то, как формулировать запросы к большим языковым моделям.</p>
-<h3 class="toc-heading-only" id="цель-и-суть">Цель и суть</h3>
+    <p>Статья цикла «Базовый минимум» про <strong>ИИ-агентов</strong> — системы, где языковая модель не только генерирует текст, но и <strong>планирует шаги</strong>, <strong>помнит контекст</strong>, <strong>вызывает инструменты</strong> и движется к цели в несколько итераций.</p>
+<h3 class="toc-heading-only" id="чат-и-агент-в-чём-разница">Чат и агент: в чём разница</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Цель и суть</summary>
+<summary style="cursor: pointer; font-weight: 600;">Чат и агент: в чём разница</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Промпт — это короткое техническое задание для модели.</strong> Вы явно задаёте, что нужно сделать, в каком виде вернуть результат и на что опереться. Чем точнее «ТЗ», тем меньше догадок остаётся на стороне LLM.</p>
+<p><strong>Обычный диалог с LLM</strong> — это в основном «вопрос → ответ»: модель предсказывает следующие токены, опираясь на промпт и историю в окне. Она <strong>не обязана</strong> сама инициировать действия во внешнем мире.</p>
+<p><strong>Агент</strong> — надстройка над моделью (и иногда несколькими компонентами), которая ставит <strong>цель</strong>, разбивает её на шаги и при необходимости <strong>что-то делает</strong>: запрашивает API, запускает код, ищет в интернете или в базе документов, пока задача не закрыта или не исчерпан лимит шагов.</p>
+<p>Удобная метафора: <strong>LLM — «двигатель»</strong> (умение рассуждать и формулировать), <strong>агент — «водитель»</strong>, который решает, куда ехать, когда тормознуть и какие «рычаги» (инструменты) нажать. Без сценария использования движитель сам по себе никуда не привезёт.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="из-чего-состоит-агент">Из чего состоит агент</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Из чего состоит агент</summary>
+<div style="margin-top: 0.75em;">
+<p>Упрощённо выделяют три опоры — их можно представить как блоки на схеме «анатомии агента».</p>
+<p><strong>Планирование.</strong> Агент декомпозирует большую задачу на подцели и шаги. Здесь пересекаются идеи <strong>цепочки рассуждений (chain-of-thought)</strong>, пошагового плана и <strong>самопроверки (self-reflection)</strong>: перечитать свой черновик, сравнить с ограничениями, скорректировать план.</p>
+<p><strong>Память.</strong></p>
 <ul>
-<li><strong>Качество ответа.</strong> Хорошая формулировка снижает размытость и повышает полезность текста, кода или структуры данных.</li>
-<li><strong>Предсказуемость.</strong> Фиксированный формат (списки, JSON, шаблон абзаца) и чёткие ограничения делают вывод воспроизводимым от запроса к запросу.</li>
-<li><strong>Сборка из блоков.</strong> Имеет смысл собирать промпт как мини-спецификацию: роль, контекст, задача, формат ответа, примеры (если нужны), критерии успеха.</li>
+<li><strong>Краткосрочная</strong> — текущее окно контекста: недавние реплики, промежуточные выводы в рамках одной сессии.</li>
+<li><strong>Долгосрочная</strong> — сохранённые факты, документы, прошлые диалоги; часто это связано с <strong>векторным хранилищем и RAG</strong>: нужный фрагмент поднимают поиском и подмешивают в промпт (см. <a class="link" href="/p/ai-basics-rag/">статью про RAG</a>).</li>
+</ul>
+<p><strong>Инструменты (tools).</strong> Формализованные действия, которые модель может «заказать» исполнителю: вызов HTTP API, выполнение фрагмента кода (например, Python), поиск в сети, работа с файлами, запрос к календарю или БД. Без инструментов агент остаётся «чистым текстом» без рычагов вовне.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="как-думать-об-агентах">Как думать об агентах</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">Как думать об агентах</summary>
+<div style="margin-top: 0.75em;">
+<p>Сдвиг в голове похож на переход от поисковой строки к работе с <strong>исполнителем</strong>.</p>
+<ul>
+<li><strong>Делегируйте, а не только «промптите».</strong> Формулируйте цель и критерии успеха так, как для джуниор-сотрудника: что сделать, в каком виде сдать, какие источники или инструменты разрешены.</li>
+<li><strong>Задайте границы и роль.</strong> Явная роль («ты исследовательский ассистент», «ты не выполняешь платежи») и ограничения снижают размах ошибок и неожиданных действий.</li>
+<li><strong>Считайте с итерациями.</strong> Агенты ошибаются и идут в тупик; нормальна петля «попробовал → увидел результат → поправил план». От этого зависят лимиты шагов, логирование и контроль со стороны человека.</li>
+<li><strong>Обеспечьте ресурсы.</strong> Если нужен факт из документов — подключите поиск или RAG; если нужен код — среду выполнения; без нужных «рычагов» модель останется в режиме фантазии.</li>
 </ul>
 </div>
 </details>
-<h3 class="toc-heading-only" id="zero-shot-промптинг">Zero-shot промптинг</h3>
+<h3 class="toc-heading-only" id="react-рассуждение-и-действие">ReAct: рассуждение и действие</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Zero-shot промптинг</summary>
+<summary style="cursor: pointer; font-weight: 600;">ReAct: рассуждение и действие</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Задача ставится без примеров входа и выхода.</strong> Модель опирается на знания и паттерны из предобучения и на вашу инструкцию в текущем запросе.</p>
+<p><strong>ReAct</strong> (*Reasoning and Acting*) — распространённый шаблон цикла, который рисуют схемой «мысль → действие → наблюдение».</p>
 <ul>
-<li>Подходит для простых и однозначных задач, когда формат ответа очевиден или задан одной фразой.</li>
-<li><strong>Пример:</strong> классификация тональности текста («определи настроение: позитив / нейтрал / негатив») без показа размеченных примеров.</li>
+<li><strong>Thought (мысль):</strong> что я знаю, что нужно выяснить, какой следующий шаг логичен?</li>
+<li><strong>Action (действие):</strong> вызов конкретного инструмента с аргументами (поиск, API, код…).</li>
+<li><strong>Observation (наблюдение):</strong> сырой результат инструмента возвращается в контекст.</li>
+<li>Далее снова <strong>Thought</strong> — скорректировать план или завершить задачу финальным ответом пользователю.</li>
 </ul>
-<p>Если zero-shot «плывёт», обычно помогают few-shot примеры или явное пошаговое рассуждение (CoT).</p>
+<p>Так агент чередует **рассуждение на естественном языке** с **реальными шагами во внешней среде**, а не «придумывает ответ с потолка», когда нужны актуальные данные или вычисления.</p>
 </div>
 </details>
-<h3 class="toc-heading-only" id="few-shot-промптинг">Few-shot промптинг</h3>
+<h3 class="toc-heading-only" id="мультиагентные-системы">Мультиагентные системы</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Few-shot промптинг</summary>
+<summary style="cursor: pointer; font-weight: 600;">Мультиагентные системы</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Контекстное обучение (in-context learning):</strong> в запрос включаются один или несколько пар «вход → эталонный выход», чтобы модель уловила стиль, поля и ограничения.</p>
+<p>Одну сложную задачу иногда делят между <strong>несколькими агентами</strong> с разными ролями — как на схеме «менеджер и исполнители».</p>
 <ul>
-<li>Особенно полезно, когда нужен <strong>строгий или нестандартный формат</strong> — таблица, JSON с фиксированными ключами, шаблон отчёта.</li>
-<li>Примеры задают «контракт» на ответ: меньше отклонений и произвольных интерпретаций.</li>
+<li><strong>Координатор (менеджер)</strong> ставит подзадачи, собирает результаты, следит за целостностью ответа.</li>
+<li><strong>Специализированные агенты</strong> — например, отдельно «пишет код», «готовит тесты», «ищет в литературе», «оформляет отчёт».</li>
 </ul>
-<p>Важно не перегружать контекст: оставляйте релевантные, типичные примеры и следите за длиной окна.</p>
+<p>Плюс — модульность и параллелизм; минус — сложнее отладка, стоимость вызовов модели и риск «разъезда» контекста между агентами. Для учебных и продуктовых прототипов важно явно описывать протокол обмена: кто кому что передаёт и в каком формате.</p>
 </div>
 </details>
-<h3 class="toc-heading-only" id="chain-of-thought-cot">Chain-of-Thought (CoT)</h3>
+<h3 class="toc-heading-only" id="кто-использует">Кто использует</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Chain-of-Thought (CoT)</summary>
+<summary style="cursor: pointer; font-weight: 600;">Кто использует</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Цепочка рассуждений:</strong> модель сначала выводит промежуточные шаги, затем итог. Так стабильнее получаются логика, подсчёты и многошаговые задачи.</p>
+<p>Агентные схемы подключают там, где одного ответа в чате мало — нужна <strong>цепочка действий</strong> и опора на внешние системы или корпус документов.</p>
 <ul>
-<li><strong>Few-shot CoT:</strong> в примерах показываете не только ответ, но и ход решения — модель повторяет паттерн рассуждения.</li>
-<li><strong>Zero-shot CoT:</strong> достаточно формулировки вроде «рассуждай шаг за шагом» / «сначала объясни ход мыслей, затем дай ответ».</li>
-<li><strong>Uncertainty-Routed CoT:</strong> идея развести несколько линий рассуждения или проверить альтернативы, когда задача двусмысленная — затем сравнить или выбрать обоснованный итог.</li>
+<li><strong>Исследователи.</strong> Обход десятков PDF, выжимки, сверка формулировок с источниками — при связке с RAG и поиском.</li>
+<li><strong>Студенты и академическое сообщество.</strong> Поиск первоисточников, черновики обзоров с явной привязкой к цитатам (без подмены проверки фактов).</li>
+<li><strong>Разработчики.</strong> Сложная отладка, рефакторинг в несколько шагов, автоматизация рутинных пайплайнов (тикеты, CI, документация) — с осторожностью и code review.</li>
+<li><strong>Компании.</strong> Внутренние ассистенты поверх CRM, wiki и API — при жёстких политиках доступа, аудите действий и человеческом контроле на критичных операциях.</li>
 </ul>
-<p>CoT увеличивает длину ответа и время; для простых задач иногда достаточно короткой инструкции без рассуждений.</p>
-</div>
-</details>
-<h3 class="toc-heading-only" id="источники-промптов">Источники промптов</h3>
-<details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Источники промптов</summary>
-<div style="margin-top: 0.75em;">
-<ul>
-<li><strong>Вы задаёте цель.</strong> Базовый источник — ваша формулировка задачи, аудитории и критериев качества.</li>
-<li><strong>Генерация через LLM.</strong> Можно попросить модель предложить структурированный промпт под задачу (роль, шаги, формат), а затем отредактировать вручную.</li>
-<li><strong>Обратный инжиниринг.</strong> По желаемому результату (или по удачному ответу) восстанавливают и уточняют формулировку запроса — что именно в нём сработало.</li>
-</ul>
-<p>На практике часто комбинируют: черновик от модели + ваши ограничения + итерация по реальным ответам.</p>
-</div>
-</details>
-<h3 class="toc-heading-only" id="ролевой-промптинг">Ролевой промптинг</h3>
-<details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Ролевой промптинг</summary>
-<div style="margin-top: 0.75em;">
-<p><strong>Явно задаётся роль и перспектива:</strong> «ты — редактор», «экономист для неспециалистов», «юморист в стиле …». Так проще получить нужный тон, глубину и уровень детализации.</p>
-<ul>
-<li>Особенно помогает на <strong>открытых</strong> задачах: объяснения, креатив, советы, когда нет одного «правильного» формата.</li>
-<li><strong>Примеры ролей:</strong> публичный спикер, эксперт по домену, комик, методист — от роли зависят лексика, структура и смелость формулировок.</li>
-</ul>
-<p>Роль дополняет, но не заменяет чёткую задачу и ограничения; «ты эксперт» без контекста даёт меньше, чем эксперт с указанием цели и формата.</p>
-</div>
-</details>
-<h3 class="toc-heading-only" id="step-back-промптинг">Step-back промптинг</h3>
-<details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Step-back промптинг</summary>
-<div style="margin-top: 0.75em;">
-<p><strong>Вариация идеи CoT:</strong> сначала отходите на шаг «назад» — вспоминаете общие принципы, определения или типовой метод, <strong>потом</strong> применяете их к конкретному кейсу.</p>
-<ul>
-<li>Сначала наводящие или уточняющие вопросы: какие закономерности и понятия релевантны задаче?</li>
-<li>Затем перенос на ваш частный случай: данные, ограничения, желаемый вывод.</li>
-</ul>
-<p>Хорошо работает там, где ошибка часто в том, что модель «прыгает» к ответу, минуя нужную опору на базовые правила предметной области.</p>
 </div>
 </details>
 
@@ -529,30 +518,6 @@
             
                 
 <article class="has-image">
-    <a href="/p/ai-basics-agents/">
-        
-        
-            <div class="article-image">
-                <img src="/p/ai-basics-agents/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Базовый минимум про ИИ – ИИ-агенты"
-                        data-key="ai-basics-agents" 
-                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Базовый минимум про ИИ – ИИ-агенты</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
     <a href="/p/ai-basics-overview/">
         
         
@@ -570,6 +535,30 @@
 
         <div class="article-details">
             <h2 class="article-title">Базовый минимум про ИИ – обзор</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/ai-basics-prompt-engineering/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-prompt-engineering/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Базовый минимум про ИИ – промпт-инжиниринг"
+                        data-key="ai-basics-prompt-engineering" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Базовый минимум про ИИ – промпт-инжиниринг</h2>
         </div>
     </a>
 </article>

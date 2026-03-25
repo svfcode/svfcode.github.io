@@ -280,6 +280,8 @@ This overview for the «Bare minimum» series is an outline:
 <li>Using external tools and APIs</li>
 </ul>
 
+<p>More on planning, memory, tools, ReAct, and multi-agent setups: <a class="link" href="/en/p/ai-basics-agents/">AI basics – LLM agents</a>.</p>
+
 <p><strong>Model optimization</strong></p>
 <ul>
 <li>Quantization and distillation for speed</li>

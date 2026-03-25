@@ -7,6 +7,164 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>ru</language>
         <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Базовый минимум про ИИ – RAG-системы</title>
+        <link>http://localhost:1313/p/ai-basics-rag/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/ai-basics-rag/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-rag/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – RAG-системы" /&gt;&lt;p&gt;Статья цикла «Базовый минимум» про системы &lt;strong&gt;дополненной генерации с поиском&lt;/strong&gt; (RAG): как подключать к языковой модели внешние документы и актуальные знания.&lt;/p&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;что-такое-rag&#34;&gt;Что такое RAG&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Что такое RAG&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Retrieval-Augmented Generation&lt;/strong&gt; — подход, при котором перед ответом модель опирается не только на «память» из обучения, но и на &lt;strong&gt;найденные во внешнем хранилище&lt;/strong&gt; фрагменты текста.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Проблема одной только LLM:&lt;/strong&gt; знания после обучения по сути &lt;strong&gt;статичны&lt;/strong&gt; — модель не узнаёт о событиях после среза данных, &lt;strong&gt;не обновляется сама по себе&lt;/strong&gt; и отражает мир &lt;strong&gt;каким он был на момент обучения&lt;/strong&gt;. Для свежих фактов, внутренних регламентов компании или вашей библиотеки статей этого недостаточно.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RAG — это &lt;strong&gt;технология подключения внешних источников&lt;/strong&gt; к шагу генерации.&lt;/li&gt;
+&lt;li&gt;Она &lt;strong&gt;смягчает проблему устаревших знаний&lt;/strong&gt;: релевантные куски подтягиваются из актуального корпуса.&lt;/li&gt;
+&lt;li&gt;Модель &lt;strong&gt;дополняется контекстом из документов&lt;/strong&gt;, а не только весами, заложенными при pre-training.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;RAG не отменяет галлюцинации полностью, но даёт опору на цитируемые фрагменты — их проще проверить человеку или правилами.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;этапы-работы-rag&#34;&gt;Этапы работы RAG&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Этапы работы RAG&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Типичный пайплайн можно представить как цепочку из офлайн-подготовки данных и онлайн-запроса пользователя.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Загрузка корпуса и чанкование.&lt;/strong&gt; Документы попадают в систему и режутся на фрагменты удобного размера для индекса и контекстного окна.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Построение векторного индекса.&lt;/strong&gt; Для каждого фрагмента считается эмбеддинг; по ним организуется поиск «похожих» кусков по смыслу запроса.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Retrieval.&lt;/strong&gt; По пользовательскому вопросу выбираются наиболее релевантные фрагменты из индекса.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Generation.&lt;/strong&gt; Выбранные фрагменты подставляются в промпт (вместе с инструкцией и вопросом), и LLM формулирует ответ, опираясь на этот контекст.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Детали реализации (какой энкодер, какой векторный стор, сколько чанков подмешивать) сильно влияют на качество — но логика «найти → подставить → сгенерировать» остаётся общей.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;чанкование&#34;&gt;Чанкование&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Чанкование&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Чанкование&lt;/strong&gt; — разбиение документов на небольшие части. Эти куски — &lt;strong&gt;базовые единицы индексации и поиска&lt;/strong&gt;: именно их векторизуют и именно их доставляют в промпт.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;В контекст модели попадают &lt;strong&gt;фрагменты, а не целые документы&lt;/strong&gt; целиком — иначе не уложиться в окно и не потерять точность поиска.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Качество нарезки напрямую влияет на доступность фактов:&lt;/strong&gt; если смысловой блок разрезан посередине, ретривер может не найти нужный кусок; если чанк огромный — в нём много шума, падает точность попадания в запрос.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;На практике подбирают размер чанка, перекрытие между соседними кусками и иногда более умное деление по структуре (заголовки, абзацы), а не только «каждые N символов».&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;типы-rag-систем&#34;&gt;Типы RAG-систем&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Типы RAG-систем&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Условно выделяют «наивный» и «продвинутый» уровень зрелости пайплайна — граница размыта, но названия помогают ориентироваться.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Naive RAG:&lt;/strong&gt; запрос → поиск ближайших чанков → они сразу передаются в модель &lt;strong&gt;без дополнительной обработки&lt;/strong&gt;. Просто собрать, но качество сильно зависит от качества корпуса, чанков и эмбеддингов.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Advanced RAG:&lt;/strong&gt; добавляют шаги вокруг retrieval и генерации: &lt;strong&gt;переформулирование или расширение запроса&lt;/strong&gt;, &lt;strong&gt;переранжирование&lt;/strong&gt; кандидатов отдельной моделью или кросс-энкодером, &lt;strong&gt;очистка от дубликатов&lt;/strong&gt; и пересекающихся кусков, иногда фильтрация по метаданным. Цель — выше точность и полнота подмешиваемого контекста.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Для учебного и исследовательского прототипа часто начинают с naive и усложняют пайплайн там, где видны типичные ошибки: «не тот абзац», «дубли», «запрос сформулирован не так, как в документе».&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;кто-использует&#34;&gt;Кто использует&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Кто использует&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;RAG внедряют там, где ответ нужно строить по &lt;strong&gt;заданному набору документов&lt;/strong&gt; — внутренним, клиентским или личным — а не только по «памяти» модели из обучения.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Компании.&lt;/strong&gt; Базы знаний, регламенты, скрипты поддержки: сотрудник или клиент задаёт вопрос, система находит релевантные фрагменты и формулирует ответ с опорой на актуальные тексты организации.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Разработчики и продуктовые команды.&lt;/strong&gt; Чат-боты и ассистенты поверх документации, вики, тикетов: снижается нагрузка на «угадать» API по обрывкам из интернета — контролируемый корпус задаёт границы.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Учёба и наука.&lt;/strong&gt; Работа с подборкой статей, конспектами и PDF: удобно задавать вопросы по материалам курса или обзора литературы, не подменяя проверку источников.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Отраслевые сценарии.&lt;/strong&gt; Юридические, медицинские, финансовые и другие домены, где важна привязка к текстам компании или регуляторики — всегда с человеческой верификацией и политиками доступа к данным.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
+        <title>Базовый минимум про ИИ – ИИ-агенты</title>
+        <link>http://localhost:1313/p/ai-basics-agents/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/ai-basics-agents/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-agents/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – ИИ-агенты" /&gt;&lt;p&gt;Статья цикла «Базовый минимум» про &lt;strong&gt;ИИ-агентов&lt;/strong&gt; — системы, где языковая модель не только генерирует текст, но и &lt;strong&gt;планирует шаги&lt;/strong&gt;, &lt;strong&gt;помнит контекст&lt;/strong&gt;, &lt;strong&gt;вызывает инструменты&lt;/strong&gt; и движется к цели в несколько итераций.&lt;/p&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;чат-и-агент-в-чём-разница&#34;&gt;Чат и агент: в чём разница&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Чат и агент: в чём разница&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Обычный диалог с LLM&lt;/strong&gt; — это в основном «вопрос → ответ»: модель предсказывает следующие токены, опираясь на промпт и историю в окне. Она &lt;strong&gt;не обязана&lt;/strong&gt; сама инициировать действия во внешнем мире.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Агент&lt;/strong&gt; — надстройка над моделью (и иногда несколькими компонентами), которая ставит &lt;strong&gt;цель&lt;/strong&gt;, разбивает её на шаги и при необходимости &lt;strong&gt;что-то делает&lt;/strong&gt;: запрашивает API, запускает код, ищет в интернете или в базе документов, пока задача не закрыта или не исчерпан лимит шагов.&lt;/p&gt;
+&lt;p&gt;Удобная метафора: &lt;strong&gt;LLM — «двигатель»&lt;/strong&gt; (умение рассуждать и формулировать), &lt;strong&gt;агент — «водитель»&lt;/strong&gt;, который решает, куда ехать, когда тормознуть и какие «рычаги» (инструменты) нажать. Без сценария использования движитель сам по себе никуда не привезёт.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;из-чего-состоит-агент&#34;&gt;Из чего состоит агент&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Из чего состоит агент&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Упрощённо выделяют три опоры — их можно представить как блоки на схеме «анатомии агента».&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Планирование.&lt;/strong&gt; Агент декомпозирует большую задачу на подцели и шаги. Здесь пересекаются идеи &lt;strong&gt;цепочки рассуждений (chain-of-thought)&lt;/strong&gt;, пошагового плана и &lt;strong&gt;самопроверки (self-reflection)&lt;/strong&gt;: перечитать свой черновик, сравнить с ограничениями, скорректировать план.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Память.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Краткосрочная&lt;/strong&gt; — текущее окно контекста: недавние реплики, промежуточные выводы в рамках одной сессии.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Долгосрочная&lt;/strong&gt; — сохранённые факты, документы, прошлые диалоги; часто это связано с &lt;strong&gt;векторным хранилищем и RAG&lt;/strong&gt;: нужный фрагмент поднимают поиском и подмешивают в промпт (см. &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34;&gt;статью про RAG&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Инструменты (tools).&lt;/strong&gt; Формализованные действия, которые модель может «заказать» исполнителю: вызов HTTP API, выполнение фрагмента кода (например, Python), поиск в сети, работа с файлами, запрос к календарю или БД. Без инструментов агент остаётся «чистым текстом» без рычагов вовне.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;как-думать-об-агентах&#34;&gt;Как думать об агентах&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Как думать об агентах&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Сдвиг в голове похож на переход от поисковой строки к работе с &lt;strong&gt;исполнителем&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Делегируйте, а не только «промптите».&lt;/strong&gt; Формулируйте цель и критерии успеха так, как для джуниор-сотрудника: что сделать, в каком виде сдать, какие источники или инструменты разрешены.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Задайте границы и роль.&lt;/strong&gt; Явная роль («ты исследовательский ассистент», «ты не выполняешь платежи») и ограничения снижают размах ошибок и неожиданных действий.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Считайте с итерациями.&lt;/strong&gt; Агенты ошибаются и идут в тупик; нормальна петля «попробовал → увидел результат → поправил план». От этого зависят лимиты шагов, логирование и контроль со стороны человека.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Обеспечьте ресурсы.&lt;/strong&gt; Если нужен факт из документов — подключите поиск или RAG; если нужен код — среду выполнения; без нужных «рычагов» модель останется в режиме фантазии.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;react-рассуждение-и-действие&#34;&gt;ReAct: рассуждение и действие&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;ReAct: рассуждение и действие&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;ReAct&lt;/strong&gt; (*Reasoning and Acting*) — распространённый шаблон цикла, который рисуют схемой «мысль → действие → наблюдение».&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Thought (мысль):&lt;/strong&gt; что я знаю, что нужно выяснить, какой следующий шаг логичен?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Action (действие):&lt;/strong&gt; вызов конкретного инструмента с аргументами (поиск, API, код…).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Observation (наблюдение):&lt;/strong&gt; сырой результат инструмента возвращается в контекст.&lt;/li&gt;
+&lt;li&gt;Далее снова &lt;strong&gt;Thought&lt;/strong&gt; — скорректировать план или завершить задачу финальным ответом пользователю.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Так агент чередует **рассуждение на естественном языке** с **реальными шагами во внешней среде**, а не «придумывает ответ с потолка», когда нужны актуальные данные или вычисления.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;мультиагентные-системы&#34;&gt;Мультиагентные системы&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Мультиагентные системы&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Одну сложную задачу иногда делят между &lt;strong&gt;несколькими агентами&lt;/strong&gt; с разными ролями — как на схеме «менеджер и исполнители».&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Координатор (менеджер)&lt;/strong&gt; ставит подзадачи, собирает результаты, следит за целостностью ответа.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Специализированные агенты&lt;/strong&gt; — например, отдельно «пишет код», «готовит тесты», «ищет в литературе», «оформляет отчёт».&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Плюс — модульность и параллелизм; минус — сложнее отладка, стоимость вызовов модели и риск «разъезда» контекста между агентами. Для учебных и продуктовых прототипов важно явно описывать протокол обмена: кто кому что передаёт и в каком формате.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;кто-использует&#34;&gt;Кто использует&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Кто использует&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Агентные схемы подключают там, где одного ответа в чате мало — нужна &lt;strong&gt;цепочка действий&lt;/strong&gt; и опора на внешние системы или корпус документов.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Исследователи.&lt;/strong&gt; Обход десятков PDF, выжимки, сверка формулировок с источниками — при связке с RAG и поиском.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Студенты и академическое сообщество.&lt;/strong&gt; Поиск первоисточников, черновики обзоров с явной привязкой к цитатам (без подмены проверки фактов).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Разработчики.&lt;/strong&gt; Сложная отладка, рефакторинг в несколько шагов, автоматизация рутинных пайплайнов (тикеты, CI, документация) — с осторожностью и code review.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Компании.&lt;/strong&gt; Внутренние ассистенты поверх CRM, wiki и API — при жёстких политиках доступа, аудите действий и человеческом контроле на критичных операциях.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
         <title>Базовый минимум про ИИ – обзор</title>
         <link>http://localhost:1313/p/ai-basics-overview/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
@@ -1318,7 +1476,7 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
         
         <guid>http://localhost:1313/p/ai-basics-intro/</guid>
         <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – введение" /&gt;&lt;p&gt;Это первая статья из цикла «Базовый минимум» — коротко про то, как устроен ИИ. Каждая статья будет освещать одно понятие или концепцию, постараюсь делать их короткими и последовательными.&lt;/p&gt;
-&lt;p&gt;Начнём с общепринятых терминов; отдельно в цикле — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-prompt-engineering/&#34; &gt;промпт-инжиниринг&lt;/a&gt;, RAG-системы и агенты, способные выполнять сложные многоступенчатые задачи.&lt;/p&gt;
+&lt;p&gt;Начнём с общепринятых терминов; отдельно в цикле — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-prompt-engineering/&#34; &gt;промпт-инжиниринг&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34; &gt;RAG-системы&lt;/a&gt; и &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-agents/&#34; &gt;ИИ-агенты&lt;/a&gt;, способные выполнять сложные многоступенчатые задачи.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Видео версия:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Смотреть на YouTube&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;что-такое-языковая-модель&#34;&gt;Что такое языковая модель&lt;/h2&gt;

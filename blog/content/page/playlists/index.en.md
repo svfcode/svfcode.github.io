@@ -11,7 +11,7 @@ menu:
 
 ## 📚 Basics
 
-Short track on AI: terms and language models → LLM overview → **prompt engineering** and **RAG systems** as separate articles.
+Short track on AI: terms and language models → LLM overview → **prompt engineering**, **RAG**, and **LLM agents** as separate articles.
 
 - **[AI basics – introduction](/en/p/ai-basics-intro/)**
   - 🎬 [Video](https://youtu.be/z9VBZn0XcVk) · reading 5 min / video 4 min
@@ -36,6 +36,12 @@ Short track on AI: terms and language models → LLM overview → **prompt engin
   - 🏷️ RAG, retrieval, embeddings, vector index, chunking, context-conditioned generation
   - 📊 Difficulty: basic
   - 📋 Prerequisites: [LLM overview](/en/p/ai-basics-overview/) recommended
+- **[AI basics – LLM agents](/en/p/ai-basics-agents/)**
+  - ⏱️ ~7 min read · no video
+  - 📋 Agent vs chat, planning / memory / tools, mindset, ReAct, multi-agent, who uses them; accordions
+  - 🏷️ AI agents, LLM, ReAct, tools, planning, memory, multi-agent systems
+  - 📊 Difficulty: basic
+  - 📋 Prerequisites: [LLM overview](/en/p/ai-basics-overview/) recommended; [RAG](/en/p/ai-basics-rag/) helps
 
 ## 👥 On Their Shoulders
 

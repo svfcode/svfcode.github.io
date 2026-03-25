@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru" dir="ltr">
+<html lang="en" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Промпт-инжиниринг: цель и суть, zero-shot и few-shot, chain-of-thought, роли, step-back, источники хороших промптов'>
-<title>Базовый минимум про ИИ – промпт-инжиниринг</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='LLM-based AI agents: beyond chat, planning, memory, tools, ReAct, multi-agent patterns'>
+<title>AI basics – LLM agents</title>
 
-<link rel='canonical' href='http://localhost:1313/p/ai-basics-prompt-engineering/'>
+<link rel='canonical' href='http://localhost:1313/en/p/ai-basics-agents/'>
 
 <link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
-<meta property='og:title' content='Базовый минимум про ИИ – промпт-инжиниринг'>
-<meta property='og:description' content='Промпт-инжиниринг: цель и суть, zero-shot и few-shot, chain-of-thought, роли, step-back, источники хороших промптов'>
-<meta property='og:url' content='http://localhost:1313/p/ai-basics-prompt-engineering/'>
-<meta property='og:site_name' content='Блог'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Искусственный интеллект' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg' />
-<meta name="twitter:title" content="Базовый минимум про ИИ – промпт-инжиниринг">
-<meta name="twitter:description" content="Промпт-инжиниринг: цель и суть, zero-shot и few-shot, chain-of-thought, роли, step-back, источники хороших промптов"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
+<meta property='og:title' content='AI basics – LLM agents'>
+<meta property='og:description' content='LLM-based AI agents: beyond chat, planning, memory, tools, ReAct, multi-agent patterns'>
+<meta property='og:url' content='http://localhost:1313/en/p/ai-basics-agents/'>
+<meta property='og:site_name' content='Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Artificial Intelligence' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-25T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/ai-basics-agents/cover.jpg' />
+<meta name="twitter:title" content="AI basics – LLM agents">
+<meta name="twitter:description" content="LLM-based AI agents: beyond chat, planning, memory, tools, ReAct, multi-agent patterns"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/ai-basics-agents/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
   integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
@@ -87,7 +87,7 @@
     })();
 </script>
 <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Показать/скрыть меню">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
@@ -97,7 +97,7 @@
         
             
             <figure class="site-avatar">
-                <a href="/">
+                <a href="/en/">
                 
                     
                     
@@ -114,7 +114,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">Блог</a></h1>
+            <h1 class="site-name"><a href="/en">Blog</a></h1>
             <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
         </div>
     </header><ol class="menu" id="main-menu">
@@ -122,7 +122,7 @@
         
         
         <li >
-            <a href='/about/' >
+            <a href='/en/about/' >
                 
                 
                 
@@ -135,13 +135,13 @@
 
 
                 
-                <span>Обо мне</span>
+                <span>About</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/playlists/' >
+            <a href='/en/playlists/' >
                 
                 
                 
@@ -154,13 +154,13 @@
 
 
                 
-                <span>Плейлисты</span>
+                <span>Playlists</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/archives/' >
+            <a href='/en/archives/' >
                 
                 
                 
@@ -174,13 +174,13 @@
 
 
                 
-                <span>Архивы</span>
+                <span>Archives</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/search/' >
+            <a href='/en/search/' >
                 
                 
                 
@@ -193,7 +193,7 @@
 
 
                 
-                <span>Поиск</span>
+                <span>Search</span>
             </a>
         </li>
         
@@ -213,9 +213,9 @@
 
                     <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
                         
-                            <option value="http://localhost:1313/" selected>ru</option>
+                            <option value="http://localhost:1313/" >ru</option>
                         
-                            <option value="http://localhost:1313/en/" >en</option>
+                            <option value="http://localhost:1313/en/" selected>en</option>
                         
                     </select>
                 </li>
@@ -239,7 +239,7 @@
 
 
 
-                    <span>Тёмный режим</span>
+                    <span>Dark Mode</span>
                 </li>
             
         </div>
@@ -263,20 +263,19 @@
 
 
         </div>
-        <h2 class="widget-title section-title">Содержание</h2>
+        <h2 class="widget-title section-title">Table of contents</h2>
         
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ul>
     <li>
       <ul>
-        <li><a href="#цель-и-суть">Цель и суть</a></li>
-        <li><a href="#zero-shot-промптинг">Zero-shot промптинг</a></li>
-        <li><a href="#few-shot-промптинг">Few-shot промптинг</a></li>
-        <li><a href="#chain-of-thought-cot">Chain-of-Thought (CoT)</a></li>
-        <li><a href="#источники-промптов">Источники промптов</a></li>
-        <li><a href="#ролевой-промптинг">Ролевой промптинг</a></li>
-        <li><a href="#step-back-промптинг">Step-back промптинг</a></li>
+        <li><a href="#chat-vs-agent">Chat vs agent</a></li>
+        <li><a href="#what-makes-an-agent">What makes an agent</a></li>
+        <li><a href="#how-to-think-about-agents">How to think about agents</a></li>
+        <li><a href="#react-reason-and-act">ReAct: reason and act</a></li>
+        <li><a href="#multi-agent-systems">Multi-agent systems</a></li>
+        <li><a href="#who-uses-them">Who uses them</a></li>
       </ul>
     </li>
   </ul>
@@ -293,13 +292,13 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/ai-basics-prompt-engineering/">
-                <img src="/p/ai-basics-prompt-engineering/cover_hu_9edf806161ac8987.jpg"
-                        srcset="/p/ai-basics-prompt-engineering/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-prompt-engineering/cover_hu_fef56980ce8b91ab.jpg 1600w"
+            <a href="/en/p/ai-basics-agents/">
+                <img src="/p/ai-basics-agents/cover_hu_9edf806161ac8987.jpg"
+                        srcset="/p/ai-basics-agents/cover_hu_9edf806161ac8987.jpg 800w, /p/ai-basics-agents/cover_hu_fef56980ce8b91ab.jpg 1600w"
                         width="800" 
                         height="450" 
                         loading="lazy"
-                        alt="Featured image of post Базовый минимум про ИИ – промпт-инжиниринг" />
+                        alt="Featured image of post AI basics – LLM agents" />
                 
             </a>
         </div>
@@ -310,12 +309,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/ai-basics-prompt-engineering/">Базовый минимум про ИИ – промпт-инжиниринг</a>
+            <a href="/en/p/ai-basics-agents/">AI basics – LLM agents</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Промпт-инжиниринг: цель и суть, zero-shot и few-shot, chain-of-thought, роли, step-back, источники хороших промптов
+            LLM-based AI agents: beyond chat, planning, memory, tools, ReAct, multi-agent patterns
         </h3>
         
     </div>
@@ -351,7 +350,7 @@
 
 
                 <time class="article-time--reading">
-                    Время чтения: 3 мин.
+                    3 minute read
                 </time>
             </div>
         
@@ -373,7 +372,7 @@
 
             <div>
                 
-                    <a href="http://localhost:1313/en/p/ai-basics-prompt-engineering/" class="link">en</a>
+                    <a href="http://localhost:1313/p/ai-basics-agents/" class="link">ru</a>
                 
             </div>
         </footer>
@@ -385,90 +384,80 @@
     <section class="article-content">
     
     
-    <p>Статья цикла «Базовый минимум» про то, как формулировать запросы к большим языковым моделям.</p>
-<h3 class="toc-heading-only" id="цель-и-суть">Цель и суть</h3>
+    <p>A «Bare minimum» article on <strong>AI agents</strong> built around language models: systems that <strong>plan</strong>, <strong>retain context</strong>, <strong>call tools</strong>, and iterate toward a goal—not just emit a single reply.</p>
+<h3 class="toc-heading-only" id="chat-vs-agent">Chat vs agent</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Цель и суть</summary>
+<summary style="cursor: pointer; font-weight: 600;">Chat vs agent</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Промпт — это короткое техническое задание для модели.</strong> Вы явно задаёте, что нужно сделать, в каком виде вернуть результат и на что опереться. Чем точнее «ТЗ», тем меньше догадок остаётся на стороне LLM.</p>
+<p><strong>A plain LLM chat</strong> is mostly “prompt → answer”: the model predicts tokens from the prompt and in-context history. It is <strong>not required</strong> to initiate real-world side effects on its own.</p>
+<p>An <strong>agent</strong> wraps the model (and often other parts) so it pursues a <strong>goal</strong>, decomposes work, and when needed <strong>does things</strong>: calls APIs, runs code, searches the web or a document store until the task is done or a step budget is hit.</p>
+<p>A useful metaphor: the <strong>LLM is the engine</strong> (reasoning and wording); the <strong>agent is the driver</strong> choosing route, when to stop, and which levers (tools) to pull. An engine without a driving scenario does not take you anywhere by itself.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="what-makes-an-agent">What makes an agent</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">What makes an agent</summary>
+<div style="margin-top: 0.75em;">
+<p>People often sketch three pillars—an “anatomy of an agent” diagram.</p>
+<p><strong>Planning.</strong> Breaking a large task into subgoals and steps. This overlaps with <strong>chain-of-thought</strong> style reasoning, explicit plans, and <strong>self-reflection</strong> (re-read a draft, check constraints, adjust).</p>
+<p><strong>Memory.</strong></p>
 <ul>
-<li><strong>Качество ответа.</strong> Хорошая формулировка снижает размытость и повышает полезность текста, кода или структуры данных.</li>
-<li><strong>Предсказуемость.</strong> Фиксированный формат (списки, JSON, шаблон абзаца) и чёткие ограничения делают вывод воспроизводимым от запроса к запросу.</li>
-<li><strong>Сборка из блоков.</strong> Имеет смысл собирать промпт как мини-спецификацию: роль, контекст, задача, формат ответа, примеры (если нужны), критерии успеха.</li>
+<li><strong>Short-term</strong> — the live context window: recent turns and intermediate notes in one session.</li>
+<li><strong>Long-term</strong> — stored facts, docs, prior sessions; often implemented with <strong>vector stores and RAG</strong> so relevant snippets are retrieved into the prompt (see the <a class="link" href="/en/p/ai-basics-rag/">RAG article</a>).</li>
+</ul>
+<p><strong>Tools.</strong> Formalized actions the model can request: HTTP APIs, code execution (e.g. Python), web search, filesystem hooks, calendar or DB queries. Without tools the “agent” remains text-only with no outward levers.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="how-to-think-about-agents">How to think about agents</h3>
+<details class="post-accordion">
+<summary style="cursor: pointer; font-weight: 600;">How to think about agents</summary>
+<div style="margin-top: 0.75em;">
+<p>The mindset shift is closer to delegating to a junior teammate than to typing a single search query.</p>
+<ul>
+<li><strong>Delegate, don’t only prompt.</strong> State the goal, success criteria, and allowed sources/tools the way you would brief a colleague.</li>
+<li><strong>Set boundaries and a role.</strong> A clear persona (“research assistant”, “no payment actions”) and guardrails reduce scope creep and unsafe surprises.</li>
+<li><strong>Expect iteration.</strong> Agents misstep and dead-end; a normal pattern is try → observe → replan. That drives step limits, logging, and human oversight.</li>
+<li><strong>Provide resources.</strong> If facts live in docs, wire search or RAG; if numbers matter, supply a runtime. Without the right levers the model falls back to guessing.</li>
 </ul>
 </div>
 </details>
-<h3 class="toc-heading-only" id="zero-shot-промптинг">Zero-shot промптинг</h3>
+<h3 class="toc-heading-only" id="react-reason-and-act">ReAct: reason and act</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Zero-shot промптинг</summary>
+<summary style="cursor: pointer; font-weight: 600;">ReAct: reason and act</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Задача ставится без примеров входа и выхода.</strong> Модель опирается на знания и паттерны из предобучения и на вашу инструкцию в текущем запросе.</p>
+<p><strong>ReAct</strong> (*Reasoning and Acting*) is a common loop drawn as thought → action → observation.</p>
 <ul>
-<li>Подходит для простых и однозначных задач, когда формат ответа очевиден или задан одной фразой.</li>
-<li><strong>Пример:</strong> классификация тональности текста («определи настроение: позитив / нейтрал / негатив») без показа размеченных примеров.</li>
+<li><strong>Thought:</strong> what do I know, what is missing, what is the next sensible move?</li>
+<li><strong>Action:</strong> invoke a specific tool with arguments (search, API, code, …).</li>
+<li><strong>Observation:</strong> the tool’s raw result is fed back into context.</li>
+<li>Then another <strong>Thought</strong>—adjust the plan or finish with a final user-facing answer.</li>
 </ul>
-<p>Если zero-shot «плывёт», обычно помогают few-shot примеры или явное пошаговое рассуждение (CoT).</p>
+<p>This alternates <strong>natural-language reasoning</strong> with <strong>grounded steps</strong> instead of hallucinating when fresh data or computation is required.</p>
 </div>
 </details>
-<h3 class="toc-heading-only" id="few-shot-промптинг">Few-shot промптинг</h3>
+<h3 class="toc-heading-only" id="multi-agent-systems">Multi-agent systems</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Few-shot промптинг</summary>
+<summary style="cursor: pointer; font-weight: 600;">Multi-agent systems</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Контекстное обучение (in-context learning):</strong> в запрос включаются один или несколько пар «вход → эталонный выход», чтобы модель уловила стиль, поля и ограничения.</p>
+<p>Hard problems are sometimes split across <strong>several agents</strong> with different roles—a “manager and workers” picture.</p>
 <ul>
-<li>Особенно полезно, когда нужен <strong>строгий или нестандартный формат</strong> — таблица, JSON с фиксированными ключами, шаблон отчёта.</li>
-<li>Примеры задают «контракт» на ответ: меньше отклонений и произвольных интерпретаций.</li>
+<li>A <strong>coordinator</strong> assigns subtasks, merges outputs, keeps the end result coherent.</li>
+<li><strong>Specialists</strong> might focus on coding, testing, literature search, or report formatting.</li>
 </ul>
-<p>Важно не перегружать контекст: оставляйте релевантные, типичные примеры и следите за длиной окна.</p>
+<p>Upsides: modularity and parallelism. Downsides: harder debugging, model-call cost, and risk of diverging context between agents. For prototypes, spell out the handoff protocol—who passes what, in what schema.</p>
 </div>
 </details>
-<h3 class="toc-heading-only" id="chain-of-thought-cot">Chain-of-Thought (CoT)</h3>
+<h3 class="toc-heading-only" id="who-uses-them">Who uses them</h3>
 <details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Chain-of-Thought (CoT)</summary>
+<summary style="cursor: pointer; font-weight: 600;">Who uses them</summary>
 <div style="margin-top: 0.75em;">
-<p><strong>Цепочка рассуждений:</strong> модель сначала выводит промежуточные шаги, затем итог. Так стабильнее получаются логика, подсчёты и многошаговые задачи.</p>
+<p>Agentic setups appear when a single chat reply is not enough—you need an <strong>action chain</strong> tied to tools or corpora.</p>
 <ul>
-<li><strong>Few-shot CoT:</strong> в примерах показываете не только ответ, но и ход решения — модель повторяет паттерн рассуждения.</li>
-<li><strong>Zero-shot CoT:</strong> достаточно формулировки вроде «рассуждай шаг за шагом» / «сначала объясни ход мыслей, затем дай ответ».</li>
-<li><strong>Uncertainty-Routed CoT:</strong> идея развести несколько линий рассуждения или проверить альтернативы, когда задача двусмысленная — затем сравнить или выбрать обоснованный итог.</li>
+<li><strong>Researchers.</strong> Scanning many PDFs, summaries, checking phrasing against sources—often with RAG and search.</li>
+<li><strong>Students and academics.</strong> Source discovery and draft surveys with explicit citations—never replacing fact-checking.</li>
+<li><strong>Developers.</strong> Multi-step debugging, refactors, automating ticket/CI/docs flows—with code review and caution.</li>
+<li><strong>Enterprises.</strong> Internal assistants over CRM, wikis, APIs—with strict access policy, action audit trails, and human gates on critical operations.</li>
 </ul>
-<p>CoT увеличивает длину ответа и время; для простых задач иногда достаточно короткой инструкции без рассуждений.</p>
-</div>
-</details>
-<h3 class="toc-heading-only" id="источники-промптов">Источники промптов</h3>
-<details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Источники промптов</summary>
-<div style="margin-top: 0.75em;">
-<ul>
-<li><strong>Вы задаёте цель.</strong> Базовый источник — ваша формулировка задачи, аудитории и критериев качества.</li>
-<li><strong>Генерация через LLM.</strong> Можно попросить модель предложить структурированный промпт под задачу (роль, шаги, формат), а затем отредактировать вручную.</li>
-<li><strong>Обратный инжиниринг.</strong> По желаемому результату (или по удачному ответу) восстанавливают и уточняют формулировку запроса — что именно в нём сработало.</li>
-</ul>
-<p>На практике часто комбинируют: черновик от модели + ваши ограничения + итерация по реальным ответам.</p>
-</div>
-</details>
-<h3 class="toc-heading-only" id="ролевой-промптинг">Ролевой промптинг</h3>
-<details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Ролевой промптинг</summary>
-<div style="margin-top: 0.75em;">
-<p><strong>Явно задаётся роль и перспектива:</strong> «ты — редактор», «экономист для неспециалистов», «юморист в стиле …». Так проще получить нужный тон, глубину и уровень детализации.</p>
-<ul>
-<li>Особенно помогает на <strong>открытых</strong> задачах: объяснения, креатив, советы, когда нет одного «правильного» формата.</li>
-<li><strong>Примеры ролей:</strong> публичный спикер, эксперт по домену, комик, методист — от роли зависят лексика, структура и смелость формулировок.</li>
-</ul>
-<p>Роль дополняет, но не заменяет чёткую задачу и ограничения; «ты эксперт» без контекста даёт меньше, чем эксперт с указанием цели и формата.</p>
-</div>
-</details>
-<h3 class="toc-heading-only" id="step-back-промптинг">Step-back промптинг</h3>
-<details class="post-accordion">
-<summary style="cursor: pointer; font-weight: 600;">Step-back промптинг</summary>
-<div style="margin-top: 0.75em;">
-<p><strong>Вариация идеи CoT:</strong> сначала отходите на шаг «назад» — вспоминаете общие принципы, определения или типовой метод, <strong>потом</strong> применяете их к конкретному кейсу.</p>
-<ul>
-<li>Сначала наводящие или уточняющие вопросы: какие закономерности и понятия релевантны задаче?</li>
-<li>Затем перенос на ваш частный случай: данные, ограничения, желаемый вывод.</li>
-</ul>
-<p>Хорошо работает там, где ошибка часто в том, что модель «прыгает» к ответу, минуя нужную опору на базовые правила предметной области.</p>
 </div>
 </details>
 
@@ -479,11 +468,11 @@
     
     <section class="article-tags">
         
-            <a href="/tags/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82/">Искусственный Интеллект</a>
+            <a href="/en/tags/artificial-intelligence/">Artificial Intelligence</a>
         
-            <a href="/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/">Машинное Обучение</a>
+            <a href="/en/tags/machine-learning/">Machine Learning</a>
         
-            <a href="/tags/%D0%B1%D0%B0%D0%B7%D0%B0/">База</a>
+            <a href="/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/">База</a>
         
     </section>
 
@@ -499,13 +488,13 @@
     
 
 <aside class="related-content--wrapper">
-    <h2 class="section-title">Также рекомендуем</h2>
+    <h2 class="section-title">Related content</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
             
                 
 <article class="has-image">
-    <a href="/p/ai-basics-rag/">
+    <a href="/en/p/ai-basics-rag/">
         
         
             <div class="article-image">
@@ -513,7 +502,7 @@
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post Базовый минимум про ИИ – RAG-системы"
+                        alt="Featured image of post AI basics – RAG systems"
                         data-key="ai-basics-rag" 
                         data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
                 
@@ -521,7 +510,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">Базовый минимум про ИИ – RAG-системы</h2>
+            <h2 class="article-title">AI basics – RAG systems</h2>
         </div>
     </a>
 </article>
@@ -529,31 +518,7 @@
             
                 
 <article class="has-image">
-    <a href="/p/ai-basics-agents/">
-        
-        
-            <div class="article-image">
-                <img src="/p/ai-basics-agents/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Базовый минимум про ИИ – ИИ-агенты"
-                        data-key="ai-basics-agents" 
-                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Базовый минимум про ИИ – ИИ-агенты</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/ai-basics-overview/">
+    <a href="/en/p/ai-basics-overview/">
         
         
             <div class="article-image">
@@ -561,7 +526,7 @@
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post Базовый минимум про ИИ – обзор"
+                        alt="Featured image of post AI basics – overview"
                         data-key="ai-basics-overview" 
                         data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
                 
@@ -569,7 +534,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">Базовый минимум про ИИ – обзор</h2>
+            <h2 class="article-title">AI basics – overview</h2>
         </div>
     </a>
 </article>
@@ -577,7 +542,31 @@
             
                 
 <article class="has-image">
-    <a href="/p/ai-basics-intro/">
+    <a href="/en/p/ai-basics-prompt-engineering/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-prompt-engineering/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post AI basics – prompt engineering"
+                        data-key="ai-basics-prompt-engineering" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI basics – prompt engineering</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/ai-basics-intro/">
         
         
             <div class="article-image">
@@ -585,7 +574,7 @@
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post Базовый минимум про ИИ – введение"
+                        alt="Featured image of post AI basics – introduction"
                         data-key="ai-basics-intro" 
                         data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
                 
@@ -593,31 +582,20 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">Базовый минимум про ИИ – введение</h2>
+            <h2 class="article-title">AI basics – introduction</h2>
         </div>
     </a>
 </article>
 
             
                 
-<article class="has-image">
-    <a href="/p/ai-future-beyond-scaling/">
+<article class="">
+    <a href="/en/p/ai-future-beyond-scaling/">
         
-        
-            <div class="article-image">
-                <img src="/p/ai-future-beyond-scaling/cover.021d37318be2db61d8f7849e96887ab9_hu_c758c54acc359981.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Будущее ИИ: почему одного масштабирования уже недостаточно"
-                        data-key="ai-future-beyond-scaling" 
-                        data-hash="md5-Ah03MYvi22HY94Seloh6uQ==">
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">Будущее ИИ: почему одного масштабирования уже недостаточно</h2>
+            <h2 class="article-title">The Future of AI: Why Scaling Alone is No Longer Enough</h2>
         </div>
     </a>
 </article>
@@ -636,12 +614,12 @@
     <section class="copyright">
         &copy; 
         
-        2026 Блог
+        2026 Blog
     </section>
     
     <section class="powerby">
-        Создано при помощи <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Тема <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b>, дизайн <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 

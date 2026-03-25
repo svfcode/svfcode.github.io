@@ -7,6 +7,90 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI basics – LLM agents</title>
+        <link>http://localhost:1313/en/p/ai-basics-agents/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-agents/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-agents/cover.jpg" alt="Featured image of post AI basics – LLM agents" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;AI agents&lt;/strong&gt; built around language models: systems that &lt;strong&gt;plan&lt;/strong&gt;, &lt;strong&gt;retain context&lt;/strong&gt;, &lt;strong&gt;call tools&lt;/strong&gt;, and iterate toward a goal—not just emit a single reply.&lt;/p&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chat-vs-agent&#34;&gt;Chat vs agent&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chat vs agent&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;A plain LLM chat&lt;/strong&gt; is mostly “prompt → answer”: the model predicts tokens from the prompt and in-context history. It is &lt;strong&gt;not required&lt;/strong&gt; to initiate real-world side effects on its own.&lt;/p&gt;
+&lt;p&gt;An &lt;strong&gt;agent&lt;/strong&gt; wraps the model (and often other parts) so it pursues a &lt;strong&gt;goal&lt;/strong&gt;, decomposes work, and when needed &lt;strong&gt;does things&lt;/strong&gt;: calls APIs, runs code, searches the web or a document store until the task is done or a step budget is hit.&lt;/p&gt;
+&lt;p&gt;A useful metaphor: the &lt;strong&gt;LLM is the engine&lt;/strong&gt; (reasoning and wording); the &lt;strong&gt;agent is the driver&lt;/strong&gt; choosing route, when to stop, and which levers (tools) to pull. An engine without a driving scenario does not take you anywhere by itself.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-makes-an-agent&#34;&gt;What makes an agent&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What makes an agent&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;People often sketch three pillars—an “anatomy of an agent” diagram.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Planning.&lt;/strong&gt; Breaking a large task into subgoals and steps. This overlaps with &lt;strong&gt;chain-of-thought&lt;/strong&gt; style reasoning, explicit plans, and &lt;strong&gt;self-reflection&lt;/strong&gt; (re-read a draft, check constraints, adjust).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Short-term&lt;/strong&gt; — the live context window: recent turns and intermediate notes in one session.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Long-term&lt;/strong&gt; — stored facts, docs, prior sessions; often implemented with &lt;strong&gt;vector stores and RAG&lt;/strong&gt; so relevant snippets are retrieved into the prompt (see the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;RAG article&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Tools.&lt;/strong&gt; Formalized actions the model can request: HTTP APIs, code execution (e.g. Python), web search, filesystem hooks, calendar or DB queries. Without tools the “agent” remains text-only with no outward levers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;how-to-think-about-agents&#34;&gt;How to think about agents&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;How to think about agents&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;The mindset shift is closer to delegating to a junior teammate than to typing a single search query.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Delegate, don’t only prompt.&lt;/strong&gt; State the goal, success criteria, and allowed sources/tools the way you would brief a colleague.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Set boundaries and a role.&lt;/strong&gt; A clear persona (“research assistant”, “no payment actions”) and guardrails reduce scope creep and unsafe surprises.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Expect iteration.&lt;/strong&gt; Agents misstep and dead-end; a normal pattern is try → observe → replan. That drives step limits, logging, and human oversight.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Provide resources.&lt;/strong&gt; If facts live in docs, wire search or RAG; if numbers matter, supply a runtime. Without the right levers the model falls back to guessing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;react-reason-and-act&#34;&gt;ReAct: reason and act&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;ReAct: reason and act&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;ReAct&lt;/strong&gt; (*Reasoning and Acting*) is a common loop drawn as thought → action → observation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Thought:&lt;/strong&gt; what do I know, what is missing, what is the next sensible move?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Action:&lt;/strong&gt; invoke a specific tool with arguments (search, API, code, …).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Observation:&lt;/strong&gt; the tool’s raw result is fed back into context.&lt;/li&gt;
+&lt;li&gt;Then another &lt;strong&gt;Thought&lt;/strong&gt;—adjust the plan or finish with a final user-facing answer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This alternates &lt;strong&gt;natural-language reasoning&lt;/strong&gt; with &lt;strong&gt;grounded steps&lt;/strong&gt; instead of hallucinating when fresh data or computation is required.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;multi-agent-systems&#34;&gt;Multi-agent systems&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Multi-agent systems&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Hard problems are sometimes split across &lt;strong&gt;several agents&lt;/strong&gt; with different roles—a “manager and workers” picture.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;strong&gt;coordinator&lt;/strong&gt; assigns subtasks, merges outputs, keeps the end result coherent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Specialists&lt;/strong&gt; might focus on coding, testing, literature search, or report formatting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Upsides: modularity and parallelism. Downsides: harder debugging, model-call cost, and risk of diverging context between agents. For prototypes, spell out the handoff protocol—who passes what, in what schema.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;who-uses-them&#34;&gt;Who uses them&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Who uses them&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;Agentic setups appear when a single chat reply is not enough—you need an &lt;strong&gt;action chain&lt;/strong&gt; tied to tools or corpora.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Researchers.&lt;/strong&gt; Scanning many PDFs, summaries, checking phrasing against sources—often with RAG and search.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Students and academics.&lt;/strong&gt; Source discovery and draft surveys with explicit citations—never replacing fact-checking.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Developers.&lt;/strong&gt; Multi-step debugging, refactors, automating ticket/CI/docs flows—with code review and caution.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enterprises.&lt;/strong&gt; Internal assistants over CRM, wikis, APIs—with strict access policy, action audit trails, and human gates on critical operations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
         <title>AI basics – overview</title>
         <link>http://localhost:1313/en/p/ai-basics-overview/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
@@ -225,6 +309,7 @@
 &lt;li&gt;Planning actions and making decisions&lt;/li&gt;
 &lt;li&gt;Using external tools and APIs&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;More on planning, memory, tools, ReAct, and multi-agent setups: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34;&gt;AI basics – LLM agents&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Model optimization&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Quantization and distillation for speed&lt;/li&gt;
@@ -1392,7 +1477,7 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
         
         <guid>http://localhost:1313/en/p/ai-basics-intro/</guid>
         <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
-&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;RAG systems&lt;/a&gt;, and agents that can handle complex multi-step tasks.&lt;/p&gt;
+&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;RAG systems&lt;/a&gt;, and &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34; &gt;LLM agents&lt;/a&gt; for complex multi-step tasks.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-a-language-model-is&#34;&gt;What a language model is&lt;/h2&gt;

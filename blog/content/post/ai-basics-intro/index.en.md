@@ -12,7 +12,7 @@ image: cover.jpg
 
 This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.
 
-We’ll start with common terms; elsewhere in the series — [prompt engineering](/en/p/ai-basics-prompt-engineering/), [RAG systems](/en/p/ai-basics-rag/), and agents that can handle complex multi-step tasks.
+We’ll start with common terms; elsewhere in the series — [prompt engineering](/en/p/ai-basics-prompt-engineering/), [RAG systems](/en/p/ai-basics-rag/), and [LLM agents](/en/p/ai-basics-agents/) for complex multi-step tasks.
 
 **Video:** [Watch on YouTube](https://youtu.be/z9VBZn0XcVk)
 
