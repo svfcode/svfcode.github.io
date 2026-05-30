@@ -41,6 +41,32 @@
                 href="http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/"
                 />
   </url><url>
+    <loc>http://localhost:1313/p/ai-basics-rag/</loc>
+    <lastmod>2026-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/p/ai-basics-rag/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://localhost:1313/p/ai-basics-rag/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/p/ai-basics-agents/</loc>
+    <lastmod>2026-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/p/ai-basics-agents/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://localhost:1313/p/ai-basics-agents/"
+                />
+  </url><url>
     <loc>http://localhost:1313/p/ai-basics-overview/</loc>
     <lastmod>2026-03-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -165,6 +191,19 @@
                 rel="alternate"
                 hreflang="ru"
                 href="http://localhost:1313/p/ai-future-beyond-scaling/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/p/math-better-explained/</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/p/math-better-explained/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://localhost:1313/p/math-better-explained/"
                 />
   </url><url>
     <loc>http://localhost:1313/p/ai-basics-intro/</loc>

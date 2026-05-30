@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Basics on Blog</title>
+        <link>http://localhost:1313/en/tags/basics/</link>
+        <description>Recent content in Basics on Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/basics/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Intuitive Math from BetterExplained</title>
+        <link>http://localhost:1313/en/p/math-better-explained/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-better-explained/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained/cover.jpg" alt="Featured image of post Intuitive Math from BetterExplained" /&gt;&lt;p&gt;The first article in the «Essential Mathematics» series is not about formulas — it is about &lt;em&gt;how&lt;/em&gt; to understand them. A recommended starting point before the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;overview of topics&lt;/a&gt; and the deeper dives.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Learn Right, Not Rote.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Math is no more about equations than poetry is about spelling.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Formulas and rules are tools. Without a sense of &lt;em&gt;why&lt;/em&gt; something works, they become symbols that are easy to forget and hard to apply. In machine learning this shows up everywhere: gradient, matrix, integral — the meaning slips away if there is no intuition behind them.&lt;/p&gt;
+&lt;h2 id=&#34;betterexplained&#34;&gt;BetterExplained&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://betterexplained.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BetterExplained&lt;/a&gt; is Kalid Azad’s site of intuitive math explanations. The material is built from images and meaning toward notation, not the other way around.&lt;/p&gt;
+&lt;p&gt;The usual pattern: first &lt;em&gt;what is going on&lt;/em&gt; (geometry, analogy, story), then symbols. That makes it easier to connect school math with linear algebra, calculus, and probability for AI.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-useful-for-this-series&#34;&gt;What is useful for this series&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Derivatives and integrals&lt;/strong&gt; — rate of change and accumulation before the formulas; good prep for &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;circle area&lt;/a&gt; example.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exponents and e&lt;/strong&gt; — why &lt;code&gt;e^x&lt;/code&gt; behaves as it does; useful for softmax, loss, and growth in models.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vectors and dot products&lt;/strong&gt; — geometric meaning before matrix algebra.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Euler’s formula&lt;/strong&gt; — one intuition linking exponentials, sin/cos, and complex numbers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You do not need to read everything: pick the topic that still feels opaque in a textbook or an ML article.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-use-it-with-this-blog&#34;&gt;How to use it with this blog&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Here — why the math matters for AI and short ML-oriented write-ups.&lt;/li&gt;
+&lt;li&gt;On BetterExplained — deeper intuition on classic topics.&lt;/li&gt;
+&lt;li&gt;Return to the formulas with a mental picture — articles, code, and lectures become easier.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Next in the series: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;Essential math they&amp;rsquo;ll ask you at interviews from nareshka.ru&lt;/a&gt; — which areas you need and what they are for.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -46,6 +46,14 @@
         <guid>http://localhost:1313/en/tags/computer-vision/</guid>
         <description></description>
         </item>
+        <item>
+        <title>Basics</title>
+        <link>http://localhost:1313/en/tags/basics/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/tags/basics/</guid>
+        <description></description>
+        </item>
         
     </channel>
 </rss>

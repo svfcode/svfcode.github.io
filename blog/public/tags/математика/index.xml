@@ -832,12 +832,12 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 </description>
         </item>
         <item>
-        <title>Необходимая математика — обзор</title>
+        <title>Необходимая математика которую у тебя спросят на собесе от nareshka.ru</title>
         <link>http://localhost:1313/p/math-essentials-overview/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/math-essentials-overview/</guid>
-        <description>&lt;img src="http://localhost:1313/p/math-essentials-overview/cover.jpg" alt="Featured image of post Необходимая математика — обзор" /&gt;&lt;p&gt;Это вводная статья цикла «Необходимая математика» — обзор того, какие разделы математики нужны для работы с ИИ и машинным обучением и для чего именно они используются.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/math-essentials-overview/cover.jpg" alt="Featured image of post Необходимая математика которую у тебя спросят на собесе от nareshka.ru" /&gt;&lt;p&gt;Это вводная статья цикла «Необходимая математика» — обзор того, какие разделы математики нужны для работы с ИИ и машинным обучением и для чего именно они используются.&lt;/p&gt;
 &lt;h2 id=&#34;линейная-алгебра&#34;&gt;Линейная алгебра&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Что нужно:&lt;/strong&gt; векторы, матрицы, умножение матриц, линейные преобразования, скалярное произведение, норма вектора, собственные числа и векторы (на продвинутом уровне).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Зачем:&lt;/strong&gt;&lt;/p&gt;
@@ -896,6 +896,40 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>Интуитивная математика от BetterExplained</title>
+        <link>http://localhost:1313/p/math-better-explained/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/math-better-explained/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained/cover.jpg" alt="Featured image of post Интуитивная математика от BetterExplained" /&gt;&lt;p&gt;Первая статья цикла «Необходимая математика» — не про формулы, а про то, &lt;em&gt;как&lt;/em&gt; их понимать. Рекомендуемый ориентир перед &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-essentials-overview/&#34; &gt;обзором разделов&lt;/a&gt; и разбором конкретных тем.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Learn Right, Not Rote&lt;/strong&gt; — учиться правильно, а не зубрить.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Math is no more about equations than poetry is about spelling.&lt;/p&gt;
+&lt;p&gt;Математика не сводится к уравнениям не больше, чем поэзия — к правописанию.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Формулы и правила — инструменты. Без картины «зачем это работает» они превращаются в набор символов, который легко забыть и трудно применить. В машинном обучении это особенно заметно: градиент, матрица, интеграл встречаются на каждом шагу, но смысл теряется, если за ними нет интуиции.&lt;/p&gt;
+&lt;h2 id=&#34;betterexplained&#34;&gt;BetterExplained&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://betterexplained.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BetterExplained&lt;/a&gt; — сайт Калида Азада (Kalid Azad) с интуитивными объяснениями математики. Автор сознательно строит материал от образа и смысла к символам, а не наоборот.&lt;/p&gt;
+&lt;p&gt;Типичный приём: сначала «что происходит» (геометрия, аналогия, история), потом уже нотация. Так проще связать школьную математику с тем, что понадобится в линейной алгебре, анализе и вероятности для ИИ.&lt;/p&gt;
+&lt;h2 id=&#34;что-там-полезно-для-нашего-цикла&#34;&gt;Что там полезно для нашего цикла&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Производные и интегралы&lt;/strong&gt; — «скорость изменения» и «накопление» до формул; хорошая подготовка к &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-derivatives/&#34; &gt;производным&lt;/a&gt; и примеру с &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-circle-area/&#34; &gt;площадью круга&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Экспонента и e&lt;/strong&gt; — почему &lt;code&gt;e^x&lt;/code&gt; ведёт себя так, а не иначе; пригодится для softmax, loss и роста моделей.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Векторы и скалярное произведение&lt;/strong&gt; — геометрический смысл перед матричной алгеброй.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Формула Эйлера&lt;/strong&gt; — связь экспоненты, sin/cos и комплексных чисел одной интуицией.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Не обязательно читать всё подряд: выбирайте тему, которая «не складывается» в учебнике или в статье про ML.&lt;/p&gt;
+&lt;h2 id=&#34;как-пользоваться-вместе-с-этим-блогом&#34;&gt;Как пользоваться вместе с этим блогом&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Здесь — зачем нужна математика для ИИ и короткие разборы под ML.&lt;/li&gt;
+&lt;li&gt;На BetterExplained — глубокая интуиция по классическим темам.&lt;/li&gt;
+&lt;li&gt;Возвращайтесь к формулам уже с картинкой в голове — так проще читать статьи, код и лекции.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Следующий шаг в цикле: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-essentials-overview/&#34; &gt;Необходимая математика которую у тебя спросят на собесе от nareshka.ru&lt;/a&gt; — какие разделы понадобятся и для чего именно.&lt;/p&gt;
 </description>
         </item>
         

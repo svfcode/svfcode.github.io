@@ -450,7 +450,7 @@
         
         <guid>http://localhost:1313/en/playlists/</guid>
         <description>&lt;h2 id=&#34;-basics&#34;&gt;📚 Basics&lt;/h2&gt;
-&lt;p&gt;Short track on AI: terms and language models → LLM overview → &lt;strong&gt;prompt engineering&lt;/strong&gt; as its own article.&lt;/p&gt;
+&lt;p&gt;Short track on AI: terms and language models → LLM overview → &lt;strong&gt;prompt engineering&lt;/strong&gt;, &lt;strong&gt;RAG&lt;/strong&gt;, and &lt;strong&gt;LLM agents&lt;/strong&gt; as separate articles.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-intro/&#34; &gt;AI basics – introduction&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
@@ -480,6 +480,24 @@
 &lt;li&gt;📋 Prerequisites: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;LLM overview&lt;/a&gt; recommended&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;AI basics – RAG systems&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;⏱️ ~6 min read · no video&lt;/li&gt;
+&lt;li&gt;📋 Why RAG, pipeline stages, chunking, naive vs advanced RAG; accordions&lt;/li&gt;
+&lt;li&gt;🏷️ RAG, retrieval, embeddings, vector index, chunking, context-conditioned generation&lt;/li&gt;
+&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
+&lt;li&gt;📋 Prerequisites: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;LLM overview&lt;/a&gt; recommended&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34; &gt;AI basics – LLM agents&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;⏱️ ~7 min read · no video&lt;/li&gt;
+&lt;li&gt;📋 Agent vs chat, planning / memory / tools, mindset, ReAct, multi-agent, who uses them; accordions&lt;/li&gt;
+&lt;li&gt;🏷️ AI agents, LLM, ReAct, tools, planning, memory, multi-agent systems&lt;/li&gt;
+&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
+&lt;li&gt;📋 Prerequisites: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;LLM overview&lt;/a&gt; recommended; &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;RAG&lt;/a&gt; helps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;-on-their-shoulders&#34;&gt;👥 On Their Shoulders&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -502,13 +520,8 @@
 &lt;p&gt;&lt;em&gt;Machine learning relies on mathematics that grows out of the school curriculum; to understand how ML works, you need a solid grasp of school-level math.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;Essential Mathematics — Overview&lt;/a&gt;&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;📋 Overview: which math areas are needed for AI/ML and why&lt;/li&gt;
-&lt;li&gt;🏷️ Linear algebra, calculus, probability and statistics&lt;/li&gt;
-&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;Intuitive Math from BetterExplained&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;Essential math they&amp;rsquo;ll ask you at interviews from nareshka.ru&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;Math Analysis — Example of Analysis (Finding πr²)&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;📋 Slicing the circle into rings, unrolling into strips 2πr × Δr — yields a triangle of area πR²&lt;/li&gt;

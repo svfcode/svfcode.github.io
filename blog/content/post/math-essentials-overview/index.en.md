@@ -1,5 +1,5 @@
 ---
-title: "Essential Mathematics — Overview"
+title: "Essential math they'll ask you at interviews from nareshka.ru"
 description: "What math knowledge is needed for AI and machine learning, and why"
 date: "2026-03-12"
 slug: "math-essentials-overview"

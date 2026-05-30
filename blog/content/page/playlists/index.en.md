@@ -58,10 +58,9 @@ Short track on AI: terms and language models → LLM overview → **prompt engin
 
 > *Machine learning relies on mathematics that grows out of the school curriculum; to understand how ML works, you need a solid grasp of school-level math.*
 
-- **[Essential Mathematics — Overview](/en/p/math-essentials-overview/)**
-  - 📋 Overview: which math areas are needed for AI/ML and why
-  - 🏷️ Linear algebra, calculus, probability and statistics
-  - 📊 Difficulty: basic
+- **[Intuitive Math from BetterExplained](/en/p/math-better-explained/)**
+- **[Essential math they'll ask you at interviews from nareshka.ru](/en/p/math-essentials-overview/)**
+- **[Math with Bad Drawings — overview of Ben Orlin's books](/en/p/math-bad-drawings/)**
 - **[Math Analysis — Example of Analysis (Finding πr²)](/en/p/math-circle-area/)**
   - 📋 Slicing the circle into rings, unrolling into strips 2πr × Δr — yields a triangle of area πR²
   - 🏷️ Integral, limits, area of circle
