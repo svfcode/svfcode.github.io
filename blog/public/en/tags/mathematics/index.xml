@@ -301,6 +301,30 @@
 </description>
         </item>
         <item>
+        <title>Math with Bad Drawings — overview of Ben Orlin&#39;s books</title>
+        <link>http://localhost:1313/en/p/math-bad-drawings/</link>
+        <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-bad-drawings/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-bad-drawings/cover.jpg" alt="Featured image of post Math with Bad Drawings — overview of Ben Orlin&#39;s books" /&gt;&lt;p&gt;Another way to build math intuition before the formulas — through stories and sketches. Ben Orlin writes as if explaining to a friend over tea: with humor, no pretense, and a focus on &lt;em&gt;why&lt;/em&gt; any of this matters.&lt;/p&gt;
+&lt;p&gt;Author’s site: &lt;a class=&#34;link&#34; href=&#34;https://mathwithbaddrawings.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Math with Bad Drawings&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;math-with-bad-drawings&#34;&gt;Math with Bad Drawings&lt;/h2&gt;
+&lt;p&gt;The flagship book. Orlin covers school and early college topics — probability, geometry, statistics, infinity — via comics and everyday analogies.&lt;/p&gt;
+&lt;p&gt;The strength: math as a way of thinking, not a memorization exam. Pairs well with &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt;: more pure intuition there, more narrative and humor here.&lt;/p&gt;
+&lt;h2 id=&#34;change-is-the-only-constant&#34;&gt;Change Is the Only Constant&lt;/h2&gt;
+&lt;p&gt;The second book — calculus and the history of ideas: how people arrived at derivatives, integrals, and limits. A good bridge to &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;circle area example&lt;/a&gt;: story and meaning first, symbols second.&lt;/p&gt;
+&lt;h2 id=&#34;math-games-with-bad-drawings&#34;&gt;Math Games with Bad Drawings&lt;/h2&gt;
+&lt;p&gt;A collection of games and puzzles — logic, combinatorics, strategy. Less directly about ML, but it trains mathematical thinking: spot structure, test hypotheses, don’t fear being wrong.&lt;/p&gt;
+&lt;h2 id=&#34;when-to-read-in-this-series&#34;&gt;When to read in this series&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;After &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt; — same “understand, don’t memorize” vibe, in book form.&lt;/li&gt;
+&lt;li&gt;Alongside the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;interview math overview&lt;/a&gt; — so the checklist topics aren’t just a dry list.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You don’t need all three in order: start with &lt;em&gt;Math with Bad Drawings&lt;/em&gt; for a broad tour; with &lt;em&gt;Change Is the Only Constant&lt;/em&gt; if calculus is the sticking point.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Essential math they&#39;ll ask you at interviews from nareshka.ru</title>
         <link>http://localhost:1313/en/p/math-essentials-overview/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
