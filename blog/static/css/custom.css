@@ -1,3 +1,13 @@
+/* Подзаголовки внутри раздела (например, «Ментальные трюки»): легче и с отступом вправо */
+.article-content h3.trick-subheading {
+    font-weight: 500;
+    color: var(--card-text-color-secondary);
+    margin-inline-start: calc((var(--card-padding)) * -1 + 1.25rem);
+    padding-inline-start: calc(var(--card-padding) - var(--heading-border-size) + 0.35rem);
+    border-inline-start-width: 2px;
+    border-inline-start-color: var(--card-separator-color);
+}
+
 /* Заголовки только для оглавления Hugo: в «Содержание» есть, в теле статьи не занимают место и не видны */
 .article-content h3.toc-heading-only {
     margin: 0 !important;

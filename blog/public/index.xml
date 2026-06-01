@@ -6,7 +6,43 @@
         <description>Recent content on Блог</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ru</language>
-        <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>BetterExplained - часть 2 - Арифметика</title>
+        <link>http://localhost:1313/p/math-better-explained-arithmetic/</link>
+        <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/math-better-explained-arithmetic/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - часть 2 - Арифметика" /&gt;&lt;h2 id=&#34;ментальные-трюки&#34;&gt;Ментальные трюки&lt;/h2&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;60-кмч--это-1-км-в-минуту&#34;&gt;60 км/ч — это 1 км в минуту&lt;/h3&gt;
+&lt;p&gt;Время реакции водителя (заметил → принял решение → начал действовать) ~ 1 сек.&lt;/p&gt;
+&lt;p&gt;Значит, если препятствие возникает ближе 16 метров (при 60 км/ч), то вероятно, что сделать ничего уже не получится. А если скорость в три раза больше, то какое расстояние является критическим?&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;1-year--250-work-days--2000-work-hours&#34;&gt;1 year = 250 work days = 2000 work hours&lt;/h3&gt;
+&lt;p&gt;Т.е. если на дорогу вы тратите 1 ч в день (полчаса в одну сторону), то в год вы тратите на дорогу 250 часов.&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;правило-72-удвоение-за-годы--72--процентная-ставка&#34;&gt;Правило 72: удвоение за годы = 72 / процентная ставка&lt;/h3&gt;
+&lt;p&gt;Хотите увеличить инвестиции на 10% годовых? Они удвоятся за 7,2 года.&lt;/p&gt;
+&lt;p&gt;Хотите, чтобы ваши инвестиции удвоились за 5 лет? Вам нужна процентная ставка 72/5 или около 15%.&lt;/p&gt;
+&lt;p&gt;Вы можете использовать это правило в течение любого периода времени, а не только в течение нескольких лет.&lt;/p&gt;
+&lt;p&gt;Инфляция составляет 4%? Это уменьшит ваши деньги вдвое за 72/4 или 18 лет.&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;устный-счёт&#34;&gt;Устный счёт&lt;/h3&gt;
+&lt;p&gt;10 000 = сто сотен&lt;/p&gt;
+&lt;p&gt;миллион = тысяча тысяч&lt;/p&gt;
+&lt;p&gt;миллиард = тысяча миллионов&lt;/p&gt;
+&lt;p&gt;триллион = миллион миллионов&lt;/p&gt;
+&lt;p&gt;1% от 10 тыс. — это 100. Индекс Dow примерно 10 тыс. (сейчас около 12 тыс.). Если Dow падает на 100, это примерно потеря 1%.&lt;/p&gt;
+&lt;p&gt;Чему равно 5 тыс. × 50 тыс.? Это 250 × тысяча × тысяча, или 250 миллионов.&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;визуализация-чисел&#34;&gt;Визуализация чисел&lt;/h3&gt;
+&lt;p&gt;12 дней = 1 миллион секунд&lt;/p&gt;
+&lt;p&gt;1 год = 31 миллион секунд (примерно π × 10 миллионов)&lt;/p&gt;
+&lt;p&gt;30 лет = 1 миллиард секунд&lt;/p&gt;
+&lt;p&gt;30 000 лет = 1 триллион секунд&lt;/p&gt;
+&lt;p&gt;Одна «часть на миллион» — точность 1 секунды за 12 дней. Одна «часть на триллион» — точность 1 секунды за 30 000 лет.&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;a-от-b--b-от-a&#34;&gt;a% от b = b% от a&lt;/h3&gt;
+&lt;p&gt;С первого взгляда неочевидно, но это верно: a% от b = 0,01 × a × b — то же самое, что b% от a (0,01 × b × a).&lt;/p&gt;
+&lt;p&gt;Чему равно 16% от 25? Тому же, что 25% от 16: 4.&lt;/p&gt;
+&lt;p&gt;Чему равно 43% от 200? Тому же, что 200% от 43: 86.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Базовый минимум про ИИ – RAG-системы</title>
         <link>http://localhost:1313/p/ai-basics-rag/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
@@ -1470,6 +1506,7 @@ F = G \frac{m_1 m_2}{r^2}
 &lt;li&gt;Я это запомнил — у меня есть аналогия, схема или пример, которые запомнятся мне на месяцы или годы.&lt;/li&gt;
 &lt;li&gt;Мне приятно это припоминать — если есть отвращение, значит, что-то не так.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Далее в серии:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained — часть 2 — Арифметика&lt;/a&gt;.&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2123,6 +2160,7 @@ F = G \frac{m_1 m_2}{r^2}
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained/&#34; &gt;BetterExplained - часть 1 - Интуитивная математика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained - часть 2 - Арифметика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-essentials-overview/&#34; &gt;Необходимая математика которую у тебя спросят на собесе от nareshka.ru&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-bad-drawings/&#34; &gt;Математика с дурацкими рисунками — обзор книг Орлин Бен&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-circle-area/&#34; &gt;Мат анализ — пример анализа (нахождение πr²)&lt;/a&gt;&lt;/strong&gt;

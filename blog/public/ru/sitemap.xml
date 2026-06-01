@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/p/math-better-explained-arithmetic/</loc>
+    <lastmod>2026-06-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/p/math-better-explained-arithmetic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://localhost:1313/p/math-better-explained-arithmetic/"
+                />
+  </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2026-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +29,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +42,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</loc>
-    <lastmod>2026-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -40,6 +53,25 @@
                 hreflang="ru"
                 href="http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-06-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://localhost:1313/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/</loc>
+    <lastmod>2026-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/</loc>
+    <lastmod>2026-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/p/ai-basics-rag/</loc>
     <lastmod>2026-03-25T00:00:00+00:00</lastmod>
@@ -93,23 +125,7 @@
                 href="http://localhost:1313/p/ai-basics-prompt-engineering/"
                 />
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-03-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="http://localhost:1313/"
-                />
-  </url><url>
     <loc>http://localhost:1313/tags/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82/</loc>
-    <lastmod>2026-03-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/</loc>
     <lastmod>2026-03-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/p/math-derivatives/</loc>
@@ -124,9 +140,6 @@
                 hreflang="ru"
                 href="http://localhost:1313/p/math-derivatives/"
                 />
-  </url><url>
-    <loc>http://localhost:1313/tags/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/</loc>
-    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/p/math-bad-drawings/</loc>
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
@@ -193,19 +206,6 @@
                 href="http://localhost:1313/p/math-essentials-overview/"
                 />
   </url><url>
-    <loc>http://localhost:1313/p/ai-future-beyond-scaling/</loc>
-    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/p/ai-future-beyond-scaling/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="http://localhost:1313/p/ai-future-beyond-scaling/"
-                />
-  </url><url>
     <loc>http://localhost:1313/p/math-better-explained/</loc>
     <lastmod>2026-03-10T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -217,6 +217,19 @@
                 rel="alternate"
                 hreflang="ru"
                 href="http://localhost:1313/p/math-better-explained/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/p/ai-future-beyond-scaling/</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/p/ai-future-beyond-scaling/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://localhost:1313/p/ai-future-beyond-scaling/"
                 />
   </url><url>
     <loc>http://localhost:1313/p/ai-basics-intro/</loc>

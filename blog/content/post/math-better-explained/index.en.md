@@ -1,5 +1,5 @@
 ---
-title: "Intuitive Math from BetterExplained"
+title: "BetterExplained - Part 1 - Intuitive Math"
 description: "Learn Right, Not Rote"
 date: "2026-03-10"
 slug: "math-better-explained"
@@ -10,7 +10,7 @@ tags:
 image: cover.jpg
 ---
 
-The first article in the «Essential Mathematics» series is not about formulas — it is about *how* to understand them. A recommended starting point before the [overview of topics](/en/p/math-essentials-overview/) and the deeper dives.
+First article in the **BetterExplained** series on this blog — not about formulas, but about *how* to understand them.
 
 **Learn Right, Not Rote.**
 
@@ -39,4 +39,4 @@ You do not need to read everything: pick the topic that still feels opaque in a 
 2. On BetterExplained — deeper intuition on classic topics.
 3. Return to the formulas with a mental picture — articles, code, and lectures become easier.
 
-Next in the series: [Essential math they'll ask you at interviews from nareshka.ru](/en/p/math-essentials-overview/) — which areas you need and what they are for.
+**Next in the series:** [BetterExplained — Part 2 — Arithmetic](/en/p/math-better-explained-arithmetic/).

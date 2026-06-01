@@ -6,7 +6,43 @@
         <description>Recent content in Basics on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/basics/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/basics/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>BetterExplained - Part 2 - Arithmetic</title>
+        <link>http://localhost:1313/en/p/math-better-explained-arithmetic/</link>
+        <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-better-explained-arithmetic/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - Part 2 - Arithmetic" /&gt;&lt;h2 id=&#34;mental-tricks&#34;&gt;Mental tricks&lt;/h2&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;60-kmh-is-1-km-per-minute&#34;&gt;60 km/h is 1 km per minute&lt;/h3&gt;
+&lt;p&gt;Driver reaction time (notice → decide → act) is ~1 second.&lt;/p&gt;
+&lt;p&gt;So if an obstacle appears closer than 16 meters (at 60 km/h), you probably cannot do anything in time. If the speed is three times higher, what distance is critical?&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;1-year--250-work-days--2000-work-hours&#34;&gt;1 year = 250 work days = 2000 work hours&lt;/h3&gt;
+&lt;p&gt;So if you spend 1 hour per day commuting (half an hour each way), you spend 250 hours per year on the road.&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;rule-of-72-years-to-double--72--interest-rate&#34;&gt;Rule of 72: years to double = 72 / interest rate&lt;/h3&gt;
+&lt;p&gt;Want 10% annual growth on your investments? They double in 7.2 years.&lt;/p&gt;
+&lt;p&gt;Want your investments to double in 5 years? You need a rate of 72/5, or about 15%.&lt;/p&gt;
+&lt;p&gt;You can use this rule for any time period, not just years.&lt;/p&gt;
+&lt;p&gt;Inflation is 4%? That cuts your money in half in 72/4, or 18 years.&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;mental-arithmetic&#34;&gt;Mental arithmetic&lt;/h3&gt;
+&lt;p&gt;10,000 = hundred hundred&lt;/p&gt;
+&lt;p&gt;million = thousand thousand&lt;/p&gt;
+&lt;p&gt;billion = thousand million&lt;/p&gt;
+&lt;p&gt;trillion = million million&lt;/p&gt;
+&lt;p&gt;1% of 10k is 100. The Dow is roughly 10k (it&amp;rsquo;s about 12k now). So if the Dow drops 100, it&amp;rsquo;s about a 1% loss.&lt;/p&gt;
+&lt;p&gt;What&amp;rsquo;s 5k × 50k? That&amp;rsquo;s 250 × thousand × thousand, or 250 million.&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;visualizing-numbers&#34;&gt;Visualizing numbers&lt;/h3&gt;
+&lt;p&gt;12 days = 1 million seconds&lt;/p&gt;
+&lt;p&gt;1 year = 31 million seconds (about π × 10 million)&lt;/p&gt;
+&lt;p&gt;30 years = 1 billion seconds&lt;/p&gt;
+&lt;p&gt;30,000 years = 1 trillion seconds&lt;/p&gt;
+&lt;p&gt;One “part per million” means an accuracy of 1 second every 12 days. One “part per trillion” means an accuracy of 1 second every 30,000 years.&lt;/p&gt;
+&lt;h3 class=&#34;trick-subheading&#34; id=&#34;a-of-b--b-of-a&#34;&gt;a% of b = b% of a&lt;/h3&gt;
+&lt;p&gt;It’s not immediately clear, but it’s true: a% of b = 0.01 × a × b, which is the same as b% of a (0.01 × b × a).&lt;/p&gt;
+&lt;p&gt;What’s 16% of 25? The same as 25% of 16: 4.&lt;/p&gt;
+&lt;p&gt;What’s 43% of 200? The same as 200% of 43: 86.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Math with Bad Drawings — overview of Ben Orlin&#39;s books</title>
         <link>http://localhost:1313/en/p/math-bad-drawings/</link>
         <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
@@ -31,12 +67,12 @@
 </description>
         </item>
         <item>
-        <title>Intuitive Math from BetterExplained</title>
+        <title>BetterExplained - Part 1 - Intuitive Math</title>
         <link>http://localhost:1313/en/p/math-better-explained/</link>
         <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/en/p/math-better-explained/</guid>
-        <description>&lt;img src="http://localhost:1313/p/math-better-explained/cover.jpg" alt="Featured image of post Intuitive Math from BetterExplained" /&gt;&lt;p&gt;The first article in the «Essential Mathematics» series is not about formulas — it is about &lt;em&gt;how&lt;/em&gt; to understand them. A recommended starting point before the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;overview of topics&lt;/a&gt; and the deeper dives.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained/cover.jpg" alt="Featured image of post BetterExplained - Part 1 - Intuitive Math" /&gt;&lt;p&gt;First article in the &lt;strong&gt;BetterExplained&lt;/strong&gt; series on this blog — not about formulas, but about &lt;em&gt;how&lt;/em&gt; to understand them.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Learn Right, Not Rote.&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Math is no more about equations than poetry is about spelling.&lt;/p&gt;
@@ -60,7 +96,7 @@
 &lt;li&gt;On BetterExplained — deeper intuition on classic topics.&lt;/li&gt;
 &lt;li&gt;Return to the formulas with a mental picture — articles, code, and lectures become easier.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Next in the series: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;Essential math they&amp;rsquo;ll ask you at interviews from nareshka.ru&lt;/a&gt; — which areas you need and what they are for.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Next in the series:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained — Part 2 — Arithmetic&lt;/a&gt;.&lt;/p&gt;
 </description>
         </item>
         

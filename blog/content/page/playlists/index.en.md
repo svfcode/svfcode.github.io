@@ -58,7 +58,8 @@ Short track on AI: terms and language models → LLM overview → **prompt engin
 
 > *Machine learning relies on mathematics that grows out of the school curriculum; to understand how ML works, you need a solid grasp of school-level math.*
 
-- **[Intuitive Math from BetterExplained](/en/p/math-better-explained/)**
+- **[BetterExplained - Part 1 - Intuitive Math](/en/p/math-better-explained/)**
+- **[BetterExplained - Part 2 - Arithmetic](/en/p/math-better-explained-arithmetic/)**
 - **[Essential math they'll ask you at interviews from nareshka.ru](/en/p/math-essentials-overview/)**
 - **[Math with Bad Drawings — overview of Ben Orlin's books](/en/p/math-bad-drawings/)**
 - **[Math Analysis — Example of Analysis (Finding πr²)](/en/p/math-circle-area/)**
