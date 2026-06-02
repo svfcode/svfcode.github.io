@@ -97,6 +97,99 @@
 &lt;p&gt;What’s 43% of 200? The same as 200% of 43: 86.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
+&lt;h2 id=&#34;sum-from-1-to-n&#34;&gt;Sum from 1 to n&lt;/h2&gt;
+&lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Expand all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Expand all&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--collapse&#34; data-action=&#34;collapse&#34; aria-label=&#34;Collapse all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Collapse all&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener(&#34;click&#34;, function (e) {
+        var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
+        if (!btn) return;
+        var article = btn.closest(&#34;.article-content&#34;);
+        if (!article) return;
+        var open = btn.dataset.action === &#34;expand&#34;;
+        article.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+&lt;/script&gt;
+
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;were-usually-just-given-the-formula-and-told-to-memorize-it&#34;&gt;We&amp;rsquo;re usually just given the formula and told to memorize it&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;We&#39;re usually just given the formula and told to memorize it&lt;/summary&gt;
+&lt;div&gt;
+\[
+\text{Sum from 1 to } n = \frac{n(n+1)}{2}
+\]\[
+\text{Sum from 1 to 100} = \frac{100(100+1)}{2} = (50)(101) = 5050
+\]&lt;p&gt;But to build &lt;strong&gt;intuition&lt;/strong&gt; and really understand it, you need to &lt;strong&gt;derive the formula yourself&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Below are four ways to derive it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;1-split-the-sequence-in-half-and-add-in-pairs&#34;&gt;1) Split the sequence in half and add in pairs&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;1) Split the sequence in half and add in pairs&lt;/summary&gt;
+&lt;div&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; 1   2   3   4   5
+10   9   8   7   6
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Each vertical pair has the same sum: \(1 + 10 = 2 + 9 = \ldots = n + 1\). There are \(\frac{n}{2}\) pairs.&lt;/p&gt;
+\[
+\text{Number of pairs} \times \text{sum of each pair} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
+\]&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;2-two-rows-of-numbers&#34;&gt;2) Two rows of numbers&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;2) Two rows of numbers&lt;/summary&gt;
+&lt;div&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; 1   2   3   4   5   6   7   8   9  10
+10   9   8   7   6   5   4   3   2   1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Add &lt;strong&gt;both&lt;/strong&gt; rows: every column sums to \(n + 1\), and there are \(n\) columns:&lt;/p&gt;
+\[
+\text{Sum of both rows} = n(n+1)
+\]&lt;p&gt;We only want &lt;strong&gt;one&lt;/strong&gt; row, so divide by 2:&lt;/p&gt;
+\[
+\frac{n(n+1)}{2}
+\]&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;3-picture-a-triangle&#34;&gt;3) Picture a triangle&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;3) Picture a triangle&lt;/summary&gt;
+&lt;div&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;x
+x x
+x x x
+x x x x
+x x x x x
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;\(n\) rows, row \(k\) has \(k\) cells — \(1 + 2 + \ldots + n\) in total. Imagine fitting two such triangles together tooth-to-tooth to form a rectangle. &lt;strong&gt;Derive the formula yourself&lt;/strong&gt; from that picture.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;4-via-the-average--the-most-interesting-one-in-my-view&#34;&gt;4) Via the average — the most interesting one, in my view&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;4) Via the average — the most interesting one, in my view&lt;/summary&gt;
+&lt;div&gt;
+&lt;p&gt;We all know that&lt;/p&gt;
+\[
+\text{average} = \frac{\text{sum}}{\text{number of items}}
+\]&lt;p&gt;which we can rewrite as&lt;/p&gt;
+\[
+\text{sum} = \text{average} \times \text{number of items}
+\]&lt;p&gt;For \(1, 2, \ldots, n\) the average is easy to eyeball from the &lt;strong&gt;middle&lt;/strong&gt; of the range: \(\frac{n+1}{2}\). There are \(n\) items, so:&lt;/p&gt;
+\[
+\text{sum} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
+\]&lt;p&gt;For \(1 \ldots 100\): average \(\approx 50.5\), sum \(50.5 \times 100 = 5050\).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 </description>
         </item>
         <item>

@@ -97,6 +97,99 @@
 &lt;p&gt;Чему равно 43% от 200? Тому же, что 200% от 43: 86.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
+&lt;h2 id=&#34;подсчет-суммы-от-1-до-n&#34;&gt;Подсчет суммы от 1 до n&lt;/h2&gt;
+&lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Развернуть все&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Развернуть все&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--collapse&#34; data-action=&#34;collapse&#34; aria-label=&#34;Свернуть все&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Свернуть все&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener(&#34;click&#34;, function (e) {
+        var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
+        if (!btn) return;
+        var article = btn.closest(&#34;.article-content&#34;);
+        if (!article) return;
+        var open = btn.dataset.action === &#34;expand&#34;;
+        article.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+&lt;/script&gt;
+
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;нам-обычно-просто-дают-формулу-и-говорят-запомнить&#34;&gt;Нам обычно просто дают формулу и говорят запомнить&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Нам обычно просто дают формулу и говорят запомнить&lt;/summary&gt;
+&lt;div&gt;
+\[
+\text{Сумма от 1 до } n = \frac{n(n+1)}{2}
+\]\[
+\text{Сумма от 1 до 100} = \frac{100(100+1)}{2} = (50)(101) = 5050
+\]&lt;p&gt;Но чтобы добиться &lt;strong&gt;интуиции&lt;/strong&gt; и понять её, надо &lt;strong&gt;вывести эту формулу самому&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Ниже — четыре техники выведения.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;1-делим-массив-пополам-и-складываем-парами&#34;&gt;1) Делим массив пополам и складываем парами&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;1) Делим массив пополам и складываем парами&lt;/summary&gt;
+&lt;div&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; 1   2   3   4   5
+10   9   8   7   6
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Каждая вертикальная пара даёт одну и ту же сумму: \(1 + 10 = 2 + 9 = \ldots = n + 1\). Пар ровно \(\frac{n}{2}\).&lt;/p&gt;
+\[
+\text{Число пар} \times \text{сумма каждой пары} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
+\]&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;2-два-ряда-чисел&#34;&gt;2) Два ряда чисел&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;2) Два ряда чисел&lt;/summary&gt;
+&lt;div&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; 1   2   3   4   5   6   7   8   9  10
+10   9   8   7   6   5   4   3   2   1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Складываем &lt;strong&gt;оба&lt;/strong&gt; ряда: в каждом столбце снова \(n + 1\), столбцов \(n\) штук — итого:&lt;/p&gt;
+\[
+\text{Сумма двух рядов} = n(n+1)
+\]&lt;p&gt;Нужна сумма &lt;strong&gt;одного&lt;/strong&gt; ряда, поэтому делим на 2:&lt;/p&gt;
+\[
+\frac{n(n+1)}{2}
+\]&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;3-представить-треугольник&#34;&gt;3) Представить треугольник&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;3) Представить треугольник&lt;/summary&gt;
+&lt;div&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;x
+x x
+x x x
+x x x x
+x x x x x
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;\(n\) строк, в \(k\)-й строке \(k\) «клеток» — всего \(1 + 2 + \ldots + n\) единиц. Представьте, что складываете два таких треугольника «зуб к зубу» и получаете прямоугольник. &lt;strong&gt;Формулу постройте сами&lt;/strong&gt; из этой картинки.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;4-через-среднее--самая-интересная-на-мой-взгляд&#34;&gt;4) Через среднее — самая интересная, на мой взгляд&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;4) Через среднее — самая интересная, на мой взгляд&lt;/summary&gt;
+&lt;div&gt;
+&lt;p&gt;Все знают:&lt;/p&gt;
+\[
+\text{среднее} = \frac{\text{сумма}}{\text{число элементов}}
+\]&lt;p&gt;Перепишем:&lt;/p&gt;
+\[
+\text{сумма} = \text{среднее} \times \text{число элементов}
+\]&lt;p&gt;Для ряда \(1, 2, \ldots, n\) среднее можно взять «на глаз» — из &lt;strong&gt;центра&lt;/strong&gt; ряда: это \(\frac{n+1}{2}\). Элементов \(n\) штук, значит:&lt;/p&gt;
+\[
+\text{сумма} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
+\]&lt;p&gt;Для \(1 \ldots 100\): среднее \(\approx 50{,}5\), сумма \(50{,}5 \times 100 = 5050\).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 </description>
         </item>
         <item>

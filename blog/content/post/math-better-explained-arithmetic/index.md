@@ -1,6 +1,8 @@
 ---
 title: "BetterExplained - часть 2 - Арифметика"
-description: "Ментальные трюки: скорость на дороге и рабочие часы в году"
+description: >-
+  Числа (N, Z, Q, R), их свойства и отношения, операции
+  <span class="op-pairs"><span class="op-pair">+ и −</span><span class="op-pair">× и /</span><span class="op-pair">\(a^{b}\) и \(\sqrt[n]{a}\)</span></span>
 date: "2026-06-01"
 slug: "math-better-explained-arithmetic"
 tags:
@@ -13,6 +15,8 @@ image: cover.jpg
 ## Ментальные трюки
 
 {{< accordion_controls expand="Развернуть все" collapse="Свернуть все" >}}
+
+{{< accordion_group_open >}}
 
 ### 60 км/ч — это 1 км в минуту {.toc-heading-only}
 
@@ -109,3 +113,128 @@ image: cover.jpg
 
 </div>
 </details>
+
+{{< accordion_group_close >}}
+
+## Подсчет суммы от 1 до n
+
+{{< accordion_controls expand="Развернуть все" collapse="Свернуть все" >}}
+
+{{< accordion_group_open >}}
+
+### Нам обычно просто дают формулу и говорят запомнить {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Нам обычно просто дают формулу и говорят запомнить</summary>
+<div>
+
+\[
+\text{Сумма от 1 до } n = \frac{n(n+1)}{2}
+\]
+
+\[
+\text{Сумма от 1 до 100} = \frac{100(100+1)}{2} = (50)(101) = 5050
+\]
+
+Но чтобы добиться **интуиции** и понять её, надо **вывести эту формулу самому**.
+
+Ниже — четыре техники выведения.
+
+</div>
+</details>
+
+### 1) Делим массив пополам и складываем парами {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>1) Делим массив пополам и складываем парами</summary>
+<div>
+
+```
+ 1   2   3   4   5
+10   9   8   7   6
+```
+
+Каждая вертикальная пара даёт одну и ту же сумму: \(1 + 10 = 2 + 9 = \ldots = n + 1\). Пар ровно \(\frac{n}{2}\).
+
+\[
+\text{Число пар} \times \text{сумма каждой пары} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
+\]
+
+</div>
+</details>
+
+### 2) Два ряда чисел {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>2) Два ряда чисел</summary>
+<div>
+
+```
+ 1   2   3   4   5   6   7   8   9  10
+10   9   8   7   6   5   4   3   2   1
+```
+
+Складываем **оба** ряда: в каждом столбце снова \(n + 1\), столбцов \(n\) штук — итого:
+
+\[
+\text{Сумма двух рядов} = n(n+1)
+\]
+
+Нужна сумма **одного** ряда, поэтому делим на 2:
+
+\[
+\frac{n(n+1)}{2}
+\]
+
+</div>
+</details>
+
+### 3) Представить треугольник {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>3) Представить треугольник</summary>
+<div>
+
+```
+x
+x x
+x x x
+x x x x
+x x x x x
+```
+
+\(n\) строк, в \(k\)-й строке \(k\) «клеток» — всего \(1 + 2 + \ldots + n\) единиц. Представьте, что складываете два таких треугольника «зуб к зубу» и получаете прямоугольник. **Формулу постройте сами** из этой картинки.
+
+</div>
+</details>
+
+### 4) Через среднее — самая интересная, на мой взгляд {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>4) Через среднее — самая интересная, на мой взгляд</summary>
+<div>
+
+Все знают:
+
+\[
+\text{среднее} = \frac{\text{сумма}}{\text{число элементов}}
+\]
+
+Перепишем:
+
+\[
+\text{сумма} = \text{среднее} \times \text{число элементов}
+\]
+
+Для ряда \(1, 2, \ldots, n\) среднее можно взять «на глаз» — из **центра** ряда: это \(\frac{n+1}{2}\). Элементов \(n\) штук, значит:
+
+\[
+\text{сумма} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
+\]
+
+Для \(1 \ldots 100\): среднее \(\approx 50{,}5\), сумма \(50{,}5 \times 100 = 5050\).
+
+</div>
+</details>
+
+{{< accordion_group_close >}}

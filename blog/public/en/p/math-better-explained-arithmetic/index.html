@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Mental math tricks: road speed and work hours in a year'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Numbers (N, Z, Q, R), their properties and relations, operations &#43; and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)'>
 <title>BetterExplained - Part 2 - Arithmetic</title>
 
 <link rel='canonical' href='http://localhost:1313/en/p/math-better-explained-arithmetic/'>
 
 <link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
 <meta property='og:title' content='BetterExplained - Part 2 - Arithmetic'>
-<meta property='og:description' content='Mental math tricks: road speed and work hours in a year'>
+<meta property='og:description' content='Numbers (N, Z, Q, R), their properties and relations, operations &#43; and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)'>
 <meta property='og:url' content='http://localhost:1313/en/p/math-better-explained-arithmetic/'>
 <meta property='og:site_name' content='Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Mathematics' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='Basics' /><meta property='article:published_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg' />
 <meta name="twitter:title" content="BetterExplained - Part 2 - Arithmetic">
-<meta name="twitter:description" content="Mental math tricks: road speed and work hours in a year"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Numbers (N, Z, Q, R), their properties and relations, operations &#43; and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
@@ -278,6 +278,15 @@
         <li><a href="#a-of-b--b-of-a">a% of b = b% of a</a></li>
       </ul>
     </li>
+    <li><a href="#sum-from-1-to-n">Sum from 1 to n</a>
+      <ul>
+        <li><a href="#were-usually-just-given-the-formula-and-told-to-memorize-it">We&rsquo;re usually just given the formula and told to memorize it</a></li>
+        <li><a href="#1-split-the-sequence-in-half-and-add-in-pairs">1) Split the sequence in half and add in pairs</a></li>
+        <li><a href="#2-two-rows-of-numbers">2) Two rows of numbers</a></li>
+        <li><a href="#3-picture-a-triangle">3) Picture a triangle</a></li>
+        <li><a href="#4-via-the-average--the-most-interesting-one-in-my-view">4) Via the average — the most interesting one, in my view</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -314,7 +323,7 @@
     
         
         <h3 class="article-subtitle">
-            Mental math tricks: road speed and work hours in a year
+            Numbers (N, Z, Q, R), their properties and relations, operations <span class="op-pairs"><span class="op-pair">+ and −</span><span class="op-pair">× and /</span><span class="op-pair">\(a^{b}\) and \(\sqrt[n]{a}\)</span></span>
         </h3>
         
     </div>
@@ -350,7 +359,7 @@
 
 
                 <time class="article-time--reading">
-                    2 minute read
+                    4 minute read
                 </time>
             </div>
         
@@ -402,15 +411,19 @@
     document.addEventListener("click", function (e) {
         var btn = e.target.closest(".accordion-toggle-all");
         if (!btn) return;
-        var article = btn.closest(".article-content");
-        if (!article) return;
+        var controls = btn.closest(".accordion-controls");
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains("post-accordion-group")) return;
         var open = btn.dataset.action === "expand";
-        article.querySelectorAll("details.post-accordion").forEach(function (d) {
+        group.querySelectorAll("details.post-accordion").forEach(function (d) {
             d.open = open;
         });
     });
 })();
 </script>
+
+<div class="post-accordion-group">
 
 <h3 class="toc-heading-only" id="60-kmh-is-1-km-per-minute">60 km/h is 1 km per minute</h3>
 <details class="post-accordion">
@@ -469,6 +482,107 @@
 <p>What’s 43% of 200? The same as 200% of 43: 86.</p>
 </div>
 </details>
+</div>
+
+<h2 id="sum-from-1-to-n">Sum from 1 to n</h2>
+<div class="accordion-controls" role="group" aria-label="Управление секциями">
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Expand all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Expand all</span>
+    </button>
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Collapse all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Collapse all</span>
+    </button>
+</div>
+<script>
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".accordion-toggle-all");
+        if (!btn) return;
+        var controls = btn.closest(".accordion-controls");
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains("post-accordion-group")) return;
+        var open = btn.dataset.action === "expand";
+        group.querySelectorAll("details.post-accordion").forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+</script>
+
+<div class="post-accordion-group">
+
+<h3 class="toc-heading-only" id="were-usually-just-given-the-formula-and-told-to-memorize-it">We&rsquo;re usually just given the formula and told to memorize it</h3>
+<details class="post-accordion">
+<summary>We're usually just given the formula and told to memorize it</summary>
+<div>
+\[
+\text{Sum from 1 to } n = \frac{n(n+1)}{2}
+\]\[
+\text{Sum from 1 to 100} = \frac{100(100+1)}{2} = (50)(101) = 5050
+\]<p>But to build <strong>intuition</strong> and really understand it, you need to <strong>derive the formula yourself</strong>.</p>
+<p>Below are four ways to derive it.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="1-split-the-sequence-in-half-and-add-in-pairs">1) Split the sequence in half and add in pairs</h3>
+<details class="post-accordion">
+<summary>1) Split the sequence in half and add in pairs</summary>
+<div>
+<pre tabindex="0"><code> 1   2   3   4   5
+10   9   8   7   6
+</code></pre><p>Each vertical pair has the same sum: \(1 + 10 = 2 + 9 = \ldots = n + 1\). There are \(\frac{n}{2}\) pairs.</p>
+\[
+\text{Number of pairs} \times \text{sum of each pair} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
+\]</div>
+</details>
+<h3 class="toc-heading-only" id="2-two-rows-of-numbers">2) Two rows of numbers</h3>
+<details class="post-accordion">
+<summary>2) Two rows of numbers</summary>
+<div>
+<pre tabindex="0"><code> 1   2   3   4   5   6   7   8   9  10
+10   9   8   7   6   5   4   3   2   1
+</code></pre><p>Add <strong>both</strong> rows: every column sums to \(n + 1\), and there are \(n\) columns:</p>
+\[
+\text{Sum of both rows} = n(n+1)
+\]<p>We only want <strong>one</strong> row, so divide by 2:</p>
+\[
+\frac{n(n+1)}{2}
+\]</div>
+</details>
+<h3 class="toc-heading-only" id="3-picture-a-triangle">3) Picture a triangle</h3>
+<details class="post-accordion">
+<summary>3) Picture a triangle</summary>
+<div>
+<pre tabindex="0"><code>x
+x x
+x x x
+x x x x
+x x x x x
+</code></pre><p>\(n\) rows, row \(k\) has \(k\) cells — \(1 + 2 + \ldots + n\) in total. Imagine fitting two such triangles together tooth-to-tooth to form a rectangle. <strong>Derive the formula yourself</strong> from that picture.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="4-via-the-average--the-most-interesting-one-in-my-view">4) Via the average — the most interesting one, in my view</h3>
+<details class="post-accordion">
+<summary>4) Via the average — the most interesting one, in my view</summary>
+<div>
+<p>We all know that</p>
+\[
+\text{average} = \frac{\text{sum}}{\text{number of items}}
+\]<p>which we can rewrite as</p>
+\[
+\text{sum} = \text{average} \times \text{number of items}
+\]<p>For \(1, 2, \ldots, n\) the average is easy to eyeball from the <strong>middle</strong> of the range: \(\frac{n+1}{2}\). There are \(n\) items, so:</p>
+\[
+\text{sum} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
+\]<p>For \(1 \ldots 100\): average \(\approx 50.5\), sum \(50.5 \times 100 = 5050\).</p>
+</div>
+</details>
+</div>
+
 
 </section>
 

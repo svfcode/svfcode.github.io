@@ -15,10 +15,12 @@
     document.addEventListener("click", function (e) {
         var btn = e.target.closest(".accordion-toggle-all");
         if (!btn) return;
-        var article = btn.closest(".article-content");
-        if (!article) return;
+        var controls = btn.closest(".accordion-controls");
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains("post-accordion-group")) return;
         var open = btn.dataset.action === "expand";
-        article.querySelectorAll("details.post-accordion").forEach(function (d) {
+        group.querySelectorAll("details.post-accordion").forEach(function (d) {
             d.open = open;
         });
     });

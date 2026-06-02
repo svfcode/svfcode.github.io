@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Ментальные трюки: скорость на дороге и рабочие часы в году'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Числа (N, Z, Q, R), их свойства и отношения, операции &#43; и −× и /\(a^{b}\) и \(\sqrt[n]{a}\)'>
 <title>BetterExplained - часть 2 - Арифметика</title>
 
 <link rel='canonical' href='http://localhost:1313/p/math-better-explained-arithmetic/'>
 
 <link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
 <meta property='og:title' content='BetterExplained - часть 2 - Арифметика'>
-<meta property='og:description' content='Ментальные трюки: скорость на дороге и рабочие часы в году'>
+<meta property='og:description' content='Числа (N, Z, Q, R), их свойства и отношения, операции &#43; и −× и /\(a^{b}\) и \(\sqrt[n]{a}\)'>
 <meta property='og:url' content='http://localhost:1313/p/math-better-explained-arithmetic/'>
 <meta property='og:site_name' content='Блог'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Математика' /><meta property='article:tag' content='Машинное обучение' /><meta property='article:tag' content='База' /><meta property='article:published_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg' />
 <meta name="twitter:title" content="BetterExplained - часть 2 - Арифметика">
-<meta name="twitter:description" content="Ментальные трюки: скорость на дороге и рабочие часы в году"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Числа (N, Z, Q, R), их свойства и отношения, операции &#43; и −× и /\(a^{b}\) и \(\sqrt[n]{a}\)"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
@@ -278,6 +278,15 @@
         <li><a href="#a-от-b--b-от-a">a% от b = b% от a</a></li>
       </ul>
     </li>
+    <li><a href="#подсчет-суммы-от-1-до-n">Подсчет суммы от 1 до n</a>
+      <ul>
+        <li><a href="#нам-обычно-просто-дают-формулу-и-говорят-запомнить">Нам обычно просто дают формулу и говорят запомнить</a></li>
+        <li><a href="#1-делим-массив-пополам-и-складываем-парами">1) Делим массив пополам и складываем парами</a></li>
+        <li><a href="#2-два-ряда-чисел">2) Два ряда чисел</a></li>
+        <li><a href="#3-представить-треугольник">3) Представить треугольник</a></li>
+        <li><a href="#4-через-среднее--самая-интересная-на-мой-взгляд">4) Через среднее — самая интересная, на мой взгляд</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -314,7 +323,7 @@
     
         
         <h3 class="article-subtitle">
-            Ментальные трюки: скорость на дороге и рабочие часы в году
+            Числа (N, Z, Q, R), их свойства и отношения, операции <span class="op-pairs"><span class="op-pair">+ и −</span><span class="op-pair">× и /</span><span class="op-pair">\(a^{b}\) и \(\sqrt[n]{a}\)</span></span>
         </h3>
         
     </div>
@@ -350,7 +359,7 @@
 
 
                 <time class="article-time--reading">
-                    Время чтения: 2 мин.
+                    Время чтения: 4 мин.
                 </time>
             </div>
         
@@ -402,15 +411,19 @@
     document.addEventListener("click", function (e) {
         var btn = e.target.closest(".accordion-toggle-all");
         if (!btn) return;
-        var article = btn.closest(".article-content");
-        if (!article) return;
+        var controls = btn.closest(".accordion-controls");
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains("post-accordion-group")) return;
         var open = btn.dataset.action === "expand";
-        article.querySelectorAll("details.post-accordion").forEach(function (d) {
+        group.querySelectorAll("details.post-accordion").forEach(function (d) {
             d.open = open;
         });
     });
 })();
 </script>
+
+<div class="post-accordion-group">
 
 <h3 class="toc-heading-only" id="60-кмч--это-1-км-в-минуту">60 км/ч — это 1 км в минуту</h3>
 <details class="post-accordion">
@@ -469,6 +482,107 @@
 <p>Чему равно 43% от 200? Тому же, что 200% от 43: 86.</p>
 </div>
 </details>
+</div>
+
+<h2 id="подсчет-суммы-от-1-до-n">Подсчет суммы от 1 до n</h2>
+<div class="accordion-controls" role="group" aria-label="Управление секциями">
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Развернуть все">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Развернуть все</span>
+    </button>
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Свернуть все">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Свернуть все</span>
+    </button>
+</div>
+<script>
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".accordion-toggle-all");
+        if (!btn) return;
+        var controls = btn.closest(".accordion-controls");
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains("post-accordion-group")) return;
+        var open = btn.dataset.action === "expand";
+        group.querySelectorAll("details.post-accordion").forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+</script>
+
+<div class="post-accordion-group">
+
+<h3 class="toc-heading-only" id="нам-обычно-просто-дают-формулу-и-говорят-запомнить">Нам обычно просто дают формулу и говорят запомнить</h3>
+<details class="post-accordion">
+<summary>Нам обычно просто дают формулу и говорят запомнить</summary>
+<div>
+\[
+\text{Сумма от 1 до } n = \frac{n(n+1)}{2}
+\]\[
+\text{Сумма от 1 до 100} = \frac{100(100+1)}{2} = (50)(101) = 5050
+\]<p>Но чтобы добиться <strong>интуиции</strong> и понять её, надо <strong>вывести эту формулу самому</strong>.</p>
+<p>Ниже — четыре техники выведения.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="1-делим-массив-пополам-и-складываем-парами">1) Делим массив пополам и складываем парами</h3>
+<details class="post-accordion">
+<summary>1) Делим массив пополам и складываем парами</summary>
+<div>
+<pre tabindex="0"><code> 1   2   3   4   5
+10   9   8   7   6
+</code></pre><p>Каждая вертикальная пара даёт одну и ту же сумму: \(1 + 10 = 2 + 9 = \ldots = n + 1\). Пар ровно \(\frac{n}{2}\).</p>
+\[
+\text{Число пар} \times \text{сумма каждой пары} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
+\]</div>
+</details>
+<h3 class="toc-heading-only" id="2-два-ряда-чисел">2) Два ряда чисел</h3>
+<details class="post-accordion">
+<summary>2) Два ряда чисел</summary>
+<div>
+<pre tabindex="0"><code> 1   2   3   4   5   6   7   8   9  10
+10   9   8   7   6   5   4   3   2   1
+</code></pre><p>Складываем <strong>оба</strong> ряда: в каждом столбце снова \(n + 1\), столбцов \(n\) штук — итого:</p>
+\[
+\text{Сумма двух рядов} = n(n+1)
+\]<p>Нужна сумма <strong>одного</strong> ряда, поэтому делим на 2:</p>
+\[
+\frac{n(n+1)}{2}
+\]</div>
+</details>
+<h3 class="toc-heading-only" id="3-представить-треугольник">3) Представить треугольник</h3>
+<details class="post-accordion">
+<summary>3) Представить треугольник</summary>
+<div>
+<pre tabindex="0"><code>x
+x x
+x x x
+x x x x
+x x x x x
+</code></pre><p>\(n\) строк, в \(k\)-й строке \(k\) «клеток» — всего \(1 + 2 + \ldots + n\) единиц. Представьте, что складываете два таких треугольника «зуб к зубу» и получаете прямоугольник. <strong>Формулу постройте сами</strong> из этой картинки.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="4-через-среднее--самая-интересная-на-мой-взгляд">4) Через среднее — самая интересная, на мой взгляд</h3>
+<details class="post-accordion">
+<summary>4) Через среднее — самая интересная, на мой взгляд</summary>
+<div>
+<p>Все знают:</p>
+\[
+\text{среднее} = \frac{\text{сумма}}{\text{число элементов}}
+\]<p>Перепишем:</p>
+\[
+\text{сумма} = \text{среднее} \times \text{число элементов}
+\]<p>Для ряда \(1, 2, \ldots, n\) среднее можно взять «на глаз» — из <strong>центра</strong> ряда: это \(\frac{n+1}{2}\). Элементов \(n\) штук, значит:</p>
+\[
+\text{сумма} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
+\]<p>Для \(1 \ldots 100\): среднее \(\approx 50{,}5\), сумма \(50{,}5 \times 100 = 5050\).</p>
+</div>
+</details>
+</div>
+
 
 </section>
 

@@ -1,6 +1,8 @@
 ---
 title: "BetterExplained - Part 2 - Arithmetic"
-description: "Mental math tricks: road speed and work hours in a year"
+description: >-
+  Numbers (N, Z, Q, R), their properties and relations, operations
+  <span class="op-pairs"><span class="op-pair">+ and −</span><span class="op-pair">× and /</span><span class="op-pair">\(a^{b}\) and \(\sqrt[n]{a}\)</span></span>
 date: "2026-06-01"
 slug: "math-better-explained-arithmetic"
 tags:
@@ -13,6 +15,8 @@ image: cover.jpg
 ## Mental tricks
 
 {{< accordion_controls expand="Expand all" collapse="Collapse all" >}}
+
+{{< accordion_group_open >}}
 
 ### 60 km/h is 1 km per minute {.toc-heading-only}
 
@@ -109,3 +113,128 @@ What’s 43% of 200? The same as 200% of 43: 86.
 
 </div>
 </details>
+
+{{< accordion_group_close >}}
+
+## Sum from 1 to n
+
+{{< accordion_controls expand="Expand all" collapse="Collapse all" >}}
+
+{{< accordion_group_open >}}
+
+### We're usually just given the formula and told to memorize it {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>We're usually just given the formula and told to memorize it</summary>
+<div>
+
+\[
+\text{Sum from 1 to } n = \frac{n(n+1)}{2}
+\]
+
+\[
+\text{Sum from 1 to 100} = \frac{100(100+1)}{2} = (50)(101) = 5050
+\]
+
+But to build **intuition** and really understand it, you need to **derive the formula yourself**.
+
+Below are four ways to derive it.
+
+</div>
+</details>
+
+### 1) Split the sequence in half and add in pairs {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>1) Split the sequence in half and add in pairs</summary>
+<div>
+
+```
+ 1   2   3   4   5
+10   9   8   7   6
+```
+
+Each vertical pair has the same sum: \(1 + 10 = 2 + 9 = \ldots = n + 1\). There are \(\frac{n}{2}\) pairs.
+
+\[
+\text{Number of pairs} \times \text{sum of each pair} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
+\]
+
+</div>
+</details>
+
+### 2) Two rows of numbers {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>2) Two rows of numbers</summary>
+<div>
+
+```
+ 1   2   3   4   5   6   7   8   9  10
+10   9   8   7   6   5   4   3   2   1
+```
+
+Add **both** rows: every column sums to \(n + 1\), and there are \(n\) columns:
+
+\[
+\text{Sum of both rows} = n(n+1)
+\]
+
+We only want **one** row, so divide by 2:
+
+\[
+\frac{n(n+1)}{2}
+\]
+
+</div>
+</details>
+
+### 3) Picture a triangle {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>3) Picture a triangle</summary>
+<div>
+
+```
+x
+x x
+x x x
+x x x x
+x x x x x
+```
+
+\(n\) rows, row \(k\) has \(k\) cells — \(1 + 2 + \ldots + n\) in total. Imagine fitting two such triangles together tooth-to-tooth to form a rectangle. **Derive the formula yourself** from that picture.
+
+</div>
+</details>
+
+### 4) Via the average — the most interesting one, in my view {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>4) Via the average — the most interesting one, in my view</summary>
+<div>
+
+We all know that
+
+\[
+\text{average} = \frac{\text{sum}}{\text{number of items}}
+\]
+
+which we can rewrite as
+
+\[
+\text{sum} = \text{average} \times \text{number of items}
+\]
+
+For \(1, 2, \ldots, n\) the average is easy to eyeball from the **middle** of the range: \(\frac{n+1}{2}\). There are \(n\) items, so:
+
+\[
+\text{sum} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
+\]
+
+For \(1 \ldots 100\): average \(\approx 50.5\), sum \(50.5 \times 100 = 5050\).
+
+</div>
+</details>
+
+{{< accordion_group_close >}}
