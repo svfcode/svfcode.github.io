@@ -385,33 +385,90 @@
     
     
     <h2 id="ментальные-трюки">Ментальные трюки</h2>
-<h3 class="trick-subheading" id="60-кмч--это-1-км-в-минуту">60 км/ч — это 1 км в минуту</h3>
+<div class="accordion-controls" role="group" aria-label="Управление секциями">
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Развернуть все">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Развернуть все</span>
+    </button>
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Свернуть все">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Свернуть все</span>
+    </button>
+</div>
+<script>
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".accordion-toggle-all");
+        if (!btn) return;
+        var article = btn.closest(".article-content");
+        if (!article) return;
+        var open = btn.dataset.action === "expand";
+        article.querySelectorAll("details.post-accordion").forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+</script>
+
+<h3 class="toc-heading-only" id="60-кмч--это-1-км-в-минуту">60 км/ч — это 1 км в минуту</h3>
+<details class="post-accordion">
+<summary>60 км/ч — это 1 км в минуту</summary>
+<div>
 <p>Время реакции водителя (заметил → принял решение → начал действовать) ~ 1 сек.</p>
 <p>Значит, если препятствие возникает ближе 16 метров (при 60 км/ч), то вероятно, что сделать ничего уже не получится. А если скорость в три раза больше, то какое расстояние является критическим?</p>
-<h3 class="trick-subheading" id="1-year--250-work-days--2000-work-hours">1 year = 250 work days = 2000 work hours</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="1-year--250-work-days--2000-work-hours">1 year = 250 work days = 2000 work hours</h3>
+<details class="post-accordion">
+<summary>1 year = 250 work days = 2000 work hours</summary>
+<div>
 <p>Т.е. если на дорогу вы тратите 1 ч в день (полчаса в одну сторону), то в год вы тратите на дорогу 250 часов.</p>
-<h3 class="trick-subheading" id="правило-72-удвоение-за-годы--72--процентная-ставка">Правило 72: удвоение за годы = 72 / процентная ставка</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="правило-72-удвоение-за-годы--72--процентная-ставка">Правило 72: удвоение за годы = 72 / процентная ставка</h3>
+<details class="post-accordion">
+<summary>Правило 72: удвоение за годы = 72 / процентная ставка</summary>
+<div>
 <p>Хотите увеличить инвестиции на 10% годовых? Они удвоятся за 7,2 года.</p>
 <p>Хотите, чтобы ваши инвестиции удвоились за 5 лет? Вам нужна процентная ставка 72/5 или около 15%.</p>
 <p>Вы можете использовать это правило в течение любого периода времени, а не только в течение нескольких лет.</p>
 <p>Инфляция составляет 4%? Это уменьшит ваши деньги вдвое за 72/4 или 18 лет.</p>
-<h3 class="trick-subheading" id="устный-счёт">Устный счёт</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="устный-счёт">Устный счёт</h3>
+<details class="post-accordion">
+<summary>Устный счёт</summary>
+<div>
 <p>10 000 = сто сотен</p>
 <p>миллион = тысяча тысяч</p>
 <p>миллиард = тысяча миллионов</p>
 <p>триллион = миллион миллионов</p>
 <p>1% от 10 тыс. — это 100. Индекс Dow примерно 10 тыс. (сейчас около 12 тыс.). Если Dow падает на 100, это примерно потеря 1%.</p>
 <p>Чему равно 5 тыс. × 50 тыс.? Это 250 × тысяча × тысяча, или 250 миллионов.</p>
-<h3 class="trick-subheading" id="визуализация-чисел">Визуализация чисел</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="визуализация-чисел">Визуализация чисел</h3>
+<details class="post-accordion">
+<summary>Визуализация чисел</summary>
+<div>
 <p>12 дней = 1 миллион секунд</p>
 <p>1 год = 31 миллион секунд (примерно π × 10 миллионов)</p>
 <p>30 лет = 1 миллиард секунд</p>
 <p>30 000 лет = 1 триллион секунд</p>
 <p>Одна «часть на миллион» — точность 1 секунды за 12 дней. Одна «часть на триллион» — точность 1 секунды за 30 000 лет.</p>
-<h3 class="trick-subheading" id="a-от-b--b-от-a">a% от b = b% от a</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="a-от-b--b-от-a">a% от b = b% от a</h3>
+<details class="post-accordion">
+<summary>a% от b = b% от a</summary>
+<div>
 <p>С первого взгляда неочевидно, но это верно: a% от b = 0,01 × a × b — то же самое, что b% от a (0,01 × b × a).</p>
 <p>Чему равно 16% от 25? Тому же, что 25% от 16: 4.</p>
 <p>Чему равно 43% от 200? Тому же, что 200% от 43: 86.</p>
+</div>
+</details>
 
 </section>
 

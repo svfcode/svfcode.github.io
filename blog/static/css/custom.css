@@ -142,6 +142,126 @@ html[data-scheme="dark"] .article-content details.post-accordion:nth-of-type(7) 
     --acc-inner: rgba(129, 140, 248, 0.06);
 }
 
+/* Кнопки «развернуть / свернуть все» для аккордеонов в статье */
+.article-content .accordion-controls {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.85rem 0 1.5rem;
+    padding: 0.45rem;
+    border-radius: 14px;
+    border: 1px solid var(--card-separator-color, rgba(0, 0, 0, 0.12));
+    background: var(--card-background, #fff);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+html[data-scheme="dark"] .article-content .accordion-controls {
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+
+.article-content .accordion-toggle-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.2rem;
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    border-radius: 11px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--card-text-color-secondary, #64748b);
+    cursor: pointer;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+.article-content .accordion-toggle-all__icon {
+    position: relative;
+    flex: 0 0 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 999px;
+    border: 2px solid currentColor;
+}
+
+.article-content .accordion-toggle-all__icon::before,
+.article-content .accordion-toggle-all__icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+}
+
+.article-content .accordion-toggle-all--expand .accordion-toggle-all__icon::before {
+    width: 0.55rem;
+    height: 2px;
+}
+
+.article-content .accordion-toggle-all--expand .accordion-toggle-all__icon::after {
+    width: 2px;
+    height: 0.55rem;
+}
+
+.article-content .accordion-toggle-all--collapse .accordion-toggle-all__icon::before {
+    width: 0.55rem;
+    height: 2px;
+}
+
+.article-content .accordion-toggle-all--expand:hover,
+.article-content .accordion-toggle-all--expand:focus-visible {
+    color: #0f766e;
+    background: rgba(13, 148, 136, 0.1);
+    border-color: rgba(13, 148, 136, 0.22);
+}
+
+.article-content .accordion-toggle-all--collapse:hover,
+.article-content .accordion-toggle-all--collapse:focus-visible {
+    color: #be123c;
+    background: rgba(225, 29, 72, 0.08);
+    border-color: rgba(225, 29, 72, 0.18);
+}
+
+html[data-scheme="dark"] .article-content .accordion-toggle-all--expand:hover,
+html[data-scheme="dark"] .article-content .accordion-toggle-all--expand:focus-visible {
+    color: #2dd4bf;
+    background: rgba(45, 212, 191, 0.12);
+    border-color: rgba(45, 212, 191, 0.28);
+}
+
+html[data-scheme="dark"] .article-content .accordion-toggle-all--collapse:hover,
+html[data-scheme="dark"] .article-content .accordion-toggle-all--collapse:focus-visible {
+    color: #fb7185;
+    background: rgba(251, 113, 133, 0.12);
+    border-color: rgba(251, 113, 133, 0.24);
+}
+
+.article-content .accordion-toggle-all:active {
+    transform: translateY(1px);
+}
+
+.article-content .accordion-toggle-all:focus {
+    outline: none;
+}
+
+.article-content .accordion-toggle-all:focus-visible {
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.18);
+}
+
+.article-content .accordion-toggle-all--collapse:focus-visible {
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.16);
+}
+
 /* Прочие details (не .post-accordion) */
 .article-content details:not(.post-accordion) summary,
 .content details summary {

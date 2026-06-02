@@ -449,16 +449,13 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/en/playlists/</guid>
-        <description>&lt;h2 id=&#34;-basics&#34;&gt;📚 Basics&lt;/h2&gt;
-&lt;p&gt;Short track on AI: terms and language models → LLM overview → &lt;strong&gt;prompt engineering&lt;/strong&gt;, &lt;strong&gt;RAG&lt;/strong&gt;, and &lt;strong&gt;LLM agents&lt;/strong&gt; as separate articles.&lt;/p&gt;
+        <description>&lt;h2 id=&#34;-ai&#34;&gt;📚 AI&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-intro/&#34; &gt;AI basics – introduction&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Video&lt;/a&gt; · reading 5 min / video 4 min&lt;/li&gt;
 &lt;li&gt;🏷️ Terms: language model, dataset, parameters, AI/ML/NN, foundation models&lt;/li&gt;
-&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
-&lt;li&gt;📋 Prerequisites: none&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;AI basics – overview&lt;/a&gt;&lt;/strong&gt;
@@ -467,8 +464,6 @@
     &gt;Video&lt;/a&gt; · reading ~14 min / video 9 min&lt;/li&gt;
 &lt;li&gt;📋 LLM overview: use cases, internals (tokens, transformers), prompting, RAG, fine-tuning, chain-of-thought, model families, key terms, risks, trends&lt;/li&gt;
 &lt;li&gt;🏷️ LLM, transformer, token, temperature, prompt engineering, RAG, fine-tuning, RLHF, chain-of-thought, context window, hallucinations, multimodality, agents&lt;/li&gt;
-&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
-&lt;li&gt;📋 Prerequisites: none (intro to the series is enough)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;AI basics – prompt engineering&lt;/a&gt;&lt;/strong&gt;
@@ -476,8 +471,6 @@
 &lt;li&gt;⏱️ ~7 min read · no video&lt;/li&gt;
 &lt;li&gt;📋 Zero-shot, few-shot, chain-of-thought, roles, step-back, where prompts come from; mind-map layout; accordions&lt;/li&gt;
 &lt;li&gt;🏷️ prompt engineering, zero-shot, few-shot, CoT, role prompting, step-back, in-context learning&lt;/li&gt;
-&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
-&lt;li&gt;📋 Prerequisites: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;LLM overview&lt;/a&gt; recommended&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;AI basics – RAG systems&lt;/a&gt;&lt;/strong&gt;
@@ -485,8 +478,6 @@
 &lt;li&gt;⏱️ ~6 min read · no video&lt;/li&gt;
 &lt;li&gt;📋 Why RAG, pipeline stages, chunking, naive vs advanced RAG; accordions&lt;/li&gt;
 &lt;li&gt;🏷️ RAG, retrieval, embeddings, vector index, chunking, context-conditioned generation&lt;/li&gt;
-&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
-&lt;li&gt;📋 Prerequisites: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;LLM overview&lt;/a&gt; recommended&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34; &gt;AI basics – LLM agents&lt;/a&gt;&lt;/strong&gt;
@@ -494,8 +485,6 @@
 &lt;li&gt;⏱️ ~7 min read · no video&lt;/li&gt;
 &lt;li&gt;📋 Agent vs chat, planning / memory / tools, mindset, ReAct, multi-agent, who uses them; accordions&lt;/li&gt;
 &lt;li&gt;🏷️ AI agents, LLM, ReAct, tools, planning, memory, multi-agent systems&lt;/li&gt;
-&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
-&lt;li&gt;📋 Prerequisites: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;LLM overview&lt;/a&gt; recommended; &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;RAG&lt;/a&gt; helps&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -510,15 +499,10 @@
     &gt;Video&lt;/a&gt; · reading 12 min / video 8 min (original 52 min)&lt;/li&gt;
 &lt;li&gt;👥 Participants: Nicholas Thompson, Eric Xing, Yoshua Bengio, Yuval Noah Harari, Yejin Choi&lt;/li&gt;
 &lt;li&gt;🏷️ Terms: scaling, reward hacking, world model, guardrail, AGI, anthropomorphism&lt;/li&gt;
-&lt;li&gt;📊 Difficulty: intermediate&lt;/li&gt;
-&lt;li&gt;📋 Prerequisites: AI basics&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-essential-mathematics&#34;&gt;📐 Essential Mathematics&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;Machine learning relies on mathematics that grows out of the school curriculum; to understand how ML works, you need a solid grasp of school-level math.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&#34;-mathematics&#34;&gt;📐 Mathematics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained - Part 1 - Intuitive Math&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained - Part 2 - Arithmetic&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
@@ -528,14 +512,12 @@
 &lt;ul&gt;
 &lt;li&gt;📋 Slicing the circle into rings, unrolling into strips 2πr × Δr — yields a triangle of area πR²&lt;/li&gt;
 &lt;li&gt;🏷️ Integral, limits, area of circle&lt;/li&gt;
-&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;Math Analysis — Derivatives&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;📋 Without this you can&amp;rsquo;t understand how neural networks learn. Derivative, gradient, chain rule.&lt;/li&gt;
 &lt;li&gt;🏷️ Gradient descent, backpropagation&lt;/li&gt;
-&lt;li&gt;📊 Difficulty: basic&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

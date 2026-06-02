@@ -385,33 +385,90 @@
     
     
     <h2 id="mental-tricks">Mental tricks</h2>
-<h3 class="trick-subheading" id="60-kmh-is-1-km-per-minute">60 km/h is 1 km per minute</h3>
+<div class="accordion-controls" role="group" aria-label="Управление секциями">
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Expand all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Expand all</span>
+    </button>
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Collapse all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Collapse all</span>
+    </button>
+</div>
+<script>
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".accordion-toggle-all");
+        if (!btn) return;
+        var article = btn.closest(".article-content");
+        if (!article) return;
+        var open = btn.dataset.action === "expand";
+        article.querySelectorAll("details.post-accordion").forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+</script>
+
+<h3 class="toc-heading-only" id="60-kmh-is-1-km-per-minute">60 km/h is 1 km per minute</h3>
+<details class="post-accordion">
+<summary>60 km/h is 1 km per minute</summary>
+<div>
 <p>Driver reaction time (notice → decide → act) is ~1 second.</p>
 <p>So if an obstacle appears closer than 16 meters (at 60 km/h), you probably cannot do anything in time. If the speed is three times higher, what distance is critical?</p>
-<h3 class="trick-subheading" id="1-year--250-work-days--2000-work-hours">1 year = 250 work days = 2000 work hours</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="1-year--250-work-days--2000-work-hours">1 year = 250 work days = 2000 work hours</h3>
+<details class="post-accordion">
+<summary>1 year = 250 work days = 2000 work hours</summary>
+<div>
 <p>So if you spend 1 hour per day commuting (half an hour each way), you spend 250 hours per year on the road.</p>
-<h3 class="trick-subheading" id="rule-of-72-years-to-double--72--interest-rate">Rule of 72: years to double = 72 / interest rate</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="rule-of-72-years-to-double--72--interest-rate">Rule of 72: years to double = 72 / interest rate</h3>
+<details class="post-accordion">
+<summary>Rule of 72: years to double = 72 / interest rate</summary>
+<div>
 <p>Want 10% annual growth on your investments? They double in 7.2 years.</p>
 <p>Want your investments to double in 5 years? You need a rate of 72/5, or about 15%.</p>
 <p>You can use this rule for any time period, not just years.</p>
 <p>Inflation is 4%? That cuts your money in half in 72/4, or 18 years.</p>
-<h3 class="trick-subheading" id="mental-arithmetic">Mental arithmetic</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="mental-arithmetic">Mental arithmetic</h3>
+<details class="post-accordion">
+<summary>Mental arithmetic</summary>
+<div>
 <p>10,000 = hundred hundred</p>
 <p>million = thousand thousand</p>
 <p>billion = thousand million</p>
 <p>trillion = million million</p>
 <p>1% of 10k is 100. The Dow is roughly 10k (it&rsquo;s about 12k now). So if the Dow drops 100, it&rsquo;s about a 1% loss.</p>
 <p>What&rsquo;s 5k × 50k? That&rsquo;s 250 × thousand × thousand, or 250 million.</p>
-<h3 class="trick-subheading" id="visualizing-numbers">Visualizing numbers</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="visualizing-numbers">Visualizing numbers</h3>
+<details class="post-accordion">
+<summary>Visualizing numbers</summary>
+<div>
 <p>12 days = 1 million seconds</p>
 <p>1 year = 31 million seconds (about π × 10 million)</p>
 <p>30 years = 1 billion seconds</p>
 <p>30,000 years = 1 trillion seconds</p>
 <p>One “part per million” means an accuracy of 1 second every 12 days. One “part per trillion” means an accuracy of 1 second every 30,000 years.</p>
-<h3 class="trick-subheading" id="a-of-b--b-of-a">a% of b = b% of a</h3>
+</div>
+</details>
+<h3 class="toc-heading-only" id="a-of-b--b-of-a">a% of b = b% of a</h3>
+<details class="post-accordion">
+<summary>a% of b = b% of a</summary>
+<div>
 <p>It’s not immediately clear, but it’s true: a% of b = 0.01 × a × b, which is the same as b% of a (0.01 × b × a).</p>
 <p>What’s 16% of 25? The same as 25% of 16: 4.</p>
 <p>What’s 43% of 200? The same as 200% of 43: 86.</p>
+</div>
+</details>
 
 </section>
 

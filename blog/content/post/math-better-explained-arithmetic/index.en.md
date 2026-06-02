@@ -12,17 +12,37 @@ image: cover.jpg
 
 ## Mental tricks
 
-### 60 km/h is 1 km per minute {.trick-subheading}
+{{< accordion_controls expand="Expand all" collapse="Collapse all" >}}
+
+### 60 km/h is 1 km per minute {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>60 km/h is 1 km per minute</summary>
+<div>
 
 Driver reaction time (notice → decide → act) is ~1 second.
 
 So if an obstacle appears closer than 16 meters (at 60 km/h), you probably cannot do anything in time. If the speed is three times higher, what distance is critical?
 
-### 1 year = 250 work days = 2000 work hours {.trick-subheading}
+</div>
+</details>
+
+### 1 year = 250 work days = 2000 work hours {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>1 year = 250 work days = 2000 work hours</summary>
+<div>
 
 So if you spend 1 hour per day commuting (half an hour each way), you spend 250 hours per year on the road.
 
-### Rule of 72: years to double = 72 / interest rate {.trick-subheading}
+</div>
+</details>
+
+### Rule of 72: years to double = 72 / interest rate {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Rule of 72: years to double = 72 / interest rate</summary>
+<div>
 
 Want 10% annual growth on your investments? They double in 7.2 years.
 
@@ -32,7 +52,14 @@ You can use this rule for any time period, not just years.
 
 Inflation is 4%? That cuts your money in half in 72/4, or 18 years.
 
-### Mental arithmetic {.trick-subheading}
+</div>
+</details>
+
+### Mental arithmetic {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Mental arithmetic</summary>
+<div>
 
 10,000 = hundred hundred
 
@@ -46,7 +73,14 @@ trillion = million million
 
 What's 5k × 50k? That's 250 × thousand × thousand, or 250 million.
 
-### Visualizing numbers {.trick-subheading}
+</div>
+</details>
+
+### Visualizing numbers {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Visualizing numbers</summary>
+<div>
 
 12 days = 1 million seconds
 
@@ -58,10 +92,20 @@ What's 5k × 50k? That's 250 × thousand × thousand, or 250 million.
 
 One “part per million” means an accuracy of 1 second every 12 days. One “part per trillion” means an accuracy of 1 second every 30,000 years.
 
-### a% of b = b% of a {.trick-subheading}
+</div>
+</details>
+
+### a% of b = b% of a {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>a% of b = b% of a</summary>
+<div>
 
 It’s not immediately clear, but it’s true: a% of b = 0.01 × a × b, which is the same as b% of a (0.01 × b × a).
 
 What’s 16% of 25? The same as 25% of 16: 4.
 
 What’s 43% of 200? The same as 200% of 43: 86.
+
+</div>
+</details>

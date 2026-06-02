@@ -449,16 +449,13 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/playlists/</guid>
-        <description>&lt;h2 id=&#34;-базовый-минимум&#34;&gt;📚 Базовый минимум&lt;/h2&gt;
-&lt;p&gt;Короткий цикл про ИИ: термины и языковые модели → обзор LLM → &lt;strong&gt;промпт-инжиниринг&lt;/strong&gt;, &lt;strong&gt;RAG&lt;/strong&gt; и &lt;strong&gt;ИИ-агенты&lt;/strong&gt; отдельными статьями.&lt;/p&gt;
+        <description>&lt;h2 id=&#34;-ии&#34;&gt;📚 ИИ&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-intro/&#34; &gt;Базовый минимум про ИИ – введение&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Видео&lt;/a&gt; · чтение 5 мин / видео 4 мин&lt;/li&gt;
 &lt;li&gt;🏷️ Термины: языковая модель, датасет, параметры, ИИ/МО/НС, фундаментальные модели&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: нет&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;Базовый минимум про ИИ – обзор&lt;/a&gt;&lt;/strong&gt;
@@ -467,8 +464,6 @@
     &gt;Видео&lt;/a&gt; · чтение ~14 мин / видео 9 мин&lt;/li&gt;
 &lt;li&gt;📋 Обзор LLM: инструмент и сценарии, устройство (токены, трансформеры), промпт, RAG, fine-tuning, chain-of-thought, семейства моделей, токен и температура, типы и контекст, риски, тренды&lt;/li&gt;
 &lt;li&gt;🏷️ LLM, трансформер, токен, температура, промпт-инжиниринг, RAG, fine-tuning, RLHF, chain-of-thought, контекстное окно, галлюцинации, мультимодальность, агенты&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: нет (достаточно введения в цикл)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-prompt-engineering/&#34; &gt;Базовый минимум про ИИ – промпт-инжиниринг&lt;/a&gt;&lt;/strong&gt;
@@ -476,8 +471,6 @@
 &lt;li&gt;⏱️ чтение ~7 мин · без видео&lt;/li&gt;
 &lt;li&gt;📋 Zero-shot, few-shot, chain-of-thought, роли, step-back, источники промптов; структура как на mind map; аккордеоны&lt;/li&gt;
 &lt;li&gt;🏷️ промпт-инжиниринг, zero-shot, few-shot, CoT, ролевой промптинг, step-back, in-context learning&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: желательно &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;обзор LLM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34; &gt;Базовый минимум про ИИ – RAG-системы&lt;/a&gt;&lt;/strong&gt;
@@ -485,8 +478,6 @@
 &lt;li&gt;⏱️ чтение ~6 мин · без видео&lt;/li&gt;
 &lt;li&gt;📋 Зачем RAG, этапы пайплайна, чанкование, naive / advanced RAG; аккордеоны&lt;/li&gt;
 &lt;li&gt;🏷️ RAG, retrieval, эмбеддинги, векторный индекс, чанкование, генерация с контекстом&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: желательно &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;обзор LLM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-agents/&#34; &gt;Базовый минимум про ИИ – ИИ-агенты&lt;/a&gt;&lt;/strong&gt;
@@ -494,8 +485,6 @@
 &lt;li&gt;⏱️ чтение ~7 мин · без видео&lt;/li&gt;
 &lt;li&gt;📋 Агент vs чат, планирование / память / инструменты, mindset, ReAct, мультиагенты, кто использует; аккордеоны&lt;/li&gt;
 &lt;li&gt;🏷️ ИИ-агенты, LLM, ReAct, tools, планирование, память, мультиагентные системы&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: желательно &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;обзор LLM&lt;/a&gt;, полезен &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34; &gt;RAG&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -510,15 +499,10 @@
     &gt;Видео&lt;/a&gt; · чтение 12 мин / видео 8 мин (оригинал 52 мин)&lt;/li&gt;
 &lt;li&gt;👥 Участники: Nicholas Thompson, Eric Xing, Yoshua Bengio, Yuval Noah Harari, Yejin Choi&lt;/li&gt;
 &lt;li&gt;🏷️ Термины: масштабирование, reward hacking, world model, guardrail, AGI, антропоморфизм&lt;/li&gt;
-&lt;li&gt;📊 Сложность: средняя&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: база по ИИ&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-необходимая-математика&#34;&gt;📐 Необходимая математика&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;В машинном обучении используется математика, которая опирается на школьную программу; чтобы понять, как устроено МО, нужно хорошо знать школьную математику.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&#34;-математика&#34;&gt;📐 Математика&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained/&#34; &gt;BetterExplained - часть 1 - Интуитивная математика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained - часть 2 - Арифметика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
@@ -528,14 +512,12 @@
 &lt;ul&gt;
 &lt;li&gt;📋 Нарезка круга на кольца, разворот в полоски 2πr × Δr — получается треугольник с площадью πR²&lt;/li&gt;
 &lt;li&gt;🏷️ Интеграл, пределы, площадь круга&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-derivatives/&#34; &gt;Мат анализ — Производные&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;📋 Без этого не понять, как нейросеть вообще учится. Производная, градиент, правило цепочки.&lt;/li&gt;
 &lt;li&gt;🏷️ Градиентный спуск, backpropagation&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

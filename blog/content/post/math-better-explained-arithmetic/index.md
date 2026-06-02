@@ -12,17 +12,37 @@ image: cover.jpg
 
 ## Ментальные трюки
 
-### 60 км/ч — это 1 км в минуту {.trick-subheading}
+{{< accordion_controls expand="Развернуть все" collapse="Свернуть все" >}}
+
+### 60 км/ч — это 1 км в минуту {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>60 км/ч — это 1 км в минуту</summary>
+<div>
 
 Время реакции водителя (заметил → принял решение → начал действовать) ~ 1 сек.
 
 Значит, если препятствие возникает ближе 16 метров (при 60 км/ч), то вероятно, что сделать ничего уже не получится. А если скорость в три раза больше, то какое расстояние является критическим?
 
-### 1 year = 250 work days = 2000 work hours {.trick-subheading}
+</div>
+</details>
+
+### 1 year = 250 work days = 2000 work hours {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>1 year = 250 work days = 2000 work hours</summary>
+<div>
 
 Т.е. если на дорогу вы тратите 1 ч в день (полчаса в одну сторону), то в год вы тратите на дорогу 250 часов.
 
-### Правило 72: удвоение за годы = 72 / процентная ставка {.trick-subheading}
+</div>
+</details>
+
+### Правило 72: удвоение за годы = 72 / процентная ставка {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Правило 72: удвоение за годы = 72 / процентная ставка</summary>
+<div>
 
 Хотите увеличить инвестиции на 10% годовых? Они удвоятся за 7,2 года.
 
@@ -32,7 +52,14 @@ image: cover.jpg
 
 Инфляция составляет 4%? Это уменьшит ваши деньги вдвое за 72/4 или 18 лет.
 
-### Устный счёт {.trick-subheading}
+</div>
+</details>
+
+### Устный счёт {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Устный счёт</summary>
+<div>
 
 10 000 = сто сотен
 
@@ -46,7 +73,14 @@ image: cover.jpg
 
 Чему равно 5 тыс. × 50 тыс.? Это 250 × тысяча × тысяча, или 250 миллионов.
 
-### Визуализация чисел {.trick-subheading}
+</div>
+</details>
+
+### Визуализация чисел {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Визуализация чисел</summary>
+<div>
 
 12 дней = 1 миллион секунд
 
@@ -58,10 +92,20 @@ image: cover.jpg
 
 Одна «часть на миллион» — точность 1 секунды за 12 дней. Одна «часть на триллион» — точность 1 секунды за 30 000 лет.
 
-### a% от b = b% от a {.trick-subheading}
+</div>
+</details>
+
+### a% от b = b% от a {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>a% от b = b% от a</summary>
+<div>
 
 С первого взгляда неочевидно, но это верно: a% от b = 0,01 × a × b — то же самое, что b% от a (0,01 × b × a).
 
 Чему равно 16% от 25? Тому же, что 25% от 16: 4.
 
 Чему равно 43% от 200? Тому же, что 200% от 43: 86.
+
+</div>
+</details>

@@ -9,39 +9,27 @@ menu:
             icon: link
 ---
 
-## 📚 Basics
-
-Short track on AI: terms and language models → LLM overview → **prompt engineering**, **RAG**, and **LLM agents** as separate articles.
+## 📚 AI
 
 - **[AI basics – introduction](/en/p/ai-basics-intro/)**
   - 🎬 [Video](https://youtu.be/z9VBZn0XcVk) · reading 5 min / video 4 min
   - 🏷️ Terms: language model, dataset, parameters, AI/ML/NN, foundation models
-  - 📊 Difficulty: basic
-  - 📋 Prerequisites: none
 - **[AI basics – overview](/en/p/ai-basics-overview/)**
   - 🎬 [Video](https://youtu.be/xHLP2f2WVpU) · reading ~14 min / video 9 min
   - 📋 LLM overview: use cases, internals (tokens, transformers), prompting, RAG, fine-tuning, chain-of-thought, model families, key terms, risks, trends
   - 🏷️ LLM, transformer, token, temperature, prompt engineering, RAG, fine-tuning, RLHF, chain-of-thought, context window, hallucinations, multimodality, agents
-  - 📊 Difficulty: basic
-  - 📋 Prerequisites: none (intro to the series is enough)
 - **[AI basics – prompt engineering](/en/p/ai-basics-prompt-engineering/)**
   - ⏱️ ~7 min read · no video
   - 📋 Zero-shot, few-shot, chain-of-thought, roles, step-back, where prompts come from; mind-map layout; accordions
   - 🏷️ prompt engineering, zero-shot, few-shot, CoT, role prompting, step-back, in-context learning
-  - 📊 Difficulty: basic
-  - 📋 Prerequisites: [LLM overview](/en/p/ai-basics-overview/) recommended
 - **[AI basics – RAG systems](/en/p/ai-basics-rag/)**
   - ⏱️ ~6 min read · no video
   - 📋 Why RAG, pipeline stages, chunking, naive vs advanced RAG; accordions
   - 🏷️ RAG, retrieval, embeddings, vector index, chunking, context-conditioned generation
-  - 📊 Difficulty: basic
-  - 📋 Prerequisites: [LLM overview](/en/p/ai-basics-overview/) recommended
 - **[AI basics – LLM agents](/en/p/ai-basics-agents/)**
   - ⏱️ ~7 min read · no video
   - 📋 Agent vs chat, planning / memory / tools, mindset, ReAct, multi-agent, who uses them; accordions
   - 🏷️ AI agents, LLM, ReAct, tools, planning, memory, multi-agent systems
-  - 📊 Difficulty: basic
-  - 📋 Prerequisites: [LLM overview](/en/p/ai-basics-overview/) recommended; [RAG](/en/p/ai-basics-rag/) helps
 
 ## 👥 On Their Shoulders
 
@@ -51,12 +39,8 @@ Short track on AI: terms and language models → LLM overview → **prompt engin
   - 🎬 [Video](https://youtu.be/5mUEOx3uLDc) · reading 12 min / video 8 min (original 52 min)
   - 👥 Participants: Nicholas Thompson, Eric Xing, Yoshua Bengio, Yuval Noah Harari, Yejin Choi
   - 🏷️ Terms: scaling, reward hacking, world model, guardrail, AGI, anthropomorphism
-  - 📊 Difficulty: intermediate
-  - 📋 Prerequisites: AI basics
 
-## 📐 Essential Mathematics
-
-> *Machine learning relies on mathematics that grows out of the school curriculum; to understand how ML works, you need a solid grasp of school-level math.*
+## 📐 Mathematics
 
 - **[BetterExplained - Part 1 - Intuitive Math](/en/p/math-better-explained/)**
 - **[BetterExplained - Part 2 - Arithmetic](/en/p/math-better-explained-arithmetic/)**
@@ -65,8 +49,6 @@ Short track on AI: terms and language models → LLM overview → **prompt engin
 - **[Math Analysis — Example of Analysis (Finding πr²)](/en/p/math-circle-area/)**
   - 📋 Slicing the circle into rings, unrolling into strips 2πr × Δr — yields a triangle of area πR²
   - 🏷️ Integral, limits, area of circle
-  - 📊 Difficulty: basic
 - **[Math Analysis — Derivatives](/en/p/math-derivatives/)**
   - 📋 Without this you can't understand how neural networks learn. Derivative, gradient, chain rule.
   - 🏷️ Gradient descent, backpropagation
-  - 📊 Difficulty: basic

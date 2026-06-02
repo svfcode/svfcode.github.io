@@ -13,33 +13,90 @@
         
         <guid>http://localhost:1313/p/math-better-explained-arithmetic/</guid>
         <description>&lt;img src="http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - часть 2 - Арифметика" /&gt;&lt;h2 id=&#34;ментальные-трюки&#34;&gt;Ментальные трюки&lt;/h2&gt;
-&lt;h3 class=&#34;trick-subheading&#34; id=&#34;60-кмч--это-1-км-в-минуту&#34;&gt;60 км/ч — это 1 км в минуту&lt;/h3&gt;
+&lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Развернуть все&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Развернуть все&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--collapse&#34; data-action=&#34;collapse&#34; aria-label=&#34;Свернуть все&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Свернуть все&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener(&#34;click&#34;, function (e) {
+        var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
+        if (!btn) return;
+        var article = btn.closest(&#34;.article-content&#34;);
+        if (!article) return;
+        var open = btn.dataset.action === &#34;expand&#34;;
+        article.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+&lt;/script&gt;
+
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;60-кмч--это-1-км-в-минуту&#34;&gt;60 км/ч — это 1 км в минуту&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;60 км/ч — это 1 км в минуту&lt;/summary&gt;
+&lt;div&gt;
 &lt;p&gt;Время реакции водителя (заметил → принял решение → начал действовать) ~ 1 сек.&lt;/p&gt;
 &lt;p&gt;Значит, если препятствие возникает ближе 16 метров (при 60 км/ч), то вероятно, что сделать ничего уже не получится. А если скорость в три раза больше, то какое расстояние является критическим?&lt;/p&gt;
-&lt;h3 class=&#34;trick-subheading&#34; id=&#34;1-year--250-work-days--2000-work-hours&#34;&gt;1 year = 250 work days = 2000 work hours&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;1-year--250-work-days--2000-work-hours&#34;&gt;1 year = 250 work days = 2000 work hours&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;1 year = 250 work days = 2000 work hours&lt;/summary&gt;
+&lt;div&gt;
 &lt;p&gt;Т.е. если на дорогу вы тратите 1 ч в день (полчаса в одну сторону), то в год вы тратите на дорогу 250 часов.&lt;/p&gt;
-&lt;h3 class=&#34;trick-subheading&#34; id=&#34;правило-72-удвоение-за-годы--72--процентная-ставка&#34;&gt;Правило 72: удвоение за годы = 72 / процентная ставка&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;правило-72-удвоение-за-годы--72--процентная-ставка&#34;&gt;Правило 72: удвоение за годы = 72 / процентная ставка&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Правило 72: удвоение за годы = 72 / процентная ставка&lt;/summary&gt;
+&lt;div&gt;
 &lt;p&gt;Хотите увеличить инвестиции на 10% годовых? Они удвоятся за 7,2 года.&lt;/p&gt;
 &lt;p&gt;Хотите, чтобы ваши инвестиции удвоились за 5 лет? Вам нужна процентная ставка 72/5 или около 15%.&lt;/p&gt;
 &lt;p&gt;Вы можете использовать это правило в течение любого периода времени, а не только в течение нескольких лет.&lt;/p&gt;
 &lt;p&gt;Инфляция составляет 4%? Это уменьшит ваши деньги вдвое за 72/4 или 18 лет.&lt;/p&gt;
-&lt;h3 class=&#34;trick-subheading&#34; id=&#34;устный-счёт&#34;&gt;Устный счёт&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;устный-счёт&#34;&gt;Устный счёт&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Устный счёт&lt;/summary&gt;
+&lt;div&gt;
 &lt;p&gt;10 000 = сто сотен&lt;/p&gt;
 &lt;p&gt;миллион = тысяча тысяч&lt;/p&gt;
 &lt;p&gt;миллиард = тысяча миллионов&lt;/p&gt;
 &lt;p&gt;триллион = миллион миллионов&lt;/p&gt;
 &lt;p&gt;1% от 10 тыс. — это 100. Индекс Dow примерно 10 тыс. (сейчас около 12 тыс.). Если Dow падает на 100, это примерно потеря 1%.&lt;/p&gt;
 &lt;p&gt;Чему равно 5 тыс. × 50 тыс.? Это 250 × тысяча × тысяча, или 250 миллионов.&lt;/p&gt;
-&lt;h3 class=&#34;trick-subheading&#34; id=&#34;визуализация-чисел&#34;&gt;Визуализация чисел&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;визуализация-чисел&#34;&gt;Визуализация чисел&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Визуализация чисел&lt;/summary&gt;
+&lt;div&gt;
 &lt;p&gt;12 дней = 1 миллион секунд&lt;/p&gt;
 &lt;p&gt;1 год = 31 миллион секунд (примерно π × 10 миллионов)&lt;/p&gt;
 &lt;p&gt;30 лет = 1 миллиард секунд&lt;/p&gt;
 &lt;p&gt;30 000 лет = 1 триллион секунд&lt;/p&gt;
 &lt;p&gt;Одна «часть на миллион» — точность 1 секунды за 12 дней. Одна «часть на триллион» — точность 1 секунды за 30 000 лет.&lt;/p&gt;
-&lt;h3 class=&#34;trick-subheading&#34; id=&#34;a-от-b--b-от-a&#34;&gt;a% от b = b% от a&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;a-от-b--b-от-a&#34;&gt;a% от b = b% от a&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;a% от b = b% от a&lt;/summary&gt;
+&lt;div&gt;
 &lt;p&gt;С первого взгляда неочевидно, но это верно: a% от b = 0,01 × a × b — то же самое, что b% от a (0,01 × b × a).&lt;/p&gt;
 &lt;p&gt;Чему равно 16% от 25? Тому же, что 25% от 16: 4.&lt;/p&gt;
 &lt;p&gt;Чему равно 43% от 200? Тому же, что 200% от 43: 86.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 </description>
         </item>
         <item>
@@ -2088,16 +2145,13 @@ F = G \frac{m_1 m_2}{r^2}
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/playlists/</guid>
-        <description>&lt;h2 id=&#34;-базовый-минимум&#34;&gt;📚 Базовый минимум&lt;/h2&gt;
-&lt;p&gt;Короткий цикл про ИИ: термины и языковые модели → обзор LLM → &lt;strong&gt;промпт-инжиниринг&lt;/strong&gt;, &lt;strong&gt;RAG&lt;/strong&gt; и &lt;strong&gt;ИИ-агенты&lt;/strong&gt; отдельными статьями.&lt;/p&gt;
+        <description>&lt;h2 id=&#34;-ии&#34;&gt;📚 ИИ&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-intro/&#34; &gt;Базовый минимум про ИИ – введение&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Видео&lt;/a&gt; · чтение 5 мин / видео 4 мин&lt;/li&gt;
 &lt;li&gt;🏷️ Термины: языковая модель, датасет, параметры, ИИ/МО/НС, фундаментальные модели&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: нет&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;Базовый минимум про ИИ – обзор&lt;/a&gt;&lt;/strong&gt;
@@ -2106,8 +2160,6 @@ F = G \frac{m_1 m_2}{r^2}
     &gt;Видео&lt;/a&gt; · чтение ~14 мин / видео 9 мин&lt;/li&gt;
 &lt;li&gt;📋 Обзор LLM: инструмент и сценарии, устройство (токены, трансформеры), промпт, RAG, fine-tuning, chain-of-thought, семейства моделей, токен и температура, типы и контекст, риски, тренды&lt;/li&gt;
 &lt;li&gt;🏷️ LLM, трансформер, токен, температура, промпт-инжиниринг, RAG, fine-tuning, RLHF, chain-of-thought, контекстное окно, галлюцинации, мультимодальность, агенты&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: нет (достаточно введения в цикл)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-prompt-engineering/&#34; &gt;Базовый минимум про ИИ – промпт-инжиниринг&lt;/a&gt;&lt;/strong&gt;
@@ -2115,8 +2167,6 @@ F = G \frac{m_1 m_2}{r^2}
 &lt;li&gt;⏱️ чтение ~7 мин · без видео&lt;/li&gt;
 &lt;li&gt;📋 Zero-shot, few-shot, chain-of-thought, роли, step-back, источники промптов; структура как на mind map; аккордеоны&lt;/li&gt;
 &lt;li&gt;🏷️ промпт-инжиниринг, zero-shot, few-shot, CoT, ролевой промптинг, step-back, in-context learning&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: желательно &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;обзор LLM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34; &gt;Базовый минимум про ИИ – RAG-системы&lt;/a&gt;&lt;/strong&gt;
@@ -2124,8 +2174,6 @@ F = G \frac{m_1 m_2}{r^2}
 &lt;li&gt;⏱️ чтение ~6 мин · без видео&lt;/li&gt;
 &lt;li&gt;📋 Зачем RAG, этапы пайплайна, чанкование, naive / advanced RAG; аккордеоны&lt;/li&gt;
 &lt;li&gt;🏷️ RAG, retrieval, эмбеддинги, векторный индекс, чанкование, генерация с контекстом&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: желательно &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;обзор LLM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-agents/&#34; &gt;Базовый минимум про ИИ – ИИ-агенты&lt;/a&gt;&lt;/strong&gt;
@@ -2133,8 +2181,6 @@ F = G \frac{m_1 m_2}{r^2}
 &lt;li&gt;⏱️ чтение ~7 мин · без видео&lt;/li&gt;
 &lt;li&gt;📋 Агент vs чат, планирование / память / инструменты, mindset, ReAct, мультиагенты, кто использует; аккордеоны&lt;/li&gt;
 &lt;li&gt;🏷️ ИИ-агенты, LLM, ReAct, tools, планирование, память, мультиагентные системы&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: желательно &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;обзор LLM&lt;/a&gt;, полезен &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34; &gt;RAG&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2149,15 +2195,10 @@ F = G \frac{m_1 m_2}{r^2}
     &gt;Видео&lt;/a&gt; · чтение 12 мин / видео 8 мин (оригинал 52 мин)&lt;/li&gt;
 &lt;li&gt;👥 Участники: Nicholas Thompson, Eric Xing, Yoshua Bengio, Yuval Noah Harari, Yejin Choi&lt;/li&gt;
 &lt;li&gt;🏷️ Термины: масштабирование, reward hacking, world model, guardrail, AGI, антропоморфизм&lt;/li&gt;
-&lt;li&gt;📊 Сложность: средняя&lt;/li&gt;
-&lt;li&gt;📋 Необходимые знания: база по ИИ&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;-необходимая-математика&#34;&gt;📐 Необходимая математика&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;В машинном обучении используется математика, которая опирается на школьную программу; чтобы понять, как устроено МО, нужно хорошо знать школьную математику.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&#34;-математика&#34;&gt;📐 Математика&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained/&#34; &gt;BetterExplained - часть 1 - Интуитивная математика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained - часть 2 - Арифметика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
@@ -2167,14 +2208,12 @@ F = G \frac{m_1 m_2}{r^2}
 &lt;ul&gt;
 &lt;li&gt;📋 Нарезка круга на кольца, разворот в полоски 2πr × Δr — получается треугольник с площадью πR²&lt;/li&gt;
 &lt;li&gt;🏷️ Интеграл, пределы, площадь круга&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-derivatives/&#34; &gt;Мат анализ — Производные&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;📋 Без этого не понять, как нейросеть вообще учится. Производная, градиент, правило цепочки.&lt;/li&gt;
 &lt;li&gt;🏷️ Градиентный спуск, backpropagation&lt;/li&gt;
-&lt;li&gt;📊 Сложность: базовая&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
