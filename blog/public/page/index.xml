@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on Блог</title>
-        <link>http://localhost:1313/page/</link>
+        <link>http://localhost:38331/page/</link>
         <description>Recent content in Pages on Блог</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ru</language>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:38331/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Архивы</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>http://localhost:38331/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>http://localhost:38331/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Обо мне</title>
-        <link>http://localhost:1313/about/</link>
+        <link>http://localhost:38331/about/</link>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/about/</guid>
+        <guid>http://localhost:38331/about/</guid>
         <description>&lt;p&gt;&lt;strong&gt;Обо мне&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;10 лет работал в нефтяной отрасли, затем 5 лет — фулстек-разработчиком. Сейчас занимаюсь &lt;strong&gt;ML&lt;/strong&gt; и &lt;strong&gt;ROS&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -445,20 +445,20 @@
         </item>
         <item>
         <title>Плейлисты</title>
-        <link>http://localhost:1313/playlists/</link>
+        <link>http://localhost:38331/playlists/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/playlists/</guid>
+        <guid>http://localhost:38331/playlists/</guid>
         <description>&lt;h2 id=&#34;-ии&#34;&gt;📚 ИИ&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-intro/&#34; &gt;Базовый минимум про ИИ – введение&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-intro/&#34; &gt;Базовый минимум про ИИ – введение&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Видео&lt;/a&gt; · чтение 5 мин / видео 4 мин&lt;/li&gt;
 &lt;li&gt;🏷️ Термины: языковая модель, датасет, параметры, ИИ/МО/НС, фундаментальные модели&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-overview/&#34; &gt;Базовый минимум про ИИ – обзор&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-overview/&#34; &gt;Базовый минимум про ИИ – обзор&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/xHLP2f2WVpU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Видео&lt;/a&gt; · чтение ~14 мин / видео 9 мин&lt;/li&gt;
@@ -466,21 +466,21 @@
 &lt;li&gt;🏷️ LLM, трансформер, токен, температура, промпт-инжиниринг, RAG, fine-tuning, RLHF, chain-of-thought, контекстное окно, галлюцинации, мультимодальность, агенты&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-prompt-engineering/&#34; &gt;Базовый минимум про ИИ – промпт-инжиниринг&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-prompt-engineering/&#34; &gt;Базовый минимум про ИИ – промпт-инжиниринг&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;⏱️ чтение ~7 мин · без видео&lt;/li&gt;
 &lt;li&gt;📋 Zero-shot, few-shot, chain-of-thought, роли, step-back, источники промптов; структура как на mind map; аккордеоны&lt;/li&gt;
 &lt;li&gt;🏷️ промпт-инжиниринг, zero-shot, few-shot, CoT, ролевой промптинг, step-back, in-context learning&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34; &gt;Базовый минимум про ИИ – RAG-системы&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-rag/&#34; &gt;Базовый минимум про ИИ – RAG-системы&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;⏱️ чтение ~6 мин · без видео&lt;/li&gt;
 &lt;li&gt;📋 Зачем RAG, этапы пайплайна, чанкование, naive / advanced RAG; аккордеоны&lt;/li&gt;
 &lt;li&gt;🏷️ RAG, retrieval, эмбеддинги, векторный индекс, чанкование, генерация с контекстом&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-agents/&#34; &gt;Базовый минимум про ИИ – ИИ-агенты&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-agents/&#34; &gt;Базовый минимум про ИИ – ИИ-агенты&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;⏱️ чтение ~7 мин · без видео&lt;/li&gt;
 &lt;li&gt;📋 Агент vs чат, планирование / память / инструменты, mindset, ReAct, мультиагенты, кто использует; аккордеоны&lt;/li&gt;
@@ -493,7 +493,7 @@
 &lt;p&gt;&lt;em&gt;краткая выжимка из интервью, подкастов и конференций про ИИ&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-future-beyond-scaling/&#34; &gt;Будущее ИИ: почему одного масштабирования уже недостаточно&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-future-beyond-scaling/&#34; &gt;Будущее ИИ: почему одного масштабирования уже недостаточно&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Видео&lt;/a&gt; · чтение 12 мин / видео 8 мин (оригинал 52 мин)&lt;/li&gt;
@@ -504,17 +504,17 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;-математика&#34;&gt;📐 Математика&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained/&#34; &gt;BetterExplained - часть 1 - Интуитивная математика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained - часть 2 - Арифметика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-essentials-overview/&#34; &gt;Необходимая математика которую у тебя спросят на собесе от nareshka.ru&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-bad-drawings/&#34; &gt;Математика с дурацкими рисунками — обзор книг Орлин Бен&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-circle-area/&#34; &gt;Мат анализ — пример анализа (нахождение πr²)&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-better-explained/&#34; &gt;BetterExplained - часть 1 - Интуитивная математика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained - часть 2 - Арифметика&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-essentials-overview/&#34; &gt;Необходимая математика которую у тебя спросят на собесе от nareshka.ru&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-bad-drawings/&#34; &gt;Математика с дурацкими рисунками — обзор книг Орлин Бен&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-circle-area/&#34; &gt;Мат анализ — пример анализа (нахождение πr²)&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;📋 Нарезка круга на кольца, разворот в полоски 2πr × Δr — получается треугольник с площадью πR²&lt;/li&gt;
 &lt;li&gt;🏷️ Интеграл, пределы, площадь круга&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-derivatives/&#34; &gt;Мат анализ — Производные&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-derivatives/&#34; &gt;Мат анализ — Производные&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;📋 Без этого не понять, как нейросеть вообще учится. Производная, градиент, правило цепочки.&lt;/li&gt;
 &lt;li&gt;🏷️ Градиентный спуск, backpropagation&lt;/li&gt;
@@ -525,10 +525,10 @@
         </item>
         <item>
         <title>Поиск</title>
-        <link>http://localhost:1313/search/</link>
+        <link>http://localhost:38331/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>http://localhost:38331/search/</guid>
         <description></description>
         </item>
         

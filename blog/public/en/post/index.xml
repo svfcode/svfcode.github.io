@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Blog</title>
-        <link>http://localhost:1313/en/post/</link>
+        <link>http://localhost:38331/en/post/</link>
         <description>Recent content in Posts on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:38331/en/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>BetterExplained - Part 2 - Arithmetic</title>
-        <link>http://localhost:1313/en/p/math-better-explained-arithmetic/</link>
+        <link>http://localhost:38331/en/p/math-better-explained-arithmetic/</link>
         <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/math-better-explained-arithmetic/</guid>
-        <description>&lt;img src="http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - Part 2 - Arithmetic" /&gt;&lt;h2 id=&#34;mental-tricks&#34;&gt;Mental tricks&lt;/h2&gt;
+        <guid>http://localhost:38331/en/p/math-better-explained-arithmetic/</guid>
+        <description>&lt;img src="http://localhost:38331/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - Part 2 - Arithmetic" /&gt;&lt;h2 id=&#34;mental-tricks&#34;&gt;Mental tricks&lt;/h2&gt;
 &lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
     &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Expand all&#34;&gt;
         &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
@@ -30,15 +30,19 @@
     document.addEventListener(&#34;click&#34;, function (e) {
         var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
         if (!btn) return;
-        var article = btn.closest(&#34;.article-content&#34;);
-        if (!article) return;
+        var controls = btn.closest(&#34;.accordion-controls&#34;);
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
         var open = btn.dataset.action === &#34;expand&#34;;
-        article.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
+        group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
             d.open = open;
         });
     });
 })();
 &lt;/script&gt;
+
+&lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;60-kmh-is-1-km-per-minute&#34;&gt;60 km/h is 1 km per minute&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
@@ -97,6 +101,8 @@
 &lt;p&gt;What’s 43% of 200? The same as 200% of 43: 86.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&#34;sum-from-1-to-n&#34;&gt;Sum from 1 to n&lt;/h2&gt;
 &lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
     &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Expand all&#34;&gt;
@@ -115,15 +121,19 @@
     document.addEventListener(&#34;click&#34;, function (e) {
         var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
         if (!btn) return;
-        var article = btn.closest(&#34;.article-content&#34;);
-        if (!article) return;
+        var controls = btn.closest(&#34;.accordion-controls&#34;);
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
         var open = btn.dataset.action === &#34;expand&#34;;
-        article.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
+        group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
             d.open = open;
         });
     });
 })();
 &lt;/script&gt;
+
+&lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;were-usually-just-given-the-formula-and-told-to-memorize-it&#34;&gt;We&amp;rsquo;re usually just given the formula and told to memorize it&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
@@ -131,9 +141,11 @@
 &lt;div&gt;
 \[
 \text{Sum from 1 to } n = \frac{n(n+1)}{2}
-\]\[
+\]
+\[
 \text{Sum from 1 to 100} = \frac{100(100+1)}{2} = (50)(101) = 5050
-\]&lt;p&gt;But to build &lt;strong&gt;intuition&lt;/strong&gt; and really understand it, you need to &lt;strong&gt;derive the formula yourself&lt;/strong&gt;.&lt;/p&gt;
+\]
+&lt;p&gt;But to build &lt;strong&gt;intuition&lt;/strong&gt; and really understand it, you need to &lt;strong&gt;derive the formula yourself&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Below are four ways to derive it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
@@ -146,7 +158,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Each vertical pair has the same sum: \(1 + 10 = 2 + 9 = \ldots = n + 1\). There are \(\frac{n}{2}\) pairs.&lt;/p&gt;
 \[
 \text{Number of pairs} \times \text{sum of each pair} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
-\]&lt;/div&gt;
+\]
+&lt;/div&gt;
 &lt;/details&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;2-two-rows-of-numbers&#34;&gt;2) Two rows of numbers&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
@@ -157,10 +170,12 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Add &lt;strong&gt;both&lt;/strong&gt; rows: every column sums to \(n + 1\), and there are \(n\) columns:&lt;/p&gt;
 \[
 \text{Sum of both rows} = n(n+1)
-\]&lt;p&gt;We only want &lt;strong&gt;one&lt;/strong&gt; row, so divide by 2:&lt;/p&gt;
+\]
+&lt;p&gt;We only want &lt;strong&gt;one&lt;/strong&gt; row, so divide by 2:&lt;/p&gt;
 \[
 \frac{n(n+1)}{2}
-\]&lt;/div&gt;
+\]
+&lt;/div&gt;
 &lt;/details&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;3-picture-a-triangle&#34;&gt;3) Picture a triangle&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
@@ -181,24 +196,29 @@ x x x x x
 &lt;p&gt;We all know that&lt;/p&gt;
 \[
 \text{average} = \frac{\text{sum}}{\text{number of items}}
-\]&lt;p&gt;which we can rewrite as&lt;/p&gt;
+\]
+&lt;p&gt;which we can rewrite as&lt;/p&gt;
 \[
 \text{sum} = \text{average} \times \text{number of items}
-\]&lt;p&gt;For \(1, 2, \ldots, n\) the average is easy to eyeball from the &lt;strong&gt;middle&lt;/strong&gt; of the range: \(\frac{n+1}{2}\). There are \(n\) items, so:&lt;/p&gt;
+\]
+&lt;p&gt;For \(1, 2, \ldots, n\) the average is easy to eyeball from the &lt;strong&gt;middle&lt;/strong&gt; of the range: \(\frac{n+1}{2}\). There are \(n\) items, so:&lt;/p&gt;
 \[
 \text{sum} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
-\]&lt;p&gt;For \(1 \ldots 100\): average \(\approx 50.5\), sum \(50.5 \times 100 = 5050\).&lt;/p&gt;
+\]
+&lt;p&gt;For \(1 \ldots 100\): average \(\approx 50.5\), sum \(50.5 \times 100 = 5050\).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
+&lt;/div&gt;
+
 </description>
         </item>
         <item>
         <title>AI basics – LLM agents</title>
-        <link>http://localhost:1313/en/p/ai-basics-agents/</link>
+        <link>http://localhost:38331/en/p/ai-basics-agents/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-agents/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-agents/cover.jpg" alt="Featured image of post AI basics – LLM agents" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;AI agents&lt;/strong&gt; built around language models: systems that &lt;strong&gt;plan&lt;/strong&gt;, &lt;strong&gt;retain context&lt;/strong&gt;, &lt;strong&gt;call tools&lt;/strong&gt;, and iterate toward a goal—not just emit a single reply.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-agents/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-agents/cover.jpg" alt="Featured image of post AI basics – LLM agents" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;AI agents&lt;/strong&gt; built around language models: systems that &lt;strong&gt;plan&lt;/strong&gt;, &lt;strong&gt;retain context&lt;/strong&gt;, &lt;strong&gt;call tools&lt;/strong&gt;, and iterate toward a goal—not just emit a single reply.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chat-vs-agent&#34;&gt;Chat vs agent&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chat vs agent&lt;/summary&gt;
@@ -217,7 +237,7 @@ x x x x x
 &lt;p&gt;&lt;strong&gt;Memory.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Short-term&lt;/strong&gt; — the live context window: recent turns and intermediate notes in one session.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Long-term&lt;/strong&gt; — stored facts, docs, prior sessions; often implemented with &lt;strong&gt;vector stores and RAG&lt;/strong&gt; so relevant snippets are retrieved into the prompt (see the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;RAG article&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Long-term&lt;/strong&gt; — stored facts, docs, prior sessions; often implemented with &lt;strong&gt;vector stores and RAG&lt;/strong&gt; so relevant snippets are retrieved into the prompt (see the &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-rag/&#34;&gt;RAG article&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Tools.&lt;/strong&gt; Formalized actions the model can request: HTTP APIs, code execution (e.g. Python), web search, filesystem hooks, calendar or DB queries. Without tools the “agent” remains text-only with no outward levers.&lt;/p&gt;
 &lt;/div&gt;
@@ -278,11 +298,11 @@ x x x x x
         </item>
         <item>
         <title>AI basics – overview</title>
-        <link>http://localhost:1313/en/p/ai-basics-overview/</link>
+        <link>http://localhost:38331/en/p/ai-basics-overview/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-overview/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-overview/cover.jpg" alt="Featured image of post AI basics – overview" /&gt;&lt;p&gt;This overview for the «Bare minimum» series is an outline:&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-overview/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-overview/cover.jpg" alt="Featured image of post AI basics – overview" /&gt;&lt;p&gt;This overview for the «Bare minimum» series is an outline:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;large language models;&lt;/li&gt;
 &lt;li&gt;architecture;&lt;/li&gt;
@@ -369,7 +389,7 @@ x x x x x
 &lt;li&gt;Structuring instructions with roles, examples, and context&lt;/li&gt;
 &lt;li&gt;Iteratively refining prompts for accurate answers&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34;&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-prompt-engineering/&#34;&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fine-tuning&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Adapting the model to specific tasks and domains&lt;/li&gt;
@@ -382,7 +402,7 @@ x x x x x
 &lt;li&gt;Combining external sources with generation&lt;/li&gt;
 &lt;li&gt;Reducing hallucinations by grounding in verified facts&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More on stages, chunking, and pipeline flavors: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;AI basics – RAG systems&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More on stages, chunking, and pipeline flavors: &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-rag/&#34;&gt;AI basics – RAG systems&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Chain-of-thought&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Step-by-step reasoning for hard problems&lt;/li&gt;
@@ -495,7 +515,7 @@ x x x x x
 &lt;li&gt;Planning actions and making decisions&lt;/li&gt;
 &lt;li&gt;Using external tools and APIs&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More on planning, memory, tools, ReAct, and multi-agent setups: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34;&gt;AI basics – LLM agents&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More on planning, memory, tools, ReAct, and multi-agent setups: &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-agents/&#34;&gt;AI basics – LLM agents&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Model optimization&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Quantization and distillation for speed&lt;/li&gt;
@@ -514,11 +534,11 @@ x x x x x
         </item>
         <item>
         <title>AI basics – prompt engineering</title>
-        <link>http://localhost:1313/en/p/ai-basics-prompt-engineering/</link>
+        <link>http://localhost:38331/en/p/ai-basics-prompt-engineering/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-prompt-engineering/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-prompt-engineering/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;goal-and-essence&#34;&gt;Goal and essence&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Goal and essence&lt;/summary&gt;
@@ -608,11 +628,11 @@ x x x x x
         </item>
         <item>
         <title>AI basics – RAG systems</title>
-        <link>http://localhost:1313/en/p/ai-basics-rag/</link>
+        <link>http://localhost:38331/en/p/ai-basics-rag/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-rag/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-rag/cover.jpg" alt="Featured image of post AI basics – RAG systems" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;retrieval-augmented generation&lt;/strong&gt;: how to ground a language model in external documents and up-to-date knowledge.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-rag/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-rag/cover.jpg" alt="Featured image of post AI basics – RAG systems" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;retrieval-augmented generation&lt;/strong&gt;: how to ground a language model in external documents and up-to-date knowledge.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-rag-is&#34;&gt;What RAG is&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What RAG is&lt;/summary&gt;
@@ -682,10 +702,10 @@ x x x x x
         </item>
         <item>
         <title>Math Analysis — Derivatives</title>
-        <link>http://localhost:1313/en/p/math-derivatives/</link>
+        <link>http://localhost:38331/en/p/math-derivatives/</link>
         <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/math-derivatives/</guid>
+        <guid>http://localhost:38331/en/p/math-derivatives/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Without this you can&amp;rsquo;t understand how neural networks learn.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -976,34 +996,34 @@ x x x x x
         </item>
         <item>
         <title>Math with Bad Drawings — overview of Ben Orlin&#39;s books</title>
-        <link>http://localhost:1313/en/p/math-bad-drawings/</link>
+        <link>http://localhost:38331/en/p/math-bad-drawings/</link>
         <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/math-bad-drawings/</guid>
-        <description>&lt;img src="http://localhost:1313/p/math-bad-drawings/cover.jpg" alt="Featured image of post Math with Bad Drawings — overview of Ben Orlin&#39;s books" /&gt;&lt;p&gt;Another way to build math intuition before the formulas — through stories and sketches. Ben Orlin writes as if explaining to a friend over tea: with humor, no pretense, and a focus on &lt;em&gt;why&lt;/em&gt; any of this matters.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/math-bad-drawings/</guid>
+        <description>&lt;img src="http://localhost:38331/p/math-bad-drawings/cover.jpg" alt="Featured image of post Math with Bad Drawings — overview of Ben Orlin&#39;s books" /&gt;&lt;p&gt;Another way to build math intuition before the formulas — through stories and sketches. Ben Orlin writes as if explaining to a friend over tea: with humor, no pretense, and a focus on &lt;em&gt;why&lt;/em&gt; any of this matters.&lt;/p&gt;
 &lt;p&gt;Author’s site: &lt;a class=&#34;link&#34; href=&#34;https://mathwithbaddrawings.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Math with Bad Drawings&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;math-with-bad-drawings&#34;&gt;Math with Bad Drawings&lt;/h2&gt;
 &lt;p&gt;The flagship book. Orlin covers school and early college topics — probability, geometry, statistics, infinity — via comics and everyday analogies.&lt;/p&gt;
-&lt;p&gt;The strength: math as a way of thinking, not a memorization exam. Pairs well with &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt;: more pure intuition there, more narrative and humor here.&lt;/p&gt;
+&lt;p&gt;The strength: math as a way of thinking, not a memorization exam. Pairs well with &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt;: more pure intuition there, more narrative and humor here.&lt;/p&gt;
 &lt;h2 id=&#34;change-is-the-only-constant&#34;&gt;Change Is the Only Constant&lt;/h2&gt;
-&lt;p&gt;The second book — calculus and the history of ideas: how people arrived at derivatives, integrals, and limits. A good bridge to &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;circle area example&lt;/a&gt;: story and meaning first, symbols second.&lt;/p&gt;
+&lt;p&gt;The second book — calculus and the history of ideas: how people arrived at derivatives, integrals, and limits. A good bridge to &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-circle-area/&#34; &gt;circle area example&lt;/a&gt;: story and meaning first, symbols second.&lt;/p&gt;
 &lt;h2 id=&#34;math-games-with-bad-drawings&#34;&gt;Math Games with Bad Drawings&lt;/h2&gt;
 &lt;p&gt;A collection of games and puzzles — logic, combinatorics, strategy. Less directly about ML, but it trains mathematical thinking: spot structure, test hypotheses, don’t fear being wrong.&lt;/p&gt;
 &lt;h2 id=&#34;when-to-read-in-this-series&#34;&gt;When to read in this series&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;After &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt; — same “understand, don’t memorize” vibe, in book form.&lt;/li&gt;
-&lt;li&gt;Alongside the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;interview math overview&lt;/a&gt; — so the checklist topics aren’t just a dry list.&lt;/li&gt;
+&lt;li&gt;After &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt; — same “understand, don’t memorize” vibe, in book form.&lt;/li&gt;
+&lt;li&gt;Alongside the &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-essentials-overview/&#34; &gt;interview math overview&lt;/a&gt; — so the checklist topics aren’t just a dry list.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You don’t need all three in order: start with &lt;em&gt;Math with Bad Drawings&lt;/em&gt; for a broad tour; with &lt;em&gt;Change Is the Only Constant&lt;/em&gt; if calculus is the sticking point.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Essential math they&#39;ll ask you at interviews from nareshka.ru</title>
-        <link>http://localhost:1313/en/p/math-essentials-overview/</link>
+        <link>http://localhost:38331/en/p/math-essentials-overview/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/math-essentials-overview/</guid>
+        <guid>http://localhost:38331/en/p/math-essentials-overview/</guid>
         <description>&lt;p&gt;This is the intro to the «Essential Mathematics» series — an overview of which math areas are needed for AI and machine learning, and what they are used for.&lt;/p&gt;
 &lt;h2 id=&#34;linear-algebra&#34;&gt;Linear Algebra&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; vectors, matrices, matrix multiplication, linear transformations, dot product, vector norm, eigenvalues and eigenvectors (advanced).&lt;/p&gt;
@@ -1067,10 +1087,10 @@ x x x x x
         </item>
         <item>
         <title>Math Analysis — Derivatives</title>
-        <link>http://localhost:1313/en/p/math-derivatives-bkp/</link>
+        <link>http://localhost:38331/en/p/math-derivatives-bkp/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/math-derivatives-bkp/</guid>
+        <guid>http://localhost:38331/en/p/math-derivatives-bkp/</guid>
         <description>&lt;p&gt;Second article in the «Essential Mathematics» series — on derivatives, gradient, and chain rule.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Without this you can&amp;rsquo;t understand how neural networks learn.&lt;/strong&gt;&lt;/p&gt;
@@ -1097,7 +1117,8 @@ x x x x x
 &lt;p&gt;For a single-variable function \( f(x) \), the derivative \( f&#39;(x) \) is the limit of the ratio of the change in \( f \) to the change in \( x \) as the change goes to zero:&lt;/p&gt;
 \[
 f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
-\]&lt;p&gt;Here \( \Delta x \) is the increment of the argument (a small step). In the examples below we use \( h \) for the same quantity.&lt;/p&gt;
+\]
+&lt;p&gt;Here \( \Delta x \) is the increment of the argument (a small step). In the examples below we use \( h \) for the same quantity.&lt;/p&gt;
 &lt;p&gt;Geometrically — the slope of the tangent line at \( x \):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;\( f&#39;(x) &gt; 0 \) — function is increasing&lt;/li&gt;
@@ -1125,91 +1146,92 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;p&gt;Speed is &amp;ldquo;how many km per hour.&amp;rdquo; The ratio of change in distance to change in time:&lt;/p&gt;
 \[
 \text{speed} = \frac{s(1) - s(0)}{1 - 0} = \frac{60 - 0}{1} = 60 \text{ km/h}
-\]&lt;p&gt;That&amp;rsquo;s the derivative: the &lt;strong&gt;rate of change&lt;/strong&gt; of one quantity (distance) with respect to another (time).&lt;/p&gt;
+\]
+&lt;p&gt;That&amp;rsquo;s the derivative: the &lt;strong&gt;rate of change&lt;/strong&gt; of one quantity (distance) with respect to another (time).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Numeric example:&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;\( t \) (h)&lt;/th&gt;
-          &lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
-          &lt;th&gt;\( s(t+0.5) - s(t) \)&lt;/th&gt;
-          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0&lt;/td&gt;
-          &lt;td&gt;0&lt;/td&gt;
-          &lt;td&gt;30&lt;/td&gt;
-          &lt;td&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;1&lt;/td&gt;
-          &lt;td&gt;60&lt;/td&gt;
-          &lt;td&gt;30&lt;/td&gt;
-          &lt;td&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;2&lt;/td&gt;
-          &lt;td&gt;120&lt;/td&gt;
-          &lt;td&gt;30&lt;/td&gt;
-          &lt;td&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;\( t \) (h)&lt;/th&gt;
+&lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
+&lt;th&gt;\( s(t+0.5) - s(t) \)&lt;/th&gt;
+&lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;120&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Everywhere we get 60. &lt;strong&gt;Yes: 60 (the speed in km/h) is the derivative&lt;/strong&gt; — \( s&#39;(t) = 60 \). It&amp;rsquo;s constant because the speed doesn&amp;rsquo;t change.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The graph&lt;/strong&gt; — a straight line. The slope of this line is also 60 — the same number:&lt;/p&gt;
 &lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:38331/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;What if the speed varied?&lt;/strong&gt; First 30 min at 40 km/h, next 30 min at 80 km/h. Total: 20 + 40 = 60 km in 1 h. &lt;strong&gt;Average&lt;/strong&gt; speed is 60 km/h — but at each moment it was either 40 or 80.&lt;/p&gt;
 &lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-piecewise.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of s(t) and s&#39;(t): smooth acceleration&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:38331/games/derivative-graph-piecewise.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of s(t) and s&#39;(t): smooth acceleration&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;The graph shows a smooth variant: speed increases from 40 to 80 km/h. Green curve — distance s(t), dashed line — derivative s&amp;rsquo;(t) (instantaneous speed).&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;We compute the &lt;strong&gt;instantaneous&lt;/strong&gt; speed (derivative) at several points — using \( \frac{s(t+h) - s(t)}{h} \) with small \( h = 0.1 \) h:&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;\( t \) (h)&lt;/th&gt;
-          &lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
-          &lt;th&gt;\( s(t+0.1) - s(t) \)&lt;/th&gt;
-          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0.1&lt;/td&gt;
-          &lt;td&gt;4&lt;/td&gt;
-          &lt;td&gt;4&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0.25&lt;/td&gt;
-          &lt;td&gt;10&lt;/td&gt;
-          &lt;td&gt;4&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0.5&lt;/td&gt;
-          &lt;td&gt;20&lt;/td&gt;
-          &lt;td&gt;—&lt;/td&gt;
-          &lt;td&gt;40 (from left) / &lt;strong&gt;80&lt;/strong&gt; (from right)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0.75&lt;/td&gt;
-          &lt;td&gt;40&lt;/td&gt;
-          &lt;td&gt;8&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;1&lt;/td&gt;
-          &lt;td&gt;60&lt;/td&gt;
-          &lt;td&gt;8&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;\( t \) (h)&lt;/th&gt;
+&lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
+&lt;th&gt;\( s(t+0.1) - s(t) \)&lt;/th&gt;
+&lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0.1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.25&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;td&gt;40 (from left) / &lt;strong&gt;80&lt;/strong&gt; (from right)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.75&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;In the first half-hour the derivative is 40 everywhere; in the second, 80. At \( t = 0.5 \) the graph has a &amp;ldquo;kink&amp;rdquo;: slope 40 on the left, 80 on the right. The average 60 is just an average over the whole trip; the derivative tells you the speed &lt;strong&gt;at that exact moment&lt;/strong&gt;.&lt;/p&gt;
 &lt;/details&gt;
@@ -1225,45 +1247,45 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Main rules (brief):&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Function&lt;/th&gt;
-          &lt;th&gt;Derivative&lt;/th&gt;
-          &lt;th&gt;Description&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;\( C \) (constant)&lt;/td&gt;
-          &lt;td&gt;\( 0 \)&lt;/td&gt;
-          &lt;td&gt;constant does not change; rate of change is zero&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;\( x \)&lt;/td&gt;
-          &lt;td&gt;\( 1 \)&lt;/td&gt;
-          &lt;td&gt;linear growth at rate 1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;\( x^n \)&lt;/td&gt;
-          &lt;td&gt;\( n \cdot x^{n-1} \)&lt;/td&gt;
-          &lt;td&gt;exponent &amp;ldquo;comes down&amp;rdquo; as factor; power decreases by 1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;\( kx + b \)&lt;/td&gt;
-          &lt;td&gt;\( k \)&lt;/td&gt;
-          &lt;td&gt;linear function: slope equals coefficient \( k \)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;\( f + g \)&lt;/td&gt;
-          &lt;td&gt;\( f&#39; + g&#39; \)&lt;/td&gt;
-          &lt;td&gt;derivative of sum equals sum of derivatives&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;\( C \cdot f \)&lt;/td&gt;
-          &lt;td&gt;\( C \cdot f&#39; \)&lt;/td&gt;
-          &lt;td&gt;constant can be factored out of the derivative&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Function&lt;/th&gt;
+&lt;th&gt;Derivative&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;\( C \) (constant)&lt;/td&gt;
+&lt;td&gt;\( 0 \)&lt;/td&gt;
+&lt;td&gt;constant does not change; rate of change is zero&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\( x \)&lt;/td&gt;
+&lt;td&gt;\( 1 \)&lt;/td&gt;
+&lt;td&gt;linear growth at rate 1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\( x^n \)&lt;/td&gt;
+&lt;td&gt;\( n \cdot x^{n-1} \)&lt;/td&gt;
+&lt;td&gt;exponent &amp;ldquo;comes down&amp;rdquo; as factor; power decreases by 1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\( kx + b \)&lt;/td&gt;
+&lt;td&gt;\( k \)&lt;/td&gt;
+&lt;td&gt;linear function: slope equals coefficient \( k \)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\( f + g \)&lt;/td&gt;
+&lt;td&gt;\( f&#39; + g&#39; \)&lt;/td&gt;
+&lt;td&gt;derivative of sum equals sum of derivatives&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\( C \cdot f \)&lt;/td&gt;
+&lt;td&gt;\( C \cdot f&#39; \)&lt;/td&gt;
+&lt;td&gt;constant can be factored out of the derivative&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; \( (5)&#39; = 0 \), \( (x^2)&#39; = 2x \), \( (x^3)&#39; = 3x^2 \), \( (7x - 2)&#39; = 7 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why it matters in ML:&lt;/strong&gt; training minimizes the loss. The derivative points in the direction of increase; gradient descent moves the opposite way (\( -\nabla L \))&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; so the loss decreases.&lt;/p&gt;
@@ -1272,51 +1294,52 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;p&gt;For natural \( n \) we can derive from the definition. Example for \( n = 2 \):&lt;/p&gt;
 \[
 \frac{(x+h)^2 - x^2}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = 2x + h \to 2x
-\]&lt;p&gt;As \( h \to 0 \) we get \( (x^2)&#39; = 2x \). For \( n = 3 \): expanding \( (x+h)^3 \), the \( h^2 \) term vanishes in the limit, leaving \( 3x^2 \).&lt;/p&gt;
+\]
+&lt;p&gt;As \( h \to 0 \) we get \( (x^2)&#39; = 2x \). For \( n = 3 \): expanding \( (x+h)^3 \), the \( h^2 \) term vanishes in the limit, leaving \( 3x^2 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Intuition:&lt;/strong&gt; the power \( n \) «comes down» as a multiplier; the exponent drops by 1. Higher power means steeper growth — so the derivative has \( n \) and \( x^{n-1} \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example: parabola \( y = x^2 \)&lt;/strong&gt; — in detail&lt;/p&gt;
 &lt;p&gt;For \( f(x) = x^2 \) the formula gives \( f&#39;(x) = 2x \). Each point has its own slope:&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Point \( x \)&lt;/th&gt;
-          &lt;th&gt;\( f(x) = x^2 \)&lt;/th&gt;
-          &lt;th&gt;\( f&#39;(x) = 2x \) (slope)&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0&lt;/td&gt;
-          &lt;td&gt;0&lt;/td&gt;
-          &lt;td&gt;0&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;1&lt;/td&gt;
-          &lt;td&gt;1&lt;/td&gt;
-          &lt;td&gt;2&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;2&lt;/td&gt;
-          &lt;td&gt;4&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;3&lt;/td&gt;
-          &lt;td&gt;9&lt;/td&gt;
-          &lt;td&gt;6&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;4&lt;/td&gt;
-          &lt;td&gt;16&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Point \( x \)&lt;/th&gt;
+&lt;th&gt;\( f(x) = x^2 \)&lt;/th&gt;
+&lt;th&gt;\( f&#39;(x) = 2x \) (slope)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;At \( x = 2 \): the parabola is tangent to a line with slope 4 (tangent \( y = 4x - 4 \) passes through (2, 4)).&lt;br&gt;
 At \( x = 4 \): slope is 8 — the parabola is steeper, tangent \( y = 8x - 16 \).&lt;br&gt;
 At \( x = 0 \): vertex of the parabola, slope 0 — tangent is horizontal.&lt;/p&gt;
 &lt;div style=&#34;margin: 0.75em 0; aspect-ratio: 320/240; min-height: 200px; max-height: 400px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Parabola y = x² and tangents&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:38331/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Parabola y = x² and tangents&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;On the graph:&lt;/em&gt; green curve — \( y = x^2 \); dashed lines — tangents at (2, 4) and (4, 16). Slopes 4 and 8 match \( f&#39;(2) = 4 \), \( f&#39;(4) = 8 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example: square&lt;/strong&gt; — \( x \) as side length, area \( A(x) = x^2 \)&lt;/p&gt;
@@ -1324,16 +1347,18 @@ At \( x = 0 \): vertex of the parabola, slope 0 — tangent is horizontal.&lt;/p
 &lt;/p&gt;
 \[
 \Delta A = A(x + \Delta x) - A(x)
-\]&lt;p&gt;
+\]
+&lt;p&gt;
 So ΔA is how much area is added when side \( x \) increases by Δx.&lt;/p&gt;
 &lt;p&gt;Increase the side by \( \Delta x \). To the original square we add: two &amp;ldquo;strips&amp;rdquo; of area \( x \cdot \Delta x \) (right and top) and a small square \( (\Delta x)^2 \) in the corner. So:
 &lt;/p&gt;
 \[
 \Delta A = 2x \cdot \Delta x + (\Delta x)^2,\quad \frac{\Delta A}{\Delta x} = 2x + \Delta x \to 2x
-\]&lt;p&gt;
+\]
+&lt;p&gt;
 as \( \Delta x \to 0 \). Derivative \( A&#39;(x) = 2x \) — for the same \( \Delta x \), larger \( x \) gives more area gain.&lt;/p&gt;
 &lt;div style=&#34;margin: 0.75em 0; min-height: 360px;&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/games/derivative-square-area-en.html&#34; style=&#34;width: 100%; height: 360px; border: none; display: block; background: #1a1a1a; border-radius: 8px;&#34; title=&#34;Square: area and increment&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:38331/games/derivative-square-area-en.html&#34; style=&#34;width: 100%; height: 360px; border: none; display: block; background: #1a1a1a; border-radius: 8px;&#34; title=&#34;Square: area and increment&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;Change x and Δx&lt;/em&gt; — observe how the &amp;ldquo;strips&amp;rdquo; and \( \Delta A / \Delta x \approx 2x \) change.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s important to distinguish two cases.&lt;/p&gt;
@@ -1341,11 +1366,13 @@ as \( \Delta x \to 0 \). Derivative \( A&#39;(x) = 2x \) — for the same \( \De
 &lt;/p&gt;
 \[
 \frac{\Delta A}{\Delta x} = 2x + \Delta x \approx 2x \quad \text{for small } \Delta x
-\]&lt;p&gt;The formula \( (x^n)&#39; = nx^{n-1} \) — this is not an approximation, but an exact expression. The derivative is defined as the limit:
+\]
+&lt;p&gt;The formula \( (x^n)&#39; = nx^{n-1} \) — this is not an approximation, but an exact expression. The derivative is defined as the limit:
 &lt;/p&gt;
 \[
 f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
-\]&lt;p&gt;
+\]
+&lt;p&gt;
 We take this limit first, then obtain the exact formula.&lt;/p&gt;
 &lt;p&gt;\( \Delta A/\Delta x \) — approximation, because \( \Delta x \) is still finite. \( A&#39;(x) = 2x \) and \( (x^n)&#39; = nx^{n-1} \) — exact formulas, because they are the result of the limit \( \Delta x \to 0 \).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;In short:&lt;/em&gt; approximation applies to finite differences; the derivatives themselves and their formulas are exact.&lt;/p&gt;
@@ -1357,7 +1384,8 @@ We take this limit first, then obtain the exact formula.&lt;/p&gt;
 &lt;/p&gt;
 \[
 (C \cdot f)&#39;(x) = \lim_{h \to 0} \frac{C \cdot f(x+h) - C \cdot f(x)}{h} = C \cdot \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = C \cdot f&#39;(x)
-\]&lt;p&gt;The constant \( C \) does not depend on \( h \), so it can be taken outside the limit.&lt;/p&gt;
+\]
+&lt;p&gt;The constant \( C \) does not depend on \( h \), so it can be taken outside the limit.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; \( (5x^2)&#39; = 5 \cdot 2x = 10x \), \( (-3x^3)&#39; = -3 \cdot 3x^2 = -9x^2 \).&lt;/p&gt;
 &lt;/details&gt;
 &lt;/details&gt;
@@ -1368,41 +1396,42 @@ We take this limit first, then obtain the exact formula.&lt;/p&gt;
 &lt;p&gt;For a straight line the slope is the same everywhere. At any point, e.g. \( x = 5 \):&lt;/p&gt;
 \[
 \frac{g(5 + h) - g(5)}{h} = \frac{(3(5+h) - 1) - g(5)}{h} = \frac{14 + 3h - 14}{h} = \frac{3h}{h} = 3
-\]&lt;p&gt;
+\]
+&lt;p&gt;
 where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;p&gt;For any \( h \neq 0 \) we get &lt;strong&gt;3&lt;/strong&gt; — the derivative is constant, same as the coefficient of \( x \) in the line equation.&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;\( x \)&lt;/th&gt;
-          &lt;th&gt;\( g(x) \)&lt;/th&gt;
-          &lt;th&gt;\( g(x+0.1) - g(x) \)&lt;/th&gt;
-          &lt;th&gt;\( \frac{g(x+0.1)-g(x)}{0.1} \)&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;5&lt;/td&gt;
-          &lt;td&gt;14&lt;/td&gt;
-          &lt;td&gt;0.3&lt;/td&gt;
-          &lt;td&gt;3&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;10&lt;/td&gt;
-          &lt;td&gt;29&lt;/td&gt;
-          &lt;td&gt;0.3&lt;/td&gt;
-          &lt;td&gt;3&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;-2&lt;/td&gt;
-          &lt;td&gt;-7&lt;/td&gt;
-          &lt;td&gt;0.3&lt;/td&gt;
-          &lt;td&gt;3&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;\( x \)&lt;/th&gt;
+&lt;th&gt;\( g(x) \)&lt;/th&gt;
+&lt;th&gt;\( g(x+0.1) - g(x) \)&lt;/th&gt;
+&lt;th&gt;\( \frac{g(x+0.1)-g(x)}{0.1} \)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;0.3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;td&gt;0.3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-2&lt;/td&gt;
+&lt;td&gt;-7&lt;/td&gt;
+&lt;td&gt;0.3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:38331/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;numerical-example-quadratic-function&#34;&gt;Numerical example: quadratic function \( f(x) = x^2 \)&lt;/h3&gt;
@@ -1411,80 +1440,82 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;p&gt;Approximate the derivative at \( x = 2 \) using &amp;ldquo;change in \( f \) over change in \( x \)&amp;rdquo;. Take a small step \( h \):&lt;/p&gt;
 \[
 \frac{f(2 + h) - f(2)}{h} = \frac{(2+h)^2 - 4}{h}
-\]&lt;p&gt;&lt;strong&gt;At \( x = 2 \)&lt;/strong&gt; (\( f(2) = 4 \)):&lt;/p&gt;
+\]
+&lt;p&gt;&lt;strong&gt;At \( x = 2 \)&lt;/strong&gt; (\( f(2) = 4 \)):&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;\( h \)&lt;/th&gt;
-          &lt;th&gt;\( f(2+h) \)&lt;/th&gt;
-          &lt;th&gt;\( f(2+h) - f(2) \)&lt;/th&gt;
-          &lt;th&gt;\( \frac{f(2+h)-f(2)}{h} \)&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;1&lt;/td&gt;
-          &lt;td&gt;9&lt;/td&gt;
-          &lt;td&gt;5&lt;/td&gt;
-          &lt;td&gt;5&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0.1&lt;/td&gt;
-          &lt;td&gt;4.41&lt;/td&gt;
-          &lt;td&gt;0.41&lt;/td&gt;
-          &lt;td&gt;4.1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0.01&lt;/td&gt;
-          &lt;td&gt;4.0401&lt;/td&gt;
-          &lt;td&gt;0.0401&lt;/td&gt;
-          &lt;td&gt;4.01&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0.001&lt;/td&gt;
-          &lt;td&gt;4.0004…&lt;/td&gt;
-          &lt;td&gt;0.004…&lt;/td&gt;
-          &lt;td&gt;4.001&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;\( h \)&lt;/th&gt;
+&lt;th&gt;\( f(2+h) \)&lt;/th&gt;
+&lt;th&gt;\( f(2+h) - f(2) \)&lt;/th&gt;
+&lt;th&gt;\( \frac{f(2+h)-f(2)}{h} \)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.1&lt;/td&gt;
+&lt;td&gt;4.41&lt;/td&gt;
+&lt;td&gt;0.41&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.01&lt;/td&gt;
+&lt;td&gt;4.0401&lt;/td&gt;
+&lt;td&gt;0.0401&lt;/td&gt;
+&lt;td&gt;4.01&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.001&lt;/td&gt;
+&lt;td&gt;4.0004…&lt;/td&gt;
+&lt;td&gt;0.004…&lt;/td&gt;
+&lt;td&gt;4.001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The ratio tends to &lt;strong&gt;4&lt;/strong&gt; → \( f&#39;(2) = 4 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;At \( x = 4 \)&lt;/strong&gt; (\( f(4) = 16 \)):&lt;/p&gt;
 \[
 \frac{f(4 + h) - f(4)}{h} = \frac{(4+h)^2 - 16}{h} = \frac{8h + h^2}{h} = 8 + h \to 8
-\]&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;\( h \)&lt;/th&gt;
-          &lt;th&gt;\( f(4+h) \)&lt;/th&gt;
-          &lt;th&gt;\( f(4+h) - f(4) \)&lt;/th&gt;
-          &lt;th&gt;\( \frac{f(4+h)-f(4)}{h} \)&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;1&lt;/td&gt;
-          &lt;td&gt;25&lt;/td&gt;
-          &lt;td&gt;9&lt;/td&gt;
-          &lt;td&gt;9&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0.1&lt;/td&gt;
-          &lt;td&gt;16.81&lt;/td&gt;
-          &lt;td&gt;0.81&lt;/td&gt;
-          &lt;td&gt;8.1&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;0.01&lt;/td&gt;
-          &lt;td&gt;16.0801&lt;/td&gt;
-          &lt;td&gt;0.0801&lt;/td&gt;
-          &lt;td&gt;8.01&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+\]
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;\( h \)&lt;/th&gt;
+&lt;th&gt;\( f(4+h) \)&lt;/th&gt;
+&lt;th&gt;\( f(4+h) - f(4) \)&lt;/th&gt;
+&lt;th&gt;\( \frac{f(4+h)-f(4)}{h} \)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.1&lt;/td&gt;
+&lt;td&gt;16.81&lt;/td&gt;
+&lt;td&gt;0.81&lt;/td&gt;
+&lt;td&gt;8.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.01&lt;/td&gt;
+&lt;td&gt;16.0801&lt;/td&gt;
+&lt;td&gt;0.0801&lt;/td&gt;
+&lt;td&gt;8.01&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The ratio tends to &lt;strong&gt;8&lt;/strong&gt; → \( f&#39;(4) = 8 \). By \( (x^2)&#39; = 2x \): at \( x = 2 \) we get 4, at \( x = 4 \) — 8. For a curve, the derivative is different at each point.&lt;/p&gt;
 &lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/240; min-height: 240px; max-height: 480px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = x² and tangent&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:38331/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = x² and tangent&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Why it matters in ML:&lt;/strong&gt; training is minimization of the loss function. We need to know which direction to change the weights so that the loss decreases. The derivative points in the direction of increase; we go the opposite way so the loss drops.&lt;/p&gt;
 &lt;/details&gt;
@@ -1493,11 +1524,11 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;summary&gt;Car and Bezier curve&lt;/summary&gt;
 &lt;p&gt;&lt;strong&gt;1. Car.&lt;/strong&gt; Change the speed — the distance graph \( s(t) \) and derivative table update. Derivative \( s&#39;(t) \) = speed (constant for uniform motion).&lt;/p&gt;
 &lt;div style=&#34;margin: 1em 0; min-height: 380px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/games/derivative-car-interactive-en.html&#34; style=&#34;width: 100%; height: 420px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Car: speed and derivative&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:38331/games/derivative-car-interactive-en.html&#34; style=&#34;width: 100%; height: 420px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Car: speed and derivative&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;2. Draw a Bezier curve.&lt;/strong&gt; Drag 4 control points — a cubic Bezier curve is built. Place the orange point on the curve — the derivative calculation appears on the right.&lt;/p&gt;
 &lt;div style=&#34;margin: 1em 0; min-height: 420px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/games/derivative-draw-curve-en.html&#34; style=&#34;width: 100%; height: 520px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Bezier curve and derivative&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:38331/games/derivative-draw-curve-en.html&#34; style=&#34;width: 100%; height: 520px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Bezier curve and derivative&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;self-check-tasks&#34;&gt;Self-check tasks&lt;/h3&gt;
@@ -1505,7 +1536,7 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;summary&gt;Tasks with hints and verification&lt;/summary&gt;
 &lt;p&gt;Solve the tasks. Open the hint if needed. Enter your answer and click &amp;ldquo;Check&amp;rdquo;.&lt;/p&gt;
 &lt;div style=&#34;margin: 0.5em 0; min-height: 480px;&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/games/derivative-selfcheck-en.html&#34; style=&#34;width: 100%; height: 480px; border: none; display: block; background: #1a1a1a; border-radius: 6px;&#34; title=&#34;Self-check tasks&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:38331/games/derivative-selfcheck-en.html&#34; style=&#34;width: 100%; height: 480px; border: none; display: block; background: #1a1a1a; border-radius: 6px;&#34; title=&#34;Self-check tasks&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
@@ -1529,10 +1560,10 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
         </item>
         <item>
         <title>Math Analysis — Example of Analysis (Finding πr²)</title>
-        <link>http://localhost:1313/en/p/math-circle-area/</link>
+        <link>http://localhost:38331/en/p/math-circle-area/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/math-circle-area/</guid>
+        <guid>http://localhost:38331/en/p/math-circle-area/</guid>
         <description>&lt;p&gt;How do we find the area of a circle &lt;strong&gt;analytically&lt;/strong&gt;?&lt;/p&gt;
 &lt;h2 id=&#34;slicing-into-rectangles&#34;&gt;Slicing into Rectangles&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Idea:&lt;/strong&gt; slice the circle into thin concentric rings and «unroll» each ring into a rectangle.&lt;/p&gt;
@@ -1597,11 +1628,11 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
         </item>
         <item>
         <title>BetterExplained - Part 1 - Intuitive Math</title>
-        <link>http://localhost:1313/en/p/math-better-explained/</link>
+        <link>http://localhost:38331/en/p/math-better-explained/</link>
         <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/math-better-explained/</guid>
-        <description>&lt;img src="http://localhost:1313/p/math-better-explained/cover.jpg" alt="Featured image of post BetterExplained - Part 1 - Intuitive Math" /&gt;&lt;p&gt;First article in the &lt;strong&gt;BetterExplained&lt;/strong&gt; series on this blog — not about formulas, but about &lt;em&gt;how&lt;/em&gt; to understand them.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/math-better-explained/</guid>
+        <description>&lt;img src="http://localhost:38331/p/math-better-explained/cover.jpg" alt="Featured image of post BetterExplained - Part 1 - Intuitive Math" /&gt;&lt;p&gt;First article in the &lt;strong&gt;BetterExplained&lt;/strong&gt; series on this blog — not about formulas, but about &lt;em&gt;how&lt;/em&gt; to understand them.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Learn Right, Not Rote.&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Math is no more about equations than poetry is about spelling.&lt;/p&gt;
@@ -1613,7 +1644,7 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;p&gt;The usual pattern: first &lt;em&gt;what is going on&lt;/em&gt; (geometry, analogy, story), then symbols. That makes it easier to connect school math with linear algebra, calculus, and probability for AI.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-useful-for-this-series&#34;&gt;What is useful for this series&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Derivatives and integrals&lt;/strong&gt; — rate of change and accumulation before the formulas; good prep for &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;circle area&lt;/a&gt; example.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Derivatives and integrals&lt;/strong&gt; — rate of change and accumulation before the formulas; good prep for &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-circle-area/&#34; &gt;circle area&lt;/a&gt; example.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Exponents and e&lt;/strong&gt; — why &lt;code&gt;e^x&lt;/code&gt; behaves as it does; useful for softmax, loss, and growth in models.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Vectors and dot products&lt;/strong&gt; — geometric meaning before matrix algebra.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Euler’s formula&lt;/strong&gt; — one intuition linking exponentials, sin/cos, and complex numbers.&lt;/li&gt;
@@ -1625,15 +1656,15 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;li&gt;On BetterExplained — deeper intuition on classic topics.&lt;/li&gt;
 &lt;li&gt;Return to the formulas with a mental picture — articles, code, and lectures become easier.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Next in the series:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained — Part 2 — Arithmetic&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Next in the series:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained — Part 2 — Arithmetic&lt;/a&gt;.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>The Future of AI: Why Scaling Alone is No Longer Enough</title>
-        <link>http://localhost:1313/en/p/ai-future-beyond-scaling/</link>
+        <link>http://localhost:38331/en/p/ai-future-beyond-scaling/</link>
         <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-future-beyond-scaling/</guid>
+        <guid>http://localhost:38331/en/p/ai-future-beyond-scaling/</guid>
         <description>&lt;p&gt;Until recently, the main recipe for progress in AI seemed obvious: more data, more compute, more parameters. And it worked — it led to modern large language models. But the central idea is that &lt;strong&gt;scaling is useful but no longer sufficient&lt;/strong&gt;. The next step requires not just more power, but a paradigm shift in how we train models.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Article based on a video.&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Watch on YouTube&lt;/a&gt; (8 min) · &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/MdGnCIl-_hU?si=ylocQLiEBvp9Bydb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1715,12 +1746,12 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
         </item>
         <item>
         <title>AI basics – introduction</title>
-        <link>http://localhost:1313/en/p/ai-basics-intro/</link>
+        <link>http://localhost:38331/en/p/ai-basics-intro/</link>
         <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-intro/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
-&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;RAG systems&lt;/a&gt;, and &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34; &gt;LLM agents&lt;/a&gt; for complex multi-step tasks.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-intro/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
+&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-rag/&#34; &gt;RAG systems&lt;/a&gt;, and &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-agents/&#34; &gt;LLM agents&lt;/a&gt; for complex multi-step tasks.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-a-language-model-is&#34;&gt;What a language model is&lt;/h2&gt;
@@ -1749,7 +1780,7 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;p&gt;Quiz:&lt;/p&gt;
 &lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
   &lt;iframe
-    src=&#34;http://localhost:1313/games/ai-basics-quiz.html&#34;
+    src=&#34;http://localhost:38331/games/ai-basics-quiz.html&#34;
     style=&#34;width: 100%; max-width: 672px; height: 540px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
     title=&#34;Quiz: test your AI basics&#34;
   &gt;&lt;/iframe&gt;
@@ -1757,7 +1788,7 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;p&gt;Sort the shelf — drag statements onto the right shelves (AI, ML, NN, parameter scale):&lt;/p&gt;
 &lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
   &lt;iframe
-    src=&#34;http://localhost:1313/games/ai-basics-shelves.html&#34;
+    src=&#34;http://localhost:38331/games/ai-basics-shelves.html&#34;
     style=&#34;width: 100%; max-width: 840px; height: 720px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
     title=&#34;Sort the shelf&#34;
   &gt;&lt;/iframe&gt;

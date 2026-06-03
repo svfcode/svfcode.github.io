@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>База on Blog</title>
-        <link>http://localhost:1313/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link>
+        <link>http://localhost:38331/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link>
         <description>Recent content in База on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:38331/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AI basics – LLM agents</title>
-        <link>http://localhost:1313/en/p/ai-basics-agents/</link>
+        <link>http://localhost:38331/en/p/ai-basics-agents/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-agents/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-agents/cover.jpg" alt="Featured image of post AI basics – LLM agents" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;AI agents&lt;/strong&gt; built around language models: systems that &lt;strong&gt;plan&lt;/strong&gt;, &lt;strong&gt;retain context&lt;/strong&gt;, &lt;strong&gt;call tools&lt;/strong&gt;, and iterate toward a goal—not just emit a single reply.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-agents/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-agents/cover.jpg" alt="Featured image of post AI basics – LLM agents" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;AI agents&lt;/strong&gt; built around language models: systems that &lt;strong&gt;plan&lt;/strong&gt;, &lt;strong&gt;retain context&lt;/strong&gt;, &lt;strong&gt;call tools&lt;/strong&gt;, and iterate toward a goal—not just emit a single reply.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chat-vs-agent&#34;&gt;Chat vs agent&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chat vs agent&lt;/summary&gt;
@@ -31,7 +31,7 @@
 &lt;p&gt;&lt;strong&gt;Memory.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Short-term&lt;/strong&gt; — the live context window: recent turns and intermediate notes in one session.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Long-term&lt;/strong&gt; — stored facts, docs, prior sessions; often implemented with &lt;strong&gt;vector stores and RAG&lt;/strong&gt; so relevant snippets are retrieved into the prompt (see the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;RAG article&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Long-term&lt;/strong&gt; — stored facts, docs, prior sessions; often implemented with &lt;strong&gt;vector stores and RAG&lt;/strong&gt; so relevant snippets are retrieved into the prompt (see the &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-rag/&#34;&gt;RAG article&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Tools.&lt;/strong&gt; Formalized actions the model can request: HTTP APIs, code execution (e.g. Python), web search, filesystem hooks, calendar or DB queries. Without tools the “agent” remains text-only with no outward levers.&lt;/p&gt;
 &lt;/div&gt;
@@ -92,11 +92,11 @@
         </item>
         <item>
         <title>AI basics – overview</title>
-        <link>http://localhost:1313/en/p/ai-basics-overview/</link>
+        <link>http://localhost:38331/en/p/ai-basics-overview/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-overview/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-overview/cover.jpg" alt="Featured image of post AI basics – overview" /&gt;&lt;p&gt;This overview for the «Bare minimum» series is an outline:&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-overview/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-overview/cover.jpg" alt="Featured image of post AI basics – overview" /&gt;&lt;p&gt;This overview for the «Bare minimum» series is an outline:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;large language models;&lt;/li&gt;
 &lt;li&gt;architecture;&lt;/li&gt;
@@ -183,7 +183,7 @@
 &lt;li&gt;Structuring instructions with roles, examples, and context&lt;/li&gt;
 &lt;li&gt;Iteratively refining prompts for accurate answers&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34;&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-prompt-engineering/&#34;&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fine-tuning&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Adapting the model to specific tasks and domains&lt;/li&gt;
@@ -196,7 +196,7 @@
 &lt;li&gt;Combining external sources with generation&lt;/li&gt;
 &lt;li&gt;Reducing hallucinations by grounding in verified facts&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More on stages, chunking, and pipeline flavors: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;AI basics – RAG systems&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More on stages, chunking, and pipeline flavors: &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-rag/&#34;&gt;AI basics – RAG systems&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Chain-of-thought&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Step-by-step reasoning for hard problems&lt;/li&gt;
@@ -309,7 +309,7 @@
 &lt;li&gt;Planning actions and making decisions&lt;/li&gt;
 &lt;li&gt;Using external tools and APIs&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More on planning, memory, tools, ReAct, and multi-agent setups: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34;&gt;AI basics – LLM agents&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More on planning, memory, tools, ReAct, and multi-agent setups: &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-agents/&#34;&gt;AI basics – LLM agents&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Model optimization&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Quantization and distillation for speed&lt;/li&gt;
@@ -328,11 +328,11 @@
         </item>
         <item>
         <title>AI basics – prompt engineering</title>
-        <link>http://localhost:1313/en/p/ai-basics-prompt-engineering/</link>
+        <link>http://localhost:38331/en/p/ai-basics-prompt-engineering/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-prompt-engineering/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-prompt-engineering/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;goal-and-essence&#34;&gt;Goal and essence&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Goal and essence&lt;/summary&gt;
@@ -422,11 +422,11 @@
         </item>
         <item>
         <title>AI basics – RAG systems</title>
-        <link>http://localhost:1313/en/p/ai-basics-rag/</link>
+        <link>http://localhost:38331/en/p/ai-basics-rag/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-rag/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-rag/cover.jpg" alt="Featured image of post AI basics – RAG systems" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;retrieval-augmented generation&lt;/strong&gt;: how to ground a language model in external documents and up-to-date knowledge.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-rag/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-rag/cover.jpg" alt="Featured image of post AI basics – RAG systems" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;retrieval-augmented generation&lt;/strong&gt;: how to ground a language model in external documents and up-to-date knowledge.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-rag-is&#34;&gt;What RAG is&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What RAG is&lt;/summary&gt;
@@ -496,12 +496,12 @@
         </item>
         <item>
         <title>AI basics – introduction</title>
-        <link>http://localhost:1313/en/p/ai-basics-intro/</link>
+        <link>http://localhost:38331/en/p/ai-basics-intro/</link>
         <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/en/p/ai-basics-intro/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
-&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;RAG systems&lt;/a&gt;, and &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34; &gt;LLM agents&lt;/a&gt; for complex multi-step tasks.&lt;/p&gt;
+        <guid>http://localhost:38331/en/p/ai-basics-intro/</guid>
+        <description>&lt;img src="http://localhost:38331/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
+&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-rag/&#34; &gt;RAG systems&lt;/a&gt;, and &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-agents/&#34; &gt;LLM agents&lt;/a&gt; for complex multi-step tasks.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-a-language-model-is&#34;&gt;What a language model is&lt;/h2&gt;
@@ -530,7 +530,7 @@
 &lt;p&gt;Quiz:&lt;/p&gt;
 &lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
   &lt;iframe
-    src=&#34;http://localhost:1313/games/ai-basics-quiz.html&#34;
+    src=&#34;http://localhost:38331/games/ai-basics-quiz.html&#34;
     style=&#34;width: 100%; max-width: 672px; height: 540px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
     title=&#34;Quiz: test your AI basics&#34;
   &gt;&lt;/iframe&gt;
@@ -538,7 +538,7 @@
 &lt;p&gt;Sort the shelf — drag statements onto the right shelves (AI, ML, NN, parameter scale):&lt;/p&gt;
 &lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
   &lt;iframe
-    src=&#34;http://localhost:1313/games/ai-basics-shelves.html&#34;
+    src=&#34;http://localhost:38331/games/ai-basics-shelves.html&#34;
     style=&#34;width: 100%; max-width: 840px; height: 720px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
     title=&#34;Sort the shelf&#34;
   &gt;&lt;/iframe&gt;
