@@ -290,6 +290,17 @@
         <li><a href="#4-via-the-average--the-most-interesting-one-in-my-view">4) Via the average — the most interesting one, in my view</a></li>
       </ul>
     </li>
+    <li><a href="#visual-arithmetic">Visual arithmetic</a>
+      <ul>
+        <li><a href="#every-operation-is-a-transformation">Every operation is a transformation</a></li>
+        <li><a href="#addition-gives-tools-for">Addition gives tools for:</a></li>
+        <li><a href="#multiplication-gives-tools-for">Multiplication gives tools for:</a></li>
+        <li><a href="#negatives-and-inverses">Negatives and inverses</a></li>
+        <li><a href="#division-gives-tools-for">Division gives tools for:</a></li>
+        <li><a href="#powers-and-roots-give-tools-for">Powers and roots give tools for:</a></li>
+        <li><a href="#an-and-sqrtna--dont-mix-up-reverse"> and  — don’t mix up “reverse”</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -362,7 +373,7 @@
 
 
                 <time class="article-time--reading">
-                    4 minute read
+                    5 minute read
                 </time>
             </div>
         
@@ -590,6 +601,111 @@ x x x x x
 \text{sum} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
 \]
 <p>For \(1 \ldots 100\): average \(\approx 50.5\), sum \(50.5 \times 100 = 5050\).</p>
+</div>
+</details>
+</div>
+
+<h2 id="visual-arithmetic">Visual arithmetic</h2>
+<div class="accordion-controls" role="group" aria-label="Управление секциями">
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Expand all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Expand all</span>
+    </button>
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Collapse all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Collapse all</span>
+    </button>
+</div>
+<script>
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".accordion-toggle-all");
+        if (!btn) return;
+        var controls = btn.closest(".accordion-controls");
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains("post-accordion-group")) return;
+        var open = btn.dataset.action === "expand";
+        group.querySelectorAll("details.post-accordion").forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+</script>
+
+<div class="post-accordion-group">
+
+<h3 class="toc-heading-only" id="every-operation-is-a-transformation">Every operation is a transformation</h3>
+<details class="post-accordion">
+<summary>Every operation is a transformation</summary>
+<div>
+<p>Every operation is a transformation. In the real world there are things we want to slide, smoosh and stretch — arithmetic is exactly what gives us the tools to model that.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="addition-gives-tools-for">Addition gives tools for:</h3>
+<details class="post-accordion">
+<summary>Addition gives tools for:</summary>
+<div>
+<ol>
+<li>accumulation — counting quantities (total at checkout)</li>
+<li>slide — move a mark along a scale (temperature)</li>
+<li>combination — a new quantity from two different ones (sound wave)</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="multiplication-gives-tools-for">Multiplication gives tools for:</h3>
+<details class="post-accordion">
+<summary>Multiplication gives tools for:</summary>
+<div>
+<ol>
+<li>repetition — several additions in a row</li>
+<li>scaling — a number grows or shrinks all at once</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="negatives-and-inverses">Negatives and inverses</h3>
+<details class="post-accordion">
+<summary>Negatives and inverses</summary>
+<div>
+<ol>
+<li>multiply by 1/2: turn a profit of 1 into a profit of 1/2 (“unscale”)</li>
+<li>multiply by −2: turn a profit of 1 into a loss of 2 (“invert”)</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="division-gives-tools-for">Division gives tools for:</h3>
+<details class="post-accordion">
+<summary>Division gives tools for:</summary>
+<div>
+<ol>
+<li>share (\(a/b\)) — how much of the whole: ate \(3/8\) of the pizza, tank is \(2/5\) full</li>
+<li>split (\(a \div b\)) — how many groups of \(b\) in \(a\): \(12 \div 3\) → 4 piles of 3</li>
+<li>undo scaling — multiplied by 3 → divide by 3 to get back</li>
+</ol>
+<p>A fraction looks at <strong>part of a whole</strong>; division looks at <strong>how many times it fits</strong>.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="powers-and-roots-give-tools-for">Powers and roots give tools for:</h3>
+<details class="post-accordion">
+<summary>Powers and roots give tools for:</summary>
+<div>
+<ol>
+<li>repeated multiplication — \(2^3 = 2 \times 2 \times 2\)</li>
+<li>growth across dimensions — length \(\times 2\) → area \(\times 4\) (\(n=2\)), volume \(\times 8\) (\(n=3\))</li>
+<li>root — inverse power: \(2^3 = 8 \Leftrightarrow \sqrt[3]{8} = 2\); \(a^{1/n}\) links \(\sqrt[n]{a}\) and \(a^n\)</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="an-and-sqrtna--dont-mix-up-reverse">\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”</h3>
+<details class="post-accordion">
+<summary>\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”</summary>
+<div>
+<ol>
+<li>\(a^{-n}\) — “invert” growth: not 8, but \(1/8\)</li>
+<li>\(a^{1/n}\) — “unscale” the exponent: from 8 back to 2 without flipping sign</li>
+</ol>
 </div>
 </details>
 </div>

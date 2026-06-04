@@ -238,3 +238,99 @@ For \(1 \ldots 100\): average \(\approx 50.5\), sum \(50.5 \times 100 = 5050\).
 </details>
 
 {{< accordion_group_close >}}
+
+## Visual arithmetic
+
+{{< accordion_controls expand="Expand all" collapse="Collapse all" >}}
+
+{{< accordion_group_open >}}
+
+### Every operation is a transformation {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Every operation is a transformation</summary>
+<div>
+
+Every operation is a transformation. In the real world there are things we want to slide, smoosh and stretch — arithmetic is exactly what gives us the tools to model that.
+
+</div>
+</details>
+
+### Addition gives tools for: {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Addition gives tools for:</summary>
+<div>
+
+1) accumulation — counting quantities (total at checkout)
+2) slide — move a mark along a scale (temperature)
+3) combination — a new quantity from two different ones (sound wave)
+
+</div>
+</details>
+
+### Multiplication gives tools for: {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Multiplication gives tools for:</summary>
+<div>
+
+1) repetition — several additions in a row
+2) scaling — a number grows or shrinks all at once
+
+</div>
+</details>
+
+### Negatives and inverses {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Negatives and inverses</summary>
+<div>
+
+1) multiply by 1/2: turn a profit of 1 into a profit of 1/2 (“unscale”)
+2) multiply by −2: turn a profit of 1 into a loss of 2 (“invert”)
+
+</div>
+</details>
+
+### Division gives tools for: {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Division gives tools for:</summary>
+<div>
+
+1) share (\(a/b\)) — how much of the whole: ate \(3/8\) of the pizza, tank is \(2/5\) full
+2) split (\(a \div b\)) — how many groups of \(b\) in \(a\): \(12 \div 3\) → 4 piles of 3
+3) undo scaling — multiplied by 3 → divide by 3 to get back
+
+A fraction looks at **part of a whole**; division looks at **how many times it fits**.
+
+</div>
+</details>
+
+### Powers and roots give tools for: {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>Powers and roots give tools for:</summary>
+<div>
+
+1) repeated multiplication — \(2^3 = 2 \times 2 \times 2\)
+2) growth across dimensions — length \(\times 2\) → area \(\times 4\) (\(n=2\)), volume \(\times 8\) (\(n=3\))
+3) root — inverse power: \(2^3 = 8 \Leftrightarrow \sqrt[3]{8} = 2\); \(a^{1/n}\) links \(\sqrt[n]{a}\) and \(a^n\)
+
+</div>
+</details>
+
+### \(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse” {.toc-heading-only}
+
+<details class="post-accordion">
+<summary>\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”</summary>
+<div>
+
+1) \(a^{-n}\) — “invert” growth: not 8, but \(1/8\)
+2) \(a^{1/n}\) — “unscale” the exponent: from 8 back to 2 without flipping sign
+
+</div>
+</details>
+
+{{< accordion_group_close >}}

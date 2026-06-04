@@ -290,6 +290,17 @@
         <li><a href="#4-через-среднее--самая-интересная-на-мой-взгляд">4) Через среднее — самая интересная, на мой взгляд</a></li>
       </ul>
     </li>
+    <li><a href="#визуальная-арифметика">Визуальная арифметика</a>
+      <ul>
+        <li><a href="#любая-операция--трансформация">Любая операция — трансформация</a></li>
+        <li><a href="#сложение-даёт-инструменты-для">Сложение даёт инструменты для:</a></li>
+        <li><a href="#умножение-даёт-инструменты-для">Умножение даёт инструменты для:</a></li>
+        <li><a href="#отрицательные-и-обратные-величины">Отрицательные и обратные величины</a></li>
+        <li><a href="#деление-даёт-инструменты-для">Деление даёт инструменты для:</a></li>
+        <li><a href="#степень-и-корень-дают-инструменты-для">Степень и корень дают инструменты для:</a></li>
+        <li><a href="#an-и-sqrtna--не-путать-обратное"> и  — не путать «обратное»</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -362,7 +373,7 @@
 
 
                 <time class="article-time--reading">
-                    Время чтения: 4 мин.
+                    Время чтения: 5 мин.
                 </time>
             </div>
         
@@ -590,6 +601,111 @@ x x x x x
 \text{сумма} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
 \]
 <p>Для \(1 \ldots 100\): среднее \(\approx 50{,}5\), сумма \(50{,}5 \times 100 = 5050\).</p>
+</div>
+</details>
+</div>
+
+<h2 id="визуальная-арифметика">Визуальная арифметика</h2>
+<div class="accordion-controls" role="group" aria-label="Управление секциями">
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Развернуть все">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Развернуть все</span>
+    </button>
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Свернуть все">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Свернуть все</span>
+    </button>
+</div>
+<script>
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".accordion-toggle-all");
+        if (!btn) return;
+        var controls = btn.closest(".accordion-controls");
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains("post-accordion-group")) return;
+        var open = btn.dataset.action === "expand";
+        group.querySelectorAll("details.post-accordion").forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+</script>
+
+<div class="post-accordion-group">
+
+<h3 class="toc-heading-only" id="любая-операция--трансформация">Любая операция — трансформация</h3>
+<details class="post-accordion">
+<summary>Любая операция — трансформация</summary>
+<div>
+<p>Любая операция — это трансформация. В реальном мире есть то, что мы хотим сдвинуть, сплющить и растянуть — арифметика как раз даёт инструменты, чтобы это смоделировать.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="сложение-даёт-инструменты-для">Сложение даёт инструменты для:</h3>
+<details class="post-accordion">
+<summary>Сложение даёт инструменты для:</summary>
+<div>
+<ol>
+<li>накопление — подсчёт количества (сумма покупки)</li>
+<li>сдвиг — перемещаем метку по шкале (температура)</li>
+<li>комбинация — получаем новую величину из двух разных (звуковая волна)</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="умножение-даёт-инструменты-для">Умножение даёт инструменты для:</h3>
+<details class="post-accordion">
+<summary>Умножение даёт инструменты для:</summary>
+<div>
+<ol>
+<li>повторение — несколько сложений подряд</li>
+<li>масштабирование — число растёт или сжимается сразу целиком</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="отрицательные-и-обратные-величины">Отрицательные и обратные величины</h3>
+<details class="post-accordion">
+<summary>Отрицательные и обратные величины</summary>
+<div>
+<ol>
+<li>умножить на 1/2: прибыль 1 превращается в прибыль 1/2 («unscale»)</li>
+<li>умножить на −2: прибыль 1 превращается в убыток 2 («инверсировать»)</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="деление-даёт-инструменты-для">Деление даёт инструменты для:</h3>
+<details class="post-accordion">
+<summary>Деление даёт инструменты для:</summary>
+<div>
+<ol>
+<li>доля (\(a/b\)) — сколько взяли от целого: съели \(3/8\) пиццы, бак заполнен на \(2/5\)</li>
+<li>разбиение (\(a \div b\)) — сколько кучек по \(b\) в \(a\): \(12 \div 3\) → 4 кучки по 3</li>
+<li>обратное масштабированию — умножили на 3 → делим на 3, возвращаем исходное</li>
+</ol>
+<p>Дробь смотрит на <strong>часть целого</strong>, деление — на <strong>сколько раз уместилось</strong>.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="степень-и-корень-дают-инструменты-для">Степень и корень дают инструменты для:</h3>
+<details class="post-accordion">
+<summary>Степень и корень дают инструменты для:</summary>
+<div>
+<ol>
+<li>повторение умножения — \(2^3 = 2 \times 2 \times 2\)</li>
+<li>рост по измерениям — длина \(\times 2\) → площадь \(\times 4\) (\(n=2\)), объём \(\times 8\) (\(n=3\))</li>
+<li>корень — обратная степень: \(2^3 = 8 \Leftrightarrow \sqrt[3]{8} = 2\); запись \(a^{1/n}\) связывает \(\sqrt[n]{a}\) и \(a^n\)</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="an-и-sqrtna--не-путать-обратное">\(a^n\) и \(\sqrt[n]{a}\) — не путать «обратное»</h3>
+<details class="post-accordion">
+<summary>\(a^n\) и \(\sqrt[n]{a}\) — не путать «обратное»</summary>
+<div>
+<ol>
+<li>\(a^{-n}\) — «инверсировать» рост: не 8, а \(1/8\)</li>
+<li>\(a^{1/n}\) — «unscale» по степени: от 8 вернуться к 2, не меняя знак</li>
+</ol>
 </div>
 </details>
 </div>
