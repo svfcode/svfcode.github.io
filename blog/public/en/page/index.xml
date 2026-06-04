@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on Blog</title>
-        <link>http://localhost:38331/en/page/</link>
+        <link>http://localhost:1313/en/page/</link>
         <description>Recent content in Pages on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:38331/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Archives</title>
-        <link>http://localhost:38331/en/archives/</link>
+        <link>http://localhost:1313/en/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/en/archives/</guid>
+        <guid>http://localhost:1313/en/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>About</title>
-        <link>http://localhost:38331/en/about/</link>
+        <link>http://localhost:1313/en/about/</link>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/en/about/</guid>
+        <guid>http://localhost:1313/en/about/</guid>
         <description>&lt;p&gt;&lt;strong&gt;About&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Spent 10 years in the oil &amp;amp; gas industry, then 5 years as a fullstack developer. Now focused on &lt;strong&gt;ML&lt;/strong&gt; and &lt;strong&gt;ROS&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -445,20 +445,20 @@
         </item>
         <item>
         <title>Playlists</title>
-        <link>http://localhost:38331/en/playlists/</link>
+        <link>http://localhost:1313/en/playlists/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/en/playlists/</guid>
+        <guid>http://localhost:1313/en/playlists/</guid>
         <description>&lt;h2 id=&#34;-ai&#34;&gt;📚 AI&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-intro/&#34; &gt;AI basics – introduction&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-intro/&#34; &gt;AI basics – introduction&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Video&lt;/a&gt; · reading 5 min / video 4 min&lt;/li&gt;
 &lt;li&gt;🏷️ Terms: language model, dataset, parameters, AI/ML/NN, foundation models&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-overview/&#34; &gt;AI basics – overview&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-overview/&#34; &gt;AI basics – overview&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/xHLP2f2WVpU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Video&lt;/a&gt; · reading ~14 min / video 9 min&lt;/li&gt;
@@ -466,21 +466,21 @@
 &lt;li&gt;🏷️ LLM, transformer, token, temperature, prompt engineering, RAG, fine-tuning, RLHF, chain-of-thought, context window, hallucinations, multimodality, agents&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-prompt-engineering/&#34; &gt;AI basics – prompt engineering&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;AI basics – prompt engineering&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;⏱️ ~7 min read · no video&lt;/li&gt;
 &lt;li&gt;📋 Zero-shot, few-shot, chain-of-thought, roles, step-back, where prompts come from; mind-map layout; accordions&lt;/li&gt;
 &lt;li&gt;🏷️ prompt engineering, zero-shot, few-shot, CoT, role prompting, step-back, in-context learning&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-rag/&#34; &gt;AI basics – RAG systems&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;AI basics – RAG systems&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;⏱️ ~6 min read · no video&lt;/li&gt;
 &lt;li&gt;📋 Why RAG, pipeline stages, chunking, naive vs advanced RAG; accordions&lt;/li&gt;
 &lt;li&gt;🏷️ RAG, retrieval, embeddings, vector index, chunking, context-conditioned generation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-basics-agents/&#34; &gt;AI basics – LLM agents&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34; &gt;AI basics – LLM agents&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;⏱️ ~7 min read · no video&lt;/li&gt;
 &lt;li&gt;📋 Agent vs chat, planning / memory / tools, mindset, ReAct, multi-agent, who uses them; accordions&lt;/li&gt;
@@ -493,7 +493,7 @@
 &lt;p&gt;&lt;em&gt;Short digests from interviews, podcasts, and conferences on AI&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/ai-future-beyond-scaling/&#34; &gt;The Future of AI: Why Scaling Alone is No Longer Enough&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-future-beyond-scaling/&#34; &gt;The Future of AI: Why Scaling Alone is No Longer Enough&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;🎬 &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Video&lt;/a&gt; · reading 12 min / video 8 min (original 52 min)&lt;/li&gt;
@@ -504,17 +504,17 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;-mathematics&#34;&gt;📐 Mathematics&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-better-explained/&#34; &gt;BetterExplained - Part 1 - Intuitive Math&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained - Part 2 - Arithmetic&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-essentials-overview/&#34; &gt;Essential math they&amp;rsquo;ll ask you at interviews from nareshka.ru&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-bad-drawings/&#34; &gt;Math with Bad Drawings — overview of Ben Orlin&amp;rsquo;s books&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-circle-area/&#34; &gt;Math Analysis — Example of Analysis (Finding πr²)&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained - Part 1 - Intuitive Math&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained - Part 2 - Arithmetic&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;Essential math they&amp;rsquo;ll ask you at interviews from nareshka.ru&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-bad-drawings/&#34; &gt;Math with Bad Drawings — overview of Ben Orlin&amp;rsquo;s books&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;Math Analysis — Example of Analysis (Finding πr²)&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;📋 Slicing the circle into rings, unrolling into strips 2πr × Δr — yields a triangle of area πR²&lt;/li&gt;
 &lt;li&gt;🏷️ Integral, limits, area of circle&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-derivatives/&#34; &gt;Math Analysis — Derivatives&lt;/a&gt;&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;Math Analysis — Derivatives&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;📋 Without this you can&amp;rsquo;t understand how neural networks learn. Derivative, gradient, chain rule.&lt;/li&gt;
 &lt;li&gt;🏷️ Gradient descent, backpropagation&lt;/li&gt;
@@ -525,10 +525,10 @@
         </item>
         <item>
         <title>Search</title>
-        <link>http://localhost:38331/en/search/</link>
+        <link>http://localhost:1313/en/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/en/search/</guid>
+        <guid>http://localhost:1313/en/search/</guid>
         <description></description>
         </item>
         

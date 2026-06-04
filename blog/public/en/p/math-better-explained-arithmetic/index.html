@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38331&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Numbers (N, Z, Q, R), their properties and relations, operations &#43; and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)'>
 <title>BetterExplained - Part 2 - Arithmetic</title>
 
-<link rel='canonical' href='http://localhost:38331/en/p/math-better-explained-arithmetic/'>
+<link rel='canonical' href='http://localhost:1313/en/p/math-better-explained-arithmetic/'>
 
 <link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css">
 <meta property='og:title' content='BetterExplained - Part 2 - Arithmetic'>
 <meta property='og:description' content='Numbers (N, Z, Q, R), their properties and relations, operations &#43; and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)'>
-<meta property='og:url' content='http://localhost:38331/en/p/math-better-explained-arithmetic/'>
+<meta property='og:url' content='http://localhost:1313/en/p/math-better-explained-arithmetic/'>
 <meta property='og:site_name' content='Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Mathematics' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='Basics' /><meta property='article:published_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:38331/p/math-better-explained-arithmetic/cover.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Mathematics' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='Basics' /><meta property='article:published_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg' />
 <meta name="twitter:title" content="BetterExplained - Part 2 - Arithmetic">
 <meta name="twitter:description" content="Numbers (N, Z, Q, R), their properties and relations, operations &#43; and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:38331/p/math-better-explained-arithmetic/cover.jpg' />
+    <meta name="twitter:image" content='http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg' />
   
 
 <link rel="stylesheet" href="/css/custom.css"><link
@@ -216,9 +216,9 @@
 
                     <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
                         
-                            <option value="http://localhost:38331/" >ru</option>
+                            <option value="http://localhost:1313/" >ru</option>
                         
-                            <option value="http://localhost:38331/en/" selected>en</option>
+                            <option value="http://localhost:1313/en/" selected>en</option>
                         
                     </select>
                 </li>
@@ -395,7 +395,7 @@
 
             <div>
                 
-                    <a href="http://localhost:38331/p/math-better-explained-arithmetic/" class="link">ru</a>
+                    <a href="http://localhost:1313/p/math-better-explained-arithmetic/" class="link">ru</a>
                 
             </div>
         </footer>
@@ -417,8 +417,7 @@
         <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
         <span class="accordion-toggle-all__label">Collapse all</span>
     </button>
-</div>
-<script>
+</div><script>
 (function () {
     if (window.__accordionControlsInit) return;
     window.__accordionControlsInit = true;
@@ -428,7 +427,10 @@
         var controls = btn.closest(".accordion-controls");
         if (!controls) return;
         var group = controls.nextElementSibling;
-        if (!group || !group.classList.contains("post-accordion-group")) return;
+        while (group && !group.classList.contains("post-accordion-group")) {
+            group = group.nextElementSibling;
+        }
+        if (!group) return;
         var open = btn.dataset.action === "expand";
         group.querySelectorAll("details.post-accordion").forEach(function (d) {
             d.open = open;
@@ -436,7 +438,6 @@
     });
 })();
 </script>
-
 <div class="post-accordion-group">
 
 <h3 class="toc-heading-only" id="60-kmh-is-1-km-per-minute">60 km/h is 1 km per minute</h3>
@@ -509,25 +510,6 @@
         <span class="accordion-toggle-all__label">Collapse all</span>
     </button>
 </div>
-<script>
-(function () {
-    if (window.__accordionControlsInit) return;
-    window.__accordionControlsInit = true;
-    document.addEventListener("click", function (e) {
-        var btn = e.target.closest(".accordion-toggle-all");
-        if (!btn) return;
-        var controls = btn.closest(".accordion-controls");
-        if (!controls) return;
-        var group = controls.nextElementSibling;
-        if (!group || !group.classList.contains("post-accordion-group")) return;
-        var open = btn.dataset.action === "expand";
-        group.querySelectorAll("details.post-accordion").forEach(function (d) {
-            d.open = open;
-        });
-    });
-})();
-</script>
-
 <div class="post-accordion-group">
 
 <h3 class="toc-heading-only" id="were-usually-just-given-the-formula-and-told-to-memorize-it">We&rsquo;re usually just given the formula and told to memorize it</h3>
@@ -616,25 +598,6 @@ x x x x x
         <span class="accordion-toggle-all__label">Collapse all</span>
     </button>
 </div>
-<script>
-(function () {
-    if (window.__accordionControlsInit) return;
-    window.__accordionControlsInit = true;
-    document.addEventListener("click", function (e) {
-        var btn = e.target.closest(".accordion-toggle-all");
-        if (!btn) return;
-        var controls = btn.closest(".accordion-controls");
-        if (!controls) return;
-        var group = controls.nextElementSibling;
-        if (!group || !group.classList.contains("post-accordion-group")) return;
-        var open = btn.dataset.action === "expand";
-        group.querySelectorAll("details.post-accordion").forEach(function (d) {
-            d.open = open;
-        });
-    });
-})();
-</script>
-
 <div class="post-accordion-group">
 
 <h3 class="toc-heading-only" id="every-operation-is-a-transformation">Every operation is a transformation</h3>

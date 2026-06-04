@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>База on Блог</title>
-        <link>http://localhost:38331/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link>
+        <link>http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link>
         <description>Recent content in База on Блог</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ru</language>
-        <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:38331/tags/%D0%B1%D0%B0%D0%B7%D0%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>BetterExplained - часть 2 - Арифметика</title>
-        <link>http://localhost:38331/p/math-better-explained-arithmetic/</link>
+        <link>http://localhost:1313/p/math-better-explained-arithmetic/</link>
         <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/p/math-better-explained-arithmetic/</guid>
-        <description>&lt;img src="http://localhost:38331/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - часть 2 - Арифметика" /&gt;&lt;h2 id=&#34;ментальные-трюки&#34;&gt;Ментальные трюки&lt;/h2&gt;
+        <guid>http://localhost:1313/p/math-better-explained-arithmetic/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - часть 2 - Арифметика" /&gt;&lt;h2 id=&#34;ментальные-трюки&#34;&gt;Ментальные трюки&lt;/h2&gt;
 &lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
     &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Развернуть все&#34;&gt;
         &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
@@ -22,8 +22,7 @@
         &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
         &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Свернуть все&lt;/span&gt;
     &lt;/button&gt;
-&lt;/div&gt;
-&lt;script&gt;
+&lt;/div&gt;&lt;script&gt;
 (function () {
     if (window.__accordionControlsInit) return;
     window.__accordionControlsInit = true;
@@ -33,7 +32,10 @@
         var controls = btn.closest(&#34;.accordion-controls&#34;);
         if (!controls) return;
         var group = controls.nextElementSibling;
-        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
+        while (group &amp;&amp; !group.classList.contains(&#34;post-accordion-group&#34;)) {
+            group = group.nextElementSibling;
+        }
+        if (!group) return;
         var open = btn.dataset.action === &#34;expand&#34;;
         group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
             d.open = open;
@@ -41,7 +43,6 @@
     });
 })();
 &lt;/script&gt;
-
 &lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;60-кмч--это-1-км-в-минуту&#34;&gt;60 км/ч — это 1 км в минуту&lt;/h3&gt;
@@ -114,25 +115,6 @@
         &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Свернуть все&lt;/span&gt;
     &lt;/button&gt;
 &lt;/div&gt;
-&lt;script&gt;
-(function () {
-    if (window.__accordionControlsInit) return;
-    window.__accordionControlsInit = true;
-    document.addEventListener(&#34;click&#34;, function (e) {
-        var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
-        if (!btn) return;
-        var controls = btn.closest(&#34;.accordion-controls&#34;);
-        if (!controls) return;
-        var group = controls.nextElementSibling;
-        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
-        var open = btn.dataset.action === &#34;expand&#34;;
-        group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
-            d.open = open;
-        });
-    });
-})();
-&lt;/script&gt;
-
 &lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;нам-обычно-просто-дают-формулу-и-говорят-запомнить&#34;&gt;Нам обычно просто дают формулу и говорят запомнить&lt;/h3&gt;
@@ -210,15 +192,101 @@ x x x x x
 &lt;/details&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&#34;визуальная-арифметика&#34;&gt;Визуальная арифметика&lt;/h2&gt;
+&lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Развернуть все&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Развернуть все&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--collapse&#34; data-action=&#34;collapse&#34; aria-label=&#34;Свернуть все&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Свернуть все&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-accordion-group&#34;&gt;
+
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;любая-операция--трансформация&#34;&gt;Любая операция — трансформация&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Любая операция — трансформация&lt;/summary&gt;
+&lt;div&gt;
+&lt;p&gt;Любая операция — это трансформация. В реальном мире есть то, что мы хотим сдвинуть, сплющить и растянуть — арифметика как раз даёт инструменты, чтобы это смоделировать.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;сложение-даёт-инструменты-для&#34;&gt;Сложение даёт инструменты для:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Сложение даёт инструменты для:&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;накопление — подсчёт количества (сумма покупки)&lt;/li&gt;
+&lt;li&gt;сдвиг — перемещаем метку по шкале (температура)&lt;/li&gt;
+&lt;li&gt;комбинация — получаем новую величину из двух разных (звуковая волна)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;умножение-даёт-инструменты-для&#34;&gt;Умножение даёт инструменты для:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Умножение даёт инструменты для:&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;повторение — несколько сложений подряд&lt;/li&gt;
+&lt;li&gt;масштабирование — число растёт или сжимается сразу целиком&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;отрицательные-и-обратные-величины&#34;&gt;Отрицательные и обратные величины&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Отрицательные и обратные величины&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;умножить на 1/2: прибыль 1 превращается в прибыль 1/2 («unscale»)&lt;/li&gt;
+&lt;li&gt;умножить на −2: прибыль 1 превращается в убыток 2 («инверсировать»)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;деление-даёт-инструменты-для&#34;&gt;Деление даёт инструменты для:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Деление даёт инструменты для:&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;доля (\(a/b\)) — сколько взяли от целого: съели \(3/8\) пиццы, бак заполнен на \(2/5\)&lt;/li&gt;
+&lt;li&gt;разбиение (\(a \div b\)) — сколько кучек по \(b\) в \(a\): \(12 \div 3\) → 4 кучки по 3&lt;/li&gt;
+&lt;li&gt;обратное масштабированию — умножили на 3 → делим на 3, возвращаем исходное&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Дробь смотрит на &lt;strong&gt;часть целого&lt;/strong&gt;, деление — на &lt;strong&gt;сколько раз уместилось&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;степень-и-корень-дают-инструменты-для&#34;&gt;Степень и корень дают инструменты для:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Степень и корень дают инструменты для:&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;повторение умножения — \(2^3 = 2 \times 2 \times 2\)&lt;/li&gt;
+&lt;li&gt;рост по измерениям — длина \(\times 2\) → площадь \(\times 4\) (\(n=2\)), объём \(\times 8\) (\(n=3\))&lt;/li&gt;
+&lt;li&gt;корень — обратная степень: \(2^3 = 8 \Leftrightarrow \sqrt[3]{8} = 2\); запись \(a^{1/n}\) связывает \(\sqrt[n]{a}\) и \(a^n\)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;an-и-sqrtna--не-путать-обратное&#34;&gt;\(a^n\) и \(\sqrt[n]{a}\) — не путать «обратное»&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;\(a^n\) и \(\sqrt[n]{a}\) — не путать «обратное»&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;\(a^{-n}\) — «инверсировать» рост: не 8, а \(1/8\)&lt;/li&gt;
+&lt;li&gt;\(a^{1/n}\) — «unscale» по степени: от 8 вернуться к 2, не меняя знак&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;
+
 </description>
         </item>
         <item>
         <title>Базовый минимум про ИИ – RAG-системы</title>
-        <link>http://localhost:38331/p/ai-basics-rag/</link>
+        <link>http://localhost:1313/p/ai-basics-rag/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/p/ai-basics-rag/</guid>
-        <description>&lt;img src="http://localhost:38331/p/ai-basics-rag/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – RAG-системы" /&gt;&lt;p&gt;Статья цикла «Базовый минимум» про системы &lt;strong&gt;дополненной генерации с поиском&lt;/strong&gt; (RAG): как подключать к языковой модели внешние документы и актуальные знания.&lt;/p&gt;
+        <guid>http://localhost:1313/p/ai-basics-rag/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-rag/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – RAG-системы" /&gt;&lt;p&gt;Статья цикла «Базовый минимум» про системы &lt;strong&gt;дополненной генерации с поиском&lt;/strong&gt; (RAG): как подключать к языковой модели внешние документы и актуальные знания.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;что-такое-rag&#34;&gt;Что такое RAG&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Что такое RAG&lt;/summary&gt;
@@ -288,11 +356,11 @@ x x x x x
         </item>
         <item>
         <title>Базовый минимум про ИИ – ИИ-агенты</title>
-        <link>http://localhost:38331/p/ai-basics-agents/</link>
+        <link>http://localhost:1313/p/ai-basics-agents/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/p/ai-basics-agents/</guid>
-        <description>&lt;img src="http://localhost:38331/p/ai-basics-agents/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – ИИ-агенты" /&gt;&lt;p&gt;Статья цикла «Базовый минимум» про &lt;strong&gt;ИИ-агентов&lt;/strong&gt; — системы, где языковая модель не только генерирует текст, но и &lt;strong&gt;планирует шаги&lt;/strong&gt;, &lt;strong&gt;помнит контекст&lt;/strong&gt;, &lt;strong&gt;вызывает инструменты&lt;/strong&gt; и движется к цели в несколько итераций.&lt;/p&gt;
+        <guid>http://localhost:1313/p/ai-basics-agents/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-agents/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – ИИ-агенты" /&gt;&lt;p&gt;Статья цикла «Базовый минимум» про &lt;strong&gt;ИИ-агентов&lt;/strong&gt; — системы, где языковая модель не только генерирует текст, но и &lt;strong&gt;планирует шаги&lt;/strong&gt;, &lt;strong&gt;помнит контекст&lt;/strong&gt;, &lt;strong&gt;вызывает инструменты&lt;/strong&gt; и движется к цели в несколько итераций.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;чат-и-агент-в-чём-разница&#34;&gt;Чат и агент: в чём разница&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Чат и агент: в чём разница&lt;/summary&gt;
@@ -311,7 +379,7 @@ x x x x x
 &lt;p&gt;&lt;strong&gt;Память.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Краткосрочная&lt;/strong&gt; — текущее окно контекста: недавние реплики, промежуточные выводы в рамках одной сессии.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Долгосрочная&lt;/strong&gt; — сохранённые факты, документы, прошлые диалоги; часто это связано с &lt;strong&gt;векторным хранилищем и RAG&lt;/strong&gt;: нужный фрагмент поднимают поиском и подмешивают в промпт (см. &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-rag/&#34;&gt;статью про RAG&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Долгосрочная&lt;/strong&gt; — сохранённые факты, документы, прошлые диалоги; часто это связано с &lt;strong&gt;векторным хранилищем и RAG&lt;/strong&gt;: нужный фрагмент поднимают поиском и подмешивают в промпт (см. &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34;&gt;статью про RAG&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Инструменты (tools).&lt;/strong&gt; Формализованные действия, которые модель может «заказать» исполнителю: вызов HTTP API, выполнение фрагмента кода (например, Python), поиск в сети, работа с файлами, запрос к календарю или БД. Без инструментов агент остаётся «чистым текстом» без рычагов вовне.&lt;/p&gt;
 &lt;/div&gt;
@@ -372,11 +440,11 @@ x x x x x
         </item>
         <item>
         <title>Базовый минимум про ИИ – обзор</title>
-        <link>http://localhost:38331/p/ai-basics-overview/</link>
+        <link>http://localhost:1313/p/ai-basics-overview/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/p/ai-basics-overview/</guid>
-        <description>&lt;img src="http://localhost:38331/p/ai-basics-overview/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – обзор" /&gt;&lt;p&gt;Это обзорная статья цикла «Базовый минимум» — по тезисам:&lt;/p&gt;
+        <guid>http://localhost:1313/p/ai-basics-overview/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-overview/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – обзор" /&gt;&lt;p&gt;Это обзорная статья цикла «Базовый минимум» — по тезисам:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;большие языковые модели;&lt;/li&gt;
 &lt;li&gt;архитектура;&lt;/li&gt;
@@ -463,7 +531,7 @@ x x x x x
 &lt;li&gt;Структурирование инструкций с ролями, примерами и контекстом&lt;/li&gt;
 &lt;li&gt;Итеративное улучшение запросов для точных ответов&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Развёрнуто по техникам (zero-shot, few-shot, CoT, роли, step-back и др.): &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-prompt-engineering/&#34;&gt;Базовый минимум про ИИ – промпт-инжиниринг&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Развёрнуто по техникам (zero-shot, few-shot, CoT, роли, step-back и др.): &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-prompt-engineering/&#34;&gt;Базовый минимум про ИИ – промпт-инжиниринг&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fine-tuning (дообучение)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Адаптация модели под специфические задачи и домены&lt;/li&gt;
@@ -476,7 +544,7 @@ x x x x x
 &lt;li&gt;Комбинирование внешних источников информации с генерацией&lt;/li&gt;
 &lt;li&gt;Уменьшение галлюцинаций через опору на проверенные факты&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Подробнее про этапы, чанкование и типы пайплайнов: &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-rag/&#34;&gt;Базовый минимум про ИИ – RAG-системы&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Подробнее про этапы, чанкование и типы пайплайнов: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34;&gt;Базовый минимум про ИИ – RAG-системы&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Chain-of-thought&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Пошаговое рассуждение для решения сложных задач&lt;/li&gt;
@@ -589,7 +657,7 @@ x x x x x
 &lt;li&gt;Планирование действий и принятие решений&lt;/li&gt;
 &lt;li&gt;Взаимодействие с внешними инструментами и API&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Подробнее про планирование, память, инструменты, ReAct и мультиагентов: &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-agents/&#34;&gt;Базовый минимум про ИИ – ИИ-агенты&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Подробнее про планирование, память, инструменты, ReAct и мультиагентов: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-agents/&#34;&gt;Базовый минимум про ИИ – ИИ-агенты&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Оптимизация моделей&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Квантизация и дистилляция для ускорения работы&lt;/li&gt;
@@ -608,11 +676,11 @@ x x x x x
         </item>
         <item>
         <title>Базовый минимум про ИИ – промпт-инжиниринг</title>
-        <link>http://localhost:38331/p/ai-basics-prompt-engineering/</link>
+        <link>http://localhost:1313/p/ai-basics-prompt-engineering/</link>
         <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/p/ai-basics-prompt-engineering/</guid>
-        <description>&lt;img src="http://localhost:38331/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – промпт-инжиниринг" /&gt;&lt;p&gt;Статья цикла «Базовый минимум» про то, как формулировать запросы к большим языковым моделям.&lt;/p&gt;
+        <guid>http://localhost:1313/p/ai-basics-prompt-engineering/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – промпт-инжиниринг" /&gt;&lt;p&gt;Статья цикла «Базовый минимум» про то, как формулировать запросы к большим языковым моделям.&lt;/p&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;цель-и-суть&#34;&gt;Цель и суть&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Цель и суть&lt;/summary&gt;
@@ -702,35 +770,35 @@ x x x x x
         </item>
         <item>
         <title>Математика с дурацкими рисунками — обзор книг Орлин Бен</title>
-        <link>http://localhost:38331/p/math-bad-drawings/</link>
+        <link>http://localhost:1313/p/math-bad-drawings/</link>
         <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/p/math-bad-drawings/</guid>
-        <description>&lt;img src="http://localhost:38331/p/math-bad-drawings/cover.jpg" alt="Featured image of post Математика с дурацкими рисунками — обзор книг Орлин Бен" /&gt;&lt;p&gt;Ещё один способ подтянуть математику до формул — через истории и картинки. Бен Орлин (Ben Orlin) пишет так, будто объясняет другу за чаем: с юмором, без пафоса и с акцентом на &lt;em&gt;зачем&lt;/em&gt; это вообще нужно.&lt;/p&gt;
+        <guid>http://localhost:1313/p/math-bad-drawings/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-bad-drawings/cover.jpg" alt="Featured image of post Математика с дурацкими рисунками — обзор книг Орлин Бен" /&gt;&lt;p&gt;Ещё один способ подтянуть математику до формул — через истории и картинки. Бен Орлин (Ben Orlin) пишет так, будто объясняет другу за чаем: с юмором, без пафоса и с акцентом на &lt;em&gt;зачем&lt;/em&gt; это вообще нужно.&lt;/p&gt;
 &lt;p&gt;Сайт автора: &lt;a class=&#34;link&#34; href=&#34;https://mathwithbaddrawings.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Math with Bad Drawings&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;math-with-bad-drawings-математика-с-дурацкими-рисунками&#34;&gt;Math with Bad Drawings («Математика с дурацкими рисунками»)&lt;/h2&gt;
 &lt;p&gt;Главная книга серии. Орлин разбирает школьные и университетские темы — вероятность, геометрию, статистику, бесконечность — через комиксы и аналогии из жизни.&lt;/p&gt;
-&lt;p&gt;Сильная сторона: показывает, что математика — это способ думать, а не экзамен на запоминание. Хорошо ложится рядом с &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt;: там больше «чистой» интуиции, у Орлина — нарратив и юмор.&lt;/p&gt;
+&lt;p&gt;Сильная сторона: показывает, что математика — это способ думать, а не экзамен на запоминание. Хорошо ложится рядом с &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt;: там больше «чистой» интуиции, у Орлина — нарратив и юмор.&lt;/p&gt;
 &lt;h2 id=&#34;change-is-the-only-constant-изменения--единственная-константа&#34;&gt;Change Is the Only Constant («Изменения — единственная константа»)&lt;/h2&gt;
-&lt;p&gt;Вторая книга — про калculus и историю идей: как люди пришли к производным, интегралам и пределам. Полезна как мост к &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-derivatives/&#34; &gt;производным&lt;/a&gt; и &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-circle-area/&#34; &gt;примеру с площадью круга&lt;/a&gt;: сначала история и смысл, потом символы.&lt;/p&gt;
+&lt;p&gt;Вторая книга — про калculus и историю идей: как люди пришли к производным, интегралам и пределам. Полезна как мост к &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-derivatives/&#34; &gt;производным&lt;/a&gt; и &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-circle-area/&#34; &gt;примеру с площадью круга&lt;/a&gt;: сначала история и смысл, потом символы.&lt;/p&gt;
 &lt;h2 id=&#34;math-games-with-bad-drawings-математические-игры-с-дурацкими-рисунками&#34;&gt;Math Games with Bad Drawings («Математические игры с дурацкими рисунками»)&lt;/h2&gt;
 &lt;p&gt;Сборник игр и головоломок — логика, комбинаторика, стратегии. Меньше про ML напрямую, зато тренирует математическое мышление: видеть структуру задачи, пробовать гипотезы, не бояться ошибиться.&lt;/p&gt;
 &lt;h2 id=&#34;когда-читать-в-цикле&#34;&gt;Когда читать в цикле&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;После &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt; — если хочется того же «понять, а не зубрить», но в формате книги.&lt;/li&gt;
-&lt;li&gt;Параллельно с &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-essentials-overview/&#34; &gt;обзором для собеса&lt;/a&gt; — чтобы разделы из чек-листа не оставались сухим списком тем.&lt;/li&gt;
+&lt;li&gt;После &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt; — если хочется того же «понять, а не зубрить», но в формате книги.&lt;/li&gt;
+&lt;li&gt;Параллельно с &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-essentials-overview/&#34; &gt;обзором для собеса&lt;/a&gt; — чтобы разделы из чек-листа не оставались сухим списком тем.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Не обязательно читать все три подряд: начните с &lt;em&gt;Math with Bad Drawings&lt;/em&gt;, если нужен общий обзор; с &lt;em&gt;Change Is the Only Constant&lt;/em&gt;, если упираетесь в анализ.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>BetterExplained - часть 1 - Интуитивная математика</title>
-        <link>http://localhost:38331/p/math-better-explained/</link>
+        <link>http://localhost:1313/p/math-better-explained/</link>
         <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/p/math-better-explained/</guid>
-        <description>&lt;img src="http://localhost:38331/p/math-better-explained/cover.jpg" alt="Featured image of post BetterExplained - часть 1 - Интуитивная математика" /&gt;&lt;p&gt;Математика сводится к уравнениям не больше, чем поэзия — к правописанию.&lt;/p&gt;
+        <guid>http://localhost:1313/p/math-better-explained/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained/cover.jpg" alt="Featured image of post BetterExplained - часть 1 - Интуитивная математика" /&gt;&lt;p&gt;Математика сводится к уравнениям не больше, чем поэзия — к правописанию.&lt;/p&gt;
 &lt;p&gt;Формулы — это просто удобная запись; можно было бы жить и без них и словами писать: &lt;em&gt;притяжение равно произведению масс двух тел и обратно пропорционально квадрату расстояния между ними&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Но в виде формулы&lt;/p&gt;
 \[
@@ -785,17 +853,17 @@ F = G \frac{m_1 m_2}{r^2}
 &lt;li&gt;Я это запомнил — у меня есть аналогия, схема или пример, которые запомнятся мне на месяцы или годы.&lt;/li&gt;
 &lt;li&gt;Мне приятно это припоминать — если есть отвращение, значит, что-то не так.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Далее в серии:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained — часть 2 — Арифметика&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Далее в серии:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained — часть 2 — Арифметика&lt;/a&gt;.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Базовый минимум про ИИ – введение</title>
-        <link>http://localhost:38331/p/ai-basics-intro/</link>
+        <link>http://localhost:1313/p/ai-basics-intro/</link>
         <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/p/ai-basics-intro/</guid>
-        <description>&lt;img src="http://localhost:38331/p/ai-basics-intro/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – введение" /&gt;&lt;p&gt;Это первая статья из цикла «Базовый минимум» — коротко про то, как устроен ИИ. Каждая статья будет освещать одно понятие или концепцию, постараюсь делать их короткими и последовательными.&lt;/p&gt;
-&lt;p&gt;Начнём с общепринятых терминов; отдельно в цикле — &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-prompt-engineering/&#34; &gt;промпт-инжиниринг&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-rag/&#34; &gt;RAG-системы&lt;/a&gt; и &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/p/ai-basics-agents/&#34; &gt;ИИ-агенты&lt;/a&gt;, способные выполнять сложные многоступенчатые задачи.&lt;/p&gt;
+        <guid>http://localhost:1313/p/ai-basics-intro/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post Базовый минимум про ИИ – введение" /&gt;&lt;p&gt;Это первая статья из цикла «Базовый минимум» — коротко про то, как устроен ИИ. Каждая статья будет освещать одно понятие или концепцию, постараюсь делать их короткими и последовательными.&lt;/p&gt;
+&lt;p&gt;Начнём с общепринятых терминов; отдельно в цикле — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-prompt-engineering/&#34; &gt;промпт-инжиниринг&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-rag/&#34; &gt;RAG-системы&lt;/a&gt; и &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/ai-basics-agents/&#34; &gt;ИИ-агенты&lt;/a&gt;, способные выполнять сложные многоступенчатые задачи.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Видео версия:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Смотреть на YouTube&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;что-такое-языковая-модель&#34;&gt;Что такое языковая модель&lt;/h2&gt;
@@ -824,7 +892,7 @@ F = G \frac{m_1 m_2}{r^2}
 &lt;p&gt;Викторина:&lt;/p&gt;
 &lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
   &lt;iframe
-    src=&#34;http://localhost:38331/games/ai-basics-quiz.html&#34;
+    src=&#34;http://localhost:1313/games/ai-basics-quiz.html&#34;
     style=&#34;width: 100%; max-width: 672px; height: 540px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
     title=&#34;Игра: проверь знания по ИИ&#34;
   &gt;&lt;/iframe&gt;
@@ -832,7 +900,7 @@ F = G \frac{m_1 m_2}{r^2}
 &lt;p&gt;Разложи по полочкам — перетащи тезисы на нужные полки (ИИ, МО, НС, Масштаб параметров):&lt;/p&gt;
 &lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
   &lt;iframe
-    src=&#34;http://localhost:38331/games/ai-basics-shelves.html&#34;
+    src=&#34;http://localhost:1313/games/ai-basics-shelves.html&#34;
     style=&#34;width: 100%; max-width: 840px; height: 720px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
     title=&#34;Разложи по полочкам&#34;
   &gt;&lt;/iframe&gt;

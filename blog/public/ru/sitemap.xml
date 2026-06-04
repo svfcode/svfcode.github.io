@@ -2,322 +2,322 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:38331/p/math-better-explained-arithmetic/</loc>
+    <loc>http://localhost:1313/p/math-better-explained-arithmetic/</loc>
     <lastmod>2026-06-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/math-better-explained-arithmetic/"
+                href="http://localhost:1313/en/p/math-better-explained-arithmetic/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/math-better-explained-arithmetic/"
+                href="http://localhost:1313/p/math-better-explained-arithmetic/"
                 />
   </url><url>
-    <loc>http://localhost:38331/post/</loc>
+    <loc>http://localhost:1313/post/</loc>
     <lastmod>2026-06-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/post/"
+                href="http://localhost:1313/en/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/post/"
+                href="http://localhost:1313/post/"
                 />
   </url><url>
-    <loc>http://localhost:38331/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-06-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/tags/"
+                href="http://localhost:1313/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/tags/"
+                href="http://localhost:1313/tags/"
                 />
   </url><url>
-    <loc>http://localhost:38331/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</loc>
+    <loc>http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</loc>
     <lastmod>2026-06-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/"
+                href="http://localhost:1313/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/tags/%D0%B1%D0%B0%D0%B7%D0%B0/"
+                href="http://localhost:1313/tags/%D0%B1%D0%B0%D0%B7%D0%B0/"
                 />
   </url><url>
-    <loc>http://localhost:38331/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-06-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/"
+                href="http://localhost:1313/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/"
+                href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>http://localhost:38331/tags/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/</loc>
+    <loc>http://localhost:1313/tags/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0/</loc>
     <lastmod>2026-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:38331/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/</loc>
+    <loc>http://localhost:1313/tags/%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/</loc>
     <lastmod>2026-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:38331/p/ai-basics-rag/</loc>
+    <loc>http://localhost:1313/p/ai-basics-rag/</loc>
     <lastmod>2026-03-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/ai-basics-rag/"
+                href="http://localhost:1313/en/p/ai-basics-rag/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/ai-basics-rag/"
+                href="http://localhost:1313/p/ai-basics-rag/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/ai-basics-agents/</loc>
+    <loc>http://localhost:1313/p/ai-basics-agents/</loc>
     <lastmod>2026-03-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/ai-basics-agents/"
+                href="http://localhost:1313/en/p/ai-basics-agents/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/ai-basics-agents/"
+                href="http://localhost:1313/p/ai-basics-agents/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/ai-basics-overview/</loc>
+    <loc>http://localhost:1313/p/ai-basics-overview/</loc>
     <lastmod>2026-03-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/ai-basics-overview/"
+                href="http://localhost:1313/en/p/ai-basics-overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/ai-basics-overview/"
+                href="http://localhost:1313/p/ai-basics-overview/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/ai-basics-prompt-engineering/</loc>
+    <loc>http://localhost:1313/p/ai-basics-prompt-engineering/</loc>
     <lastmod>2026-03-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/ai-basics-prompt-engineering/"
+                href="http://localhost:1313/en/p/ai-basics-prompt-engineering/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/ai-basics-prompt-engineering/"
+                href="http://localhost:1313/p/ai-basics-prompt-engineering/"
                 />
   </url><url>
-    <loc>http://localhost:38331/tags/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82/</loc>
+    <loc>http://localhost:1313/tags/%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82/</loc>
     <lastmod>2026-03-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:38331/p/math-derivatives/</loc>
+    <loc>http://localhost:1313/p/math-derivatives/</loc>
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/math-derivatives/"
+                href="http://localhost:1313/en/p/math-derivatives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/math-derivatives/"
+                href="http://localhost:1313/p/math-derivatives/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/math-bad-drawings/</loc>
+    <loc>http://localhost:1313/p/math-bad-drawings/</loc>
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/math-bad-drawings/"
+                href="http://localhost:1313/en/p/math-bad-drawings/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/math-bad-drawings/"
+                href="http://localhost:1313/p/math-bad-drawings/"
                 />
   </url><url>
-    <loc>http://localhost:38331/tags/computer-vision/</loc>
+    <loc>http://localhost:1313/tags/computer-vision/</loc>
     <lastmod>2026-03-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/tags/computer-vision/"
+                href="http://localhost:1313/en/tags/computer-vision/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/tags/computer-vision/"
+                href="http://localhost:1313/tags/computer-vision/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/math-circle-area/</loc>
+    <loc>http://localhost:1313/p/math-circle-area/</loc>
     <lastmod>2026-03-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/math-circle-area/"
+                href="http://localhost:1313/en/p/math-circle-area/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/math-circle-area/"
+                href="http://localhost:1313/p/math-circle-area/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/math-derivatives-bkp/</loc>
+    <loc>http://localhost:1313/p/math-derivatives-bkp/</loc>
     <lastmod>2026-03-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/math-derivatives-bkp/"
+                href="http://localhost:1313/en/p/math-derivatives-bkp/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/math-derivatives-bkp/"
+                href="http://localhost:1313/p/math-derivatives-bkp/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/math-essentials-overview/</loc>
+    <loc>http://localhost:1313/p/math-essentials-overview/</loc>
     <lastmod>2026-03-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/math-essentials-overview/"
+                href="http://localhost:1313/en/p/math-essentials-overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/math-essentials-overview/"
+                href="http://localhost:1313/p/math-essentials-overview/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/math-better-explained/</loc>
+    <loc>http://localhost:1313/p/math-better-explained/</loc>
     <lastmod>2026-03-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/math-better-explained/"
+                href="http://localhost:1313/en/p/math-better-explained/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/math-better-explained/"
+                href="http://localhost:1313/p/math-better-explained/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/ai-future-beyond-scaling/</loc>
+    <loc>http://localhost:1313/p/ai-future-beyond-scaling/</loc>
     <lastmod>2026-03-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/ai-future-beyond-scaling/"
+                href="http://localhost:1313/en/p/ai-future-beyond-scaling/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/ai-future-beyond-scaling/"
+                href="http://localhost:1313/p/ai-future-beyond-scaling/"
                 />
   </url><url>
-    <loc>http://localhost:38331/p/ai-basics-intro/</loc>
+    <loc>http://localhost:1313/p/ai-basics-intro/</loc>
     <lastmod>2026-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/p/ai-basics-intro/"
+                href="http://localhost:1313/en/p/ai-basics-intro/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/p/ai-basics-intro/"
+                href="http://localhost:1313/p/ai-basics-intro/"
                 />
   </url><url>
-    <loc>http://localhost:38331/page/</loc>
+    <loc>http://localhost:1313/page/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/page/"
+                href="http://localhost:1313/en/page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/page/"
+                href="http://localhost:1313/page/"
                 />
   </url><url>
-    <loc>http://localhost:38331/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/archives/"
+                href="http://localhost:1313/en/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/archives/"
+                href="http://localhost:1313/archives/"
                 />
   </url><url>
-    <loc>http://localhost:38331/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/about/"
+                href="http://localhost:1313/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/about/"
+                href="http://localhost:1313/about/"
                 />
   </url><url>
-    <loc>http://localhost:38331/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/categories/"
+                href="http://localhost:1313/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/categories/"
+                href="http://localhost:1313/categories/"
                 />
   </url><url>
-    <loc>http://localhost:38331/playlists/</loc>
+    <loc>http://localhost:1313/playlists/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/playlists/"
+                href="http://localhost:1313/en/playlists/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/playlists/"
+                href="http://localhost:1313/playlists/"
                 />
   </url><url>
-    <loc>http://localhost:38331/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:38331/en/search/"
+                href="http://localhost:1313/en/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://localhost:38331/search/"
+                href="http://localhost:1313/search/"
                 />
   </url>
 </urlset>

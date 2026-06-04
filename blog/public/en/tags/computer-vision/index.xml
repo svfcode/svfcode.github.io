@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Computer Vision on Blog</title>
-        <link>http://localhost:38331/en/tags/computer-vision/</link>
+        <link>http://localhost:1313/en/tags/computer-vision/</link>
         <description>Recent content in Computer Vision on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Thu, 12 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:38331/en/tags/computer-vision/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 12 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/computer-vision/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Essential math they&#39;ll ask you at interviews from nareshka.ru</title>
-        <link>http://localhost:38331/en/p/math-essentials-overview/</link>
+        <link>http://localhost:1313/en/p/math-essentials-overview/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/en/p/math-essentials-overview/</guid>
+        <guid>http://localhost:1313/en/p/math-essentials-overview/</guid>
         <description>&lt;p&gt;This is the intro to the «Essential Mathematics» series — an overview of which math areas are needed for AI and machine learning, and what they are used for.&lt;/p&gt;
 &lt;h2 id=&#34;linear-algebra&#34;&gt;Linear Algebra&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; vectors, matrices, matrix multiplication, linear transformations, dot product, vector norm, eigenvalues and eigenvectors (advanced).&lt;/p&gt;

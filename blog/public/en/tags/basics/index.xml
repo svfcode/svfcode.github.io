@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Basics on Blog</title>
-        <link>http://localhost:38331/en/tags/basics/</link>
+        <link>http://localhost:1313/en/tags/basics/</link>
         <description>Recent content in Basics on Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:38331/en/tags/basics/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/basics/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>BetterExplained - Part 2 - Arithmetic</title>
-        <link>http://localhost:38331/en/p/math-better-explained-arithmetic/</link>
+        <link>http://localhost:1313/en/p/math-better-explained-arithmetic/</link>
         <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/en/p/math-better-explained-arithmetic/</guid>
-        <description>&lt;img src="http://localhost:38331/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - Part 2 - Arithmetic" /&gt;&lt;h2 id=&#34;mental-tricks&#34;&gt;Mental tricks&lt;/h2&gt;
+        <guid>http://localhost:1313/en/p/math-better-explained-arithmetic/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - Part 2 - Arithmetic" /&gt;&lt;h2 id=&#34;mental-tricks&#34;&gt;Mental tricks&lt;/h2&gt;
 &lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
     &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Expand all&#34;&gt;
         &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
@@ -22,8 +22,7 @@
         &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
         &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Collapse all&lt;/span&gt;
     &lt;/button&gt;
-&lt;/div&gt;
-&lt;script&gt;
+&lt;/div&gt;&lt;script&gt;
 (function () {
     if (window.__accordionControlsInit) return;
     window.__accordionControlsInit = true;
@@ -33,7 +32,10 @@
         var controls = btn.closest(&#34;.accordion-controls&#34;);
         if (!controls) return;
         var group = controls.nextElementSibling;
-        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
+        while (group &amp;&amp; !group.classList.contains(&#34;post-accordion-group&#34;)) {
+            group = group.nextElementSibling;
+        }
+        if (!group) return;
         var open = btn.dataset.action === &#34;expand&#34;;
         group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
             d.open = open;
@@ -41,7 +43,6 @@
     });
 })();
 &lt;/script&gt;
-
 &lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;60-kmh-is-1-km-per-minute&#34;&gt;60 km/h is 1 km per minute&lt;/h3&gt;
@@ -114,25 +115,6 @@
         &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Collapse all&lt;/span&gt;
     &lt;/button&gt;
 &lt;/div&gt;
-&lt;script&gt;
-(function () {
-    if (window.__accordionControlsInit) return;
-    window.__accordionControlsInit = true;
-    document.addEventListener(&#34;click&#34;, function (e) {
-        var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
-        if (!btn) return;
-        var controls = btn.closest(&#34;.accordion-controls&#34;);
-        if (!controls) return;
-        var group = controls.nextElementSibling;
-        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
-        var open = btn.dataset.action === &#34;expand&#34;;
-        group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
-            d.open = open;
-        });
-    });
-})();
-&lt;/script&gt;
-
 &lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;were-usually-just-given-the-formula-and-told-to-memorize-it&#34;&gt;We&amp;rsquo;re usually just given the formula and told to memorize it&lt;/h3&gt;
@@ -210,39 +192,125 @@ x x x x x
 &lt;/details&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&#34;visual-arithmetic&#34;&gt;Visual arithmetic&lt;/h2&gt;
+&lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Expand all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Expand all&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--collapse&#34; data-action=&#34;collapse&#34; aria-label=&#34;Collapse all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Collapse all&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-accordion-group&#34;&gt;
+
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;every-operation-is-a-transformation&#34;&gt;Every operation is a transformation&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Every operation is a transformation&lt;/summary&gt;
+&lt;div&gt;
+&lt;p&gt;Every operation is a transformation. In the real world there are things we want to slide, smoosh and stretch — arithmetic is exactly what gives us the tools to model that.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;addition-gives-tools-for&#34;&gt;Addition gives tools for:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Addition gives tools for:&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;accumulation — counting quantities (total at checkout)&lt;/li&gt;
+&lt;li&gt;slide — move a mark along a scale (temperature)&lt;/li&gt;
+&lt;li&gt;combination — a new quantity from two different ones (sound wave)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;multiplication-gives-tools-for&#34;&gt;Multiplication gives tools for:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Multiplication gives tools for:&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;repetition — several additions in a row&lt;/li&gt;
+&lt;li&gt;scaling — a number grows or shrinks all at once&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;negatives-and-inverses&#34;&gt;Negatives and inverses&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Negatives and inverses&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;multiply by 1/2: turn a profit of 1 into a profit of 1/2 (“unscale”)&lt;/li&gt;
+&lt;li&gt;multiply by −2: turn a profit of 1 into a loss of 2 (“invert”)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;division-gives-tools-for&#34;&gt;Division gives tools for:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Division gives tools for:&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;share (\(a/b\)) — how much of the whole: ate \(3/8\) of the pizza, tank is \(2/5\) full&lt;/li&gt;
+&lt;li&gt;split (\(a \div b\)) — how many groups of \(b\) in \(a\): \(12 \div 3\) → 4 piles of 3&lt;/li&gt;
+&lt;li&gt;undo scaling — multiplied by 3 → divide by 3 to get back&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A fraction looks at &lt;strong&gt;part of a whole&lt;/strong&gt;; division looks at &lt;strong&gt;how many times it fits&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;powers-and-roots-give-tools-for&#34;&gt;Powers and roots give tools for:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;Powers and roots give tools for:&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;repeated multiplication — \(2^3 = 2 \times 2 \times 2\)&lt;/li&gt;
+&lt;li&gt;growth across dimensions — length \(\times 2\) → area \(\times 4\) (\(n=2\)), volume \(\times 8\) (\(n=3\))&lt;/li&gt;
+&lt;li&gt;root — inverse power: \(2^3 = 8 \Leftrightarrow \sqrt[3]{8} = 2\); \(a^{1/n}\) links \(\sqrt[n]{a}\) and \(a^n\)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;an-and-sqrtna--dont-mix-up-reverse&#34;&gt;\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”&lt;/summary&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;\(a^{-n}\) — “invert” growth: not 8, but \(1/8\)&lt;/li&gt;
+&lt;li&gt;\(a^{1/n}\) — “unscale” the exponent: from 8 back to 2 without flipping sign&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;
+
 </description>
         </item>
         <item>
         <title>Math with Bad Drawings — overview of Ben Orlin&#39;s books</title>
-        <link>http://localhost:38331/en/p/math-bad-drawings/</link>
+        <link>http://localhost:1313/en/p/math-bad-drawings/</link>
         <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/en/p/math-bad-drawings/</guid>
-        <description>&lt;img src="http://localhost:38331/p/math-bad-drawings/cover.jpg" alt="Featured image of post Math with Bad Drawings — overview of Ben Orlin&#39;s books" /&gt;&lt;p&gt;Another way to build math intuition before the formulas — through stories and sketches. Ben Orlin writes as if explaining to a friend over tea: with humor, no pretense, and a focus on &lt;em&gt;why&lt;/em&gt; any of this matters.&lt;/p&gt;
+        <guid>http://localhost:1313/en/p/math-bad-drawings/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-bad-drawings/cover.jpg" alt="Featured image of post Math with Bad Drawings — overview of Ben Orlin&#39;s books" /&gt;&lt;p&gt;Another way to build math intuition before the formulas — through stories and sketches. Ben Orlin writes as if explaining to a friend over tea: with humor, no pretense, and a focus on &lt;em&gt;why&lt;/em&gt; any of this matters.&lt;/p&gt;
 &lt;p&gt;Author’s site: &lt;a class=&#34;link&#34; href=&#34;https://mathwithbaddrawings.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Math with Bad Drawings&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;math-with-bad-drawings&#34;&gt;Math with Bad Drawings&lt;/h2&gt;
 &lt;p&gt;The flagship book. Orlin covers school and early college topics — probability, geometry, statistics, infinity — via comics and everyday analogies.&lt;/p&gt;
-&lt;p&gt;The strength: math as a way of thinking, not a memorization exam. Pairs well with &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt;: more pure intuition there, more narrative and humor here.&lt;/p&gt;
+&lt;p&gt;The strength: math as a way of thinking, not a memorization exam. Pairs well with &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt;: more pure intuition there, more narrative and humor here.&lt;/p&gt;
 &lt;h2 id=&#34;change-is-the-only-constant&#34;&gt;Change Is the Only Constant&lt;/h2&gt;
-&lt;p&gt;The second book — calculus and the history of ideas: how people arrived at derivatives, integrals, and limits. A good bridge to &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-circle-area/&#34; &gt;circle area example&lt;/a&gt;: story and meaning first, symbols second.&lt;/p&gt;
+&lt;p&gt;The second book — calculus and the history of ideas: how people arrived at derivatives, integrals, and limits. A good bridge to &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;circle area example&lt;/a&gt;: story and meaning first, symbols second.&lt;/p&gt;
 &lt;h2 id=&#34;math-games-with-bad-drawings&#34;&gt;Math Games with Bad Drawings&lt;/h2&gt;
 &lt;p&gt;A collection of games and puzzles — logic, combinatorics, strategy. Less directly about ML, but it trains mathematical thinking: spot structure, test hypotheses, don’t fear being wrong.&lt;/p&gt;
 &lt;h2 id=&#34;when-to-read-in-this-series&#34;&gt;When to read in this series&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;After &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt; — same “understand, don’t memorize” vibe, in book form.&lt;/li&gt;
-&lt;li&gt;Alongside the &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-essentials-overview/&#34; &gt;interview math overview&lt;/a&gt; — so the checklist topics aren’t just a dry list.&lt;/li&gt;
+&lt;li&gt;After &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt; — same “understand, don’t memorize” vibe, in book form.&lt;/li&gt;
+&lt;li&gt;Alongside the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;interview math overview&lt;/a&gt; — so the checklist topics aren’t just a dry list.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You don’t need all three in order: start with &lt;em&gt;Math with Bad Drawings&lt;/em&gt; for a broad tour; with &lt;em&gt;Change Is the Only Constant&lt;/em&gt; if calculus is the sticking point.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>BetterExplained - Part 1 - Intuitive Math</title>
-        <link>http://localhost:38331/en/p/math-better-explained/</link>
+        <link>http://localhost:1313/en/p/math-better-explained/</link>
         <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:38331/en/p/math-better-explained/</guid>
-        <description>&lt;img src="http://localhost:38331/p/math-better-explained/cover.jpg" alt="Featured image of post BetterExplained - Part 1 - Intuitive Math" /&gt;&lt;p&gt;First article in the &lt;strong&gt;BetterExplained&lt;/strong&gt; series on this blog — not about formulas, but about &lt;em&gt;how&lt;/em&gt; to understand them.&lt;/p&gt;
+        <guid>http://localhost:1313/en/p/math-better-explained/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained/cover.jpg" alt="Featured image of post BetterExplained - Part 1 - Intuitive Math" /&gt;&lt;p&gt;First article in the &lt;strong&gt;BetterExplained&lt;/strong&gt; series on this blog — not about formulas, but about &lt;em&gt;how&lt;/em&gt; to understand them.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Learn Right, Not Rote.&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Math is no more about equations than poetry is about spelling.&lt;/p&gt;
@@ -254,7 +322,7 @@ x x x x x
 &lt;p&gt;The usual pattern: first &lt;em&gt;what is going on&lt;/em&gt; (geometry, analogy, story), then symbols. That makes it easier to connect school math with linear algebra, calculus, and probability for AI.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-useful-for-this-series&#34;&gt;What is useful for this series&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Derivatives and integrals&lt;/strong&gt; — rate of change and accumulation before the formulas; good prep for &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-circle-area/&#34; &gt;circle area&lt;/a&gt; example.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Derivatives and integrals&lt;/strong&gt; — rate of change and accumulation before the formulas; good prep for &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;circle area&lt;/a&gt; example.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Exponents and e&lt;/strong&gt; — why &lt;code&gt;e^x&lt;/code&gt; behaves as it does; useful for softmax, loss, and growth in models.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Vectors and dot products&lt;/strong&gt; — geometric meaning before matrix algebra.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Euler’s formula&lt;/strong&gt; — one intuition linking exponentials, sin/cos, and complex numbers.&lt;/li&gt;
@@ -266,7 +334,7 @@ x x x x x
 &lt;li&gt;On BetterExplained — deeper intuition on classic topics.&lt;/li&gt;
 &lt;li&gt;Return to the formulas with a mental picture — articles, code, and lectures become easier.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Next in the series:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://localhost:38331/en/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained — Part 2 — Arithmetic&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Next in the series:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained — Part 2 — Arithmetic&lt;/a&gt;.&lt;/p&gt;
 </description>
         </item>
         

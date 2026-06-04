@@ -8,6 +8,8 @@
         <span class="accordion-toggle-all__label">{{ .Get "collapse" | default "Свернуть все" }}</span>
     </button>
 </div>
+{{- if not (.Page.Scratch.Get "accordionControlsScript") -}}
+{{- .Page.Scratch.Set "accordionControlsScript" true -}}
 <script>
 (function () {
     if (window.__accordionControlsInit) return;
@@ -18,7 +20,10 @@
         var controls = btn.closest(".accordion-controls");
         if (!controls) return;
         var group = controls.nextElementSibling;
-        if (!group || !group.classList.contains("post-accordion-group")) return;
+        while (group && !group.classList.contains("post-accordion-group")) {
+            group = group.nextElementSibling;
+        }
+        if (!group) return;
         var open = btn.dataset.action === "expand";
         group.querySelectorAll("details.post-accordion").forEach(function (d) {
             d.open = open;
@@ -26,3 +31,4 @@
     });
 })();
 </script>
+{{- end -}}
