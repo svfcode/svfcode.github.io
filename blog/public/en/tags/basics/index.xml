@@ -32,10 +32,14 @@
         var controls = btn.closest(&#34;.accordion-controls&#34;);
         if (!controls) return;
         var group = controls.nextElementSibling;
+<<<<<<< Updated upstream
         while (group &amp;&amp; !group.classList.contains(&#34;post-accordion-group&#34;)) {
             group = group.nextElementSibling;
         }
         if (!group) return;
+=======
+        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
+>>>>>>> Stashed changes
         var open = btn.dataset.action === &#34;expand&#34;;
         group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
             d.open = open;
@@ -43,6 +47,8 @@
     });
 })();
 &lt;/script&gt;
+&lt;div class=&#34;post-accordion-group&#34;&gt;
+
 &lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;60-kmh-is-1-km-per-minute&#34;&gt;60 km/h is 1 km per minute&lt;/h3&gt;
@@ -115,6 +121,29 @@
         &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Collapse all&lt;/span&gt;
     &lt;/button&gt;
 &lt;/div&gt;
+<<<<<<< Updated upstream
+&lt;div class=&#34;post-accordion-group&#34;&gt;
+=======
+&lt;script&gt;
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener(&#34;click&#34;, function (e) {
+        var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
+        if (!btn) return;
+        var controls = btn.closest(&#34;.accordion-controls&#34;);
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
+        var open = btn.dataset.action === &#34;expand&#34;;
+        group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+&lt;/script&gt;
+>>>>>>> Stashed changes
+
 &lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;were-usually-just-given-the-formula-and-told-to-memorize-it&#34;&gt;We&amp;rsquo;re usually just given the formula and told to memorize it&lt;/h3&gt;
@@ -192,6 +221,7 @@ x x x x x
 &lt;/details&gt;
 &lt;/div&gt;
 
+<<<<<<< Updated upstream
 &lt;h2 id=&#34;visual-arithmetic&#34;&gt;Visual arithmetic&lt;/h2&gt;
 &lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
     &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Expand all&#34;&gt;
@@ -278,6 +308,8 @@ x x x x x
 &lt;/details&gt;
 &lt;/div&gt;
 
+=======
+>>>>>>> Stashed changes
 </description>
         </item>
         <item>
