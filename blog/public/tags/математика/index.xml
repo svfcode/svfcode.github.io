@@ -22,33 +22,7 @@
         &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
         &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Свернуть все&lt;/span&gt;
     &lt;/button&gt;
-&lt;/div&gt;&lt;script&gt;
-(function () {
-    if (window.__accordionControlsInit) return;
-    window.__accordionControlsInit = true;
-    document.addEventListener(&#34;click&#34;, function (e) {
-        var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
-        if (!btn) return;
-        var controls = btn.closest(&#34;.accordion-controls&#34;);
-        if (!controls) return;
-        var group = controls.nextElementSibling;
-<<<<<<< Updated upstream
-        while (group &amp;&amp; !group.classList.contains(&#34;post-accordion-group&#34;)) {
-            group = group.nextElementSibling;
-        }
-        if (!group) return;
-=======
-        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
->>>>>>> Stashed changes
-        var open = btn.dataset.action === &#34;expand&#34;;
-        group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
-            d.open = open;
-        });
-    });
-})();
-&lt;/script&gt;
-&lt;div class=&#34;post-accordion-group&#34;&gt;
-
+&lt;/div&gt;
 &lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;60-кмч--это-1-км-в-минуту&#34;&gt;60 км/ч — это 1 км в минуту&lt;/h3&gt;
@@ -121,29 +95,6 @@
         &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Свернуть все&lt;/span&gt;
     &lt;/button&gt;
 &lt;/div&gt;
-<<<<<<< Updated upstream
-&lt;div class=&#34;post-accordion-group&#34;&gt;
-=======
-&lt;script&gt;
-(function () {
-    if (window.__accordionControlsInit) return;
-    window.__accordionControlsInit = true;
-    document.addEventListener(&#34;click&#34;, function (e) {
-        var btn = e.target.closest(&#34;.accordion-toggle-all&#34;);
-        if (!btn) return;
-        var controls = btn.closest(&#34;.accordion-controls&#34;);
-        if (!controls) return;
-        var group = controls.nextElementSibling;
-        if (!group || !group.classList.contains(&#34;post-accordion-group&#34;)) return;
-        var open = btn.dataset.action === &#34;expand&#34;;
-        group.querySelectorAll(&#34;details.post-accordion&#34;).forEach(function (d) {
-            d.open = open;
-        });
-    });
-})();
-&lt;/script&gt;
->>>>>>> Stashed changes
-
 &lt;div class=&#34;post-accordion-group&#34;&gt;
 
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;нам-обычно-просто-дают-формулу-и-говорят-запомнить&#34;&gt;Нам обычно просто дают формулу и говорят запомнить&lt;/h3&gt;
@@ -152,11 +103,9 @@
 &lt;div&gt;
 \[
 \text{Сумма от 1 до } n = \frac{n(n+1)}{2}
-\]
-\[
+\]\[
 \text{Сумма от 1 до 100} = \frac{100(100+1)}{2} = (50)(101) = 5050
-\]
-&lt;p&gt;Но чтобы добиться &lt;strong&gt;интуиции&lt;/strong&gt; и понять её, надо &lt;strong&gt;вывести эту формулу самому&lt;/strong&gt;.&lt;/p&gt;
+\]&lt;p&gt;Но чтобы добиться &lt;strong&gt;интуиции&lt;/strong&gt; и понять её, надо &lt;strong&gt;вывести эту формулу самому&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Ниже — четыре техники выведения.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
@@ -169,8 +118,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Каждая вертикальная пара даёт одну и ту же сумму: \(1 + 10 = 2 + 9 = \ldots = n + 1\). Пар ровно \(\frac{n}{2}\).&lt;/p&gt;
 \[
 \text{Число пар} \times \text{сумма каждой пары} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
-\]
-&lt;/div&gt;
+\]&lt;/div&gt;
 &lt;/details&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;2-два-ряда-чисел&#34;&gt;2) Два ряда чисел&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
@@ -181,12 +129,10 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Складываем &lt;strong&gt;оба&lt;/strong&gt; ряда: в каждом столбце снова \(n + 1\), столбцов \(n\) штук — итого:&lt;/p&gt;
 \[
 \text{Сумма двух рядов} = n(n+1)
-\]
-&lt;p&gt;Нужна сумма &lt;strong&gt;одного&lt;/strong&gt; ряда, поэтому делим на 2:&lt;/p&gt;
+\]&lt;p&gt;Нужна сумма &lt;strong&gt;одного&lt;/strong&gt; ряда, поэтому делим на 2:&lt;/p&gt;
 \[
 \frac{n(n+1)}{2}
-\]
-&lt;/div&gt;
+\]&lt;/div&gt;
 &lt;/details&gt;
 &lt;h3 class=&#34;toc-heading-only&#34; id=&#34;3-представить-треугольник&#34;&gt;3) Представить треугольник&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
@@ -207,21 +153,17 @@ x x x x x
 &lt;p&gt;Все знают:&lt;/p&gt;
 \[
 \text{среднее} = \frac{\text{сумма}}{\text{число элементов}}
-\]
-&lt;p&gt;Перепишем:&lt;/p&gt;
+\]&lt;p&gt;Перепишем:&lt;/p&gt;
 \[
 \text{сумма} = \text{среднее} \times \text{число элементов}
-\]
-&lt;p&gt;Для ряда \(1, 2, \ldots, n\) среднее можно взять «на глаз» — из &lt;strong&gt;центра&lt;/strong&gt; ряда: это \(\frac{n+1}{2}\). Элементов \(n\) штук, значит:&lt;/p&gt;
+\]&lt;p&gt;Для ряда \(1, 2, \ldots, n\) среднее можно взять «на глаз» — из &lt;strong&gt;центра&lt;/strong&gt; ряда: это \(\frac{n+1}{2}\). Элементов \(n\) штук, значит:&lt;/p&gt;
 \[
 \text{сумма} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
-\]
-&lt;p&gt;Для \(1 \ldots 100\): среднее \(\approx 50{,}5\), сумма \(50{,}5 \times 100 = 5050\).&lt;/p&gt;
+\]&lt;p&gt;Для \(1 \ldots 100\): среднее \(\approx 50{,}5\), сумма \(50{,}5 \times 100 = 5050\).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;/div&gt;
 
-<<<<<<< Updated upstream
 &lt;h2 id=&#34;визуальная-арифметика&#34;&gt;Визуальная арифметика&lt;/h2&gt;
 &lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
     &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Развернуть все&#34;&gt;
@@ -296,7 +238,7 @@ x x x x x
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;an-и-sqrtna--не-путать-обратное&#34;&gt;\(a^n\) и \(\sqrt[n]{a}\) — не путать «обратное»&lt;/h3&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;и---не-путать-обратное&#34;&gt;\(a^n\) и \(\sqrt[n]{a}\) — не путать «обратное»&lt;/h3&gt;
 &lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;\(a^n\) и \(\sqrt[n]{a}\) — не путать «обратное»&lt;/summary&gt;
 &lt;div&gt;
@@ -308,8 +250,6 @@ x x x x x
 &lt;/details&gt;
 &lt;/div&gt;
 
-=======
->>>>>>> Stashed changes
 </description>
         </item>
         <item>
@@ -731,8 +671,7 @@ x x x x x
 &lt;p&gt;Для функции одной переменной \( f(x) \) производная \( f&#39;(x) \) — это предел отношения приращения \( f \) к приращению \( x \), когда приращение стремится к нулю:&lt;/p&gt;
 \[
 f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
-\]
-&lt;p&gt;Здесь \( \Delta x \) — приращение аргумента (маленький шаг). В примерах ниже ту же величину обозначаем буквой \( h \).&lt;/p&gt;
+\]&lt;p&gt;Здесь \( \Delta x \) — приращение аргумента (маленький шаг). В примерах ниже ту же величину обозначаем буквой \( h \).&lt;/p&gt;
 &lt;p&gt;Геометрически — наклон касательной к графику в точке \( x \):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;\( f&#39;(x) &gt; 0 \) — функция растёт&lt;/li&gt;
@@ -760,38 +699,37 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;p&gt;Скорость — это «сколько км прибавляется за каждый час». То есть отношение изменения расстояния к изменению времени:&lt;/p&gt;
 \[
 \text{скорость} = \frac{s(1) - s(0)}{1 - 0} = \frac{60 - 0}{1} = 60 \text{ км/ч}
-\]
-&lt;p&gt;Это и есть производная: &lt;strong&gt;скорость изменения&lt;/strong&gt; одной величины (расстояние) по другой (время).&lt;/p&gt;
+\]&lt;p&gt;Это и есть производная: &lt;strong&gt;скорость изменения&lt;/strong&gt; одной величины (расстояние) по другой (время).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Числовой пример:&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( t \) (ч)&lt;/th&gt;
-&lt;th&gt;\( s(t) \) (км)&lt;/th&gt;
-&lt;th&gt;\( s(t+0{,}5) - s(t) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;120&lt;/td&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( t \) (ч)&lt;/th&gt;
+          &lt;th&gt;\( s(t) \) (км)&lt;/th&gt;
+          &lt;th&gt;\( s(t+0{,}5) - s(t) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;120&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Везде получается 60. &lt;strong&gt;Да: 60 (скорость в км/ч) и есть производная&lt;/strong&gt; — \( s&#39;(t) = 60 \). Она постоянна, потому что скорость не меняется.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;График&lt;/strong&gt; — прямая линия. Наклон этой прямой тоже равен 60 — то же самое число:&lt;/p&gt;
@@ -806,46 +744,46 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;p&gt;&lt;em&gt;На графике — плавный вариант: скорость растёт от 40 до 80 км/ч. Зелёная кривая — расстояние s(t), пунктир — производная s&amp;rsquo;(t) (мгновенная скорость).&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Считаем &lt;strong&gt;мгновенную&lt;/strong&gt; скорость (производную) в разных точках — по формуле \( \frac{s(t+h) - s(t)}{h} \) при маленьком \( h = 0{,}1 \) ч:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( t \) (ч)&lt;/th&gt;
-&lt;th&gt;\( s(t) \) (км)&lt;/th&gt;
-&lt;th&gt;\( s(t+0{,}1) - s(t) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0,1&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0,25&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0,5&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
-&lt;td&gt;—&lt;/td&gt;
-&lt;td&gt;40 (слева) / &lt;strong&gt;80&lt;/strong&gt; (справа)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0,75&lt;/td&gt;
-&lt;td&gt;40&lt;/td&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( t \) (ч)&lt;/th&gt;
+          &lt;th&gt;\( s(t) \) (км)&lt;/th&gt;
+          &lt;th&gt;\( s(t+0{,}1) - s(t) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,1&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,25&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,5&lt;/td&gt;
+          &lt;td&gt;20&lt;/td&gt;
+          &lt;td&gt;—&lt;/td&gt;
+          &lt;td&gt;40 (слева) / &lt;strong&gt;80&lt;/strong&gt; (справа)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,75&lt;/td&gt;
+          &lt;td&gt;40&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;В первой половине часа производная везде 40, во второй — 80. В точке \( t = 0{,}5 \) график «ломается»: слева наклон 40, справа 80. Средняя 60 — это лишь «усреднение» по всему пути; производная показывает скорость &lt;strong&gt;в данный момент&lt;/strong&gt;.&lt;/p&gt;
 &lt;/details&gt;
@@ -861,45 +799,45 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Основные правила (кратко):&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Функция&lt;/th&gt;
-&lt;th&gt;Производная&lt;/th&gt;
-&lt;th&gt;Описание&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;\( C \) (константа)&lt;/td&gt;
-&lt;td&gt;\( 0 \)&lt;/td&gt;
-&lt;td&gt;константа не меняется, скорость изменения нулевая&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( x \)&lt;/td&gt;
-&lt;td&gt;\( 1 \)&lt;/td&gt;
-&lt;td&gt;линейный рост со скоростью 1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( x^n \)&lt;/td&gt;
-&lt;td&gt;\( n \cdot x^{n-1} \)&lt;/td&gt;
-&lt;td&gt;степень «спускается» множителем, показатель уменьшается на 1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( kx + b \)&lt;/td&gt;
-&lt;td&gt;\( k \)&lt;/td&gt;
-&lt;td&gt;линейная функция: наклон равен коэффициенту \( k \)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( f + g \)&lt;/td&gt;
-&lt;td&gt;\( f&#39; + g&#39; \)&lt;/td&gt;
-&lt;td&gt;производная суммы равна сумме производных&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( C \cdot f \)&lt;/td&gt;
-&lt;td&gt;\( C \cdot f&#39; \)&lt;/td&gt;
-&lt;td&gt;константу можно вынести за знак производной&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Функция&lt;/th&gt;
+          &lt;th&gt;Производная&lt;/th&gt;
+          &lt;th&gt;Описание&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( C \) (константа)&lt;/td&gt;
+          &lt;td&gt;\( 0 \)&lt;/td&gt;
+          &lt;td&gt;константа не меняется, скорость изменения нулевая&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( x \)&lt;/td&gt;
+          &lt;td&gt;\( 1 \)&lt;/td&gt;
+          &lt;td&gt;линейный рост со скоростью 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( x^n \)&lt;/td&gt;
+          &lt;td&gt;\( n \cdot x^{n-1} \)&lt;/td&gt;
+          &lt;td&gt;степень «спускается» множителем, показатель уменьшается на 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( kx + b \)&lt;/td&gt;
+          &lt;td&gt;\( k \)&lt;/td&gt;
+          &lt;td&gt;линейная функция: наклон равен коэффициенту \( k \)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( f + g \)&lt;/td&gt;
+          &lt;td&gt;\( f&#39; + g&#39; \)&lt;/td&gt;
+          &lt;td&gt;производная суммы равна сумме производных&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( C \cdot f \)&lt;/td&gt;
+          &lt;td&gt;\( C \cdot f&#39; \)&lt;/td&gt;
+          &lt;td&gt;константу можно вынести за знак производной&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;strong&gt;Примеры:&lt;/strong&gt; \( (5)&#39; = 0 \), \( (x^2)&#39; = 2x \), \( (x^3)&#39; = 3x^2 \), \( (7x - 2)&#39; = 7 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Зачем в МО:&lt;/strong&gt; обучение модели — это минимизация loss. Производная показывает направление роста; градиентный спуск двигается в противоположную сторону (\( -\nabla L \))&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, чтобы loss уменьшался.&lt;/p&gt;
@@ -908,46 +846,45 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;p&gt;Для натурального \( n \) можно вывести из определения. Пример для \( n = 2 \):&lt;/p&gt;
 \[
 \frac{(x+h)^2 - x^2}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = 2x + h \to 2x
-\]
-&lt;p&gt;При \( h \to 0 \) получаем \( (x^2)&#39; = 2x \). Для \( n = 3 \): раскрывая \( (x+h)^3 \), член с \( h^2 \) уходит в ноль, остаётся \( 3x^2 \).&lt;/p&gt;
+\]&lt;p&gt;При \( h \to 0 \) получаем \( (x^2)&#39; = 2x \). Для \( n = 3 \): раскрывая \( (x+h)^3 \), член с \( h^2 \) уходит в ноль, остаётся \( 3x^2 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Интуиция:&lt;/strong&gt; степень \( n \) «спускается» вперёд как множитель, показатель уменьшается на 1. Чем выше степень, тем «круче» рост — поэтому производная содержит \( n \) и \( x^{n-1} \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Пример: парабола \( y = x^2 \)&lt;/strong&gt; — подробно&lt;/p&gt;
 &lt;p&gt;Для \( f(x) = x^2 \) формула даёт \( f&#39;(x) = 2x \). В каждой точке свой наклон:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Точка \( x \)&lt;/th&gt;
-&lt;th&gt;\( f(x) = x^2 \)&lt;/th&gt;
-&lt;th&gt;\( f&#39;(x) = 2x \) (наклон)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;16&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Точка \( x \)&lt;/th&gt;
+          &lt;th&gt;\( f(x) = x^2 \)&lt;/th&gt;
+          &lt;th&gt;\( f&#39;(x) = 2x \) (наклон)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;16&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;В \( x = 2 \): парабола касается прямой с наклоном 4 (касательная \( y = 4x - 4 \) проходит через (2, 4)).&lt;br&gt;
 В \( x = 4 \): наклон уже 8 — парабола круче, касательная \( y = 8x - 16 \).&lt;br&gt;
@@ -961,15 +898,13 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;/p&gt;
 \[
 \Delta A = A(x + \Delta x) - A(x)
-\]
-&lt;p&gt;
+\]&lt;p&gt;
 То есть ΔA — сколько прибавляется к площади, когда сторона \( x \) увеличивается на Δx.&lt;/p&gt;
 &lt;p&gt;Увеличиваем сторону на \( \Delta x \). К исходному квадрату добавляются: две «полосы» площадью \( x \cdot \Delta x \) (справа и сверху) и малый квадрат \( (\Delta x)^2 \) в углу. Итого:
 &lt;/p&gt;
 \[
 \Delta A = 2x \cdot \Delta x + (\Delta x)^2,\quad \frac{\Delta A}{\Delta x} = 2x + \Delta x \to 2x
-\]
-&lt;p&gt;
+\]&lt;p&gt;
 при \( \Delta x \to 0 \). Производная \( A&#39;(x) = 2x \) — при том же \( \Delta x \) чем больше \( x \), тем больше прирост площади.&lt;/p&gt;
 &lt;div style=&#34;margin: 0.75em 0; min-height: 360px;&#34;&gt;
   &lt;iframe src=&#34;http://localhost:1313/games/derivative-square-area.html&#34; style=&#34;width: 100%; height: 360px; border: none; display: block; background: #1a1a1a; border-radius: 8px;&#34; title=&#34;Квадрат: площадь и приращение&#34;&gt;&lt;/iframe&gt;
@@ -980,13 +915,11 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;/p&gt;
 \[
 \frac{\Delta A}{\Delta x} = 2x + \Delta x \approx 2x \quad \text{при малом } \Delta x
-\]
-&lt;p&gt;Формула \( (x^n)&#39; = nx^{n-1} \) — это уже не приближение, а точное выражение. Производная определяется как предел:
+\]&lt;p&gt;Формула \( (x^n)&#39; = nx^{n-1} \) — это уже не приближение, а точное выражение. Производная определяется как предел:
 &lt;/p&gt;
 \[
 f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
-\]
-&lt;p&gt;
+\]&lt;p&gt;
 Мы сначала берём этот предел, а потом получаем точную формулу.&lt;/p&gt;
 &lt;p&gt;\( \Delta A/\Delta x \) — приближение, потому что \( \Delta x \) ещё конечное. \( A&#39;(x) = 2x \) и \( (x^n)&#39; = nx^{n-1} \) — точные формулы, потому что это результат предела \( \Delta x \to 0 \).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Коротко:&lt;/em&gt; приближение — у конечных разностей; сами производные и их формулы — точные.&lt;/p&gt;
@@ -998,8 +931,7 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;/p&gt;
 \[
 (C \cdot f)&#39;(x) = \lim_{h \to 0} \frac{C \cdot f(x+h) - C \cdot f(x)}{h} = C \cdot \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = C \cdot f&#39;(x)
-\]
-&lt;p&gt;Константа \( C \) не зависит от \( h \), поэтому её можно вынести из предела.&lt;/p&gt;
+\]&lt;p&gt;Константа \( C \) не зависит от \( h \), поэтому её можно вынести из предела.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Примеры:&lt;/strong&gt; \( (5x^2)&#39; = 5 \cdot 2x = 10x \), \( (-3x^3)&#39; = -3 \cdot 3x^2 = -9x^2 \).&lt;/p&gt;
 &lt;/details&gt;
 &lt;/details&gt;
@@ -1010,39 +942,38 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;p&gt;Для прямой наклон везде один и тот же. Считаем в любой точке, например в \( x = 5 \):&lt;/p&gt;
 \[
 \frac{g(5 + h) - g(5)}{h} = \frac{(3(5+h) - 1) - g(5)}{h} = \frac{14 + 3h - 14}{h} = \frac{3h}{h} = 3
-\]
-&lt;p&gt;
+\]&lt;p&gt;
 где \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;p&gt;При любом \( h \neq 0 \) получается &lt;strong&gt;3&lt;/strong&gt; — производная постоянна, как и коэффициент при \( x \) в уравнении прямой.&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( x \)&lt;/th&gt;
-&lt;th&gt;\( g(x) \)&lt;/th&gt;
-&lt;th&gt;\( g(x+0{,}1) - g(x) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{g(x+0{,}1)-g(x)}{0{,}1} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;14&lt;/td&gt;
-&lt;td&gt;0,3&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;29&lt;/td&gt;
-&lt;td&gt;0,3&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;-2&lt;/td&gt;
-&lt;td&gt;-7&lt;/td&gt;
-&lt;td&gt;0,3&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( x \)&lt;/th&gt;
+          &lt;th&gt;\( g(x) \)&lt;/th&gt;
+          &lt;th&gt;\( g(x+0{,}1) - g(x) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{g(x+0{,}1)-g(x)}{0{,}1} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;0,3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;29&lt;/td&gt;
+          &lt;td&gt;0,3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-2&lt;/td&gt;
+          &lt;td&gt;-7&lt;/td&gt;
+          &lt;td&gt;0,3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
   &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;График y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
@@ -1054,78 +985,76 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;p&gt;Считаем приближённую производную в точке \( x = 2 \) по формуле «приращение \( f \) делим на приращение \( x \)». Берём маленький шаг \( h \) и смотрим отношение:&lt;/p&gt;
 \[
 \frac{f(2 + h) - f(2)}{h} = \frac{(2+h)^2 - 4}{h}
-\]
-&lt;p&gt;&lt;strong&gt;При \( x = 2 \)&lt;/strong&gt; (\( f(2) = 4 \)):&lt;/p&gt;
+\]&lt;p&gt;&lt;strong&gt;При \( x = 2 \)&lt;/strong&gt; (\( f(2) = 4 \)):&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( h \)&lt;/th&gt;
-&lt;th&gt;\( f(2+h) \)&lt;/th&gt;
-&lt;th&gt;\( f(2+h) - f(2) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{f(2+h)-f(2)}{h} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0,1&lt;/td&gt;
-&lt;td&gt;4,41&lt;/td&gt;
-&lt;td&gt;0,41&lt;/td&gt;
-&lt;td&gt;4,1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0,01&lt;/td&gt;
-&lt;td&gt;4,0401&lt;/td&gt;
-&lt;td&gt;0,0401&lt;/td&gt;
-&lt;td&gt;4,01&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0,001&lt;/td&gt;
-&lt;td&gt;4,0004…&lt;/td&gt;
-&lt;td&gt;0,004…&lt;/td&gt;
-&lt;td&gt;4,001&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( h \)&lt;/th&gt;
+          &lt;th&gt;\( f(2+h) \)&lt;/th&gt;
+          &lt;th&gt;\( f(2+h) - f(2) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{f(2+h)-f(2)}{h} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,1&lt;/td&gt;
+          &lt;td&gt;4,41&lt;/td&gt;
+          &lt;td&gt;0,41&lt;/td&gt;
+          &lt;td&gt;4,1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,01&lt;/td&gt;
+          &lt;td&gt;4,0401&lt;/td&gt;
+          &lt;td&gt;0,0401&lt;/td&gt;
+          &lt;td&gt;4,01&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,001&lt;/td&gt;
+          &lt;td&gt;4,0004…&lt;/td&gt;
+          &lt;td&gt;0,004…&lt;/td&gt;
+          &lt;td&gt;4,001&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Отношение стремится к &lt;strong&gt;4&lt;/strong&gt; → \( f&#39;(2) = 4 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;При \( x = 4 \)&lt;/strong&gt; (\( f(4) = 16 \)):&lt;/p&gt;
 \[
 \frac{f(4 + h) - f(4)}{h} = \frac{(4+h)^2 - 16}{h} = \frac{8h + h^2}{h} = 8 + h \to 8
-\]
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( h \)&lt;/th&gt;
-&lt;th&gt;\( f(4+h) \)&lt;/th&gt;
-&lt;th&gt;\( f(4+h) - f(4) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{f(4+h)-f(4)}{h} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;25&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0,1&lt;/td&gt;
-&lt;td&gt;16,81&lt;/td&gt;
-&lt;td&gt;0,81&lt;/td&gt;
-&lt;td&gt;8,1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0,01&lt;/td&gt;
-&lt;td&gt;16,0801&lt;/td&gt;
-&lt;td&gt;0,0801&lt;/td&gt;
-&lt;td&gt;8,01&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+\]&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( h \)&lt;/th&gt;
+          &lt;th&gt;\( f(4+h) \)&lt;/th&gt;
+          &lt;th&gt;\( f(4+h) - f(4) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{f(4+h)-f(4)}{h} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;25&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,1&lt;/td&gt;
+          &lt;td&gt;16,81&lt;/td&gt;
+          &lt;td&gt;0,81&lt;/td&gt;
+          &lt;td&gt;8,1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0,01&lt;/td&gt;
+          &lt;td&gt;16,0801&lt;/td&gt;
+          &lt;td&gt;0,0801&lt;/td&gt;
+          &lt;td&gt;8,01&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Отношение стремится к &lt;strong&gt;8&lt;/strong&gt; → \( f&#39;(4) = 8 \). По формуле \( (x^2)&#39; = 2x \): при \( x = 2 \) получаем 4, при \( x = 4 \) — 8. Для кривой производная в каждой точке своя.&lt;/p&gt;
 &lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/240; min-height: 240px; max-height: 480px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
@@ -1250,8 +1179,7 @@ f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;p&gt;Но в виде формулы&lt;/p&gt;
 \[
 F = G \frac{m_1 m_2}{r^2}
-\]
-&lt;p&gt;во-первых занимает меньше места, а во-вторых позволяет удобно работать с уравнением и при необходимости переносить полиномы, чтобы решить задачу.&lt;/p&gt;
+\]&lt;p&gt;во-первых занимает меньше места, а во-вторых позволяет удобно работать с уравнением и при необходимости переносить полиномы, чтобы решить задачу.&lt;/p&gt;
 &lt;p&gt;Интуиция же нужна, чтобы не упускать из вида то, что стоит за формулой, то, что она означает — &lt;strong&gt;отношение объектов друг к другу&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;В машинном обучении приходится догадываться до решения; без интуиции это невозможно.&lt;/p&gt;
 &lt;h2 id=&#34;betterexplained&#34;&gt;BetterExplained&lt;/h2&gt;
