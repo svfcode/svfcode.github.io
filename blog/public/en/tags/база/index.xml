@@ -1,45 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>База on Blog</title>
-        <link>http://localhost:1313/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link>
-        <description>Recent content in База on Blog</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>AI basics – LLM agents</title>
-        <link>http://localhost:1313/en/p/ai-basics-agents/</link>
-        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/en/p/ai-basics-agents/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-agents/cover.jpg" alt="Featured image of post AI basics – LLM agents" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;AI agents&lt;/strong&gt; built around language models: systems that &lt;strong&gt;plan&lt;/strong&gt;, &lt;strong&gt;retain context&lt;/strong&gt;, &lt;strong&gt;call tools&lt;/strong&gt;, and iterate toward a goal—not just emit a single reply.&lt;/p&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chat-vs-agent&#34;&gt;Chat vs agent&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chat vs agent&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>База on Blog</title><link>https://svfcode.github.io/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/</link><description>Recent content in База on Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://svfcode.github.io/en/tags/%D0%B1%D0%B0%D0%B7%D0%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>AI basics – LLM agents</title><link>https://svfcode.github.io/en/p/ai-basics-agents/</link><pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-agents/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-agents/cover.jpg" alt="Featured image of post AI basics – LLM agents" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;AI agents&lt;/strong&gt; built around language models: systems that &lt;strong&gt;plan&lt;/strong&gt;, &lt;strong&gt;retain context&lt;/strong&gt;, &lt;strong&gt;call tools&lt;/strong&gt;, and iterate toward a goal—not just emit a single reply.&lt;/p&gt;
+&lt;h3 class="toc-heading-only" id="chat-vs-agent"&gt;Chat vs agent&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Chat vs agent&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;A plain LLM chat&lt;/strong&gt; is mostly “prompt → answer”: the model predicts tokens from the prompt and in-context history. It is &lt;strong&gt;not required&lt;/strong&gt; to initiate real-world side effects on its own.&lt;/p&gt;
 &lt;p&gt;An &lt;strong&gt;agent&lt;/strong&gt; wraps the model (and often other parts) so it pursues a &lt;strong&gt;goal&lt;/strong&gt;, decomposes work, and when needed &lt;strong&gt;does things&lt;/strong&gt;: calls APIs, runs code, searches the web or a document store until the task is done or a step budget is hit.&lt;/p&gt;
 &lt;p&gt;A useful metaphor: the &lt;strong&gt;LLM is the engine&lt;/strong&gt; (reasoning and wording); the &lt;strong&gt;agent is the driver&lt;/strong&gt; choosing route, when to stop, and which levers (tools) to pull. An engine without a driving scenario does not take you anywhere by itself.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-makes-an-agent&#34;&gt;What makes an agent&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What makes an agent&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="what-makes-an-agent"&gt;What makes an agent&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;What makes an agent&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;People often sketch three pillars—an “anatomy of an agent” diagram.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Planning.&lt;/strong&gt; Breaking a large task into subgoals and steps. This overlaps with &lt;strong&gt;chain-of-thought&lt;/strong&gt; style reasoning, explicit plans, and &lt;strong&gt;self-reflection&lt;/strong&gt; (re-read a draft, check constraints, adjust).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Memory.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Short-term&lt;/strong&gt; — the live context window: recent turns and intermediate notes in one session.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Long-term&lt;/strong&gt; — stored facts, docs, prior sessions; often implemented with &lt;strong&gt;vector stores and RAG&lt;/strong&gt; so relevant snippets are retrieved into the prompt (see the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;RAG article&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Long-term&lt;/strong&gt; — stored facts, docs, prior sessions; often implemented with &lt;strong&gt;vector stores and RAG&lt;/strong&gt; so relevant snippets are retrieved into the prompt (see the &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-rag/"&gt;RAG article&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Tools.&lt;/strong&gt; Formalized actions the model can request: HTTP APIs, code execution (e.g. Python), web search, filesystem hooks, calendar or DB queries. Without tools the “agent” remains text-only with no outward levers.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;how-to-think-about-agents&#34;&gt;How to think about agents&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;How to think about agents&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="how-to-think-about-agents"&gt;How to think about agents&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;How to think about agents&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;The mindset shift is closer to delegating to a junior teammate than to typing a single search query.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Delegate, don’t only prompt.&lt;/strong&gt; State the goal, success criteria, and allowed sources/tools the way you would brief a colleague.&lt;/li&gt;
@@ -49,10 +35,10 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;react-reason-and-act&#34;&gt;ReAct: reason and act&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;ReAct: reason and act&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="react-reason-and-act"&gt;ReAct: reason and act&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;ReAct: reason and act&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;ReAct&lt;/strong&gt; (*Reasoning and Acting*) is a common loop drawn as thought → action → observation.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Thought:&lt;/strong&gt; what do I know, what is missing, what is the next sensible move?&lt;/li&gt;
@@ -63,10 +49,10 @@
 &lt;p&gt;This alternates &lt;strong&gt;natural-language reasoning&lt;/strong&gt; with &lt;strong&gt;grounded steps&lt;/strong&gt; instead of hallucinating when fresh data or computation is required.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;multi-agent-systems&#34;&gt;Multi-agent systems&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Multi-agent systems&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="multi-agent-systems"&gt;Multi-agent systems&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Multi-agent systems&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;Hard problems are sometimes split across &lt;strong&gt;several agents&lt;/strong&gt; with different roles—a “manager and workers” picture.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A &lt;strong&gt;coordinator&lt;/strong&gt; assigns subtasks, merges outputs, keeps the end result coherent.&lt;/li&gt;
@@ -75,10 +61,10 @@
 &lt;p&gt;Upsides: modularity and parallelism. Downsides: harder debugging, model-call cost, and risk of diverging context between agents. For prototypes, spell out the handoff protocol—who passes what, in what schema.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;who-uses-them&#34;&gt;Who uses them&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Who uses them&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="who-uses-them"&gt;Who uses them&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Who uses them&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;Agentic setups appear when a single chat reply is not enough—you need an &lt;strong&gt;action chain&lt;/strong&gt; tied to tools or corpora.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Researchers.&lt;/strong&gt; Scanning many PDFs, summaries, checking phrasing against sources—often with RAG and search.&lt;/li&gt;
@@ -87,29 +73,20 @@
 &lt;li&gt;&lt;strong&gt;Enterprises.&lt;/strong&gt; Internal assistants over CRM, wikis, APIs—with strict access policy, action audit trails, and human gates on critical operations.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/details&gt;
-</description>
-        </item>
-        <item>
-        <title>AI basics – overview</title>
-        <link>http://localhost:1313/en/p/ai-basics-overview/</link>
-        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/en/p/ai-basics-overview/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-overview/cover.jpg" alt="Featured image of post AI basics – overview" /&gt;&lt;p&gt;This overview for the «Bare minimum» series is an outline:&lt;/p&gt;
+&lt;/details&gt;</description></item><item><title>AI basics – overview</title><link>https://svfcode.github.io/en/p/ai-basics-overview/</link><pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-overview/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-overview/cover.jpg" alt="Featured image of post AI basics – overview" /&gt;&lt;p&gt;This overview for the «Bare minimum» series is an outline:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;large language models;&lt;/li&gt;
 &lt;li&gt;architecture;&lt;/li&gt;
 &lt;li&gt;usage patterns;&lt;/li&gt;
 &lt;li&gt;trends.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Video (~9 min):&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/xHLP2f2WVpU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;large-language-models-llms&#34;&gt;Large language models (LLMs)&lt;/h2&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-is-it--a-tool-first-then-capabilities-and-use-cases&#34;&gt;What is it? — A tool first; then capabilities and use cases&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What is it? — A tool first; then capabilities and use cases&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Video (~9 min):&lt;/strong&gt; &lt;a class="link" href="https://youtu.be/xHLP2f2WVpU" target="_blank" rel="noopener"
+&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="large-language-models-llms"&gt;Large language models (LLMs)&lt;/h2&gt;
+&lt;h3 class="toc-heading-only" id="what-is-it--a-tool-first-then-capabilities-and-use-cases"&gt;What is it? — A tool first; then capabilities and use cases&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;What is it? — A tool first; then capabilities and use cases&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Text generation&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Articles, stories, marketing materials&lt;/li&gt;
@@ -137,15 +114,15 @@
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;p&gt;&lt;em&gt;Powerful — but it helps to know how they work and where they fail.&lt;/em&gt;&lt;/p&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-is-it-technically---a-huge-statistical-machine&#34;&gt;What is it technically? - A huge statistical machine&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What is it technically? - A huge statistical machine&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="what-is-it-technically---a-huge-statistical-machine"&gt;What is it technically? - A huge statistical machine&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;What is it technically? - A huge statistical machine&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Definition and how it works&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Neural models trained to predict the next token from context.&lt;/p&gt;
 &lt;p&gt;They use statistical regularities in language to generate text.&lt;/p&gt;
 &lt;p&gt;An LLM uses the full context to pick the most likely next word.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;llm-context.png&#34; alt=&#34;Diagram: model uses full context for the next token&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="llm-context.png" alt="Diagram: model uses full context for the next token" loading="lazy" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;LLM token prediction flow&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Input context (Russian tongue-twister):&lt;/strong&gt; «Карл у Клары украл…»&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Context analysis:&lt;/strong&gt;&lt;/p&gt;
@@ -157,14 +134,14 @@
 &lt;p&gt;&lt;strong&gt;Prediction:&lt;/strong&gt; the model analyzes all prior tokens and their relations, recognizes the familiar tongue-twister pattern&lt;/p&gt;
 &lt;p&gt;→ «кораллы» (“corals”)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Probability:&lt;/strong&gt; 85%&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;llm-token-flow.png&#34; alt=&#34;Token prediction flow&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="llm-token-flow.png" alt="Token prediction flow" loading="lazy" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Transformers and architecture&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Self-attention for sequences (sounds simple — in practice, it isn’t).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;attention.png&#34; alt=&#34;Self-attention mechanism&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="attention.png" alt="Self-attention mechanism" loading="lazy" /&gt;&lt;/p&gt;
 &lt;p&gt;Parallel processing of data instead of a purely recurrent pipeline.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;parallel-vs-rnn.png&#34; alt=&#34;Parallel processing vs recurrent style&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="parallel-vs-rnn.png" alt="Parallel processing vs recurrent style" loading="lazy" /&gt;&lt;/p&gt;
 &lt;p&gt;Multi-layer structure with billions of parameters (weight heatmap).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;layer-weights-heatmap.png&#34; alt=&#34;Layers and parameter scale&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="layer-weights-heatmap.png" alt="Layers and parameter scale" loading="lazy" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Training on text&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Self-supervised learning on billions of text examples&lt;/li&gt;
@@ -173,17 +150,17 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;how-to-use-them---overview-of-techniques-for-working-with-llms&#34;&gt;How to use them? - Overview of techniques for working with LLMs&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;How to use them? - Overview of techniques for working with LLMs&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="how-to-use-them---overview-of-techniques-for-working-with-llms"&gt;How to use them? - Overview of techniques for working with LLMs&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;How to use them? - Overview of techniques for working with LLMs&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Prompt engineering&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The craft of phrasing requests for better results&lt;/li&gt;
 &lt;li&gt;Structuring instructions with roles, examples, and context&lt;/li&gt;
 &lt;li&gt;Iteratively refining prompts for accurate answers&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34;&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-prompt-engineering/"&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fine-tuning&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Adapting the model to specific tasks and domains&lt;/li&gt;
@@ -196,7 +173,7 @@
 &lt;li&gt;Combining external sources with generation&lt;/li&gt;
 &lt;li&gt;Reducing hallucinations by grounding in verified facts&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More on stages, chunking, and pipeline flavors: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;AI basics – RAG systems&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More on stages, chunking, and pipeline flavors: &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-rag/"&gt;AI basics – RAG systems&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Chain-of-thought&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Step-by-step reasoning for hard problems&lt;/li&gt;
@@ -205,10 +182,10 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;popular-models&#34;&gt;Popular models&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Popular models&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="popular-models"&gt;Popular models&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Popular models&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;GPT (OpenAI)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A family from GPT-3 through GPT-5.4-class releases, industry leaders&lt;/li&gt;
@@ -235,10 +212,10 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;key-concepts&#34;&gt;Key concepts&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Key concepts&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="key-concepts"&gt;Key concepts&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Key concepts&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Token&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Smallest unit of text the model processes&lt;/li&gt;
@@ -251,7 +228,7 @@
 &lt;li&gt;Low (0.1–0.3): more predictable, precise text&lt;/li&gt;
 &lt;li&gt;Mid (0.7–0.9): balance of creativity and coherence&lt;/li&gt;
 &lt;li&gt;High (1.5–2.0): more creative, less coherent
-&lt;p style=&#34;margin: 0.5rem 0 0 0;&#34;&gt;&lt;img src=&#34;overview-temperature-high.png&#34; alt=&#34;Infographic: LLM generation temperature from predictable to highly diverse output&#34; style=&#34;max-width: 100%; height: auto; border-radius: 8px;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p style="margin: 0.5rem 0 0 0;"&gt;&lt;img src="overview-temperature-high.png" alt="Infographic: LLM generation temperature from predictable to highly diverse output" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Model types by role&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -259,7 +236,7 @@
 &lt;li&gt;Instruction-tuned: trained to follow user instructions&lt;/li&gt;
 &lt;li&gt;Chat: tuned for dialogue and multi-turn conversation&lt;/li&gt;
 &lt;li&gt;Specialized: tuned for code, medicine, law, etc.
-&lt;p style=&#34;margin: 0.5rem 0 0 0;&#34;&gt;&lt;img src=&#34;overview-model-specialized.png&#34; alt=&#34;Diagram: from foundation models to specialized models (code, medicine, law)&#34; style=&#34;max-width: 100%; height: auto; border-radius: 8px;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p style="margin: 0.5rem 0 0 0;"&gt;&lt;img src="overview-model-specialized.png" alt="Diagram: from foundation models to specialized models (code, medicine, law)" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Context window&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -269,10 +246,10 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;problems-and-limitations&#34;&gt;Problems and limitations&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Problems and limitations&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="problems-and-limitations"&gt;Problems and limitations&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Problems and limitations&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Hallucinations&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The model may invent facts while sounding confident&lt;/li&gt;
@@ -293,10 +270,10 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;future-and-trends&#34;&gt;Future and trends&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Future and trends&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="future-and-trends"&gt;Future and trends&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Future and trends&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Multimodality&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Text, images, audio, and video&lt;/li&gt;
@@ -309,7 +286,7 @@
 &lt;li&gt;Planning actions and making decisions&lt;/li&gt;
 &lt;li&gt;Using external tools and APIs&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More on planning, memory, tools, ReAct, and multi-agent setups: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34;&gt;AI basics – LLM agents&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More on planning, memory, tools, ReAct, and multi-agent setups: &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-agents/"&gt;AI basics – LLM agents&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Model optimization&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Quantization and distillation for speed&lt;/li&gt;
@@ -323,20 +300,11 @@
 &lt;li&gt;Specialized hardware for LLM inference&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/details&gt;
-</description>
-        </item>
-        <item>
-        <title>AI basics – prompt engineering</title>
-        <link>http://localhost:1313/en/p/ai-basics-prompt-engineering/</link>
-        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/en/p/ai-basics-prompt-engineering/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;goal-and-essence&#34;&gt;Goal and essence&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Goal and essence&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;/details&gt;</description></item><item><title>AI basics – prompt engineering</title><link>https://svfcode.github.io/en/p/ai-basics-prompt-engineering/</link><pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-prompt-engineering/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
+&lt;h3 class="toc-heading-only" id="goal-and-essence"&gt;Goal and essence&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Goal and essence&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;A prompt is a short technical spec for the model.&lt;/strong&gt; You state what to do, how to format the answer, and what to rely on. The clearer the spec, the less the model has to guess.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Quality.&lt;/strong&gt; Clear instructions reduce vagueness and improve usefulness of text, code, or structured output.&lt;/li&gt;
@@ -345,10 +313,10 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;zero-shot-prompting&#34;&gt;Zero-shot prompting&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Zero-shot prompting&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="zero-shot-prompting"&gt;Zero-shot prompting&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Zero-shot prompting&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;The task is given with no input–output examples.&lt;/strong&gt; The model leans on pretraining plus your instruction in the current request.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Works well for simple, unambiguous tasks when the desired format is obvious or one line away.&lt;/li&gt;
@@ -357,10 +325,10 @@
 &lt;p&gt;If zero-shot drifts, few-shot examples or explicit step-by-step reasoning (CoT) usually help.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;few-shot-prompting&#34;&gt;Few-shot prompting&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Few-shot prompting&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="few-shot-prompting"&gt;Few-shot prompting&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Few-shot prompting&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;In-context learning:&lt;/strong&gt; you add one or more “input → gold output” pairs so the model picks up style, fields, and constraints.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Especially useful when you need a &lt;strong&gt;strict or unusual format&lt;/strong&gt; — tables, JSON with fixed keys, report templates.&lt;/li&gt;
@@ -369,10 +337,10 @@
 &lt;p&gt;Do not overload context: keep examples relevant, representative, and within the context window.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chain-of-thought-cot&#34;&gt;Chain-of-Thought (CoT)&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chain-of-Thought (CoT)&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="chain-of-thought-cot"&gt;Chain-of-Thought (CoT)&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Chain-of-Thought (CoT)&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Reasoning chain:&lt;/strong&gt; the model emits intermediate steps, then the final answer. That tends to stabilize logic, arithmetic, and multi-step tasks.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Few-shot CoT:&lt;/strong&gt; examples show not only the answer but the reasoning path — the model mimics that pattern.&lt;/li&gt;
@@ -382,10 +350,10 @@
 &lt;p&gt;CoT lengthens responses and latency; for trivial tasks a short instruction without reasoning may be enough.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;where-prompts-come-from&#34;&gt;Where prompts come from&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Where prompts come from&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="where-prompts-come-from"&gt;Where prompts come from&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Where prompts come from&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;You define the goal.&lt;/strong&gt; The primary source is your statement of task, audience, and quality bar.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;LLM-generated drafts.&lt;/strong&gt; Ask the model for a structured prompt (role, steps, format), then edit manually.&lt;/li&gt;
@@ -394,10 +362,10 @@
 &lt;p&gt;In practice people combine model drafts, hard constraints, and iteration on real outputs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;role-based-prompting&#34;&gt;Role-based prompting&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Role-based prompting&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="role-based-prompting"&gt;Role-based prompting&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Role-based prompting&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Explicit role and perspective:&lt;/strong&gt; “you are an editor”, “economist for non-experts”, “comedian in the style of …”. That steers tone, depth, and granularity.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Especially helpful for &lt;strong&gt;open-ended&lt;/strong&gt; work: explanations, creative writing, advice when there is no single “right” format.&lt;/li&gt;
@@ -406,10 +374,10 @@
 &lt;p&gt;Role complements but does not replace a clear task and constraints; “you are an expert” without context helps less than expert + goal + format.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;step-back-prompting&#34;&gt;Step-back prompting&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Step-back prompting&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="step-back-prompting"&gt;Step-back prompting&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Step-back prompting&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;A CoT-style variation:&lt;/strong&gt; first step back to general principles, definitions, or a standard method, &lt;strong&gt;then&lt;/strong&gt; apply them to the specific case.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Start with guiding questions: which laws, patterns, or concepts matter for this task?&lt;/li&gt;
@@ -417,20 +385,11 @@
 &lt;/ul&gt;
 &lt;p&gt;Useful when failures come from jumping to an answer without anchoring on the right background knowledge.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/details&gt;
-</description>
-        </item>
-        <item>
-        <title>AI basics – RAG systems</title>
-        <link>http://localhost:1313/en/p/ai-basics-rag/</link>
-        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/en/p/ai-basics-rag/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-rag/cover.jpg" alt="Featured image of post AI basics – RAG systems" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;retrieval-augmented generation&lt;/strong&gt;: how to ground a language model in external documents and up-to-date knowledge.&lt;/p&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-rag-is&#34;&gt;What RAG is&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What RAG is&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;/details&gt;</description></item><item><title>AI basics – RAG systems</title><link>https://svfcode.github.io/en/p/ai-basics-rag/</link><pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-rag/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-rag/cover.jpg" alt="Featured image of post AI basics – RAG systems" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;retrieval-augmented generation&lt;/strong&gt;: how to ground a language model in external documents and up-to-date knowledge.&lt;/p&gt;
+&lt;h3 class="toc-heading-only" id="what-rag-is"&gt;What RAG is&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;What RAG is&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Retrieval-Augmented Generation&lt;/strong&gt; means the model answers not only from weights learned at training time but also from &lt;strong&gt;fragments retrieved&lt;/strong&gt; from an external store.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The LLM-only issue:&lt;/strong&gt; knowledge is largely &lt;strong&gt;static&lt;/strong&gt; after training — the model does not automatically learn what happened next, &lt;strong&gt;does not self-update&lt;/strong&gt;, and reflects the world &lt;strong&gt;as of the training cutoff&lt;/strong&gt;. That is weak for fresh facts, internal playbooks, or a personal paper library.&lt;/p&gt;
 &lt;ul&gt;
@@ -441,10 +400,10 @@
 &lt;p&gt;RAG does not eliminate hallucinations, but it grounds answers in retrievable snippets that humans (or rules) can verify more easily.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;stages-of-a-rag-pipeline&#34;&gt;Stages of a RAG pipeline&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Stages of a RAG pipeline&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="stages-of-a-rag-pipeline"&gt;Stages of a RAG pipeline&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Stages of a RAG pipeline&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;Think of two phases: offline indexing and the online user query.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Ingestion and chunking.&lt;/strong&gt; Documents enter the system and are split into pieces sized for the index and the context window.&lt;/li&gt;
@@ -455,10 +414,10 @@
 &lt;p&gt;Concrete choices (embeddings, vector DB, how many chunks to inject) strongly affect quality, but the pattern &lt;em&gt;retrieve → inject → generate&lt;/em&gt; stays the same.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chunking&#34;&gt;Chunking&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chunking&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="chunking"&gt;Chunking&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Chunking&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;&lt;strong&gt;Chunking&lt;/strong&gt; splits documents into smaller segments. Those segments are the &lt;strong&gt;basic units of indexing and search&lt;/strong&gt; — what you embed and what you pass to the model.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The LLM sees &lt;strong&gt;fragments, not whole documents&lt;/strong&gt; at once — full docs rarely fit the window, and search needs granular matches.&lt;/li&gt;
@@ -467,10 +426,10 @@
 &lt;p&gt;In practice people tune chunk size, overlap between neighbors, and sometimes structure-aware splits (headings, paragraphs) instead of fixed character counts only.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;types-of-rag-systems&#34;&gt;Types of RAG systems&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Types of RAG systems&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="types-of-rag-systems"&gt;Types of RAG systems&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Types of RAG systems&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;People loosely contrast “naive” and “advanced” pipelines — the boundary is fuzzy, but the labels help navigate complexity.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Naive RAG:&lt;/strong&gt; query → nearest-chunk search → chunks go straight into the model &lt;strong&gt;without extra processing&lt;/strong&gt;. Easy to ship; quality hinges on corpus, chunks, and embeddings.&lt;/li&gt;
@@ -479,10 +438,10 @@
 &lt;p&gt;For coursework or a research prototype, naive RAG is a common start; you add sophistication where you see failure modes like wrong paragraph, duplicates, or vocabulary mismatch between query and docs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;who-uses-it&#34;&gt;Who uses it&lt;/h3&gt;
-&lt;details class=&#34;post-accordion&#34;&gt;
-&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Who uses it&lt;/summary&gt;
-&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
+&lt;h3 class="toc-heading-only" id="who-uses-it"&gt;Who uses it&lt;/h3&gt;
+&lt;details class="post-accordion"&gt;
+&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Who uses it&lt;/summary&gt;
+&lt;div style="margin-top: 0.75em;"&gt;
 &lt;p&gt;Teams adopt RAG when answers must be grounded in a &lt;strong&gt;chosen document set&lt;/strong&gt; — internal, customer-facing, or personal — rather than only in the model’s training-time knowledge.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Enterprises.&lt;/strong&gt; Knowledge bases, policies, support playbooks: employees or customers ask questions, the system retrieves relevant snippets, and the model answers with reference to up-to-date org text.&lt;/li&gt;
@@ -491,60 +450,46 @@
 &lt;li&gt;&lt;strong&gt;Regulated or expert domains.&lt;/strong&gt; Legal, clinical, finance, and similar settings where tying answers to company or regulatory text matters — always with human verification and data-access policies.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/details&gt;
-</description>
-        </item>
-        <item>
-        <title>AI basics – introduction</title>
-        <link>http://localhost:1313/en/p/ai-basics-intro/</link>
-        <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/en/p/ai-basics-intro/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
-&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;RAG systems&lt;/a&gt;, and &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34; &gt;LLM agents&lt;/a&gt; for complex multi-step tasks.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;what-a-language-model-is&#34;&gt;What a language model is&lt;/h2&gt;
+&lt;/details&gt;</description></item><item><title>AI basics – introduction</title><link>https://svfcode.github.io/en/p/ai-basics-intro/</link><pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-intro/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
+&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-prompt-engineering/" &gt;prompt engineering&lt;/a&gt;, &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-rag/" &gt;RAG systems&lt;/a&gt;, and &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-agents/" &gt;LLM agents&lt;/a&gt; for complex multi-step tasks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class="link" href="https://youtu.be/z9VBZn0XcVk" target="_blank" rel="noopener"
+&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="what-a-language-model-is"&gt;What a language model is&lt;/h2&gt;
 &lt;p&gt;A language model is a system that, given what has already been said, predicts the next word. And so on in a loop:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The → The cat → The cat sat → The cat sat on → The cat sat on the → …&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Filling its own context with words it has just produced.&lt;/p&gt;
-&lt;h2 id=&#34;where-we-run-into-them&#34;&gt;Where we run into them&lt;/h2&gt;
+&lt;h2 id="where-we-run-into-them"&gt;Where we run into them&lt;/h2&gt;
 &lt;p&gt;Any chatbot — whether it’s a support “assistant” that drives us crazy until we ask for a human, or “smart” chats like DeepSeek or ChatGPT — relies on a language model.&lt;/p&gt;
 &lt;p&gt;The only difference between a support bot and a “smart” one from DeepSeek is scale: the scale of the dataset and the server capacity needed to process it.&lt;/p&gt;
-&lt;h2 id=&#34;parameter-scale&#34;&gt;Parameter scale&lt;/h2&gt;
+&lt;h2 id="parameter-scale"&gt;Parameter scale&lt;/h2&gt;
 &lt;p&gt;That leads to &lt;strong&gt;parameter scale&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;1–7 billion&lt;/strong&gt; — models you can run on a local laptop&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Trillions&lt;/strong&gt; — models that need server clusters&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Models in the trillion-parameter range are called &lt;strong&gt;foundation&lt;/strong&gt; models: they have absorbed not just statistics of word sequences, but knowledge encoded in language. Language is not only a medium for communication but also a record of collective experience.&lt;/p&gt;
-&lt;h2 id=&#34;ai-ml-and-neural-networks--whats-the-difference&#34;&gt;AI, ML, and neural networks — what’s the difference&lt;/h2&gt;
+&lt;h2 id="ai-ml-and-neural-networks--whats-the-difference"&gt;AI, ML, and neural networks — what’s the difference&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;AI (artificial intelligence)&lt;/strong&gt; is the broadest term: systems and programs that behave “intelligently” — they solve tasks that usually need human intelligence (speech understanding, chess, image recognition, decision-making, and so on). AI can be built without machine learning (e.g. rules, expert systems).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ML (machine learning)&lt;/strong&gt; is a subset of AI: a way to build AI so the system learns from data instead of hand-written rules. The goal is to find patterns in examples (data) and use them for predictions or decisions. ML includes more than neural networks: decision trees, linear models, clustering, and others.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NNs (neural networks)&lt;/strong&gt; are a subset of ML: models inspired by neurons in the brain (layers, weights, activations). One of the most powerful ML tools, especially for images, text, and speech. &lt;strong&gt;Deep learning&lt;/strong&gt; is ML with deep (many-layer) neural networks.&lt;/p&gt;
 &lt;p&gt;The relationship: &lt;strong&gt;AI ⊃ ML ⊃ NN&lt;/strong&gt; — neural networks are a kind of machine learning, and machine learning is one way to implement artificial intelligence.&lt;/p&gt;
-&lt;h2 id=&#34;practice-what-you-learned&#34;&gt;Practice what you learned&lt;/h2&gt;
+&lt;h2 id="practice-what-you-learned"&gt;Practice what you learned&lt;/h2&gt;
 &lt;p&gt;Short games help you check how well you’ve absorbed the material.&lt;/p&gt;
 &lt;p&gt;Quiz:&lt;/p&gt;
-&lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
-  &lt;iframe
-    src=&#34;http://localhost:1313/games/ai-basics-quiz.html&#34;
-    style=&#34;width: 100%; max-width: 672px; height: 540px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
-    title=&#34;Quiz: test your AI basics&#34;
-  &gt;&lt;/iframe&gt;
+&lt;div style="margin: 1.5em 0;"&gt;
+&lt;iframe
+src="https://svfcode.github.io/games/ai-basics-quiz.html"
+style="width: 100%; max-width: 672px; height: 540px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;"
+title="Quiz: test your AI basics"
+&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;Sort the shelf — drag statements onto the right shelves (AI, ML, NN, parameter scale):&lt;/p&gt;
-&lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
-  &lt;iframe
-    src=&#34;http://localhost:1313/games/ai-basics-shelves.html&#34;
-    style=&#34;width: 100%; max-width: 840px; height: 720px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
-    title=&#34;Sort the shelf&#34;
-  &gt;&lt;/iframe&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+&lt;div style="margin: 1.5em 0;"&gt;
+&lt;iframe
+src="https://svfcode.github.io/games/ai-basics-shelves.html"
+style="width: 100%; max-width: 840px; height: 720px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;"
+title="Sort the shelf"
+&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description></item></channel></rss>
