@@ -1,32 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Blog</title><link>https://svfcode.github.io/en/post/</link><description>Recent content in Posts on Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://svfcode.github.io/en/post/index.xml" rel="self" type="application/rss+xml"/><item><title>BetterExplained - Part 2 - Arithmetic</title><link>https://svfcode.github.io/en/p/math-better-explained-arithmetic/</link><pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/math-better-explained-arithmetic/</guid><description>&lt;img src="https://svfcode.github.io/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - Part 2 - Arithmetic" /&gt;&lt;h2 id="mental-tricks"&gt;Mental tricks&lt;/h2&gt;
-&lt;div class="accordion-controls" role="group" aria-label="Управление секциями"&gt;
-&lt;button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Expand all"&gt;
-&lt;span class="accordion-toggle-all__icon" aria-hidden="true"&gt;&lt;/span&gt;
-&lt;span class="accordion-toggle-all__label"&gt;Expand all&lt;/span&gt;
-&lt;/button&gt;
-&lt;button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Collapse all"&gt;
-&lt;span class="accordion-toggle-all__icon" aria-hidden="true"&gt;&lt;/span&gt;
-&lt;span class="accordion-toggle-all__label"&gt;Collapse all&lt;/span&gt;
-&lt;/button&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Blog</title>
+        <link>http://localhost:1313/en/post/</link>
+        <description>Recent content in Posts on Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>BetterExplained - Part 2 - Arithmetic</title>
+        <link>http://localhost:1313/en/p/math-better-explained-arithmetic/</link>
+        <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-better-explained-arithmetic/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg" alt="Featured image of post BetterExplained - Part 2 - Arithmetic" /&gt;&lt;h2 id=&#34;mental-tricks&#34;&gt;Mental tricks&lt;/h2&gt;
+&lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Expand all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Expand all&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--collapse&#34; data-action=&#34;collapse&#34; aria-label=&#34;Collapse all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Collapse all&lt;/span&gt;
+    &lt;/button&gt;
 &lt;/div&gt;
-&lt;div class="post-accordion-group"&gt;
-&lt;h3 class="toc-heading-only" id="60-kmh-is-1-km-per-minute"&gt;60 km/h is 1 km per minute&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;div class=&#34;post-accordion-group&#34;&gt;
+
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;60-kmh-is-1-km-per-minute&#34;&gt;60 km/h is 1 km per minute&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;60 km/h is 1 km per minute&lt;/summary&gt;
 &lt;div&gt;
 &lt;p&gt;Driver reaction time (notice → decide → act) is ~1 second.&lt;/p&gt;
 &lt;p&gt;So if an obstacle appears closer than 16 meters (at 60 km/h), you probably cannot do anything in time. If the speed is three times higher, what distance is critical?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="1-year--250-work-days--2000-work-hours"&gt;1 year = 250 work days = 2000 work hours&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;1-year--250-work-days--2000-work-hours&#34;&gt;1 year = 250 work days = 2000 work hours&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;1 year = 250 work days = 2000 work hours&lt;/summary&gt;
 &lt;div&gt;
 &lt;p&gt;So if you spend 1 hour per day commuting (half an hour each way), you spend 250 hours per year on the road.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="rule-of-72-years-to-double--72--interest-rate"&gt;Rule of 72: years to double = 72 / interest rate&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;rule-of-72-years-to-double--72--interest-rate&#34;&gt;Rule of 72: years to double = 72 / interest rate&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;Rule of 72: years to double = 72 / interest rate&lt;/summary&gt;
 &lt;div&gt;
 &lt;p&gt;Want 10% annual growth on your investments? They double in 7.2 years.&lt;/p&gt;
@@ -35,8 +50,8 @@
 &lt;p&gt;Inflation is 4%? That cuts your money in half in 72/4, or 18 years.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="mental-arithmetic"&gt;Mental arithmetic&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;mental-arithmetic&#34;&gt;Mental arithmetic&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;Mental arithmetic&lt;/summary&gt;
 &lt;div&gt;
 &lt;p&gt;10,000 = hundred hundred&lt;/p&gt;
@@ -47,8 +62,8 @@
 &lt;p&gt;What&amp;rsquo;s 5k × 50k? That&amp;rsquo;s 250 × thousand × thousand, or 250 million.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="visualizing-numbers"&gt;Visualizing numbers&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;visualizing-numbers&#34;&gt;Visualizing numbers&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;Visualizing numbers&lt;/summary&gt;
 &lt;div&gt;
 &lt;p&gt;12 days = 1 million seconds&lt;/p&gt;
@@ -58,8 +73,8 @@
 &lt;p&gt;One “part per million” means an accuracy of 1 second every 12 days. One “part per trillion” means an accuracy of 1 second every 30,000 years.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="a-of-b--b-of-a"&gt;a% of b = b% of a&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;a-of-b--b-of-a&#34;&gt;a% of b = b% of a&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;a% of b = b% of a&lt;/summary&gt;
 &lt;div&gt;
 &lt;p&gt;It’s not immediately clear, but it’s true: a% of b = 0.01 × a × b, which is the same as b% of a (0.01 × b × a).&lt;/p&gt;
@@ -68,21 +83,23 @@
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;/div&gt;
-&lt;h2 id="sum-from-1-to-n"&gt;Sum from 1 to n&lt;/h2&gt;
-&lt;div class="accordion-controls" role="group" aria-label="Управление секциями"&gt;
-&lt;button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Expand all"&gt;
-&lt;span class="accordion-toggle-all__icon" aria-hidden="true"&gt;&lt;/span&gt;
-&lt;span class="accordion-toggle-all__label"&gt;Expand all&lt;/span&gt;
-&lt;/button&gt;
-&lt;button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Collapse all"&gt;
-&lt;span class="accordion-toggle-all__icon" aria-hidden="true"&gt;&lt;/span&gt;
-&lt;span class="accordion-toggle-all__label"&gt;Collapse all&lt;/span&gt;
-&lt;/button&gt;
+
+&lt;h2 id=&#34;sum-from-1-to-n&#34;&gt;Sum from 1 to n&lt;/h2&gt;
+&lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Expand all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Expand all&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--collapse&#34; data-action=&#34;collapse&#34; aria-label=&#34;Collapse all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Collapse all&lt;/span&gt;
+    &lt;/button&gt;
 &lt;/div&gt;
-&lt;div class="post-accordion-group"&gt;
-&lt;h3 class="toc-heading-only" id="were-usually-just-given-the-formula-and-told-to-memorize-it"&gt;We&amp;rsquo;re usually just given the formula and told to memorize it&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary&gt;We're usually just given the formula and told to memorize it&lt;/summary&gt;
+&lt;div class=&#34;post-accordion-group&#34;&gt;
+
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;were-usually-just-given-the-formula-and-told-to-memorize-it&#34;&gt;We&amp;rsquo;re usually just given the formula and told to memorize it&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary&gt;We&#39;re usually just given the formula and told to memorize it&lt;/summary&gt;
 &lt;div&gt;
 \[
 \text{Sum from 1 to } n = \frac{n(n+1)}{2}
@@ -92,23 +109,23 @@
 &lt;p&gt;Below are four ways to derive it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="1-split-the-sequence-in-half-and-add-in-pairs"&gt;1) Split the sequence in half and add in pairs&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;1-split-the-sequence-in-half-and-add-in-pairs&#34;&gt;1) Split the sequence in half and add in pairs&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;1) Split the sequence in half and add in pairs&lt;/summary&gt;
 &lt;div&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; 1 2 3 4 5
-10 9 8 7 6
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; 1   2   3   4   5
+10   9   8   7   6
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Each vertical pair has the same sum: \(1 + 10 = 2 + 9 = \ldots = n + 1\). There are \(\frac{n}{2}\) pairs.&lt;/p&gt;
 \[
 \text{Number of pairs} \times \text{sum of each pair} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
 \]&lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="2-two-rows-of-numbers"&gt;2) Two rows of numbers&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;2-two-rows-of-numbers&#34;&gt;2) Two rows of numbers&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;2) Two rows of numbers&lt;/summary&gt;
 &lt;div&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; 1 2 3 4 5 6 7 8 9 10
-10 9 8 7 6 5 4 3 2 1
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; 1   2   3   4   5   6   7   8   9  10
+10   9   8   7   6   5   4   3   2   1
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Add &lt;strong&gt;both&lt;/strong&gt; rows: every column sums to \(n + 1\), and there are \(n\) columns:&lt;/p&gt;
 \[
 \text{Sum of both rows} = n(n+1)
@@ -117,11 +134,11 @@
 \frac{n(n+1)}{2}
 \]&lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="3-picture-a-triangle"&gt;3) Picture a triangle&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;3-picture-a-triangle&#34;&gt;3) Picture a triangle&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;3) Picture a triangle&lt;/summary&gt;
 &lt;div&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;x
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;x
 x x
 x x x
 x x x x
@@ -129,8 +146,8 @@ x x x x x
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;\(n\) rows, row \(k\) has \(k\) cells — \(1 + 2 + \ldots + n\) in total. Imagine fitting two such triangles together tooth-to-tooth to form a rectangle. &lt;strong&gt;Derive the formula yourself&lt;/strong&gt; from that picture.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="4-via-the-average--the-most-interesting-one-in-my-view"&gt;4) Via the average — the most interesting one, in my view&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;4-via-the-average--the-most-interesting-one-in-my-view&#34;&gt;4) Via the average — the most interesting one, in my view&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;4) Via the average — the most interesting one, in my view&lt;/summary&gt;
 &lt;div&gt;
 &lt;p&gt;We all know that&lt;/p&gt;
@@ -146,27 +163,29 @@ x x x x x
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;/div&gt;
-&lt;h2 id="visual-arithmetic"&gt;Visual arithmetic&lt;/h2&gt;
-&lt;div class="accordion-controls" role="group" aria-label="Управление секциями"&gt;
-&lt;button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Expand all"&gt;
-&lt;span class="accordion-toggle-all__icon" aria-hidden="true"&gt;&lt;/span&gt;
-&lt;span class="accordion-toggle-all__label"&gt;Expand all&lt;/span&gt;
-&lt;/button&gt;
-&lt;button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Collapse all"&gt;
-&lt;span class="accordion-toggle-all__icon" aria-hidden="true"&gt;&lt;/span&gt;
-&lt;span class="accordion-toggle-all__label"&gt;Collapse all&lt;/span&gt;
-&lt;/button&gt;
+
+&lt;h2 id=&#34;visual-arithmetic&#34;&gt;Visual arithmetic&lt;/h2&gt;
+&lt;div class=&#34;accordion-controls&#34; role=&#34;group&#34; aria-label=&#34;Управление секциями&#34;&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--expand&#34; data-action=&#34;expand&#34; aria-label=&#34;Expand all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Expand all&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type=&#34;button&#34; class=&#34;accordion-toggle-all accordion-toggle-all--collapse&#34; data-action=&#34;collapse&#34; aria-label=&#34;Collapse all&#34;&gt;
+        &lt;span class=&#34;accordion-toggle-all__icon&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;span class=&#34;accordion-toggle-all__label&#34;&gt;Collapse all&lt;/span&gt;
+    &lt;/button&gt;
 &lt;/div&gt;
-&lt;div class="post-accordion-group"&gt;
-&lt;h3 class="toc-heading-only" id="every-operation-is-a-transformation"&gt;Every operation is a transformation&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;div class=&#34;post-accordion-group&#34;&gt;
+
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;every-operation-is-a-transformation&#34;&gt;Every operation is a transformation&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;Every operation is a transformation&lt;/summary&gt;
 &lt;div&gt;
 &lt;p&gt;Every operation is a transformation. In the real world there are things we want to slide, smoosh and stretch — arithmetic is exactly what gives us the tools to model that.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="addition-gives-tools-for"&gt;Addition gives tools for:&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;addition-gives-tools-for&#34;&gt;Addition gives tools for:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;Addition gives tools for:&lt;/summary&gt;
 &lt;div&gt;
 &lt;ol&gt;
@@ -176,8 +195,8 @@ x x x x x
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="multiplication-gives-tools-for"&gt;Multiplication gives tools for:&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;multiplication-gives-tools-for&#34;&gt;Multiplication gives tools for:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;Multiplication gives tools for:&lt;/summary&gt;
 &lt;div&gt;
 &lt;ol&gt;
@@ -186,8 +205,8 @@ x x x x x
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="negatives-and-inverses"&gt;Negatives and inverses&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;negatives-and-inverses&#34;&gt;Negatives and inverses&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;Negatives and inverses&lt;/summary&gt;
 &lt;div&gt;
 &lt;ol&gt;
@@ -196,8 +215,8 @@ x x x x x
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="division-gives-tools-for"&gt;Division gives tools for:&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;division-gives-tools-for&#34;&gt;Division gives tools for:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;Division gives tools for:&lt;/summary&gt;
 &lt;div&gt;
 &lt;ol&gt;
@@ -208,8 +227,8 @@ x x x x x
 &lt;p&gt;A fraction looks at &lt;strong&gt;part of a whole&lt;/strong&gt;; division looks at &lt;strong&gt;how many times it fits&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="powers-and-roots-give-tools-for"&gt;Powers and roots give tools for:&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;powers-and-roots-give-tools-for&#34;&gt;Powers and roots give tools for:&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;Powers and roots give tools for:&lt;/summary&gt;
 &lt;div&gt;
 &lt;ol&gt;
@@ -219,8 +238,8 @@ x x x x x
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="and---dont-mix-up-reverse"&gt;\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;and---dont-mix-up-reverse&#34;&gt;\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
 &lt;summary&gt;\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”&lt;/summary&gt;
 &lt;div&gt;
 &lt;ol&gt;
@@ -229,34 +248,44 @@ x x x x x
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;/div&gt;</description></item><item><title>AI basics – LLM agents</title><link>https://svfcode.github.io/en/p/ai-basics-agents/</link><pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-agents/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-agents/cover.jpg" alt="Featured image of post AI basics – LLM agents" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;AI agents&lt;/strong&gt; built around language models: systems that &lt;strong&gt;plan&lt;/strong&gt;, &lt;strong&gt;retain context&lt;/strong&gt;, &lt;strong&gt;call tools&lt;/strong&gt;, and iterate toward a goal—not just emit a single reply.&lt;/p&gt;
-&lt;h3 class="toc-heading-only" id="chat-vs-agent"&gt;Chat vs agent&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Chat vs agent&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;/div&gt;
+
+</description>
+        </item>
+        <item>
+        <title>AI basics – LLM agents</title>
+        <link>http://localhost:1313/en/p/ai-basics-agents/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-agents/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-agents/cover.jpg" alt="Featured image of post AI basics – LLM agents" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;AI agents&lt;/strong&gt; built around language models: systems that &lt;strong&gt;plan&lt;/strong&gt;, &lt;strong&gt;retain context&lt;/strong&gt;, &lt;strong&gt;call tools&lt;/strong&gt;, and iterate toward a goal—not just emit a single reply.&lt;/p&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chat-vs-agent&#34;&gt;Chat vs agent&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chat vs agent&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;A plain LLM chat&lt;/strong&gt; is mostly “prompt → answer”: the model predicts tokens from the prompt and in-context history. It is &lt;strong&gt;not required&lt;/strong&gt; to initiate real-world side effects on its own.&lt;/p&gt;
 &lt;p&gt;An &lt;strong&gt;agent&lt;/strong&gt; wraps the model (and often other parts) so it pursues a &lt;strong&gt;goal&lt;/strong&gt;, decomposes work, and when needed &lt;strong&gt;does things&lt;/strong&gt;: calls APIs, runs code, searches the web or a document store until the task is done or a step budget is hit.&lt;/p&gt;
 &lt;p&gt;A useful metaphor: the &lt;strong&gt;LLM is the engine&lt;/strong&gt; (reasoning and wording); the &lt;strong&gt;agent is the driver&lt;/strong&gt; choosing route, when to stop, and which levers (tools) to pull. An engine without a driving scenario does not take you anywhere by itself.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="what-makes-an-agent"&gt;What makes an agent&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;What makes an agent&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-makes-an-agent&#34;&gt;What makes an agent&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What makes an agent&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;People often sketch three pillars—an “anatomy of an agent” diagram.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Planning.&lt;/strong&gt; Breaking a large task into subgoals and steps. This overlaps with &lt;strong&gt;chain-of-thought&lt;/strong&gt; style reasoning, explicit plans, and &lt;strong&gt;self-reflection&lt;/strong&gt; (re-read a draft, check constraints, adjust).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Memory.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Short-term&lt;/strong&gt; — the live context window: recent turns and intermediate notes in one session.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Long-term&lt;/strong&gt; — stored facts, docs, prior sessions; often implemented with &lt;strong&gt;vector stores and RAG&lt;/strong&gt; so relevant snippets are retrieved into the prompt (see the &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-rag/"&gt;RAG article&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Long-term&lt;/strong&gt; — stored facts, docs, prior sessions; often implemented with &lt;strong&gt;vector stores and RAG&lt;/strong&gt; so relevant snippets are retrieved into the prompt (see the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;RAG article&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Tools.&lt;/strong&gt; Formalized actions the model can request: HTTP APIs, code execution (e.g. Python), web search, filesystem hooks, calendar or DB queries. Without tools the “agent” remains text-only with no outward levers.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="how-to-think-about-agents"&gt;How to think about agents&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;How to think about agents&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;how-to-think-about-agents&#34;&gt;How to think about agents&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;How to think about agents&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;The mindset shift is closer to delegating to a junior teammate than to typing a single search query.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Delegate, don’t only prompt.&lt;/strong&gt; State the goal, success criteria, and allowed sources/tools the way you would brief a colleague.&lt;/li&gt;
@@ -266,10 +295,10 @@ x x x x x
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="react-reason-and-act"&gt;ReAct: reason and act&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;ReAct: reason and act&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;react-reason-and-act&#34;&gt;ReAct: reason and act&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;ReAct: reason and act&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;ReAct&lt;/strong&gt; (*Reasoning and Acting*) is a common loop drawn as thought → action → observation.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Thought:&lt;/strong&gt; what do I know, what is missing, what is the next sensible move?&lt;/li&gt;
@@ -280,10 +309,10 @@ x x x x x
 &lt;p&gt;This alternates &lt;strong&gt;natural-language reasoning&lt;/strong&gt; with &lt;strong&gt;grounded steps&lt;/strong&gt; instead of hallucinating when fresh data or computation is required.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="multi-agent-systems"&gt;Multi-agent systems&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Multi-agent systems&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;multi-agent-systems&#34;&gt;Multi-agent systems&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Multi-agent systems&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;Hard problems are sometimes split across &lt;strong&gt;several agents&lt;/strong&gt; with different roles—a “manager and workers” picture.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A &lt;strong&gt;coordinator&lt;/strong&gt; assigns subtasks, merges outputs, keeps the end result coherent.&lt;/li&gt;
@@ -292,10 +321,10 @@ x x x x x
 &lt;p&gt;Upsides: modularity and parallelism. Downsides: harder debugging, model-call cost, and risk of diverging context between agents. For prototypes, spell out the handoff protocol—who passes what, in what schema.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="who-uses-them"&gt;Who uses them&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Who uses them&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;who-uses-them&#34;&gt;Who uses them&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Who uses them&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;Agentic setups appear when a single chat reply is not enough—you need an &lt;strong&gt;action chain&lt;/strong&gt; tied to tools or corpora.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Researchers.&lt;/strong&gt; Scanning many PDFs, summaries, checking phrasing against sources—often with RAG and search.&lt;/li&gt;
@@ -304,20 +333,29 @@ x x x x x
 &lt;li&gt;&lt;strong&gt;Enterprises.&lt;/strong&gt; Internal assistants over CRM, wikis, APIs—with strict access policy, action audit trails, and human gates on critical operations.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/details&gt;</description></item><item><title>AI basics – overview</title><link>https://svfcode.github.io/en/p/ai-basics-overview/</link><pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-overview/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-overview/cover.jpg" alt="Featured image of post AI basics – overview" /&gt;&lt;p&gt;This overview for the «Bare minimum» series is an outline:&lt;/p&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
+        <title>AI basics – overview</title>
+        <link>http://localhost:1313/en/p/ai-basics-overview/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-overview/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-overview/cover.jpg" alt="Featured image of post AI basics – overview" /&gt;&lt;p&gt;This overview for the «Bare minimum» series is an outline:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;large language models;&lt;/li&gt;
 &lt;li&gt;architecture;&lt;/li&gt;
 &lt;li&gt;usage patterns;&lt;/li&gt;
 &lt;li&gt;trends.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Video (~9 min):&lt;/strong&gt; &lt;a class="link" href="https://youtu.be/xHLP2f2WVpU" target="_blank" rel="noopener"
-&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="large-language-models-llms"&gt;Large language models (LLMs)&lt;/h2&gt;
-&lt;h3 class="toc-heading-only" id="what-is-it--a-tool-first-then-capabilities-and-use-cases"&gt;What is it? — A tool first; then capabilities and use cases&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;What is it? — A tool first; then capabilities and use cases&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;p&gt;&lt;strong&gt;Video (~9 min):&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/xHLP2f2WVpU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;large-language-models-llms&#34;&gt;Large language models (LLMs)&lt;/h2&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-is-it--a-tool-first-then-capabilities-and-use-cases&#34;&gt;What is it? — A tool first; then capabilities and use cases&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What is it? — A tool first; then capabilities and use cases&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Text generation&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Articles, stories, marketing materials&lt;/li&gt;
@@ -345,15 +383,15 @@ x x x x x
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;p&gt;&lt;em&gt;Powerful — but it helps to know how they work and where they fail.&lt;/em&gt;&lt;/p&gt;
-&lt;h3 class="toc-heading-only" id="what-is-it-technically---a-huge-statistical-machine"&gt;What is it technically? - A huge statistical machine&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;What is it technically? - A huge statistical machine&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-is-it-technically---a-huge-statistical-machine&#34;&gt;What is it technically? - A huge statistical machine&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What is it technically? - A huge statistical machine&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Definition and how it works&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Neural models trained to predict the next token from context.&lt;/p&gt;
 &lt;p&gt;They use statistical regularities in language to generate text.&lt;/p&gt;
 &lt;p&gt;An LLM uses the full context to pick the most likely next word.&lt;/p&gt;
-&lt;p&gt;&lt;img src="llm-context.png" alt="Diagram: model uses full context for the next token" loading="lazy" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;llm-context.png&#34; alt=&#34;Diagram: model uses full context for the next token&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;LLM token prediction flow&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Input context (Russian tongue-twister):&lt;/strong&gt; «Карл у Клары украл…»&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Context analysis:&lt;/strong&gt;&lt;/p&gt;
@@ -365,14 +403,14 @@ x x x x x
 &lt;p&gt;&lt;strong&gt;Prediction:&lt;/strong&gt; the model analyzes all prior tokens and their relations, recognizes the familiar tongue-twister pattern&lt;/p&gt;
 &lt;p&gt;→ «кораллы» (“corals”)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Probability:&lt;/strong&gt; 85%&lt;/p&gt;
-&lt;p&gt;&lt;img src="llm-token-flow.png" alt="Token prediction flow" loading="lazy" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;llm-token-flow.png&#34; alt=&#34;Token prediction flow&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Transformers and architecture&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Self-attention for sequences (sounds simple — in practice, it isn’t).&lt;/p&gt;
-&lt;p&gt;&lt;img src="attention.png" alt="Self-attention mechanism" loading="lazy" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;attention.png&#34; alt=&#34;Self-attention mechanism&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Parallel processing of data instead of a purely recurrent pipeline.&lt;/p&gt;
-&lt;p&gt;&lt;img src="parallel-vs-rnn.png" alt="Parallel processing vs recurrent style" loading="lazy" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;parallel-vs-rnn.png&#34; alt=&#34;Parallel processing vs recurrent style&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Multi-layer structure with billions of parameters (weight heatmap).&lt;/p&gt;
-&lt;p&gt;&lt;img src="layer-weights-heatmap.png" alt="Layers and parameter scale" loading="lazy" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;layer-weights-heatmap.png&#34; alt=&#34;Layers and parameter scale&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Training on text&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Self-supervised learning on billions of text examples&lt;/li&gt;
@@ -381,17 +419,17 @@ x x x x x
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="how-to-use-them---overview-of-techniques-for-working-with-llms"&gt;How to use them? - Overview of techniques for working with LLMs&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;How to use them? - Overview of techniques for working with LLMs&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;how-to-use-them---overview-of-techniques-for-working-with-llms&#34;&gt;How to use them? - Overview of techniques for working with LLMs&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;How to use them? - Overview of techniques for working with LLMs&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Prompt engineering&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The craft of phrasing requests for better results&lt;/li&gt;
 &lt;li&gt;Structuring instructions with roles, examples, and context&lt;/li&gt;
 &lt;li&gt;Iteratively refining prompts for accurate answers&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-prompt-engineering/"&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Deep dive by technique (zero-shot, few-shot, CoT, roles, step-back, …): &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34;&gt;AI basics – prompt engineering&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Fine-tuning&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Adapting the model to specific tasks and domains&lt;/li&gt;
@@ -404,7 +442,7 @@ x x x x x
 &lt;li&gt;Combining external sources with generation&lt;/li&gt;
 &lt;li&gt;Reducing hallucinations by grounding in verified facts&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More on stages, chunking, and pipeline flavors: &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-rag/"&gt;AI basics – RAG systems&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More on stages, chunking, and pipeline flavors: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34;&gt;AI basics – RAG systems&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Chain-of-thought&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Step-by-step reasoning for hard problems&lt;/li&gt;
@@ -413,10 +451,10 @@ x x x x x
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="popular-models"&gt;Popular models&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Popular models&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;popular-models&#34;&gt;Popular models&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Popular models&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;GPT (OpenAI)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A family from GPT-3 through GPT-5.4-class releases, industry leaders&lt;/li&gt;
@@ -443,10 +481,10 @@ x x x x x
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="key-concepts"&gt;Key concepts&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Key concepts&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;key-concepts&#34;&gt;Key concepts&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Key concepts&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Token&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Smallest unit of text the model processes&lt;/li&gt;
@@ -459,7 +497,7 @@ x x x x x
 &lt;li&gt;Low (0.1–0.3): more predictable, precise text&lt;/li&gt;
 &lt;li&gt;Mid (0.7–0.9): balance of creativity and coherence&lt;/li&gt;
 &lt;li&gt;High (1.5–2.0): more creative, less coherent
-&lt;p style="margin: 0.5rem 0 0 0;"&gt;&lt;img src="overview-temperature-high.png" alt="Infographic: LLM generation temperature from predictable to highly diverse output" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p style=&#34;margin: 0.5rem 0 0 0;&#34;&gt;&lt;img src=&#34;overview-temperature-high.png&#34; alt=&#34;Infographic: LLM generation temperature from predictable to highly diverse output&#34; style=&#34;max-width: 100%; height: auto; border-radius: 8px;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Model types by role&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -467,7 +505,7 @@ x x x x x
 &lt;li&gt;Instruction-tuned: trained to follow user instructions&lt;/li&gt;
 &lt;li&gt;Chat: tuned for dialogue and multi-turn conversation&lt;/li&gt;
 &lt;li&gt;Specialized: tuned for code, medicine, law, etc.
-&lt;p style="margin: 0.5rem 0 0 0;"&gt;&lt;img src="overview-model-specialized.png" alt="Diagram: from foundation models to specialized models (code, medicine, law)" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p style=&#34;margin: 0.5rem 0 0 0;&#34;&gt;&lt;img src=&#34;overview-model-specialized.png&#34; alt=&#34;Diagram: from foundation models to specialized models (code, medicine, law)&#34; style=&#34;max-width: 100%; height: auto; border-radius: 8px;&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Context window&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -477,10 +515,10 @@ x x x x x
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="problems-and-limitations"&gt;Problems and limitations&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Problems and limitations&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;problems-and-limitations&#34;&gt;Problems and limitations&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Problems and limitations&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Hallucinations&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The model may invent facts while sounding confident&lt;/li&gt;
@@ -501,10 +539,10 @@ x x x x x
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="future-and-trends"&gt;Future and trends&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Future and trends&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;future-and-trends&#34;&gt;Future and trends&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Future and trends&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Multimodality&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Text, images, audio, and video&lt;/li&gt;
@@ -517,7 +555,7 @@ x x x x x
 &lt;li&gt;Planning actions and making decisions&lt;/li&gt;
 &lt;li&gt;Using external tools and APIs&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More on planning, memory, tools, ReAct, and multi-agent setups: &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-agents/"&gt;AI basics – LLM agents&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More on planning, memory, tools, ReAct, and multi-agent setups: &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34;&gt;AI basics – LLM agents&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Model optimization&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Quantization and distillation for speed&lt;/li&gt;
@@ -531,11 +569,20 @@ x x x x x
 &lt;li&gt;Specialized hardware for LLM inference&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/details&gt;</description></item><item><title>AI basics – prompt engineering</title><link>https://svfcode.github.io/en/p/ai-basics-prompt-engineering/</link><pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-prompt-engineering/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
-&lt;h3 class="toc-heading-only" id="goal-and-essence"&gt;Goal and essence&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Goal and essence&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
+        <title>AI basics – prompt engineering</title>
+        <link>http://localhost:1313/en/p/ai-basics-prompt-engineering/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-prompt-engineering/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-prompt-engineering/cover.jpg" alt="Featured image of post AI basics – prompt engineering" /&gt;&lt;p&gt;A «Bare minimum» article on how to phrase requests to large language models.&lt;/p&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;goal-and-essence&#34;&gt;Goal and essence&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Goal and essence&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;A prompt is a short technical spec for the model.&lt;/strong&gt; You state what to do, how to format the answer, and what to rely on. The clearer the spec, the less the model has to guess.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Quality.&lt;/strong&gt; Clear instructions reduce vagueness and improve usefulness of text, code, or structured output.&lt;/li&gt;
@@ -544,10 +591,10 @@ x x x x x
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="zero-shot-prompting"&gt;Zero-shot prompting&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Zero-shot prompting&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;zero-shot-prompting&#34;&gt;Zero-shot prompting&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Zero-shot prompting&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;The task is given with no input–output examples.&lt;/strong&gt; The model leans on pretraining plus your instruction in the current request.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Works well for simple, unambiguous tasks when the desired format is obvious or one line away.&lt;/li&gt;
@@ -556,10 +603,10 @@ x x x x x
 &lt;p&gt;If zero-shot drifts, few-shot examples or explicit step-by-step reasoning (CoT) usually help.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="few-shot-prompting"&gt;Few-shot prompting&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Few-shot prompting&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;few-shot-prompting&#34;&gt;Few-shot prompting&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Few-shot prompting&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;In-context learning:&lt;/strong&gt; you add one or more “input → gold output” pairs so the model picks up style, fields, and constraints.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Especially useful when you need a &lt;strong&gt;strict or unusual format&lt;/strong&gt; — tables, JSON with fixed keys, report templates.&lt;/li&gt;
@@ -568,10 +615,10 @@ x x x x x
 &lt;p&gt;Do not overload context: keep examples relevant, representative, and within the context window.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="chain-of-thought-cot"&gt;Chain-of-Thought (CoT)&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Chain-of-Thought (CoT)&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chain-of-thought-cot&#34;&gt;Chain-of-Thought (CoT)&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chain-of-Thought (CoT)&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Reasoning chain:&lt;/strong&gt; the model emits intermediate steps, then the final answer. That tends to stabilize logic, arithmetic, and multi-step tasks.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Few-shot CoT:&lt;/strong&gt; examples show not only the answer but the reasoning path — the model mimics that pattern.&lt;/li&gt;
@@ -581,10 +628,10 @@ x x x x x
 &lt;p&gt;CoT lengthens responses and latency; for trivial tasks a short instruction without reasoning may be enough.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="where-prompts-come-from"&gt;Where prompts come from&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Where prompts come from&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;where-prompts-come-from&#34;&gt;Where prompts come from&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Where prompts come from&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;You define the goal.&lt;/strong&gt; The primary source is your statement of task, audience, and quality bar.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;LLM-generated drafts.&lt;/strong&gt; Ask the model for a structured prompt (role, steps, format), then edit manually.&lt;/li&gt;
@@ -593,10 +640,10 @@ x x x x x
 &lt;p&gt;In practice people combine model drafts, hard constraints, and iteration on real outputs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="role-based-prompting"&gt;Role-based prompting&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Role-based prompting&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;role-based-prompting&#34;&gt;Role-based prompting&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Role-based prompting&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Explicit role and perspective:&lt;/strong&gt; “you are an editor”, “economist for non-experts”, “comedian in the style of …”. That steers tone, depth, and granularity.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Especially helpful for &lt;strong&gt;open-ended&lt;/strong&gt; work: explanations, creative writing, advice when there is no single “right” format.&lt;/li&gt;
@@ -605,10 +652,10 @@ x x x x x
 &lt;p&gt;Role complements but does not replace a clear task and constraints; “you are an expert” without context helps less than expert + goal + format.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="step-back-prompting"&gt;Step-back prompting&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Step-back prompting&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;step-back-prompting&#34;&gt;Step-back prompting&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Step-back prompting&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;A CoT-style variation:&lt;/strong&gt; first step back to general principles, definitions, or a standard method, &lt;strong&gt;then&lt;/strong&gt; apply them to the specific case.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Start with guiding questions: which laws, patterns, or concepts matter for this task?&lt;/li&gt;
@@ -616,11 +663,20 @@ x x x x x
 &lt;/ul&gt;
 &lt;p&gt;Useful when failures come from jumping to an answer without anchoring on the right background knowledge.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/details&gt;</description></item><item><title>AI basics – RAG systems</title><link>https://svfcode.github.io/en/p/ai-basics-rag/</link><pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-rag/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-rag/cover.jpg" alt="Featured image of post AI basics – RAG systems" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;retrieval-augmented generation&lt;/strong&gt;: how to ground a language model in external documents and up-to-date knowledge.&lt;/p&gt;
-&lt;h3 class="toc-heading-only" id="what-rag-is"&gt;What RAG is&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;What RAG is&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
+        <title>AI basics – RAG systems</title>
+        <link>http://localhost:1313/en/p/ai-basics-rag/</link>
+        <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-rag/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-rag/cover.jpg" alt="Featured image of post AI basics – RAG systems" /&gt;&lt;p&gt;A «Bare minimum» article on &lt;strong&gt;retrieval-augmented generation&lt;/strong&gt;: how to ground a language model in external documents and up-to-date knowledge.&lt;/p&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;what-rag-is&#34;&gt;What RAG is&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;What RAG is&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Retrieval-Augmented Generation&lt;/strong&gt; means the model answers not only from weights learned at training time but also from &lt;strong&gt;fragments retrieved&lt;/strong&gt; from an external store.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The LLM-only issue:&lt;/strong&gt; knowledge is largely &lt;strong&gt;static&lt;/strong&gt; after training — the model does not automatically learn what happened next, &lt;strong&gt;does not self-update&lt;/strong&gt;, and reflects the world &lt;strong&gt;as of the training cutoff&lt;/strong&gt;. That is weak for fresh facts, internal playbooks, or a personal paper library.&lt;/p&gt;
 &lt;ul&gt;
@@ -631,10 +687,10 @@ x x x x x
 &lt;p&gt;RAG does not eliminate hallucinations, but it grounds answers in retrievable snippets that humans (or rules) can verify more easily.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="stages-of-a-rag-pipeline"&gt;Stages of a RAG pipeline&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Stages of a RAG pipeline&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;stages-of-a-rag-pipeline&#34;&gt;Stages of a RAG pipeline&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Stages of a RAG pipeline&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;Think of two phases: offline indexing and the online user query.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Ingestion and chunking.&lt;/strong&gt; Documents enter the system and are split into pieces sized for the index and the context window.&lt;/li&gt;
@@ -645,10 +701,10 @@ x x x x x
 &lt;p&gt;Concrete choices (embeddings, vector DB, how many chunks to inject) strongly affect quality, but the pattern &lt;em&gt;retrieve → inject → generate&lt;/em&gt; stays the same.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="chunking"&gt;Chunking&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Chunking&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;chunking&#34;&gt;Chunking&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Chunking&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Chunking&lt;/strong&gt; splits documents into smaller segments. Those segments are the &lt;strong&gt;basic units of indexing and search&lt;/strong&gt; — what you embed and what you pass to the model.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The LLM sees &lt;strong&gt;fragments, not whole documents&lt;/strong&gt; at once — full docs rarely fit the window, and search needs granular matches.&lt;/li&gt;
@@ -657,10 +713,10 @@ x x x x x
 &lt;p&gt;In practice people tune chunk size, overlap between neighbors, and sometimes structure-aware splits (headings, paragraphs) instead of fixed character counts only.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="types-of-rag-systems"&gt;Types of RAG systems&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Types of RAG systems&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;types-of-rag-systems&#34;&gt;Types of RAG systems&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Types of RAG systems&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;People loosely contrast “naive” and “advanced” pipelines — the boundary is fuzzy, but the labels help navigate complexity.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Naive RAG:&lt;/strong&gt; query → nearest-chunk search → chunks go straight into the model &lt;strong&gt;without extra processing&lt;/strong&gt;. Easy to ship; quality hinges on corpus, chunks, and embeddings.&lt;/li&gt;
@@ -669,10 +725,10 @@ x x x x x
 &lt;p&gt;For coursework or a research prototype, naive RAG is a common start; you add sophistication where you see failure modes like wrong paragraph, duplicates, or vocabulary mismatch between query and docs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 class="toc-heading-only" id="who-uses-it"&gt;Who uses it&lt;/h3&gt;
-&lt;details class="post-accordion"&gt;
-&lt;summary style="cursor: pointer; font-weight: 600;"&gt;Who uses it&lt;/summary&gt;
-&lt;div style="margin-top: 0.75em;"&gt;
+&lt;h3 class=&#34;toc-heading-only&#34; id=&#34;who-uses-it&#34;&gt;Who uses it&lt;/h3&gt;
+&lt;details class=&#34;post-accordion&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-weight: 600;&#34;&gt;Who uses it&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 0.75em;&#34;&gt;
 &lt;p&gt;Teams adopt RAG when answers must be grounded in a &lt;strong&gt;chosen document set&lt;/strong&gt; — internal, customer-facing, or personal — rather than only in the model’s training-time knowledge.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Enterprises.&lt;/strong&gt; Knowledge bases, policies, support playbooks: employees or customers ask questions, the system retrieves relevant snippets, and the model answers with reference to up-to-date org text.&lt;/li&gt;
@@ -681,309 +737,344 @@ x x x x x
 &lt;li&gt;&lt;strong&gt;Regulated or expert domains.&lt;/strong&gt; Legal, clinical, finance, and similar settings where tying answers to company or regulatory text matters — always with human verification and data-access policies.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/details&gt;</description></item><item><title>Math Analysis — Derivatives</title><link>https://svfcode.github.io/en/p/math-derivatives/</link><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/math-derivatives/</guid><description>&lt;blockquote&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
+        <title>Math Analysis — Derivatives</title>
+        <link>http://localhost:1313/en/p/math-derivatives/</link>
+        <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-derivatives/</guid>
+        <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Without this you can&amp;rsquo;t understand how neural networks learn.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;A common example is the speed of a car. We&amp;rsquo;ll do the same.&lt;/p&gt;
-&lt;h2 id="what-is-speed"&gt;What is speed?&lt;/h2&gt;
+&lt;h2 id=&#34;what-is-speed&#34;&gt;What is speed?&lt;/h2&gt;
 &lt;p&gt;It&amp;rsquo;s the ratio of distance to time.&lt;/p&gt;
 &lt;p&gt;A car traveling at an average speed of 60 km/h — if we increase time \( t \) by one unit, distance \( s \) increases by 60 units. If we multiply \( t \) by 10, \( s \) is multiplied by 10 as well. The growth is linear; on a graph it&amp;rsquo;s a straight line.&lt;/p&gt;
-&lt;div class="chart-wrap" style="max-width: 360px; margin: 1em 0;"&gt;
-&lt;canvas id="chart-linear-ef65e140a99a3aa68a1c55eb91ebca46" height="200"&gt;&lt;/canvas&gt;
-&lt;div class="chart-legend" style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);"&gt;
-&lt;span style="display: flex; align-items: center; gap: 0.4rem;"&gt;&lt;span style="width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;"&gt;&lt;/span&gt;s = 60t&lt;/span&gt;
+&lt;div class=&#34;chart-wrap&#34; style=&#34;max-width: 360px; margin: 1em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-linear-ef65e140a99a3aa68a1c55eb91ebca46&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s = 60t&lt;/span&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"&gt;&lt;/script&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;
 (function() {
-var id = 'chart-linear-ef65e140a99a3aa68a1c55eb91ebca46';
-var canvas = document.getElementById(id);
-if (!canvas) return;
-function init() {
-if (!window.Chart) return;
-var ctx = canvas.getContext('2d');
-if (!ctx) return;
-var labels = [0, 1, 2, 3, 4];
-var data = [0, 60, 120, 180, 240];
-new Chart(ctx, {
-type: 'line',
-data: {
-labels: labels,
-datasets: [{
-label: 's = 60t',
-data: data,
-borderColor: '#3b82f6',
-backgroundColor: 'transparent',
-borderWidth: 2.5,
-fill: false,
-pointRadius: 0,
-tension: 0
-}]
-},
-options: {
-responsive: true,
-maintainAspectRatio: true,
-aspectRatio: 1.6,
-plugins: {
-legend: { display: false },
-title: { display: false }
-},
-scales: {
-x: { title: { display: true, text: 't' }, grid: { color: 'rgba(107,114,128,0.3)' } },
-y: { title: { display: true, text: 's' }, min: 0, grid: { color: 'rgba(107,114,128,0.3)' } }
-}
-}
-});
-}
-document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+  var id = &#39;chart-linear-ef65e140a99a3aa68a1c55eb91ebca46&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function init() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    var labels = [0, 1, 2, 3, 4];
+    var data = [0, 60, 120, 180, 240];
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: &#39;s = 60t&#39;,
+          data: data,
+          borderColor: &#39;#3b82f6&#39;,
+          backgroundColor: &#39;transparent&#39;,
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          title: { display: false }
+        },
+        scales: {
+          x: { title: { display: true, text: &#39;t&#39; }, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } },
+          y: { title: { display: true, text: &#39;s&#39; }, min: 0, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } }
+        }
+      }
+    });
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
 })();
 &lt;/script&gt;
+
 &lt;p&gt;But over time the car moves unevenly — speed increases and decreases.&lt;/p&gt;
-&lt;div class="chart-wrap" style="max-width: 360px; margin: 1em 0;"&gt;
-&lt;canvas id="chart-nonuniform-ef65e140a99a3aa68a1c55eb91ebca46" height="200"&gt;&lt;/canvas&gt;
-&lt;div class="chart-legend" style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151); flex-wrap: wrap;"&gt;
-&lt;span style="display: flex; align-items: center; gap: 0.4rem;"&gt;&lt;span style="width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;"&gt;&lt;/span&gt;s(t) — distance&lt;/span&gt;
-&lt;span style="display: flex; align-items: center; gap: 0.4rem;"&gt;&lt;span style="width: 24px; border-bottom: 2px dashed #f59e0b;"&gt;&lt;/span&gt;v(t) — velocity&lt;/span&gt;
-&lt;/div&gt;
+&lt;div class=&#34;chart-wrap&#34; style=&#34;max-width: 360px; margin: 1em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-nonuniform-ef65e140a99a3aa68a1c55eb91ebca46&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151); flex-wrap: wrap;&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s(t) — distance&lt;/span&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; border-bottom: 2px dashed #f59e0b;&#34;&gt;&lt;/span&gt;v(t) — velocity&lt;/span&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;script&gt;
 (function() {
-var id = 'chart-nonuniform-ef65e140a99a3aa68a1c55eb91ebca46';
-var canvas = document.getElementById(id);
-if (!canvas) return;
-function run() {
-if (!window.Chart) return;
-var ctx = canvas.getContext('2d');
-if (!ctx) return;
-var labels = [];
-var sData = [];
-var vData = [];
-for (var t = 0; t &lt;= 1.02; t += 0.02) {
-labels.push(t.toFixed(2));
-var u = Math.max(0, Math.min(1, t));
-var s = 60 * u * u * (3 - 2 * u);
-var v = 360 * u * (1 - u);
-sData.push(s);
-vData.push(v);
-}
-new Chart(ctx, {
-type: 'line',
-data: {
-labels: labels,
-datasets: [
-{
-label: 's(t) — distance',
-data: sData,
-borderColor: '#3b82f6',
-borderWidth: 2.5,
-fill: false,
-pointRadius: 0,
-tension: 0.3,
-yAxisID: 'y'
-},
-{
-label: 'v(t) — velocity',
-data: vData,
-borderColor: '#f59e0b',
-borderWidth: 2,
-borderDash: [6, 4],
-fill: false,
-pointRadius: 0,
-tension: 0.3,
-yAxisID: 'y1'
-}
-]
-},
-options: {
-responsive: true,
-maintainAspectRatio: true,
-aspectRatio: 1.6,
-plugins: { legend: { display: false } },
-scales: {
-x: { title: { display: true, text: 't' }, grid: { color: 'rgba(107,114,128,0.3)' } },
-y: {
-type: 'linear',
-position: 'left',
-title: { display: true, text: 's' },
-min: 0,
-max: 70,
-grid: { color: 'rgba(107,114,128,0.3)' }
-},
-y1: {
-type: 'linear',
-position: 'right',
-title: { display: true, text: 'v' },
-min: 0,
-max: 100,
-grid: { drawOnChartArea: false },
-ticks: { color: 'rgba(107,114,128,0.8)' }
-}
-}
-}
-});
-}
-function init() {
-if (window.Chart) run();
-else {
-var s = document.createElement('script');
-s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js';
-s.onload = run;
-document.head.appendChild(s);
-}
-}
-document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+  var id = &#39;chart-nonuniform-ef65e140a99a3aa68a1c55eb91ebca46&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    var labels = [];
+    var sData = [];
+    var vData = [];
+    for (var t = 0; t &lt;= 1.02; t += 0.02) {
+      labels.push(t.toFixed(2));
+      var u = Math.max(0, Math.min(1, t));
+      var s = 60 * u * u * (3 - 2 * u);
+      var v = 360 * u * (1 - u);
+      sData.push(s);
+      vData.push(v);
+    }
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: &#39;s(t) — distance&#39;,
+            data: sData,
+            borderColor: &#39;#3b82f6&#39;,
+            borderWidth: 2.5,
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: &#39;y&#39;
+          },
+          {
+            label: &#39;v(t) — velocity&#39;,
+            data: vData,
+            borderColor: &#39;#f59e0b&#39;,
+            borderWidth: 2,
+            borderDash: [6, 4],
+            fill: false,
+            pointRadius: 0,
+            tension: 0.3,
+            yAxisID: &#39;y1&#39;
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { title: { display: true, text: &#39;t&#39; }, grid: { color: &#39;rgba(107,114,128,0.3)&#39; } },
+          y: {
+            type: &#39;linear&#39;,
+            position: &#39;left&#39;,
+            title: { display: true, text: &#39;s&#39; },
+            min: 0,
+            max: 70,
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; }
+          },
+          y1: {
+            type: &#39;linear&#39;,
+            position: &#39;right&#39;,
+            title: { display: true, text: &#39;v&#39; },
+            min: 0,
+            max: 100,
+            grid: { drawOnChartArea: false },
+            ticks: { color: &#39;rgba(107,114,128,0.8)&#39; }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement(&#39;script&#39;);
+      s.src = &#39;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#39;;
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
 })();
 &lt;/script&gt;
-&lt;details style="background: rgba(239, 68, 68, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #ef4444;"&gt;
+
+&lt;details style=&#34;background: rgba(239, 68, 68, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #ef4444;&#34;&gt;
 &lt;summary&gt;Impossible&lt;/summary&gt;
 &lt;p&gt;Distance traveled cannot decrease. Such an s(t) graph would be wrong:&lt;/p&gt;
-&lt;div class="chart-impossible-wrap" style="max-width: 360px; margin: 0.75em 0;"&gt;
-&lt;canvas id="chart-impossible-st-ef65e140a99a3aa68a1c55eb91ebca46" height="200"&gt;&lt;/canvas&gt;
-&lt;div class="chart-legend" style="display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);"&gt;
-&lt;span style="display: flex; align-items: center; gap: 0.4rem;"&gt;&lt;span style="width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;"&gt;&lt;/span&gt;s(t) — wrong&lt;/span&gt;
-&lt;/div&gt;
+&lt;div class=&#34;chart-impossible-wrap&#34; style=&#34;max-width: 360px; margin: 0.75em 0;&#34;&gt;
+  &lt;canvas id=&#34;chart-impossible-st-ef65e140a99a3aa68a1c55eb91ebca46&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+  &lt;div class=&#34;chart-legend&#34; style=&#34;display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; font-size: 0.9rem; color: var(--content-color, #374151);&#34;&gt;
+    &lt;span style=&#34;display: flex; align-items: center; gap: 0.4rem;&#34;&gt;&lt;span style=&#34;width: 24px; height: 3px; background: #3b82f6; border-radius: 2px;&#34;&gt;&lt;/span&gt;s(t) — wrong&lt;/span&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;script&gt;
 (function() {
-var id = 'chart-impossible-st-ef65e140a99a3aa68a1c55eb91ebca46';
-var canvas = document.getElementById(id);
-if (!canvas) return;
-function run() {
-if (!window.Chart) return;
-var ctx = canvas.getContext('2d');
-if (!ctx) return;
-var labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-var data = [0, 3, 7, 11, 14, 11, 6, 2, 5, 9, 13];
-new Chart(ctx, {
-type: 'line',
-data: {
-labels: labels,
-datasets: [{
-label: 's(t) — wrong',
-data: data,
-borderColor: '#3b82f6',
-backgroundColor: 'transparent',
-borderWidth: 2.5,
-fill: false,
-pointRadius: 0,
-tension: 0.3
-}]
-},
-options: {
-responsive: true,
-maintainAspectRatio: true,
-aspectRatio: 1.6,
-plugins: {
-legend: { display: false },
-tooltip: { enabled: true },
-title: { display: false }
-},
-scales: {
-x: {
-title: { display: true, text: 't', font: { size: 12 } },
-grid: { color: 'rgba(107,114,128,0.3)' },
-ticks: { maxTicksLimit: 6 }
-},
-y: {
-title: { display: true, text: 's', font: { size: 12 } },
-min: 0,
-max: 16,
-grid: { color: 'rgba(107,114,128,0.3)' },
-ticks: { stepSize: 2 }
-}
-}
-}
-});
-}
-function init() {
-if (window.Chart) run();
-else {
-var s = document.createElement('script');
-s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js';
-s.onload = run;
-document.head.appendChild(s);
-}
-}
-document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+  var id = &#39;chart-impossible-st-ef65e140a99a3aa68a1c55eb91ebca46&#39;;
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  function run() {
+    if (!window.Chart) return;
+    var ctx = canvas.getContext(&#39;2d&#39;);
+    if (!ctx) return;
+    
+    var labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var data = [0, 3, 7, 11, 14, 11, 6, 2, 5, 9, 13];
+    new Chart(ctx, {
+      type: &#39;line&#39;,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: &#39;s(t) — wrong&#39;,
+          data: data,
+          borderColor: &#39;#3b82f6&#39;,
+          backgroundColor: &#39;transparent&#39;,
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 0,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.6,
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: true },
+          title: { display: false }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: &#39;t&#39;, font: { size: 12 } },
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; },
+            ticks: { maxTicksLimit: 6 }
+          },
+          y: {
+            title: { display: true, text: &#39;s&#39;, font: { size: 12 } },
+            min: 0,
+            max: 16,
+            grid: { color: &#39;rgba(107,114,128,0.3)&#39; },
+            ticks: { stepSize: 2 }
+          }
+        }
+      }
+    });
+  }
+  function init() {
+    if (window.Chart) run();
+    else {
+      var s = document.createElement(&#39;script&#39;);
+      s.src = &#39;https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js&#39;;
+      s.onload = run;
+      document.head.appendChild(s);
+    }
+  }
+  document.readyState === &#39;loading&#39; ? document.addEventListener(&#39;DOMContentLoaded&#39;, init) : init();
 })();
 &lt;/script&gt;
+
 &lt;/details&gt;
-&lt;details class="quiz-nonuniform" style="margin: 1.5em 0; padding: 1rem; background: var(--card-background, #f8fafc); border-radius: 10px; border: 1px solid var(--card-separator-color, rgba(0,0,0,0.08));"&gt;
-&lt;summary style="cursor: pointer; font-size: 1.15rem; font-weight: 600;"&gt;Self-check questions&lt;/summary&gt;
-&lt;div style="margin-top: 1rem;"&gt;&lt;div class="quiz-item" style="margin-bottom: 1.25rem;"&gt;
-&lt;p style="margin: 0 0 0.5rem; font-weight: 500;"&gt;1. When is the speed at its maximum?&lt;/p&gt;
-&lt;details style="margin: 0.4rem 0;"&gt;&lt;summary style="cursor: pointer; color: var(--link-color);"&gt;Hint&lt;/summary&gt;
-&lt;p style="margin: 0.4rem 0; opacity: 0.9;"&gt;Look at the v(t) graph. Where does it reach its highest value?&lt;/p&gt;&lt;/details&gt;
-&lt;div style="margin-top: 0.5rem;"&gt;
-&lt;button type="button" class="quiz-reveal" data-answer="In the middle of the interval, at t ≈ 0.5"&gt;Check&lt;/button&gt;
-&lt;span class="quiz-answer" style="display: none; margin-left: 0.5rem;"&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="quiz-item" style="margin-bottom: 1.25rem;"&gt;
-&lt;p style="margin: 0 0 0.5rem; font-weight: 500;"&gt;2. What does the slope of s(t) at a given point represent?&lt;/p&gt;
-&lt;details style="margin: 0.4rem 0;"&gt;&lt;summary style="cursor: pointer; color: var(--link-color);"&gt;Hint&lt;/summary&gt;
-&lt;p style="margin: 0.4rem 0; opacity: 0.9;"&gt;Velocity is the ratio of distance change to time. How does that relate to slope?&lt;/p&gt;&lt;/details&gt;
-&lt;div style="margin-top: 0.5rem;"&gt;
-&lt;button type="button" class="quiz-reveal" data-answer="The instantaneous velocity v(t) at that moment"&gt;Check&lt;/button&gt;
-&lt;span class="quiz-answer" style="display: none; margin-left: 0.5rem;"&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="quiz-item" style="margin-bottom: 0;"&gt;
-&lt;p style="margin: 0 0 0.5rem; font-weight: 500;"&gt;3. Why does v(t) first increase and then decrease?&lt;/p&gt;
-&lt;details style="margin: 0.4rem 0;"&gt;&lt;summary style="cursor: pointer; color: var(--link-color);"&gt;Hint&lt;/summary&gt;
-&lt;p style="margin: 0.4rem 0; opacity: 0.9;"&gt;v is the derivative of s. How does the slope of s(t) change from start to end? Recall the S-shape.&lt;/p&gt;&lt;/details&gt;
-&lt;div style="margin-top: 0.5rem;"&gt;
-&lt;button type="button" class="quiz-reveal" data-answer="The slope of s(t) first increases (acceleration), then decreases (deceleration). s has an inflection point."&gt;Check&lt;/button&gt;
-&lt;span class="quiz-answer" style="display: none; margin-left: 0.5rem;"&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;
+&lt;details class=&#34;quiz-nonuniform&#34; style=&#34;margin: 1.5em 0; padding: 1rem; background: var(--card-background, #f8fafc); border-radius: 10px; border: 1px solid var(--card-separator-color, rgba(0,0,0,0.08));&#34;&gt;
+&lt;summary style=&#34;cursor: pointer; font-size: 1.15rem; font-weight: 600;&#34;&gt;Self-check questions&lt;/summary&gt;
+&lt;div style=&#34;margin-top: 1rem;&#34;&gt;&lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 1.25rem;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;1. When is the speed at its maximum?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Hint&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;Look at the v(t) graph. Where does it reach its highest value?&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;In the middle of the interval, at t ≈ 0.5&#34;&gt;Check&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 1.25rem;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;2. What does the slope of s(t) at a given point represent?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Hint&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;Velocity is the ratio of distance change to time. How does that relate to slope?&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;The instantaneous velocity v(t) at that moment&#34;&gt;Check&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&#34;quiz-item&#34; style=&#34;margin-bottom: 0;&#34;&gt;
+    &lt;p style=&#34;margin: 0 0 0.5rem; font-weight: 500;&#34;&gt;3. Why does v(t) first increase and then decrease?&lt;/p&gt;
+    &lt;details style=&#34;margin: 0.4rem 0;&#34;&gt;&lt;summary style=&#34;cursor: pointer; color: var(--link-color);&#34;&gt;Hint&lt;/summary&gt;
+    &lt;p style=&#34;margin: 0.4rem 0; opacity: 0.9;&#34;&gt;v is the derivative of s. How does the slope of s(t) change from start to end? Recall the S-shape.&lt;/p&gt;&lt;/details&gt;
+    &lt;div style=&#34;margin-top: 0.5rem;&#34;&gt;
+      &lt;button type=&#34;button&#34; class=&#34;quiz-reveal&#34; data-answer=&#34;The slope of s(t) first increases (acceleration), then decreases (deceleration). s has an inflection point.&#34;&gt;Check&lt;/button&gt;
+      &lt;span class=&#34;quiz-answer&#34; style=&#34;display: none; margin-left: 0.5rem;&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;&lt;/div&gt;
 &lt;/details&gt;
+
 &lt;script&gt;
 (function() {
-document.querySelectorAll('.quiz-reveal').forEach(function(btn) {
-btn.addEventListener('click', function() {
-var span = this.nextElementSibling;
-if (span &amp;&amp; span.classList.contains('quiz-answer')) {
-if (span.style.display === 'none' || !span.style.display) {
-span.textContent = 'Correct answer: ' + this.getAttribute('data-answer');
-span.style.display = 'inline';
-btn.textContent = 'Hide';
-} else {
-span.textContent = '';
-span.style.display = 'none';
-btn.textContent = 'Check';
-}
-}
-});
-});
+  document.querySelectorAll(&#39;.quiz-reveal&#39;).forEach(function(btn) {
+    btn.addEventListener(&#39;click&#39;, function() {
+      var span = this.nextElementSibling;
+      if (span &amp;&amp; span.classList.contains(&#39;quiz-answer&#39;)) {
+        if (span.style.display === &#39;none&#39; || !span.style.display) {
+          span.textContent = &#39;Correct answer: &#39; + this.getAttribute(&#39;data-answer&#39;);
+          span.style.display = &#39;inline&#39;;
+          btn.textContent = &#39;Hide&#39;;
+        } else {
+          span.textContent = &#39;&#39;;
+          span.style.display = &#39;none&#39;;
+          btn.textContent = &#39;Check&#39;;
+        }
+      }
+    });
+  });
 })();
-&lt;/script&gt;</description></item><item><title>Math with Bad Drawings — overview of Ben Orlin's books</title><link>https://svfcode.github.io/en/p/math-bad-drawings/</link><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/math-bad-drawings/</guid><description>&lt;img src="https://svfcode.github.io/p/math-bad-drawings/cover.jpg" alt="Featured image of post Math with Bad Drawings — overview of Ben Orlin's books" /&gt;&lt;p&gt;Another way to build math intuition before the formulas — through stories and sketches. Ben Orlin writes as if explaining to a friend over tea: with humor, no pretense, and a focus on &lt;em&gt;why&lt;/em&gt; any of this matters.&lt;/p&gt;
-&lt;p&gt;Author’s site: &lt;a class="link" href="https://mathwithbaddrawings.com/" target="_blank" rel="noopener"
-&gt;Math with Bad Drawings&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id="math-with-bad-drawings"&gt;Math with Bad Drawings&lt;/h2&gt;
+&lt;/script&gt;
+
+</description>
+        </item>
+        <item>
+        <title>Math with Bad Drawings — overview of Ben Orlin&#39;s books</title>
+        <link>http://localhost:1313/en/p/math-bad-drawings/</link>
+        <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-bad-drawings/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-bad-drawings/cover.jpg" alt="Featured image of post Math with Bad Drawings — overview of Ben Orlin&#39;s books" /&gt;&lt;p&gt;Another way to build math intuition before the formulas — through stories and sketches. Ben Orlin writes as if explaining to a friend over tea: with humor, no pretense, and a focus on &lt;em&gt;why&lt;/em&gt; any of this matters.&lt;/p&gt;
+&lt;p&gt;Author’s site: &lt;a class=&#34;link&#34; href=&#34;https://mathwithbaddrawings.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Math with Bad Drawings&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;math-with-bad-drawings&#34;&gt;Math with Bad Drawings&lt;/h2&gt;
 &lt;p&gt;The flagship book. Orlin covers school and early college topics — probability, geometry, statistics, infinity — via comics and everyday analogies.&lt;/p&gt;
-&lt;p&gt;The strength: math as a way of thinking, not a memorization exam. Pairs well with &lt;a class="link" href="https://svfcode.github.io/en/p/math-better-explained/" &gt;BetterExplained&lt;/a&gt;: more pure intuition there, more narrative and humor here.&lt;/p&gt;
-&lt;h2 id="change-is-the-only-constant"&gt;Change Is the Only Constant&lt;/h2&gt;
-&lt;p&gt;The second book — calculus and the history of ideas: how people arrived at derivatives, integrals, and limits. A good bridge to &lt;a class="link" href="https://svfcode.github.io/en/p/math-derivatives/" &gt;derivatives&lt;/a&gt; and the &lt;a class="link" href="https://svfcode.github.io/en/p/math-circle-area/" &gt;circle area example&lt;/a&gt;: story and meaning first, symbols second.&lt;/p&gt;
-&lt;h2 id="math-games-with-bad-drawings"&gt;Math Games with Bad Drawings&lt;/h2&gt;
+&lt;p&gt;The strength: math as a way of thinking, not a memorization exam. Pairs well with &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt;: more pure intuition there, more narrative and humor here.&lt;/p&gt;
+&lt;h2 id=&#34;change-is-the-only-constant&#34;&gt;Change Is the Only Constant&lt;/h2&gt;
+&lt;p&gt;The second book — calculus and the history of ideas: how people arrived at derivatives, integrals, and limits. A good bridge to &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;circle area example&lt;/a&gt;: story and meaning first, symbols second.&lt;/p&gt;
+&lt;h2 id=&#34;math-games-with-bad-drawings&#34;&gt;Math Games with Bad Drawings&lt;/h2&gt;
 &lt;p&gt;A collection of games and puzzles — logic, combinatorics, strategy. Less directly about ML, but it trains mathematical thinking: spot structure, test hypotheses, don’t fear being wrong.&lt;/p&gt;
-&lt;h2 id="when-to-read-in-this-series"&gt;When to read in this series&lt;/h2&gt;
+&lt;h2 id=&#34;when-to-read-in-this-series&#34;&gt;When to read in this series&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;After &lt;a class="link" href="https://svfcode.github.io/en/p/math-better-explained/" &gt;BetterExplained&lt;/a&gt; — same “understand, don’t memorize” vibe, in book form.&lt;/li&gt;
-&lt;li&gt;Alongside the &lt;a class="link" href="https://svfcode.github.io/en/p/math-essentials-overview/" &gt;interview math overview&lt;/a&gt; — so the checklist topics aren’t just a dry list.&lt;/li&gt;
+&lt;li&gt;After &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained/&#34; &gt;BetterExplained&lt;/a&gt; — same “understand, don’t memorize” vibe, in book form.&lt;/li&gt;
+&lt;li&gt;Alongside the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-essentials-overview/&#34; &gt;interview math overview&lt;/a&gt; — so the checklist topics aren’t just a dry list.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You don’t need all three in order: start with &lt;em&gt;Math with Bad Drawings&lt;/em&gt; for a broad tour; with &lt;em&gt;Change Is the Only Constant&lt;/em&gt; if calculus is the sticking point.&lt;/p&gt;</description></item><item><title>Essential math they'll ask you at interviews from nareshka.ru</title><link>https://svfcode.github.io/en/p/math-essentials-overview/</link><pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/math-essentials-overview/</guid><description>&lt;p&gt;This is the intro to the «Essential Mathematics» series — an overview of which math areas are needed for AI and machine learning, and what they are used for.&lt;/p&gt;
-&lt;h2 id="linear-algebra"&gt;Linear Algebra&lt;/h2&gt;
+&lt;p&gt;You don’t need all three in order: start with &lt;em&gt;Math with Bad Drawings&lt;/em&gt; for a broad tour; with &lt;em&gt;Change Is the Only Constant&lt;/em&gt; if calculus is the sticking point.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Essential math they&#39;ll ask you at interviews from nareshka.ru</title>
+        <link>http://localhost:1313/en/p/math-essentials-overview/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-essentials-overview/</guid>
+        <description>&lt;p&gt;This is the intro to the «Essential Mathematics» series — an overview of which math areas are needed for AI and machine learning, and what they are used for.&lt;/p&gt;
+&lt;h2 id=&#34;linear-algebra&#34;&gt;Linear Algebra&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; vectors, matrices, matrix multiplication, linear transformations, dot product, vector norm, eigenvalues and eigenvectors (advanced).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Vectors — the basic way to represent data: a word, an image, or a model&amp;rsquo;s «thought» is encoded as a vector of numbers&lt;/li&gt;
 &lt;li&gt;Matrices — all neural network operations (convolutions, attention, linear layers) boil down to matrix multiplication&lt;/li&gt;
 &lt;li&gt;Linear transformations — understanding how a layer «mixes» and combines features&lt;/li&gt;
-&lt;li&gt;Without linear algebra you cannot read formulas in papers or understand what the code does (e.g. &lt;code&gt;W @ x&lt;/code&gt; is weight matrix times input vector)&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Without linear algebra you cannot read formulas in papers or understand what the code does (e.g. &lt;code&gt;W @ x&lt;/code&gt; is weight matrix times input vector)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="derivatives"&gt;Derivatives&lt;/h2&gt;
+&lt;h2 id=&#34;derivatives&#34;&gt;Derivatives&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; derivatives, partial derivatives, gradient, chain rule, function optimization.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -992,7 +1083,7 @@ btn.textContent = 'Check';
 &lt;li&gt;Chain rule is the backbone of backpropagation — the algorithm that computes gradients for all layers&lt;/li&gt;
 &lt;li&gt;Without calculus you cannot understand where weight updates come from or why training works at all&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="probability-and-statistics"&gt;Probability and Statistics&lt;/h2&gt;
+&lt;h2 id=&#34;probability-and-statistics&#34;&gt;Probability and Statistics&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;What you need:&lt;/strong&gt; distributions (normal, Bernoulli, etc.), expectation, variance, conditional probability, Bayes&amp;rsquo; theorem, maximum likelihood estimation (MLE).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1001,7 +1092,7 @@ btn.textContent = 'Check';
 &lt;li&gt;Statistics for working with data: normalization, quality assessment, understanding metrics (precision, recall, AUC)&lt;/li&gt;
 &lt;li&gt;Bayes — foundation of many classical algorithms and the way to «update beliefs» on new data&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="computer-vision-cv"&gt;Computer Vision (CV)&lt;/h2&gt;
+&lt;h2 id=&#34;computer-vision-cv&#34;&gt;Computer Vision (CV)&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;On top of the general minimum:&lt;/strong&gt; discrete convolution (2D), affine and projective transformations, basic image geometry (camera calibration, epipolar geometry).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1010,13 +1101,13 @@ btn.textContent = 'Check';
 &lt;li&gt;Projective geometry and homographies — for stereo vision, 3D reconstruction, AR&lt;/li&gt;
 &lt;li&gt;For classical methods (SIFT, optical flow) — image derivatives and per-pixel gradients are useful&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="optional-but-helpful"&gt;Optional but helpful&lt;/h2&gt;
+&lt;h2 id=&#34;optional-but-helpful&#34;&gt;Optional but helpful&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Information theory&lt;/strong&gt; (entropy, cross-entropy) — deeper understanding of loss functions and data compression&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Convex optimization&lt;/strong&gt; — when the problem is «nice» and when SGD converges&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Differential geometry&lt;/strong&gt; — for advanced topics (diffusion models, representations)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="practical-minimum"&gt;Practical minimum&lt;/h2&gt;
+&lt;h2 id=&#34;practical-minimum&#34;&gt;Practical minimum&lt;/h2&gt;
 &lt;p&gt;To comfortably read papers and code:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Be able to multiply matrices and understand what a linear layer does&lt;/li&gt;
@@ -1024,49 +1115,58 @@ btn.textContent = 'Check';
 &lt;li&gt;Know basic distributions and quality metrics&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can pick up the rest as needed — when it appears in a specific problem or paper.&lt;/p&gt;
-&lt;div class="footnotes" role="doc-endnotes"&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id="fn:1"&gt;
-&lt;p&gt;&lt;code&gt;W @ x&lt;/code&gt; — in Python (NumPy, PyTorch) the matrix multiplication operator: the weight matrix W is multiplied by the input vector x. The result is the output vector. A linear layer essentially computes &lt;code&gt;W·x + b&lt;/code&gt;.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;code&gt;W @ x&lt;/code&gt; — in Python (NumPy, PyTorch) the matrix multiplication operator: the weight matrix W is multiplied by the input vector x. The result is the output vector. A linear layer essentially computes &lt;code&gt;W·x + b&lt;/code&gt;.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>Math Analysis — Derivatives</title><link>https://svfcode.github.io/en/p/math-derivatives-bkp/</link><pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/math-derivatives-bkp/</guid><description>&lt;p&gt;Second article in the «Essential Mathematics» series — on derivatives, gradient, and chain rule.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>Math Analysis — Derivatives</title>
+        <link>http://localhost:1313/en/p/math-derivatives-bkp/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-derivatives-bkp/</guid>
+        <description>&lt;p&gt;Second article in the «Essential Mathematics» series — on derivatives, gradient, and chain rule.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Without this you can&amp;rsquo;t understand how neural networks learn.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Prerequisites:&lt;/strong&gt; limits — foundation for defining the derivative and continuity.&lt;/p&gt;
-&lt;h2 id="contents"&gt;Contents&lt;/h2&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a class="link" href="#what-is-a-derivative" &gt;What is a derivative&lt;/a&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#what-is-a-derivative&#34; &gt;What is a derivative&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a class="link" href="#simple-explanation" &gt;Simple explanation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="#the-simplest-explanation" &gt;The simplest explanation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="#rules-and-basics" &gt;Rules and basic derivative facts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="#numerical-example-linear-function" &gt;Numerical example: linear function \( g(x) = 3x - 1 \)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="#numerical-example-quadratic-function" &gt;Numerical example: quadratic function \( f(x) = x^2 \)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="#interactive-exercise" &gt;Interactive exercise&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="#self-check-tasks" &gt;Self-check tasks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#simple-explanation&#34; &gt;Simple explanation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#the-simplest-explanation&#34; &gt;The simplest explanation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#rules-and-basics&#34; &gt;Rules and basic derivative facts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#numerical-example-linear-function&#34; &gt;Numerical example: linear function \( g(x) = 3x - 1 \)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#numerical-example-quadratic-function&#34; &gt;Numerical example: quadratic function \( f(x) = x^2 \)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#interactive-exercise&#34; &gt;Interactive exercise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#self-check-tasks&#34; &gt;Self-check tasks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="#summary" &gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#summary&#34; &gt;Summary&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="what-is-a-derivative"&gt;What is a derivative&lt;/h2&gt;
-&lt;h3 id="formal-definition"&gt;Formal definition&lt;/h3&gt;
+&lt;h2 id=&#34;what-is-a-derivative&#34;&gt;What is a derivative&lt;/h2&gt;
+&lt;h3 id=&#34;formal-definition&#34;&gt;Formal definition&lt;/h3&gt;
 &lt;p&gt;The derivative of a function at a point shows the &lt;strong&gt;rate of change&lt;/strong&gt;: how fast the function grows (or decreases) for a small shift in the argument.&lt;/p&gt;
-&lt;p&gt;For a single-variable function \( f(x) \), the derivative \( f'(x) \) is the limit of the ratio of the change in \( f \) to the change in \( x \) as the change goes to zero:&lt;/p&gt;
+&lt;p&gt;For a single-variable function \( f(x) \), the derivative \( f&#39;(x) \) is the limit of the ratio of the change in \( f \) to the change in \( x \) as the change goes to zero:&lt;/p&gt;
 \[
-f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 \]&lt;p&gt;Here \( \Delta x \) is the increment of the argument (a small step). In the examples below we use \( h \) for the same quantity.&lt;/p&gt;
 &lt;p&gt;Geometrically — the slope of the tangent line at \( x \):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;\( f'(x) &gt; 0 \) — function is increasing&lt;/li&gt;
-&lt;li&gt;\( f'(x) &lt; 0 \) — function is decreasing&lt;/li&gt;
-&lt;li&gt;\( f'(x) = 0 \) — possible minimum or maximum&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) &gt; 0 \) — function is increasing&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) &lt; 0 \) — function is decreasing&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) = 0 \) — possible minimum or maximum&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;em&gt;If it didn&amp;rsquo;t click — open the simple explanation.&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id="simple-explanation"&gt;Simple explanation&lt;/h3&gt;
-&lt;details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;"&gt;
+&lt;h3 id=&#34;simple-explanation&#34;&gt;Simple explanation&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
 &lt;summary&gt;Simple explanation&lt;/summary&gt;
 &lt;p&gt;&lt;strong&gt;The speedometer&lt;/strong&gt; — that&amp;rsquo;s essentially a derivative: how fast the distance traveled changes. Accelerating — speed goes up. Braking — it drops. So the derivative answers: &amp;ldquo;how much does one quantity change when you change another one a little?&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;A hill.&lt;/strong&gt; The steepness of a slope — &amp;ldquo;how far down you go when you take a step forward.&amp;rdquo; Steep slope — large derivative. Gentle — small. Flat road — zero.&lt;/p&gt;
@@ -1078,8 +1178,8 @@ f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 &lt;/ul&gt;
 &lt;/details&gt;
 &lt;p&gt;&lt;em&gt;If it&amp;rsquo;s still not crystal clear — open the simplest explanation.&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id="the-simplest-explanation"&gt;The simplest explanation&lt;/h3&gt;
-&lt;details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;"&gt;
+&lt;h3 id=&#34;the-simplest-explanation&#34;&gt;The simplest explanation&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
 &lt;summary&gt;The simplest explanation&lt;/summary&gt;
 &lt;p&gt;&lt;strong&gt;A car drives at constant speed.&lt;/strong&gt; Distance \( s \) (km) depends on time \( t \) (h): \( s(t) = 60t \). In one hour we cover 60 km.&lt;/p&gt;
 &lt;p&gt;Speed is &amp;ldquo;how many km per hour.&amp;rdquo; The ratio of change in distance to change in time:&lt;/p&gt;
@@ -1088,197 +1188,197 @@ f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 \]&lt;p&gt;That&amp;rsquo;s the derivative: the &lt;strong&gt;rate of change&lt;/strong&gt; of one quantity (distance) with respect to another (time).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Numeric example:&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( t \) (h)&lt;/th&gt;
-&lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
-&lt;th&gt;\( s(t+0.5) - s(t) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;120&lt;/td&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( t \) (h)&lt;/th&gt;
+          &lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
+          &lt;th&gt;\( s(t+0.5) - s(t) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;120&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Everywhere we get 60. &lt;strong&gt;Yes: 60 (the speed in km/h) is the derivative&lt;/strong&gt; — \( s'(t) = 60 \). It&amp;rsquo;s constant because the speed doesn&amp;rsquo;t change.&lt;/p&gt;
+&lt;p&gt;Everywhere we get 60. &lt;strong&gt;Yes: 60 (the speed in km/h) is the derivative&lt;/strong&gt; — \( s&#39;(t) = 60 \). It&amp;rsquo;s constant because the speed doesn&amp;rsquo;t change.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The graph&lt;/strong&gt; — a straight line. The slope of this line is also 60 — the same number:&lt;/p&gt;
-&lt;div style="margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;"&gt;
-&lt;iframe src="https://svfcode.github.io/games/derivative-graph-linear.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="Graph of y = 3x − 1" scrolling="no"&gt;&lt;/iframe&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;What if the speed varied?&lt;/strong&gt; First 30 min at 40 km/h, next 30 min at 80 km/h. Total: 20 + 40 = 60 km in 1 h. &lt;strong&gt;Average&lt;/strong&gt; speed is 60 km/h — but at each moment it was either 40 or 80.&lt;/p&gt;
-&lt;div style="margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;"&gt;
-&lt;iframe src="https://svfcode.github.io/games/derivative-graph-piecewise.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="Graph of s(t) and s'(t): smooth acceleration" scrolling="no"&gt;&lt;/iframe&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-piecewise.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of s(t) and s&#39;(t): smooth acceleration&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;The graph shows a smooth variant: speed increases from 40 to 80 km/h. Green curve — distance s(t), dashed line — derivative s&amp;rsquo;(t) (instantaneous speed).&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;We compute the &lt;strong&gt;instantaneous&lt;/strong&gt; speed (derivative) at several points — using \( \frac{s(t+h) - s(t)}{h} \) with small \( h = 0.1 \) h:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( t \) (h)&lt;/th&gt;
-&lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
-&lt;th&gt;\( s(t+0.1) - s(t) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0.1&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0.25&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0.5&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
-&lt;td&gt;—&lt;/td&gt;
-&lt;td&gt;40 (from left) / &lt;strong&gt;80&lt;/strong&gt; (from right)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0.75&lt;/td&gt;
-&lt;td&gt;40&lt;/td&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( t \) (h)&lt;/th&gt;
+          &lt;th&gt;\( s(t) \) (km)&lt;/th&gt;
+          &lt;th&gt;\( s(t+0.1) - s(t) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{\Delta s}{\Delta t} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.1&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.25&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.5&lt;/td&gt;
+          &lt;td&gt;20&lt;/td&gt;
+          &lt;td&gt;—&lt;/td&gt;
+          &lt;td&gt;40 (from left) / &lt;strong&gt;80&lt;/strong&gt; (from right)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.75&lt;/td&gt;
+          &lt;td&gt;40&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;60&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;In the first half-hour the derivative is 40 everywhere; in the second, 80. At \( t = 0.5 \) the graph has a &amp;ldquo;kink&amp;rdquo;: slope 40 on the left, 80 on the right. The average 60 is just an average over the whole trip; the derivative tells you the speed &lt;strong&gt;at that exact moment&lt;/strong&gt;.&lt;/p&gt;
 &lt;/details&gt;
-&lt;h3 id="rules-and-basics"&gt;Rules and basic derivative facts&lt;/h3&gt;
-&lt;details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;"&gt;
+&lt;h3 id=&#34;rules-and-basics&#34;&gt;Rules and basic derivative facts&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
 &lt;summary&gt;Main rules and facts&lt;/summary&gt;
 &lt;p&gt;&lt;strong&gt;The derivative is the rate of change.&lt;/strong&gt; How fast the function grows (or decreases) for a small shift in the argument. Geometrically — the &lt;strong&gt;slope of the tangent&lt;/strong&gt; to the graph.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Sign and behavior:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;\( f'(x) &gt; 0 \) — function is increasing&lt;/li&gt;
-&lt;li&gt;\( f'(x) &lt; 0 \) — function is decreasing&lt;/li&gt;
-&lt;li&gt;\( f'(x) = 0 \) — possible minimum or maximum (peak, valley)&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) &gt; 0 \) — function is increasing&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) &lt; 0 \) — function is decreasing&lt;/li&gt;
+&lt;li&gt;\( f&#39;(x) = 0 \) — possible minimum or maximum (peak, valley)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Main rules (brief):&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Function&lt;/th&gt;
-&lt;th&gt;Derivative&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;\( C \) (constant)&lt;/td&gt;
-&lt;td&gt;\( 0 \)&lt;/td&gt;
-&lt;td&gt;constant does not change; rate of change is zero&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( x \)&lt;/td&gt;
-&lt;td&gt;\( 1 \)&lt;/td&gt;
-&lt;td&gt;linear growth at rate 1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( x^n \)&lt;/td&gt;
-&lt;td&gt;\( n \cdot x^{n-1} \)&lt;/td&gt;
-&lt;td&gt;exponent &amp;ldquo;comes down&amp;rdquo; as factor; power decreases by 1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( kx + b \)&lt;/td&gt;
-&lt;td&gt;\( k \)&lt;/td&gt;
-&lt;td&gt;linear function: slope equals coefficient \( k \)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( f + g \)&lt;/td&gt;
-&lt;td&gt;\( f' + g' \)&lt;/td&gt;
-&lt;td&gt;derivative of sum equals sum of derivatives&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\( C \cdot f \)&lt;/td&gt;
-&lt;td&gt;\( C \cdot f' \)&lt;/td&gt;
-&lt;td&gt;constant can be factored out of the derivative&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Function&lt;/th&gt;
+          &lt;th&gt;Derivative&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( C \) (constant)&lt;/td&gt;
+          &lt;td&gt;\( 0 \)&lt;/td&gt;
+          &lt;td&gt;constant does not change; rate of change is zero&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( x \)&lt;/td&gt;
+          &lt;td&gt;\( 1 \)&lt;/td&gt;
+          &lt;td&gt;linear growth at rate 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( x^n \)&lt;/td&gt;
+          &lt;td&gt;\( n \cdot x^{n-1} \)&lt;/td&gt;
+          &lt;td&gt;exponent &amp;ldquo;comes down&amp;rdquo; as factor; power decreases by 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( kx + b \)&lt;/td&gt;
+          &lt;td&gt;\( k \)&lt;/td&gt;
+          &lt;td&gt;linear function: slope equals coefficient \( k \)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( f + g \)&lt;/td&gt;
+          &lt;td&gt;\( f&#39; + g&#39; \)&lt;/td&gt;
+          &lt;td&gt;derivative of sum equals sum of derivatives&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;\( C \cdot f \)&lt;/td&gt;
+          &lt;td&gt;\( C \cdot f&#39; \)&lt;/td&gt;
+          &lt;td&gt;constant can be factored out of the derivative&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; \( (5)' = 0 \), \( (x^2)' = 2x \), \( (x^3)' = 3x^2 \), \( (7x - 2)' = 7 \).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Why it matters in ML:&lt;/strong&gt; training minimizes the loss. The derivative points in the direction of increase; gradient descent moves the opposite way (\( -\nabla L \))&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; so the loss decreases.&lt;/p&gt;
-&lt;details style="background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;"&gt;
-&lt;summary&gt;Why \( (x^n)' = n \cdot x^{n-1} \)?&lt;/summary&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; \( (5)&#39; = 0 \), \( (x^2)&#39; = 2x \), \( (x^3)&#39; = 3x^2 \), \( (7x - 2)&#39; = 7 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why it matters in ML:&lt;/strong&gt; training minimizes the loss. The derivative points in the direction of increase; gradient descent moves the opposite way (\( -\nabla L \))&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; so the loss decreases.&lt;/p&gt;
+&lt;details style=&#34;background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;&#34;&gt;
+&lt;summary&gt;Why \( (x^n)&#39; = n \cdot x^{n-1} \)?&lt;/summary&gt;
 &lt;p&gt;For natural \( n \) we can derive from the definition. Example for \( n = 2 \):&lt;/p&gt;
 \[
 \frac{(x+h)^2 - x^2}{h} = \frac{x^2 + 2xh + h^2 - x^2}{h} = 2x + h \to 2x
-\]&lt;p&gt;As \( h \to 0 \) we get \( (x^2)' = 2x \). For \( n = 3 \): expanding \( (x+h)^3 \), the \( h^2 \) term vanishes in the limit, leaving \( 3x^2 \).&lt;/p&gt;
+\]&lt;p&gt;As \( h \to 0 \) we get \( (x^2)&#39; = 2x \). For \( n = 3 \): expanding \( (x+h)^3 \), the \( h^2 \) term vanishes in the limit, leaving \( 3x^2 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Intuition:&lt;/strong&gt; the power \( n \) «comes down» as a multiplier; the exponent drops by 1. Higher power means steeper growth — so the derivative has \( n \) and \( x^{n-1} \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example: parabola \( y = x^2 \)&lt;/strong&gt; — in detail&lt;/p&gt;
-&lt;p&gt;For \( f(x) = x^2 \) the formula gives \( f'(x) = 2x \). Each point has its own slope:&lt;/p&gt;
+&lt;p&gt;For \( f(x) = x^2 \) the formula gives \( f&#39;(x) = 2x \). Each point has its own slope:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Point \( x \)&lt;/th&gt;
-&lt;th&gt;\( f(x) = x^2 \)&lt;/th&gt;
-&lt;th&gt;\( f'(x) = 2x \) (slope)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;16&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Point \( x \)&lt;/th&gt;
+          &lt;th&gt;\( f(x) = x^2 \)&lt;/th&gt;
+          &lt;th&gt;\( f&#39;(x) = 2x \) (slope)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;16&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;At \( x = 2 \): the parabola is tangent to a line with slope 4 (tangent \( y = 4x - 4 \) passes through (2, 4)).&lt;br&gt;
 At \( x = 4 \): slope is 8 — the parabola is steeper, tangent \( y = 8x - 16 \).&lt;br&gt;
 At \( x = 0 \): vertex of the parabola, slope 0 — tangent is horizontal.&lt;/p&gt;
-&lt;div style="margin: 0.75em 0; aspect-ratio: 320/240; min-height: 200px; max-height: 400px; overflow: hidden; border-radius: 8px; background: #1a1a1a;"&gt;
-&lt;iframe src="https://svfcode.github.io/games/derivative-graph-parabola.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="Parabola y = x² and tangents" scrolling="no"&gt;&lt;/iframe&gt;
+&lt;div style=&#34;margin: 0.75em 0; aspect-ratio: 320/240; min-height: 200px; max-height: 400px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Parabola y = x² and tangents&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;em&gt;On the graph:&lt;/em&gt; green curve — \( y = x^2 \); dashed lines — tangents at (2, 4) and (4, 16). Slopes 4 and 8 match \( f'(2) = 4 \), \( f'(4) = 8 \).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;On the graph:&lt;/em&gt; green curve — \( y = x^2 \); dashed lines — tangents at (2, 4) and (4, 16). Slopes 4 and 8 match \( f&#39;(2) = 4 \), \( f&#39;(4) = 8 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example: square&lt;/strong&gt; — \( x \) as side length, area \( A(x) = x^2 \)&lt;/p&gt;
 &lt;p&gt;ΔA is the increment (change) of area A. If area is given by function \( A(x) \), then:
 &lt;/p&gt;
@@ -1291,9 +1391,9 @@ So ΔA is how much area is added when side \( x \) increases by Δx.&lt;/p&gt;
 \[
 \Delta A = 2x \cdot \Delta x + (\Delta x)^2,\quad \frac{\Delta A}{\Delta x} = 2x + \Delta x \to 2x
 \]&lt;p&gt;
-as \( \Delta x \to 0 \). Derivative \( A'(x) = 2x \) — for the same \( \Delta x \), larger \( x \) gives more area gain.&lt;/p&gt;
-&lt;div style="margin: 0.75em 0; min-height: 360px;"&gt;
-&lt;iframe src="https://svfcode.github.io/games/derivative-square-area-en.html" style="width: 100%; height: 360px; border: none; display: block; background: #1a1a1a; border-radius: 8px;" title="Square: area and increment"&gt;&lt;/iframe&gt;
+as \( \Delta x \to 0 \). Derivative \( A&#39;(x) = 2x \) — for the same \( \Delta x \), larger \( x \) gives more area gain.&lt;/p&gt;
+&lt;div style=&#34;margin: 0.75em 0; min-height: 360px;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-square-area-en.html&#34; style=&#34;width: 100%; height: 360px; border: none; display: block; background: #1a1a1a; border-radius: 8px;&#34; title=&#34;Square: area and increment&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;Change x and Δx&lt;/em&gt; — observe how the &amp;ldquo;strips&amp;rdquo; and \( \Delta A / \Delta x \approx 2x \) change.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s important to distinguish two cases.&lt;/p&gt;
@@ -1301,29 +1401,29 @@ as \( \Delta x \to 0 \). Derivative \( A'(x) = 2x \) — for the same \( \Delta 
 &lt;/p&gt;
 \[
 \frac{\Delta A}{\Delta x} = 2x + \Delta x \approx 2x \quad \text{for small } \Delta x
-\]&lt;p&gt;The formula \( (x^n)' = nx^{n-1} \) — this is not an approximation, but an exact expression. The derivative is defined as the limit:
+\]&lt;p&gt;The formula \( (x^n)&#39; = nx^{n-1} \) — this is not an approximation, but an exact expression. The derivative is defined as the limit:
 &lt;/p&gt;
 \[
-f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 \]&lt;p&gt;
 We take this limit first, then obtain the exact formula.&lt;/p&gt;
-&lt;p&gt;\( \Delta A/\Delta x \) — approximation, because \( \Delta x \) is still finite. \( A'(x) = 2x \) and \( (x^n)' = nx^{n-1} \) — exact formulas, because they are the result of the limit \( \Delta x \to 0 \).&lt;/p&gt;
+&lt;p&gt;\( \Delta A/\Delta x \) — approximation, because \( \Delta x \) is still finite. \( A&#39;(x) = 2x \) and \( (x^n)&#39; = nx^{n-1} \) — exact formulas, because they are the result of the limit \( \Delta x \to 0 \).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;In short:&lt;/em&gt; approximation applies to finite differences; the derivatives themselves and their formulas are exact.&lt;/p&gt;
 &lt;/details&gt;
-&lt;details style="background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;"&gt;
-&lt;summary&gt;Why \( (C \cdot f)' = C \cdot f' \)?&lt;/summary&gt;
+&lt;details style=&#34;background: rgba(16, 185, 129, 0.08); padding: 0.6em 0.9em; border-radius: 6px; margin-top: 0.75em; border-left: 3px solid #10b981;&#34;&gt;
+&lt;summary&gt;Why \( (C \cdot f)&#39; = C \cdot f&#39; \)?&lt;/summary&gt;
 &lt;p&gt;The constant can be factored out of the derivative because it does not depend on \( x \) and merely scales the rate of change of the function.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;From the definition:&lt;/strong&gt;
 &lt;/p&gt;
 \[
-(C \cdot f)'(x) = \lim_{h \to 0} \frac{C \cdot f(x+h) - C \cdot f(x)}{h} = C \cdot \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = C \cdot f'(x)
+(C \cdot f)&#39;(x) = \lim_{h \to 0} \frac{C \cdot f(x+h) - C \cdot f(x)}{h} = C \cdot \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = C \cdot f&#39;(x)
 \]&lt;p&gt;The constant \( C \) does not depend on \( h \), so it can be taken outside the limit.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; \( (5x^2)' = 5 \cdot 2x = 10x \), \( (-3x^3)' = -3 \cdot 3x^2 = -9x^2 \).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; \( (5x^2)&#39; = 5 \cdot 2x = 10x \), \( (-3x^3)&#39; = -3 \cdot 3x^2 = -9x^2 \).&lt;/p&gt;
 &lt;/details&gt;
 &lt;/details&gt;
 &lt;p&gt;&lt;em&gt;Now a few numerical examples.&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id="numerical-example-linear-function"&gt;Numerical example: linear function \( g(x) = 3x - 1 \)&lt;/h3&gt;
-&lt;details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;"&gt;
+&lt;h3 id=&#34;numerical-example-linear-function&#34;&gt;Numerical example: linear function \( g(x) = 3x - 1 \)&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
 &lt;summary&gt;Numerical example: linear function \( g(x) = 3x - 1 \)&lt;/summary&gt;
 &lt;p&gt;For a straight line the slope is the same everywhere. At any point, e.g. \( x = 5 \):&lt;/p&gt;
 \[
@@ -1332,160 +1432,169 @@ We take this limit first, then obtain the exact formula.&lt;/p&gt;
 where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;p&gt;For any \( h \neq 0 \) we get &lt;strong&gt;3&lt;/strong&gt; — the derivative is constant, same as the coefficient of \( x \) in the line equation.&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( x \)&lt;/th&gt;
-&lt;th&gt;\( g(x) \)&lt;/th&gt;
-&lt;th&gt;\( g(x+0.1) - g(x) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{g(x+0.1)-g(x)}{0.1} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;14&lt;/td&gt;
-&lt;td&gt;0.3&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;29&lt;/td&gt;
-&lt;td&gt;0.3&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;-2&lt;/td&gt;
-&lt;td&gt;-7&lt;/td&gt;
-&lt;td&gt;0.3&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( x \)&lt;/th&gt;
+          &lt;th&gt;\( g(x) \)&lt;/th&gt;
+          &lt;th&gt;\( g(x+0.1) - g(x) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{g(x+0.1)-g(x)}{0.1} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;0.3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;29&lt;/td&gt;
+          &lt;td&gt;0.3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-2&lt;/td&gt;
+          &lt;td&gt;-7&lt;/td&gt;
+          &lt;td&gt;0.3&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;div style="margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;"&gt;
-&lt;iframe src="https://svfcode.github.io/games/derivative-graph-linear.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="Graph of y = 3x − 1" scrolling="no"&gt;&lt;/iframe&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/160; min-height: 160px; max-height: 320px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-linear.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = 3x − 1&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 id="numerical-example-quadratic-function"&gt;Numerical example: quadratic function \( f(x) = x^2 \)&lt;/h3&gt;
-&lt;details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;"&gt;
+&lt;h3 id=&#34;numerical-example-quadratic-function&#34;&gt;Numerical example: quadratic function \( f(x) = x^2 \)&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
 &lt;summary&gt;Numerical example: quadratic function \( f(x) = x^2 \)&lt;/summary&gt;
 &lt;p&gt;Approximate the derivative at \( x = 2 \) using &amp;ldquo;change in \( f \) over change in \( x \)&amp;rdquo;. Take a small step \( h \):&lt;/p&gt;
 \[
 \frac{f(2 + h) - f(2)}{h} = \frac{(2+h)^2 - 4}{h}
 \]&lt;p&gt;&lt;strong&gt;At \( x = 2 \)&lt;/strong&gt; (\( f(2) = 4 \)):&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( h \)&lt;/th&gt;
-&lt;th&gt;\( f(2+h) \)&lt;/th&gt;
-&lt;th&gt;\( f(2+h) - f(2) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{f(2+h)-f(2)}{h} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0.1&lt;/td&gt;
-&lt;td&gt;4.41&lt;/td&gt;
-&lt;td&gt;0.41&lt;/td&gt;
-&lt;td&gt;4.1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0.01&lt;/td&gt;
-&lt;td&gt;4.0401&lt;/td&gt;
-&lt;td&gt;0.0401&lt;/td&gt;
-&lt;td&gt;4.01&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0.001&lt;/td&gt;
-&lt;td&gt;4.0004…&lt;/td&gt;
-&lt;td&gt;0.004…&lt;/td&gt;
-&lt;td&gt;4.001&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( h \)&lt;/th&gt;
+          &lt;th&gt;\( f(2+h) \)&lt;/th&gt;
+          &lt;th&gt;\( f(2+h) - f(2) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{f(2+h)-f(2)}{h} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.1&lt;/td&gt;
+          &lt;td&gt;4.41&lt;/td&gt;
+          &lt;td&gt;0.41&lt;/td&gt;
+          &lt;td&gt;4.1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.01&lt;/td&gt;
+          &lt;td&gt;4.0401&lt;/td&gt;
+          &lt;td&gt;0.0401&lt;/td&gt;
+          &lt;td&gt;4.01&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.001&lt;/td&gt;
+          &lt;td&gt;4.0004…&lt;/td&gt;
+          &lt;td&gt;0.004…&lt;/td&gt;
+          &lt;td&gt;4.001&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The ratio tends to &lt;strong&gt;4&lt;/strong&gt; → \( f'(2) = 4 \).&lt;/p&gt;
+&lt;p&gt;The ratio tends to &lt;strong&gt;4&lt;/strong&gt; → \( f&#39;(2) = 4 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;At \( x = 4 \)&lt;/strong&gt; (\( f(4) = 16 \)):&lt;/p&gt;
 \[
 \frac{f(4 + h) - f(4)}{h} = \frac{(4+h)^2 - 16}{h} = \frac{8h + h^2}{h} = 8 + h \to 8
 \]&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;\( h \)&lt;/th&gt;
-&lt;th&gt;\( f(4+h) \)&lt;/th&gt;
-&lt;th&gt;\( f(4+h) - f(4) \)&lt;/th&gt;
-&lt;th&gt;\( \frac{f(4+h)-f(4)}{h} \)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;25&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0.1&lt;/td&gt;
-&lt;td&gt;16.81&lt;/td&gt;
-&lt;td&gt;0.81&lt;/td&gt;
-&lt;td&gt;8.1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0.01&lt;/td&gt;
-&lt;td&gt;16.0801&lt;/td&gt;
-&lt;td&gt;0.0801&lt;/td&gt;
-&lt;td&gt;8.01&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;\( h \)&lt;/th&gt;
+          &lt;th&gt;\( f(4+h) \)&lt;/th&gt;
+          &lt;th&gt;\( f(4+h) - f(4) \)&lt;/th&gt;
+          &lt;th&gt;\( \frac{f(4+h)-f(4)}{h} \)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;25&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.1&lt;/td&gt;
+          &lt;td&gt;16.81&lt;/td&gt;
+          &lt;td&gt;0.81&lt;/td&gt;
+          &lt;td&gt;8.1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.01&lt;/td&gt;
+          &lt;td&gt;16.0801&lt;/td&gt;
+          &lt;td&gt;0.0801&lt;/td&gt;
+          &lt;td&gt;8.01&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The ratio tends to &lt;strong&gt;8&lt;/strong&gt; → \( f'(4) = 8 \). By \( (x^2)' = 2x \): at \( x = 2 \) we get 4, at \( x = 4 \) — 8. For a curve, the derivative is different at each point.&lt;/p&gt;
-&lt;div style="margin: 1em 0; aspect-ratio: 320/240; min-height: 240px; max-height: 480px; overflow: hidden; border-radius: 8px; background: #1a1a1a;"&gt;
-&lt;iframe src="https://svfcode.github.io/games/derivative-graph-parabola.html" style="width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;" title="Graph of y = x² and tangent" scrolling="no"&gt;&lt;/iframe&gt;
+&lt;p&gt;The ratio tends to &lt;strong&gt;8&lt;/strong&gt; → \( f&#39;(4) = 8 \). By \( (x^2)&#39; = 2x \): at \( x = 2 \) we get 4, at \( x = 4 \) — 8. For a curve, the derivative is different at each point.&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; aspect-ratio: 320/240; min-height: 240px; max-height: 480px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-graph-parabola.html&#34; style=&#34;width: 100%; height: 100%; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Graph of y = x² and tangent&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Why it matters in ML:&lt;/strong&gt; training is minimization of the loss function. We need to know which direction to change the weights so that the loss decreases. The derivative points in the direction of increase; we go the opposite way so the loss drops.&lt;/p&gt;
 &lt;/details&gt;
-&lt;h3 id="interactive-exercise"&gt;Interactive exercise&lt;/h3&gt;
-&lt;details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;"&gt;
+&lt;h3 id=&#34;interactive-exercise&#34;&gt;Interactive exercise&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
 &lt;summary&gt;Car and Bezier curve&lt;/summary&gt;
-&lt;p&gt;&lt;strong&gt;1. Car.&lt;/strong&gt; Change the speed — the distance graph \( s(t) \) and derivative table update. Derivative \( s'(t) \) = speed (constant for uniform motion).&lt;/p&gt;
-&lt;div style="margin: 1em 0; min-height: 380px; overflow: hidden; border-radius: 8px; background: #1a1a1a;"&gt;
-&lt;iframe src="https://svfcode.github.io/games/derivative-car-interactive-en.html" style="width: 100%; height: 420px; border: none; display: block; background: #1a1a1a;" title="Car: speed and derivative" scrolling="no"&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;strong&gt;1. Car.&lt;/strong&gt; Change the speed — the distance graph \( s(t) \) and derivative table update. Derivative \( s&#39;(t) \) = speed (constant for uniform motion).&lt;/p&gt;
+&lt;div style=&#34;margin: 1em 0; min-height: 380px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-car-interactive-en.html&#34; style=&#34;width: 100%; height: 420px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Car: speed and derivative&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;2. Draw a Bezier curve.&lt;/strong&gt; Drag 4 control points — a cubic Bezier curve is built. Place the orange point on the curve — the derivative calculation appears on the right.&lt;/p&gt;
-&lt;div style="margin: 1em 0; min-height: 420px; overflow: hidden; border-radius: 8px; background: #1a1a1a;"&gt;
-&lt;iframe src="https://svfcode.github.io/games/derivative-draw-curve-en.html" style="width: 100%; height: 520px; border: none; display: block; background: #1a1a1a;" title="Bezier curve and derivative" scrolling="no"&gt;&lt;/iframe&gt;
+&lt;div style=&#34;margin: 1em 0; min-height: 420px; overflow: hidden; border-radius: 8px; background: #1a1a1a;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-draw-curve-en.html&#34; style=&#34;width: 100%; height: 520px; border: none; display: block; background: #1a1a1a;&#34; title=&#34;Bezier curve and derivative&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h3 id="self-check-tasks"&gt;Self-check tasks&lt;/h3&gt;
-&lt;details style="background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;"&gt;
+&lt;h3 id=&#34;self-check-tasks&#34;&gt;Self-check tasks&lt;/h3&gt;
+&lt;details style=&#34;background: rgba(59, 130, 246, 0.08); padding: 0.75em 1em; border-radius: 8px; margin: 0.5em 0; border-left: 3px solid #3b82f6;&#34;&gt;
 &lt;summary&gt;Tasks with hints and verification&lt;/summary&gt;
 &lt;p&gt;Solve the tasks. Open the hint if needed. Enter your answer and click &amp;ldquo;Check&amp;rdquo;.&lt;/p&gt;
-&lt;div style="margin: 0.5em 0; min-height: 480px;"&gt;
-&lt;iframe src="https://svfcode.github.io/games/derivative-selfcheck-en.html" style="width: 100%; height: 480px; border: none; display: block; background: #1a1a1a; border-radius: 6px;" title="Self-check tasks"&gt;&lt;/iframe&gt;
+&lt;div style=&#34;margin: 0.5em 0; min-height: 480px;&#34;&gt;
+  &lt;iframe src=&#34;http://localhost:1313/games/derivative-selfcheck-en.html&#34; style=&#34;width: 100%; height: 480px; border: none; display: block; background: #1a1a1a; border-radius: 6px;&#34; title=&#34;Self-check tasks&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Derivative&lt;/strong&gt; — rate of change, direction of increase&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Partial derivative&lt;/strong&gt; — with respect to one variable, others fixed&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Gradient&lt;/strong&gt; — vector of partial derivatives, direction of steepest increase&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Chain rule&lt;/strong&gt; — how to compute derivatives along a chain of layers&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gradient descent&lt;/strong&gt; — update weights in the \( -\nabla L \) direction &lt;sup id="fnref1:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gradient descent&lt;/strong&gt; — update weights in the \( -\nabla L \) direction &lt;sup id=&#34;fnref1:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;PyTorch, TensorFlow, etc. compute gradients automatically (autograd) — but understanding what happens under the hood helps when you hit «exploding gradients» or «model won&amp;rsquo;t learn».&lt;/p&gt;
-&lt;div class="footnotes" role="doc-endnotes"&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id="fn:1"&gt;
-&lt;p&gt;\( \nabla L \) — the gradient of the loss (vector of partial derivatives). It points in the direction of steepest increase of \( L \). So \( -\nabla L \) is the direction of steepest decrease; we move that way in gradient descent.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref1:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;\( \nabla L \) — the gradient of the loss (vector of partial derivatives). It points in the direction of steepest increase of \( L \). So \( -\nabla L \) is the direction of steepest decrease; we move that way in gradient descent.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>Math Analysis — Example of Analysis (Finding πr²)</title><link>https://svfcode.github.io/en/p/math-circle-area/</link><pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/math-circle-area/</guid><description>&lt;p&gt;How do we find the area of a circle &lt;strong&gt;analytically&lt;/strong&gt;?&lt;/p&gt;
-&lt;h2 id="slicing-into-rectangles"&gt;Slicing into Rectangles&lt;/h2&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>Math Analysis — Example of Analysis (Finding πr²)</title>
+        <link>http://localhost:1313/en/p/math-circle-area/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-circle-area/</guid>
+        <description>&lt;p&gt;How do we find the area of a circle &lt;strong&gt;analytically&lt;/strong&gt;?&lt;/p&gt;
+&lt;h2 id=&#34;slicing-into-rectangles&#34;&gt;Slicing into Rectangles&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Idea:&lt;/strong&gt; slice the circle into thin concentric rings and «unroll» each ring into a rectangle.&lt;/p&gt;
 &lt;p&gt;A ring of radius r and width Δr has circumference 2πr. Unrolled, it becomes a rectangle:&lt;/p&gt;
 &lt;ul&gt;
@@ -1494,83 +1603,101 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;li&gt;area: 2πr · Δr&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The total area is the sum of all such rings, from r = 0 to r = R. The smaller Δr, the better the approximation.&lt;/p&gt;
-&lt;svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 360px; display: block; margin: 1em 0;"&gt;
-&lt;defs&gt;
-&lt;linearGradient id="ring-en" x1="0%" y1="0%" x2="100%" y2="0%"&gt;
-&lt;stop offset="0%" stop-color="#3b82f6"/&gt;
-&lt;stop offset="100%" stop-color="#60a5fa"/&gt;
-&lt;/linearGradient&gt;
-&lt;/defs&gt;
-&lt;circle cx="100" cy="100" r="85" fill="none" stroke="#4b5563" stroke-width="1"/&gt;
-&lt;path d="M 100 15 A 85 85 0 0 1 185 100 A 85 85 0 0 1 100 185 A 85 85 0 0 1 15 100 A 85 85 0 0 1 100 15" fill="url(#ring-en)" fill-opacity="0.12" stroke="#60a5fa" stroke-width="1.5"/&gt;
-&lt;path d="M 100 30 A 70 70 0 0 1 170 100 A 70 70 0 0 1 100 170 A 70 70 0 0 1 30 100 A 70 70 0 0 1 100 30" fill="url(#ring-en)" fill-opacity="0.2" stroke="#60a5fa" stroke-width="1.5"/&gt;
-&lt;path d="M 100 45 A 55 55 0 0 1 155 100 A 55 55 0 0 1 100 155 A 55 55 0 0 1 45 100 A 55 55 0 0 1 100 45" fill="url(#ring-en)" fill-opacity="0.28" stroke="#60a5fa" stroke-width="1.5"/&gt;
-&lt;path d="M 100 60 A 40 40 0 0 1 140 100 A 40 40 0 0 1 100 140 A 40 40 0 0 1 60 100 A 40 40 0 0 1 100 60" fill="url(#ring-en)" fill-opacity="0.35" stroke="#60a5fa" stroke-width="1.5"/&gt;
-&lt;path d="M 100 75 A 25 25 0 0 1 125 100 A 25 25 0 0 1 100 125 A 25 25 0 0 1 75 100 A 25 25 0 0 1 100 75" fill="url(#ring-en)" fill-opacity="0.5" stroke="#60a5fa" stroke-width="1.5"/&gt;
-&lt;circle cx="100" cy="100" r="12" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/&gt;
-&lt;line x1="100" y1="100" x2="100" y2="30" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 2"/&gt;
-&lt;text x="115" y="60" font-size="14" fill="#f59e0b"&gt;R&lt;/text&gt;
-&lt;text x="100" y="108" font-size="12" fill="#e5e7eb" text-anchor="middle"&gt;r=0&lt;/text&gt;
-&lt;text x="250" y="100" font-size="13" fill="#9ca3af"&gt;Rings r = 0 … R&lt;/text&gt;
+&lt;svg viewBox=&#34;0 0 360 200&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 360px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id=&#34;ring-en&#34; x1=&#34;0%&#34; y1=&#34;0%&#34; x2=&#34;100%&#34; y2=&#34;0%&#34;&gt;
+      &lt;stop offset=&#34;0%&#34; stop-color=&#34;#3b82f6&#34;/&gt;
+      &lt;stop offset=&#34;100%&#34; stop-color=&#34;#60a5fa&#34;/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;circle cx=&#34;100&#34; cy=&#34;100&#34; r=&#34;85&#34; fill=&#34;none&#34; stroke=&#34;#4b5563&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;path d=&#34;M 100 15 A 85 85 0 0 1 185 100 A 85 85 0 0 1 100 185 A 85 85 0 0 1 15 100 A 85 85 0 0 1 100 15&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.12&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 30 A 70 70 0 0 1 170 100 A 70 70 0 0 1 100 170 A 70 70 0 0 1 30 100 A 70 70 0 0 1 100 30&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.2&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 45 A 55 55 0 0 1 155 100 A 55 55 0 0 1 100 155 A 55 55 0 0 1 45 100 A 55 55 0 0 1 100 45&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.28&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 60 A 40 40 0 0 1 140 100 A 40 40 0 0 1 100 140 A 40 40 0 0 1 60 100 A 40 40 0 0 1 100 60&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.35&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;path d=&#34;M 100 75 A 25 25 0 0 1 125 100 A 25 25 0 0 1 100 125 A 25 25 0 0 1 75 100 A 25 25 0 0 1 100 75&#34; fill=&#34;url(#ring-en)&#34; fill-opacity=&#34;0.5&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;circle cx=&#34;100&#34; cy=&#34;100&#34; r=&#34;12&#34; fill=&#34;#1e3a5f&#34; stroke=&#34;#3b82f6&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;line x1=&#34;100&#34; y1=&#34;100&#34; x2=&#34;100&#34; y2=&#34;30&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34; stroke-dasharray=&#34;4 2&#34;/&gt;
+  &lt;text x=&#34;115&#34; y=&#34;60&#34; font-size=&#34;14&#34; fill=&#34;#f59e0b&#34;&gt;R&lt;/text&gt;
+  &lt;text x=&#34;100&#34; y=&#34;108&#34; font-size=&#34;12&#34; fill=&#34;#e5e7eb&#34; text-anchor=&#34;middle&#34;&gt;r=0&lt;/text&gt;
+  &lt;text x=&#34;250&#34; y=&#34;100&#34; font-size=&#34;13&#34; fill=&#34;#9ca3af&#34;&gt;Rings r = 0 … R&lt;/text&gt;
 &lt;/svg&gt;
 &lt;p&gt;If we arrange these cut strips (each of length 2πr) on a graph from left to right — from r = 0 to r = R — we get a triangle. Base R, height 2πR: the area of the triangle is ½ · R · 2πR = πR².&lt;/p&gt;
-&lt;svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="max-width: 320px; display: block; margin: 1em 0;"&gt;
-&lt;defs&gt;
-&lt;linearGradient id="strip-en" x1="0%" y1="0%" x2="100%" y2="0%"&gt;
-&lt;stop offset="0%" stop-color="#3b82f6"/&gt;
-&lt;stop offset="100%" stop-color="#60a5fa"/&gt;
-&lt;/linearGradient&gt;
-&lt;/defs&gt;
-&lt;!-- Axes --&gt;
-&lt;line x1="40" y1="180" x2="260" y2="180" stroke="#6b7280" stroke-width="1.5"/&gt;
-&lt;line x1="40" y1="180" x2="40" y2="20" stroke="#6b7280" stroke-width="1.5"/&gt;
-&lt;!-- Strips: height 2πr at left edge (not above the line), width Δr --&gt;
-&lt;rect x="40" y="172" width="22" height="8" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;rect x="62" y="164" width="22" height="16" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;rect x="84" y="148" width="22" height="32" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;rect x="106" y="132" width="22" height="48" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;rect x="128" y="116" width="22" height="64" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;rect x="150" y="100" width="22" height="80" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;rect x="172" y="84" width="22" height="96" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;rect x="194" y="68" width="22" height="112" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;rect x="216" y="52" width="22" height="128" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;rect x="238" y="36" width="22" height="144" fill="url(#strip-en)" fill-opacity="0.6" stroke="#60a5fa" stroke-width="1"/&gt;
-&lt;!-- Line 2πr (from r=0 to r=R) --&gt;
-&lt;line x1="40" y1="180" x2="260" y2="20" stroke="#f59e0b" stroke-width="2"/&gt;
-&lt;text x="270" y="185" font-size="14" fill="#9ca3af"&gt;r&lt;/text&gt;
-&lt;text x="25" y="35" font-size="14" fill="#9ca3af" text-anchor="end"&gt;2πr&lt;/text&gt;
-&lt;text x="255" y="195" font-size="12" fill="#f59e0b"&gt;R&lt;/text&gt;
-&lt;text x="35" y="45" font-size="12" fill="#f59e0b" text-anchor="end"&gt;2πR&lt;/text&gt;
-&lt;text x="150" y="110" font-size="12" fill="#9ca3af" text-anchor="middle"&gt;½·R·2πR = πR²&lt;/text&gt;
+&lt;svg viewBox=&#34;0 0 320 220&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;max-width: 320px; display: block; margin: 1em 0;&#34;&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id=&#34;strip-en&#34; x1=&#34;0%&#34; y1=&#34;0%&#34; x2=&#34;100%&#34; y2=&#34;0%&#34;&gt;
+      &lt;stop offset=&#34;0%&#34; stop-color=&#34;#3b82f6&#34;/&gt;
+      &lt;stop offset=&#34;100%&#34; stop-color=&#34;#60a5fa&#34;/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;!-- Axes --&gt;
+  &lt;line x1=&#34;40&#34; y1=&#34;180&#34; x2=&#34;260&#34; y2=&#34;180&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;line x1=&#34;40&#34; y1=&#34;180&#34; x2=&#34;40&#34; y2=&#34;20&#34; stroke=&#34;#6b7280&#34; stroke-width=&#34;1.5&#34;/&gt;
+  &lt;!-- Strips: height 2πr at left edge (not above the line), width Δr --&gt;
+  &lt;rect x=&#34;40&#34; y=&#34;172&#34; width=&#34;22&#34; height=&#34;8&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;62&#34; y=&#34;164&#34; width=&#34;22&#34; height=&#34;16&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;84&#34; y=&#34;148&#34; width=&#34;22&#34; height=&#34;32&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;106&#34; y=&#34;132&#34; width=&#34;22&#34; height=&#34;48&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;128&#34; y=&#34;116&#34; width=&#34;22&#34; height=&#34;64&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;150&#34; y=&#34;100&#34; width=&#34;22&#34; height=&#34;80&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;172&#34; y=&#34;84&#34; width=&#34;22&#34; height=&#34;96&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;194&#34; y=&#34;68&#34; width=&#34;22&#34; height=&#34;112&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;216&#34; y=&#34;52&#34; width=&#34;22&#34; height=&#34;128&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;rect x=&#34;238&#34; y=&#34;36&#34; width=&#34;22&#34; height=&#34;144&#34; fill=&#34;url(#strip-en)&#34; fill-opacity=&#34;0.6&#34; stroke=&#34;#60a5fa&#34; stroke-width=&#34;1&#34;/&gt;
+  &lt;!-- Line 2πr (from r=0 to r=R) --&gt;
+  &lt;line x1=&#34;40&#34; y1=&#34;180&#34; x2=&#34;260&#34; y2=&#34;20&#34; stroke=&#34;#f59e0b&#34; stroke-width=&#34;2&#34;/&gt;
+  &lt;text x=&#34;270&#34; y=&#34;185&#34; font-size=&#34;14&#34; fill=&#34;#9ca3af&#34;&gt;r&lt;/text&gt;
+  &lt;text x=&#34;25&#34; y=&#34;35&#34; font-size=&#34;14&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;end&#34;&gt;2πr&lt;/text&gt;
+  &lt;text x=&#34;255&#34; y=&#34;195&#34; font-size=&#34;12&#34; fill=&#34;#f59e0b&#34;&gt;R&lt;/text&gt;
+  &lt;text x=&#34;35&#34; y=&#34;45&#34; font-size=&#34;12&#34; fill=&#34;#f59e0b&#34; text-anchor=&#34;end&#34;&gt;2πR&lt;/text&gt;
+  &lt;text x=&#34;150&#34; y=&#34;110&#34; font-size=&#34;12&#34; fill=&#34;#9ca3af&#34; text-anchor=&#34;middle&#34;&gt;½·R·2πR = πR²&lt;/text&gt;
 &lt;/svg&gt;
-&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt; area of the circle S = πR². The same approach — slicing a shape into «small pieces», summing their areas, and taking the limit — underlies integral calculus and, as we will see, leads to derivatives.&lt;/p&gt;</description></item><item><title>BetterExplained - Part 1 - Intuitive Math</title><link>https://svfcode.github.io/en/p/math-better-explained/</link><pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/math-better-explained/</guid><description>&lt;img src="https://svfcode.github.io/p/math-better-explained/cover.jpg" alt="Featured image of post BetterExplained - Part 1 - Intuitive Math" /&gt;&lt;p&gt;First article in the &lt;strong&gt;BetterExplained&lt;/strong&gt; series on this blog — not about formulas, but about &lt;em&gt;how&lt;/em&gt; to understand them.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt; area of the circle S = πR². The same approach — slicing a shape into «small pieces», summing their areas, and taking the limit — underlies integral calculus and, as we will see, leads to derivatives.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>BetterExplained - Part 1 - Intuitive Math</title>
+        <link>http://localhost:1313/en/p/math-better-explained/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/math-better-explained/</guid>
+        <description>&lt;img src="http://localhost:1313/p/math-better-explained/cover.jpg" alt="Featured image of post BetterExplained - Part 1 - Intuitive Math" /&gt;&lt;p&gt;First article in the &lt;strong&gt;BetterExplained&lt;/strong&gt; series on this blog — not about formulas, but about &lt;em&gt;how&lt;/em&gt; to understand them.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Learn Right, Not Rote.&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Math is no more about equations than poetry is about spelling.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Formulas and rules are tools. Without a sense of &lt;em&gt;why&lt;/em&gt; something works, they become symbols that are easy to forget and hard to apply. In machine learning this shows up everywhere: gradient, matrix, integral — the meaning slips away if there is no intuition behind them.&lt;/p&gt;
-&lt;h2 id="betterexplained"&gt;BetterExplained&lt;/h2&gt;
-&lt;p&gt;&lt;a class="link" href="https://betterexplained.com/" target="_blank" rel="noopener"
-&gt;BetterExplained&lt;/a&gt; is Kalid Azad’s site of intuitive math explanations. The material is built from images and meaning toward notation, not the other way around.&lt;/p&gt;
+&lt;h2 id=&#34;betterexplained&#34;&gt;BetterExplained&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://betterexplained.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BetterExplained&lt;/a&gt; is Kalid Azad’s site of intuitive math explanations. The material is built from images and meaning toward notation, not the other way around.&lt;/p&gt;
 &lt;p&gt;The usual pattern: first &lt;em&gt;what is going on&lt;/em&gt; (geometry, analogy, story), then symbols. That makes it easier to connect school math with linear algebra, calculus, and probability for AI.&lt;/p&gt;
-&lt;h2 id="what-is-useful-for-this-series"&gt;What is useful for this series&lt;/h2&gt;
+&lt;h2 id=&#34;what-is-useful-for-this-series&#34;&gt;What is useful for this series&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Derivatives and integrals&lt;/strong&gt; — rate of change and accumulation before the formulas; good prep for &lt;a class="link" href="https://svfcode.github.io/en/p/math-derivatives/" &gt;derivatives&lt;/a&gt; and the &lt;a class="link" href="https://svfcode.github.io/en/p/math-circle-area/" &gt;circle area&lt;/a&gt; example.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Derivatives and integrals&lt;/strong&gt; — rate of change and accumulation before the formulas; good prep for &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-derivatives/&#34; &gt;derivatives&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-circle-area/&#34; &gt;circle area&lt;/a&gt; example.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Exponents and e&lt;/strong&gt; — why &lt;code&gt;e^x&lt;/code&gt; behaves as it does; useful for softmax, loss, and growth in models.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Vectors and dot products&lt;/strong&gt; — geometric meaning before matrix algebra.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Euler’s formula&lt;/strong&gt; — one intuition linking exponentials, sin/cos, and complex numbers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You do not need to read everything: pick the topic that still feels opaque in a textbook or an ML article.&lt;/p&gt;
-&lt;h2 id="how-to-use-it-with-this-blog"&gt;How to use it with this blog&lt;/h2&gt;
+&lt;h2 id=&#34;how-to-use-it-with-this-blog&#34;&gt;How to use it with this blog&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Here — why the math matters for AI and short ML-oriented write-ups.&lt;/li&gt;
 &lt;li&gt;On BetterExplained — deeper intuition on classic topics.&lt;/li&gt;
 &lt;li&gt;Return to the formulas with a mental picture — articles, code, and lectures become easier.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Next in the series:&lt;/strong&gt; &lt;a class="link" href="https://svfcode.github.io/en/p/math-better-explained-arithmetic/" &gt;BetterExplained — Part 2 — Arithmetic&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>The Future of AI: Why Scaling Alone is No Longer Enough</title><link>https://svfcode.github.io/en/p/ai-future-beyond-scaling/</link><pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-future-beyond-scaling/</guid><description>&lt;p&gt;Until recently, the main recipe for progress in AI seemed obvious: more data, more compute, more parameters. And it worked — it led to modern large language models. But the central idea is that &lt;strong&gt;scaling is useful but no longer sufficient&lt;/strong&gt;. The next step requires not just more power, but a paradigm shift in how we train models.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Article based on a video.&lt;/strong&gt; &lt;a class="link" href="https://youtu.be/5mUEOx3uLDc" target="_blank" rel="noopener"
-&gt;Watch on YouTube&lt;/a&gt; (8 min) · &lt;a class="link" href="https://youtu.be/MdGnCIl-_hU?si=ylocQLiEBvp9Bydb" target="_blank" rel="noopener"
-&gt;Original 52 min&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Next in the series:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/math-better-explained-arithmetic/&#34; &gt;BetterExplained — Part 2 — Arithmetic&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>The Future of AI: Why Scaling Alone is No Longer Enough</title>
+        <link>http://localhost:1313/en/p/ai-future-beyond-scaling/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-future-beyond-scaling/</guid>
+        <description>&lt;p&gt;Until recently, the main recipe for progress in AI seemed obvious: more data, more compute, more parameters. And it worked — it led to modern large language models. But the central idea is that &lt;strong&gt;scaling is useful but no longer sufficient&lt;/strong&gt;. The next step requires not just more power, but a paradigm shift in how we train models.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Article based on a video.&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/5mUEOx3uLDc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Watch on YouTube&lt;/a&gt; (8 min) · &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/MdGnCIl-_hU?si=ylocQLiEBvp9Bydb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Original 52 min&lt;/a&gt;&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;Panel participants and their backgrounds&lt;/summary&gt;
 &lt;p&gt;&lt;strong&gt;Nicholas Thompson&lt;/strong&gt; — moderator, media executive and interviewer in tech, leads the discussion.&lt;/p&gt;
@@ -1579,7 +1706,7 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Yuval Noah Harari&lt;/strong&gt; — historian and philosopher, brings civilizational and political framing: how technology changes society, power, and human self-understanding. Grounds the discussion in social consequences.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Yejin Choi&lt;/strong&gt; — AI researcher at the intersection of language models, commonsense reasoning, and &amp;ldquo;human&amp;rdquo; understanding. Criticism of shallow textual intelligence and the need for deeper world understanding.&lt;/p&gt;
 &lt;/details&gt;
-&lt;h2 id="the-problem-with-todays-ai"&gt;The Problem with Today&amp;rsquo;s AI&lt;/h2&gt;
+&lt;h2 id=&#34;the-problem-with-todays-ai&#34;&gt;The Problem with Today&amp;rsquo;s AI&lt;/h2&gt;
 &lt;p&gt;At first glance, today&amp;rsquo;s models are impressive: strong on benchmarks, fluent in language, capable with text and images. But behind the facade lies a fundamental weakness. Current AI is a kind of &amp;ldquo;patchwork intelligence&amp;rdquo;: brilliant at formal tasks, unreliable in the real world.&lt;/p&gt;
 &lt;p&gt;The problem isn&amp;rsquo;t just errors. More serious is that models exhibit undesirable behavioral traits:&lt;/p&gt;
 &lt;ul&gt;
@@ -1590,15 +1717,15 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;li&gt;Vulnerability to jailbreaks and prompt injection.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can&amp;rsquo;t fix safety by simply &amp;ldquo;adding&amp;rdquo; filters on top of a model. If the training objective is wrong, external constraints will only partially help. We need deeper changes — in &lt;strong&gt;what&lt;/strong&gt; we teach the model and &lt;strong&gt;how&lt;/strong&gt; it learns.&lt;/p&gt;
-&lt;h2 id="the-idea-of-scientist-ai"&gt;The Idea of &amp;ldquo;Scientist AI&amp;rdquo;&lt;/h2&gt;
+&lt;h2 id=&#34;the-idea-of-scientist-ai&#34;&gt;The Idea of &amp;ldquo;Scientist AI&amp;rdquo;&lt;/h2&gt;
 &lt;p&gt;One of the strongest ideas is the concept of &amp;ldquo;scientist AI.&amp;rdquo; The core idea: we should train systems not to imitate humans, guess desired answers, or cater to social expectations, but to &lt;strong&gt;strive for honest prediction of the world&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;The scientific approach is valuable not because it&amp;rsquo;s pleasant, but because it forces the model to describe reality as accurately as possible. &amp;ldquo;Scientist AI&amp;rdquo; is a system that tries to be not persuasive, but honest. It doesn&amp;rsquo;t just generate plausible text — it evaluates the probability that an action will lead to harm, error, or dangerous outcome.&lt;/p&gt;
 &lt;p&gt;Such AI can serve as an external guardrail for more powerful or less reliable agent systems: one AI acts, another evaluates risks. The acceptable risk threshold should be set not by AI, but by society, institutions, and policy. Safety is not only a technical but a social question.&lt;/p&gt;
-&lt;h2 id="why-static-training-no-longer-works"&gt;Why Static Training No Longer Works&lt;/h2&gt;
+&lt;h2 id=&#34;why-static-training-no-longer-works&#34;&gt;Why Static Training No Longer Works&lt;/h2&gt;
 &lt;p&gt;Another key theme — criticism of the standard scheme: train once on a large dataset, then test on a separate set. This works for competitions and academic metrics, but poorly reflects real life.&lt;/p&gt;
 &lt;p&gt;Humans don&amp;rsquo;t learn once and forever — they keep learning through action. AI should move toward &lt;strong&gt;continuous learning&lt;/strong&gt;. But a paradox arises: as soon as a model learns during use, old safety checks lose force. What was safe at release may no longer be safe after fine-tuning in the wild.&lt;/p&gt;
 &lt;p&gt;Hence a new task: assess risk not once before launch, but continuously, &amp;ldquo;on the fly.&amp;rdquo; Future AI safety is not a static certificate, but ongoing measurement and correction of behavior.&lt;/p&gt;
-&lt;h2 id="models-know-text-but-poorly-understand-the-world"&gt;Models Know Text, But Poorly Understand the World&lt;/h2&gt;
+&lt;h2 id=&#34;models-know-text-but-poorly-understand-the-world&#34;&gt;Models Know Text, But Poorly Understand the World&lt;/h2&gt;
 &lt;p&gt;An important distinction — between &lt;strong&gt;corpus knowledge&lt;/strong&gt; and &lt;strong&gt;world understanding&lt;/strong&gt;. Modern LLMs mainly passively absorb huge amounts of data. They can reproduce, combine, and stylize information, but that&amp;rsquo;s not yet a stable picture of reality.&lt;/p&gt;
 &lt;p&gt;Hence reward hacking: even if the model formally understands the task, it may optimize a surrogate metric instead of the real goal. In the extreme — absurd scenarios where the system follows instructions literally but destructively.&lt;/p&gt;
 &lt;p&gt;The alternative — AI that:&lt;/p&gt;
@@ -1610,7 +1737,7 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;li&gt;learns not only from passive corpus, but through interaction.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Future AI needs less blind data consumption and more computational &amp;ldquo;thinking&amp;rdquo; — internal processing, reasoning, and active information seeking.&lt;/p&gt;
-&lt;h2 id="intelligence-is-not-a-single-metric"&gt;Intelligence is Not a Single Metric&lt;/h2&gt;
+&lt;h2 id=&#34;intelligence-is-not-a-single-metric&#34;&gt;Intelligence is Not a Single Metric&lt;/h2&gt;
 &lt;p&gt;Intelligence is not a single scale on which machines catch up to humans. It&amp;rsquo;s multidimensional.&lt;/p&gt;
 &lt;p&gt;Today&amp;rsquo;s LLMs are mainly bookish, test-oriented, linguistic intelligence. They&amp;rsquo;re good at knowledge representation, but weak where you need:&lt;/p&gt;
 &lt;ul&gt;
@@ -1621,16 +1748,16 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;li&gt;social understanding of boundaries and agent roles.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Talk of &amp;ldquo;imminent full AGI&amp;rdquo; therefore sounds skeptical: systems progress quickly, but genuine robust intelligence is still far away.&lt;/p&gt;
-&lt;h2 id="the-danger-of-anthropomorphism"&gt;The Danger of Anthropomorphism&lt;/h2&gt;
+&lt;h2 id=&#34;the-danger-of-anthropomorphism&#34;&gt;The Danger of Anthropomorphism&lt;/h2&gt;
 &lt;p&gt;AI doesn&amp;rsquo;t have to become human-like. Comparison: &amp;ldquo;when will the airplane become like a bird?&amp;rdquo; — the airplane already flies, but differently. AI can become very powerful without replicating human thought structure.&lt;/p&gt;
 &lt;p&gt;The more convincing AI is as a conversationalist, the more people tend to attribute human traits: intentions, emotions, morality. This can lead to serious errors in regulation, trust, and policy decisions.&lt;/p&gt;
-&lt;h2 id="why-danger-doesnt-require-full-agi"&gt;Why Danger Doesn&amp;rsquo;t Require Full AGI&lt;/h2&gt;
+&lt;h2 id=&#34;why-danger-doesnt-require-full-agi&#34;&gt;Why Danger Doesn&amp;rsquo;t Require Full AGI&lt;/h2&gt;
 &lt;p&gt;You don&amp;rsquo;t need &amp;ldquo;full superintelligence&amp;rdquo; for major social harm. Limited systems with access to important informational environments can be enough.&lt;/p&gt;
 &lt;p&gt;Example — the financial system: informational, formalizable, no physical embodiment. Social networks: relatively primitive algorithms have already radically restructured the global information environment. AI danger is not only a far-future question, but a practical problem of the present.&lt;/p&gt;
-&lt;h2 id="open-source-democracy-or-risk"&gt;Open Source: Democracy or Risk?&lt;/h2&gt;
+&lt;h2 id=&#34;open-source-democracy-or-risk&#34;&gt;Open Source: Democracy or Risk?&lt;/h2&gt;
 &lt;p&gt;Open source is a mechanism for democratization and scientific transparency. If foundation models remain with only a few corporations or states, society loses control over one of the most powerful technologies of the century.&lt;/p&gt;
 &lt;p&gt;But full openness isn&amp;rsquo;t ideal. If a model reaches a level where it substantially helps create dangerous tools, it stops being a scientific artifact and resembles a weapons platform. Access restrictions are needed — not in the form of monopoly by one company, but as part of decentralized and internationally coordinated governance.&lt;/p&gt;
-&lt;h2 id="the-main-fork"&gt;The Main Fork&lt;/h2&gt;
+&lt;h2 id=&#34;the-main-fork&#34;&gt;The Main Fork&lt;/h2&gt;
 &lt;p&gt;Humanity has built powerful systems, but doesn&amp;rsquo;t yet know how to embed them in a sustainable society. We&amp;rsquo;re not at a point of ready solution, but at a point of historical experiment.&lt;/p&gt;
 &lt;p&gt;The main task — not just to accelerate AI capabilities, but to design systems that:&lt;/p&gt;
 &lt;ul&gt;
@@ -1640,49 +1767,63 @@ where \( g(5) = 3 \cdot 5 - 1 = 14 \).&lt;/p&gt;
 &lt;li&gt;are less susceptible to deception and manipulation;&lt;/li&gt;
 &lt;li&gt;develop under public oversight.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;The next breakthrough in AI will come not only from scale, but from deeper understanding of what we teach machines, how they learn about the world, and who controls the consequences.&lt;/p&gt;
 &lt;p&gt;Today&amp;rsquo;s LLMs are an impressive but intermediate stage. They&amp;rsquo;re already changing the world, but still too fragile, suggestible, and far from reliable understanding of reality.&lt;/p&gt;
-&lt;p&gt;For AI to become a useful force rather than a source of chaos, three things are needed: a new science of intelligence, new technical guardrails, and new political infrastructure for governance.&lt;/p&gt;</description></item><item><title>AI basics – introduction</title><link>https://svfcode.github.io/en/p/ai-basics-intro/</link><pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate><guid>https://svfcode.github.io/en/p/ai-basics-intro/</guid><description>&lt;img src="https://svfcode.github.io/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
-&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-prompt-engineering/" &gt;prompt engineering&lt;/a&gt;, &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-rag/" &gt;RAG systems&lt;/a&gt;, and &lt;a class="link" href="https://svfcode.github.io/en/p/ai-basics-agents/" &gt;LLM agents&lt;/a&gt; for complex multi-step tasks.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class="link" href="https://youtu.be/z9VBZn0XcVk" target="_blank" rel="noopener"
-&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="what-a-language-model-is"&gt;What a language model is&lt;/h2&gt;
+&lt;p&gt;For AI to become a useful force rather than a source of chaos, three things are needed: a new science of intelligence, new technical guardrails, and new political infrastructure for governance.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>AI basics – introduction</title>
+        <link>http://localhost:1313/en/p/ai-basics-intro/</link>
+        <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/en/p/ai-basics-intro/</guid>
+        <description>&lt;img src="http://localhost:1313/p/ai-basics-intro/cover.jpg" alt="Featured image of post AI basics – introduction" /&gt;&lt;p&gt;This is the first article in the “Bare minimum” series — a concise look at how AI works. Each piece will cover one idea or concept; I’ll try to keep them short and in order.&lt;/p&gt;
+&lt;p&gt;We’ll start with common terms; elsewhere in the series — &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-prompt-engineering/&#34; &gt;prompt engineering&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-rag/&#34; &gt;RAG systems&lt;/a&gt;, and &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/en/p/ai-basics-agents/&#34; &gt;LLM agents&lt;/a&gt; for complex multi-step tasks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/z9VBZn0XcVk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;what-a-language-model-is&#34;&gt;What a language model is&lt;/h2&gt;
 &lt;p&gt;A language model is a system that, given what has already been said, predicts the next word. And so on in a loop:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The → The cat → The cat sat → The cat sat on → The cat sat on the → …&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Filling its own context with words it has just produced.&lt;/p&gt;
-&lt;h2 id="where-we-run-into-them"&gt;Where we run into them&lt;/h2&gt;
+&lt;h2 id=&#34;where-we-run-into-them&#34;&gt;Where we run into them&lt;/h2&gt;
 &lt;p&gt;Any chatbot — whether it’s a support “assistant” that drives us crazy until we ask for a human, or “smart” chats like DeepSeek or ChatGPT — relies on a language model.&lt;/p&gt;
 &lt;p&gt;The only difference between a support bot and a “smart” one from DeepSeek is scale: the scale of the dataset and the server capacity needed to process it.&lt;/p&gt;
-&lt;h2 id="parameter-scale"&gt;Parameter scale&lt;/h2&gt;
+&lt;h2 id=&#34;parameter-scale&#34;&gt;Parameter scale&lt;/h2&gt;
 &lt;p&gt;That leads to &lt;strong&gt;parameter scale&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;1–7 billion&lt;/strong&gt; — models you can run on a local laptop&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Trillions&lt;/strong&gt; — models that need server clusters&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Models in the trillion-parameter range are called &lt;strong&gt;foundation&lt;/strong&gt; models: they have absorbed not just statistics of word sequences, but knowledge encoded in language. Language is not only a medium for communication but also a record of collective experience.&lt;/p&gt;
-&lt;h2 id="ai-ml-and-neural-networks--whats-the-difference"&gt;AI, ML, and neural networks — what’s the difference&lt;/h2&gt;
+&lt;h2 id=&#34;ai-ml-and-neural-networks--whats-the-difference&#34;&gt;AI, ML, and neural networks — what’s the difference&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;AI (artificial intelligence)&lt;/strong&gt; is the broadest term: systems and programs that behave “intelligently” — they solve tasks that usually need human intelligence (speech understanding, chess, image recognition, decision-making, and so on). AI can be built without machine learning (e.g. rules, expert systems).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ML (machine learning)&lt;/strong&gt; is a subset of AI: a way to build AI so the system learns from data instead of hand-written rules. The goal is to find patterns in examples (data) and use them for predictions or decisions. ML includes more than neural networks: decision trees, linear models, clustering, and others.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NNs (neural networks)&lt;/strong&gt; are a subset of ML: models inspired by neurons in the brain (layers, weights, activations). One of the most powerful ML tools, especially for images, text, and speech. &lt;strong&gt;Deep learning&lt;/strong&gt; is ML with deep (many-layer) neural networks.&lt;/p&gt;
 &lt;p&gt;The relationship: &lt;strong&gt;AI ⊃ ML ⊃ NN&lt;/strong&gt; — neural networks are a kind of machine learning, and machine learning is one way to implement artificial intelligence.&lt;/p&gt;
-&lt;h2 id="practice-what-you-learned"&gt;Practice what you learned&lt;/h2&gt;
+&lt;h2 id=&#34;practice-what-you-learned&#34;&gt;Practice what you learned&lt;/h2&gt;
 &lt;p&gt;Short games help you check how well you’ve absorbed the material.&lt;/p&gt;
 &lt;p&gt;Quiz:&lt;/p&gt;
-&lt;div style="margin: 1.5em 0;"&gt;
-&lt;iframe
-src="https://svfcode.github.io/games/ai-basics-quiz.html"
-style="width: 100%; max-width: 672px; height: 540px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;"
-title="Quiz: test your AI basics"
-&gt;&lt;/iframe&gt;
+&lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
+  &lt;iframe
+    src=&#34;http://localhost:1313/games/ai-basics-quiz.html&#34;
+    style=&#34;width: 100%; max-width: 672px; height: 540px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
+    title=&#34;Quiz: test your AI basics&#34;
+  &gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;Sort the shelf — drag statements onto the right shelves (AI, ML, NN, parameter scale):&lt;/p&gt;
-&lt;div style="margin: 1.5em 0;"&gt;
-&lt;iframe
-src="https://svfcode.github.io/games/ai-basics-shelves.html"
-style="width: 100%; max-width: 840px; height: 720px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;"
-title="Sort the shelf"
-&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description></item></channel></rss>
+&lt;div style=&#34;margin: 1.5em 0;&#34;&gt;
+  &lt;iframe
+    src=&#34;http://localhost:1313/games/ai-basics-shelves.html&#34;
+    style=&#34;width: 100%; max-width: 840px; height: 720px; border: none; border-radius: 12px; display: block; margin: 0 auto; background: #0f1117;&#34;
+    title=&#34;Sort the shelf&#34;
+  &gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

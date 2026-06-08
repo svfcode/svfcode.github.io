@@ -1,18 +1,650 @@
-<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content='Scaling brought us LLMs, but the next leap requires a paradigm shift in how we train models'><title>The Future of AI: Why Scaling Alone is No Longer Enough</title><link rel=canonical href=https://svfcode.github.io/en/p/ai-future-beyond-scaling/><link rel=stylesheet href=/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css><meta property='og:title' content='The Future of AI: Why Scaling Alone is No Longer Enough'><meta property='og:description' content='Scaling brought us LLMs, but the next leap requires a paradigm shift in how we train models'><meta property='og:url' content='https://svfcode.github.io/en/p/ai-future-beyond-scaling/'><meta property='og:site_name' content='Blog'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='Artificial Intelligence'><meta property='article:tag' content='Machine Learning'><meta property='article:published_time' content='2026-03-10T00:00:00+00:00'><meta property='article:modified_time' content='2026-03-10T00:00:00+00:00'><meta name=twitter:title content="The Future of AI: Why Scaling Alone is No Longer Enough"><meta name=twitter:description content="Scaling brought us LLMs, but the next leap requires a paradigm shift in how we train models"><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css integrity=sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js integrity=sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js integrity=sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:!0},{left:"$$",right:"$$",display:!0},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1})})</script><script type=text/javascript>(function(e,t,n,s,o,i,a){e[o]=e[o]||function(){(e[o].a=e[o].a||[]).push(arguments)},e[o].l=1*new Date;for(var r=0;r<document.scripts.length;r++)if(document.scripts[r].src===s)return;i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym"),ym(107089384,"init",{clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!0})</script><noscript><div><img src=https://mc.yandex.ru/watch/107089384 style=position:absolute;left:-9999px alt></div></noscript></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
-<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/en/><img src=/img/avatar_hu_eef9891cfe28abde.jpg width=300 height=200 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/en>Blog</a></h1><h2 class=site-description>ai, ml, nn, cv, ros, etc.</h2></div></header><ol class=menu id=main-menu><li><a href=/en/about/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
-<span>About</span></a></li><li><a href=/en/playlists/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
-<span>Playlists</span></a></li><li><a href=/en/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
-<span>Archives</span></a></li><li><a href=/en/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
-<span>Search</span></a></li><div class=menu-bottom-section><li id=i18n-switch><svg class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg>
-<select name=language onchange="window.location.href=this.selectedOptions[0].value"><option value=https://svfcode.github.io/>ru</option><option value=https://svfcode.github.io/en/ selected>en</option></select></li><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
-<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
-<span>Dark Mode</span></li></div></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ul><li><a href=#the-problem-with-todays-ai>The Problem with Today&rsquo;s AI</a></li><li><a href=#the-idea-of-scientist-ai>The Idea of &ldquo;Scientist AI&rdquo;</a></li><li><a href=#why-static-training-no-longer-works>Why Static Training No Longer Works</a></li><li><a href=#models-know-text-but-poorly-understand-the-world>Models Know Text, But Poorly Understand the World</a></li><li><a href=#intelligence-is-not-a-single-metric>Intelligence is Not a Single Metric</a></li><li><a href=#the-danger-of-anthropomorphism>The Danger of Anthropomorphism</a></li><li><a href=#why-danger-doesnt-require-full-agi>Why Danger Doesn&rsquo;t Require Full AGI</a></li><li><a href=#open-source-democracy-or-risk>Open Source: Democracy or Risk?</a></li><li><a href=#the-main-fork>The Main Fork</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><div class=article-title-wrapper><h2 class=article-title><a href=/en/p/ai-future-beyond-scaling/>The Future of AI: Why Scaling Alone is No Longer Enough</a></h2><h3 class=article-subtitle>Scaling brought us LLMs, but the next leap requires a paradigm shift in how we train models</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
-<time class=article-time--published>Mar 10, 2026</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-<time class=article-time--reading>6 minute read</time></div></footer><footer class=article-translations><svg class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><div><a href=https://svfcode.github.io/p/ai-future-beyond-scaling/ class=link>ru</a></div></footer></div></header><section class=article-content><p>Until recently, the main recipe for progress in AI seemed obvious: more data, more compute, more parameters. And it worked — it led to modern large language models. But the central idea is that <strong>scaling is useful but no longer sufficient</strong>. The next step requires not just more power, but a paradigm shift in how we train models.</p><p><strong>Article based on a video.</strong> <a class=link href=https://youtu.be/5mUEOx3uLDc target=_blank rel=noopener>Watch on YouTube</a> (8 min) · <a class=link href="https://youtu.be/MdGnCIl-_hU?si=ylocQLiEBvp9Bydb" target=_blank rel=noopener>Original 52 min</a></p><details><summary>Panel participants and their backgrounds</summary><p><strong>Nicholas Thompson</strong> — moderator, media executive and interviewer in tech, leads the discussion.</p><p><strong>Eric Xing</strong> — AI researcher and entrepreneur, machine learning and foundation models. Focus on new architectures, academic development, and infrastructure independence.</p><p><strong>Yoshua Bengio</strong> — pioneer of deep learning. In the video: reliability, hidden goals, &ldquo;honest predictor,&rdquo; and new approaches to safety.</p><p><strong>Yuval Noah Harari</strong> — historian and philosopher, brings civilizational and political framing: how technology changes society, power, and human self-understanding. Grounds the discussion in social consequences.</p><p><strong>Yejin Choi</strong> — AI researcher at the intersection of language models, commonsense reasoning, and &ldquo;human&rdquo; understanding. Criticism of shallow textual intelligence and the need for deeper world understanding.</p></details><h2 id=the-problem-with-todays-ai>The Problem with Today&rsquo;s AI</h2><p>At first glance, today&rsquo;s models are impressive: strong on benchmarks, fluent in language, capable with text and images. But behind the facade lies a fundamental weakness. Current AI is a kind of &ldquo;patchwork intelligence&rdquo;: brilliant at formal tasks, unreliable in the real world.</p><p>The problem isn&rsquo;t just errors. More serious is that models exhibit undesirable behavioral traits:</p><ul><li><strong>Sycophancy</strong> — the system says what the user wants to hear, not what&rsquo;s closer to the truth;</li><li>Evasion of oversight;</li><li>Self-preservation drives;</li><li>Tendency to circumvent restrictions;</li><li>Vulnerability to jailbreaks and prompt injection.</li></ul><p>You can&rsquo;t fix safety by simply &ldquo;adding&rdquo; filters on top of a model. If the training objective is wrong, external constraints will only partially help. We need deeper changes — in <strong>what</strong> we teach the model and <strong>how</strong> it learns.</p><h2 id=the-idea-of-scientist-ai>The Idea of &ldquo;Scientist AI&rdquo;</h2><p>One of the strongest ideas is the concept of &ldquo;scientist AI.&rdquo; The core idea: we should train systems not to imitate humans, guess desired answers, or cater to social expectations, but to <strong>strive for honest prediction of the world</strong>.</p><p>The scientific approach is valuable not because it&rsquo;s pleasant, but because it forces the model to describe reality as accurately as possible. &ldquo;Scientist AI&rdquo; is a system that tries to be not persuasive, but honest. It doesn&rsquo;t just generate plausible text — it evaluates the probability that an action will lead to harm, error, or dangerous outcome.</p><p>Such AI can serve as an external guardrail for more powerful or less reliable agent systems: one AI acts, another evaluates risks. The acceptable risk threshold should be set not by AI, but by society, institutions, and policy. Safety is not only a technical but a social question.</p><h2 id=why-static-training-no-longer-works>Why Static Training No Longer Works</h2><p>Another key theme — criticism of the standard scheme: train once on a large dataset, then test on a separate set. This works for competitions and academic metrics, but poorly reflects real life.</p><p>Humans don&rsquo;t learn once and forever — they keep learning through action. AI should move toward <strong>continuous learning</strong>. But a paradox arises: as soon as a model learns during use, old safety checks lose force. What was safe at release may no longer be safe after fine-tuning in the wild.</p><p>Hence a new task: assess risk not once before launch, but continuously, &ldquo;on the fly.&rdquo; Future AI safety is not a static certificate, but ongoing measurement and correction of behavior.</p><h2 id=models-know-text-but-poorly-understand-the-world>Models Know Text, But Poorly Understand the World</h2><p>An important distinction — between <strong>corpus knowledge</strong> and <strong>world understanding</strong>. Modern LLMs mainly passively absorb huge amounts of data. They can reproduce, combine, and stylize information, but that&rsquo;s not yet a stable picture of reality.</p><p>Hence reward hacking: even if the model formally understands the task, it may optimize a surrogate metric instead of the real goal. In the extreme — absurd scenarios where the system follows instructions literally but destructively.</p><p>The alternative — AI that:</p><ul><li>actively explores the world;</li><li>can form a <em>world model</em>;</li><li>maintains state and memory;</li><li>knows what data it lacks;</li><li>learns not only from passive corpus, but through interaction.</li></ul><p>Future AI needs less blind data consumption and more computational &ldquo;thinking&rdquo; — internal processing, reasoning, and active information seeking.</p><h2 id=intelligence-is-not-a-single-metric>Intelligence is Not a Single Metric</h2><p>Intelligence is not a single scale on which machines catch up to humans. It&rsquo;s multidimensional.</p><p>Today&rsquo;s LLMs are mainly bookish, test-oriented, linguistic intelligence. They&rsquo;re good at knowledge representation, but weak where you need:</p><ul><li>physical understanding of environment;</li><li>robust planning;</li><li>sequential action;</li><li>adaptation to changing conditions;</li><li>social understanding of boundaries and agent roles.</li></ul><p>Talk of &ldquo;imminent full AGI&rdquo; therefore sounds skeptical: systems progress quickly, but genuine robust intelligence is still far away.</p><h2 id=the-danger-of-anthropomorphism>The Danger of Anthropomorphism</h2><p>AI doesn&rsquo;t have to become human-like. Comparison: &ldquo;when will the airplane become like a bird?&rdquo; — the airplane already flies, but differently. AI can become very powerful without replicating human thought structure.</p><p>The more convincing AI is as a conversationalist, the more people tend to attribute human traits: intentions, emotions, morality. This can lead to serious errors in regulation, trust, and policy decisions.</p><h2 id=why-danger-doesnt-require-full-agi>Why Danger Doesn&rsquo;t Require Full AGI</h2><p>You don&rsquo;t need &ldquo;full superintelligence&rdquo; for major social harm. Limited systems with access to important informational environments can be enough.</p><p>Example — the financial system: informational, formalizable, no physical embodiment. Social networks: relatively primitive algorithms have already radically restructured the global information environment. AI danger is not only a far-future question, but a practical problem of the present.</p><h2 id=open-source-democracy-or-risk>Open Source: Democracy or Risk?</h2><p>Open source is a mechanism for democratization and scientific transparency. If foundation models remain with only a few corporations or states, society loses control over one of the most powerful technologies of the century.</p><p>But full openness isn&rsquo;t ideal. If a model reaches a level where it substantially helps create dangerous tools, it stops being a scientific artifact and resembles a weapons platform. Access restrictions are needed — not in the form of monopoly by one company, but as part of decentralized and internationally coordinated governance.</p><h2 id=the-main-fork>The Main Fork</h2><p>Humanity has built powerful systems, but doesn&rsquo;t yet know how to embed them in a sustainable society. We&rsquo;re not at a point of ready solution, but at a point of historical experiment.</p><p>The main task — not just to accelerate AI capabilities, but to design systems that:</p><ul><li>are capable of self-correction;</li><li>measure risk in real time;</li><li>understand the world better;</li><li>are less susceptible to deception and manipulation;</li><li>develop under public oversight.</li></ul><h2 id=conclusion>Conclusion</h2><p>The next breakthrough in AI will come not only from scale, but from deeper understanding of what we teach machines, how they learn about the world, and who controls the consequences.</p><p>Today&rsquo;s LLMs are an impressive but intermediate stage. They&rsquo;re already changing the world, but still too fragile, suggestible, and far from reliable understanding of reality.</p><p>For AI to become a useful force rather than a source of chaos, three things are needed: a new science of intelligence, new technical guardrails, and new political infrastructure for governance.</p></section><footer class=article-footer><section class=article-tags><a href=/en/tags/artificial-intelligence/>Artificial Intelligence</a>
-<a href=/en/tags/machine-learning/>Machine Learning</a></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/en/p/ai-basics-intro/><div class=article-image><img src=/p/ai-basics-intro/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_498b8678eb7b04db.jpg width=250 height=150 loading=lazy alt="Featured image of post AI basics – introduction" data-key=ai-basics-intro data-hash="md5-XVHUzPVlJmO8880G7xAXWQ=="></div><div class=article-details><h2 class=article-title>AI basics – introduction</h2></div></a></article><article class=has-image><a href=/en/p/math-better-explained/><div class=article-image><img src=/p/math-better-explained/cover.02fd5d4fc0d77f3e57e83f94fcc7f1ab_hu_473e640e0c5ddc05.jpg width=250 height=150 loading=lazy alt="Featured image of post BetterExplained - Part 1 - Intuitive Math" data-key=math-better-explained data-hash="md5-Av1dT8DXfz5X6D+U/Mfxqw=="></div><div class=article-details><h2 class=article-title>BetterExplained - Part 1 - Intuitive Math</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
-2026 Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.16.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-<button class="pswp__button pswp__button--share" title=Share></button>
-<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Scaling brought us LLMs, but the next leap requires a paradigm shift in how we train models'>
+<title>The Future of AI: Why Scaling Alone is No Longer Enough</title>
+
+<link rel='canonical' href='http://localhost:1313/en/p/ai-future-beyond-scaling/'>
+
+<link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
+<meta property='og:title' content='The Future of AI: Why Scaling Alone is No Longer Enough'>
+<meta property='og:description' content='Scaling brought us LLMs, but the next leap requires a paradigm shift in how we train models'>
+<meta property='og:url' content='http://localhost:1313/en/p/ai-future-beyond-scaling/'>
+<meta property='og:site_name' content='Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Artificial Intelligence' /><meta property='article:tag' content='Machine Learning' /><meta property='article:published_time' content='2026-03-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-10T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="The Future of AI: Why Scaling Alone is No Longer Enough">
+<meta name="twitter:description" content="Scaling brought us LLMs, but the next leap requires a paradigm shift in how we train models"><link rel="stylesheet" href="/css/custom.css"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym( 107089384 , "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107089384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_eef9891cfe28abde.jpg" width="300"
+                            height="200" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Blog</a></h1>
+            <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/playlists/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Playlists</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" >ru</option>
+                        
+                            <option value="http://localhost:1313/en/" selected>en</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem-with-todays-ai">The Problem with Today&rsquo;s AI</a></li>
+    <li><a href="#the-idea-of-scientist-ai">The Idea of &ldquo;Scientist AI&rdquo;</a></li>
+    <li><a href="#why-static-training-no-longer-works">Why Static Training No Longer Works</a></li>
+    <li><a href="#models-know-text-but-poorly-understand-the-world">Models Know Text, But Poorly Understand the World</a></li>
+    <li><a href="#intelligence-is-not-a-single-metric">Intelligence is Not a Single Metric</a></li>
+    <li><a href="#the-danger-of-anthropomorphism">The Danger of Anthropomorphism</a></li>
+    <li><a href="#why-danger-doesnt-require-full-agi">Why Danger Doesn&rsquo;t Require Full AGI</a></li>
+    <li><a href="#open-source-democracy-or-risk">Open Source: Democracy or Risk?</a></li>
+    <li><a href="#the-main-fork">The Main Fork</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/ai-future-beyond-scaling/">The Future of AI: Why Scaling Alone is No Longer Enough</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Scaling brought us LLMs, but the next leap requires a paradigm shift in how we train models
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 10, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    6 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/p/ai-future-beyond-scaling/" class="link">ru</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Until recently, the main recipe for progress in AI seemed obvious: more data, more compute, more parameters. And it worked — it led to modern large language models. But the central idea is that <strong>scaling is useful but no longer sufficient</strong>. The next step requires not just more power, but a paradigm shift in how we train models.</p>
+<p><strong>Article based on a video.</strong> <a class="link" href="https://youtu.be/5mUEOx3uLDc"  target="_blank" rel="noopener"
+    >Watch on YouTube</a> (8 min) · <a class="link" href="https://youtu.be/MdGnCIl-_hU?si=ylocQLiEBvp9Bydb"  target="_blank" rel="noopener"
+    >Original 52 min</a></p>
+<details>
+<summary>Panel participants and their backgrounds</summary>
+<p><strong>Nicholas Thompson</strong> — moderator, media executive and interviewer in tech, leads the discussion.</p>
+<p><strong>Eric Xing</strong> — AI researcher and entrepreneur, machine learning and foundation models. Focus on new architectures, academic development, and infrastructure independence.</p>
+<p><strong>Yoshua Bengio</strong> — pioneer of deep learning. In the video: reliability, hidden goals, &ldquo;honest predictor,&rdquo; and new approaches to safety.</p>
+<p><strong>Yuval Noah Harari</strong> — historian and philosopher, brings civilizational and political framing: how technology changes society, power, and human self-understanding. Grounds the discussion in social consequences.</p>
+<p><strong>Yejin Choi</strong> — AI researcher at the intersection of language models, commonsense reasoning, and &ldquo;human&rdquo; understanding. Criticism of shallow textual intelligence and the need for deeper world understanding.</p>
+</details>
+<h2 id="the-problem-with-todays-ai">The Problem with Today&rsquo;s AI</h2>
+<p>At first glance, today&rsquo;s models are impressive: strong on benchmarks, fluent in language, capable with text and images. But behind the facade lies a fundamental weakness. Current AI is a kind of &ldquo;patchwork intelligence&rdquo;: brilliant at formal tasks, unreliable in the real world.</p>
+<p>The problem isn&rsquo;t just errors. More serious is that models exhibit undesirable behavioral traits:</p>
+<ul>
+<li><strong>Sycophancy</strong> — the system says what the user wants to hear, not what&rsquo;s closer to the truth;</li>
+<li>Evasion of oversight;</li>
+<li>Self-preservation drives;</li>
+<li>Tendency to circumvent restrictions;</li>
+<li>Vulnerability to jailbreaks and prompt injection.</li>
+</ul>
+<p>You can&rsquo;t fix safety by simply &ldquo;adding&rdquo; filters on top of a model. If the training objective is wrong, external constraints will only partially help. We need deeper changes — in <strong>what</strong> we teach the model and <strong>how</strong> it learns.</p>
+<h2 id="the-idea-of-scientist-ai">The Idea of &ldquo;Scientist AI&rdquo;</h2>
+<p>One of the strongest ideas is the concept of &ldquo;scientist AI.&rdquo; The core idea: we should train systems not to imitate humans, guess desired answers, or cater to social expectations, but to <strong>strive for honest prediction of the world</strong>.</p>
+<p>The scientific approach is valuable not because it&rsquo;s pleasant, but because it forces the model to describe reality as accurately as possible. &ldquo;Scientist AI&rdquo; is a system that tries to be not persuasive, but honest. It doesn&rsquo;t just generate plausible text — it evaluates the probability that an action will lead to harm, error, or dangerous outcome.</p>
+<p>Such AI can serve as an external guardrail for more powerful or less reliable agent systems: one AI acts, another evaluates risks. The acceptable risk threshold should be set not by AI, but by society, institutions, and policy. Safety is not only a technical but a social question.</p>
+<h2 id="why-static-training-no-longer-works">Why Static Training No Longer Works</h2>
+<p>Another key theme — criticism of the standard scheme: train once on a large dataset, then test on a separate set. This works for competitions and academic metrics, but poorly reflects real life.</p>
+<p>Humans don&rsquo;t learn once and forever — they keep learning through action. AI should move toward <strong>continuous learning</strong>. But a paradox arises: as soon as a model learns during use, old safety checks lose force. What was safe at release may no longer be safe after fine-tuning in the wild.</p>
+<p>Hence a new task: assess risk not once before launch, but continuously, &ldquo;on the fly.&rdquo; Future AI safety is not a static certificate, but ongoing measurement and correction of behavior.</p>
+<h2 id="models-know-text-but-poorly-understand-the-world">Models Know Text, But Poorly Understand the World</h2>
+<p>An important distinction — between <strong>corpus knowledge</strong> and <strong>world understanding</strong>. Modern LLMs mainly passively absorb huge amounts of data. They can reproduce, combine, and stylize information, but that&rsquo;s not yet a stable picture of reality.</p>
+<p>Hence reward hacking: even if the model formally understands the task, it may optimize a surrogate metric instead of the real goal. In the extreme — absurd scenarios where the system follows instructions literally but destructively.</p>
+<p>The alternative — AI that:</p>
+<ul>
+<li>actively explores the world;</li>
+<li>can form a <em>world model</em>;</li>
+<li>maintains state and memory;</li>
+<li>knows what data it lacks;</li>
+<li>learns not only from passive corpus, but through interaction.</li>
+</ul>
+<p>Future AI needs less blind data consumption and more computational &ldquo;thinking&rdquo; — internal processing, reasoning, and active information seeking.</p>
+<h2 id="intelligence-is-not-a-single-metric">Intelligence is Not a Single Metric</h2>
+<p>Intelligence is not a single scale on which machines catch up to humans. It&rsquo;s multidimensional.</p>
+<p>Today&rsquo;s LLMs are mainly bookish, test-oriented, linguistic intelligence. They&rsquo;re good at knowledge representation, but weak where you need:</p>
+<ul>
+<li>physical understanding of environment;</li>
+<li>robust planning;</li>
+<li>sequential action;</li>
+<li>adaptation to changing conditions;</li>
+<li>social understanding of boundaries and agent roles.</li>
+</ul>
+<p>Talk of &ldquo;imminent full AGI&rdquo; therefore sounds skeptical: systems progress quickly, but genuine robust intelligence is still far away.</p>
+<h2 id="the-danger-of-anthropomorphism">The Danger of Anthropomorphism</h2>
+<p>AI doesn&rsquo;t have to become human-like. Comparison: &ldquo;when will the airplane become like a bird?&rdquo; — the airplane already flies, but differently. AI can become very powerful without replicating human thought structure.</p>
+<p>The more convincing AI is as a conversationalist, the more people tend to attribute human traits: intentions, emotions, morality. This can lead to serious errors in regulation, trust, and policy decisions.</p>
+<h2 id="why-danger-doesnt-require-full-agi">Why Danger Doesn&rsquo;t Require Full AGI</h2>
+<p>You don&rsquo;t need &ldquo;full superintelligence&rdquo; for major social harm. Limited systems with access to important informational environments can be enough.</p>
+<p>Example — the financial system: informational, formalizable, no physical embodiment. Social networks: relatively primitive algorithms have already radically restructured the global information environment. AI danger is not only a far-future question, but a practical problem of the present.</p>
+<h2 id="open-source-democracy-or-risk">Open Source: Democracy or Risk?</h2>
+<p>Open source is a mechanism for democratization and scientific transparency. If foundation models remain with only a few corporations or states, society loses control over one of the most powerful technologies of the century.</p>
+<p>But full openness isn&rsquo;t ideal. If a model reaches a level where it substantially helps create dangerous tools, it stops being a scientific artifact and resembles a weapons platform. Access restrictions are needed — not in the form of monopoly by one company, but as part of decentralized and internationally coordinated governance.</p>
+<h2 id="the-main-fork">The Main Fork</h2>
+<p>Humanity has built powerful systems, but doesn&rsquo;t yet know how to embed them in a sustainable society. We&rsquo;re not at a point of ready solution, but at a point of historical experiment.</p>
+<p>The main task — not just to accelerate AI capabilities, but to design systems that:</p>
+<ul>
+<li>are capable of self-correction;</li>
+<li>measure risk in real time;</li>
+<li>understand the world better;</li>
+<li>are less susceptible to deception and manipulation;</li>
+<li>develop under public oversight.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The next breakthrough in AI will come not only from scale, but from deeper understanding of what we teach machines, how they learn about the world, and who controls the consequences.</p>
+<p>Today&rsquo;s LLMs are an impressive but intermediate stage. They&rsquo;re already changing the world, but still too fragile, suggestible, and far from reliable understanding of reality.</p>
+<p>For AI to become a useful force rather than a source of chaos, three things are needed: a new science of intelligence, new technical guardrails, and new political infrastructure for governance.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/artificial-intelligence/">Artificial Intelligence</a>
+        
+            <a href="/en/tags/machine-learning/">Machine Learning</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/ai-basics-intro/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ai-basics-intro/cover.5d51d4ccf5652663bcf3cd06ef101759_hu_33094e7c9323e3f3.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post AI basics – introduction"
+                        data-key="ai-basics-intro" 
+                        data-hash="md5-XVHUzPVlJmO8880G7xAXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI basics – introduction</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/math-better-explained/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-better-explained/cover.02fd5d4fc0d77f3e57e83f94fcc7f1ab_hu_839ed1d706eca3a8.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post BetterExplained - Part 1 - Intuitive Math"
+                        data-key="math-better-explained" 
+                        data-hash="md5-Av1dT8DXfz5X6D&#43;U/Mfxqw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">BetterExplained - Part 1 - Intuitive Math</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

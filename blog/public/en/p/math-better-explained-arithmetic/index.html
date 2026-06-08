@@ -1,62 +1,905 @@
-<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content='Numbers (N, Z, Q, R), their properties and relations, operations + and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)'><title>BetterExplained - Part 2 - Arithmetic</title><link rel=canonical href=https://svfcode.github.io/en/p/math-better-explained-arithmetic/><link rel=stylesheet href=/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css><meta property='og:title' content='BetterExplained - Part 2 - Arithmetic'><meta property='og:description' content='Numbers (N, Z, Q, R), their properties and relations, operations + and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)'><meta property='og:url' content='https://svfcode.github.io/en/p/math-better-explained-arithmetic/'><meta property='og:site_name' content='Blog'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='Mathematics'><meta property='article:tag' content='Machine Learning'><meta property='article:tag' content='Basics'><meta property='article:published_time' content='2026-06-01T00:00:00+00:00'><meta property='article:modified_time' content='2026-06-01T00:00:00+00:00'><meta property='og:image' content='https://svfcode.github.io/p/math-better-explained-arithmetic/cover.jpg'><meta name=twitter:title content="BetterExplained - Part 2 - Arithmetic"><meta name=twitter:description content="Numbers (N, Z, Q, R), their properties and relations, operations + and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://svfcode.github.io/p/math-better-explained-arithmetic/cover.jpg'><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css integrity=sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js integrity=sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js integrity=sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:!0},{left:"$$",right:"$$",display:!0},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1})})</script><script type=text/javascript>(function(e,t,n,s,o,i,a){e[o]=e[o]||function(){(e[o].a=e[o].a||[]).push(arguments)},e[o].l=1*new Date;for(var r=0;r<document.scripts.length;r++)if(document.scripts[r].src===s)return;i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym"),ym(107089384,"init",{clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!0})</script><noscript><div><img src=https://mc.yandex.ru/watch/107089384 style=position:absolute;left:-9999px alt></div></noscript></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
-<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/en/><img src=/img/avatar_hu_eef9891cfe28abde.jpg width=300 height=200 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/en>Blog</a></h1><h2 class=site-description>ai, ml, nn, cv, ros, etc.</h2></div></header><ol class=menu id=main-menu><li><a href=/en/about/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
-<span>About</span></a></li><li><a href=/en/playlists/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
-<span>Playlists</span></a></li><li><a href=/en/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
-<span>Archives</span></a></li><li><a href=/en/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
-<span>Search</span></a></li><div class=menu-bottom-section><li id=i18n-switch><svg class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg>
-<select name=language onchange="window.location.href=this.selectedOptions[0].value"><option value=https://svfcode.github.io/>ru</option><option value=https://svfcode.github.io/en/ selected>en</option></select></li><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
-<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
-<span>Dark Mode</span></li></div></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ul><li><a href=#mental-tricks>Mental tricks</a><ul><li><a href=#60-kmh-is-1-km-per-minute>60 km/h is 1 km per minute</a></li><li><a href=#1-year--250-work-days--2000-work-hours>1 year = 250 work days = 2000 work hours</a></li><li><a href=#rule-of-72-years-to-double--72--interest-rate>Rule of 72: years to double = 72 / interest rate</a></li><li><a href=#mental-arithmetic>Mental arithmetic</a></li><li><a href=#visualizing-numbers>Visualizing numbers</a></li><li><a href=#a-of-b--b-of-a>a% of b = b% of a</a></li></ul></li><li><a href=#sum-from-1-to-n>Sum from 1 to n</a><ul><li><a href=#were-usually-just-given-the-formula-and-told-to-memorize-it>We&rsquo;re usually just given the formula and told to memorize it</a></li><li><a href=#1-split-the-sequence-in-half-and-add-in-pairs>1) Split the sequence in half and add in pairs</a></li><li><a href=#2-two-rows-of-numbers>2) Two rows of numbers</a></li><li><a href=#3-picture-a-triangle>3) Picture a triangle</a></li><li><a href=#4-via-the-average--the-most-interesting-one-in-my-view>4) Via the average — the most interesting one, in my view</a></li></ul></li><li><a href=#visual-arithmetic>Visual arithmetic</a><ul><li><a href=#every-operation-is-a-transformation>Every operation is a transformation</a></li><li><a href=#addition-gives-tools-for>Addition gives tools for:</a></li><li><a href=#multiplication-gives-tools-for>Multiplication gives tools for:</a></li><li><a href=#negatives-and-inverses>Negatives and inverses</a></li><li><a href=#division-gives-tools-for>Division gives tools for:</a></li><li><a href=#powers-and-roots-give-tools-for>Powers and roots give tools for:</a></li><li><a href=#and---dont-mix-up-reverse>\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”</a></li></ul></li></ul></nav></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/en/p/math-better-explained-arithmetic/><img src=/p/math-better-explained-arithmetic/cover_hu_5e8b71bdfa69c370.jpg srcset="/p/math-better-explained-arithmetic/cover_hu_5e8b71bdfa69c370.jpg 800w, /p/math-better-explained-arithmetic/cover_hu_d845b0c2ebcdc32f.jpg 1600w" width=800 height=451 loading=lazy alt="Featured image of post BetterExplained - Part 2 - Arithmetic"></a></div><div class=article-details><div class=article-title-wrapper><h2 class=article-title><a href=/en/p/math-better-explained-arithmetic/>BetterExplained - Part 2 - Arithmetic</a></h2><h3 class=article-subtitle>Numbers (N, Z, Q, R), their properties and relations, operations <span class=op-pairs><span class=op-pair>+ and −</span><span class=op-pair>× and /</span><span class=op-pair>\(a^{b}\) and \(\sqrt[n]{a}\)</span></span></h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
-<time class=article-time--published>Jun 01, 2026</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-<time class=article-time--reading>5 minute read</time></div></footer><footer class=article-translations><svg class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><div><a href=https://svfcode.github.io/p/math-better-explained-arithmetic/ class=link>ru</a></div></footer></div></header><section class=article-content><h2 id=mental-tricks>Mental tricks</h2><div class=accordion-controls role=group aria-label="Управление секциями"><button type=button class="accordion-toggle-all accordion-toggle-all--expand" data-action=expand aria-label="Expand all">
-<span class=accordion-toggle-all__icon aria-hidden=true></span>
-<span class=accordion-toggle-all__label>Expand all</span>
-</button>
-<button type=button class="accordion-toggle-all accordion-toggle-all--collapse" data-action=collapse aria-label="Collapse all">
-<span class=accordion-toggle-all__icon aria-hidden=true></span>
-<span class=accordion-toggle-all__label>Collapse all</span></button></div><script>(function(){if(window.__accordionControlsInit)return;window.__accordionControlsInit=!0,document.addEventListener("click",function(e){var t,s,o,n=e.target.closest(".accordion-toggle-all");if(!n)return;if(s=n.closest(".accordion-controls"),!s)return;for(t=s.nextElementSibling;t&&!t.classList.contains("post-accordion-group");)t=t.nextElementSibling;if(!t)return;o=n.dataset.action==="expand",t.querySelectorAll("details.post-accordion").forEach(function(e){e.open=o})})})()</script><div class=post-accordion-group><h3 class=toc-heading-only id=60-kmh-is-1-km-per-minute>60 km/h is 1 km per minute</h3><details class=post-accordion><summary>60 km/h is 1 km per minute</summary><div><p>Driver reaction time (notice → decide → act) is ~1 second.</p><p>So if an obstacle appears closer than 16 meters (at 60 km/h), you probably cannot do anything in time. If the speed is three times higher, what distance is critical?</p></div></details><h3 class=toc-heading-only id=1-year--250-work-days--2000-work-hours>1 year = 250 work days = 2000 work hours</h3><details class=post-accordion><summary>1 year = 250 work days = 2000 work hours</summary><div><p>So if you spend 1 hour per day commuting (half an hour each way), you spend 250 hours per year on the road.</p></div></details><h3 class=toc-heading-only id=rule-of-72-years-to-double--72--interest-rate>Rule of 72: years to double = 72 / interest rate</h3><details class=post-accordion><summary>Rule of 72: years to double = 72 / interest rate</summary><div><p>Want 10% annual growth on your investments? They double in 7.2 years.</p><p>Want your investments to double in 5 years? You need a rate of 72/5, or about 15%.</p><p>You can use this rule for any time period, not just years.</p><p>Inflation is 4%? That cuts your money in half in 72/4, or 18 years.</p></div></details><h3 class=toc-heading-only id=mental-arithmetic>Mental arithmetic</h3><details class=post-accordion><summary>Mental arithmetic</summary><div><p>10,000 = hundred hundred</p><p>million = thousand thousand</p><p>billion = thousand million</p><p>trillion = million million</p><p>1% of 10k is 100. The Dow is roughly 10k (it&rsquo;s about 12k now). So if the Dow drops 100, it&rsquo;s about a 1% loss.</p><p>What&rsquo;s 5k × 50k? That&rsquo;s 250 × thousand × thousand, or 250 million.</p></div></details><h3 class=toc-heading-only id=visualizing-numbers>Visualizing numbers</h3><details class=post-accordion><summary>Visualizing numbers</summary><div><p>12 days = 1 million seconds</p><p>1 year = 31 million seconds (about π × 10 million)</p><p>30 years = 1 billion seconds</p><p>30,000 years = 1 trillion seconds</p><p>One “part per million” means an accuracy of 1 second every 12 days. One “part per trillion” means an accuracy of 1 second every 30,000 years.</p></div></details><h3 class=toc-heading-only id=a-of-b--b-of-a>a% of b = b% of a</h3><details class=post-accordion><summary>a% of b = b% of a</summary><div><p>It’s not immediately clear, but it’s true: a% of b = 0.01 × a × b, which is the same as b% of a (0.01 × b × a).</p><p>What’s 16% of 25? The same as 25% of 16: 4.</p><p>What’s 43% of 200? The same as 200% of 43: 86.</p></div></details></div><h2 id=sum-from-1-to-n>Sum from 1 to n</h2><div class=accordion-controls role=group aria-label="Управление секциями"><button type=button class="accordion-toggle-all accordion-toggle-all--expand" data-action=expand aria-label="Expand all">
-<span class=accordion-toggle-all__icon aria-hidden=true></span>
-<span class=accordion-toggle-all__label>Expand all</span>
-</button>
-<button type=button class="accordion-toggle-all accordion-toggle-all--collapse" data-action=collapse aria-label="Collapse all">
-<span class=accordion-toggle-all__icon aria-hidden=true></span>
-<span class=accordion-toggle-all__label>Collapse all</span></button></div><div class=post-accordion-group><h3 class=toc-heading-only id=were-usually-just-given-the-formula-and-told-to-memorize-it>We&rsquo;re usually just given the formula and told to memorize it</h3><details class=post-accordion><summary>We're usually just given the formula and told to memorize it</summary><div>\[
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Numbers (N, Z, Q, R), their properties and relations, operations &#43; and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)'>
+<title>BetterExplained - Part 2 - Arithmetic</title>
+
+<link rel='canonical' href='http://localhost:1313/en/p/math-better-explained-arithmetic/'>
+
+<link rel="stylesheet" href="/scss/style.min.22ad1c74b5bb435181c77741d99f034b2c36f7272eff9d0d1aa16d32e7e84673.css">
+<meta property='og:title' content='BetterExplained - Part 2 - Arithmetic'>
+<meta property='og:description' content='Numbers (N, Z, Q, R), their properties and relations, operations &#43; and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)'>
+<meta property='og:url' content='http://localhost:1313/en/p/math-better-explained-arithmetic/'>
+<meta property='og:site_name' content='Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Mathematics' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='Basics' /><meta property='article:published_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-06-01T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg' />
+<meta name="twitter:title" content="BetterExplained - Part 2 - Arithmetic">
+<meta name="twitter:description" content="Numbers (N, Z, Q, R), their properties and relations, operations &#43; and −× and /\(a^{b}\) and \(\sqrt[n]{a}\)"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/math-better-explained-arithmetic/cover.jpg' /><link rel="stylesheet" href="/css/custom.css"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym( 107089384 , "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107089384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_eef9891cfe28abde.jpg" width="300"
+                            height="200" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Blog</a></h1>
+            <h2 class="site-description">ai, ml, nn, cv, ros, etc.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/playlists/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Playlists</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" >ru</option>
+                        
+                            <option value="http://localhost:1313/en/" selected>en</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mental-tricks">Mental tricks</a>
+      <ul>
+        <li><a href="#60-kmh-is-1-km-per-minute">60 km/h is 1 km per minute</a></li>
+        <li><a href="#1-year--250-work-days--2000-work-hours">1 year = 250 work days = 2000 work hours</a></li>
+        <li><a href="#rule-of-72-years-to-double--72--interest-rate">Rule of 72: years to double = 72 / interest rate</a></li>
+        <li><a href="#mental-arithmetic">Mental arithmetic</a></li>
+        <li><a href="#visualizing-numbers">Visualizing numbers</a></li>
+        <li><a href="#a-of-b--b-of-a">a% of b = b% of a</a></li>
+      </ul>
+    </li>
+    <li><a href="#sum-from-1-to-n">Sum from 1 to n</a>
+      <ul>
+        <li><a href="#were-usually-just-given-the-formula-and-told-to-memorize-it">We&rsquo;re usually just given the formula and told to memorize it</a></li>
+        <li><a href="#1-split-the-sequence-in-half-and-add-in-pairs">1) Split the sequence in half and add in pairs</a></li>
+        <li><a href="#2-two-rows-of-numbers">2) Two rows of numbers</a></li>
+        <li><a href="#3-picture-a-triangle">3) Picture a triangle</a></li>
+        <li><a href="#4-via-the-average--the-most-interesting-one-in-my-view">4) Via the average — the most interesting one, in my view</a></li>
+      </ul>
+    </li>
+    <li><a href="#visual-arithmetic">Visual arithmetic</a>
+      <ul>
+        <li><a href="#every-operation-is-a-transformation">Every operation is a transformation</a></li>
+        <li><a href="#addition-gives-tools-for">Addition gives tools for:</a></li>
+        <li><a href="#multiplication-gives-tools-for">Multiplication gives tools for:</a></li>
+        <li><a href="#negatives-and-inverses">Negatives and inverses</a></li>
+        <li><a href="#division-gives-tools-for">Division gives tools for:</a></li>
+        <li><a href="#powers-and-roots-give-tools-for">Powers and roots give tools for:</a></li>
+        <li><a href="#and---dont-mix-up-reverse"> and  — don’t mix up “reverse”</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/p/math-better-explained-arithmetic/">
+                <img src="/p/math-better-explained-arithmetic/cover_hu_5e8b71bdfa69c370.jpg"
+                        srcset="/p/math-better-explained-arithmetic/cover_hu_5e8b71bdfa69c370.jpg 800w, /p/math-better-explained-arithmetic/cover_hu_d845b0c2ebcdc32f.jpg 1600w"
+                        width="800" 
+                        height="451" 
+                        loading="lazy"
+                        alt="Featured image of post BetterExplained - Part 2 - Arithmetic" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/math-better-explained-arithmetic/">BetterExplained - Part 2 - Arithmetic</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Numbers (N, Z, Q, R), their properties and relations, operations <span class="op-pairs"><span class="op-pair">+ and −</span><span class="op-pair">× and /</span><span class="op-pair">\(a^{b}\) and \(\sqrt[n]{a}\)</span></span>
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 01, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    5 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="http://localhost:1313/p/math-better-explained-arithmetic/" class="link">ru</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="mental-tricks">Mental tricks</h2>
+<div class="accordion-controls" role="group" aria-label="Управление секциями">
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Expand all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Expand all</span>
+    </button>
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Collapse all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Collapse all</span>
+    </button>
+</div><script>
+(function () {
+    if (window.__accordionControlsInit) return;
+    window.__accordionControlsInit = true;
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".accordion-toggle-all");
+        if (!btn) return;
+        var controls = btn.closest(".accordion-controls");
+        if (!controls) return;
+        var group = controls.nextElementSibling;
+        while (group && !group.classList.contains("post-accordion-group")) {
+            group = group.nextElementSibling;
+        }
+        if (!group) return;
+        var open = btn.dataset.action === "expand";
+        group.querySelectorAll("details.post-accordion").forEach(function (d) {
+            d.open = open;
+        });
+    });
+})();
+</script>
+<div class="post-accordion-group">
+
+<h3 class="toc-heading-only" id="60-kmh-is-1-km-per-minute">60 km/h is 1 km per minute</h3>
+<details class="post-accordion">
+<summary>60 km/h is 1 km per minute</summary>
+<div>
+<p>Driver reaction time (notice → decide → act) is ~1 second.</p>
+<p>So if an obstacle appears closer than 16 meters (at 60 km/h), you probably cannot do anything in time. If the speed is three times higher, what distance is critical?</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="1-year--250-work-days--2000-work-hours">1 year = 250 work days = 2000 work hours</h3>
+<details class="post-accordion">
+<summary>1 year = 250 work days = 2000 work hours</summary>
+<div>
+<p>So if you spend 1 hour per day commuting (half an hour each way), you spend 250 hours per year on the road.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="rule-of-72-years-to-double--72--interest-rate">Rule of 72: years to double = 72 / interest rate</h3>
+<details class="post-accordion">
+<summary>Rule of 72: years to double = 72 / interest rate</summary>
+<div>
+<p>Want 10% annual growth on your investments? They double in 7.2 years.</p>
+<p>Want your investments to double in 5 years? You need a rate of 72/5, or about 15%.</p>
+<p>You can use this rule for any time period, not just years.</p>
+<p>Inflation is 4%? That cuts your money in half in 72/4, or 18 years.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="mental-arithmetic">Mental arithmetic</h3>
+<details class="post-accordion">
+<summary>Mental arithmetic</summary>
+<div>
+<p>10,000 = hundred hundred</p>
+<p>million = thousand thousand</p>
+<p>billion = thousand million</p>
+<p>trillion = million million</p>
+<p>1% of 10k is 100. The Dow is roughly 10k (it&rsquo;s about 12k now). So if the Dow drops 100, it&rsquo;s about a 1% loss.</p>
+<p>What&rsquo;s 5k × 50k? That&rsquo;s 250 × thousand × thousand, or 250 million.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="visualizing-numbers">Visualizing numbers</h3>
+<details class="post-accordion">
+<summary>Visualizing numbers</summary>
+<div>
+<p>12 days = 1 million seconds</p>
+<p>1 year = 31 million seconds (about π × 10 million)</p>
+<p>30 years = 1 billion seconds</p>
+<p>30,000 years = 1 trillion seconds</p>
+<p>One “part per million” means an accuracy of 1 second every 12 days. One “part per trillion” means an accuracy of 1 second every 30,000 years.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="a-of-b--b-of-a">a% of b = b% of a</h3>
+<details class="post-accordion">
+<summary>a% of b = b% of a</summary>
+<div>
+<p>It’s not immediately clear, but it’s true: a% of b = 0.01 × a × b, which is the same as b% of a (0.01 × b × a).</p>
+<p>What’s 16% of 25? The same as 25% of 16: 4.</p>
+<p>What’s 43% of 200? The same as 200% of 43: 86.</p>
+</div>
+</details>
+</div>
+
+<h2 id="sum-from-1-to-n">Sum from 1 to n</h2>
+<div class="accordion-controls" role="group" aria-label="Управление секциями">
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Expand all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Expand all</span>
+    </button>
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Collapse all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Collapse all</span>
+    </button>
+</div>
+<div class="post-accordion-group">
+
+<h3 class="toc-heading-only" id="were-usually-just-given-the-formula-and-told-to-memorize-it">We&rsquo;re usually just given the formula and told to memorize it</h3>
+<details class="post-accordion">
+<summary>We're usually just given the formula and told to memorize it</summary>
+<div>
+\[
 \text{Sum from 1 to } n = \frac{n(n+1)}{2}
 \]\[
 \text{Sum from 1 to 100} = \frac{100(100+1)}{2} = (50)(101) = 5050
-\]<p>But to build <strong>intuition</strong> and really understand it, you need to <strong>derive the formula yourself</strong>.</p><p>Below are four ways to derive it.</p></div></details><h3 class=toc-heading-only id=1-split-the-sequence-in-half-and-add-in-pairs>1) Split the sequence in half and add in pairs</h3><details class=post-accordion><summary>1) Split the sequence in half and add in pairs</summary><div><pre tabindex=0><code> 1   2   3   4   5
+\]<p>But to build <strong>intuition</strong> and really understand it, you need to <strong>derive the formula yourself</strong>.</p>
+<p>Below are four ways to derive it.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="1-split-the-sequence-in-half-and-add-in-pairs">1) Split the sequence in half and add in pairs</h3>
+<details class="post-accordion">
+<summary>1) Split the sequence in half and add in pairs</summary>
+<div>
+<pre tabindex="0"><code> 1   2   3   4   5
 10   9   8   7   6
-</code></pre><p>Each vertical pair has the same sum: \(1 + 10 = 2 + 9 = \ldots = n + 1\). There are \(\frac{n}{2}\) pairs.</p>\[
+</code></pre><p>Each vertical pair has the same sum: \(1 + 10 = 2 + 9 = \ldots = n + 1\). There are \(\frac{n}{2}\) pairs.</p>
+\[
 \text{Number of pairs} \times \text{sum of each pair} = \frac{n}{2}(n+1) = \frac{n(n+1)}{2}
-\]</div></details><h3 class=toc-heading-only id=2-two-rows-of-numbers>2) Two rows of numbers</h3><details class=post-accordion><summary>2) Two rows of numbers</summary><div><pre tabindex=0><code> 1   2   3   4   5   6   7   8   9  10
+\]</div>
+</details>
+<h3 class="toc-heading-only" id="2-two-rows-of-numbers">2) Two rows of numbers</h3>
+<details class="post-accordion">
+<summary>2) Two rows of numbers</summary>
+<div>
+<pre tabindex="0"><code> 1   2   3   4   5   6   7   8   9  10
 10   9   8   7   6   5   4   3   2   1
-</code></pre><p>Add <strong>both</strong> rows: every column sums to \(n + 1\), and there are \(n\) columns:</p>\[
+</code></pre><p>Add <strong>both</strong> rows: every column sums to \(n + 1\), and there are \(n\) columns:</p>
+\[
 \text{Sum of both rows} = n(n+1)
-\]<p>We only want <strong>one</strong> row, so divide by 2:</p>\[
+\]<p>We only want <strong>one</strong> row, so divide by 2:</p>
+\[
 \frac{n(n+1)}{2}
-\]</div></details><h3 class=toc-heading-only id=3-picture-a-triangle>3) Picture a triangle</h3><details class=post-accordion><summary>3) Picture a triangle</summary><div><pre tabindex=0><code>x
+\]</div>
+</details>
+<h3 class="toc-heading-only" id="3-picture-a-triangle">3) Picture a triangle</h3>
+<details class="post-accordion">
+<summary>3) Picture a triangle</summary>
+<div>
+<pre tabindex="0"><code>x
 x x
 x x x
 x x x x
 x x x x x
-</code></pre><p>\(n\) rows, row \(k\) has \(k\) cells — \(1 + 2 + \ldots + n\) in total. Imagine fitting two such triangles together tooth-to-tooth to form a rectangle. <strong>Derive the formula yourself</strong> from that picture.</p></div></details><h3 class=toc-heading-only id=4-via-the-average--the-most-interesting-one-in-my-view>4) Via the average — the most interesting one, in my view</h3><details class=post-accordion><summary>4) Via the average — the most interesting one, in my view</summary><div><p>We all know that</p>\[
+</code></pre><p>\(n\) rows, row \(k\) has \(k\) cells — \(1 + 2 + \ldots + n\) in total. Imagine fitting two such triangles together tooth-to-tooth to form a rectangle. <strong>Derive the formula yourself</strong> from that picture.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="4-via-the-average--the-most-interesting-one-in-my-view">4) Via the average — the most interesting one, in my view</h3>
+<details class="post-accordion">
+<summary>4) Via the average — the most interesting one, in my view</summary>
+<div>
+<p>We all know that</p>
+\[
 \text{average} = \frac{\text{sum}}{\text{number of items}}
-\]<p>which we can rewrite as</p>\[
+\]<p>which we can rewrite as</p>
+\[
 \text{sum} = \text{average} \times \text{number of items}
-\]<p>For \(1, 2, \ldots, n\) the average is easy to eyeball from the <strong>middle</strong> of the range: \(\frac{n+1}{2}\). There are \(n\) items, so:</p>\[
+\]<p>For \(1, 2, \ldots, n\) the average is easy to eyeball from the <strong>middle</strong> of the range: \(\frac{n+1}{2}\). There are \(n\) items, so:</p>
+\[
 \text{sum} = \frac{n+1}{2} \cdot n = \frac{n(n+1)}{2}
-\]<p>For \(1 \ldots 100\): average \(\approx 50.5\), sum \(50.5 \times 100 = 5050\).</p></div></details></div><h2 id=visual-arithmetic>Visual arithmetic</h2><div class=accordion-controls role=group aria-label="Управление секциями"><button type=button class="accordion-toggle-all accordion-toggle-all--expand" data-action=expand aria-label="Expand all">
-<span class=accordion-toggle-all__icon aria-hidden=true></span>
-<span class=accordion-toggle-all__label>Expand all</span>
-</button>
-<button type=button class="accordion-toggle-all accordion-toggle-all--collapse" data-action=collapse aria-label="Collapse all">
-<span class=accordion-toggle-all__icon aria-hidden=true></span>
-<span class=accordion-toggle-all__label>Collapse all</span></button></div><div class=post-accordion-group><h3 class=toc-heading-only id=every-operation-is-a-transformation>Every operation is a transformation</h3><details class=post-accordion><summary>Every operation is a transformation</summary><div><p>Every operation is a transformation. In the real world there are things we want to slide, smoosh and stretch — arithmetic is exactly what gives us the tools to model that.</p></div></details><h3 class=toc-heading-only id=addition-gives-tools-for>Addition gives tools for:</h3><details class=post-accordion><summary>Addition gives tools for:</summary><div><ol><li>accumulation — counting quantities (total at checkout)</li><li>slide — move a mark along a scale (temperature)</li><li>combination — a new quantity from two different ones (sound wave)</li></ol></div></details><h3 class=toc-heading-only id=multiplication-gives-tools-for>Multiplication gives tools for:</h3><details class=post-accordion><summary>Multiplication gives tools for:</summary><div><ol><li>repetition — several additions in a row</li><li>scaling — a number grows or shrinks all at once</li></ol></div></details><h3 class=toc-heading-only id=negatives-and-inverses>Negatives and inverses</h3><details class=post-accordion><summary>Negatives and inverses</summary><div><ol><li>multiply by 1/2: turn a profit of 1 into a profit of 1/2 (“unscale”)</li><li>multiply by −2: turn a profit of 1 into a loss of 2 (“invert”)</li></ol></div></details><h3 class=toc-heading-only id=division-gives-tools-for>Division gives tools for:</h3><details class=post-accordion><summary>Division gives tools for:</summary><div><ol><li>share (\(a/b\)) — how much of the whole: ate \(3/8\) of the pizza, tank is \(2/5\) full</li><li>split (\(a \div b\)) — how many groups of \(b\) in \(a\): \(12 \div 3\) → 4 piles of 3</li><li>undo scaling — multiplied by 3 → divide by 3 to get back</li></ol><p>A fraction looks at <strong>part of a whole</strong>; division looks at <strong>how many times it fits</strong>.</p></div></details><h3 class=toc-heading-only id=powers-and-roots-give-tools-for>Powers and roots give tools for:</h3><details class=post-accordion><summary>Powers and roots give tools for:</summary><div><ol><li>repeated multiplication — \(2^3 = 2 \times 2 \times 2\)</li><li>growth across dimensions — length \(\times 2\) → area \(\times 4\) (\(n=2\)), volume \(\times 8\) (\(n=3\))</li><li>root — inverse power: \(2^3 = 8 \Leftrightarrow \sqrt[3]{8} = 2\); \(a^{1/n}\) links \(\sqrt[n]{a}\) and \(a^n\)</li></ol></div></details><h3 class=toc-heading-only id=and---dont-mix-up-reverse>\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”</h3><details class=post-accordion><summary>\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”</summary><div><ol><li>\(a^{-n}\) — “invert” growth: not 8, but \(1/8\)</li><li>\(a^{1/n}\) — “unscale” the exponent: from 8 back to 2 without flipping sign</li></ol></div></details></div></section><footer class=article-footer><section class=article-tags><a href=/en/tags/mathematics/>Mathematics</a>
-<a href=/en/tags/machine-learning/>Machine Learning</a>
-<a href=/en/tags/basics/>Basics</a></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/en/p/math-bad-drawings/><div class=article-image><img src=/p/math-bad-drawings/cover.02fd5d4fc0d77f3e57e83f94fcc7f1ab_hu_473e640e0c5ddc05.jpg width=250 height=150 loading=lazy alt="Featured image of post Math with Bad Drawings — overview of Ben Orlin's books" data-key=math-bad-drawings data-hash="md5-Av1dT8DXfz5X6D+U/Mfxqw=="></div><div class=article-details><h2 class=article-title>Math with Bad Drawings — overview of Ben Orlin's books</h2></div></a></article><article class=has-image><a href=/en/p/math-better-explained/><div class=article-image><img src=/p/math-better-explained/cover.02fd5d4fc0d77f3e57e83f94fcc7f1ab_hu_473e640e0c5ddc05.jpg width=250 height=150 loading=lazy alt="Featured image of post BetterExplained - Part 1 - Intuitive Math" data-key=math-better-explained data-hash="md5-Av1dT8DXfz5X6D+U/Mfxqw=="></div><div class=article-details><h2 class=article-title>BetterExplained - Part 1 - Intuitive Math</h2></div></a></article><article><a href=/en/p/math-derivatives/><div class=article-details><h2 class=article-title>Math Analysis — Derivatives</h2></div></a></article><article><a href=/en/p/math-essentials-overview/><div class=article-details><h2 class=article-title>Essential math they'll ask you at interviews from nareshka.ru</h2></div></a></article><article><a href=/en/p/math-derivatives-bkp/><div class=article-details><h2 class=article-title>Math Analysis — Derivatives</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
-2026 Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.16.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-<button class="pswp__button pswp__button--share" title=Share></button>
-<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
+\]<p>For \(1 \ldots 100\): average \(\approx 50.5\), sum \(50.5 \times 100 = 5050\).</p>
+</div>
+</details>
+</div>
+
+<h2 id="visual-arithmetic">Visual arithmetic</h2>
+<div class="accordion-controls" role="group" aria-label="Управление секциями">
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--expand" data-action="expand" aria-label="Expand all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Expand all</span>
+    </button>
+    <button type="button" class="accordion-toggle-all accordion-toggle-all--collapse" data-action="collapse" aria-label="Collapse all">
+        <span class="accordion-toggle-all__icon" aria-hidden="true"></span>
+        <span class="accordion-toggle-all__label">Collapse all</span>
+    </button>
+</div>
+<div class="post-accordion-group">
+
+<h3 class="toc-heading-only" id="every-operation-is-a-transformation">Every operation is a transformation</h3>
+<details class="post-accordion">
+<summary>Every operation is a transformation</summary>
+<div>
+<p>Every operation is a transformation. In the real world there are things we want to slide, smoosh and stretch — arithmetic is exactly what gives us the tools to model that.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="addition-gives-tools-for">Addition gives tools for:</h3>
+<details class="post-accordion">
+<summary>Addition gives tools for:</summary>
+<div>
+<ol>
+<li>accumulation — counting quantities (total at checkout)</li>
+<li>slide — move a mark along a scale (temperature)</li>
+<li>combination — a new quantity from two different ones (sound wave)</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="multiplication-gives-tools-for">Multiplication gives tools for:</h3>
+<details class="post-accordion">
+<summary>Multiplication gives tools for:</summary>
+<div>
+<ol>
+<li>repetition — several additions in a row</li>
+<li>scaling — a number grows or shrinks all at once</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="negatives-and-inverses">Negatives and inverses</h3>
+<details class="post-accordion">
+<summary>Negatives and inverses</summary>
+<div>
+<ol>
+<li>multiply by 1/2: turn a profit of 1 into a profit of 1/2 (“unscale”)</li>
+<li>multiply by −2: turn a profit of 1 into a loss of 2 (“invert”)</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="division-gives-tools-for">Division gives tools for:</h3>
+<details class="post-accordion">
+<summary>Division gives tools for:</summary>
+<div>
+<ol>
+<li>share (\(a/b\)) — how much of the whole: ate \(3/8\) of the pizza, tank is \(2/5\) full</li>
+<li>split (\(a \div b\)) — how many groups of \(b\) in \(a\): \(12 \div 3\) → 4 piles of 3</li>
+<li>undo scaling — multiplied by 3 → divide by 3 to get back</li>
+</ol>
+<p>A fraction looks at <strong>part of a whole</strong>; division looks at <strong>how many times it fits</strong>.</p>
+</div>
+</details>
+<h3 class="toc-heading-only" id="powers-and-roots-give-tools-for">Powers and roots give tools for:</h3>
+<details class="post-accordion">
+<summary>Powers and roots give tools for:</summary>
+<div>
+<ol>
+<li>repeated multiplication — \(2^3 = 2 \times 2 \times 2\)</li>
+<li>growth across dimensions — length \(\times 2\) → area \(\times 4\) (\(n=2\)), volume \(\times 8\) (\(n=3\))</li>
+<li>root — inverse power: \(2^3 = 8 \Leftrightarrow \sqrt[3]{8} = 2\); \(a^{1/n}\) links \(\sqrt[n]{a}\) and \(a^n\)</li>
+</ol>
+</div>
+</details>
+<h3 class="toc-heading-only" id="and---dont-mix-up-reverse">\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”</h3>
+<details class="post-accordion">
+<summary>\(a^n\) and \(\sqrt[n]{a}\) — don’t mix up “reverse”</summary>
+<div>
+<ol>
+<li>\(a^{-n}\) — “invert” growth: not 8, but \(1/8\)</li>
+<li>\(a^{1/n}\) — “unscale” the exponent: from 8 back to 2 without flipping sign</li>
+</ol>
+</div>
+</details>
+</div>
+
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/mathematics/">Mathematics</a>
+        
+            <a href="/en/tags/machine-learning/">Machine Learning</a>
+        
+            <a href="/en/tags/basics/">Basics</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/math-bad-drawings/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-bad-drawings/cover.02fd5d4fc0d77f3e57e83f94fcc7f1ab_hu_839ed1d706eca3a8.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Math with Bad Drawings — overview of Ben Orlin&#39;s books"
+                        data-key="math-bad-drawings" 
+                        data-hash="md5-Av1dT8DXfz5X6D&#43;U/Mfxqw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Math with Bad Drawings — overview of Ben Orlin&#39;s books</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/math-better-explained/">
+        
+        
+            <div class="article-image">
+                <img src="/p/math-better-explained/cover.02fd5d4fc0d77f3e57e83f94fcc7f1ab_hu_839ed1d706eca3a8.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post BetterExplained - Part 1 - Intuitive Math"
+                        data-key="math-better-explained" 
+                        data-hash="md5-Av1dT8DXfz5X6D&#43;U/Mfxqw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">BetterExplained - Part 1 - Intuitive Math</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-derivatives/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Math Analysis — Derivatives</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-essentials-overview/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Essential math they&#39;ll ask you at interviews from nareshka.ru</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/en/p/math-derivatives-bkp/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Math Analysis — Derivatives</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
